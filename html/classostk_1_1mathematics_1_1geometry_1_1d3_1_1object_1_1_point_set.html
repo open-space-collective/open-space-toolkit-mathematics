@@ -201,7 +201,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html" title="Point.">Point</a> set. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a> pointSet({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a257f4e16cbaf7a172b99449b9b9130a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a257f4e16cbaf7a172b99449b9b9130a0">&#9670;&nbsp;</a></span>ConstIterator</h2>
 
@@ -284,7 +285,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to point set. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a> pointSet = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line">pointSet.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">Transformation::Identity</a>()) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -311,7 +314,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get begin const iterator. </p>
-<dl class="section return"><dt>Returns</dt><dd>Begin const iterator </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a> pointSet = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a257f4e16cbaf7a172b99449b9b9130a0">PointSet::ConstIterator</a> it = pointSet.begin() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Begin const iterator </dd></dl>
 
 </div>
 </div>
@@ -339,7 +344,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone point set. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned point set </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>* pointSetPtr = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a1ab0dfee99b56b4324e782a406ca1687">clone</a>() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned point set </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a8ea8d4074bfaaa3d996d760d5d5751db">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -362,7 +368,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get distance to point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a> pointSet = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line">Real distance = pointSet.distanceTo(Point(2.0, 0.0, 0.0)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -417,7 +425,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get end const iterator. </p>
-<dl class="section return"><dt>Returns</dt><dd>End const iterator </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a> pointSet = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a257f4e16cbaf7a172b99449b9b9130a0">PointSet::ConstIterator</a> it = pointSet.end() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>End const iterator </dd></dl>
 
 </div>
 </div>
@@ -438,7 +448,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get point closest to another point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a> pointSet = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line">Point closest = pointSet.getPointClosestTo(Point(0.1, 0.0, 0.0)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -464,7 +476,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get size of point set. </p>
-<dl class="section return"><dt>Returns</dt><dd>Size of point set </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#af110ae77a421e673d3ede1b39bfea608">getSize</a>() ; <span class="comment">// 2</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Size of point set </dd></dl>
 
 </div>
 </div>
@@ -577,7 +590,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 0.0, 0.0, 0.0 } }) != <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 1.0, 0.0, 0.0 } }) ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPointSet</td><td>A point set </td></tr>
   </table>
@@ -604,7 +618,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 0.0, 0.0, 0.0 } }) == <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 0.0, 0.0, 0.0 } }) ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPointSet</td><td>A point set </td></tr>
   </table>
@@ -649,7 +664,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">PointSet</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a54b5df386104fa9e13d7a982c3a99589">print</a>(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -668,8 +684,13 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_html_ab40c84e9a4d76cf89471771c74c3126c"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#ab40c84e9a4d76cf89471771c74c3126c">ostk::mathematics::geometry::d3::object::PointSet::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Check if point set is empty.</div><div class="ttdef"><b>Definition:</b> PointSet.cpp:47</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_html_af110ae77a421e673d3ede1b39bfea608"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#af110ae77a421e673d3ede1b39bfea608">ostk::mathematics::geometry::d3::object::PointSet::getSize</a></div><div class="ttdeci">Size getSize() const</div><div class="ttdoc">Get size of point set.</div><div class="ttdef"><b>Definition:</b> PointSet.cpp:102</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_html_aabd317c62ef535b222c6facc6103faf6"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aabd317c62ef535b222c6facc6103faf6">ostk::mathematics::geometry::d3::object::PointSet::PointSet</a></div><div class="ttdeci">PointSet(const Array&lt; Point &gt; &amp;aPointArray)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> PointSet.cpp:21</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_html_a257f4e16cbaf7a172b99449b9b9130a0"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a257f4e16cbaf7a172b99449b9b9130a0">ostk::mathematics::geometry::d3::object::PointSet::ConstIterator</a></div><div class="ttdeci">PointSet::Container::const_iterator ConstIterator</div><div class="ttdef"><b>Definition:</b> PointSet.hpp:67</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_html_aa973f5bcaee2c808e981ced66f60156c"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aa973f5bcaee2c808e981ced66f60156c">ostk::mathematics::geometry::d3::object::PointSet::Empty</a></div><div class="ttdeci">static PointSet Empty()</div><div class="ttdoc">Constructs an empty point set.</div><div class="ttdef"><b>Definition:</b> PointSet.cpp:206</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_a5cd654de32139306358aa773bbf8c291"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">ostk::mathematics::geometry::d3::Transformation::Identity</a></div><div class="ttdeci">static Transformation Identity()</div><div class="ttdoc">Construct an identity transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:254</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_html_a54b5df386104fa9e13d7a982c3a99589"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a54b5df386104fa9e13d7a982c3a99589">ostk::mathematics::geometry::d3::object::PointSet::print</a></div><div class="ttdeci">virtual void print(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</div><div class="ttdoc">Print point.</div><div class="ttdef"><b>Definition:</b> PointSet.cpp:162</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_html_a1ab0dfee99b56b4324e782a406ca1687"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a1ab0dfee99b56b4324e782a406ca1687">ostk::mathematics::geometry::d3::object::PointSet::clone</a></div><div class="ttdeci">virtual PointSet * clone() const override</div><div class="ttdoc">Clone point set.</div><div class="ttdef"><b>Definition:</b> PointSet.cpp:27</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_html_aedd7f0ed2b59c5a8713bc83ab2bbdee6"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#aedd7f0ed2b59c5a8713bc83ab2bbdee6">ostk::mathematics::geometry::d3::object::PointSet::isNear</a></div><div class="ttdeci">bool isNear(const PointSet &amp;aPointSet, const Real &amp;aTolerance) const</div><div class="ttdoc">Check if point set is near another point set.</div><div class="ttdef"><b>Definition:</b> PointSet.cpp:52</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

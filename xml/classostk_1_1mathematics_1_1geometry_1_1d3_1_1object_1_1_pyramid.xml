@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="262" column="13" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" bodystart="262" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="318" column="13" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" bodystart="318" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a3c70e7ff32b5fab37ccb9c98c901083d" prot="private" static="no" mutable="no">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="263" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" bodystart="263" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="319" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" bodystart="319" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -50,9 +50,9 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Polygon<sp/>base<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Polygon<sp/>base<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Point<sp/>apex<sp/>=<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>}<sp/>;</highlight></codeline>
-<codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>{<sp/>base,<sp/>apex<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>{<sp/>base,<sp/>apex<sp/>}<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="68" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="31" bodyend="36"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="69" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="31" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a61cb86ec44359755cc1edc8dec1604c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref> *</type>
@@ -87,13 +87,15 @@
 <para>Clone pyramid. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref>*<sp/>clonePtr<sp/>=<sp/>pyramid.clone()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Pointer to cloned pyramid </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="74" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="38" bodyend="41"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="78" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="38" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a77efda8908205d41517ed65ad8a09cf9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -108,6 +110,9 @@
 <para>Equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">pyramid<sp/>==<sp/>pyramid<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPyramid</parametername>
@@ -123,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="81" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="43" bodyend="51"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="89" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="43" bodyend="51"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a3fa7abd7265937266cb59f19f63db3bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -138,6 +143,10 @@
 <para>Not equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramidA<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramidB<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">pyramidA<sp/>!=<sp/>pyramidB<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPyramid</parametername>
@@ -153,7 +162,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="88" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="53" bodyend="56"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="101" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="53" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8b85f9aa5f4b1cdf0047c8010fdb7645" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -165,13 +174,16 @@
 <para>Check if pyramid is defined. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">pyramid.isDefined()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>True if pyramid is defined </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="94" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="58" bodyend="61"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="111" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="58" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a4676717f067f8fd710fc9073d0b1709d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -191,7 +203,7 @@
 <para>Check if pyramid intersects sphere. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Sphere<sp/>sphere<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">pyramid.intersects(sphere)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -218,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="108" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="63" bodyend="85"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="124" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="63" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1ae2daf13e58b060a4085944e3c3171910" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -238,7 +250,7 @@
 <para>Check if pyramid intersects ellipsoid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">pyramid.intersects(ellipsoid)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -265,7 +277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="122" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="87" bodyend="109"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="137" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="87" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8b9e0648b92e137af003fa83b0a7d882" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -280,7 +292,7 @@
 <para>Check if pyramid contains point. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">pyramid.contains(point)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -299,7 +311,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="135" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="111" bodyend="171"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="149" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="111" bodyend="171"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a24f4e1fe595451ef6cb1c3acef15d894" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -314,7 +326,7 @@
 <para>Check if pyramid contains point set. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">PointSet<sp/>pointSet<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">pyramid.contains(pointSet)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -333,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="148" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="173" bodyend="188"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="161" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="173" bodyend="188"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a4df37b7e74dcdbce1d4485e5531a6f65" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -348,7 +360,7 @@
 <para>Check if pyramid contains segment. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Segment<sp/>segment<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">pyramid.contains(segment)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -367,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="161" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="190" bodyend="193"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="173" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="190" bodyend="193"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1afb8fc0cc19a2ed253abf288c91d6a769" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -382,7 +394,7 @@
 <para>Check if pyramid contains ellipsoid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">pyramid.contains(ellipsoid)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -401,7 +413,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="174" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="195" bodyend="210"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="185" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="195" bodyend="210"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8438922f810553cb5ca34e777ef809bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" kindref="compound">Polygon</ref></type>
@@ -412,13 +424,16 @@
 <para>Get pyramid base. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Polygon<sp/>base<sp/>=<sp/>pyramid.getBase()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref> base </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="180" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="212" bodyend="220"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="195" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="212" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a11b0783c46852783670d9d0aa82fc61a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -429,13 +444,16 @@
 <para>Get pyramid apex. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>apex<sp/>=<sp/>pyramid.getApex()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref> apex </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="186" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="222" bodyend="230"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="205" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="222" bodyend="230"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aed535ef84d792822dd1105148fb76451" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -446,13 +464,16 @@
 <para>Get number of lateral faces. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Size<sp/>count<sp/>=<sp/>pyramid.getLateralFaceCount()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Number of lateral faces </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="192" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="232" bodyend="240"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="215" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="232" bodyend="240"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aca6a2bed3e225add46016583f1c3baec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" kindref="compound">Polygon</ref></type>
@@ -467,6 +488,9 @@
 <para>Get lateral face at index. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Polygon<sp/>lateralFace<sp/>=<sp/>pyramid.getLateralFaceAt(0)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aLateralFaceIndex</parametername>
@@ -482,7 +506,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="199" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="242" bodyend="270"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="226" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="242" bodyend="270"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a83e11f308ae9cd0cdfd10a15c4c11335" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> &gt;</type>
@@ -502,6 +526,9 @@
 <para>Get rays of lateral face at index. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Array&lt;Ray&gt;<sp/>rays<sp/>=<sp/>pyramid.getRaysOfLateralFaceAt(0,<sp/>2)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aLateralFaceIndex</parametername>
@@ -525,7 +552,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="207" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="272" bodyend="317"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="238" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="272" bodyend="317"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8674910a0a9b4a158c0a538c646fe971" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> &gt;</type>
@@ -541,6 +568,9 @@
 <para>Get rays of lateral faces. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Array&lt;Ray&gt;<sp/>rays<sp/>=<sp/>pyramid.getRaysOfLateralFaces()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aRayCount</parametername>
@@ -556,7 +586,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="214" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="319" bodyend="342"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="249" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="319" bodyend="342"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a93113d23dee9ac80c7cba6198ce272a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -581,6 +611,10 @@
 <para>Compute intersection of pyramid with sphere. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Sphere<sp/>sphere<sp/>=<sp/>Sphere({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>pyramid.intersectionWith(sphere)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aSphere</parametername>
@@ -612,7 +646,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="223" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="344" bodyend="408"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="263" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="344" bodyend="408"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a5ed8e14c5ca36792c887d534d446ce4f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -637,6 +671,10 @@
 <para>Compute intersection of pyramid with ellipsoid. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>Ellipsoid(<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a2e0dc90fe04fb9befb79ec9874dcebc4" kindref="member">Point::Origin</ref>(),<sp/>1.0,<sp/>2.0,<sp/>3.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>pyramid.intersectionWith(ellipsoid)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anEllipsoid</parametername>
@@ -668,7 +706,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="236" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="410" bodyend="495"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="281" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="410" bodyend="495"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aba0fd8b256f78bb7bb0725103287f681" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -689,6 +727,9 @@
 <para>Print pyramid. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">pyramid.print(std::cout,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOutputStream</parametername>
@@ -710,7 +751,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="247" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="497" bodyend="508"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="296" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="497" bodyend="508"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aec8ebca28ff89fd03a088d399de8e6e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -726,6 +767,9 @@
 <para>Apply transformation to pyramid. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">pyramid.applyTransformation(<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1af9058de81115d953ab8d9b8922abe692" kindref="member">Transformation::Translation</ref>({<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>}))<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aTransformation</parametername>
@@ -739,7 +783,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="253" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="510" bodyend="524"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="306" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="510" bodyend="524"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -752,13 +796,15 @@
 <para>Constructs an undefined pyramid. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a631ca947390c95b73c78b42c3d840b12" kindref="member">Pyramid::Undefined</ref>()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Undefined pyramid </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="259" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="526" bodyend="529"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="315" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="526" bodyend="529"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -768,6 +814,8 @@
 <para><verbatim>                        A pyramid is a polyhedron formed by connecting a polygonal base and a point, called the
                         apex. Each base edge and apex form a triangle, called a lateral face.
 </verbatim></para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" kindref="member">Pyramid</ref><sp/>pyramid(polygon,<sp/>Point(0.0,<sp/>0.0,<sp/>1.0));</highlight></codeline>
+</programlisting></para>
 <para><ulink url="https://en.wikipedia.org/wiki/Pyramid_">https://en.wikipedia.org/wiki/Pyramid_</ulink>(geometry) </para>
     </detaileddescription>
     <inheritancegraph>
@@ -794,7 +842,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="55" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" bodystart="54" bodyend="264"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="57" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" bodystart="56" bodyend="320"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a3c70e7ff32b5fab37ccb9c98c901083d" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>apex_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aec8ebca28ff89fd03a088d399de8e6e4" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>applyTransformation</name></member>

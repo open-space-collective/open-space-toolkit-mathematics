@@ -75,6 +75,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 \end{DoxyVerb}
 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid(polygon, Point(0.0, 0.0, 1.0));}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Pyramid_}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Pyramid\+\_\+}}(geometry) 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -117,6 +123,13 @@ Constructor.
 Apply transformation to pyramid. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{pyramid.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_af9058de81115d953ab8d9b8922abe692}{Transformation::Translation}}(\{ 1.0, 0.0, 0.0 \})) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -134,6 +147,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Clone pyramid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}}* clonePtr = pyramid.clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned pyramid 
@@ -256,6 +275,13 @@ True if pyramid contains segment
 
 Get pyramid apex. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Point apex = pyramid.getApex() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} apex 
 \end{DoxyReturn}
@@ -269,6 +295,13 @@ Get pyramid apex.
 
 Get pyramid base. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Polygon base = pyramid.getBase() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} base 
 \end{DoxyReturn}
@@ -281,6 +314,13 @@ Get pyramid base.
 
 
 Get lateral face at index. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Polygon lateralFace = pyramid.getLateralFaceAt(0) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -300,6 +340,13 @@ Lateral face
 
 Get number of lateral faces. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Size count = pyramid.getLateralFaceCount() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Number of lateral faces 
 \end{DoxyReturn}
@@ -312,6 +359,13 @@ Number of lateral faces
 
 
 Get rays of lateral face at index. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Array<Ray> rays = pyramid.getRaysOfLateralFaceAt(0, 2) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -334,6 +388,13 @@ Array of rays
 Get rays of lateral faces. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Array<Ray> rays = pyramid.getRaysOfLateralFaces() ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Ray\+Count} & A number of rays (at least face count) \\
 \hline
@@ -350,6 +411,14 @@ Array of rays
 
 
 Compute intersection of pyramid with ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Ellipsoid ellipsoid = Ellipsoid(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{Intersection intersection = pyramid.intersectionWith(ellipsoid) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -372,6 +441,14 @@ Compute intersection of pyramid with ellipsoid.
 
 
 Compute intersection of pyramid with sphere. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Sphere sphere = Sphere(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{Intersection intersection = pyramid.intersectionWith(sphere) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -451,6 +528,13 @@ True if pyramid intersects sphere
 
 Check if pyramid is defined. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{pyramid.isDefined() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 True if pyramid is defined 
 \end{DoxyReturn}
@@ -467,6 +551,14 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Not equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramidA = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramidB = ... ;}
+\DoxyCodeLine{pyramidA != pyramidB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -487,6 +579,13 @@ True if pyramids are not equal
 Equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{pyramid == pyramid ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Pyramid} & A pyramid \\
 \hline
@@ -503,6 +602,13 @@ True if pyramids are equal
 
 
 Print pyramid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{pyramid.print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -524,6 +630,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Constructs an undefined pyramid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a631ca947390c95b73c78b42c3d840b12}{Pyramid::Undefined}}() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Undefined pyramid 

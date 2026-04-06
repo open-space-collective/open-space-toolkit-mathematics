@@ -87,6 +87,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 \end{DoxyVerb}
 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0) ;}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Sphere}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Sphere}} 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -127,6 +133,13 @@ Constructor.
 Apply transformation to sphere. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0) ;}
+\DoxyCodeLine{sphere.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5cd654de32139306358aa773bbf8c291}{Transformation::Identity}}()) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -144,6 +157,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Clone sphere. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}* spherePtr = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0).clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned sphere 
@@ -253,6 +272,14 @@ Get sphere radius.
 Compute intersection of sphere with cone. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0) ;}
+\DoxyCodeLine{Cone cone = ... ;}
+\DoxyCodeLine{Intersection intersection = sphere.intersectionWith(cone) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Cone} & A cone \\
 \hline
@@ -273,6 +300,14 @@ Compute intersection of sphere with cone.
 Compute intersection of sphere with line. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0) ;}
+\DoxyCodeLine{Line line = Line(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = sphere.intersectionWith(line) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Line} & A line \\
 \hline
@@ -289,6 +324,14 @@ Compute intersection of sphere with line.
 
 
 Compute intersection of sphere with pyramid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0) ;}
+\DoxyCodeLine{Pyramid pyramid = ... ;}
+\DoxyCodeLine{Intersection intersection = sphere.intersectionWith(pyramid) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -311,6 +354,14 @@ Compute intersection of sphere with pyramid.
 Compute intersection of sphere with ray. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0) ;}
+\DoxyCodeLine{Ray ray = Ray(\{ 0.0, 0.0, -\/2.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = sphere.intersectionWith(ray) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
 \hline
@@ -329,6 +380,14 @@ Compute intersection of sphere with ray.
 
 
 Compute intersection of sphere with segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0) ;}
+\DoxyCodeLine{Segment segment = Segment(\{ 0.0, 0.0, -\/2.0 \}, \{ 0.0, 0.0, 2.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = sphere.intersectionWith(segment) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -671,6 +730,12 @@ True if spheres are equal
 
 
 Print sphere. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0).print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

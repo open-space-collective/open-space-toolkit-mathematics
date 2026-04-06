@@ -100,10 +100,16 @@ $(document).ready(function(){initNavTree('classostk_1_1mathematics_1_1solver_1_1
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a6d9ca28da654c92c6f36878e6a5efd97"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97">StepperType</a> { <a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a2ad1d4b322353ee07200045be21ffb58">StepperType::RungeKutta4</a>, 
+<tr class="memitem:a6d9ca28da654c92c6f36878e6a5efd97"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97">StepperType</a> { <br />
+&#160;&#160;<a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a2ad1d4b322353ee07200045be21ffb58">StepperType::RungeKutta4</a>, 
 <a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a646d9d3aaac989d6fd4990f308ba3a37">StepperType::RungeKuttaCashKarp54</a>, 
 <a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a5002097811f3eb2dd4a34b826b1288e7">StepperType::RungeKuttaFehlberg78</a>, 
-<a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a3203013d28f8e40a899ed45ede9ad149">StepperType::RungeKuttaDopri5</a>
+<a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a3203013d28f8e40a899ed45ede9ad149">StepperType::RungeKuttaDopri5</a>, 
+<br />
+&#160;&#160;<a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a65ca550a20efb224edd0f6fb324af7d3">StepperType::AdamsBashforthMoulton5</a>, 
+<a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a6d5c11acddf69b60055af372f885f751">StepperType::AdamsBashforthMoulton8</a>, 
+<a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a031df4984d03b288981ec5bec64685db">StepperType::BulirschStoer</a>
+<br />
  }</td></tr>
 <tr class="separator:a6d9ca28da654c92c6f36878e6a5efd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8a0c981770c8ee40f765cc17cf0c1a5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#ad8a0c981770c8ee40f765cc17cf0c1a5">LogType</a> { <a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#ad8a0c981770c8ee40f765cc17cf0c1a5ac224e58a49e83bb9b94e2bd594fd5231">LogType::NoLog</a>, 
@@ -213,7 +219,8 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines a numerical ODE solver that use the Boost Odeint libraries. This class will be moved into OSTk-math in the future. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1c5fd12a2d545bf7d090d992ffcbe17e">NumericalSolver</a> solver = <a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">NumericalSolver::Default</a>();</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aef6d06e4478e44fbe3354dbe8f80b94d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aef6d06e4478e44fbe3354dbe8f80b94d">&#9670;&nbsp;</a></span>Solution</h2>
 
@@ -308,6 +315,9 @@ Friends</h2></td></tr>
 <tr><td class="fieldname"><a id="a6d9ca28da654c92c6f36878e6a5efd97a646d9d3aaac989d6fd4990f308ba3a37"></a>RungeKuttaCashKarp54&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6d9ca28da654c92c6f36878e6a5efd97a5002097811f3eb2dd4a34b826b1288e7"></a>RungeKuttaFehlberg78&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6d9ca28da654c92c6f36878e6a5efd97a3203013d28f8e40a899ed45ede9ad149"></a>RungeKuttaDopri5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d9ca28da654c92c6f36878e6a5efd97a65ca550a20efb224edd0f6fb324af7d3"></a>AdamsBashforthMoulton5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d9ca28da654c92c6f36878e6a5efd97a6d5c11acddf69b60055af372f885f751"></a>AdamsBashforthMoulton8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d9ca28da654c92c6f36878e6a5efd97a031df4984d03b288981ec5bec64685db"></a>BulirschStoer&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -390,7 +400,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Access observed state vectors. </p>
-<dl class="section return"><dt>Returns</dt><dd>Observed state vectors </dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">const</span> Array&lt;Solution&gt;&amp; states = numericalSolver.accessObservedStateVectors();</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Observed state vectors </dd></dl>
 
 </div>
 </div>
@@ -410,7 +421,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone numerical solver. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned numerical solver </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1c5fd12a2d545bf7d090d992ffcbe17e">NumericalSolver</a>* <a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#ade382b45dc13976a125ee742a7e0e299">clone</a> = <a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">NumericalSolver::Default</a>().<a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#ade382b45dc13976a125ee742a7e0e299">clone</a>();</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned numerical solver </dd></dl>
 
 </div>
 </div>
@@ -438,7 +450,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default. </p>
-<dl class="section return"><dt>Returns</dt><dd>A default numerical solver </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1c5fd12a2d545bf7d090d992ffcbe17e">NumericalSolver</a> solver = <a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">NumericalSolver::Default</a>();</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>A default numerical solver </dd></dl>
 
 </div>
 </div>
@@ -812,7 +825,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if numerical solver is defined. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if numerical solver is defined </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">NumericalSolver::Default</a>().<a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#ae9123dc938fbfdf8497f804adf981f37">isDefined</a>();</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if numerical solver is defined </dd></dl>
 
 </div>
 </div>
@@ -833,7 +847,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">NumericalSolver::Default</a>() != <a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1e196c06ce05721dd871501fd4df0500">NumericalSolver::Undefined</a>();</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aNumericalSolver</td><td>A numerical solver </td></tr>
   </table>
@@ -860,7 +875,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">NumericalSolver::Default</a>() == <a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">NumericalSolver::Default</a>();</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aNumericalSolver</td><td>A numerical solver </td></tr>
   </table>
@@ -897,7 +913,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print numerical solver. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">NumericalSolver::Default</a>().<a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#ad228bac87a6b39aeecc275e894178722">print</a>(std::cout);</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -1003,7 +1020,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Undefined. </p>
-<dl class="section return"><dt>Returns</dt><dd>An undefined numerical solver </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1c5fd12a2d545bf7d090d992ffcbe17e">NumericalSolver</a> solver = <a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1e196c06ce05721dd871501fd4df0500">NumericalSolver::Undefined</a>();</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>An undefined numerical solver </dd></dl>
 
 </div>
 </div>
@@ -1043,7 +1061,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Output stream operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">NumericalSolver::Default</a>();</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aNumericalSolver</td><td>A numerical solver </td></tr>
@@ -1171,10 +1190,15 @@ Friends</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_a1c5fd12a2d545bf7d090d992ffcbe17e"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1c5fd12a2d545bf7d090d992ffcbe17e">ostk::mathematics::solver::NumericalSolver::NumericalSolver</a></div><div class="ttdeci">NumericalSolver(const NumericalSolver::LogType &amp;aLogType, const NumericalSolver::StepperType &amp;aStepperType, const Real &amp;aTimeStep, const Real &amp;aRelativeTolerance, const Real &amp;anAbsoluteTolerance)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> NumericalSolver.cpp:27</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_aef6d06e4478e44fbe3354dbe8f80b94d"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#aef6d06e4478e44fbe3354dbe8f80b94d">ostk::mathematics::solver::NumericalSolver::Solution</a></div><div class="ttdeci">Pair&lt; StateVector, double &gt; Solution</div><div class="ttdef"><b>Definition:</b> NumericalSolver.hpp:52</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_a7cee34ba53141a87ef6b43c8109b3444"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a7cee34ba53141a87ef6b43c8109b3444">ostk::mathematics::solver::NumericalSolver::StringFromLogType</a></div><div class="ttdeci">static String StringFromLogType(const NumericalSolver::LogType &amp;aLogType)</div><div class="ttdoc">Get string from the integration log type.</div><div class="ttdef"><b>Definition:</b> NumericalSolver.cpp:442</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_a2c4600d661dbfbc01f5cd4c3380440c7"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a2c4600d661dbfbc01f5cd4c3380440c7">ostk::mathematics::solver::NumericalSolver::StringFromStepperType</a></div><div class="ttdeci">static String StringFromStepperType(const NumericalSolver::StepperType &amp;aStepperType)</div><div class="ttdoc">Get string from the integration stepper type.</div><div class="ttdef"><b>Definition:</b> NumericalSolver.cpp:460</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_a1653209d9c0b27cc3299fafaa4df7368"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">ostk::mathematics::solver::NumericalSolver::Default</a></div><div class="ttdeci">static NumericalSolver Default()</div><div class="ttdoc">Default.</div><div class="ttdef"><b>Definition:</b> NumericalSolver.cpp:709</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_a1e196c06ce05721dd871501fd4df0500"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1e196c06ce05721dd871501fd4df0500">ostk::mathematics::solver::NumericalSolver::Undefined</a></div><div class="ttdeci">static NumericalSolver Undefined()</div><div class="ttdoc">Undefined.</div><div class="ttdef"><b>Definition:</b> NumericalSolver.cpp:698</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_ade382b45dc13976a125ee742a7e0e299"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#ade382b45dc13976a125ee742a7e0e299">ostk::mathematics::solver::NumericalSolver::clone</a></div><div class="ttdeci">NumericalSolver * clone() const</div><div class="ttdoc">Clone numerical solver.</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_a1c5fd12a2d545bf7d090d992ffcbe17e"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1c5fd12a2d545bf7d090d992ffcbe17e">ostk::mathematics::solver::NumericalSolver::NumericalSolver</a></div><div class="ttdeci">NumericalSolver(const NumericalSolver::LogType &amp;aLogType, const NumericalSolver::StepperType &amp;aStepperType, const Real &amp;aTimeStep, const Real &amp;aRelativeTolerance, const Real &amp;anAbsoluteTolerance)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> NumericalSolver.cpp:86</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_ae9123dc938fbfdf8497f804adf981f37"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#ae9123dc938fbfdf8497f804adf981f37">ostk::mathematics::solver::NumericalSolver::isDefined</a></div><div class="ttdeci">bool isDefined() const</div><div class="ttdoc">Check if numerical solver is defined.</div><div class="ttdef"><b>Definition:</b> NumericalSolver.cpp:126</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_aef6d06e4478e44fbe3354dbe8f80b94d"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#aef6d06e4478e44fbe3354dbe8f80b94d">ostk::mathematics::solver::NumericalSolver::Solution</a></div><div class="ttdeci">Pair&lt; StateVector, double &gt; Solution</div><div class="ttdef"><b>Definition:</b> NumericalSolver.hpp:58</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_ad228bac87a6b39aeecc275e894178722"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#ad228bac87a6b39aeecc275e894178722">ostk::mathematics::solver::NumericalSolver::print</a></div><div class="ttdeci">void print(std::ostream &amp;anOutputStream, bool displayDecorator=true) const</div><div class="ttdoc">Print numerical solver.</div><div class="ttdef"><b>Definition:</b> NumericalSolver.cpp:131</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_a7cee34ba53141a87ef6b43c8109b3444"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a7cee34ba53141a87ef6b43c8109b3444">ostk::mathematics::solver::NumericalSolver::StringFromLogType</a></div><div class="ttdeci">static String StringFromLogType(const NumericalSolver::LogType &amp;aLogType)</div><div class="ttdoc">Get string from the integration log type.</div><div class="ttdef"><b>Definition:</b> NumericalSolver.cpp:650</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_a2c4600d661dbfbc01f5cd4c3380440c7"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a2c4600d661dbfbc01f5cd4c3380440c7">ostk::mathematics::solver::NumericalSolver::StringFromStepperType</a></div><div class="ttdeci">static String StringFromStepperType(const NumericalSolver::StepperType &amp;aStepperType)</div><div class="ttdoc">Get string from the integration stepper type.</div><div class="ttdef"><b>Definition:</b> NumericalSolver.cpp:668</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -202,7 +202,8 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>2D intersection </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#abadbbcd1176ace347a7148ea89a0fdef">Intersection</a> intersection = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a557d7508624c7644f74a358959e3a7e2">Intersection::Point</a>(object::Point(0.0, 0.0)) ;</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ab05d25c82a3b3118aea0aecc2570faae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab05d25c82a3b3118aea0aecc2570faae">&#9670;&nbsp;</a></span>Type</h2>
 
@@ -254,7 +255,10 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Array&lt;Unique&lt;Object&gt;&gt; objects ;</div>
+<div class="line">objects.add(std::make_unique&lt;object::Point&gt;(0.0, 0.0)) ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#abadbbcd1176ace347a7148ea89a0fdef">Intersection</a> intersection(std::move(objects)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObjectArray</td><td>An array of objects </td></tr>
   </table>
@@ -280,7 +284,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copy constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#abadbbcd1176ace347a7148ea89a0fdef">Intersection</a> copiedIntersection(intersection) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anIntersection</td><td>An intersection </td></tr>
   </table>
@@ -305,7 +310,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor. </p>
-
+<div class="fragment"><div class="line"><span class="comment">// Destructor is called automatically when intersection goes out of scope.</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -325,7 +331,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Access composite object. </p>
-<dl class="section return"><dt>Returns</dt><dd>Reference to composite object </dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">const</span> Composite&amp; composite = intersection.accessComposite() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Reference to composite object </dd></dl>
 
 </div>
 </div>
@@ -355,7 +362,9 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Access intersection as its underlying object. </p>
-<pre class="fragment">                Only valid if the intersection only contains one object.
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#abadbbcd1176ace347a7148ea89a0fdef">Intersection</a> intersection = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a557d7508624c7644f74a358959e3a7e2">Intersection::Point</a>(object::Point(0.0, 0.0)) ;</div>
+<div class="line"><span class="keyword">const</span> object::Point&amp; point = intersection.as&lt;object::Point&gt;() ;</div>
+</div><!-- fragment --> <pre class="fragment">                Only valid if the intersection only contains one object.
 </pre><dl class="section return"><dt>Returns</dt><dd>Reference to underlying object </dd></dl>
 
 </div>
@@ -405,7 +414,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Get intersection type. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html" title="2D intersection">Intersection</a> type </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#ab05d25c82a3b3118aea0aecc2570faae">Intersection::Type</a> type = intersection.getType() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html" title="2D intersection">Intersection</a> type </dd></dl>
 
 </div>
 </div>
@@ -435,7 +445,9 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns true if intersection can be converted to underlying object. </p>
-<pre class="fragment">                Only valid if the intersection only contains one object.
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#abadbbcd1176ace347a7148ea89a0fdef">Intersection</a> intersection = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a557d7508624c7644f74a358959e3a7e2">Intersection::Point</a>(object::Point(0.0, 0.0)) ;</div>
+<div class="line"><span class="keywordtype">bool</span> isPoint = intersection.is&lt;object::Point&gt;() ; <span class="comment">// True</span></div>
+</div><!-- fragment --> <pre class="fragment">                Only valid if the intersection only contains one object.
 </pre><dl class="section return"><dt>Returns</dt><dd>True if intersection can be converted to underlying object </dd></dl>
 
 </div>
@@ -456,7 +468,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Check if intersection is complex. </p>
-<pre class="fragment">                A complex intersection contains more than one object.
+<div class="fragment"><div class="line">intersection.isComplex() ; <span class="comment">// False</span></div>
+</div><!-- fragment --> <pre class="fragment">                A complex intersection contains more than one object.
 </pre><dl class="section return"><dt>Returns</dt><dd>True if intersection is complex </dd></dl>
 
 </div>
@@ -477,7 +490,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Check if intersection is defined. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if intersection is defined </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a4b1d39b9c1516c2b1129957e1aaeab61">Intersection::Empty</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#aee7e7ede2e3ea269b9b2eb091da92b8f">isDefined</a>() ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if intersection is defined </dd></dl>
 
 </div>
 </div>
@@ -497,7 +511,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Check if intersection is empty. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if intersection is empty </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a4b1d39b9c1516c2b1129957e1aaeab61">Intersection::Empty</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a4908a1b0edd4fb1b77bf13051f524a70">isEmpty</a>() ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if intersection is empty </dd></dl>
 
 </div>
 </div>
@@ -579,7 +594,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">intersectionA != intersectionB ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anIntersection</td><td>An intersection </td></tr>
   </table>
@@ -606,7 +622,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Addition operator (intersection concatenation) </p>
-<pre class="fragment">                Concatenate (merge) intersection with another intersection.
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#abadbbcd1176ace347a7148ea89a0fdef">Intersection</a> intersectionC = intersectionA + intersectionB ;</div>
+</div><!-- fragment --> <pre class="fragment">                Concatenate (merge) intersection with another intersection.
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anIntersection</td><td>An intersection </td></tr>
@@ -634,7 +651,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Addition assignment operator (intersection concatenation) </p>
-<pre class="fragment">                Concatenate (merge) intersection with another intersection.
+<div class="fragment"><div class="line">intersectionA += intersectionB ;</div>
+</div><!-- fragment --> <pre class="fragment">                Concatenate (merge) intersection with another intersection.
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anIntersection</td><td>An intersection </td></tr>
@@ -662,7 +680,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Copy assignment operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#abadbbcd1176ace347a7148ea89a0fdef">Intersection</a> intersectionB = intersectionA ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anIntersection</td><td>An intersection </td></tr>
   </table>
@@ -689,7 +708,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">intersectionA == intersectionB ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anIntersection</td><td>An intersection </td></tr>
   </table>
@@ -844,7 +864,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Converts intersection type to string. </p>
-<dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
+<div class="fragment"><div class="line">String str = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a7b00ce84dad2ae6d6bc09ca964dd4e28">Intersection::StringFromType</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#ab05d25c82a3b3118aea0aecc2570faaea2a3cd5946cfd317eb99c3d32e35e2d4c">Intersection::Type::Point</a>) ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
 </div>
 </div>
@@ -931,14 +952,19 @@ template&lt;class Type &gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_a7b00ce84dad2ae6d6bc09ca964dd4e28"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a7b00ce84dad2ae6d6bc09ca964dd4e28">ostk::mathematics::geometry::d2::Intersection::StringFromType</a></div><div class="ttdeci">static String StringFromType(const Intersection::Type &amp;aType)</div><div class="ttdoc">Converts intersection type to string.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:217</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_a2ecaccd9004396a2c0552ee3459a73a0"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a2ecaccd9004396a2c0552ee3459a73a0">ostk::mathematics::geometry::d2::Intersection::LineString</a></div><div class="ttdeci">static Intersection LineString(const object::LineString &amp;aLineString)</div><div class="ttdoc">Constructs a line string intersection.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:173</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_a4b1d39b9c1516c2b1129957e1aaeab61"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a4b1d39b9c1516c2b1129957e1aaeab61">ostk::mathematics::geometry::d2::Intersection::Empty</a></div><div class="ttdeci">static Intersection Empty()</div><div class="ttdoc">Constructs an empty intersection.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:146</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_a557d7508624c7644f74a358959e3a7e2"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a557d7508624c7644f74a358959e3a7e2">ostk::mathematics::geometry::d2::Intersection::Point</a></div><div class="ttdeci">static Intersection Point(const object::Point &amp;aPoint)</div><div class="ttdoc">Constructs a point intersection.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:151</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_a4981da070b5400c1546f0014000c968a"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a4981da070b5400c1546f0014000c968a">ostk::mathematics::geometry::d2::Intersection::Line</a></div><div class="ttdeci">static Intersection Line(const object::Line &amp;aLine)</div><div class="ttdoc">Constructs a line intersection.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:184</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_aee7e7ede2e3ea269b9b2eb091da92b8f"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#aee7e7ede2e3ea269b9b2eb091da92b8f">ostk::mathematics::geometry::d2::Intersection::isDefined</a></div><div class="ttdeci">bool isDefined() const</div><div class="ttdoc">Check if intersection is defined.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:102</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_ad326132c2af6ff427d658d6fdcc726be"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#ad326132c2af6ff427d658d6fdcc726be">ostk::mathematics::geometry::d2::Intersection::Segment</a></div><div class="ttdeci">static Intersection Segment(const object::Segment &amp;aSegment)</div><div class="ttdoc">Constructs a segment intersection.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:195</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_ab05d25c82a3b3118aea0aecc2570faaea2a3cd5946cfd317eb99c3d32e35e2d4c"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#ab05d25c82a3b3118aea0aecc2570faaea2a3cd5946cfd317eb99c3d32e35e2d4c">ostk::mathematics::geometry::d2::Intersection::Type::Point</a></div><div class="ttdeci">@ Point</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_a0e011491a8e6fd33fa8f703529bebc76"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a0e011491a8e6fd33fa8f703529bebc76">ostk::mathematics::geometry::d2::Intersection::Polygon</a></div><div class="ttdeci">static Intersection Polygon(const object::Polygon &amp;aPolygon)</div><div class="ttdoc">Constructs a polygon intersection.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:206</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_aac4f1f9c3ecee9bce18232398a6a8344"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#aac4f1f9c3ecee9bce18232398a6a8344">ostk::mathematics::geometry::d2::Intersection::PointSet</a></div><div class="ttdeci">static Intersection PointSet(const object::PointSet &amp;aPointSet)</div><div class="ttdoc">Constructs a point set intersection.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:162</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_a4908a1b0edd4fb1b77bf13051f524a70"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a4908a1b0edd4fb1b77bf13051f524a70">ostk::mathematics::geometry::d2::Intersection::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Check if intersection is empty.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:107</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_abadbbcd1176ace347a7148ea89a0fdef"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#abadbbcd1176ace347a7148ea89a0fdef">ostk::mathematics::geometry::d2::Intersection::Intersection</a></div><div class="ttdeci">Intersection(Array&lt; Unique&lt; Object &gt;&gt; &amp;&amp;anObjectArray)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:17</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_ab05d25c82a3b3118aea0aecc2570faae"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#ab05d25c82a3b3118aea0aecc2570faae">ostk::mathematics::geometry::d2::Intersection::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> Intersection.hpp:45</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_html_af09e4e5f1f8a4b76d0b5e91e3ea7ec11"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#af09e4e5f1f8a4b76d0b5e91e3ea7ec11">ostk::mathematics::geometry::d2::Intersection::Undefined</a></div><div class="ttdeci">static Intersection Undefined()</div><div class="ttdoc">Constructs an undefined intersection.</div><div class="ttdef"><b>Definition:</b> Intersection.cpp:137</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

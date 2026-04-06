@@ -68,6 +68,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} set. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}} pointSet(\{ \{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \} \}) ;}
+\end{DoxyCode}
+ 
+
 \doxysubsection{Member Typedef Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a257f4e16cbaf7a172b99449b9b9130a0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a257f4e16cbaf7a172b99449b9b9130a0}} 
 \index{ostk::mathematics::geometry::d3::object::PointSet@{ostk::mathematics::geometry::d3::object::PointSet}!ConstIterator@{ConstIterator}}
@@ -119,6 +125,13 @@ Constructor.
 Apply transformation to point set. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}} pointSet = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \} \}) ;}
+\DoxyCodeLine{pointSet.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5cd654de32139306358aa773bbf8c291}{Transformation::Identity}}()) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -137,6 +150,13 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 Get begin const iterator. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}} pointSet = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \} \}) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a257f4e16cbaf7a172b99449b9b9130a0}{PointSet::ConstIterator}} it = pointSet.begin() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Begin const iterator 
 \end{DoxyReturn}
@@ -149,6 +169,12 @@ Begin const iterator
 
 
 Clone point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}* pointSetPtr = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a1ab0dfee99b56b4324e782a406ca1687}{clone}}() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned point set 
@@ -166,6 +192,13 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Get distance to point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}} pointSet = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \} \}) ;}
+\DoxyCodeLine{Real distance = pointSet.distanceTo(Point(2.0, 0.0, 0.0)) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -204,6 +237,13 @@ Empty point set
 
 Get end const iterator. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}} pointSet = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \} \}) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a257f4e16cbaf7a172b99449b9b9130a0}{PointSet::ConstIterator}} it = pointSet.end() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 End const iterator 
 \end{DoxyReturn}
@@ -216,6 +256,13 @@ End const iterator
 
 
 Get point closest to another point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}} pointSet = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \} \}) ;}
+\DoxyCodeLine{Point closest = pointSet.getPointClosestTo(Point(0.1, 0.0, 0.0)) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -234,6 +281,12 @@ Closest point
 
 
 Get size of point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_af110ae77a421e673d3ede1b39bfea608}{getSize}}() ; \textcolor{comment}{// 2}}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Size of point set 
@@ -318,6 +371,12 @@ True if point set is near another point set
 Not equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \} \}) != \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 1.0, 0.0, 0.0 \} \}) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
 \hline
@@ -336,6 +395,12 @@ True if point sets are not equal
 Equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \} \}) == \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \} \}) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
 \hline
@@ -352,6 +417,12 @@ True if point sets are equal
 
 
 Print point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a54b5df386104fa9e13d7a982c3a99589}{print}}(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

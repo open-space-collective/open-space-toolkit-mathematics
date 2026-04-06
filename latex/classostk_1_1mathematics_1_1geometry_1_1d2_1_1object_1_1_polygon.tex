@@ -97,7 +97,11 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}}. 
 
-\begin{DoxyVerb}                        A plane figure that is bounded by a finite chain of straight line segments closing in a
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a5389f3ef22d7144b5f01e37c8a221e8e}{Polygon}} polygon(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \}, \{ 1.0, 1.0 \}, \{ 0.0, 1.0 \} \}) ;}
+\end{DoxyCode}
+ \begin{DoxyVerb}                        A plane figure that is bounded by a finite chain of straight line segments closing in a
                         loop to form a closed polygonal chain or circuit. These segments are called its edges,
                         and the points where two edges meet are the polygon's vertices.
 \end{DoxyVerb}
@@ -138,6 +142,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1
 Constructor. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a5389f3ef22d7144b5f01e37c8a221e8e}{Polygon}} polygon(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \}, \{ 1.0, 1.0 \}, \{ 0.0, 1.0 \} \}) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Outer\+Ring} & An outer ring \\
 \hline
@@ -153,6 +163,13 @@ Constructor.
 
 
 Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a4e1a66ca47ea2cd18df9898d2d7ab014}{Polygon::Ring}} outerRing = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a5389f3ef22d7144b5f01e37c8a221e8e}{Polygon}} polygon(outerRing) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -172,6 +189,12 @@ Constructor.
 Copy constructor. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a5389f3ef22d7144b5f01e37c8a221e8e}{Polygon}} copiedPolygon(polygon) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Polygon} & A polygon \\
 \hline
@@ -187,6 +210,10 @@ Copy constructor.
 Destructor (virtual) 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Destructor is called automatically when polygon goes out of scope.}}
+\end{DoxyCode}
+ 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a98902fdd8d77f9f6f0d6f833fa007ada}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a98902fdd8d77f9f6f0d6f833fa007ada}} 
@@ -198,6 +225,12 @@ Destructor (virtual)
 
 
 Apply transformation to polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{polygon.applyTransformation(aTransformation) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -217,6 +250,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 
 Clone polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a5389f3ef22d7144b5f01e37c8a221e8e}{Polygon}}* clonePtr = polygon.clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned polygon 
@@ -314,6 +353,12 @@ True if polygon contains point set
 Compute difference of polygon with polygon. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Intersection difference = polygonA.differenceWith(polygonB) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Polygon} & A polygon \\
 \hline
@@ -331,7 +376,11 @@ Difference (leveraging \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1
 
 Get polygon convex hull. 
 
-\begin{DoxyVerb}                https://en.wikipedia.org/wiki/Convex_hull
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a5389f3ef22d7144b5f01e37c8a221e8e}{Polygon}} convexHull = polygon.getConvexHull() ;}
+\end{DoxyCode}
+ \begin{DoxyVerb}                https://en.wikipedia.org/wiki/Convex_hull
 \end{DoxyVerb}
 
 
@@ -347,6 +396,12 @@ Get polygon convex hull.
 
 
 Get edge at index. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_afe8fc2aa12ac96c61c7eb213a1be60b5}{Polygon::Edge}} edge = polygon.getEdgeAt(0) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -366,6 +421,12 @@ Edge (segment)
 
 Get edge count. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Size count = polygon.getEdgeCount() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Edge count 
 \end{DoxyReturn}
@@ -378,6 +439,12 @@ Edge count
 
 
 Get polygon edges. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Array<Polygon::Edge> edges = polygon.getEdges() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} edges 
@@ -392,6 +459,12 @@ Get polygon edges.
 
 Get inner ring at index. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a4e1a66ca47ea2cd18df9898d2d7ab014}{Polygon::Ring}} innerRing = polygon.getInnerRingAt(0) ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Inner ring at index 
 \end{DoxyReturn}
@@ -404,6 +477,12 @@ Inner ring at index
 
 
 Get number of inner rings. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Size count = polygon.getInnerRingCount() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Number of inner rings 
@@ -418,6 +497,12 @@ Number of inner rings
 
 Get outer ring. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a4e1a66ca47ea2cd18df9898d2d7ab014}{Polygon::Ring}} outerRing = polygon.getOuterRing() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Outer ring 
 \end{DoxyReturn}
@@ -430,6 +515,12 @@ Outer ring
 
 
 Get vertex at index. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_adf15f8325e848f3c4e310169aa8e0657}{Polygon::Vertex}} vertex = polygon.getVertexAt(0) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -449,6 +540,12 @@ Vertex
 
 Get vertex count. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Size count = polygon.getVertexCount() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Vertex count 
 \end{DoxyReturn}
@@ -462,6 +559,12 @@ Vertex count
 
 Get polygon vertices. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Array<Polygon::Vertex> vertices = polygon.getVertices() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} vertices 
 \end{DoxyReturn}
@@ -474,6 +577,12 @@ Get polygon vertices.
 
 
 Compute intersection of polygon with polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Intersection intersection = polygonA.intersectionWith(polygonB) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -519,6 +628,12 @@ True if polygon intersects polygon
 
 Check if polygon is defined. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a5389f3ef22d7144b5f01e37c8a221e8e}{Polygon}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \}, \{ 1.0, 1.0 \}, \{ 0.0, 1.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a81f715c35ecd0fa424f2daf4ffe59bec}{isDefined}}() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 True if polygon is defined 
 \end{DoxyReturn}
@@ -535,6 +650,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 
 Check if polygon is near another polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{polygon.isNear(anotherPolygon, 1e-\/15) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -557,6 +678,12 @@ True if polygon is near another polygon
 Not equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{polygonA != polygonB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Polygon} & A polygon \\
 \hline
@@ -573,6 +700,12 @@ True if polygons are not equal
 
 
 Copy assignment operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a5389f3ef22d7144b5f01e37c8a221e8e}{Polygon}} polygonB = polygonA ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -593,6 +726,12 @@ Reference to polygon
 Equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{polygonA == polygonB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Polygon} & A polygon \\
 \hline
@@ -609,6 +748,12 @@ True if polygons are equal
 
 
 Print polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{polygon.print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -630,6 +775,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 
 Get string representation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{String str = polygon.toString() ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -671,6 +822,12 @@ Undefined polygon
 
 
 Compute union of polygon with polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{MultiPolygon unionResult = polygonA.unionWith(polygonB) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

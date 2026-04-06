@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['solution_816',['Solution',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#aef6d06e4478e44fbe3354dbe8f80b94d',1,'ostk::mathematics::solver::NumericalSolver']]],
-  ['statevector_817',['StateVector',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a321c69ab0db9e09939b690580685a4b9',1,'ostk::mathematics::solver::NumericalSolver']]],
-  ['stepper_5ftype_5f4_818',['stepper_type_4',['../namespaceostk_1_1mathematics_1_1solver.html#a239397c5452cb7026b6b7bd5909c49ea',1,'ostk::mathematics::solver']]],
-  ['systemofequationswrapper_819',['SystemOfEquationsWrapper',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#af087a68c505e3da6f7ebfd0cfb1d2ef5',1,'ostk::mathematics::solver::NumericalSolver']]]
+  ['ring_836',['Ring',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a4e1a66ca47ea2cd18df9898d2d7ab014',1,'ostk::mathematics::geometry::d2::object::Polygon::Ring()'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a0def0d0862a7b5a429699d9e49b09edf',1,'ostk::mathematics::geometry::d3::object::Polygon::Ring()']]],
+  ['rowvectorxd_837',['RowVectorXd',['../namespaceostk_1_1mathematics_1_1object.html#a9be86062a33aac0443deff367090b0a2',1,'ostk::mathematics::object']]]
 ];

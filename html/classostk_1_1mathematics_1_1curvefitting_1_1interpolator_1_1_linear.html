@@ -138,7 +138,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classostk_1_1mathematics_1_1curvefitting_1_1_interpolator')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html">ostk::mathematics::curvefitting::Interpolator</a></td></tr>
 <tr class="memitem:a6318ad43cbddfa9b220213af2ac33557 inherit pub_types_classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557">Type</a> { <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557a98cf9ba70112c998166a82b6f289bb9f">Type::BarycentricRational</a>, 
 <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557abc050383dcd36a2e1f9481e562332cfa">Type::CubicSpline</a>, 
-<a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b">Type::Linear</a>
+<a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b">Type::Linear</a>, 
+<a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557a302ecba0c202890cc825530fca2bf596">Type::ZeroOrder</a>
  }</td></tr>
 <tr class="separator:a6318ad43cbddfa9b220213af2ac33557 inherit pub_types_classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classostk_1_1mathematics_1_1curvefitting_1_1_interpolator')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html">ostk::mathematics::curvefitting::Interpolator</a></td></tr>
@@ -151,7 +152,11 @@ Additional Inherited Members</h2></td></tr>
 <pre class="fragment">                        In mathematics, linear interpolator is a method of curve fitting using linear
                         polynomials to construct new data points within the range of a discrete set of known
                         data points.
-</pre><p><a href="https://en.wikipedia.org/wiki/Linear_interpolator#">https://en.wikipedia.org/wiki/Linear_interpolator#</a>:~:text=In%20mathematics%2C%20linear%20interpolator%20is,set%20of%20known%20data%20points. </p>
+</pre><div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> x = {{0.0, 1.0, 2.0, 3.0}};</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> y = {{0.0, 1.0, 4.0, 9.0}};</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a66f13250b306128dacc988a56961eda8">Linear</a> interpolator(x, y);</div>
+<div class="line"><span class="keywordtype">double</span> value = interpolator.evaluate(1.5);</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Linear_interpolator#">https://en.wikipedia.org/wiki/Linear_interpolator#</a>:~:text=In%20mathematics%2C%20linear%20interpolator%20is,set%20of%20known%20data%20points. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a66f13250b306128dacc988a56961eda8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a66f13250b306128dacc988a56961eda8">&#9670;&nbsp;</a></span>Linear()</h2>
@@ -216,7 +221,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor. </p>
-
+<div class="fragment"><div class="line"><span class="comment">// Called automatically when the Linear interpolator goes out of scope</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -379,7 +385,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_html_a66f13250b306128dacc988a56961eda8"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a66f13250b306128dacc988a56961eda8">ostk::mathematics::curvefitting::interpolator::Linear::Linear</a></div><div class="ttdeci">Linear(const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Linear.cpp:18</div></div>
-<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a7353155bb00668655919bf5698f74c84"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">ostk::mathematics::object::VectorXd</a></div><div class="ttdeci">Eigen::VectorXd VectorXd</div><div class="ttdef"><b>Definition:</b> Vector.hpp:42</div></div>
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a7353155bb00668655919bf5698f74c84"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">ostk::mathematics::object::VectorXd</a></div><div class="ttdeci">Eigen::VectorXd VectorXd</div><div class="ttdoc">Dynamic-size double vector type alias for Eigen::VectorXd.</div><div class="ttdef"><b>Definition:</b> Vector.hpp:50</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

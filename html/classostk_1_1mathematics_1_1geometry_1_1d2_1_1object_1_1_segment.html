@@ -199,7 +199,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html" title="Segment.">Segment</a>. </p>
-<pre class="fragment">                        A segment is a part of a line that is bounded by two distinct end points,
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ac5180c75994c3f3f1d824307a600874f">Segment</a> segment({ 0.0, 0.0 }, { 0.0, 1.0 }) ;</div>
+</div><!-- fragment --> <pre class="fragment">                        A segment is a part of a line that is bounded by two distinct end points,
                         and contains every point on the line between its endpoints.
 </pre><p><a href="https://en.wikipedia.org/wiki/Line_segment">https://en.wikipedia.org/wiki/Line_segment</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -267,7 +268,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to segment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ac5180c75994c3f3f1d824307a600874f">Segment</a> segment({ 0.0, 0.0 }, { 0.0, 1.0 }) ;</div>
+<div class="line">segment.applyTransformation(aTransformation) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -302,7 +305,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone segment. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned segment </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ac5180c75994c3f3f1d824307a600874f">Segment</a>* clonePtr = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ac5180c75994c3f3f1d824307a600874f">Segment</a>({ 0.0, 0.0 }, { 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a354e489eed79ff4e87deea504eeccb54">clone</a>() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned segment </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#af63da855554f9114803103fe2390f5eb">ostk::mathematics::geometry::d2::Object</a>.</p>
 
@@ -385,7 +389,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get distance to point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Real distance = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ac5180c75994c3f3f1d824307a600874f">Segment</a>({ 0.0, 0.0 }, { 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a0fa9db689dceda267581043aab6bc8b9">distanceTo</a>(Point(1.0, 0.0)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -412,7 +417,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get distance to point set. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Real distance = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ac5180c75994c3f3f1d824307a600874f">Segment</a>({ 0.0, 0.0 }, { 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a0fa9db689dceda267581043aab6bc8b9">distanceTo</a>(pointSet) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPointSet</td><td>A point set </td></tr>
   </table>
@@ -670,7 +676,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print segment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ac5180c75994c3f3f1d824307a600874f">Segment</a>({ 0.0, 0.0 }, { 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a104bbc842576324e46876838e92b18c9">print</a>(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -698,7 +705,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get line from segment. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html" title="Line.">Line</a> </dd></dl>
+<div class="fragment"><div class="line">Line line = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ac5180c75994c3f3f1d824307a600874f">Segment</a>({ 0.0, 0.0 }, { 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a12d65189283e7c180d4046238be766f0">toLine</a>() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html" title="Line.">Line</a> </dd></dl>
 
 </div>
 </div>
@@ -737,7 +745,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get string representation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">String str = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ac5180c75994c3f3f1d824307a600874f">Segment</a>({ 0.0, 0.0 }, { 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a336bfa4add0cea6ca7ce52a2e2b5e341">toString</a>() ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aFormat</td><td>A format </td></tr>
   </table>
@@ -790,7 +799,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_html_a90d8233fcd492fac4a74d5715d5e3b28"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a90d8233fcd492fac4a74d5715d5e3b28">ostk::mathematics::geometry::d2::object::Segment::getLength</a></div><div class="ttdeci">Real getLength() const</div><div class="ttdoc">Get segment length.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:164</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_html_a1963e9bad746b355e0b340804622b2b9"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a1963e9bad746b355e0b340804622b2b9">ostk::mathematics::geometry::d2::object::Segment::getDirection</a></div><div class="ttdeci">Vector2d getDirection() const</div><div class="ttdoc">Get segment direction.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:149</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_html_ab16e56418d2482c24971dcf678d85ec5"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ab16e56418d2482c24971dcf678d85ec5">ostk::mathematics::geometry::d2::object::Segment::getFirstPoint</a></div><div class="ttdeci">Point getFirstPoint() const</div><div class="ttdoc">Get segment first point.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:119</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_html_a12d65189283e7c180d4046238be766f0"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a12d65189283e7c180d4046238be766f0">ostk::mathematics::geometry::d2::object::Segment::toLine</a></div><div class="ttdeci">Line toLine() const</div><div class="ttdoc">Get line from segment.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:234</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_html_a0fa9db689dceda267581043aab6bc8b9"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a0fa9db689dceda267581043aab6bc8b9">ostk::mathematics::geometry::d2::object::Segment::distanceTo</a></div><div class="ttdeci">Real distanceTo(const Point &amp;aPoint) const</div><div class="ttdoc">Get distance to point.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:174</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_html_a354e489eed79ff4e87deea504eeccb54"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a354e489eed79ff4e87deea504eeccb54">ostk::mathematics::geometry::d2::object::Segment::clone</a></div><div class="ttdeci">virtual Segment * clone() const override</div><div class="ttdoc">Clone segment.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:30</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_html_a336bfa4add0cea6ca7ce52a2e2b5e341"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a336bfa4add0cea6ca7ce52a2e2b5e341">ostk::mathematics::geometry::d2::object::Segment::toString</a></div><div class="ttdeci">virtual String toString(const Object::Format &amp;aFormat=Object::Format::Standard, const Integer &amp;aPrecision=Integer::Undefined()) const override</div><div class="ttdoc">Get string representation.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:239</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_html_ac5180c75994c3f3f1d824307a600874f"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ac5180c75994c3f3f1d824307a600874f">ostk::mathematics::geometry::d2::object::Segment::Segment</a></div><div class="ttdeci">Segment(const Point &amp;aFirstPoint, const Point &amp;aSecondPoint)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:23</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_html_a104bbc842576324e46876838e92b18c9"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a104bbc842576324e46876838e92b18c9">ostk::mathematics::geometry::d2::object::Segment::print</a></div><div class="ttdeci">virtual void print(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</div><div class="ttdoc">Print segment.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:263</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_html_a0417919bc94c59ae23492d591514b6c9"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a0417919bc94c59ae23492d591514b6c9">ostk::mathematics::geometry::d2::object::Segment::getSecondPoint</a></div><div class="ttdeci">Point getSecondPoint() const</div><div class="ttdoc">Get segment second point.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:129</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_html_ae83df71f8f42ef823a7976f78de97a3f"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ae83df71f8f42ef823a7976f78de97a3f">ostk::mathematics::geometry::d2::object::Segment::isDegenerate</a></div><div class="ttdeci">bool isDegenerate() const</div><div class="ttdoc">Check if segment is degenerate, i.e. its length is zero.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:56</div></div>
 <!-- HTML footer for doxygen 1.8.7-->

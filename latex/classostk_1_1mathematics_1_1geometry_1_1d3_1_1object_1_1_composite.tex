@@ -89,6 +89,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite}{Composite}} object. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite(Unique<Object>(\textcolor{keyword}{new} Point(0.0, 0.0, 0.0)));}
+\end{DoxyCode}
+ 
+
 \doxysubsection{Member Typedef Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_a3fb7f38a564e36224fb4753be74836ff}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_a3fb7f38a564e36224fb4753be74836ff}} 
 \index{ostk::mathematics::geometry::d3::object::Composite@{ostk::mathematics::geometry::d3::object::Composite}!ConstIterator@{ConstIterator}}
@@ -110,6 +116,13 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 Constructor. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Point point = \{ 0.0, 0.0, 0.0 \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(point) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Object} & An object \\
 \hline
@@ -123,6 +136,13 @@ Constructor.
 
 
 Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Unique<Object> objectPtr = std::make\_unique<Point>(0.0, 0.0, 0.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(objectPtr) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -140,6 +160,14 @@ Constructor.
 Constructor. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Array<Unique<Object>> objects ;}
+\DoxyCodeLine{objects.emplace\_back(std::make\_unique<Point>(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(std::move(objects)) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Object\+Array} & An array of unique pointers to object \\
 \hline
@@ -153,6 +181,13 @@ Constructor.
 
 
 Copy constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} copy = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(composite) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -173,6 +208,13 @@ Copy constructor.
 Access object at index. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\textcolor{keyword}{const} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_af003ad733beface98466830078a83875}{Object}}\& \textcolor{keywordtype}{object} = composite.accessObjectAt(0) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Index} & An object index \\
 \hline
@@ -190,6 +232,13 @@ Reference to object
 
 Access objects in composite. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\textcolor{keyword}{const} Array<Unique<Object>>\& objects = composite.accessObjects() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Reference to objects in composite 
 \end{DoxyReturn}
@@ -202,6 +251,13 @@ Reference to objects in composite
 
 
 Apply transformation to composite. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{composite.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_af9058de81115d953ab8d9b8922abe692}{Transformation::Translation}}(\{ 1.0, 0.0, 0.0 \})) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -227,6 +283,13 @@ Access composite as its underlying object.
 \end{DoxyVerb}
 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\textcolor{keyword}{const} Point\& point = composite.as<Point>() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Reference to underlying object 
 \end{DoxyReturn}
@@ -240,6 +303,13 @@ Reference to underlying object
 
 Get const iterator to begin. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_a3fb7f38a564e36224fb4753be74836ff}{Composite::ConstIterator}} it = composite.begin() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Const iterator to begin 
 \end{DoxyReturn}
@@ -252,6 +322,12 @@ Const iterator to begin
 
 
 Clone composite. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}* clonePtr = composite.clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned composite 
@@ -271,6 +347,14 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 Check if composite contains composite. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeA = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Sphere(\{ 0.0, 0.0, 0.0 \}, 1.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeB = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{compositeA.contains(compositeB) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Composite} & A composite \\
 \hline
@@ -287,6 +371,14 @@ True if composite contains composite
 
 
 Check if composite contains object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Sphere(\{ 0.0, 0.0, 0.0 \}, 1.0)) ;}
+\DoxyCodeLine{Point point = \{ 0.0, 0.0, 0.0 \} ;}
+\DoxyCodeLine{composite.contains(point) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -329,6 +421,13 @@ Empty composite
 
 Get const iterator to end. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_a3fb7f38a564e36224fb4753be74836ff}{Composite::ConstIterator}} it = composite.end() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Const iterator to end 
 \end{DoxyReturn}
@@ -342,6 +441,13 @@ Const iterator to end
 
 Get number of objects in composite. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{Size count = composite.getObjectCount() ; \textcolor{comment}{// 1}}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Number of objects in composite 
 \end{DoxyReturn}
@@ -354,6 +460,14 @@ Number of objects in composite
 
 
 Compute intersection of composite with composite. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeA = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Sphere(\{ 0.0, 0.0, 0.0 \}, 1.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeB = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Sphere(\{ 0.5, 0.0, 0.0 \}, 1.0)) ;}
+\DoxyCodeLine{Intersection intersection = compositeA.intersectionWith(compositeB) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -372,6 +486,14 @@ Compute intersection of composite with composite.
 
 
 Compute intersection of composite with object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Sphere(\{ 0.0, 0.0, 0.0 \}, 1.0)) ;}
+\DoxyCodeLine{Line line = Line(\{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = composite.intersectionWith(line) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -396,6 +518,14 @@ Reimplemented from \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1
 Check if composite intersects composite. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeA = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeB = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{compositeA.intersects(compositeB) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Composite} & A composite \\
 \hline
@@ -412,6 +542,14 @@ True if composite intersects composite
 
 
 Check if composite intersects object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{Point point = \{ 0.0, 0.0, 0.0 \} ;}
+\DoxyCodeLine{composite.intersects(point) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -438,6 +576,13 @@ Returns true if composite can be converted to underlying object.
 
 \begin{DoxyVerb}                Only valid if the composite only contains one object.
 \end{DoxyVerb}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\textcolor{keywordtype}{bool} isPoint = composite.is<Point>() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
 
 
 \begin{DoxyReturn}{Returns}
@@ -496,6 +641,14 @@ True if composite is empty
 Not equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeA = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeB = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(1.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{compositeA != compositeB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Composite} & A composite object \\
 \hline
@@ -515,6 +668,14 @@ Addition operator (composite concatenation)
 
 \begin{DoxyVerb}                Concatenate (merge) composite with another composite.
 \end{DoxyVerb}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeA = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeB = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(1.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} merged = compositeA + compositeB ;}
+\end{DoxyCode}
 
 
 
@@ -540,6 +701,14 @@ Addition assignment operator (composite concatenation)
 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeA = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeB = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(1.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{compositeA += compositeB ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Composite} & A composite \\
 \hline
@@ -556,6 +725,14 @@ Reference to concatenated composite
 
 
 Copy assignment operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeA = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} compositeB = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ae9de0eace4f4bc2eeef0b79c48723aec}{Composite::Undefined}}() ;}
+\DoxyCodeLine{compositeB = compositeA ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -576,6 +753,13 @@ Reference to composite
 Equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{composite == composite ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Composite} & A composite object \\
 \hline
@@ -592,6 +776,13 @@ True if composites are equal
 
 
 Print composite. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_ad3c66a24df2c50819fbc8dbe288b85ee}{Composite}}(Point(0.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{composite.print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

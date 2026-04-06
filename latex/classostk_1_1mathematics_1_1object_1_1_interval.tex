@@ -103,6 +103,12 @@ class ostk\+::mathematics\+::object\+::\+Interval$<$ T $>$}
 
 Set of numbers with the property that any number that lies between two numbers in the set is also included in the set. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Interval<Real> interval(0.0, 1.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e}{Interval<Real>::Type::Closed}});}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Interval_}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Interval\+\_\+}}(mathematics) 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -773,6 +779,13 @@ void \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::m
 \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} lower bound setter. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{interval.setLowerBound(-\/1.0) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Lower\+Bound} & A lower bound \\
 \hline
@@ -789,6 +802,13 @@ void \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::m
 \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} type setter. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{interval.setType(\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201ac3bf447eabe632720a3aa1a7ce401274}{Interval<Real>::Type::Open}}) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Type} & An interval type \\
 \hline
@@ -803,6 +823,13 @@ void \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::m
 
 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} upper bound setter. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{interval.setUpperBound(2.0) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

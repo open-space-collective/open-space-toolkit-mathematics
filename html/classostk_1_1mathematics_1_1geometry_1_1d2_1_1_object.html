@@ -164,7 +164,8 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>2D object </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<div class="fragment"><div class="line">Point point(0.0, 0.0) ;  <span class="comment">// Point is a concrete 2D Object</span></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a9ba9529b76d02fa7e4d1d285a8cf1c13"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9ba9529b76d02fa7e4d1d285a8cf1c13">&#9670;&nbsp;</a></span>Format</h2>
 
@@ -220,7 +221,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default constructor. </p>
-
+<div class="fragment"><div class="line"><span class="comment">// Object is abstract; derived classes use the default constructor.</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="af11dec981b2e1ab08deae342ec2c4ef8"></a>
@@ -247,7 +249,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor (pure virtual) </p>
-
+<div class="fragment"><div class="line"><span class="comment">// Object is abstract; destructor is called via derived class.</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -276,14 +279,16 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Point point(0.0, 0.0) ;</div>
+<div class="line">point.applyTransformation(aTransformation) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a98902fdd8d77f9f6f0d6f833fa007ada">ostk::mathematics::geometry::d2::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#aa1fd52d4955be0b4ee647ac2971e72bf">ostk::mathematics::geometry::d2::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a678b14d476c41b11372b86e9db54b3a6">ostk::mathematics::geometry::d2::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html#a3a157e132491ce9f98561dff3c4959d4">ostk::mathematics::geometry::d2::object::Line</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a876015bf7a3b8667b8cb94627435a920">ostk::mathematics::geometry::d2::object::MultiPolygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html#aa0b9b22f3a53b89d79056596490bbb0d">ostk::mathematics::geometry::d2::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html#a0d3a24eba42a2d7449259b890d0bb30f">ostk::mathematics::geometry::d2::object::LineString</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#acae5fb88afef113a24cc77a3b536a2c9">ostk::mathematics::geometry::d2::object::Point</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#afec5f43815879ddfcb5051dd7ac40009">ostk::mathematics::geometry::d2::object::MultiLineString</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#aa1fd52d4955be0b4ee647ac2971e72bf">ostk::mathematics::geometry::d2::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a98902fdd8d77f9f6f0d6f833fa007ada">ostk::mathematics::geometry::d2::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a876015bf7a3b8667b8cb94627435a920">ostk::mathematics::geometry::d2::object::MultiPolygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a678b14d476c41b11372b86e9db54b3a6">ostk::mathematics::geometry::d2::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html#aa0b9b22f3a53b89d79056596490bbb0d">ostk::mathematics::geometry::d2::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html#a0d3a24eba42a2d7449259b890d0bb30f">ostk::mathematics::geometry::d2::object::LineString</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html#a3a157e132491ce9f98561dff3c4959d4">ostk::mathematics::geometry::d2::object::Line</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#acae5fb88afef113a24cc77a3b536a2c9">ostk::mathematics::geometry::d2::object::Point</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#afec5f43815879ddfcb5051dd7ac40009">ostk::mathematics::geometry::d2::object::MultiLineString</a>.</p>
 
 </div>
 </div>
@@ -311,9 +316,10 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone object (pure virtual) </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned object </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a15a959fd5b624d6fcc6725982a8cddf8">Object</a>* clonePtr = objectPtr-&gt;clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned object </dd></dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a290758ce99124ae08292c683a9d77fc3">ostk::mathematics::geometry::d2::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html#a0ee1f055d01e740ac294252806887fc6">ostk::mathematics::geometry::d2::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a04159c43117169d31c0e275f10617912">ostk::mathematics::geometry::d2::object::MultiPolygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a19f3ba420ea69eefa3a2b948d59a2fab">ostk::mathematics::geometry::d2::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html#a37f35461ca951c8a01b50631500cddd8">ostk::mathematics::geometry::d2::object::LineString</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#aab7aa00392d691582dfc454fd0d7a7c5">ostk::mathematics::geometry::d2::object::MultiLineString</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a354e489eed79ff4e87deea504eeccb54">ostk::mathematics::geometry::d2::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html#a60f4de4753ac3be12c6084aca4b9cc3a">ostk::mathematics::geometry::d2::object::Line</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a6130fa9acf01d10db49a6ea301efd579">ostk::mathematics::geometry::d2::object::Point</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a290758ce99124ae08292c683a9d77fc3">ostk::mathematics::geometry::d2::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a04159c43117169d31c0e275f10617912">ostk::mathematics::geometry::d2::object::MultiPolygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a19f3ba420ea69eefa3a2b948d59a2fab">ostk::mathematics::geometry::d2::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html#a0ee1f055d01e740ac294252806887fc6">ostk::mathematics::geometry::d2::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html#a37f35461ca951c8a01b50631500cddd8">ostk::mathematics::geometry::d2::object::LineString</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#aab7aa00392d691582dfc454fd0d7a7c5">ostk::mathematics::geometry::d2::object::MultiLineString</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a354e489eed79ff4e87deea504eeccb54">ostk::mathematics::geometry::d2::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html#a60f4de4753ac3be12c6084aca4b9cc3a">ostk::mathematics::geometry::d2::object::Line</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a6130fa9acf01d10db49a6ea301efd579">ostk::mathematics::geometry::d2::object::Point</a>.</p>
 
 </div>
 </div>
@@ -421,9 +427,10 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if object is defined. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if object is defined </dd></dl>
+<div class="fragment"><div class="line">Point(0.0, 0.0).isDefined() ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if object is defined </dd></dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a8978d917810e68bb9e6b484fc97524c3">ostk::mathematics::geometry::d2::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a81f715c35ecd0fa424f2daf4ffe59bec">ostk::mathematics::geometry::d2::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a5a81fa8426fe6a4be5addda02c888704">ostk::mathematics::geometry::d2::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html#a29bfbe3e8ba8d68e4e5b2351f225f965">ostk::mathematics::geometry::d2::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a06c0dd090011c4bc96237f46ce47e049">ostk::mathematics::geometry::d2::object::MultiPolygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a6a88d19e8e5978c2fe9eeeb88d6cf8d7">ostk::mathematics::geometry::d2::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html#a603f1de0e328c16a829b9e1c9f5c077f">ostk::mathematics::geometry::d2::object::Line</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html#ad8e472cb5b6c7fe87374a1476b8835b7">ostk::mathematics::geometry::d2::object::LineString</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#ac38eacd742cd2a60eb62d03cf1234b45">ostk::mathematics::geometry::d2::object::MultiLineString</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a8978d917810e68bb9e6b484fc97524c3">ostk::mathematics::geometry::d2::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a81f715c35ecd0fa424f2daf4ffe59bec">ostk::mathematics::geometry::d2::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a06c0dd090011c4bc96237f46ce47e049">ostk::mathematics::geometry::d2::object::MultiPolygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html#a29bfbe3e8ba8d68e4e5b2351f225f965">ostk::mathematics::geometry::d2::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a5a81fa8426fe6a4be5addda02c888704">ostk::mathematics::geometry::d2::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html#ad8e472cb5b6c7fe87374a1476b8835b7">ostk::mathematics::geometry::d2::object::LineString</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#ac38eacd742cd2a60eb62d03cf1234b45">ostk::mathematics::geometry::d2::object::MultiLineString</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a6a88d19e8e5978c2fe9eeeb88d6cf8d7">ostk::mathematics::geometry::d2::object::Segment</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html#a603f1de0e328c16a829b9e1c9f5c077f">ostk::mathematics::geometry::d2::object::Line</a>.</p>
 
 </div>
 </div>
@@ -444,7 +451,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Point(0.0, 0.0) != Point(1.0, 0.0) ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
   </table>
@@ -471,7 +479,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Point(0.0, 0.0) == Point(0.0, 0.0) ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
   </table>
@@ -516,7 +525,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Point(0.0, 0.0).print(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -524,7 +534,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a4e6da736abac853938c0a42e50984191">ostk::mathematics::geometry::d2::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a68feee2a993e698e796db61bc27a6167">ostk::mathematics::geometry::d2::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a104bbc842576324e46876838e92b18c9">ostk::mathematics::geometry::d2::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html#ad3cdbabb0a5a068923e9c63e6675fa15">ostk::mathematics::geometry::d2::object::Line</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1b7542e4161a90a3e2af18d62f9854c6">ostk::mathematics::geometry::d2::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a2912fc75e812550a0734bd6fa91368b7">ostk::mathematics::geometry::d2::object::MultiPolygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html#ab1d1852516a67b36a9d4c3b5f5483fa7">ostk::mathematics::geometry::d2::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html#a292e3bf679e232f605e4726f0bfff970">ostk::mathematics::geometry::d2::object::LineString</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#ac1befc9e46d84330636599f164cb2033">ostk::mathematics::geometry::d2::object::MultiLineString</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a68feee2a993e698e796db61bc27a6167">ostk::mathematics::geometry::d2::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a4e6da736abac853938c0a42e50984191">ostk::mathematics::geometry::d2::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a104bbc842576324e46876838e92b18c9">ostk::mathematics::geometry::d2::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a2912fc75e812550a0734bd6fa91368b7">ostk::mathematics::geometry::d2::object::MultiPolygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html#ab1d1852516a67b36a9d4c3b5f5483fa7">ostk::mathematics::geometry::d2::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html#a292e3bf679e232f605e4726f0bfff970">ostk::mathematics::geometry::d2::object::LineString</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html#ad3cdbabb0a5a068923e9c63e6675fa15">ostk::mathematics::geometry::d2::object::Line</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1b7542e4161a90a3e2af18d62f9854c6">ostk::mathematics::geometry::d2::object::Point</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#ac1befc9e46d84330636599f164cb2033">ostk::mathematics::geometry::d2::object::MultiLineString</a>.</p>
 
 </div>
 </div>
@@ -563,7 +573,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get string representation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Point(0.0, 0.0).toString() ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aFormat</td><td>A format </td></tr>
   </table>
@@ -571,7 +582,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String representation </dd></dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#acae5758cc07f2787875897d4392a07a4">ostk::mathematics::geometry::d2::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a5b9183cde21c414bc8a12e2e079e4ed1">ostk::mathematics::geometry::d2::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a336bfa4add0cea6ca7ce52a2e2b5e341">ostk::mathematics::geometry::d2::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html#a3c03f6d92663a15da6e2dc6dbdbc46ab">ostk::mathematics::geometry::d2::object::Line</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#acf4c687922d62a5aba718135134da5c6">ostk::mathematics::geometry::d2::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#ab51f3ac0454156100fd02a75fcf3f7f7">ostk::mathematics::geometry::d2::object::MultiPolygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html#a6cc208100261019089ad86b71b700864">ostk::mathematics::geometry::d2::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html#a896eb59a09118ed324b444616538c699">ostk::mathematics::geometry::d2::object::LineString</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#a08e4ad2714d08fc8b90e2f4fd643bcfd">ostk::mathematics::geometry::d2::object::MultiLineString</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a5b9183cde21c414bc8a12e2e079e4ed1">ostk::mathematics::geometry::d2::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#acae5758cc07f2787875897d4392a07a4">ostk::mathematics::geometry::d2::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a336bfa4add0cea6ca7ce52a2e2b5e341">ostk::mathematics::geometry::d2::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#ab51f3ac0454156100fd02a75fcf3f7f7">ostk::mathematics::geometry::d2::object::MultiPolygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html#a6cc208100261019089ad86b71b700864">ostk::mathematics::geometry::d2::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html#a896eb59a09118ed324b444616538c699">ostk::mathematics::geometry::d2::object::LineString</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html#a3c03f6d92663a15da6e2dc6dbdbc46ab">ostk::mathematics::geometry::d2::object::Line</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#acf4c687922d62a5aba718135134da5c6">ostk::mathematics::geometry::d2::object::Point</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#a08e4ad2714d08fc8b90e2f4fd643bcfd">ostk::mathematics::geometry::d2::object::MultiLineString</a>.</p>
 
 </div>
 </div>
@@ -611,7 +622,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Output stream operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">std::cout &lt;&lt; Point(0.0, 0.0) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
@@ -628,6 +640,7 @@ Friends</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_html_a15a959fd5b624d6fcc6725982a8cddf8"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a15a959fd5b624d6fcc6725982a8cddf8">ostk::mathematics::geometry::d2::Object::Object</a></div><div class="ttdeci">Object()=default</div><div class="ttdoc">Default constructor.</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

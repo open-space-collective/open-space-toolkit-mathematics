@@ -98,12 +98,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:aaa1d139fcb55b1f038ab29d736d07f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apache License 2.0.  <a href="_eigen_8hpp.html#aaa1d139fcb55b1f038ab29d736d07f3d">More...</a><br /></td></tr>
 <tr class="separator:aaa1d139fcb55b1f038ab29d736d07f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f14bad11d673c61a550d48d6777eae1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_eigen_8hpp.html#a0f14bad11d673c61a550d48d6777eae1">isNaN</a> () const</td></tr>
+<tr class="memdesc:a0f14bad11d673c61a550d48d6777eae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if any element of the matrix/vector is NaN.  <a href="_eigen_8hpp.html#a0f14bad11d673c61a550d48d6777eae1">More...</a><br /></td></tr>
 <tr class="separator:a0f14bad11d673c61a550d48d6777eae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe8246e867e93283cdfac59d16941411"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_eigen_8hpp.html#afe8246e867e93283cdfac59d16941411">isInf</a> () const</td></tr>
+<tr class="memdesc:afe8246e867e93283cdfac59d16941411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if any element of the matrix/vector is infinite.  <a href="_eigen_8hpp.html#afe8246e867e93283cdfac59d16941411">More...</a><br /></td></tr>
 <tr class="separator:afe8246e867e93283cdfac59d16941411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add00b5fa2f33935acb910760aeea837c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_eigen_8hpp.html#add00b5fa2f33935acb910760aeea837c">isNear</a> (const Derived &amp;aMatrix, const RealScalar aTolerance) const</td></tr>
+<tr class="memdesc:add00b5fa2f33935acb910760aeea837c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the matrix/vector is near another within a tolerance.  <a href="_eigen_8hpp.html#add00b5fa2f33935acb910760aeea837c">More...</a><br /></td></tr>
 <tr class="separator:add00b5fa2f33935acb910760aeea837c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12b926fa5c60e26e4a170e5b4e870dea"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_eigen_8hpp.html#a12b926fa5c60e26e4a170e5b4e870dea">toString</a> (int aPrecision=-1) const</td></tr>
+<tr class="memdesc:a12b926fa5c60e26e4a170e5b4e870dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the matrix/vector to a string representation.  <a href="_eigen_8hpp.html#a12b926fa5c60e26e4a170e5b4e870dea">More...</a><br /></td></tr>
 <tr class="separator:a12b926fa5c60e26e4a170e5b4e870dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -123,6 +127,10 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apache License 2.0. </p>
+<p>Check if the matrix/vector is defined (not NaN and not Inf)</p>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> v(1.0, 2.0, 3.0);</div>
+<div class="line">v.isDefined();  <span class="comment">// true</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if all elements are finite and not NaN </dd></dl>
 
 </div>
 </div>
@@ -141,6 +149,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Check if any element of the matrix/vector is infinite. </p>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> v(1.0, std::numeric_limits&lt;double&gt;::infinity(), 3.0);</div>
+<div class="line">v.isInf();  <span class="comment">// true</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if any element is infinite </dd></dl>
+
 </div>
 </div>
 <a id="a0f14bad11d673c61a550d48d6777eae1"></a>
@@ -157,6 +170,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Check if any element of the matrix/vector is NaN. </p>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> v(1.0, std::numeric_limits&lt;double&gt;::quiet_NaN(), 3.0);</div>
+<div class="line">v.isNaN();  <span class="comment">// true</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if any element is NaN </dd></dl>
 
 </div>
 </div>
@@ -186,6 +204,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Check if the matrix/vector is near another within a tolerance. </p>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> v1(1.0, 2.0, 3.0);</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> v2(1.0, 2.0, 3.0 + 1e-10);</div>
+<div class="line">v1.isNear(v2, 1e-9);  <span class="comment">// true</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aMatrix</td><td>A matrix/vector to compare against </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aTolerance</td><td>A numerical tolerance on the norm of the difference </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the norm of the difference is within the tolerance </dd></dl>
+
 </div>
 </div>
 <a id="a12b926fa5c60e26e4a170e5b4e870dea"></a>
@@ -204,10 +235,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Convert the matrix/vector to a string representation. </p>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> v(1.0, 2.0, 3.0);</div>
+<div class="line">v.toString();  <span class="comment">// &quot;[1.0, 2.0, 3.0]&quot;</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPrecision</td><td>A precision (number of decimal places, or -1 for automatic) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation of the matrix/vector </dd></dl>
+
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a69d9a055814e9440af219eff448c6c23"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">ostk::mathematics::object::Vector3d</a></div><div class="ttdeci">Eigen::Vector3d Vector3d</div><div class="ttdoc">3D double vector type alias for Eigen::Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:43</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

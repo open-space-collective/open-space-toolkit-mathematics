@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="44" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="43" bodyend="56"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="45" bodyend="58"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="279" column="24" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="279" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="324" column="24" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="324" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1aa1677a22c779b3ac78bfb49a98a6a0b7" prot="private" static="no" mutable="no">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref></type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="281" column="15" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="281" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="326" column="15" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="326" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -121,6 +121,10 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Array&lt;Unique&lt;Object&gt;&gt;<sp/>objects<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">objects.add(std::make_unique&lt;object::Point&gt;(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1abadbbcd1176ace347a7148ea89a0fdef" kindref="member">Intersection</ref><sp/>intersection(std::move(objects))<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anObjectArray</parametername>
@@ -134,7 +138,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="62" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="17" bodyend="21"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="69" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="17" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a5078dd27fbdbff7de1eeaa0a49eaea18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -149,6 +153,8 @@
 <para>Copy constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1abadbbcd1176ace347a7148ea89a0fdef" kindref="member">Intersection</ref><sp/>copiedIntersection(intersection)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anIntersection</parametername>
@@ -162,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="68" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="23" bodyend="27"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="78" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="23" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a0f8d688de5a4819053d1f69a50e5a78e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -173,10 +179,12 @@
 <para>Destructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Destructor<sp/>is<sp/>called<sp/>automatically<sp/>when<sp/>intersection<sp/>goes<sp/>out<sp/>of<sp/>scope.</highlight></codeline>
+</programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="72" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="29" bodyend="29"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="85" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="29" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1aae9f76b02e5539ae231dbdf138b72c4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
@@ -191,6 +199,8 @@
 <para>Copy assignment operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1abadbbcd1176ace347a7148ea89a0fdef" kindref="member">Intersection</ref><sp/>intersectionB<sp/>=<sp/>intersectionA<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anIntersection</parametername>
@@ -206,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="79" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="31" bodyend="40"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="95" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="31" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a6ab153de4908b154d7627d124b8f1a78" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -221,6 +231,8 @@
 <para>Equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">intersectionA<sp/>==<sp/>intersectionB<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anIntersection</parametername>
@@ -236,7 +248,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="86" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="42" bodyend="50"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="105" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="42" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a4b5775a7a48175d24ff520f3686526a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -251,6 +263,8 @@
 <para>Not equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">intersectionA<sp/>!=<sp/>intersectionB<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anIntersection</parametername>
@@ -266,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="93" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="52" bodyend="55"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="115" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="52" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1aace2f490a008ad90ff0b5e9e4d27ef56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -281,7 +295,8 @@
 <para>Addition operator (intersection concatenation) </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>                Concatenate (merge) intersection with another intersection.
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1abadbbcd1176ace347a7148ea89a0fdef" kindref="member">Intersection</ref><sp/>intersectionC<sp/>=<sp/>intersectionA<sp/>+<sp/>intersectionB<sp/>;</highlight></codeline>
+</programlisting> <verbatim>                Concatenate (merge) intersection with another intersection.
 </verbatim></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -298,7 +313,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="102" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="57" bodyend="71"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="127" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="57" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1af6afa26e7bf88dd2e8c2d824abd12076" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
@@ -313,7 +328,8 @@
 <para>Addition assignment operator (intersection concatenation) </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>                Concatenate (merge) intersection with another intersection.
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">intersectionA<sp/>+=<sp/>intersectionB<sp/>;</highlight></codeline>
+</programlisting> <verbatim>                Concatenate (merge) intersection with another intersection.
 </verbatim></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -330,7 +346,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="111" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="73" bodyend="85"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="139" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="73" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1aee7e7ede2e3ea269b9b2eb091da92b8f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -341,13 +357,15 @@
 <para>Check if intersection is defined. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a4b1d39b9c1516c2b1129957e1aaeab61" kindref="member">Intersection::Empty</ref>().<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1aee7e7ede2e3ea269b9b2eb091da92b8f" kindref="member">isDefined</ref>()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>True if intersection is defined </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="129" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="102" bodyend="105"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="159" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="102" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a4908a1b0edd4fb1b77bf13051f524a70" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -358,13 +376,15 @@
 <para>Check if intersection is empty. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a4b1d39b9c1516c2b1129957e1aaeab61" kindref="member">Intersection::Empty</ref>().<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a4908a1b0edd4fb1b77bf13051f524a70" kindref="member">isEmpty</ref>()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>True if intersection is empty </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="135" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="107" bodyend="110"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="168" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="107" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1af2757994e5cca200ade007991ff4f160" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -375,7 +395,8 @@
 <para>Check if intersection is complex. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>                A complex intersection contains more than one object.
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">intersection.isComplex()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>False</highlight></codeline>
+</programlisting> <verbatim>                A complex intersection contains more than one object.
 </verbatim></para>
 <para><simplesect kind="return"><para>True if intersection is complex </para>
 </simplesect>
@@ -383,7 +404,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="143" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="112" bodyend="115"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="179" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="112" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a7d961245648ef69ae55d6e4cbf24544f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -399,7 +420,9 @@
 <para>Returns true if intersection can be converted to underlying object. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>                Only valid if the intersection only contains one object.
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1abadbbcd1176ace347a7148ea89a0fdef" kindref="member">Intersection</ref><sp/>intersection<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a557d7508624c7644f74a358959e3a7e2" kindref="member">Intersection::Point</ref>(object::Point(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isPoint<sp/>=<sp/>intersection.is&lt;object::Point&gt;()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting> <verbatim>                Only valid if the intersection only contains one object.
 </verbatim></para>
 <para><simplesect kind="return"><para>True if intersection can be converted to underlying object </para>
 </simplesect>
@@ -407,7 +430,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="152" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="152" bodyend="160"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="192" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="192" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1ab61bad3ddb1b3810311ffe4d517e7b79" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -423,7 +446,9 @@
 <para>Access intersection as its underlying object. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>                Only valid if the intersection only contains one object.
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1abadbbcd1176ace347a7148ea89a0fdef" kindref="member">Intersection</ref><sp/>intersection<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a557d7508624c7644f74a358959e3a7e2" kindref="member">Intersection::Point</ref>(object::Point(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>object::Point&amp;<sp/>point<sp/>=<sp/>intersection.as&lt;object::Point&gt;()<sp/>;</highlight></codeline>
+</programlisting> <verbatim>                Only valid if the intersection only contains one object.
 </verbatim></para>
 <para><simplesect kind="return"><para>Reference to underlying object </para>
 </simplesect>
@@ -431,7 +456,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="169" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="169" bodyend="177"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="213" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="213" bodyend="221"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a74ec0b78bab654fc7ae2ba9795b32778" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref> &amp;</type>
@@ -442,13 +467,15 @@
 <para>Access composite object. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Composite&amp;<sp/>composite<sp/>=<sp/>intersection.accessComposite()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Reference to composite object </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="183" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="117" bodyend="125"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="230" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="117" bodyend="125"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1ad258b08bc3806cb99bb4019293b92992" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1ab05d25c82a3b3118aea0aecc2570faae" kindref="member">Intersection::Type</ref></type>
@@ -459,13 +486,15 @@
 <para>Get intersection type. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1ab05d25c82a3b3118aea0aecc2570faae" kindref="member">Intersection::Type</ref><sp/>type<sp/>=<sp/>intersection.getType()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref> type </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="189" column="24" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="127" bodyend="135"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="239" column="24" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="127" bodyend="135"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -511,7 +540,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="123" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="87" bodyend="100"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="150" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="87" bodyend="100"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -532,7 +561,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="199" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="137" bodyend="144"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="248" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="137" bodyend="144"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a4b1d39b9c1516c2b1129957e1aaeab61" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -551,7 +580,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="209" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="146" bodyend="149"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="257" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="146" bodyend="149"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a557d7508624c7644f74a358959e3a7e2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -574,7 +603,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="219" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="151" bodyend="160"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="266" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="151" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1aac4f1f9c3ecee9bce18232398a6a8344" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -597,7 +626,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="229" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="162" bodyend="171"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="275" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="162" bodyend="171"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a2ecaccd9004396a2c0552ee3459a73a0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -621,7 +650,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="240" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="173" bodyend="182"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="285" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="173" bodyend="182"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a4981da070b5400c1546f0014000c968a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -644,7 +673,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="250" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="184" bodyend="193"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="294" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="184" bodyend="193"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1ad326132c2af6ff427d658d6fdcc726be" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -667,7 +696,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="260" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="195" bodyend="204"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="303" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="195" bodyend="204"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a0e011491a8e6fd33fa8f703529bebc76" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -690,7 +719,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="270" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="206" bodyend="215"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="312" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="206" bodyend="215"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a7b00ce84dad2ae6d6bc09ca964dd4e28" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -705,13 +734,15 @@
 <para>Converts intersection type to string. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>str<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a7b00ce84dad2ae6d6bc09ca964dd4e28" kindref="member">Intersection::StringFromType</ref>(<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1ab05d25c82a3b3118aea0aecc2570faaea2a3cd5946cfd317eb99c3d32e35e2d4c" kindref="member">Intersection::Type::Point</ref>)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>String </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="276" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="217" bodyend="254"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="321" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="217" bodyend="254"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -726,7 +757,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="283" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="256" bodyend="260"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="328" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="256" bodyend="260"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a5048856931a3310726c60775e15d11c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -747,7 +778,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="285" column="5"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="330" column="5"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -766,7 +797,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="287" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="262" bodyend="286"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="332" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="262" bodyend="286"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1acdb62e3f5e85eab646afb16ad0a904e4" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1ab05d25c82a3b3118aea0aecc2570faae" kindref="member">Intersection::Type</ref></type>
@@ -783,15 +814,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="289" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="288" bodyend="321"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="334" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp" bodystart="288" bodyend="321"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>2D intersection </para>
     </briefdescription>
     <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1abadbbcd1176ace347a7148ea89a0fdef" kindref="member">Intersection</ref><sp/>intersection<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a557d7508624c7644f74a358959e3a7e2" kindref="member">Intersection::Point</ref>(object::Point(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+</programlisting> </para>
     </detaileddescription>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="41" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="40" bodyend="290"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="43" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" bodystart="42" bodyend="335"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1a74ec0b78bab654fc7ae2ba9795b32778" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::Intersection</scope><name>accessComposite</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_1ab61bad3ddb1b3810311ffe4d517e7b79" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::Intersection</scope><name>as</name></member>

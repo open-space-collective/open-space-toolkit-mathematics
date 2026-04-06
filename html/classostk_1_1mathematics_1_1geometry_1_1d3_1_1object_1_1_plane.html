@@ -217,7 +217,8 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html" title="Plane.">Plane</a>. </p>
 <pre class="fragment">                        A plane is a flat, two-dimensional surface that extends infinitely far.
-</pre><p><a href="https://en.wikipedia.org/wiki/Plane_">https://en.wikipedia.org/wiki/Plane_</a>(geometry) </p>
+</pre><div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a> plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Plane_">https://en.wikipedia.org/wiki/Plane_</a>(geometry) </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae1c8e4e15ce5c0ec7ace2e1b61b17358"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae1c8e4e15ce5c0ec7ace2e1b61b17358">&#9670;&nbsp;</a></span>Plane()</h2>
@@ -283,7 +284,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to plane. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a> plane = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">plane.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">Transformation::Identity</a>()) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -318,7 +321,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone plane. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned plane </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a>* planePtr = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a07a393740306e4f8363920a8d82823e7">clone</a>() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned plane </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a8ea8d4074bfaaa3d996d760d5d5751db">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -533,7 +537,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of plane with line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a> plane = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Line line = Line({ 0.0, 0.0, -1.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Intersection intersection = plane.intersectionWith(line) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aLine</td><td>A line </td></tr>
   </table>
@@ -560,7 +567,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of plane with point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a> plane = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Intersection intersection = plane.intersectionWith(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>()) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -587,7 +596,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of plane with point set. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a> plane = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">PointSet pointSet = PointSet({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line">Intersection intersection = plane.intersectionWith(pointSet) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPointSet</td><td>A point set </td></tr>
   </table>
@@ -614,7 +626,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of plane with ray. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a> plane = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Ray ray = Ray({ 0.0, 0.0, -1.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Intersection intersection = plane.intersectionWith(ray) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aRay</td><td>A ray </td></tr>
   </table>
@@ -641,7 +656,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of plane with segment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a> plane = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Segment segment = Segment({ 0.0, 0.0, -1.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Intersection intersection = plane.intersectionWith(segment) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aSegment</td><td>A segment </td></tr>
   </table>
@@ -925,7 +943,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print plane. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">Plane</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a69cc28d37f97308cd2d0a9b58d50c18f">print</a>(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -973,8 +992,12 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_html_a0a39c2a1bd1e330e8cc15aa4a5e19d47"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a0a39c2a1bd1e330e8cc15aa4a5e19d47">ostk::mathematics::geometry::d3::object::Plane::isDefined</a></div><div class="ttdeci">virtual bool isDefined() const override</div><div class="ttdoc">Check if plane is defined.</div><div class="ttdef"><b>Definition:</b> Plane.cpp:53</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a2e0dc90fe04fb9befb79ec9874dcebc4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">ostk::mathematics::geometry::d3::object::Point::Origin</a></div><div class="ttdeci">static Point Origin()</div><div class="ttdoc">Constructs a point at origin.</div><div class="ttdef"><b>Definition:</b> Point.cpp:204</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_html_a8637b16118f31b362eb371c3550a430b"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a8637b16118f31b362eb371c3550a430b">ostk::mathematics::geometry::d3::object::Plane::getNormalVector</a></div><div class="ttdeci">Vector3d getNormalVector() const</div><div class="ttdoc">Get plane normal vector.</div><div class="ttdef"><b>Definition:</b> Plane.cpp:192</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_html_a07a393740306e4f8363920a8d82823e7"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a07a393740306e4f8363920a8d82823e7">ostk::mathematics::geometry::d3::object::Plane::clone</a></div><div class="ttdeci">virtual Plane * clone() const override</div><div class="ttdoc">Clone plane.</div><div class="ttdef"><b>Definition:</b> Plane.cpp:28</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_html_ae1c8e4e15ce5c0ec7ace2e1b61b17358"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ae1c8e4e15ce5c0ec7ace2e1b61b17358">ostk::mathematics::geometry::d3::object::Plane::Plane</a></div><div class="ttdeci">Plane(const Point &amp;aPoint, const Vector3d &amp;aNormalVector)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Plane.cpp:21</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_a5cd654de32139306358aa773bbf8c291"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">ostk::mathematics::geometry::d3::Transformation::Identity</a></div><div class="ttdeci">static Transformation Identity()</div><div class="ttdoc">Construct an identity transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:254</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_html_a69cc28d37f97308cd2d0a9b58d50c18f"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a69cc28d37f97308cd2d0a9b58d50c18f">ostk::mathematics::geometry::d3::object::Plane::print</a></div><div class="ttdeci">virtual void print(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</div><div class="ttdoc">Print plane.</div><div class="ttdef"><b>Definition:</b> Plane.cpp:244</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_html_a426953082cf45d17f80fde82753583df"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a426953082cf45d17f80fde82753583df">ostk::mathematics::geometry::d3::object::Plane::Undefined</a></div><div class="ttdeci">static Plane Undefined()</div><div class="ttdoc">Constructs an undefined plane.</div><div class="ttdef"><b>Definition:</b> Plane.cpp:272</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_html_a27ac75e7c17511ca313236d2048dfac0"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a27ac75e7c17511ca313236d2048dfac0">ostk::mathematics::geometry::d3::object::Plane::getPoint</a></div><div class="ttdeci">Point getPoint() const</div><div class="ttdoc">Get plane point.</div><div class="ttdef"><b>Definition:</b> Plane.cpp:182</div></div>
 <!-- HTML footer for doxygen 1.8.7-->

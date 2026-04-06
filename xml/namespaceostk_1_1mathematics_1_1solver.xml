@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="22" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="22" bodyend="-1"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="58" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1solver_1aff57be115a1ef18c0a53de6e79b00023" prot="public" static="no">
         <type>runge_kutta_cash_karp54&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">NumericalSolver::StateVector</ref> &gt;</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="23" column="33" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="23" bodyend="-1"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="59" column="33" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1solver_1a446382cbb767b2c1a4413b9f6f4fee34" prot="public" static="no">
         <type>runge_kutta_fehlberg78&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">NumericalSolver::StateVector</ref> &gt;</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="24" column="32" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="24" bodyend="-1"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="60" column="32" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="60" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1solver_1a9e0e29898fea269d43fccf27c4fedd60" prot="public" static="no">
         <type>runge_kutta_dopri5&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">NumericalSolver::StateVector</ref> &gt;</type>
@@ -54,10 +54,51 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="25" column="28" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="25" bodyend="-1"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="61" column="28" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1solver_1a2bc631b362fd85f617428eec25347b45" prot="public" static="no">
+        <type>bulirsch_stoer&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">NumericalSolver::StateVector</ref> &gt;</type>
+        <definition>typedef bulirsch_stoer&lt;NumericalSolver::StateVector&gt; ostk::mathematics::solver::bulirsch_stoer_stepper_type</definition>
+        <argsstring></argsstring>
+        <name>bulirsch_stoer_stepper_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="62" column="24" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="62" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1solver_1ae273f3eb2c2a71315b16e3b57a2550ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>size_t</type>
+            <declname>Order</declname>
+            <defname>Order</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto ostk::mathematics::solver::make_controlled_adam_bashforth_moulton</definition>
+        <argsstring>(double abs_tol, double rel_tol)</argsstring>
+        <name>make_controlled_adam_bashforth_moulton</name>
+        <param>
+          <type>double</type>
+          <declname>abs_tol</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>rel_tol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="65" column="6" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="65" bodyend="84"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1solver_1a880f6ab73ddfe8eae45c0c7f4c6aaaeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
         <definition>std::ostream&amp; ostk::mathematics::solver::operator&lt;&lt;</definition>
@@ -74,6 +115,8 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/><ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a1653209d9c0b27cc3299fafaa4df7368" kindref="member">NumericalSolver::Default</ref>();</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOutputStream</parametername>
@@ -97,13 +140,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="60" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="60" bodyend="65"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="119" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="119" bodyend="124"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="19" column="1"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="18" column="1"/>
   </compounddef>
 </doxygen>

@@ -227,7 +227,8 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html" title="Sphere.">Sphere</a>. </p>
 <pre class="fragment">                        A sphere is a perfectly round geometrical object in three-dimensional space that is the
                         surface of a completely round ball.
-</pre><p><a href="https://en.wikipedia.org/wiki/Sphere">https://en.wikipedia.org/wiki/Sphere</a> </p>
+</pre><div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a> sphere(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0) ;</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Sphere">https://en.wikipedia.org/wiki/Sphere</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a44cf858e4351d1890cc1116bb85f9850"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a44cf858e4351d1890cc1116bb85f9850">&#9670;&nbsp;</a></span>Sphere()</h2>
@@ -293,7 +294,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to sphere. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a> sphere = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0) ;</div>
+<div class="line">sphere.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">Transformation::Identity</a>()) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -328,7 +331,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone sphere. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned sphere </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a>* spherePtr = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0).clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned sphere </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a8ea8d4074bfaaa3d996d760d5d5751db">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -463,7 +467,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of sphere with cone. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a> sphere = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0) ;</div>
+<div class="line">Cone cone = ... ;</div>
+<div class="line">Intersection intersection = sphere.intersectionWith(cone) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aCone</td><td>A cone </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">onlyInSight</td><td>(optional) If true, only return intersection points that are in sight </td></tr>
@@ -491,7 +498,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of sphere with line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a> sphere = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0) ;</div>
+<div class="line">Line line = Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Intersection intersection = sphere.intersectionWith(line) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aLine</td><td>A line </td></tr>
   </table>
@@ -528,7 +538,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of sphere with pyramid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a> sphere = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0) ;</div>
+<div class="line">Pyramid pyramid = ... ;</div>
+<div class="line">Intersection intersection = sphere.intersectionWith(pyramid) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPyramid</td><td>A pyramid </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">onlyInSight</td><td>(optional) If true, only return intersection points that are in sight </td></tr>
@@ -566,7 +579,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of sphere with ray. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a> sphere = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0) ;</div>
+<div class="line">Ray ray = Ray({ 0.0, 0.0, -2.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Intersection intersection = sphere.intersectionWith(ray) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aRay</td><td>A ray </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">onlyInSight</td><td>(optional) If true, only return intersection points that are in sight </td></tr>
@@ -594,7 +610,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of sphere with segment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a> sphere = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0) ;</div>
+<div class="line">Segment segment = Segment({ 0.0, 0.0, -2.0 }, { 0.0, 0.0, 2.0 }) ;</div>
+<div class="line">Intersection intersection = sphere.intersectionWith(segment) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aSegment</td><td>A segment </td></tr>
   </table>
@@ -1017,7 +1036,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print sphere. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">Sphere</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0).print(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -1099,6 +1119,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a2e0dc90fe04fb9befb79ec9874dcebc4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">ostk::mathematics::geometry::d3::object::Point::Origin</a></div><div class="ttdeci">static Point Origin()</div><div class="ttdoc">Constructs a point at origin.</div><div class="ttdef"><b>Definition:</b> Point.cpp:204</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_html_a81b2f22059fd4a1235795783e0cfcbb3"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a81b2f22059fd4a1235795783e0cfcbb3">ostk::mathematics::geometry::d3::object::Sphere::Unit</a></div><div class="ttdeci">static Sphere Unit(const Point &amp;aCenter)</div><div class="ttdoc">Constructs a unit sphere.</div><div class="ttdef"><b>Definition:</b> Sphere.cpp:605</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_html_a44cf858e4351d1890cc1116bb85f9850"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850">ostk::mathematics::geometry::d3::object::Sphere::Sphere</a></div><div class="ttdeci">Sphere(const Point &amp;aCenter, const Real &amp;aRadius)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Sphere.cpp:51</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_a5cd654de32139306358aa773bbf8c291"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">ostk::mathematics::geometry::d3::Transformation::Identity</a></div><div class="ttdeci">static Transformation Identity()</div><div class="ttdoc">Construct an identity transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:254</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

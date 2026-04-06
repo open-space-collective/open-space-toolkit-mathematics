@@ -81,6 +81,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 \end{DoxyVerb}
 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon(polygon2d, origin, xAxis, yAxis);}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Polygon}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Polygon}} 
 
 \doxysubsection{Member Typedef Documentation}
@@ -150,6 +156,13 @@ Constructor.
 Apply transformation to polygon. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{polygon.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_af9058de81115d953ab8d9b8922abe692}{Transformation::Translation}}(\{ 1.0, 0.0, 0.0 \})) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -167,6 +180,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Clone polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}}* clonePtr = polygon.clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned polygon 
@@ -186,6 +205,13 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 Get edge at index. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a58c843dbce8d1d9eca6203b027477e11}{Polygon::Edge}} edge = polygon.getEdgeAt(0) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Edge\+Index} & An edge index \\
 \hline
@@ -203,6 +229,13 @@ Edge (segment)
 
 Get edge count. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{Size edgeCount = polygon.getEdgeCount() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Edge count 
 \end{DoxyReturn}
@@ -215,6 +248,13 @@ Edge count
 
 
 Get polygon edges. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{Array<Polygon::Edge> edges = polygon.getEdges() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} edges 
@@ -229,6 +269,13 @@ Get polygon edges.
 
 Get polygon normal vector. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} normal = polygon.getNormalVector() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} normal vector 
 \end{DoxyReturn}
@@ -241,6 +288,13 @@ Get polygon normal vector.
 
 
 Get polygon origin. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{Point origin = polygon.getOrigin() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} origin 
@@ -255,6 +309,13 @@ Get polygon origin.
 
 Get polygon 2D polygon. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_ae4c84293a1f85b2e2c0d2e8aa5f281c0}{Polygon2d}} polygon2d = polygon.getPolygon2d() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} 2D polygon 
 \end{DoxyReturn}
@@ -267,6 +328,13 @@ Get polygon 2D polygon.
 
 
 Get vertex at index. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a33d84704d7e18430f2a86399103eb84d}{Polygon::Vertex}} vertex = polygon.getVertexAt(0) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -286,6 +354,13 @@ Vertex
 
 Get vertex count. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{Size vertexCount = polygon.getVertexCount() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Vertex count 
 \end{DoxyReturn}
@@ -298,6 +373,13 @@ Vertex count
 
 
 Get polygon vertices. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{Array<Polygon::Vertex> vertices = polygon.getVertices() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} vertices 
@@ -312,6 +394,13 @@ Get polygon vertices.
 
 Get polygon X axis. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} xAxis = polygon.getXAxis() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} X axis 
 \end{DoxyReturn}
@@ -325,6 +414,13 @@ Get polygon X axis.
 
 Get polygon Y axis. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} yAxis = polygon.getYAxis() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} Y axis 
 \end{DoxyReturn}
@@ -337,6 +433,13 @@ Get polygon Y axis.
 
 
 Check if polygon is defined. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{polygon.isDefined() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 True if polygon is defined 
@@ -354,6 +457,14 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Check if polygon is near another polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} anotherPolygon = ... ;}
+\DoxyCodeLine{polygon.isNear(anotherPolygon, 1e-\/15) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -376,6 +487,14 @@ True if polygon is near another polygon
 Not equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygonA = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygonB = ... ;}
+\DoxyCodeLine{polygonA != polygonB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Polygon} & A polygon \\
 \hline
@@ -392,6 +511,13 @@ True if polygons are not equal
 
 
 Equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{polygon == polygon ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -422,6 +548,13 @@ Compute intersection of polygon with another polygon.
 Print polygon
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
+\DoxyCodeLine{polygon.print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
 \hline
@@ -441,6 +574,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Constructs an undefined polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a446de1b35f71c1ac2be694b9c258b6cc}{Polygon::Undefined}}() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Undefined polygon 

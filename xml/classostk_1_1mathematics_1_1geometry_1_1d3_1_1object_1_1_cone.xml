@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="281" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" bodystart="281" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="331" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" bodystart="331" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a6a203ec91f967d2d481adced2f1efe9a" prot="private" static="no" mutable="no">
         <type>Vector3d</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="282" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" bodystart="282" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="332" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" bodystart="332" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a9de8ecb2a2edb20861f6ace1d97a6342" prot="private" static="no" mutable="no">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="283" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" bodystart="283" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="333" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" bodystart="333" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -67,10 +67,10 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Point<sp/>apex<sp/>=<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>}<sp/>;</highlight></codeline>
-<codeline><highlight class="normal">Vector3d<sp/>axis<sp/>=<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>}<sp/>;</highlight></codeline>
-<codeline><highlight class="normal">Angle<sp/>angle<sp/>=<sp/>Angle::Degrees(15.0)<sp/>;</highlight></codeline>
-<codeline><highlight class="normal">Cone<sp/>cone<sp/>=<sp/>{<sp/>apex,<sp/>axis,<sp/>angle<sp/>}<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Point<sp/>apex<sp/>=<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/>axis<sp/>=<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Angle<sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>apex,<sp/>axis,<sp/>angle<sp/>}<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="69" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="29" bodyend="35"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="70" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="29" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a0c99b116c5a6f6e0915cb5375fc66149" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone" kindref="compound">Cone</ref> *</type>
@@ -113,13 +113,15 @@
 <para>Clone cone. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref>*<sp/>clonePtr<sp/>=<sp/>cone.clone()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Pointer to cloned cone </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="75" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="37" bodyend="40"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="79" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="37" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a218e8b5b2b28de0a632b102c0953f948" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -134,6 +136,9 @@
 <para>Equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">cone<sp/>==<sp/>cone<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aCone</parametername>
@@ -149,7 +154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="82" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="42" bodyend="51"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="90" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="42" bodyend="51"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1ae08043260d062f74a3daa54ba9593964" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -164,6 +169,10 @@
 <para>Not equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>coneA<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>coneB<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(30.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">coneA<sp/>!=<sp/>coneB<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aCone</parametername>
@@ -179,7 +188,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="89" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="53" bodyend="56"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="102" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="53" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a927c5cfa7196f425f8cd153efde8e90f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -191,13 +200,16 @@
 <para>Check if cone is defined. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">cone.<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad99d5ff3a95e93b3599248c72b631ff1" kindref="member">isDefined</ref>()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>True if cone is defined </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="95" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="58" bodyend="61"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="112" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="58" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a801e263af20ca039858bcecdd579ff1c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -217,7 +229,7 @@
 <para>Check if cone intersects sphere. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Cone<sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Sphere<sp/>sphere<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cone.intersects(sphere)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -244,7 +256,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="109" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="125" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1aa08f535f31cc63cc5675f434b20617e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -264,7 +276,7 @@
 <para>Check if cone intersects ellipsoid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Cone<sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cone.intersects(ellipsoid)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -291,7 +303,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="123" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="93" bodyend="115"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="138" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="93" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a0e66cd58ae5abba7d1c183ec5c9daef7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -306,7 +318,7 @@
 <para>Check if cone contains point. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Cone<sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cone.contains(point)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -325,7 +337,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="136" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="117" bodyend="142"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="150" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="117" bodyend="142"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1aaa970b79b1e3b9dcd247a4bff7bd9378" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -340,7 +352,7 @@
 <para>Check if cone contains point set. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Cone<sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">PointSet<sp/>pointSet<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cone.contains(pointSet)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -359,7 +371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="149" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="144" bodyend="159"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="162" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="144" bodyend="159"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a2f3b44690e2997261115755b7aef8a07" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -374,7 +386,7 @@
 <para>Check if cone contains segment. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Cone<sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Segment<sp/>segment<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cone.contains(segment)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -393,7 +405,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="162" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="161" bodyend="164"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="174" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="161" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a81f8bff0944acb412ca59238bb717426" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -408,7 +420,7 @@
 <para>Check if cone contains ray. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Cone<sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Ray<sp/>ray<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cone.contains(ray)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -427,7 +439,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="175" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="166" bodyend="184"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="186" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="166" bodyend="184"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a3c18746829be63f97a7b50e7c6fa69c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -442,7 +454,7 @@
 <para>Check if cone contains sphere. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Cone<sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Sphere<sp/>sphere<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cone.contains(sphere)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -461,7 +473,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="188" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="186" bodyend="199"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="198" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="186" bodyend="199"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a589c4383552d6e6dcc23f20dc3d6008d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -476,7 +488,7 @@
 <para>Check if cone contains ellipsoid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Cone<sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cone.contains(ellipsoid)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -495,7 +507,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="201" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="201" bodyend="216"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="210" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="201" bodyend="216"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1af4e2a4ec2ea977f144e7f7e9a0aed779" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -506,13 +518,16 @@
 <para>Get cone apex. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>apex<sp/>=<sp/>cone.getApex()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone" kindref="compound">Cone</ref> apex </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="207" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="218" bodyend="226"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="220" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="218" bodyend="226"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a8089b763c1415d24136cd42b31a95fee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Vector3d</type>
@@ -523,13 +538,16 @@
 <para>Get cone axis. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/>axis<sp/>=<sp/>cone.getAxis()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone" kindref="compound">Cone</ref> axis </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="213" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="228" bodyend="236"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="230" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="228" bodyend="236"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a9ab023a205fcfdb8b12dae5aae10daad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -540,13 +558,16 @@
 <para>Get cone angle. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Angle<sp/>angle<sp/>=<sp/>cone.getAngle()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone" kindref="compound">Cone</ref> angle </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="219" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="238" bodyend="246"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="240" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="238" bodyend="246"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a4531bad0aa524f19588b4458796b3f78" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> &gt;</type>
@@ -562,6 +583,9 @@
 <para>Get rays of lateral surface. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Array&lt;Ray&gt;<sp/>rays<sp/>=<sp/>cone.getRaysOfLateralSurface(8)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aRayCount</parametername>
@@ -577,7 +601,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="226" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="248" bodyend="287"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="251" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="248" bodyend="287"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a7325f4a0c092cb59c505d281d0c064b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -592,6 +616,9 @@
 <para>Compute distance of cone to point. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Real<sp/>distance<sp/>=<sp/>cone.distanceTo({<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>})<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPoint</parametername>
@@ -607,7 +634,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="233" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="289" bodyend="336"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="262" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="289" bodyend="336"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1aff8111459bf4fd52f4890d52ef468c0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -632,6 +659,10 @@
 <para>Compute intersection of cone with sphere. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Sphere<sp/>sphere<sp/>=<sp/>Sphere({<sp/>0.0,<sp/>0.0,<sp/>10.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>cone.intersectionWith(sphere)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aSphere</parametername>
@@ -663,7 +694,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="242" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="338" bodyend="402"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="276" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="338" bodyend="402"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a4007f417805759277400b050391b77c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -688,6 +719,10 @@
 <para>Compute intersection of cone with ellipsoid. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>Ellipsoid(<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a2e0dc90fe04fb9befb79ec9874dcebc4" kindref="member">Point::Origin</ref>(),<sp/>1.0,<sp/>2.0,<sp/>3.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>cone.intersectionWith(ellipsoid)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anEllipsoid</parametername>
@@ -719,7 +754,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="255" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="404" bodyend="467"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="294" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="404" bodyend="467"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a4683504c6cc0933811bf909c96f5ef17" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -740,6 +775,9 @@
 <para>Print cone. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">cone.print(std::cout,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOutputStream</parametername>
@@ -761,7 +799,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="266" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="469" bodyend="479"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="309" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="469" bodyend="479"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1ae0eb36a3ddb55789fb3fd382ad5a5b1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -777,6 +815,9 @@
 <para>Apply transformation to cone. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(15.0)<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">cone.applyTransformation(<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1af9058de81115d953ab8d9b8922abe692" kindref="member">Transformation::Translation</ref>({<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>}))<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aTransformation</parametername>
@@ -790,7 +831,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="272" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="481" bodyend="497"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="319" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="481" bodyend="497"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -803,13 +844,15 @@
 <para>Constructs an undefined cone. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a05a5cf02c3eae74349a97c3347d54429" kindref="member">Cone::Undefined</ref>()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Undefined cone </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="278" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="499" bodyend="502"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="328" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="499" bodyend="502"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -819,6 +862,8 @@
 <para><verbatim>                        A cone is a three-dimensional geometric shape that tapers smoothly from a flat circular
                         base to a point called the apex.
 </verbatim></para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a10d3d96af94c8dc4219c4b4ffec15dce" kindref="member">Cone</ref><sp/>cone(Point(0.0,<sp/>0.0,<sp/>0.0),<sp/>{0.0,<sp/>0.0,<sp/>1.0},<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(45.0));</highlight></codeline>
+</programlisting></para>
 <para><ulink url="https://en.wikipedia.org/wiki/Cone">https://en.wikipedia.org/wiki/Cone</ulink> </para>
     </detaileddescription>
     <inheritancegraph>
@@ -845,7 +890,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="54" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" bodystart="53" bodyend="284"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="56" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" bodystart="55" bodyend="334"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a9de8ecb2a2edb20861f6ace1d97a6342" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cone</scope><name>angle_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a01af69e170fa35f83a88bfc67ebb5ff9" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cone</scope><name>apex_</name></member>

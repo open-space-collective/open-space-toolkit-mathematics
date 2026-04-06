@@ -61,6 +61,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1
 \doxysubsection{Detailed Description}
 Multi \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line}{Line}} string. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_a2be4b3e1608f466d294ef5884684bab1}{MultiLineString}} multiLineString(\{ lineStringA, lineStringB \}) ;}
+\end{DoxyCode}
+ 
+
 \doxysubsection{Member Typedef Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_a56904ee7e27c37e2c3a1c94359ec01c9}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_a56904ee7e27c37e2c3a1c94359ec01c9}} 
 \index{ostk::mathematics::geometry::d2::object::MultiLineString@{ostk::mathematics::geometry::d2::object::MultiLineString}!ConstIterator@{ConstIterator}}
@@ -106,6 +112,12 @@ Constructor.
 Apply transformation to multi line string. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{multiLineString.applyTransformation(aTransformation) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -124,6 +136,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 Get begin const iterator. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} it = multiLineString.begin() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Begin const iterator 
 \end{DoxyReturn}
@@ -136,6 +154,12 @@ Begin const iterator
 
 
 Clone multi line string. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_a2be4b3e1608f466d294ef5884684bab1}{MultiLineString}}* clonePtr = multiLineString.clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned multi line string 
@@ -173,6 +197,12 @@ Empty multi line string
 
 Get end const iterator. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} it = multiLineString.end() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 End const iterator 
 \end{DoxyReturn}
@@ -186,6 +216,12 @@ End const iterator
 
 Get multi line string count. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Size count = multiLineString.getLineStringCount() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 multi \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line}{Line}} string count 
 \end{DoxyReturn}
@@ -198,6 +234,12 @@ multi \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_
 
 
 Get point closest to another point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Point closest = multiLineString.getPointClosestTo(Point(0.0, 0.0)) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -216,6 +258,12 @@ Closest point
 
 
 Get point count. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Size count = multiLineString.getPointCount() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} count 
@@ -273,6 +321,12 @@ True if multi multi line string is empty
 Not equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{multiLineStringA != multiLineStringB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Multi\+Line\+String} & A multi multi line string \\
 \hline
@@ -291,6 +345,12 @@ True if multi multi line strings are not equal
 Equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{multiLineStringA == multiLineStringB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Multi\+Line\+String} & A multi multi line string \\
 \hline
@@ -307,6 +367,12 @@ True if multi multi line strings are equal
 
 
 Print point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{multiLineString.print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -328,6 +394,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 
 Get string representation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{String str = multiLineString.toString() ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

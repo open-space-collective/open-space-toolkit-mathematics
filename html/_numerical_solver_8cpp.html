@@ -89,13 +89,22 @@ $(document).ready(function(){initNavTree('_numerical_solver_8cpp.html',''); init
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;boost/numeric/odeint.hpp&gt;</code><br />
+<code>#include &lt;boost/numeric/odeint/algebra/vector_space_algebra.hpp&gt;</code><br />
 <code>#include &lt;boost/numeric/odeint/external/eigen/eigen.hpp&gt;</code><br />
 <code>#include &lt;OpenSpaceToolkit/Core/Error.hpp&gt;</code><br />
 <code>#include &lt;OpenSpaceToolkit/Core/Utility.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="_numerical_solver_8hpp_source.html">OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp</a>&gt;</code><br />
+<code>#include &lt;Eigen/Core&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apache License 2.0. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1numeric"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric.html">boost::numeric</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1numeric_1_1odeint"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1numeric_1_1odeint.html">boost::numeric::odeint</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceostk"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk.html">ostk</a></td></tr>
 <tr class="memdesc:namespaceostk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apache License 2.0. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,9 +123,14 @@ Typedefs</h2></td></tr>
 <tr class="separator:a446382cbb767b2c1a4413b9f6f4fee34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e0e29898fea269d43fccf27c4fedd60"><td class="memItemLeft" align="right" valign="top">typedef runge_kutta_dopri5&lt; NumericalSolver::StateVector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#a9e0e29898fea269d43fccf27c4fedd60">ostk::mathematics::solver::dense_stepper_type_5</a></td></tr>
 <tr class="separator:a9e0e29898fea269d43fccf27c4fedd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc631b362fd85f617428eec25347b45"><td class="memItemLeft" align="right" valign="top">typedef bulirsch_stoer&lt; NumericalSolver::StateVector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#a2bc631b362fd85f617428eec25347b45">ostk::mathematics::solver::bulirsch_stoer_stepper_type</a></td></tr>
+<tr class="separator:a2bc631b362fd85f617428eec25347b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ae273f3eb2c2a71315b16e3b57a2550ab"><td class="memTemplParams" colspan="2">template&lt;size_t Order&gt; </td></tr>
+<tr class="memitem:ae273f3eb2c2a71315b16e3b57a2550ab"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#ae273f3eb2c2a71315b16e3b57a2550ab">ostk::mathematics::solver::make_controlled_adam_bashforth_moulton</a> (double abs_tol, double rel_tol)</td></tr>
+<tr class="separator:ae273f3eb2c2a71315b16e3b57a2550ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a880f6ab73ddfe8eae45c0c7f4c6aaaeb"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#a880f6ab73ddfe8eae45c0c7f4c6aaaeb">ostk::mathematics::solver::operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const NumericalSolver &amp;aNumericalSolver)</td></tr>
 <tr class="separator:a880f6ab73ddfe8eae45c0c7f4c6aaaeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

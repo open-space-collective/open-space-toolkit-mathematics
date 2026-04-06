@@ -209,7 +209,8 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html" title="Segment.">Segment</a>. </p>
 <pre class="fragment">                        A segment is a part of a line that is bounded by two distinct end points,
                         and contains every point on the line between its endpoints.
-</pre><p><a href="https://en.wikipedia.org/wiki/Line_segment">https://en.wikipedia.org/wiki/Line_segment</a> </p>
+</pre><div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a> segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Line_segment">https://en.wikipedia.org/wiki/Line_segment</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab79700bcf0eb146f1fc37d3cffc44fb4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab79700bcf0eb146f1fc37d3cffc44fb4">&#9670;&nbsp;</a></span>Segment()</h2>
@@ -275,7 +276,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to segment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a> segment = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">segment.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">Transformation::Identity</a>()) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -310,7 +313,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone segment. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned segment </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a>* segmentPtr = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#aaaed581dfea7bf716e1125a088ba963c">clone</a>() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned segment </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a8ea8d4074bfaaa3d996d760d5d5751db">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -363,7 +367,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get distance to point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a> segment = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Real distance = segment.distanceTo(Point(1.0, 0.0, 0.0)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -390,7 +396,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get distance to point set. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a> segment = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">PointSet pointSet = PointSet({ { 1.0, 0.0, 0.0 }, { 2.0, 0.0, 0.0 } }) ;</div>
+<div class="line">Real distance = segment.distanceTo(pointSet) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPointSet</td><td>A point set </td></tr>
   </table>
@@ -522,7 +531,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of segment with plane. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a> segment = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a>({ 0.0, 0.0, -1.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Plane plane = Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Intersection intersection = segment.intersectionWith(plane) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPlane</td><td>A plane </td></tr>
   </table>
@@ -767,7 +779,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print segment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#aa5283e30e7ddb452b048bd54f841c63e">print</a>(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -795,7 +808,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get line from segment. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html" title="Line.">Line</a> </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a> segment = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">Segment</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Line line = segment.toLine() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html" title="Line.">Line</a> </dd></dl>
 
 </div>
 </div>
@@ -834,14 +849,17 @@ Static Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_html_aaaed581dfea7bf716e1125a088ba963c"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#aaaed581dfea7bf716e1125a088ba963c">ostk::mathematics::geometry::d3::object::Segment::clone</a></div><div class="ttdeci">virtual Segment * clone() const override</div><div class="ttdoc">Clone segment.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:33</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_html_adf1fed29cbbb81556c3a512efcf917aa"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#adf1fed29cbbb81556c3a512efcf917aa">ostk::mathematics::geometry::d3::object::Segment::getLength</a></div><div class="ttdeci">Real getLength() const</div><div class="ttdoc">Get segment length.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:197</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_html_aa382709e1071932f9fbf51f6863f4ab0"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#aa382709e1071932f9fbf51f6863f4ab0">ostk::mathematics::geometry::d3::object::Segment::getFirstPoint</a></div><div class="ttdeci">Point getFirstPoint() const</div><div class="ttdoc">Get segment first point.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:152</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_html_aa5283e30e7ddb452b048bd54f841c63e"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#aa5283e30e7ddb452b048bd54f841c63e">ostk::mathematics::geometry::d3::object::Segment::print</a></div><div class="ttdeci">virtual void print(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</div><div class="ttdoc">Print segment.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:314</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_html_a350e73ef7a773419e87b5cec077f9482"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#a350e73ef7a773419e87b5cec077f9482">ostk::mathematics::geometry::d3::object::Segment::Undefined</a></div><div class="ttdeci">static Segment Undefined()</div><div class="ttdoc">Constructs an undefined segment.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:342</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_html_a26a65f0f44cbde006a084bbdc9300089"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#a26a65f0f44cbde006a084bbdc9300089">ostk::mathematics::geometry::d3::object::Segment::isDegenerate</a></div><div class="ttdeci">bool isDegenerate() const</div><div class="ttdoc">Check if segment is degenerate, i.e. its length is zero.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:59</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_html_a682162f29a5597e61f0eaac2f9762518"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#a682162f29a5597e61f0eaac2f9762518">ostk::mathematics::geometry::d3::object::Segment::isDefined</a></div><div class="ttdeci">virtual bool isDefined() const override</div><div class="ttdoc">Check if segment is defined.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:54</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_html_ae164dfde1de40b86054ec6b945b7e274"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ae164dfde1de40b86054ec6b945b7e274">ostk::mathematics::geometry::d3::object::Segment::getDirection</a></div><div class="ttdeci">Vector3d getDirection() const</div><div class="ttdoc">Get segment direction.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:182</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_html_a06820598f214bcd39275d7a5b92c7247"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#a06820598f214bcd39275d7a5b92c7247">ostk::mathematics::geometry::d3::object::Segment::getSecondPoint</a></div><div class="ttdeci">Point getSecondPoint() const</div><div class="ttdoc">Get segment second point.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:162</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_html_afef142ebd804a348980d9ba1b86bc955"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#afef142ebd804a348980d9ba1b86bc955">ostk::mathematics::geometry::d3::object::Segment::getCenter</a></div><div class="ttdeci">Point getCenter() const</div><div class="ttdoc">Get segment center.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:172</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_a5cd654de32139306358aa773bbf8c291"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">ostk::mathematics::geometry::d3::Transformation::Identity</a></div><div class="ttdeci">static Transformation Identity()</div><div class="ttdoc">Construct an identity transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:254</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_html_ab79700bcf0eb146f1fc37d3cffc44fb4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#ab79700bcf0eb146f1fc37d3cffc44fb4">ostk::mathematics::geometry::d3::object::Segment::Segment</a></div><div class="ttdeci">Segment(const Point &amp;aFirstPoint, const Point &amp;aSecondPoint)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Segment.cpp:26</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

@@ -205,7 +205,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Multi-polygon. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a387e29bd423e834d10e30d1b55e4a2d7">MultiPolygon</a> multiPolygon({ polygon }) ;</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac8c8663dfd3465fdc37f369adc826488"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8c8663dfd3465fdc37f369adc826488">&#9670;&nbsp;</a></span>ConstIterator</h2>
 
@@ -238,7 +239,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a387e29bd423e834d10e30d1b55e4a2d7">MultiPolygon</a> multiPolygon({ polygon }) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPolygonArray</td><td>An array of polygons </td></tr>
   </table>
@@ -264,7 +266,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copy constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a387e29bd423e834d10e30d1b55e4a2d7">MultiPolygon</a> copiedMultiPolygon(multiPolygon) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aMultiPolygon</td><td>A multi-polygon </td></tr>
   </table>
@@ -297,7 +300,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor (virtual) </p>
-
+<div class="fragment"><div class="line"><span class="comment">// Destructor is called automatically when multi-polygon goes out of scope.</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -326,7 +330,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to multi-polygon. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">multiPolygon.applyTransformation(aTransformation) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -353,7 +358,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get begin const iterator over polygons. </p>
-<dl class="section return"><dt>Returns</dt><dd>Const iterator </dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> it = multiPolygon.begin() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Const iterator </dd></dl>
 
 </div>
 </div>
@@ -381,7 +387,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone multi-polygon. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned multi-polygon </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a387e29bd423e834d10e30d1b55e4a2d7">MultiPolygon</a>* clonePtr = multiPolygon.clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned multi-polygon </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#af63da855554f9114803103fe2390f5eb">ostk::mathematics::geometry::d2::Object</a>.</p>
 
@@ -463,7 +470,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get end const iterator over polygons. </p>
-<dl class="section return"><dt>Returns</dt><dd>Const iterator </dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> it = multiPolygon.end() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Const iterator </dd></dl>
 
 </div>
 </div>
@@ -483,7 +491,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get multi-polygon convex hull. </p>
-<pre class="fragment">                https://en.wikipedia.org/wiki/Convex_hull
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1geometry_1_1d2_1_1object.html#ac1ef77832033c8e89498cf87b6e0e08e">Polygon2d</a> convexHull = multiPolygon.<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a28f6ead5b5f3b2125330c318e2aee4c5">getConvexHull</a>() ;</div>
+</div><!-- fragment --> <pre class="fragment">                https://en.wikipedia.org/wiki/Convex_hull
 </pre><dl class="section return"><dt>Returns</dt><dd>Multi-polygon convex hull </dd></dl>
 
 </div>
@@ -504,7 +513,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get number of polygons. </p>
-<dl class="section return"><dt>Returns</dt><dd>Number of polygons </dd></dl>
+<div class="fragment"><div class="line">Size count = multiPolygon.getPolygonCount() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Number of polygons </dd></dl>
 
 </div>
 </div>
@@ -524,7 +534,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get polygons. </p>
-<dl class="section return"><dt>Returns</dt><dd>Array of polygons </dd></dl>
+<div class="fragment"><div class="line">Array&lt;Polygon2d&gt; polygons = multiPolygon.getPolygons() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Array of polygons </dd></dl>
 
 </div>
 </div>
@@ -552,7 +563,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if multi-polygon is defined. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if multi-polygon is defined </dd></dl>
+<div class="fragment"><div class="line">multiPolygon.isDefined() ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if multi-polygon is defined </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#abe5ea18c13bc259fc0da0b0c49fa0dca">ostk::mathematics::geometry::d2::Object</a>.</p>
 
@@ -575,7 +587,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">multiPolygonA != multiPolygonB ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aMultiPolygon</td><td>A multi-polygon </td></tr>
   </table>
@@ -602,7 +615,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copy assignment operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a387e29bd423e834d10e30d1b55e4a2d7">MultiPolygon</a> multiPolygonB = multiPolygonA ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aMultiPolygon</td><td>A multi-polygon </td></tr>
   </table>
@@ -629,7 +643,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">multiPolygonA == multiPolygonB ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aMultiPolygon</td><td>A multi-polygon </td></tr>
   </table>
@@ -704,7 +719,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print multi-polygon. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">multiPolygon.print(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -751,7 +767,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get string representation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">String str = multiPolygon.toString() ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aFormat</td><td>A format </td></tr>
   </table>
@@ -809,7 +826,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of multi-polygon with multi-polygon. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a387e29bd423e834d10e30d1b55e4a2d7">MultiPolygon</a> unionResult = multiPolygonA.unionWith(multiPolygonB) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aMultiPolygon</td><td>A multi-polygon </td></tr>
   </table>
@@ -826,7 +844,9 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_html_a387e29bd423e834d10e30d1b55e4a2d7"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a387e29bd423e834d10e30d1b55e4a2d7">ostk::mathematics::geometry::d2::object::MultiPolygon::MultiPolygon</a></div><div class="ttdeci">MultiPolygon(const Array&lt; Polygon2d &gt; &amp;aPolygonArray=Array&lt; Polygon2d &gt;::Empty())</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> MultiPolygon.cpp:329</div></div>
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1geometry_1_1d2_1_1object_html_ac1ef77832033c8e89498cf87b6e0e08e"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1geometry_1_1d2_1_1object.html#ac1ef77832033c8e89498cf87b6e0e08e">ostk::mathematics::geometry::d2::object::Polygon2d</a></div><div class="ttdeci">ostk::mathematics::geometry::d2::object::Polygon Polygon2d</div><div class="ttdef"><b>Definition:</b> MultiPolygon.hpp:38</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_html_a4c9d7d4e3f89c926571e3f03766a0551"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a4c9d7d4e3f89c926571e3f03766a0551">ostk::mathematics::geometry::d2::object::MultiPolygon::Polygon</a></div><div class="ttdeci">static MultiPolygon Polygon(const Polygon2d &amp;aPolygon)</div><div class="ttdoc">Constructs a multi-polygon from a polygon.</div><div class="ttdef"><b>Definition:</b> MultiPolygon.cpp:522</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_html_a28f6ead5b5f3b2125330c318e2aee4c5"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a28f6ead5b5f3b2125330c318e2aee4c5">ostk::mathematics::geometry::d2::object::Polygon::getConvexHull</a></div><div class="ttdeci">Polygon getConvexHull() const</div><div class="ttdoc">Get polygon convex hull.</div><div class="ttdef"><b>Definition:</b> Polygon.cpp:951</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_html_acc1cc81fdc22237fd4030fceff9962c0"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#acc1cc81fdc22237fd4030fceff9962c0">ostk::mathematics::geometry::d2::object::MultiPolygon::Undefined</a></div><div class="ttdeci">static MultiPolygon Undefined()</div><div class="ttdoc">Constructs an undefined multi-polygon.</div><div class="ttdef"><b>Definition:</b> MultiPolygon.cpp:517</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

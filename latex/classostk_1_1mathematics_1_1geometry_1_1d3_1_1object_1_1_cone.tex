@@ -77,6 +77,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 \end{DoxyVerb}
 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone(Point(0.0, 0.0, 0.0), \{0.0, 0.0, 1.0\}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(45.0));}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Cone}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Cone}} 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -122,6 +128,13 @@ Constructor.
 Apply transformation to cone. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{cone.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_af9058de81115d953ab8d9b8922abe692}{Transformation::Translation}}(\{ 1.0, 0.0, 0.0 \})) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -139,6 +152,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Clone cone. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}}* clonePtr = cone.clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned cone 
@@ -314,6 +333,13 @@ True if cone contains sphere
 Compute distance of cone to point. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{Real distance = cone.distanceTo(\{ 1.0, 0.0, 0.0 \}) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
 \hline
@@ -331,6 +357,13 @@ Distance of cone to point
 
 Get cone angle. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{Angle angle = cone.getAngle() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} angle 
 \end{DoxyReturn}
@@ -343,6 +376,13 @@ Get cone angle.
 
 
 Get cone apex. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{Point apex = cone.getApex() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} apex 
@@ -357,6 +397,13 @@ Get cone apex.
 
 Get cone axis. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} axis = cone.getAxis() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} axis 
 \end{DoxyReturn}
@@ -369,6 +416,13 @@ Get cone axis.
 
 
 Get rays of lateral surface. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{Array<Ray> rays = cone.getRaysOfLateralSurface(8) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -387,6 +441,14 @@ Array of rays
 
 
 Compute intersection of cone with ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{Ellipsoid ellipsoid = Ellipsoid(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{Intersection intersection = cone.intersectionWith(ellipsoid) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -409,6 +471,14 @@ Compute intersection of cone with ellipsoid.
 
 
 Compute intersection of cone with sphere. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{Sphere sphere = Sphere(\{ 0.0, 0.0, 10.0 \}, 1.0) ;}
+\DoxyCodeLine{Intersection intersection = cone.intersectionWith(sphere) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -488,6 +558,13 @@ True if cone intersects sphere
 
 Check if cone is defined. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{cone.\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ad99d5ff3a95e93b3599248c72b631ff1}{isDefined}}() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 True if cone is defined 
 \end{DoxyReturn}
@@ -504,6 +581,14 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Not equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} coneA = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} coneB = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(30.0) \} ;}
+\DoxyCodeLine{coneA != coneB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -524,6 +609,13 @@ True if cones are not equal
 Equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{cone == cone ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Cone} & A cone \\
 \hline
@@ -540,6 +632,13 @@ True if cones are equal
 
 
 Print cone. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{cone.print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -561,6 +660,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Constructs an undefined cone. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a05a5cf02c3eae74349a97c3347d54429}{Cone::Undefined}}() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Undefined cone 

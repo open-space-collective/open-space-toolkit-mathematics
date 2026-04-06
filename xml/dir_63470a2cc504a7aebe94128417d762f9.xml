@@ -5,6 +5,7 @@
     <innerfile refid="_barycentric_rational_8hpp">BarycentricRational.hpp</innerfile>
     <innerfile refid="_cubic_spline_8hpp">CubicSpline.hpp</innerfile>
     <innerfile refid="_linear_8hpp">Linear.hpp</innerfile>
+    <innerfile refid="_zero_order_8hpp">ZeroOrder.hpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

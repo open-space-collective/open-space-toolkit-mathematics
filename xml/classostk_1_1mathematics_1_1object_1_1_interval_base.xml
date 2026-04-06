@@ -52,16 +52,20 @@
 <para><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref> type. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201" kindref="member">IntervalBase::Type</ref><sp/>type<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e" kindref="member">IntervalBase::Type::Closed</ref>;</highlight></codeline>
+</programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="28" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="27" bodyend="36"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="33" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="32" bodyend="41"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref> base (used to avoid having a templated enum) </para>
     </briefdescription>
     <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201" kindref="member">IntervalBase::Type</ref><sp/>type<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e" kindref="member">IntervalBase::Type::Closed</ref>;</highlight></codeline>
+</programlisting> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -75,7 +79,7 @@
         <link refid="classostk_1_1mathematics_1_1object_1_1_interval_base"/>
       </node>
     </inheritancegraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="23" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="22" bodyend="37"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="25" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="24" bodyend="42"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::IntervalBase</scope><name>Type</name></member>
     </listofallmembers>

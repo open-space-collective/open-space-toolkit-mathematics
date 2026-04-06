@@ -187,7 +187,8 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Rotation matrix. </p>
-<p><a href="https://en.wikipedia.org/wiki/Rotation_matrix">https://en.wikipedia.org/wiki/Rotation_matrix</a> </p>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a74d44755a8c72da68f52106af2bcfdea">RotationMatrix</a> rotationMatrix = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a54cce35b27cb061a457bf0011f1312ba">RotationMatrix::Unit</a>();</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Rotation_matrix">https://en.wikipedia.org/wiki/Rotation_matrix</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a74d44755a8c72da68f52106af2bcfdea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74d44755a8c72da68f52106af2bcfdea">&#9670;&nbsp;</a></span>RotationMatrix() <span class="overload">[1/2]</span></h2>
@@ -206,7 +207,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a9f8f6a9f4bd331fb6bc0c66a1aca5e30">Matrix3d</a> matrix = Matrix3d::Identity();</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a74d44755a8c72da68f52106af2bcfdea">RotationMatrix</a> rotationMatrix(matrix);</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aMatrix</td><td>A matrix </td></tr>
   </table>
@@ -284,7 +287,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a74d44755a8c72da68f52106af2bcfdea">RotationMatrix</a> rotationMatrix(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0);</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aFirstCoefficient</td><td>A first coefficient </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aSecondCoefficient</td><td>A second coefficient </td></tr>
@@ -318,7 +322,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Access underlying 3D Matrix. </p>
-<dl class="section return"><dt>Returns</dt><dd>Matrix reference </dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a9f8f6a9f4bd331fb6bc0c66a1aca5e30">Matrix3d</a>&amp; matrix = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a54cce35b27cb061a457bf0011f1312ba">RotationMatrix::Unit</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a4e911a9772e1740533c371d9c89cefb8">accessMatrix</a>();</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Matrix reference </dd></dl>
 
 </div>
 </div>
@@ -429,7 +434,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get column at index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> column = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a54cce35b27cb061a457bf0011f1312ba">RotationMatrix::Unit</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a2abb637de6747ef51067aaf00237d9bf">getColumnAt</a>(0);</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aColumnIndex</td><td>Index of column </td></tr>
   </table>
@@ -455,7 +461,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get underlying 3D Matrix. </p>
-<dl class="section return"><dt>Returns</dt><dd>Matrix </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a9f8f6a9f4bd331fb6bc0c66a1aca5e30">Matrix3d</a> matrix = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a54cce35b27cb061a457bf0011f1312ba">RotationMatrix::Unit</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a2cea2567403768437e4074720996bea2">getMatrix</a>();</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Matrix </dd></dl>
 
 </div>
 </div>
@@ -476,7 +483,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get row at index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> row = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a54cce35b27cb061a457bf0011f1312ba">RotationMatrix::Unit</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a8f62d9ae197f5f94e168a612be0a9bb1">getRowAt</a>(0);</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aRowIndex</td><td>Index of row </td></tr>
   </table>
@@ -1138,7 +1146,7 @@ Friends</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_adf219273c9f6215c4a47a5530e0a3aa3"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf219273c9f6215c4a47a5530e0a3aa3">ostk::mathematics::geometry::Angle::Degrees</a></div><div class="ttdeci">static Angle Degrees(const Real &amp;aValue)</div><div class="ttdef"><b>Definition:</b> Angle.cpp:464</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_adf219273c9f6215c4a47a5530e0a3aa3"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf219273c9f6215c4a47a5530e0a3aa3">ostk::mathematics::geometry::Angle::Degrees</a></div><div class="ttdeci">static Angle Degrees(const Real &amp;aValue)</div><div class="ttdoc">Construct an angle from a value in degrees.</div><div class="ttdef"><b>Definition:</b> Angle.cpp:464</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_html_a970d830a551e4596701281e2cf0a1899"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#a970d830a551e4596701281e2cf0a1899">ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::Unit</a></div><div class="ttdeci">static EulerAngle Unit()</div><div class="ttdoc">Construct unitary Euler Angle.</div><div class="ttdef"><b>Definition:</b> EulerAngle.cpp:186</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_a31c276c930ed9d5ff4cb406be6a48f7e"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a31c276c930ed9d5ff4cb406be6a48f7e">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::Unit</a></div><div class="ttdeci">static RotationVector Unit()</div><div class="ttdoc">Construct a unitary Rotation Vector.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:143</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a54cce35b27cb061a457bf0011f1312ba"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a54cce35b27cb061a457bf0011f1312ba">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::Unit</a></div><div class="ttdeci">static RotationMatrix Unit()</div><div class="ttdoc">Construct unitary Rotation Matrix.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:290</div></div>
@@ -1147,13 +1155,18 @@ Friends</h2></td></tr>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a580d873ccc82cafaa3e18bedfe54a0f2"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a580d873ccc82cafaa3e18bedfe54a0f2">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RY</a></div><div class="ttdeci">static RotationMatrix RY(const Angle &amp;aRotationAngle)</div><div class="ttdoc">Construct Rotation Matrix representing a rotation around the Y-axis.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:312</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a4056e0c5112b76e58df8afbf359cefa6"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a4056e0c5112b76e58df8afbf359cefa6">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RZ</a></div><div class="ttdeci">static RotationMatrix RZ(const Angle &amp;aRotationAngle)</div><div class="ttdoc">Construct Rotation Matrix representing a rotation around the Z-axis.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:329</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_af11a91008ad9a5e8682437777efcfb0d"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#af11a91008ad9a5e8682437777efcfb0d">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RotationVector</a></div><div class="ttdeci">static RotationMatrix RotationVector(const rotation::RotationVector &amp;aRotationVector)</div><div class="ttdoc">Construct Rotation Matrix from Rotation Vector.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:499</div></div>
-<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a69d9a055814e9440af219eff448c6c23"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">ostk::mathematics::object::Vector3d</a></div><div class="ttdeci">Eigen::Vector3d Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:38</div></div>
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a69d9a055814e9440af219eff448c6c23"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">ostk::mathematics::object::Vector3d</a></div><div class="ttdeci">Eigen::Vector3d Vector3d</div><div class="ttdoc">3D double vector type alias for Eigen::Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:43</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_abe06734b238aa42b334c23eeee8cd50b"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#abe06734b238aa42b334c23eeee8cd50b">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::VectorBasis</a></div><div class="ttdeci">static RotationMatrix VectorBasis(const Pair&lt; Vector3d, Vector3d &gt; &amp;aSourcePair, const Pair&lt; Vector3d, Vector3d &gt; &amp;aDestinationPair)</div><div class="ttdoc">Construct Rotation Matrix from two pairs of vectors. The first pair is the source vectors,...</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:565</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a8f62d9ae197f5f94e168a612be0a9bb1"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a8f62d9ae197f5f94e168a612be0a9bb1">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::getRowAt</a></div><div class="ttdeci">Vector3d getRowAt(const Index &amp;aRowIndex) const</div><div class="ttdoc">Get row at index.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:222</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a2abb637de6747ef51067aaf00237d9bf"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a2abb637de6747ef51067aaf00237d9bf">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::getColumnAt</a></div><div class="ttdeci">Vector3d getColumnAt(const Index &amp;aColumnIndex) const</div><div class="ttdoc">Get column at index.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:237</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a74d44755a8c72da68f52106af2bcfdea"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a74d44755a8c72da68f52106af2bcfdea">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RotationMatrix</a></div><div class="ttdeci">RotationMatrix(const Matrix3d &amp;aMatrix)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:24</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a2cea2567403768437e4074720996bea2"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a2cea2567403768437e4074720996bea2">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::getMatrix</a></div><div class="ttdeci">Matrix3d getMatrix() const</div><div class="ttdoc">Get underlying 3D Matrix.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:252</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_ad6019cbe46a2b47ad26470f996214bb0"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#ad6019cbe46a2b47ad26470f996214bb0">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RX</a></div><div class="ttdeci">static RotationMatrix RX(const Angle &amp;aRotationAngle)</div><div class="ttdoc">Construct Rotation Matrix representing a rotation around the X-axis.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:295</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a255df0da5d9ec95a9842ed312a67beb2"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a255df0da5d9ec95a9842ed312a67beb2">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::Columns</a></div><div class="ttdeci">static RotationMatrix Columns(const Vector3d &amp;aFirstColumn, const Vector3d &amp;aSecondColumn, const Vector3d &amp;aThirdColumn)</div><div class="ttdoc">Construct Rotation Matrix from column vectors.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:401</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_html_affb9e0b77d6b66dfcfdccb17ec10d1bf"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#affb9e0b77d6b66dfcfdccb17ec10d1bf">ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::Unit</a></div><div class="ttdeci">static Quaternion Unit()</div><div class="ttdoc">Construct unitary Quaternion.</div><div class="ttdef"><b>Definition:</b> Quaternion.cpp:498</div></div>
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a9f8f6a9f4bd331fb6bc0c66a1aca5e30"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a9f8f6a9f4bd331fb6bc0c66a1aca5e30">ostk::mathematics::object::Matrix3d</a></div><div class="ttdeci">Eigen::Matrix3d Matrix3d</div><div class="ttdoc">3x3 double matrix type alias for Eigen::Matrix3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:68</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a17e0c181b02dd8857a0414331ac54bac"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a17e0c181b02dd8857a0414331ac54bac">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::EulerAngle</a></div><div class="ttdeci">static RotationMatrix EulerAngle(const rotation::EulerAngle &amp;aEulerAngle)</div><div class="ttdoc">Construct Rotation Matrix from Euler Angle.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:533</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a4e911a9772e1740533c371d9c89cefb8"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a4e911a9772e1740533c371d9c89cefb8">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::accessMatrix</a></div><div class="ttdeci">const Matrix3d &amp; accessMatrix() const</div><div class="ttdoc">Access underlying 3D Matrix.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:212</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a08706245c522cf0a4b101efdc66ab802"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a08706245c522cf0a4b101efdc66ab802">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::Quaternion</a></div><div class="ttdeci">static RotationMatrix Quaternion(const rotation::Quaternion &amp;aQuaternion)</div><div class="ttdoc">Construct Rotation Matrix from Quaternion.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:458</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

@@ -69,7 +69,11 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line}{Line}} string. 
 
-\begin{DoxyVerb}                        A line string is a connected series of line segments.
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}} lineString(\{ \{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}, \{ 1.0, 0.0 \} \}) ;}
+\end{DoxyCode}
+ \begin{DoxyVerb}                        A line string is a connected series of line segments.
 \end{DoxyVerb}
 
 
@@ -119,6 +123,12 @@ Constructor.
 
 Access point at index. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} Point\& point = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ad45555762f8bc004139ca09e49432d8a}{accessPointAt}}(0) ;}
+\end{DoxyCode}
+
+
 \mbox{[}in\mbox{]} an\+Index A point index \begin{DoxyReturn}{Returns}
 Reference to point at index 
 \end{DoxyReturn}
@@ -131,6 +141,13 @@ Reference to point at index
 
 
 Apply transformation to line string. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}} lineString(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}) ;}
+\DoxyCodeLine{lineString.applyTransformation(aTransformation) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -151,6 +168,13 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 Get begin const iterator. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}} lineString(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}) ;}
+\DoxyCodeLine{\textcolor{keyword}{auto} it = lineString.begin() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Begin const iterator 
 \end{DoxyReturn}
@@ -163,6 +187,12 @@ Begin const iterator
 
 
 Clone line string. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}* clonePtr = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a37f35461ca951c8a01b50631500cddd8}{clone}}() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned line string 
@@ -219,6 +249,13 @@ Empty line string
 
 Get end const iterator. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}} lineString(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}) ;}
+\DoxyCodeLine{\textcolor{keyword}{auto} it = lineString.end() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 End const iterator 
 \end{DoxyReturn}
@@ -232,6 +269,12 @@ End const iterator
 
 Get point array. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} Array<Point>\& points = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a66e45823757b2fa9a486729e02a91b94}{getPointArray}}() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} array 
 \end{DoxyReturn}
@@ -244,6 +287,13 @@ Get point array.
 
 
 Get point closest to another point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Point closest = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ae59decef7e902caadca16d171658701e}{getPointClosestTo}}(Point(0.1,}
+\DoxyCodeLine{0.0)) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -262,6 +312,12 @@ Closest point
 
 
 Get point count. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Size count = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a31ff5ebe4cb0e03f08a68218ec7723c0}{getPointCount}}() ; \textcolor{comment}{// 2}}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} count 
@@ -346,6 +402,13 @@ True if line string is near another line string
 Not equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}) != \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 2.0, 0.0 \} \}) ;}
+\DoxyCodeLine{\textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Line\+String} & A line string \\
 \hline
@@ -364,6 +427,13 @@ True if line strings are not equal
 Equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}) == \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}) ;}
+\DoxyCodeLine{\textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Line\+String} & A line string \\
 \hline
@@ -380,6 +450,12 @@ True if line strings are equal
 
 
 Print point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a292e3bf679e232f605e4726f0bfff970}{print}}(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -421,6 +497,12 @@ Constructs a line string from a segment.
 
 
 Get string representation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{String str = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a896eb59a09118ed324b444616538c699}{toString}}() ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

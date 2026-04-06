@@ -91,6 +91,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite}{Composite}} object. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a46840777485fc459449f36c304ef8989}{Composite}} composite(Point(0.0, 0.0)) ;}
+\end{DoxyCode}
+ 
+
 \doxysubsection{Member Typedef Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a34efd57a99c61f2e4e63fd6444dae04f}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a34efd57a99c61f2e4e63fd6444dae04f}} 
 \index{ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}!ConstIterator@{ConstIterator}}
@@ -112,6 +118,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1
 Constructor. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a46840777485fc459449f36c304ef8989}{Composite}} composite(Point(0.0, 0.0)) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Object} & An object \\
 \hline
@@ -125,6 +137,13 @@ Constructor.
 
 
 Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Unique<Object> objectUPtr = std::make\_unique<Point>(0.0, 0.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a46840777485fc459449f36c304ef8989}{Composite}} composite(objectUPtr) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -142,6 +161,14 @@ Constructor.
 Constructor. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Array<Unique<Object>> objects ;}
+\DoxyCodeLine{objects.add(std::make\_unique<Point>(0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a46840777485fc459449f36c304ef8989}{Composite}} composite(std::move(objects)) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Object\+Array} & An array of unique pointers to object \\
 \hline
@@ -155,6 +182,12 @@ Constructor.
 
 
 Copy constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a46840777485fc459449f36c304ef8989}{Composite}} copiedComposite(composite) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -175,6 +208,12 @@ Copy constructor.
 Access object at index. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a15a959fd5b624d6fcc6725982a8cddf8}{Object}}\& \textcolor{keywordtype}{object} = composite.accessObjectAt(0) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Index} & An object index \\
 \hline
@@ -192,6 +231,12 @@ Reference to object
 
 Access objects in composite. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} Array<Unique<Object>>\& objects = composite.accessObjects() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Reference to objects in composite 
 \end{DoxyReturn}
@@ -204,6 +249,12 @@ Reference to objects in composite
 
 
 Check if composite contains composite. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{compositeA.anyContains(compositeB) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -224,6 +275,12 @@ True if any objects in composite contains composite
 Check if composite contains object. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{composite.anyContains(Point(0.0, 0.0)) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Object} & An object \\
 \hline
@@ -240,6 +297,12 @@ True if any objects in composite contains object
 
 
 Apply transformation to composite. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{composite.applyTransformation(aTransformation) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -261,7 +324,12 @@ const Type\& ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Composite\+::a
 
 Access composite as its underlying object. 
 
-\begin{DoxyVerb}                Only valid if the composite only contains one object.
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a46840777485fc459449f36c304ef8989}{Composite}} composite(Point(0.0, 0.0)) ;}
+\DoxyCodeLine{\textcolor{keyword}{const} Point\& point = composite.as<Point>() ;}
+\end{DoxyCode}
+ \begin{DoxyVerb}                Only valid if the composite only contains one object.
 \end{DoxyVerb}
 
 
@@ -279,12 +347,29 @@ Reference to underlying object
 Compute intersection of composite with object. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Intersection intersection = composite.intersectionWith(anObject) ;}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Object} & An object \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection}{Intersection}} of composite with object 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection}{Intersection}} of composite with object
+\end{DoxyReturn}
+Get const iterator to begin
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} it = composite.begin() ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Const iterator to begin 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a19f3ba420ea69eefa3a2b948d59a2fab}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a19f3ba420ea69eefa3a2b948d59a2fab}} 
 \index{ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}!clone@{clone}}
@@ -295,6 +380,12 @@ Compute intersection of composite with object.
 
 
 Clone composite. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a46840777485fc459449f36c304ef8989}{Composite}}* clonePtr = composite.clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned composite 
@@ -314,6 +405,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 Check if composite contains composite. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{compositeA.contains(compositeB) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Composite} & A composite \\
 \hline
@@ -330,6 +427,12 @@ True if composite contains composite
 
 
 Check if composite contains object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{composite.contains(Point(0.0, 0.0)) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -372,6 +475,12 @@ Empty composite
 
 Get const iterator to end. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} it = composite.end() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Const iterator to end 
 \end{DoxyReturn}
@@ -385,6 +494,12 @@ Const iterator to end
 
 Get number of objects in composite. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Size count = composite.getObjectCount() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Number of objects in composite 
 \end{DoxyReturn}
@@ -397,6 +512,12 @@ Number of objects in composite
 
 
 Check if composite intersects composite. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{compositeA.intersects(compositeB) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -415,6 +536,12 @@ True if composite intersects composite
 
 
 Check if composite intersects object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{composite.intersects(Point(0.0, 0.0)) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -439,7 +566,12 @@ bool ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Composite\+::is (\begi
 
 Returns true if composite can be converted to underlying object. 
 
-\begin{DoxyVerb}                Only valid if the composite only contains one object.
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a46840777485fc459449f36c304ef8989}{Composite}} composite(Point(0.0, 0.0)) ;}
+\DoxyCodeLine{\textcolor{keywordtype}{bool} isPoint = composite.is<Point>() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+ \begin{DoxyVerb}                Only valid if the composite only contains one object.
 \end{DoxyVerb}
 
 
@@ -499,6 +631,12 @@ True if composite is empty
 Not equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{compositeA != compositeB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Composite} & A composite object \\
 \hline
@@ -516,7 +654,11 @@ True if composites are not equal
 
 Addition operator (composite concatenation) 
 
-\begin{DoxyVerb}                Concatenate (merge) composite with another composite.
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a46840777485fc459449f36c304ef8989}{Composite}} compositeC = compositeA + compositeB ;}
+\end{DoxyCode}
+ \begin{DoxyVerb}                Concatenate (merge) composite with another composite.
 \end{DoxyVerb}
 
 
@@ -538,7 +680,11 @@ Concatenated composite
 
 Addition assignment operator (composite concatenation) 
 
-\begin{DoxyVerb}                Concatenate (merge) composite with another composite.
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{compositeA += compositeB ;}
+\end{DoxyCode}
+ \begin{DoxyVerb}                Concatenate (merge) composite with another composite.
 \end{DoxyVerb}
 
 
@@ -561,6 +707,12 @@ Reference to concatenated composite
 Copy assignment operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a46840777485fc459449f36c304ef8989}{Composite}} compositeB = compositeA ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Composite} & A composite \\
 \hline
@@ -579,6 +731,12 @@ Reference to composite
 Equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{compositeA == compositeB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Composite} & A composite object \\
 \hline
@@ -595,6 +753,12 @@ True if composites are equal
 
 
 Print composite. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{composite.print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -616,6 +780,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 
 Get string representation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{String str = composite.toString() ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

@@ -1,12 +1,20 @@
 \hypertarget{_numerical_solver_8cpp}{}\doxysection{src/\+Open\+Space\+Toolkit/\+Mathematics/\+Solver/\+Numerical\+Solver.cpp File Reference}
 \label{_numerical_solver_8cpp}\index{src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp@{src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp}}
 {\ttfamily \#include $<$boost/numeric/odeint.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/numeric/odeint/algebra/vector\+\_\+space\+\_\+algebra.\+hpp$>$}\newline
 {\ttfamily \#include $<$boost/numeric/odeint/external/eigen/eigen.\+hpp$>$}\newline
 {\ttfamily \#include $<$Open\+Space\+Toolkit/\+Core/\+Error.\+hpp$>$}\newline
 {\ttfamily \#include $<$Open\+Space\+Toolkit/\+Core/\+Utility.\+hpp$>$}\newline
 {\ttfamily \#include $<$Open\+Space\+Toolkit/\+Mathematics/\+Solver/\+Numerical\+Solver.\+hpp$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Core$>$}\newline
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceboost}{boost}}
+\begin{DoxyCompactList}\small\item\em Apache License 2.\+0. \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespaceboost_1_1numeric}{boost\+::numeric}}
+\item 
+ \mbox{\hyperlink{namespaceboost_1_1numeric_1_1odeint}{boost\+::numeric\+::odeint}}
 \item 
  \mbox{\hyperlink{namespaceostk}{ostk}}
 \begin{DoxyCompactList}\small\item\em Apache License 2.\+0. \end{DoxyCompactList}\item 
@@ -24,9 +32,13 @@ typedef runge\+\_\+kutta\+\_\+cash\+\_\+karp54$<$ Numerical\+Solver\+::\+State\+
 typedef runge\+\_\+kutta\+\_\+fehlberg78$<$ Numerical\+Solver\+::\+State\+Vector $>$ \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1solver_a446382cbb767b2c1a4413b9f6f4fee34}{ostk\+::mathematics\+::solver\+::error\+\_\+stepper\+\_\+type\+\_\+78}}
 \item 
 typedef runge\+\_\+kutta\+\_\+dopri5$<$ Numerical\+Solver\+::\+State\+Vector $>$ \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1solver_a9e0e29898fea269d43fccf27c4fedd60}{ostk\+::mathematics\+::solver\+::dense\+\_\+stepper\+\_\+type\+\_\+5}}
+\item 
+typedef bulirsch\+\_\+stoer$<$ Numerical\+Solver\+::\+State\+Vector $>$ \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1solver_a2bc631b362fd85f617428eec25347b45}{ostk\+::mathematics\+::solver\+::bulirsch\+\_\+stoer\+\_\+stepper\+\_\+type}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t Order$>$ }\\auto \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1solver_ae273f3eb2c2a71315b16e3b57a2550ab}{ostk\+::mathematics\+::solver\+::make\+\_\+controlled\+\_\+adam\+\_\+bashforth\+\_\+moulton}} (double abs\+\_\+tol, double rel\+\_\+tol)
 \item 
 std\+::ostream \& \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1solver_a880f6ab73ddfe8eae45c0c7f4c6aaaeb}{ostk\+::mathematics\+::solver\+::operator$<$$<$}} (std\+::ostream \&an\+Output\+Stream, const Numerical\+Solver \&a\+Numerical\+Solver)
 \end{DoxyCompactItemize}

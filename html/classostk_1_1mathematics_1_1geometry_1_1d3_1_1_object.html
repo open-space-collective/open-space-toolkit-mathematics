@@ -168,7 +168,9 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>3D object </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="fragment"><div class="line"><span class="comment">// Object is abstract; use derived types such as Point, Line, Sphere, etc.</span></div>
+<div class="line">Point point = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>() ;</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af003ad733beface98466830078a83875"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af003ad733beface98466830078a83875">&#9670;&nbsp;</a></span>Object()</h2>
 
@@ -193,7 +195,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default constructor (default) </p>
-
+<div class="fragment"><div class="line"><span class="comment">// Object is abstract, construct via a derived type</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="aae1324c306129cce2e7d42a28c0de181"></a>
@@ -220,7 +223,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor (pure virtual) </p>
-
+<div class="fragment"><div class="line"><span class="comment">// Destructor is called automatically when a derived object goes out of scope</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -249,14 +253,16 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Point point = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>() ;</div>
+<div class="line">point.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">Transformation::Identity</a>()) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a3e8568dfcf2f261ea99c5a1c4edc2c1a">ostk::mathematics::geometry::d3::object::Ellipsoid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a8471b1cbbaa3498833f6fb6f9d2bab5a">ostk::mathematics::geometry::d3::object::Cuboid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#aec7fa1a21969f2175948bd57ac8a46ff">ostk::mathematics::geometry::d3::object::Sphere</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ab4e329b825fa0a3aa24c2c4b7ebfb432">ostk::mathematics::geometry::d3::object::Plane</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#ae0eb36a3ddb55789fb3fd382ad5a5b1b">ostk::mathematics::geometry::d3::object::Cone</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a07770aa678f84c74355bf7488b4df425">ostk::mathematics::geometry::d3::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#aec8ebca28ff89fd03a088d399de8e6e4">ostk::mathematics::geometry::d3::object::Pyramid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#af3da3893add570615236f1e5ab4971ff">ostk::mathematics::geometry::d3::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#a3a226ee06322255306b029e004dac647">ostk::mathematics::geometry::d3::object::Ray</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a5d3a7527694d5581fbd8ea6cf438d74c">ostk::mathematics::geometry::d3::object::Line</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#ad2265d32b954c38b63c273acd45bdc4d">ostk::mathematics::geometry::d3::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a99c3b0b78faa977d4c6bd526286a0815">ostk::mathematics::geometry::d3::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a750ddc45120fa67b224c65f5ae782ce2">ostk::mathematics::geometry::d3::object::PointSet</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a2bfff9b3a14df67fac884fd122315145">ostk::mathematics::geometry::d3::object::LineString</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a3e8568dfcf2f261ea99c5a1c4edc2c1a">ostk::mathematics::geometry::d3::object::Ellipsoid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a8471b1cbbaa3498833f6fb6f9d2bab5a">ostk::mathematics::geometry::d3::object::Cuboid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a07770aa678f84c74355bf7488b4df425">ostk::mathematics::geometry::d3::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#aec7fa1a21969f2175948bd57ac8a46ff">ostk::mathematics::geometry::d3::object::Sphere</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#ae0eb36a3ddb55789fb3fd382ad5a5b1b">ostk::mathematics::geometry::d3::object::Cone</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#ab4e329b825fa0a3aa24c2c4b7ebfb432">ostk::mathematics::geometry::d3::object::Plane</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#aec8ebca28ff89fd03a088d399de8e6e4">ostk::mathematics::geometry::d3::object::Pyramid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#ad2265d32b954c38b63c273acd45bdc4d">ostk::mathematics::geometry::d3::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#af3da3893add570615236f1e5ab4971ff">ostk::mathematics::geometry::d3::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#a3a226ee06322255306b029e004dac647">ostk::mathematics::geometry::d3::object::Ray</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a5d3a7527694d5581fbd8ea6cf438d74c">ostk::mathematics::geometry::d3::object::Line</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a99c3b0b78faa977d4c6bd526286a0815">ostk::mathematics::geometry::d3::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a750ddc45120fa67b224c65f5ae782ce2">ostk::mathematics::geometry::d3::object::PointSet</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a2bfff9b3a14df67fac884fd122315145">ostk::mathematics::geometry::d3::object::LineString</a>.</p>
 
 </div>
 </div>
@@ -286,7 +292,9 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Access object as its underlying type. </p>
-<dl class="section return"><dt>Returns</dt><dd>Reference to underlying type </dd></dl>
+<div class="fragment"><div class="line">Unique&lt;Object&gt; objectUPtr = std::make_unique&lt;Point&gt;(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>()) ;</div>
+<div class="line"><span class="keyword">const</span> Point&amp; point = objectUPtr-&gt;as&lt;Point&gt;() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Reference to underlying type </dd></dl>
 
 </div>
 </div>
@@ -314,9 +322,10 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Clone object (pure virtual) </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned object </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#af003ad733beface98466830078a83875">Object</a>* clonePtr = objectPtr-&gt;clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned object </dd></dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a1ab0dfee99b56b4324e782a406ca1687">ostk::mathematics::geometry::d3::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#a0c99b116c5a6f6e0915cb5375fc66149">ostk::mathematics::geometry::d3::object::Cone</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a0502f752850b36aa89c4fc443f7e4376">ostk::mathematics::geometry::d3::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#aca293bcf279702b8b59d72fe4dd09217">ostk::mathematics::geometry::d3::object::Ellipsoid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a61cb86ec44359755cc1edc8dec1604c0">ostk::mathematics::geometry::d3::object::Pyramid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a4d5a9ea98d5a028f2792d3b11e9fd6e8">ostk::mathematics::geometry::d3::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#ab67f8c5204e7d81204f80ca1298073a8">ostk::mathematics::geometry::d3::object::Cuboid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a28e9a96d726b5eea0da0696647912780">ostk::mathematics::geometry::d3::object::Sphere</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#ad6ef8e1e883a675f054a790093c152b8">ostk::mathematics::geometry::d3::object::Ray</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#aaaed581dfea7bf716e1125a088ba963c">ostk::mathematics::geometry::d3::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a07a393740306e4f8363920a8d82823e7">ostk::mathematics::geometry::d3::object::Plane</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#adf6a7e433d64879df60ea17403bf4694">ostk::mathematics::geometry::d3::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a34fd0962885cf69d1a70a5d62395acc9">ostk::mathematics::geometry::d3::object::Line</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a6d27eb6359000685e81a6a5d79fbb807">ostk::mathematics::geometry::d3::object::LineString</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a4d5a9ea98d5a028f2792d3b11e9fd6e8">ostk::mathematics::geometry::d3::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a1ab0dfee99b56b4324e782a406ca1687">ostk::mathematics::geometry::d3::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#a0c99b116c5a6f6e0915cb5375fc66149">ostk::mathematics::geometry::d3::object::Cone</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a0502f752850b36aa89c4fc443f7e4376">ostk::mathematics::geometry::d3::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#aca293bcf279702b8b59d72fe4dd09217">ostk::mathematics::geometry::d3::object::Ellipsoid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a61cb86ec44359755cc1edc8dec1604c0">ostk::mathematics::geometry::d3::object::Pyramid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#ab67f8c5204e7d81204f80ca1298073a8">ostk::mathematics::geometry::d3::object::Cuboid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a28e9a96d726b5eea0da0696647912780">ostk::mathematics::geometry::d3::object::Sphere</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#ad6ef8e1e883a675f054a790093c152b8">ostk::mathematics::geometry::d3::object::Ray</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#aaaed581dfea7bf716e1125a088ba963c">ostk::mathematics::geometry::d3::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a07a393740306e4f8363920a8d82823e7">ostk::mathematics::geometry::d3::object::Plane</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#adf6a7e433d64879df60ea17403bf4694">ostk::mathematics::geometry::d3::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a34fd0962885cf69d1a70a5d62395acc9">ostk::mathematics::geometry::d3::object::Line</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a6d27eb6359000685e81a6a5d79fbb807">ostk::mathematics::geometry::d3::object::LineString</a>.</p>
 
 </div>
 </div>
@@ -466,7 +475,9 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns true if object can be converted to type. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if object can be converted to type </dd></dl>
+<div class="fragment"><div class="line">Unique&lt;Object&gt; objectUPtr = std::make_unique&lt;Point&gt;(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>()) ;</div>
+<div class="line">objectUPtr-&gt;is&lt;Point&gt;() ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if object can be converted to type </dd></dl>
 
 </div>
 </div>
@@ -494,9 +505,10 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Check if object is defined. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if object is defined </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a151a3020d20a0ae2847f5ce99bd7ee06">isDefined</a>() ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if object is defined </dd></dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a8ccf639112d5c08aa7d2bb831072ca2f">ostk::mathematics::geometry::d3::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a151a3020d20a0ae2847f5ce99bd7ee06">ostk::mathematics::geometry::d3::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a3e36099693bccb2d2e68d8673d86e5f6">ostk::mathematics::geometry::d3::object::Ellipsoid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#ae9749637798c6670bb1c2b8cc2850ba8">ostk::mathematics::geometry::d3::object::Cuboid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a6b8187ba8b67220e7562357ad846edaa">ostk::mathematics::geometry::d3::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a5311446aca36ccadbd8ae323502dba44">ostk::mathematics::geometry::d3::object::Sphere</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#a927c5cfa7196f425f8cd153efde8e90f">ostk::mathematics::geometry::d3::object::Cone</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#ab2e3d42d2420cd0d3029f1d14e126a6c">ostk::mathematics::geometry::d3::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#a402bf991d7974383a2766f12367681cd">ostk::mathematics::geometry::d3::object::Ray</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a8b85f9aa5f4b1cdf0047c8010fdb7645">ostk::mathematics::geometry::d3::object::Pyramid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#a682162f29a5597e61f0eaac2f9762518">ostk::mathematics::geometry::d3::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a0a39c2a1bd1e330e8cc15aa4a5e19d47">ostk::mathematics::geometry::d3::object::Plane</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#ae07b5282c948df716fc1fa5bedeec344">ostk::mathematics::geometry::d3::object::Line</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#ac79b6efa23440fa61690181c6ade42ec">ostk::mathematics::geometry::d3::object::LineString</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a8ccf639112d5c08aa7d2bb831072ca2f">ostk::mathematics::geometry::d3::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a151a3020d20a0ae2847f5ce99bd7ee06">ostk::mathematics::geometry::d3::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a6b8187ba8b67220e7562357ad846edaa">ostk::mathematics::geometry::d3::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#a927c5cfa7196f425f8cd153efde8e90f">ostk::mathematics::geometry::d3::object::Cone</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#ab2e3d42d2420cd0d3029f1d14e126a6c">ostk::mathematics::geometry::d3::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a8b85f9aa5f4b1cdf0047c8010fdb7645">ostk::mathematics::geometry::d3::object::Pyramid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a3e36099693bccb2d2e68d8673d86e5f6">ostk::mathematics::geometry::d3::object::Ellipsoid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#ae9749637798c6670bb1c2b8cc2850ba8">ostk::mathematics::geometry::d3::object::Cuboid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a5311446aca36ccadbd8ae323502dba44">ostk::mathematics::geometry::d3::object::Sphere</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#a402bf991d7974383a2766f12367681cd">ostk::mathematics::geometry::d3::object::Ray</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#a682162f29a5597e61f0eaac2f9762518">ostk::mathematics::geometry::d3::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a0a39c2a1bd1e330e8cc15aa4a5e19d47">ostk::mathematics::geometry::d3::object::Plane</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#ac79b6efa23440fa61690181c6ade42ec">ostk::mathematics::geometry::d3::object::LineString</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#ae07b5282c948df716fc1fa5bedeec344">ostk::mathematics::geometry::d3::object::Line</a>.</p>
 
 </div>
 </div>
@@ -517,7 +529,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>() != Point(1.0, 0.0, 0.0) ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
   </table>
@@ -544,7 +557,9 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Point point = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>() ;</div>
+<div class="line">point == point ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
   </table>
@@ -589,7 +604,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Print object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a9395ae58a8f65a13328bc581586955c3">print</a>(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -597,7 +613,7 @@ template&lt;class Type &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a7c5c1f79b1c0533073ef48e38dc5e18b">ostk::mathematics::geometry::d3::object::Ellipsoid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa60fe81325d3fa897e6bc7517c28d071">ostk::mathematics::geometry::d3::object::Cuboid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#ae7a968c5f386c5f9019389e6e3fca138">ostk::mathematics::geometry::d3::object::Sphere</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a69cc28d37f97308cd2d0a9b58d50c18f">ostk::mathematics::geometry::d3::object::Plane</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#a4683504c6cc0933811bf909c96f5ef17">ostk::mathematics::geometry::d3::object::Cone</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a7d59b2b6538e28c9faa5ad94249e0d5d">ostk::mathematics::geometry::d3::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#aba0fd8b256f78bb7bb0725103287f681">ostk::mathematics::geometry::d3::object::Pyramid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#aa5283e30e7ddb452b048bd54f841c63e">ostk::mathematics::geometry::d3::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#af5e5dea5fe393ea9a76fd3b2638f9446">ostk::mathematics::geometry::d3::object::Ray</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#adbfd6a95b2edf22a2540e449d07e499c">ostk::mathematics::geometry::d3::object::Line</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a3a3719dc361d969338a34cce892fff94">ostk::mathematics::geometry::d3::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a9395ae58a8f65a13328bc581586955c3">ostk::mathematics::geometry::d3::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a54b5df386104fa9e13d7a982c3a99589">ostk::mathematics::geometry::d3::object::PointSet</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a3f55f08a54e8341f3381f1402ace1b09">ostk::mathematics::geometry::d3::object::LineString</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a7c5c1f79b1c0533073ef48e38dc5e18b">ostk::mathematics::geometry::d3::object::Ellipsoid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa60fe81325d3fa897e6bc7517c28d071">ostk::mathematics::geometry::d3::object::Cuboid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a7d59b2b6538e28c9faa5ad94249e0d5d">ostk::mathematics::geometry::d3::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#ae7a968c5f386c5f9019389e6e3fca138">ostk::mathematics::geometry::d3::object::Sphere</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#a4683504c6cc0933811bf909c96f5ef17">ostk::mathematics::geometry::d3::object::Cone</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a69cc28d37f97308cd2d0a9b58d50c18f">ostk::mathematics::geometry::d3::object::Plane</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#aba0fd8b256f78bb7bb0725103287f681">ostk::mathematics::geometry::d3::object::Pyramid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a3a3719dc361d969338a34cce892fff94">ostk::mathematics::geometry::d3::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#aa5283e30e7ddb452b048bd54f841c63e">ostk::mathematics::geometry::d3::object::Segment</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#af5e5dea5fe393ea9a76fd3b2638f9446">ostk::mathematics::geometry::d3::object::Ray</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#adbfd6a95b2edf22a2540e449d07e499c">ostk::mathematics::geometry::d3::object::Line</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a9395ae58a8f65a13328bc581586955c3">ostk::mathematics::geometry::d3::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a54b5df386104fa9e13d7a982c3a99589">ostk::mathematics::geometry::d3::object::PointSet</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a3f55f08a54e8341f3381f1402ace1b09">ostk::mathematics::geometry::d3::object::LineString</a>.</p>
 
 </div>
 </div>
@@ -637,7 +653,9 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Output stream operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Point point = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>() ;</div>
+<div class="line">std::cout &lt;&lt; point ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
@@ -654,6 +672,11 @@ template&lt;class Type &gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a151a3020d20a0ae2847f5ce99bd7ee06"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a151a3020d20a0ae2847f5ce99bd7ee06">ostk::mathematics::geometry::d3::object::Point::isDefined</a></div><div class="ttdeci">virtual bool isDefined() const override</div><div class="ttdoc">Addition operator: translate point along vector.</div><div class="ttdef"><b>Definition:</b> Point.cpp:93</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a2e0dc90fe04fb9befb79ec9874dcebc4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">ostk::mathematics::geometry::d3::object::Point::Origin</a></div><div class="ttdeci">static Point Origin()</div><div class="ttdoc">Constructs a point at origin.</div><div class="ttdef"><b>Definition:</b> Point.cpp:204</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_a5cd654de32139306358aa773bbf8c291"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">ostk::mathematics::geometry::d3::Transformation::Identity</a></div><div class="ttdeci">static Transformation Identity()</div><div class="ttdoc">Construct an identity transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:254</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a9395ae58a8f65a13328bc581586955c3"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a9395ae58a8f65a13328bc581586955c3">ostk::mathematics::geometry::d3::object::Point::print</a></div><div class="ttdeci">virtual void print(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</div><div class="ttdoc">Print point.</div><div class="ttdef"><b>Definition:</b> Point.cpp:173</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_html_af003ad733beface98466830078a83875"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#af003ad733beface98466830078a83875">ostk::mathematics::geometry::d3::Object::Object</a></div><div class="ttdeci">Object()=default</div><div class="ttdoc">Default constructor (default)</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

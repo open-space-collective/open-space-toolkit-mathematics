@@ -23,6 +23,7 @@
       BarycentricRational
       CubicSpline
       Linear
+      ZeroOrder
    
    
 

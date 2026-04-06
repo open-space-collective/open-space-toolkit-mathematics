@@ -254,7 +254,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a>. </p>
-<p><a href="https://en.wikipedia.org/wiki/Cuboid">https://en.wikipedia.org/wiki/Cuboid</a> </p>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid(Point(0.0, 0.0, 0.0), {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 1.0}},</div>
+<div class="line">{1.0, 2.0, 3.0});</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Cuboid">https://en.wikipedia.org/wiki/Cuboid</a> </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a2caa3ede4a8f8684fc8b62a8cdce0a57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2caa3ede4a8f8684fc8b62a8cdce0a57">&#9670;&nbsp;</a></span>Edge</h2>
@@ -349,7 +351,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to cuboid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">cuboid.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">Transformation::Translation</a>({ 1.0, 0.0, 0.0 })) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -384,7 +388,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone cuboid. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned cuboid </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a>* clonePtr = cuboid.clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned cuboid </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a8ea8d4074bfaaa3d996d760d5d5751db">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -558,7 +563,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get cuboid first axis. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> first axis </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> firstAxis = cuboid.getFirstAxis() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> first axis </dd></dl>
 
 </div>
 </div>
@@ -578,7 +585,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get cuboid first extent. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> first extent </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">Real firstExtent = cuboid.getFirstExtent() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> first extent </dd></dl>
 
 </div>
 </div>
@@ -598,7 +607,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get cuboid second axis. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> second axis </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> secondAxis = cuboid.getSecondAxis() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> second axis </dd></dl>
 
 </div>
 </div>
@@ -618,7 +629,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get cuboid second extent. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> second extent </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">Real secondExtent = cuboid.getSecondExtent() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> second extent </dd></dl>
 
 </div>
 </div>
@@ -638,7 +651,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get cuboid third axis. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> third axis </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> thirdAxis = cuboid.getThirdAxis() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> third axis </dd></dl>
 
 </div>
 </div>
@@ -658,7 +673,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get cuboid third extent. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> third extent </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">Real thirdExtent = cuboid.getThirdExtent() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> third extent </dd></dl>
 
 </div>
 </div>
@@ -678,7 +695,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get cuboid vertices. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> vertices </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">Array&lt;Cuboid::Vertex&gt; vertices = cuboid.getVertices() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html" title="Cuboid.">Cuboid</a> vertices </dd></dl>
 
 </div>
 </div>
@@ -699,7 +718,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of cuboid with cuboid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> anotherCuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.5, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">Intersection intersection = cuboid.intersectionWith(anotherCuboid) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aSegment</td><td>A cuboid </td></tr>
   </table>
@@ -726,7 +748,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of cuboid with line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">Line line = Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }) ;</div>
+<div class="line">Intersection intersection = cuboid.intersectionWith(line) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aLine</td><td>A line </td></tr>
   </table>
@@ -763,7 +788,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of cuboid with pyramid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">Pyramid pyramid = ... ;</div>
+<div class="line">Intersection intersection = cuboid.intersectionWith(pyramid) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPyramid</td><td>A pyramid </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">onlyInSight</td><td>(optional) If true, only return intersection points that are in sight </td></tr>
@@ -801,7 +829,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of cuboid with ray. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">Ray ray = Ray({ -2.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }) ;</div>
+<div class="line">Intersection intersection = cuboid.intersectionWith(ray) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aRay</td><td>A ray </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">onlyInSight</td><td>(optional) If true, only return intersection points that are in sight </td></tr>
@@ -829,7 +860,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of cuboid with segment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">Segment segment = Segment({ -2.0, 0.0, 0.0 }, { 2.0, 0.0, 0.0 }) ;</div>
+<div class="line">Intersection intersection = cuboid.intersectionWith(segment) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aSegment</td><td>A segment </td></tr>
   </table>
@@ -1273,7 +1307,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print cuboid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">Cuboid</a> cuboid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">Cuboid::Cube</a>({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">cuboid.print(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -1321,7 +1357,9 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_html_aa8163a96646fa5b9069c7a19d6a6c642"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#aa8163a96646fa5b9069c7a19d6a6c642">ostk::mathematics::geometry::d3::object::Cuboid::Cuboid</a></div><div class="ttdeci">Cuboid(const Point &amp;aCenter, const std::array&lt; Vector3d, 3 &gt; &amp;aAxisArray, const std::array&lt; Real, 3 &gt; &amp;anExtent)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Cuboid.cpp:54</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_af9058de81115d953ab8d9b8922abe692"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">ostk::mathematics::geometry::d3::Transformation::Translation</a></div><div class="ttdeci">static Transformation Translation(const Vector3d &amp;aTranslationVector)</div><div class="ttdoc">Construct a translation transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:259</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_html_a50197f54dd665a9dc63004e89bad728e"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a50197f54dd665a9dc63004e89bad728e">ostk::mathematics::geometry::d3::object::Cuboid::Cube</a></div><div class="ttdeci">static Cuboid Cube(const Point &amp;aCenter, const Real &amp;anExtent)</div><div class="ttdoc">Constructs a a cube.</div><div class="ttdef"><b>Definition:</b> Cuboid.cpp:505</div></div>
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a69d9a055814e9440af219eff448c6c23"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">ostk::mathematics::object::Vector3d</a></div><div class="ttdeci">Eigen::Vector3d Vector3d</div><div class="ttdoc">3D double vector type alias for Eigen::Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:43</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_html_a137ba797d414aa5432154e59227c7cfc"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a137ba797d414aa5432154e59227c7cfc">ostk::mathematics::geometry::d3::object::Cuboid::Undefined</a></div><div class="ttdeci">static Cuboid Undefined()</div><div class="ttdoc">Constructs an undefined cuboid.</div><div class="ttdef"><b>Definition:</b> Cuboid.cpp:496</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

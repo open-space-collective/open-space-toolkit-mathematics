@@ -40,6 +40,15 @@ virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1
 
 A cubic Spline interpolator is a spline where each piece is a third-\/degree polynomial specified in Spline form, that is by its values and first derivatives at the end points of the corresponding domain interval.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} x = \{\{0.0, 1.0, 2.0, 3.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} y = \{\{0.0, 1.0, 4.0, 9.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_af32918b90ad7b87440323e3b0e4a8d6e}{CubicSpline}} interpolator(x, y);}
+\DoxyCodeLine{\textcolor{keywordtype}{double} value = interpolator.evaluate(1.5);}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Cubic_Spline_spline\#}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Cubic\+\_\+\+Spline\+\_\+spline\#}}\+:$\sim$\+:text=In\%20numerical\%20analysis\%2C\%20a\%20cubic,of\%20the\%20corresponding\%20domain\%20interval. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -112,6 +121,10 @@ The x values must be equally spaced
 Destructor. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Called automatically when the CubicSpline goes out of scope}}
+\end{DoxyCode}
+ 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a18dba35307db81b233329af76feb09fa}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a18dba35307db81b233329af76feb09fa}} 

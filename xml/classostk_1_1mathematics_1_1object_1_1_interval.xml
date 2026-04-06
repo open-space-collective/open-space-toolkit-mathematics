@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="486" column="20" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="486" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="474" column="20" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="474" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1object_1_1_interval_1a7f84e7aef2105110a4e79675f1151892" prot="private" static="no" mutable="no">
         <type>T</type>
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="488" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="488" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="476" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="476" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1object_1_1_interval_1a810df853f5b560588d5a82cae03406e1" prot="private" static="no" mutable="no">
         <type>T</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="489" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="489" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="477" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="477" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="58" column="5"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="65" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a9ad41bce0c1205f0786f946870cf0fdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -135,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="69" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="75" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a0af7fe64d3e97061f44348b799654619" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -167,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="80" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="85" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a6dd09d2e325303a5ad0097bed3896708" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -186,7 +186,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="104" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="107" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a1f279c73d8c7a5fa69ce52dc301d1f5a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -205,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="114" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="116" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a8f109e44bbf0691c0a941a48df64c808" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -237,7 +237,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="125" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="126" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ac80d99178336fdcddf7406757f0cc27e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -301,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="147" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="146" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ac2e35a2096405efb9a7ab511a1c2e532" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const T &amp;</type>
@@ -321,7 +321,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="158" column="13"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="156" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a575cb7312386085246bed0ee94aeda56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const T &amp;</type>
@@ -341,7 +341,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="169" column="13"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="166" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1aed3a6e8e931beaa732211ccb44e2c43d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201" kindref="member">Interval::Type</ref></type>
@@ -361,7 +361,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="180" column="20"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="176" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a79e64fd3c8faa78c8b62859c5b095b60" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -381,7 +381,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="191" column="7"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="186" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a17efb397c97eb600f37fbe3e8517df4b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -401,7 +401,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="202" column="7"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="196" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a2d06470c41c25401977c6a1b0da578e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
@@ -436,7 +436,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="216" column="14"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="209" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1af0b873731c1700be9b2a30d87a2aa956" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
@@ -470,7 +470,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="229" column="14"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="221" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ad1636246dd97c94a67d38b5d2a8eb868" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -508,7 +508,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="242" column="17"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="233" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ad84a50656e1779837cdf34e8cb8867a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>ctnr::Array&lt; T &gt;</type>
@@ -541,7 +541,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="254" column="17"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="244" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a2078d591dd42e83abb2851a49e00cddf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>types::String</type>
@@ -560,7 +560,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="264" column="19"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="253" column="19"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ad0010cca002a86b15a2dc9e4f5335201" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -575,6 +575,9 @@
 <para><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref> type setter. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Interval&lt;Real&gt;<sp/>interval<sp/>=<sp/>Interval&lt;Real&gt;::Closed(0.0,<sp/>1.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">interval.setType(Interval&lt;Real&gt;::Type::Open)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aType</parametername>
@@ -588,7 +591,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="270" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="263" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a190b44671c94ecef7725747127bb6060" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -603,6 +606,9 @@
 <para><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref> lower bound setter. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Interval&lt;Real&gt;<sp/>interval<sp/>=<sp/>Interval&lt;Real&gt;::Closed(0.0,<sp/>1.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">interval.setLowerBound(-1.0)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aLowerBound</parametername>
@@ -616,7 +622,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="276" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="273" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a42cfebf36ddd48dde7e0673f62716eb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -631,6 +637,9 @@
 <para><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref> upper bound setter. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Interval&lt;Real&gt;<sp/>interval<sp/>=<sp/>Interval&lt;Real&gt;::Closed(0.0,<sp/>1.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">interval.setUpperBound(2.0)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anUpperBound</parametername>
@@ -644,7 +653,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="282" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="283" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -696,7 +705,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="94" column="12"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="98" column="12"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -744,7 +753,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="302" column="21"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="301" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a0dc8428f4db393e2ae009e2a8730c8c2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
@@ -771,7 +780,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="312" column="21"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="310" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ac0553ec6683fa168ae0beb39d1a4377a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
@@ -798,7 +807,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="322" column="21"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="319" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ac7c309f97e84496b0520879137fb26a4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
@@ -825,7 +834,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="332" column="21"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="328" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ad3ed5f62f822cf770b439c1aa6283639" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
@@ -858,7 +867,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="348" column="24"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="343" column="24"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a67fd1bf9afb4a553eda2782c1f1e69d7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
@@ -895,7 +904,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="364" column="24"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="358" column="24"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ac896cb95eb898a697f0b8c55f5f16f4b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
@@ -923,7 +932,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="381" column="24"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="374" column="24"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a3b1b3713ef5cbc3287bb0591e8deae53" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
@@ -957,7 +966,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="399" column="24"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="391" column="24"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a4a08b629ac0bd654b51ff0c8210ce217" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
@@ -997,7 +1006,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="426" column="24"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="417" column="24"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a2bf375749b313b2e534b1a42d23b6583" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
@@ -1037,7 +1046,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="453" column="24"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="443" column="24"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ac57a376cb40367712a31e57b82d4bf96" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
@@ -1069,7 +1078,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="466" column="21"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="455" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a906c45e8ea21c1d762015a491afa2254" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>types::String</type>
@@ -1101,7 +1110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="477" column="26"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="465" column="26"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -1128,7 +1137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="480" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="468" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ade1571d889e2c59a03681fb26240143c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1153,7 +1162,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="481" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="469" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -1184,13 +1193,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="482" column="21"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="470" column="21"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Set of numbers with the property that any number that lies between two numbers in the set is also included in the set. </para>
     </briefdescription>
     <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Interval&lt;Real&gt;<sp/>interval(0.0,<sp/>1.0,<sp/><ref refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e" kindref="member">Interval&lt;Real&gt;::Type::Closed</ref>);</highlight></codeline>
+</programlisting></para>
 <para><ulink url="https://en.wikipedia.org/wiki/Interval_">https://en.wikipedia.org/wiki/Interval_</ulink>(mathematics) </para>
     </detaileddescription>
     <inheritancegraph>
@@ -1217,7 +1228,7 @@
         <link refid="classostk_1_1mathematics_1_1object_1_1_interval_base"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="45" bodyend="490"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="54" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="53" bodyend="478"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac2e35a2096405efb9a7ab511a1c2e532" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>accessLowerBound</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a575cb7312386085246bed0ee94aeda56" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>accessUpperBound</name></member>

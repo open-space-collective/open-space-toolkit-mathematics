@@ -217,6 +217,10 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a137ba797d414aa5432154e59227c7cfc" kind="function"><name>Undefined</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kind="function"><name>Cube</name></member>
   </compound>
+  <compound refid="structboost_1_1numeric_1_1odeint_1_1eigen__pid__algebra" kind="struct"><name>boost::numeric::odeint::eigen_pid_algebra</name>
+    <member refid="structboost_1_1numeric_1_1odeint_1_1eigen__pid__algebra_1acd86592f1effd2dd392032b9b701b93c" kind="function"><name>for_each2</name></member>
+    <member refid="structboost_1_1numeric_1_1odeint_1_1eigen__pid__algebra_1a1bf259f56214cec1be40be03008660a5" kind="function"><name>for_each4</name></member>
+  </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kind="class"><name>ostk::mathematics::geometry::d3::object::Ellipsoid</name>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a601664cd2702c1ef80dc8ea4e70fb90b" kind="variable"><name>center_</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a26812a9cf0ec65f244dcfd23ec7904b2" kind="variable"><name>a_</name></member>
@@ -361,6 +365,7 @@
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557a98cf9ba70112c998166a82b6f289bb9f" kind="enumvalue"><name>BarycentricRational</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557abc050383dcd36a2e1f9481e562332cfa" kind="enumvalue"><name>CubicSpline</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b" kind="enumvalue"><name>Linear</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557a302ecba0c202890cc825530fca2bf596" kind="enumvalue"><name>ZeroOrder</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a223538405159f000a44ca3c15037380f" kind="variable"><name>type_</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6593f90bb974214f6f2b264bc114b96e" kind="function"><name>Interpolator</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ac980e413bfeb65eceb347e787899c1f4" kind="function"><name>~Interpolator</name></member>
@@ -514,27 +519,6 @@
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201ab5e08f9173f660e791d3ba99ff8281d7" kind="enumvalue"><name>HalfOpenLeft</name></member>
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201a484f1b37e0208f622a1e6f7a3ff8c2c3" kind="enumvalue"><name>HalfOpenRight</name></member>
   </compound>
-  <compound refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kind="class"><name>ostk::mathematics::geometry::d2::object::Line</name>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a2079e93918ec64cd798b1f6b99665f45" kind="variable"><name>origin_</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ab3286fd0f1915a23c39b23e1d0925243" kind="variable"><name>direction_</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a0a22b94b232fca62ec257f90f3329431" kind="function"><name>Line</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a60f4de4753ac3be12c6084aca4b9cc3a" kind="function"><name>clone</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a90b8ba896201c7e6207b8deb7d24639a" kind="function"><name>operator==</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a4b591f899c00ed44f98ce718d5d104f4" kind="function"><name>operator!=</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a603f1de0e328c16a829b9e1c9f5c077f" kind="function"><name>isDefined</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1adda17499fb10cce0898d611ec234817e" kind="function"><name>intersects</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a8f6979f55c2a971d1b7f1f7dc4b991be" kind="function"><name>intersects</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1aefb7b93e8cea6c18e38ee2e6627da0e5" kind="function"><name>contains</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a44ea437739c18c9c49f05d0f7453cb32" kind="function"><name>contains</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a2af43b703748a7eef22d63c7413fc85c" kind="function"><name>getOrigin</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1abe689136d2b21263bfc7a0e4431a4941" kind="function"><name>getDirection</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1af81c8fb3c528d9dd47a72628533f6860" kind="function"><name>distanceTo</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3c03f6d92663a15da6e2dc6dbdbc46ab" kind="function"><name>toString</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ad3cdbabb0a5a068923e9c63e6675fa15" kind="function"><name>print</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3a157e132491ce9f98561dff3c4959d4" kind="function"><name>applyTransformation</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a728722304ee853205eab876dec1ec632" kind="function"><name>Undefined</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ae8c72610b423866bc7c1bca059d3a7e3" kind="function"><name>Points</name></member>
-  </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line" kind="class"><name>ostk::mathematics::geometry::d3::object::Line</name>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_1aec6c727321d373cc28b2a5c2e567156a" kind="variable"><name>origin_</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_1a211b632c7b45fe82b71261abe9f1a4b1" kind="variable"><name>direction_</name></member>
@@ -558,6 +542,27 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_1a22a81cbf24719168493158361bb24ee7" kind="function"><name>Undefined</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_1a2c137ebb5cbfe774410eb84644e5cdd4" kind="function"><name>Points</name></member>
   </compound>
+  <compound refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kind="class"><name>ostk::mathematics::geometry::d2::object::Line</name>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a2079e93918ec64cd798b1f6b99665f45" kind="variable"><name>origin_</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ab3286fd0f1915a23c39b23e1d0925243" kind="variable"><name>direction_</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a0a22b94b232fca62ec257f90f3329431" kind="function"><name>Line</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a60f4de4753ac3be12c6084aca4b9cc3a" kind="function"><name>clone</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a90b8ba896201c7e6207b8deb7d24639a" kind="function"><name>operator==</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a4b591f899c00ed44f98ce718d5d104f4" kind="function"><name>operator!=</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a603f1de0e328c16a829b9e1c9f5c077f" kind="function"><name>isDefined</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1adda17499fb10cce0898d611ec234817e" kind="function"><name>intersects</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a8f6979f55c2a971d1b7f1f7dc4b991be" kind="function"><name>intersects</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1aefb7b93e8cea6c18e38ee2e6627da0e5" kind="function"><name>contains</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a44ea437739c18c9c49f05d0f7453cb32" kind="function"><name>contains</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a2af43b703748a7eef22d63c7413fc85c" kind="function"><name>getOrigin</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1abe689136d2b21263bfc7a0e4431a4941" kind="function"><name>getDirection</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1af81c8fb3c528d9dd47a72628533f6860" kind="function"><name>distanceTo</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3c03f6d92663a15da6e2dc6dbdbc46ab" kind="function"><name>toString</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ad3cdbabb0a5a068923e9c63e6675fa15" kind="function"><name>print</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3a157e132491ce9f98561dff3c4959d4" kind="function"><name>applyTransformation</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a728722304ee853205eab876dec1ec632" kind="function"><name>Undefined</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ae8c72610b423866bc7c1bca059d3a7e3" kind="function"><name>Points</name></member>
+  </compound>
   <compound refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear" kind="class"><name>ostk::mathematics::curvefitting::interpolator::Linear</name>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a9ed3dc311083da47076d8078154c75ef" kind="variable"><name>x_</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a2162028cba3136649306ac35cd653d33" kind="variable"><name>y_</name></member>
@@ -568,26 +573,6 @@
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a24f276d8242c407b246d7aed10ce5285" kind="function"><name>computeDerivative</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1aa3bad32623ca7a926776fac3c5a7f9e0" kind="function"><name>computeDerivative</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a00f1e08ef6368bf8806fe290c41ea8e7" kind="function"><name>findIndexRange</name></member>
-  </compound>
-  <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" kind="class"><name>ostk::mathematics::geometry::d3::object::LineString</name>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a5bc4dc999137d0087978e3a1df1d8f7b" kind="typedef"><name>ConstIterator</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac5db8251335aec96df77109870c4b6cc" kind="variable"><name>points_</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a1cbd0b1900eded1596378ba9a65b4e4e" kind="function"><name>LineString</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a6d27eb6359000685e81a6a5d79fbb807" kind="function"><name>clone</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4c81f3eb92c3248c983def441296f9fb" kind="function"><name>operator==</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a9910ccb0907ba84696f5895362c8906f" kind="function"><name>operator!=</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac79b6efa23440fa61690181c6ade42ec" kind="function"><name>isDefined</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a2be7308b9a8a52f43b920b01c41c7253" kind="function"><name>isEmpty</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac80cff5419ed1a8cbeb2b1b6835d15ae" kind="function"><name>isNear</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a06488a8c9956ec63215f8cceb6380b27" kind="function"><name>accessPointAt</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4e68ff9a60ace16eba53c703828c07e2" kind="function"><name>getPointCount</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1acdf9a6bdfdf5e8b51c3521367d9adf35" kind="function"><name>getPointClosestTo</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a3f55f08a54e8341f3381f1402ace1b09" kind="function"><name>print</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1aa57ee802638910c77c4b2dd712614192" kind="function"><name>begin</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a1427440792919bda6cc0704fe286cd71" kind="function"><name>end</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a2bfff9b3a14df67fac884fd122315145" kind="function"><name>applyTransformation</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a5a7f530f442be990ea18c30032f04d45" kind="function"><name>Empty</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4a92c1b91c16ae49fe38a3bf347586c0" kind="function"><name>Segment</name></member>
   </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string" kind="class"><name>ostk::mathematics::geometry::d2::object::LineString</name>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1acacd5fbb50b8d1b38b2d90b9139cbfa9" kind="typedef"><name>ConstIterator</name></member>
@@ -611,6 +596,26 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a0d3a24eba42a2d7449259b890d0bb30f" kind="function"><name>applyTransformation</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a1c013105d818b7e58ce82ba781ad5e95" kind="function"><name>Empty</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1aa04a6a68ea74f4702d1d98baa78b050d" kind="function"><name>Segment</name></member>
+  </compound>
+  <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" kind="class"><name>ostk::mathematics::geometry::d3::object::LineString</name>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a5bc4dc999137d0087978e3a1df1d8f7b" kind="typedef"><name>ConstIterator</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac5db8251335aec96df77109870c4b6cc" kind="variable"><name>points_</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a1cbd0b1900eded1596378ba9a65b4e4e" kind="function"><name>LineString</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a6d27eb6359000685e81a6a5d79fbb807" kind="function"><name>clone</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4c81f3eb92c3248c983def441296f9fb" kind="function"><name>operator==</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a9910ccb0907ba84696f5895362c8906f" kind="function"><name>operator!=</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac79b6efa23440fa61690181c6ade42ec" kind="function"><name>isDefined</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a2be7308b9a8a52f43b920b01c41c7253" kind="function"><name>isEmpty</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac80cff5419ed1a8cbeb2b1b6835d15ae" kind="function"><name>isNear</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a06488a8c9956ec63215f8cceb6380b27" kind="function"><name>accessPointAt</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4e68ff9a60ace16eba53c703828c07e2" kind="function"><name>getPointCount</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1acdf9a6bdfdf5e8b51c3521367d9adf35" kind="function"><name>getPointClosestTo</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a3f55f08a54e8341f3381f1402ace1b09" kind="function"><name>print</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1aa57ee802638910c77c4b2dd712614192" kind="function"><name>begin</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a1427440792919bda6cc0704fe286cd71" kind="function"><name>end</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a2bfff9b3a14df67fac884fd122315145" kind="function"><name>applyTransformation</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a5a7f530f442be990ea18c30032f04d45" kind="function"><name>Empty</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4a92c1b91c16ae49fe38a3bf347586c0" kind="function"><name>Segment</name></member>
   </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string" kind="class"><name>ostk::mathematics::geometry::d2::object::MultiLineString</name>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a56904ee7e27c37e2c3a1c94359ec01c9" kind="typedef"><name>ConstIterator</name></member>
@@ -662,6 +667,9 @@
     <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97a646d9d3aaac989d6fd4990f308ba3a37" kind="enumvalue"><name>RungeKuttaCashKarp54</name></member>
     <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97a5002097811f3eb2dd4a34b826b1288e7" kind="enumvalue"><name>RungeKuttaFehlberg78</name></member>
     <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97a3203013d28f8e40a899ed45ede9ad149" kind="enumvalue"><name>RungeKuttaDopri5</name></member>
+    <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97a65ca550a20efb224edd0f6fb324af7d3" kind="enumvalue"><name>AdamsBashforthMoulton5</name></member>
+    <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97a6d5c11acddf69b60055af372f885f751" kind="enumvalue"><name>AdamsBashforthMoulton8</name></member>
+    <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97a031df4984d03b288981ec5bec64685db" kind="enumvalue"><name>BulirschStoer</name></member>
     <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5" kind="enum"><name>LogType</name></member>
     <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5ac224e58a49e83bb9b94e2bd594fd5231" kind="enumvalue"><name>NoLog</name></member>
     <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5a40b79e6f53444b0a01aa353abfd9fe91" kind="enumvalue"><name>LogConstant</name></member>
@@ -700,6 +708,22 @@
     <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a348ac983e497f1185031205dd465c588" kind="function"><name>getSignedTimeStep</name></member>
     <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a722267157722f475db443c817a9e95d9" kind="function"><name>observeNumericalIntegration</name></member>
   </compound>
+  <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kind="class"><name>ostk::mathematics::geometry::d3::Object</name>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" kind="function"><name>Object</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aae1324c306129cce2e7d42a28c0de181" kind="function"><name>~Object</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a8ea8d4074bfaaa3d996d760d5d5751db" kind="function"><name>clone</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aeb99dd25ff1c0683d9c0a058c8200e4d" kind="function"><name>operator==</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a550754b8f5576ce2465979657325d5df" kind="function"><name>operator!=</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a1962edbcdde0f851361b60324ab9ce2b" kind="function"><name>isDefined</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ad9e6f5027d14e3c7d7bead94052611ed" kind="function"><name>is</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a0d8ddc7a929bb3b0b1c70ad82742e64e" kind="function"><name>intersects</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" kind="function"><name>contains</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" kind="function"><name>as</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ac1325aba0fa3796c9ddc5d39dfe40aa6" kind="function"><name>intersectionWith</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a5063e1f902e1b08d36f6b6cecab0bd95" kind="function"><name>print</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a925a50c2bb1c31f396e469b74595e42a" kind="function"><name>applyTransformation</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a418df9bf4a73078f3d494edef1743f8d" kind="friend"><name>operator&lt;&lt;</name></member>
+  </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kind="class"><name>ostk::mathematics::geometry::d2::Object</name>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" kind="enum"><name>Format</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13aec0fc0100c4fc1ce4eea230c3dc10360" kind="enumvalue"><name>Undefined</name></member>
@@ -717,22 +741,6 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aaf59b52c718ca92c6b6116660077d9f9" kind="function"><name>print</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1add0c7edfac25cbd241f82edbb1ce1476" kind="function"><name>applyTransformation</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a418df9bf4a73078f3d494edef1743f8d" kind="friend"><name>operator&lt;&lt;</name></member>
-  </compound>
-  <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kind="class"><name>ostk::mathematics::geometry::d3::Object</name>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" kind="function"><name>Object</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aae1324c306129cce2e7d42a28c0de181" kind="function"><name>~Object</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a8ea8d4074bfaaa3d996d760d5d5751db" kind="function"><name>clone</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aeb99dd25ff1c0683d9c0a058c8200e4d" kind="function"><name>operator==</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a550754b8f5576ce2465979657325d5df" kind="function"><name>operator!=</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a1962edbcdde0f851361b60324ab9ce2b" kind="function"><name>isDefined</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ad9e6f5027d14e3c7d7bead94052611ed" kind="function"><name>is</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a0d8ddc7a929bb3b0b1c70ad82742e64e" kind="function"><name>intersects</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" kind="function"><name>contains</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" kind="function"><name>as</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ac1325aba0fa3796c9ddc5d39dfe40aa6" kind="function"><name>intersectionWith</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a5063e1f902e1b08d36f6b6cecab0bd95" kind="function"><name>print</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a925a50c2bb1c31f396e469b74595e42a" kind="function"><name>applyTransformation</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a418df9bf4a73078f3d494edef1743f8d" kind="friend"><name>operator&lt;&lt;</name></member>
   </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" kind="class"><name>ostk::mathematics::geometry::d3::object::Plane</name>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a45f749e1258c87e28fb23f04d56cbc1c" kind="variable"><name>point_</name></member>
@@ -805,6 +813,26 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a2e0dc90fe04fb9befb79ec9874dcebc4" kind="function"><name>Origin</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1aa467c6aeea346a0a8d1d2c2b0397b069" kind="function"><name>Vector</name></member>
   </compound>
+  <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set" kind="class"><name>ostk::mathematics::geometry::d3::object::PointSet</name>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a313907ba2105a4ba75badb42c2277dc0" kind="typedef"><name>Container</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a257f4e16cbaf7a172b99449b9b9130a0" kind="typedef"><name>ConstIterator</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1ac3080b5e8917506be7ca9696d07e944c" kind="variable"><name>points_</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1aabd317c62ef535b222c6facc6103faf6" kind="function"><name>PointSet</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a1ab0dfee99b56b4324e782a406ca1687" kind="function"><name>clone</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a1a5f1f9e222a57f6055045d49c4dff6c" kind="function"><name>operator==</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1ac8021b04a413b2b37671eba1d04c126e" kind="function"><name>operator!=</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a6b8187ba8b67220e7562357ad846edaa" kind="function"><name>isDefined</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1ab40c84e9a4d76cf89471771c74c3126c" kind="function"><name>isEmpty</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1aedd7f0ed2b59c5a8713bc83ab2bbdee6" kind="function"><name>isNear</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1af110ae77a421e673d3ede1b39bfea608" kind="function"><name>getSize</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a0c0b80b471c070b67768752d65a36b66" kind="function"><name>distanceTo</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1ac94914cb9c81d2fadab4e700088be7da" kind="function"><name>getPointClosestTo</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a54b5df386104fa9e13d7a982c3a99589" kind="function"><name>print</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a2deda4dd9c626c22663b5a58f8a877d7" kind="function"><name>begin</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a4939eefd0f54e0076af40960dfe93418" kind="function"><name>end</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a750ddc45120fa67b224c65f5ae782ce2" kind="function"><name>applyTransformation</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1aa973f5bcaee2c808e981ced66f60156c" kind="function"><name>Empty</name></member>
+  </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set" kind="class"><name>ostk::mathematics::geometry::d2::object::PointSet</name>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a210d9e23e5160ce058c2d9af547bd649" kind="typedef"><name>Container</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a82c1f98e0313394b616bf3e09b8dfb91" kind="typedef"><name>ConstIterator</name></member>
@@ -825,26 +853,6 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a39a4223c3ee108f0b0b07d28fa337c3b" kind="function"><name>end</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1aa0b9b22f3a53b89d79056596490bbb0d" kind="function"><name>applyTransformation</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a512dbda75dd8c2143329e525c0478c47" kind="function"><name>Empty</name></member>
-  </compound>
-  <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set" kind="class"><name>ostk::mathematics::geometry::d3::object::PointSet</name>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a313907ba2105a4ba75badb42c2277dc0" kind="typedef"><name>Container</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a257f4e16cbaf7a172b99449b9b9130a0" kind="typedef"><name>ConstIterator</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1ac3080b5e8917506be7ca9696d07e944c" kind="variable"><name>points_</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1aabd317c62ef535b222c6facc6103faf6" kind="function"><name>PointSet</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a1ab0dfee99b56b4324e782a406ca1687" kind="function"><name>clone</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a1a5f1f9e222a57f6055045d49c4dff6c" kind="function"><name>operator==</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1ac8021b04a413b2b37671eba1d04c126e" kind="function"><name>operator!=</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a6b8187ba8b67220e7562357ad846edaa" kind="function"><name>isDefined</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1ab40c84e9a4d76cf89471771c74c3126c" kind="function"><name>isEmpty</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1aedd7f0ed2b59c5a8713bc83ab2bbdee6" kind="function"><name>isNear</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1af110ae77a421e673d3ede1b39bfea608" kind="function"><name>getSize</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a0c0b80b471c070b67768752d65a36b66" kind="function"><name>distanceTo</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1ac94914cb9c81d2fadab4e700088be7da" kind="function"><name>getPointClosestTo</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a54b5df386104fa9e13d7a982c3a99589" kind="function"><name>print</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a2deda4dd9c626c22663b5a58f8a877d7" kind="function"><name>begin</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a4939eefd0f54e0076af40960dfe93418" kind="function"><name>end</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a750ddc45120fa67b224c65f5ae782ce2" kind="function"><name>applyTransformation</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1aa973f5bcaee2c808e981ced66f60156c" kind="function"><name>Empty</name></member>
   </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kind="class"><name>ostk::mathematics::geometry::d2::object::Polygon</name>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adf15f8325e848f3c4e310169aa8e0657" kind="typedef"><name>Vertex</name></member>
@@ -1163,6 +1171,44 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_1a74397702d3224ec9a01897273de8f590" kind="function"><name>Undefined</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_1a81b2f22059fd4a1235795783e0cfcbb3" kind="function"><name>Unit</name></member>
   </compound>
+  <compound refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kind="class"><name>ostk::mathematics::geometry::d2::Transformation</name>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9" kind="enum"><name>Type</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9aec0fc0100c4fc1ce4eea230c3dc10360" kind="enumvalue"><name>Undefined</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9ac9c5c65fb4af9cf90eb99b3b84424189" kind="enumvalue"><name>Identity</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9a6dd08874f83507e9c7b23f1a46b7fa7c" kind="enumvalue"><name>Translation</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9af1a42bd417390fc63b030a519624607a" kind="enumvalue"><name>Rotation</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9abc967dc2d57e6eff184a821bf7577a80" kind="enumvalue"><name>Scaling</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9aaea1e492943ccbad7ee270ec1e064758" kind="enumvalue"><name>Reflection</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9a02414922b70cc0f9d7c841b0c70a0f94" kind="enumvalue"><name>Shear</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9a5b525aab6e200981a842101f1bcbafc6" kind="enumvalue"><name>Affine</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a640408f7548db6bb01aa192f79d39295" kind="variable"><name>type_</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a91e01677409adbbcbe9aadc8b15d8e65" kind="variable"><name>matrix_</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kind="function"><name>Transformation</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a97115f56b673ff7d0efcc45ff4de2566" kind="function"><name>operator==</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a9c5841e272ccd57670de80bedf7c7ebc" kind="function"><name>operator!=</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1aa48ed3f10a583e3a3551e91b7286dbf7" kind="function"><name>operator*</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1af7a2de30793f13e62515d9d87b9e3bd8" kind="function"><name>operator*</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1abfeafe6bbaef1ce522e1d8948a61f7f3" kind="function"><name>operator*=</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a7a810c3645491c671fae1953456257c4" kind="function"><name>isDefined</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1afc750037dcccec8a35ea8b6e959836cf" kind="function"><name>isIdentity</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a35e8e5478a46bdab58808ef63efc4f77" kind="function"><name>isRigid</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ad4af5f661b7219ddac4e96de8fb4c462" kind="function"><name>getType</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a3b523e122e6023e9416269a0bcab7367" kind="function"><name>getMatrix</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a81ec04277231eb4c06a3daf04bbd5b22" kind="function"><name>getInverse</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1acc8517da6833948aef8183180d0b59be" kind="function"><name>applyTo</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a5d1de9866945fa5b6057832b90f9e884" kind="function"><name>applyTo</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1adfd45137a2eedea1ce1877a80abe12a9" kind="function"><name>applyTo</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a3403dc8a6f1f18450a86a3e5868d2348" kind="function"><name>print</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1afb2829e106dc4aeab1c706d1eaa357e8" kind="friend"><name>operator&lt;&lt;</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ae17a40e15a7800a2395825a16cbdea46" kind="function"><name>Undefined</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kind="function"><name>Identity</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ac20f9204fa06c83f5c3d5e487f2909e9" kind="function"><name>Translation</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1aae0d29a9d8b14e1234dddf22c072ff53" kind="function"><name>Rotation</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a970c932524b54aa74373a1a3d50f51af" kind="function"><name>RotationAround</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ab96e3a181ecfd0079fa589839fe963a5" kind="function"><name>StringFromType</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a50b50b58b43aa9534849d2c0398bd710" kind="function"><name>TypeOfMatrix</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a1c7d9aefa2a61b52fcb08df51d5cd63d" kind="function"><name>Transformation</name></member>
+  </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kind="class"><name>ostk::mathematics::geometry::d3::Transformation</name>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdac" kind="enum"><name>Type</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdacaec0fc0100c4fc1ce4eea230c3dc10360" kind="enumvalue"><name>Undefined</name></member>
@@ -1203,43 +1249,20 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a2b247dc8cec2489b61e3a6ec943dc12e" kind="function"><name>IsRigid</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1ae7546266c188896b5f77dec40437e21a" kind="function"><name>Transformation</name></member>
   </compound>
-  <compound refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kind="class"><name>ostk::mathematics::geometry::d2::Transformation</name>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9" kind="enum"><name>Type</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9aec0fc0100c4fc1ce4eea230c3dc10360" kind="enumvalue"><name>Undefined</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9ac9c5c65fb4af9cf90eb99b3b84424189" kind="enumvalue"><name>Identity</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9a6dd08874f83507e9c7b23f1a46b7fa7c" kind="enumvalue"><name>Translation</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9af1a42bd417390fc63b030a519624607a" kind="enumvalue"><name>Rotation</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9abc967dc2d57e6eff184a821bf7577a80" kind="enumvalue"><name>Scaling</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9aaea1e492943ccbad7ee270ec1e064758" kind="enumvalue"><name>Reflection</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9a02414922b70cc0f9d7c841b0c70a0f94" kind="enumvalue"><name>Shear</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9a5b525aab6e200981a842101f1bcbafc6" kind="enumvalue"><name>Affine</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a640408f7548db6bb01aa192f79d39295" kind="variable"><name>type_</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a91e01677409adbbcbe9aadc8b15d8e65" kind="variable"><name>matrix_</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kind="function"><name>Transformation</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a97115f56b673ff7d0efcc45ff4de2566" kind="function"><name>operator==</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a9c5841e272ccd57670de80bedf7c7ebc" kind="function"><name>operator!=</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1aa48ed3f10a583e3a3551e91b7286dbf7" kind="function"><name>operator*</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1af7a2de30793f13e62515d9d87b9e3bd8" kind="function"><name>operator*</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1abfeafe6bbaef1ce522e1d8948a61f7f3" kind="function"><name>operator*=</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a7a810c3645491c671fae1953456257c4" kind="function"><name>isDefined</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1afc750037dcccec8a35ea8b6e959836cf" kind="function"><name>isIdentity</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a35e8e5478a46bdab58808ef63efc4f77" kind="function"><name>isRigid</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ad4af5f661b7219ddac4e96de8fb4c462" kind="function"><name>getType</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a3b523e122e6023e9416269a0bcab7367" kind="function"><name>getMatrix</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a81ec04277231eb4c06a3daf04bbd5b22" kind="function"><name>getInverse</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1acc8517da6833948aef8183180d0b59be" kind="function"><name>applyTo</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a5d1de9866945fa5b6057832b90f9e884" kind="function"><name>applyTo</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1adfd45137a2eedea1ce1877a80abe12a9" kind="function"><name>applyTo</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a3403dc8a6f1f18450a86a3e5868d2348" kind="function"><name>print</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1afb2829e106dc4aeab1c706d1eaa357e8" kind="friend"><name>operator&lt;&lt;</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ae17a40e15a7800a2395825a16cbdea46" kind="function"><name>Undefined</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kind="function"><name>Identity</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ac20f9204fa06c83f5c3d5e487f2909e9" kind="function"><name>Translation</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1aae0d29a9d8b14e1234dddf22c072ff53" kind="function"><name>Rotation</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a970c932524b54aa74373a1a3d50f51af" kind="function"><name>RotationAround</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ab96e3a181ecfd0079fa589839fe963a5" kind="function"><name>StringFromType</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a50b50b58b43aa9534849d2c0398bd710" kind="function"><name>TypeOfMatrix</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a1c7d9aefa2a61b52fcb08df51d5cd63d" kind="function"><name>Transformation</name></member>
+  <compound refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order" kind="class"><name>ostk::mathematics::curvefitting::interpolator::ZeroOrder</name>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1aa2159cbb05770b1c0cc0d5e07abb70ca" kind="variable"><name>x_</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a3efad67f19d45cb03425bf18f72c99b2" kind="variable"><name>y_</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a4ed0afab00158fdc549b2a78f2d780ac" kind="function"><name>ZeroOrder</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a05867c04160a594a06b783b6d46edd50" kind="function"><name>~ZeroOrder</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1ac9dd12114f9607239761a0891d8562e6" kind="function"><name>evaluate</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a2ecd527a195050c5892a6d09122c2664" kind="function"><name>evaluate</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a20e74914f8b7836e252c36c3d512a247" kind="function"><name>computeDerivative</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a4d9fe3d2c0e021271277ac6d43a780de" kind="function"><name>computeDerivative</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a952df155cf56edd03bdb023c2cd37270" kind="function"><name>findPreviousIndex</name></member>
+  </compound>
+  <compound refid="namespaceboost" kind="namespace"><name>boost</name>
+  </compound>
+  <compound refid="namespaceboost_1_1numeric" kind="namespace"><name>boost::numeric</name>
   </compound>
   <compound refid="namespaceboost_1_1numeric_1_1odeint" kind="namespace"><name>boost::numeric::odeint</name>
   </compound>
@@ -1314,6 +1337,8 @@
     <member refid="namespaceostk_1_1mathematics_1_1solver_1aff57be115a1ef18c0a53de6e79b00023" kind="typedef"><name>error_stepper_type_54</name></member>
     <member refid="namespaceostk_1_1mathematics_1_1solver_1a446382cbb767b2c1a4413b9f6f4fee34" kind="typedef"><name>error_stepper_type_78</name></member>
     <member refid="namespaceostk_1_1mathematics_1_1solver_1a9e0e29898fea269d43fccf27c4fedd60" kind="typedef"><name>dense_stepper_type_5</name></member>
+    <member refid="namespaceostk_1_1mathematics_1_1solver_1a2bc631b362fd85f617428eec25347b45" kind="typedef"><name>bulirsch_stoer_stepper_type</name></member>
+    <member refid="namespaceostk_1_1mathematics_1_1solver_1ae273f3eb2c2a71315b16e3b57a2550ab" kind="function"><name>make_controlled_adam_bashforth_moulton</name></member>
     <member refid="namespaceostk_1_1mathematics_1_1solver_1a880f6ab73ddfe8eae45c0c7f4c6aaaeb" kind="function"><name>operator&lt;&lt;</name></member>
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
@@ -1331,6 +1356,8 @@
   <compound refid="_cubic_spline_8hpp" kind="file"><name>CubicSpline.hpp</name>
   </compound>
   <compound refid="_linear_8hpp" kind="file"><name>Linear.hpp</name>
+  </compound>
+  <compound refid="_zero_order_8hpp" kind="file"><name>ZeroOrder.hpp</name>
   </compound>
   <compound refid="2_d_2_intersection_8hpp" kind="file"><name>Intersection.hpp</name>
   </compound>
@@ -1450,6 +1477,8 @@
   <compound refid="_cubic_spline_8cpp" kind="file"><name>CubicSpline.cpp</name>
   </compound>
   <compound refid="_linear_8cpp" kind="file"><name>Linear.cpp</name>
+  </compound>
+  <compound refid="_zero_order_8cpp" kind="file"><name>ZeroOrder.cpp</name>
   </compound>
   <compound refid="2_d_2_intersection_8cpp" kind="file"><name>Intersection.cpp</name>
   </compound>

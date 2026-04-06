@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="207" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" bodystart="207" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="223" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" bodystart="223" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a8c733831e67c7ac12f01e05a34f786e5" prot="private" static="no" mutable="no">
         <type>Real</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="208" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" bodystart="208" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="224" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" bodystart="224" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="43" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="20" bodyend="25"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="44" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="20" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a6130fa9acf01d10db49a6ea301efd579" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> *</type>
@@ -85,13 +85,15 @@
 <para>Clone point. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref>*<sp/>clonePtr<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref>(0.0,<sp/>0.0).clone()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Pointer to cloned point </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="49" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="27" bodyend="30"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="53" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="27" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a3a9cc35629142eb792940471e190f7d6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -106,6 +108,8 @@
 <para>Equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref>(0.0,<sp/>0.0)<sp/>==<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref>(0.0,<sp/>0.0)<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPoint</parametername>
@@ -121,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="56" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="32" bodyend="40"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="63" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="32" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a4591e0cef8606f3b6d4eadf6f3ffbb9f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -136,6 +140,8 @@
 <para>Not equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref>(0.0,<sp/>0.0)<sp/>!=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref>(1.0,<sp/>0.0)<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPoint</parametername>
@@ -151,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="63" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="42" bodyend="45"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="73" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="42" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a5a81fa8426fe6a4be5addda02c888704" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -168,7 +174,6 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[in]<sp/>aVector<sp/>A<sp/>translation<sp/>vector</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@return<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>point</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal">Point<sp/>operator+(const<sp/>Vector2d&amp;<sp/>aVector)<sp/>const;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Subtraction<sp/>operator:<sp/>translate<sp/>point<sp/>along<sp/>opposite<sp/>vector</highlight></codeline>
@@ -179,7 +184,6 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[in]<sp/>aVector<sp/>A<sp/>translation<sp/>vector</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@return<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>point</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal">Point<sp/>operator-(const<sp/>Vector2d&amp;<sp/>aVector)<sp/>const;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Subtraction<sp/>operator:<sp/>get<sp/>translation<sp/>vector<sp/>between<sp/>two<sp/>points</highlight></codeline>
@@ -190,7 +194,6 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[in]<sp/>aPoint<sp/>A<sp/>point</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@return<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>translation<sp/>vector</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal">Vector2d<sp/>operator-(const<sp/>Point&amp;<sp/>aPoint)<sp/>const;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Check<sp/>if<sp/>point<sp/>is<sp/>defined</highlight></codeline>
@@ -204,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="106" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="92" bodyend="95"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="112" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="92" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a98b34037dc99160c8b58f0d45f78a02c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -248,7 +251,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="118" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="97" bodyend="105"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="123" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="97" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1af8b071291f40e389405fb96905c1d6a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const Real &amp;</type>
@@ -267,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="128" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="107" bodyend="115"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="132" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="107" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a90787dd1713e93c1220b0fc5afa96d93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const Real &amp;</type>
@@ -286,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="138" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="117" bodyend="125"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="141" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="117" bodyend="125"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a2e3cfa4a339fec6203c201ab9922f35b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Vector2d</type>
@@ -297,13 +300,15 @@
 <para>Get vector representation of point. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1ac86e8f85187dc85c1f935627d56c1beb" kindref="member">Vector2d</ref><sp/>vector<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref>(1.0,<sp/>2.0).asVector()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>[1.0,<sp/>2.0]</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Vector representation of point </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="144" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="127" bodyend="135"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="150" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="127" bodyend="135"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a5ac6096d3ec22385b722e911afbd3bba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -318,6 +323,8 @@
 <para>Get distance to another point. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Real<sp/>distance<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref>(0.0,<sp/>0.0).distanceTo(<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref>(1.0,<sp/>0.0))<sp/>;<sp/></highlight><highlight class="comment">//<sp/>1.0</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPoint</parametername>
@@ -333,7 +340,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="151" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="137" bodyend="150"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="160" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="137" bodyend="150"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1acf4c687922d62a5aba718135134da5c6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>String</type>
@@ -355,6 +362,8 @@
 <para>Get string representation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>str<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref>(0.0,<sp/>0.0).toString()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aFormat</parametername>
@@ -378,7 +387,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="159" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="152" bodyend="173"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="171" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="152" bodyend="173"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1b7542e4161a90a3e2af18d62f9854c6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -399,6 +408,8 @@
 <para>Print point. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref>(0.0,<sp/>0.0).print(std::cout,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOutputStream</parametername>
@@ -420,7 +431,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="168" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="175" bodyend="183"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="183" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="175" bodyend="183"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1acae5fb88afef113a24cc77a3b536a2c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -436,6 +447,9 @@
 <para>Apply transformation to point. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref><sp/>point(0.0,<sp/>0.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">point.applyTransformation(aTransformation)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aTransformation</parametername>
@@ -449,7 +463,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="174" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="185" bodyend="198"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="193" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="185" bodyend="198"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -470,7 +484,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="184" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="200" bodyend="203"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="202" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="200" bodyend="203"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a44fa9d92b862d8fb9a379440ee0e6a81" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -489,7 +503,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="194" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="205" bodyend="208"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="211" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="205" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1ac1a68722649ac022d295b1e52cd715c5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -512,13 +526,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="204" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="210" bodyend="213"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="220" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp" bodystart="210" bodyend="213"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref>. </para>
     </briefdescription>
     <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1c108c80b33fb0252405b8a567060e28" kindref="member">Point</ref><sp/>point(1.0,<sp/>2.0)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><ulink url="https://en.wikipedia.org/wiki/Point_">https://en.wikipedia.org/wiki/Point_</ulink>(geometry) </para>
     </detaileddescription>
     <inheritancegraph>
@@ -545,7 +561,7 @@
         <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="32" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" bodystart="31" bodyend="209"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" line="34" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp" bodystart="33" bodyend="225"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1acae5fb88afef113a24cc77a3b536a2c9" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Point</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a2e3cfa4a339fec6203c201ab9922f35b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Point</scope><name>asVector</name></member>

@@ -103,6 +103,13 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}}. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid(Point(0.0, 0.0, 0.0), \{\{1.0, 0.0, 0.0\}, \{0.0, 1.0, 0.0\}, \{0.0, 0.0, 1.0\}\},}
+\DoxyCodeLine{\{1.0, 2.0, 3.0\});}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Cuboid}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Cuboid}} 
 
 \doxysubsection{Member Typedef Documentation}
@@ -150,6 +157,13 @@ Constructor.
 Apply transformation to cuboid. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{cuboid.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_af9058de81115d953ab8d9b8922abe692}{Transformation::Translation}}(\{ 1.0, 0.0, 0.0 \})) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -167,6 +181,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Clone cuboid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}}* clonePtr = cuboid.clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned cuboid 
@@ -302,6 +322,13 @@ Get cuboid center.
 
 Get cuboid first axis. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} firstAxis = cuboid.getFirstAxis() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} first axis 
 \end{DoxyReturn}
@@ -314,6 +341,13 @@ Get cuboid first axis.
 
 
 Get cuboid first extent. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{Real firstExtent = cuboid.getFirstExtent() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} first extent 
@@ -328,6 +362,13 @@ Get cuboid first extent.
 
 Get cuboid second axis. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} secondAxis = cuboid.getSecondAxis() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} second axis 
 \end{DoxyReturn}
@@ -340,6 +381,13 @@ Get cuboid second axis.
 
 
 Get cuboid second extent. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{Real secondExtent = cuboid.getSecondExtent() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} second extent 
@@ -354,6 +402,13 @@ Get cuboid second extent.
 
 Get cuboid third axis. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} thirdAxis = cuboid.getThirdAxis() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} third axis 
 \end{DoxyReturn}
@@ -366,6 +421,13 @@ Get cuboid third axis.
 
 
 Get cuboid third extent. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{Real thirdExtent = cuboid.getThirdExtent() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} third extent 
@@ -380,6 +442,13 @@ Get cuboid third extent.
 
 Get cuboid vertices. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{Array<Cuboid::Vertex> vertices = cuboid.getVertices() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} vertices 
 \end{DoxyReturn}
@@ -392,6 +461,14 @@ Get cuboid vertices.
 
 
 Compute intersection of cuboid with cuboid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} anotherCuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.5, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{Intersection intersection = cuboid.intersectionWith(anotherCuboid) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -412,6 +489,14 @@ Compute intersection of cuboid with cuboid.
 Compute intersection of cuboid with line. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{Line line = Line(\{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = cuboid.intersectionWith(line) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Line} & A line \\
 \hline
@@ -428,6 +513,14 @@ Compute intersection of cuboid with line.
 
 
 Compute intersection of cuboid with pyramid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{Pyramid pyramid = ... ;}
+\DoxyCodeLine{Intersection intersection = cuboid.intersectionWith(pyramid) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -450,6 +543,14 @@ Compute intersection of cuboid with pyramid.
 Compute intersection of cuboid with ray. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{Ray ray = Ray(\{ -\/2.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = cuboid.intersectionWith(ray) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
 \hline
@@ -468,6 +569,14 @@ Compute intersection of cuboid with ray.
 
 
 Compute intersection of cuboid with segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{Segment segment = Segment(\{ -\/2.0, 0.0, 0.0 \}, \{ 2.0, 0.0, 0.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = cuboid.intersectionWith(segment) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -820,6 +929,13 @@ True if cuboids are equal
 
 
 Print cuboid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa8163a96646fa5b9069c7a19d6a6c642}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a50197f54dd665a9dc63004e89bad728e}{Cuboid::Cube}}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\DoxyCodeLine{cuboid.print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

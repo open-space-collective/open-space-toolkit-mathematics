@@ -105,13 +105,32 @@ Typedefs</h2></td></tr>
 <tr class="separator:a446382cbb767b2c1a4413b9f6f4fee34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e0e29898fea269d43fccf27c4fedd60"><td class="memItemLeft" align="right" valign="top">typedef runge_kutta_dopri5&lt; <a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a321c69ab0db9e09939b690580685a4b9">NumericalSolver::StateVector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#a9e0e29898fea269d43fccf27c4fedd60">dense_stepper_type_5</a></td></tr>
 <tr class="separator:a9e0e29898fea269d43fccf27c4fedd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc631b362fd85f617428eec25347b45"><td class="memItemLeft" align="right" valign="top">typedef bulirsch_stoer&lt; <a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a321c69ab0db9e09939b690580685a4b9">NumericalSolver::StateVector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#a2bc631b362fd85f617428eec25347b45">bulirsch_stoer_stepper_type</a></td></tr>
+<tr class="separator:a2bc631b362fd85f617428eec25347b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ae273f3eb2c2a71315b16e3b57a2550ab"><td class="memTemplParams" colspan="2">template&lt;size_t Order&gt; </td></tr>
+<tr class="memitem:ae273f3eb2c2a71315b16e3b57a2550ab"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#ae273f3eb2c2a71315b16e3b57a2550ab">make_controlled_adam_bashforth_moulton</a> (double abs_tol, double rel_tol)</td></tr>
+<tr class="separator:ae273f3eb2c2a71315b16e3b57a2550ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a880f6ab73ddfe8eae45c0c7f4c6aaaeb"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#a880f6ab73ddfe8eae45c0c7f4c6aaaeb">operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const <a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html">NumericalSolver</a> &amp;aNumericalSolver)</td></tr>
 <tr class="separator:a880f6ab73ddfe8eae45c0c7f4c6aaaeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a2bc631b362fd85f617428eec25347b45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bc631b362fd85f617428eec25347b45">&#9670;&nbsp;</a></span>bulirsch_stoer_stepper_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef bulirsch_stoer&lt;<a class="el" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a321c69ab0db9e09939b690580685a4b9">NumericalSolver::StateVector</a>&gt; <a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#a2bc631b362fd85f617428eec25347b45">ostk::mathematics::solver::bulirsch_stoer_stepper_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9e0e29898fea269d43fccf27c4fedd60"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e0e29898fea269d43fccf27c4fedd60">&#9670;&nbsp;</a></span>dense_stepper_type_5</h2>
 
@@ -169,6 +188,36 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ae273f3eb2c2a71315b16e3b57a2550ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae273f3eb2c2a71315b16e3b57a2550ab">&#9670;&nbsp;</a></span>make_controlled_adam_bashforth_moulton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Order&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ostk::mathematics::solver::make_controlled_adam_bashforth_moulton </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>abs_tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rel_tol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a880f6ab73ddfe8eae45c0c7f4c6aaaeb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a880f6ab73ddfe8eae45c0c7f4c6aaaeb">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
 
@@ -194,7 +243,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">NumericalSolver::Default</a>();</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aNumericalSolver</td><td>A numerical solver </td></tr>
@@ -207,6 +257,7 @@ Functions</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassostk_1_1mathematics_1_1solver_1_1_numerical_solver_html_a1653209d9c0b27cc3299fafaa4df7368"><div class="ttname"><a href="classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1653209d9c0b27cc3299fafaa4df7368">ostk::mathematics::solver::NumericalSolver::Default</a></div><div class="ttdeci">static NumericalSolver Default()</div><div class="ttdoc">Default.</div><div class="ttdef"><b>Definition:</b> NumericalSolver.cpp:709</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

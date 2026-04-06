@@ -12,10 +12,15 @@ Defines a numerical O\+DE solver that use the Boost Odeint libraries. This class
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97}{Stepper\+Type}} \{ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a2ad1d4b322353ee07200045be21ffb58}{Stepper\+Type\+::\+Runge\+Kutta4}}, 
+enum \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97}{Stepper\+Type}} \{ \newline
+\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a2ad1d4b322353ee07200045be21ffb58}{Stepper\+Type\+::\+Runge\+Kutta4}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a646d9d3aaac989d6fd4990f308ba3a37}{Stepper\+Type\+::\+Runge\+Kutta\+Cash\+Karp54}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a5002097811f3eb2dd4a34b826b1288e7}{Stepper\+Type\+::\+Runge\+Kutta\+Fehlberg78}}, 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a3203013d28f8e40a899ed45ede9ad149}{Stepper\+Type\+::\+Runge\+Kutta\+Dopri5}}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a3203013d28f8e40a899ed45ede9ad149}{Stepper\+Type\+::\+Runge\+Kutta\+Dopri5}}, 
+\newline
+\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a65ca550a20efb224edd0f6fb324af7d3}{Stepper\+Type\+::\+Adams\+Bashforth\+Moulton5}}, 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a6d5c11acddf69b60055af372f885f751}{Stepper\+Type\+::\+Adams\+Bashforth\+Moulton8}}, 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a031df4984d03b288981ec5bec64685db}{Stepper\+Type\+::\+Bulirsch\+Stoer}}
  \}
 \item 
 enum \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad8a0c981770c8ee40f765cc17cf0c1a5}{Log\+Type}} \{ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad8a0c981770c8ee40f765cc17cf0c1a5ac224e58a49e83bb9b94e2bd594fd5231}{Log\+Type\+::\+No\+Log}}, 
@@ -105,6 +110,12 @@ std\+::ostream \& \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numeri
 \doxysubsection{Detailed Description}
 Defines a numerical O\+DE solver that use the Boost Odeint libraries. This class will be moved into O\+S\+Tk-\/math in the future. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}{NumericalSolver}} solver = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}();}
+\end{DoxyCode}
+ 
+
 \doxysubsection{Member Typedef Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!Solution@{Solution}}
@@ -170,6 +181,18 @@ Runge\+Kutta\+Fehlberg78&\\
 Runge\+Kutta\+Dopri5&\\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AdamsBashforthMoulton5@{AdamsBashforthMoulton5}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}\index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!AdamsBashforthMoulton5@{AdamsBashforthMoulton5}}}\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a65ca550a20efb224edd0f6fb324af7d3}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a65ca550a20efb224edd0f6fb324af7d3}} 
+Adams\+Bashforth\+Moulton5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AdamsBashforthMoulton8@{AdamsBashforthMoulton8}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}\index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!AdamsBashforthMoulton8@{AdamsBashforthMoulton8}}}\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a6d5c11acddf69b60055af372f885f751}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a6d5c11acddf69b60055af372f885f751}} 
+Adams\+Bashforth\+Moulton8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BulirschStoer@{BulirschStoer}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}\index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!BulirschStoer@{BulirschStoer}}}\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a031df4984d03b288981ec5bec64685db}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a031df4984d03b288981ec5bec64685db}} 
+Bulirsch\+Stoer&\\
+\hline
+
 \end{DoxyEnumFields}
 
 
@@ -217,6 +240,12 @@ Constructor.
 
 Access observed state vectors. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} Array<Solution>\& states = numericalSolver.accessObservedStateVectors();}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Observed state vectors 
 \end{DoxyReturn}
@@ -230,6 +259,12 @@ Observed state vectors
 
 Clone numerical solver. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}{NumericalSolver}}* \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ade382b45dc13976a125ee742a7e0e299}{clone}} = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ade382b45dc13976a125ee742a7e0e299}{clone}}();}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Pointer to cloned numerical solver 
 \end{DoxyReturn}
@@ -242,6 +277,12 @@ Pointer to cloned numerical solver
 
 
 Default. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}{NumericalSolver}} solver = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}();}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 A default numerical solver 
@@ -490,6 +531,12 @@ Solution
 
 Check if numerical solver is defined. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae9123dc938fbfdf8497f804adf981f37}{isDefined}}();}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 True if numerical solver is defined 
 \end{DoxyReturn}
@@ -502,6 +549,12 @@ True if numerical solver is defined
 
 
 Not equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}() != \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1e196c06ce05721dd871501fd4df0500}{NumericalSolver::Undefined}}();}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -522,6 +575,12 @@ True if numerical solver are not equal
 Equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}() == \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}();}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Numerical\+Solver} & A numerical solver \\
 \hline
@@ -538,6 +597,12 @@ True if numerical solver are equal
 
 
 Print numerical solver. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad228bac87a6b39aeecc275e894178722}{print}}(std::cout);}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -600,6 +665,12 @@ Stepper\+Type
 
 Undefined. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}{NumericalSolver}} solver = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1e196c06ce05721dd871501fd4df0500}{NumericalSolver::Undefined}}();}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 An undefined numerical solver 
 \end{DoxyReturn}
@@ -615,6 +686,12 @@ An undefined numerical solver
 
 
 Output stream operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::cout << \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}();}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="43" column="35" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" bodystart="43" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="45" column="35" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" bodystart="45" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="200" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" bodystart="200" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="237" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" bodystart="237" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="53" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="21" bodyend="25"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="54" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="21" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a37f35461ca951c8a01b50631500cddd8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string" kindref="compound">LineString</ref> *</type>
@@ -75,13 +75,15 @@
 <para>Clone line string. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>*<sp/>clonePtr<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a37f35461ca951c8a01b50631500cddd8" kindref="member">clone</ref>()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Pointer to cloned line string </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="59" column="24" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="27" bodyend="30"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="63" column="24" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="27" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a9a5ce9c1b26bbad9f208a1f3192ea068" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -96,6 +98,9 @@
 <para>Equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>})<sp/>==<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>})<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aLineString</parametername>
@@ -111,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="66" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="32" bodyend="35"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="74" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="32" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a53f5cb0e9c9b0c4750b398d1abd24762" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -126,6 +131,9 @@
 <para>Not equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>})<sp/>!=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>2.0,<sp/>0.0<sp/>}<sp/>})<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aLineString</parametername>
@@ -141,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="73" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="37" bodyend="40"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="85" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="37" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1ad8e472cb5b6c7fe87374a1476b8835b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -161,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="83" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="42" bodyend="45"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="94" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="42" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1ac2a570d2617759b4e5d9e802ba9abade" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -180,7 +188,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="93" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="47" bodyend="50"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="103" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="47" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a6c13eb4d91446900ddda8f0040455020" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -203,7 +211,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="103" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="52" bodyend="88"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="112" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="52" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a93f187300021999caf7c48efabcb3265" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -248,7 +256,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="116" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="90" bodyend="111"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="124" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="90" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a66e45823757b2fa9a486729e02a91b94" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &gt; &amp;</type>
@@ -259,13 +267,15 @@
 <para>Get point array. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&lt;Point&gt;&amp;<sp/>points<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a66e45823757b2fa9a486729e02a91b94" kindref="member">getPointArray</ref>()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> array </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="122" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="113" bodyend="116"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="133" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="113" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1ad45555762f8bc004139ca09e49432d8a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
@@ -280,13 +290,15 @@
 <para>Access point at index. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Point&amp;<sp/>point<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1ad45555762f8bc004139ca09e49432d8a" kindref="member">accessPointAt</ref>(0)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para>[in] anIndex A point index <simplesect kind="return"><para>Reference to point at index </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="129" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="118" bodyend="126"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="143" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="118" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a31ff5ebe4cb0e03f08a68218ec7723c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -297,13 +309,15 @@
 <para>Get point count. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Size<sp/>count<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a31ff5ebe4cb0e03f08a68218ec7723c0" kindref="member">getPointCount</ref>()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>2</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> count </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="135" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="128" bodyend="131"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="152" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="128" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1ae59decef7e902caadca16d171658701e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -318,6 +332,9 @@
 <para>Get point closest to another point. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Point<sp/>closest<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1ae59decef7e902caadca16d171658701e" kindref="member">getPointClosestTo</ref>(Point(0.1,</highlight></codeline>
+<codeline><highlight class="normal">0.0))<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPoint</parametername>
@@ -333,7 +350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="142" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="133" bodyend="161"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="163" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="133" bodyend="161"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a896eb59a09118ed324b444616538c699" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>String</type>
@@ -355,6 +372,8 @@
 <para>Get string representation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>str<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a896eb59a09118ed324b444616538c699" kindref="member">toString</ref>()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aFormat</parametername>
@@ -370,7 +389,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="149" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="163" bodyend="222"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="173" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="163" bodyend="222"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a292e3bf679e232f605e4726f0bfff970" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -391,6 +410,8 @@
 <para>Print point. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a292e3bf679e232f605e4726f0bfff970" kindref="member">print</ref>(std::cout,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOutputStream</parametername>
@@ -412,7 +433,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="158" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="224" bodyend="234"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="185" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="224" bodyend="234"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a51ad3a2adffa4a272897a22593da1428" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1acacd5fbb50b8d1b38b2d90b9139cbfa9" kindref="member">LineString::ConstIterator</ref></type>
@@ -423,13 +444,16 @@
 <para>Get begin const iterator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref><sp/>lineString({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>})<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>lineString.begin()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Begin const iterator </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="164" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="236" bodyend="239"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="195" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="236" bodyend="239"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1ac4688c0d0f28a9627add88395df8337f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1acacd5fbb50b8d1b38b2d90b9139cbfa9" kindref="member">LineString::ConstIterator</ref></type>
@@ -440,13 +464,16 @@
 <para>Get end const iterator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref><sp/>lineString({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>})<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>lineString.end()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>End const iterator </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="170" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="241" bodyend="244"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="205" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="241" bodyend="244"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a0d3a24eba42a2d7449259b890d0bb30f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -462,6 +489,9 @@
 <para>Apply transformation to line string. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref><sp/>lineString({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>})<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">lineString.applyTransformation(aTransformation)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aTransformation</parametername>
@@ -475,7 +505,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="176" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="246" bodyend="262"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="215" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="246" bodyend="262"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -496,7 +526,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="186" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="264" bodyend="267"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="224" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="264" bodyend="267"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1aa04a6a68ea74f4702d1d98baa78b050d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string" kindref="compound">LineString</ref></type>
@@ -520,14 +550,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="197" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="269" bodyend="277"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="234" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp" bodystart="269" bodyend="277"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref> string. </para>
     </briefdescription>
     <detaileddescription>
-<para><verbatim>                        A line string is a connected series of line segments.
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1af664c958b514884a3889eab433c5482d" kindref="member">LineString</ref><sp/>lineString({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>})<sp/>;</highlight></codeline>
+</programlisting> <verbatim>                        A line string is a connected series of line segments.
 </verbatim></para>
 <para><ulink url="https://en.wikipedia.org/wiki/Polygonal_chain">https://en.wikipedia.org/wiki/Polygonal_chain</ulink> </para>
     </detaileddescription>
@@ -555,7 +586,7 @@
         <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="41" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" bodystart="40" bodyend="201"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" line="43" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp" bodystart="42" bodyend="238"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1ad45555762f8bc004139ca09e49432d8a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::LineString</scope><name>accessPointAt</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a0d3a24eba42a2d7449259b890d0bb30f" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::LineString</scope><name>applyTransformation</name></member>

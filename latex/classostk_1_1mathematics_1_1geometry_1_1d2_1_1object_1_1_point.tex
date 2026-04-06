@@ -59,6 +59,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}}. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}} point(1.0, 2.0) ;}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Point_}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Point\+\_\+}}(geometry) 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -99,6 +105,13 @@ Constructor.
 Apply transformation to point. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}} point(0.0, 0.0) ;}
+\DoxyCodeLine{point.applyTransformation(aTransformation) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -117,6 +130,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 Get vector representation of point. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_ac86e8f85187dc85c1f935627d56c1beb}{Vector2d}} vector = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}(1.0, 2.0).asVector() ; \textcolor{comment}{// [1.0, 2.0]}}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Vector representation of point 
 \end{DoxyReturn}
@@ -129,6 +148,12 @@ Vector representation of point
 
 
 Clone point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}* clonePtr = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}(0.0, 0.0).clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned point 
@@ -146,6 +171,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 
 Get distance to another point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Real distance = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}(0.0, 0.0).distanceTo(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}(1.0, 0.0)) ; \textcolor{comment}{// 1.0}}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -172,7 +203,6 @@ Addition operator\+: translate point along vector.
 \DoxyCodeLine{   }
 \DoxyCodeLine{    @param              [in] aVector A translation vector}
 \DoxyCodeLine{    @\textcolor{keywordflow}{return}             A point}
-\DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_ac86e8f85187dc85c1f935627d56c1beb}{Vector2d}}\& aVector) \textcolor{keyword}{const};}
 \DoxyCodeLine{}
 \DoxyCodeLine{    @brief              Subtraction \textcolor{keyword}{operator}: translate point along opposite vector}
@@ -183,7 +213,6 @@ Addition operator\+: translate point along vector.
 \DoxyCodeLine{   }
 \DoxyCodeLine{    @param              [in] aVector A translation vector}
 \DoxyCodeLine{    @\textcolor{keywordflow}{return}             A point}
-\DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_ac86e8f85187dc85c1f935627d56c1beb}{Vector2d}}\& aVector) \textcolor{keyword}{const};}
 \DoxyCodeLine{}
 \DoxyCodeLine{    @brief              Subtraction \textcolor{keyword}{operator}: get translation vector between two points}
@@ -194,7 +223,6 @@ Addition operator\+: translate point along vector.
 \DoxyCodeLine{   }
 \DoxyCodeLine{    @param              [in] aPoint A point}
 \DoxyCodeLine{    @\textcolor{keywordflow}{return}             A translation vector}
-\DoxyCodeLine{}
 \DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_ac86e8f85187dc85c1f935627d56c1beb}{Vector2d}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}\& aPoint) \textcolor{keyword}{const};}
 \DoxyCodeLine{}
 \DoxyCodeLine{    @brief              Check \textcolor{keywordflow}{if} point is defined}
@@ -248,6 +276,12 @@ True if point is near another point
 Not equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}(0.0, 0.0) != \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}(1.0, 0.0) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
 \hline
@@ -264,6 +298,12 @@ True if points are not equal
 
 
 Equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}(0.0, 0.0) == \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}(0.0, 0.0) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -303,6 +343,12 @@ Constructs a point at origin.
 Print point. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}(0.0, 0.0).print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
 \hline
@@ -322,6 +368,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 
 Get string representation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{String str = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a1c108c80b33fb0252405b8a567060e28}{Point}}(0.0, 0.0).toString() ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

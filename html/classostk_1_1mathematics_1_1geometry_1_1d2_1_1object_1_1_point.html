@@ -187,7 +187,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html" title="Point.">Point</a>. </p>
-<p><a href="https://en.wikipedia.org/wiki/Point_">https://en.wikipedia.org/wiki/Point_</a>(geometry) </p>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a> point(1.0, 2.0) ;</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Point_">https://en.wikipedia.org/wiki/Point_</a>(geometry) </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1c108c80b33fb0252405b8a567060e28"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c108c80b33fb0252405b8a567060e28">&#9670;&nbsp;</a></span>Point()</h2>
@@ -253,7 +254,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a> point(0.0, 0.0) ;</div>
+<div class="line">point.applyTransformation(aTransformation) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -280,7 +283,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get vector representation of point. </p>
-<dl class="section return"><dt>Returns</dt><dd>Vector representation of point </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#ac86e8f85187dc85c1f935627d56c1beb">Vector2d</a> vector = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>(1.0, 2.0).asVector() ; <span class="comment">// [1.0, 2.0]</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Vector representation of point </dd></dl>
 
 </div>
 </div>
@@ -308,7 +312,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone point. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned point </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>* clonePtr = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>(0.0, 0.0).clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned point </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#af63da855554f9114803103fe2390f5eb">ostk::mathematics::geometry::d2::Object</a>.</p>
 
@@ -331,7 +336,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get distance to another point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Real distance = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>(0.0, 0.0).distanceTo(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>(1.0, 0.0)) ; <span class="comment">// 1.0</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -370,7 +376,6 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">   </div>
 <div class="line">    @param              [in] aVector A translation vector</div>
 <div class="line">    @<span class="keywordflow">return</span>             A point</div>
-<div class="line"> </div>
 <div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a> operator+(<span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#ac86e8f85187dc85c1f935627d56c1beb">Vector2d</a>&amp; aVector) <span class="keyword">const</span>;</div>
 <div class="line"> </div>
 <div class="line">    @brief              Subtraction <span class="keyword">operator</span>: translate point along opposite vector</div>
@@ -381,7 +386,6 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">   </div>
 <div class="line">    @param              [in] aVector A translation vector</div>
 <div class="line">    @<span class="keywordflow">return</span>             A point</div>
-<div class="line"> </div>
 <div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a> operator-(<span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#ac86e8f85187dc85c1f935627d56c1beb">Vector2d</a>&amp; aVector) <span class="keyword">const</span>;</div>
 <div class="line"> </div>
 <div class="line">    @brief              Subtraction <span class="keyword">operator</span>: get translation vector between two points</div>
@@ -392,7 +396,6 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">   </div>
 <div class="line">    @param              [in] aPoint A point</div>
 <div class="line">    @<span class="keywordflow">return</span>             A translation vector</div>
-<div class="line"> </div>
 <div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#ac86e8f85187dc85c1f935627d56c1beb">Vector2d</a> operator-(<span class="keyword">const</span> <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>&amp; aPoint) <span class="keyword">const</span>;</div>
 <div class="line"> </div>
 <div class="line">    @brief              Check <span class="keywordflow">if</span> point is defined</div>
@@ -461,7 +464,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>(0.0, 0.0) != <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>(1.0, 0.0) ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -488,7 +492,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>(0.0, 0.0) == <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>(0.0, 0.0) ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -562,7 +567,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>(0.0, 0.0).print(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -609,7 +615,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get string representation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">String str = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">Point</a>(0.0, 0.0).toString() ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aFormat</td><td>A format </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>aPrecision A precision </td></tr>
@@ -729,7 +736,7 @@ Additional Inherited Members</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_ac86e8f85187dc85c1f935627d56c1beb"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#ac86e8f85187dc85c1f935627d56c1beb">ostk::mathematics::object::Vector2d</a></div><div class="ttdeci">Eigen::Vector2d Vector2d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:37</div></div>
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_ac86e8f85187dc85c1f935627d56c1beb"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#ac86e8f85187dc85c1f935627d56c1beb">ostk::mathematics::object::Vector2d</a></div><div class="ttdeci">Eigen::Vector2d Vector2d</div><div class="ttdoc">2D double vector type alias for Eigen::Vector2d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:41</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_html_a1c108c80b33fb0252405b8a567060e28"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a1c108c80b33fb0252405b8a567060e28">ostk::mathematics::geometry::d2::object::Point::Point</a></div><div class="ttdeci">Point(const Real &amp;aFirstCoordinate, const Real &amp;aSecondCoordinate)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Point.cpp:20</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_html_a44fa9d92b862d8fb9a379440ee0e6a81"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a44fa9d92b862d8fb9a379440ee0e6a81">ostk::mathematics::geometry::d2::object::Point::Origin</a></div><div class="ttdeci">static Point Origin()</div><div class="ttdoc">Constructs a point at origin.</div><div class="ttdef"><b>Definition:</b> Point.cpp:205</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_html_a71002eaa63a8305e0566b490ec7740ec"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html#a71002eaa63a8305e0566b490ec7740ec">ostk::mathematics::geometry::d2::object::Point::Undefined</a></div><div class="ttdeci">static Point Undefined()</div><div class="ttdoc">Constructs an undefined point.</div><div class="ttdef"><b>Definition:</b> Point.cpp:200</div></div>

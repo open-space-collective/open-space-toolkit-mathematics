@@ -66,6 +66,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}}. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}} ray(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Line_}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Line\+\_\+}}(geometry)\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}} 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -106,6 +112,13 @@ Constructor.
 Apply transformation to ray. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}} ray = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{ray.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5cd654de32139306358aa773bbf8c291}{Transformation::Identity}}()) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -123,6 +136,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Clone ray. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}* rayPtr = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_ad6ef8e1e883a675f054a790093c152b8}{clone}}() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned ray 
@@ -194,6 +213,13 @@ True if ray contains point set
 Get distance to point. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}} ray = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Real distance = ray.distanceTo(Point(1.0, 0.0, 0.0)) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
 \hline
@@ -250,6 +276,14 @@ Get ray origin.
 Compute intersection of ray with ellipsoid. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}} ray = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, -\/2.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Ellipsoid ellipsoid = ... ;}
+\DoxyCodeLine{Intersection intersection = ray.intersectionWith(ellipsoid) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
 \hline
@@ -270,6 +304,14 @@ Compute intersection of ray with ellipsoid.
 Compute intersection of ray with plane. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}} ray = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Plane plane = Plane(\{ 0.0, 0.0, 1.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = ray.intersectionWith(plane) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Plane} & A plane \\
 \hline
@@ -286,6 +328,14 @@ Compute intersection of ray with plane.
 
 
 Compute intersection of ray with sphere. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}} ray = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, -\/2.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Sphere sphere = Sphere(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0) ;}
+\DoxyCodeLine{Intersection intersection = ray.intersectionWith(sphere) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -483,6 +533,12 @@ True if rays are equal
 
 
 Print ray. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_af5e5dea5fe393ea9a76fd3b2638f9446}{print}}(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

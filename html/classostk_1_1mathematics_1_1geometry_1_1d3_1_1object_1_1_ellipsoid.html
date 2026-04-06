@@ -246,7 +246,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html" title="Ellipsoid.">Ellipsoid</a>. </p>
-<p><a href="https://en.wikipedia.org/wiki/Ellipsoid">https://en.wikipedia.org/wiki/Ellipsoid</a> </p>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a> ellipsoid(Point(0.0, 0.0, 0.0), 1.0, 2.0, 3.0);</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Ellipsoid">https://en.wikipedia.org/wiki/Ellipsoid</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a770daad95f02aec5ed9e124592548152"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a770daad95f02aec5ed9e124592548152">&#9670;&nbsp;</a></span>Ellipsoid()</h2>
@@ -333,7 +334,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to ellipsoid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a> ellipsoid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0, 2.0, 3.0) ;</div>
+<div class="line">ellipsoid.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">Transformation::Translation</a>({ 1.0, 0.0, 0.0 })) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -368,7 +371,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone ellipsoid. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned ellipsoid </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a>* clonePtr = ellipsoid.clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned ellipsoid </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a8ea8d4074bfaaa3d996d760d5d5751db">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -501,7 +505,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get ellipsoid first axis. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html" title="Ellipsoid.">Ellipsoid</a> first axis </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a> ellipsoid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0, 2.0, 3.0) ;</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> firstAxis = ellipsoid.getFirstAxis() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html" title="Ellipsoid.">Ellipsoid</a> first axis </dd></dl>
 
 </div>
 </div>
@@ -586,7 +592,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get ellipsoid second axis. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html" title="Ellipsoid.">Ellipsoid</a> second axis </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a> ellipsoid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0, 2.0, 3.0) ;</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> secondAxis = ellipsoid.getSecondAxis() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html" title="Ellipsoid.">Ellipsoid</a> second axis </dd></dl>
 
 </div>
 </div>
@@ -627,7 +635,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get ellipsoid third axis. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html" title="Ellipsoid.">Ellipsoid</a> third axis </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a> ellipsoid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0, 2.0, 3.0) ;</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> thirdAxis = ellipsoid.getThirdAxis() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html" title="Ellipsoid.">Ellipsoid</a> third axis </dd></dl>
 
 </div>
 </div>
@@ -679,7 +689,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of ellipsoid with cone. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a> ellipsoid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0, 2.0, 3.0) ;</div>
+<div class="line">Cone cone = Cone({ 0.0, 0.0, 5.0 }, { 0.0, 0.0, -1.0 }, <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf219273c9f6215c4a47a5530e0a3aa3">Angle::Degrees</a>(15.0)) ;</div>
+<div class="line">Intersection intersection = ellipsoid.intersectionWith(cone) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aCone</td><td>A cone </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">onlyInSight</td><td>(optional) If true, only return intersection points that are in sight </td></tr>
@@ -707,7 +720,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of ellipsoid with line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a> ellipsoid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0, 2.0, 3.0) ;</div>
+<div class="line">Line line = Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }) ;</div>
+<div class="line">Intersection intersection = ellipsoid.intersectionWith(line) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aLine</td><td>A line </td></tr>
   </table>
@@ -744,7 +760,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of ellipsoid with pyramid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a> ellipsoid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0, 2.0, 3.0) ;</div>
+<div class="line">Pyramid pyramid = ... ;</div>
+<div class="line">Intersection intersection = ellipsoid.intersectionWith(pyramid) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPyramid</td><td>A pyramid </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">onlyInSight</td><td>(optional) If true, only return intersection points that are in sight </td></tr>
@@ -782,7 +801,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of ellipsoid with ray. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a> ellipsoid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0, 2.0, 3.0) ;</div>
+<div class="line">Ray ray = Ray({ -2.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }) ;</div>
+<div class="line">Intersection intersection = ellipsoid.intersectionWith(ray) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aRay</td><td>A ray </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">onlyInSight</td><td>(optional) If true, only return intersection points that are in sight </td></tr>
@@ -810,7 +832,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of ellipsoid with segment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a> ellipsoid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0, 2.0, 3.0) ;</div>
+<div class="line">Segment segment = Segment({ -2.0, 0.0, 0.0 }, { 2.0, 0.0, 0.0 }) ;</div>
+<div class="line">Intersection intersection = ellipsoid.intersectionWith(segment) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aSegment</td><td>A segment </td></tr>
   </table>
@@ -1243,7 +1268,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print ellipsoid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a> ellipsoid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">Ellipsoid</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0, 2.0, 3.0) ;</div>
+<div class="line">ellipsoid.print(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -1290,8 +1317,11 @@ Static Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_adf219273c9f6215c4a47a5530e0a3aa3"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf219273c9f6215c4a47a5530e0a3aa3">ostk::mathematics::geometry::Angle::Degrees</a></div><div class="ttdeci">static Angle Degrees(const Real &amp;aValue)</div><div class="ttdoc">Construct an angle from a value in degrees.</div><div class="ttdef"><b>Definition:</b> Angle.cpp:464</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_html_a770daad95f02aec5ed9e124592548152"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a770daad95f02aec5ed9e124592548152">ostk::mathematics::geometry::d3::object::Ellipsoid::Ellipsoid</a></div><div class="ttdeci">Ellipsoid(const Point &amp;aCenter, const Real &amp;aFirstPrincipalSemiAxis, const Real &amp;aSecondPrincipalSemiAxis, const Real &amp;aThirdPrincipalSemiAxis, const Quaternion &amp;anOrientation=DEFAULT_ORIENTATION)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Ellipsoid.cpp:66</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_af9058de81115d953ab8d9b8922abe692"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">ostk::mathematics::geometry::d3::Transformation::Translation</a></div><div class="ttdeci">static Transformation Translation(const Vector3d &amp;aTranslationVector)</div><div class="ttdoc">Construct a translation transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:259</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a2e0dc90fe04fb9befb79ec9874dcebc4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">ostk::mathematics::geometry::d3::object::Point::Origin</a></div><div class="ttdeci">static Point Origin()</div><div class="ttdoc">Constructs a point at origin.</div><div class="ttdef"><b>Definition:</b> Point.cpp:204</div></div>
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a69d9a055814e9440af219eff448c6c23"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">ostk::mathematics::object::Vector3d</a></div><div class="ttdeci">Eigen::Vector3d Vector3d</div><div class="ttdoc">3D double vector type alias for Eigen::Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:43</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_html_ab065862f2a77807e42f6feaadc0637e2"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ab065862f2a77807e42f6feaadc0637e2">ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::XYZS</a></div><div class="ttdeci">static Quaternion XYZS(const Real &amp;aFirstComponent, const Real &amp;aSecondComponent, const Real &amp;aThirdComponent, const Real &amp;aFourthComponent)</div><div class="ttdoc">Construct Quaternion using the vector-scalar format.</div><div class="ttdef"><b>Definition:</b> Quaternion.cpp:503</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_html_a926b28952c1364fff54b2cf2ace854ff"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a926b28952c1364fff54b2cf2ace854ff">ostk::mathematics::geometry::d3::object::Ellipsoid::Undefined</a></div><div class="ttdeci">static Ellipsoid Undefined()</div><div class="ttdoc">Constructs an undefined ellipsoid.</div><div class="ttdef"><b>Definition:</b> Ellipsoid.cpp:968</div></div>
 <!-- HTML footer for doxygen 1.8.7-->

@@ -42,6 +42,15 @@ virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1
 \end{DoxyVerb}
 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} x = \{\{0.0, 1.0, 2.0, 3.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} y = \{\{0.0, 1.0, 4.0, 9.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a66f13250b306128dacc988a56961eda8}{Linear}} interpolator(x, y);}
+\DoxyCodeLine{\textcolor{keywordtype}{double} value = interpolator.evaluate(1.5);}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Linear_interpolator\#}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Linear\+\_\+interpolator\#}}\+:$\sim$\+:text=In\%20mathematics\%2C\%20linear\%20interpolator\%20is,set\%20of\%20known\%20data\%20points. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -82,6 +91,10 @@ The x values must be sorted in ascending order
 Destructor. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Called automatically when the Linear interpolator goes out of scope}}
+\end{DoxyCode}
+ 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a24f276d8242c407b246d7aed10ce5285}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a24f276d8242c407b246d7aed10ce5285}} 

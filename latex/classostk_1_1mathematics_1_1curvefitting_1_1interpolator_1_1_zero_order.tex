@@ -1,0 +1,217 @@
+\hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order}{}\doxysection{ostk\+::mathematics\+::curvefitting\+::interpolator\+::Zero\+Order Class Reference}
+\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order}\index{ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}}
+
+
+Zero-\/\+Order Hold \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator}{Interpolator}}.  
+
+
+
+
+{\ttfamily \#include $<$Zero\+Order.\+hpp$>$}
+
+Inheritance diagram for ostk\+::mathematics\+::curvefitting\+::interpolator\+::Zero\+Order\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a4ed0afab00158fdc549b2a78f2d780ac}{Zero\+Order}} (const Vector\+Xd \&an\+X\+Vector, const Vector\+Xd \&a\+Y\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a05867c04160a594a06b783b6d46edd50}{$\sim$\+Zero\+Order}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_ac9dd12114f9607239761a0891d8562e6}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const override
+\begin{DoxyCompactList}\small\item\em Evaluate the zero-\/order hold interpolator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a2ecd527a195050c5892a6d09122c2664}{evaluate}} (const double \&a\+Query\+Value) const override
+\begin{DoxyCompactList}\small\item\em Evaluate the zero-\/order hold interpolator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a20e74914f8b7836e252c36c3d512a247}{compute\+Derivative}} (const double \&a\+Query\+Value) const override
+\begin{DoxyCompactList}\small\item\em Get the derivative of the zero-\/order hold interpolator. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a4d9fe3d2c0e021271277ac6d43a780de}{compute\+Derivative}} (const Vector\+Xd \&a\+Query\+Vector) const override
+\begin{DoxyCompactList}\small\item\em Get the derivative of the zero-\/order hold interpolator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Zero-\/\+Order Hold \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator}{Interpolator}}. 
+
+\begin{DoxyVerb}                        A step interpolator that returns the value of the previous data point.
+                        For any query value x, it returns the y value of the largest data point
+                        x_i where x_i <= x. Also known as "zero-order hold" or "step" interpolation.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} x = \{\{0.0, 1.0, 2.0, 3.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} y = \{\{0.0, 1.0, 4.0, 9.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a4ed0afab00158fdc549b2a78f2d780ac}{ZeroOrder}} interpolator(x, y);}
+\DoxyCodeLine{\textcolor{keywordtype}{double} value = interpolator.evaluate(1.5);  \textcolor{comment}{// 1.0}}
+\end{DoxyCode}
+
+
+\href{https://en.wikipedia.org/wiki/Zero-order_hold}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Zero-\/order\+\_\+hold}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a4ed0afab00158fdc549b2a78f2d780ac}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a4ed0afab00158fdc549b2a78f2d780ac}} 
+\index{ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}!ZeroOrder@{ZeroOrder}}
+\index{ZeroOrder@{ZeroOrder}!ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}}
+\doxysubsubsection{\texorpdfstring{ZeroOrder()}{ZeroOrder()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Zero\+Order\+::\+Zero\+Order (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{an\+X\+Vector,  }\item[{const Vector\+Xd \&}]{a\+Y\+Vector }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a4ed0afab00158fdc549b2a78f2d780ac}{ZeroOrder}} zeroOrder(x, y);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em an\+X\+Vector} & A vector of x values \\
+\hline
+{\em a\+Y\+Vector} & A vector of y values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The x values must be sorted in ascending order 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a05867c04160a594a06b783b6d46edd50}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a05867c04160a594a06b783b6d46edd50}} 
+\index{ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}!````~ZeroOrder@{$\sim$ZeroOrder}}
+\index{````~ZeroOrder@{$\sim$ZeroOrder}!ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}}
+\doxysubsubsection{\texorpdfstring{$\sim$ZeroOrder()}{~ZeroOrder()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Zero\+Order\+::$\sim$\+Zero\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Called automatically when the ZeroOrder interpolator goes out of scope}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a20e74914f8b7836e252c36c3d512a247}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a20e74914f8b7836e252c36c3d512a247}} 
+\index{ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Zero\+Order\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the derivative of the zero-\/order hold interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} derivative = zeroOrder.computeDerivative(5.0) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Derivative of the interpolator at the given x value (always 0.\+0 for step function) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a4d9fe3d2c0e021271277ac6d43a780de}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a4d9fe3d2c0e021271277ac6d43a780de}} 
+\index{ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Zero\+Order\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the derivative of the zero-\/order hold interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} derivatives = zeroOrder.computeDerivative(\{1.0, 5.0, 6.0\}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of derivatives of the interpolator at the given x values (always 0.\+0 for step function) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a2ecd527a195050c5892a6d09122c2664}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a2ecd527a195050c5892a6d09122c2664}} 
+\index{ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Zero\+Order\+::evaluate (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluate the zero-\/order hold interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} values = zeroOrder.evaluate(5.0) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The y value of the previous data point 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_aae0c8423f11e7aa9f764ee4973070c36}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_ac9dd12114f9607239761a0891d8562e6}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_ac9dd12114f9607239761a0891d8562e6}} 
+\index{ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::ZeroOrder@{ostk::mathematics::curvefitting::interpolator::ZeroOrder}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Zero\+Order\+::evaluate (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluate the zero-\/order hold interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} values = zeroOrder.evaluate(\{1.0, 5.0, 6.0\}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of y values 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a2e5f87beae48daf0ebbd4da6c0fdcb77}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Interpolator/\mbox{\hyperlink{_zero_order_8hpp}{Zero\+Order.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Interpolator/\mbox{\hyperlink{_zero_order_8cpp}{Zero\+Order.\+cpp}}\end{DoxyCompactItemize}

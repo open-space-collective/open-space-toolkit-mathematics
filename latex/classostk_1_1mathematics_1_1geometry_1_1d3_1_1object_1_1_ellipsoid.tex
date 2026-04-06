@@ -96,6 +96,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}}. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid(Point(0.0, 0.0, 0.0), 1.0, 2.0, 3.0);}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Ellipsoid}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Ellipsoid}} 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -142,6 +148,13 @@ Constructor.
 Apply transformation to ellipsoid. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{ellipsoid.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_af9058de81115d953ab8d9b8922abe692}{Transformation::Translation}}(\{ 1.0, 0.0, 0.0 \})) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -159,6 +172,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Clone ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}* clonePtr = ellipsoid.clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned ellipsoid 
@@ -274,6 +293,13 @@ Get ellipsoid center.
 
 Get ellipsoid first axis. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} firstAxis = ellipsoid.getFirstAxis() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} first axis 
 \end{DoxyReturn}
@@ -346,6 +372,13 @@ Get ellipsoid orientation.
 
 Get ellipsoid second axis. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} secondAxis = ellipsoid.getSecondAxis() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} second axis 
 \end{DoxyReturn}
@@ -377,6 +410,13 @@ Get ellipsoid second principal semi-\/axis.
 
 
 Get ellipsoid third axis. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} thirdAxis = ellipsoid.getThirdAxis() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} third axis 
@@ -411,6 +451,14 @@ Get ellipsoid third principal semi-\/axis.
 Compute intersection of ellipsoid with cone. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{Cone cone = Cone(\{ 0.0, 0.0, 5.0 \}, \{ 0.0, 0.0, -\/1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0)) ;}
+\DoxyCodeLine{Intersection intersection = ellipsoid.intersectionWith(cone) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Cone} & A cone \\
 \hline
@@ -431,6 +479,14 @@ Compute intersection of ellipsoid with cone.
 Compute intersection of ellipsoid with line. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{Line line = Line(\{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = ellipsoid.intersectionWith(line) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Line} & A line \\
 \hline
@@ -447,6 +503,14 @@ Compute intersection of ellipsoid with line.
 
 
 Compute intersection of ellipsoid with pyramid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{Pyramid pyramid = ... ;}
+\DoxyCodeLine{Intersection intersection = ellipsoid.intersectionWith(pyramid) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -469,6 +533,14 @@ Compute intersection of ellipsoid with pyramid.
 Compute intersection of ellipsoid with ray. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{Ray ray = Ray(\{ -\/2.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = ellipsoid.intersectionWith(ray) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
 \hline
@@ -487,6 +559,14 @@ Compute intersection of ellipsoid with ray.
 
 
 Compute intersection of ellipsoid with segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{Segment segment = Segment(\{ -\/2.0, 0.0, 0.0 \}, \{ 2.0, 0.0, 0.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = ellipsoid.intersectionWith(segment) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -837,6 +917,13 @@ True if ellipsoids are equal
 
 
 Print ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{ellipsoid.print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

@@ -12,7 +12,7 @@
 Inheritance diagram for ostk\+::mathematics\+::curvefitting\+::Interpolator\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.003584cm]{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator}
+\includegraphics[height=0.752688cm]{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -20,7 +20,8 @@ Inheritance diagram for ostk\+::mathematics\+::curvefitting\+::Interpolator\+:\b
 \item 
 enum \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557}{Type}} \{ \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557a98cf9ba70112c998166a82b6f289bb9f}{Type\+::\+Barycentric\+Rational}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557abc050383dcd36a2e1f9481e562332cfa}{Type\+::\+Cubic\+Spline}}, 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b}{Type\+::\+Linear}}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b}{Type\+::\+Linear}}, 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557a302ecba0c202890cc825530fca2bf596}{Type\+::\+Zero\+Order}}
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
@@ -52,6 +53,13 @@ static const Shared$<$ const \mbox{\hyperlink{classostk_1_1mathematics_1_1curvef
 
 In mathematics, an interpolator is a type of estimator allowing to construct new data points based on a range of a discrete set of known data points.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} interpolator = \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a41019cdd1cad7b5c5c818ff25a122536}{Interpolator::GenerateInterpolator}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b}{Interpolator::Type::Linear}}, x, y);}
+\DoxyCodeLine{\textcolor{keywordtype}{double} value = interpolator-\/>evaluate(1.5);}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Interpolator}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Interpolator}}. 
 
 \doxysubsection{Member Enumeration Documentation}
@@ -74,6 +82,10 @@ Cubic\+Spline&\\
 Linear&\\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ZeroOrder@{ZeroOrder}!ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}}\index{ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}!ZeroOrder@{ZeroOrder}}}\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557a302ecba0c202890cc825530fca2bf596}\label{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557a302ecba0c202890cc825530fca2bf596}} 
+Zero\+Order&\\
+\hline
+
 \end{DoxyEnumFields}
 
 
@@ -87,6 +99,12 @@ Linear&\\
 
 
 Constructor (can only be called by derived classes since it is pure virtual) 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6593f90bb974214f6f2b264bc114b96e}{Interpolator}} interpolator(\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b}{Interpolator::Type::Linear}});}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}{Parameters}
@@ -104,6 +122,10 @@ Constructor (can only be called by derived classes since it is pure virtual)
 Destructor (pure virtual) 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Called automatically when the interpolator goes out of scope}}
+\end{DoxyCode}
+ 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}\label{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}} 
@@ -117,6 +139,12 @@ Destructor (pure virtual)
 Get the derivative of the interpolator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} derivative = interpolator.computeDerivative(5.0);}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}{Parameters}
 {\em a\+Query\+Value} & An x value \\
 \hline
@@ -126,7 +154,7 @@ Derivative of the interpolator at the given x value
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a18dba35307db81b233329af76feb09fa}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a24f276d8242c407b246d7aed10ce5285}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0f9feb9408d8b5510342dc5a54107bef}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational}}.
+Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a18dba35307db81b233329af76feb09fa}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a24f276d8242c407b246d7aed10ce5285}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0f9feb9408d8b5510342dc5a54107bef}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a20e74914f8b7836e252c36c3d512a247}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Zero\+Order}}.
 
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}\label{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}} 
 \index{ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}!computeDerivative@{computeDerivative}}
@@ -139,6 +167,12 @@ Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1inte
 Get the derivative of the interpolator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} derivatives = interpolator.computeDerivative(queryVector);}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}{Parameters}
 {\em a\+Query\+Vector} & A vector of x values \\
 \hline
@@ -148,7 +182,7 @@ Vector of derivatives of the interpolator at the given x values
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a91fa43ce75d45612a45e22af98762dcd}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_aa3bad32623ca7a926776fac3c5a7f9e0}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a53b32694d5f83bb2570c82e21d8ecaf2}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational}}.
+Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a91fa43ce75d45612a45e22af98762dcd}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_aa3bad32623ca7a926776fac3c5a7f9e0}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a53b32694d5f83bb2570c82e21d8ecaf2}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a4d9fe3d2c0e021271277ac6d43a780de}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Zero\+Order}}.
 
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_aae0c8423f11e7aa9f764ee4973070c36}\label{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_aae0c8423f11e7aa9f764ee4973070c36}} 
 \index{ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}!evaluate@{evaluate}}
@@ -161,6 +195,12 @@ Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1inte
 Evaluate the interpolator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} value = interpolator.evaluate(5.0);}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}{Parameters}
 {\em a\+Query\+Value} & An x value \\
 \hline
@@ -170,7 +210,7 @@ Vector of y values
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a2f91b443473606d1236a81d24d643368}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a741b61d24af15b3332721b0751ec3a7a}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a343d5f5f554639ce936706ea75109006}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational}}.
+Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a2f91b443473606d1236a81d24d643368}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a741b61d24af15b3332721b0751ec3a7a}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a343d5f5f554639ce936706ea75109006}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_a2ecd527a195050c5892a6d09122c2664}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Zero\+Order}}.
 
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a2e5f87beae48daf0ebbd4da6c0fdcb77}\label{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a2e5f87beae48daf0ebbd4da6c0fdcb77}} 
 \index{ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}!evaluate@{evaluate}}
@@ -183,6 +223,12 @@ Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1inte
 Evaluate the interpolator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} values = interpolator.evaluate(queryVector);}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}{Parameters}
 {\em a\+Query\+Vector} & A vector of x values \\
 \hline
@@ -192,7 +238,7 @@ Vector of y values
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a6852a278bdd114175116ae0e875bd258}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_ac1332768995f471149cd3852b3ba2782}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0a440a296a04347ed9b4a9a22f1cf57f}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational}}.
+Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a6852a278bdd114175116ae0e875bd258}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_ac1332768995f471149cd3852b3ba2782}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0a440a296a04347ed9b4a9a22f1cf57f}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_ac9dd12114f9607239761a0891d8562e6}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Zero\+Order}}.
 
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a41019cdd1cad7b5c5c818ff25a122536}\label{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a41019cdd1cad7b5c5c818ff25a122536}} 
 \index{ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}!GenerateInterpolator@{GenerateInterpolator}}
@@ -203,6 +249,12 @@ Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1inte
 
 
 Generate an interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} interpolator = \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a41019cdd1cad7b5c5c818ff25a122536}{Interpolator::GenerateInterpolator}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b}{Interpolator::Type::Linear}}, x, y);}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}{Parameters}
@@ -225,6 +277,12 @@ Shared pointer to correct \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitt
 
 
 Get the interpolation type. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a6318ad43cbddfa9b220213af2ac33557}{Interpolator::Type}} type = interpolator.getInterpolationType();}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Interpolation type 

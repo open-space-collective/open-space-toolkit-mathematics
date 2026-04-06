@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="30" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" bodystart="29" bodyend="36"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="32" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" bodystart="31" bodyend="38"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -59,10 +59,12 @@
 <para>Default constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Object<sp/>is<sp/>abstract;<sp/>derived<sp/>classes<sp/>use<sp/>the<sp/>default<sp/>constructor.</highlight></codeline>
+</programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="40" column="5"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="45" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af11dec981b2e1ab08deae342ec2c4ef8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type></type>
@@ -73,10 +75,12 @@
 <para>Destructor (pure virtual) </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Object<sp/>is<sp/>abstract;<sp/>destructor<sp/>is<sp/>called<sp/>via<sp/>derived<sp/>class.</highlight></codeline>
+</programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="44" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="22" bodyend="22"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="52" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="22" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af63da855554f9114803103fe2390f5eb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref> *</type>
@@ -88,21 +92,23 @@
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a354e489eed79ff4e87deea504eeccb54">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1aab7aa00392d691582dfc454fd0d7a7c5">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a37f35461ca951c8a01b50631500cddd8">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a0ee1f055d01e740ac294252806887fc6">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a19f3ba420ea69eefa3a2b948d59a2fab">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a04159c43117169d31c0e275f10617912">clone</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a0ee1f055d01e740ac294252806887fc6">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a290758ce99124ae08292c683a9d77fc3">clone</reimplementedby>
         <briefdescription>
 <para>Clone object (pure virtual) </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a15a959fd5b624d6fcc6725982a8cddf8" kindref="member">Object</ref>*<sp/>clonePtr<sp/>=<sp/>objectPtr-&gt;clone()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Pointer to cloned object </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="50" column="20"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="61" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9617246a3e26d57e5ba78e57387ae05a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -117,6 +123,8 @@
 <para>Equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Point(0.0,<sp/>0.0)<sp/>==<sp/>Point(0.0,<sp/>0.0)<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anObject</parametername>
@@ -132,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="57" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="24" bodyend="65"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="71" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="24" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1afe72ba03919d609d2847b0b4162d083d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -147,6 +155,8 @@
 <para>Not equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Point(0.0,<sp/>0.0)<sp/>!=<sp/>Point(1.0,<sp/>0.0)<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anObject</parametername>
@@ -162,33 +172,35 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="64" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="67" bodyend="70"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="81" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="67" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1abe5ea18c13bc259fc0da0b0c49fa0dca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
         <definition>virtual bool ostk::mathematics::geometry::d2::Object::isDefined</definition>
         <argsstring>() const =0</argsstring>
         <name>isDefined</name>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ac38eacd742cd2a60eb62d03cf1234b45">isDefined</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1ad8e472cb5b6c7fe87374a1476b8835b7">isDefined</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a603f1de0e328c16a829b9e1c9f5c077f">isDefined</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a6a88d19e8e5978c2fe9eeeb88d6cf8d7">isDefined</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a06c0dd090011c4bc96237f46ce47e049">isDefined</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a29bfbe3e8ba8d68e4e5b2351f225f965">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ac38eacd742cd2a60eb62d03cf1234b45">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1ad8e472cb5b6c7fe87374a1476b8835b7">isDefined</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a5a81fa8426fe6a4be5addda02c888704">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a29bfbe3e8ba8d68e4e5b2351f225f965">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a06c0dd090011c4bc96237f46ce47e049">isDefined</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a81f715c35ecd0fa424f2daf4ffe59bec">isDefined</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a8978d917810e68bb9e6b484fc97524c3">isDefined</reimplementedby>
         <briefdescription>
 <para>Check if object is defined. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Point(0.0,<sp/>0.0).isDefined()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>True if object is defined </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="78" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="101" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a553d7a1e388598c74d0f9fdd57d1ba9d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -223,7 +235,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="91" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="79" bodyend="92"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="113" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="79" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a43eaa4a59d81e7eb36b80f6695de6ce1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -258,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="104" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="94" bodyend="167"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="125" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="94" bodyend="167"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aedf9c7ef5af5892d15cf08da795fa1af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>String</type>
@@ -266,14 +278,14 @@
         <argsstring>(const Object::Format &amp;aFormat=Object::Format::Standard, const Integer &amp;aPrecision=Integer::Undefined()) const =0</argsstring>
         <name>toString</name>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a08e4ad2714d08fc8b90e2f4fd643bcfd">toString</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1acf4c687922d62a5aba718135134da5c6">toString</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3c03f6d92663a15da6e2dc6dbdbc46ab">toString</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a896eb59a09118ed324b444616538c699">toString</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a6cc208100261019089ad86b71b700864">toString</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1ab51f3ac0454156100fd02a75fcf3f7f7">toString</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1acf4c687922d62a5aba718135134da5c6">toString</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3c03f6d92663a15da6e2dc6dbdbc46ab">toString</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a336bfa4add0cea6ca7ce52a2e2b5e341">toString</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a5b9183cde21c414bc8a12e2e079e4ed1">toString</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1acae5758cc07f2787875897d4392a07a4">toString</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a5b9183cde21c414bc8a12e2e079e4ed1">toString</reimplementedby>
         <param>
           <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" kindref="member">Object::Format</ref> &amp;</type>
           <declname>aFormat</declname>
@@ -288,6 +300,8 @@
 <para>Get string representation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Point(0.0,<sp/>0.0).toString()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aFormat</parametername>
@@ -303,7 +317,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="111" column="20"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="135" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aaf59b52c718ca92c6b6116660077d9f9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -311,14 +325,14 @@
         <argsstring>(std::ostream &amp;anOutputStream, bool displayDecorators=true) const =0</argsstring>
         <name>print</name>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ac1befc9e46d84330636599f164cb2033">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1b7542e4161a90a3e2af18d62f9854c6">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ad3cdbabb0a5a068923e9c63e6675fa15">print</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a292e3bf679e232f605e4726f0bfff970">print</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ab1d1852516a67b36a9d4c3b5f5483fa7">print</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a2912fc75e812550a0734bd6fa91368b7">print</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1a1b7542e4161a90a3e2af18d62f9854c6">print</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ad3cdbabb0a5a068923e9c63e6675fa15">print</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a104bbc842576324e46876838e92b18c9">print</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a68feee2a993e698e796db61bc27a6167">print</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e6da736abac853938c0a42e50984191">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a68feee2a993e698e796db61bc27a6167">print</reimplementedby>
         <param>
           <type>std::ostream &amp;</type>
           <declname>anOutputStream</declname>
@@ -332,6 +346,8 @@
 <para>Print object. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Point(0.0,<sp/>0.0).print(std::cout,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOutputStream</parametername>
@@ -353,7 +369,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="120" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="147" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1add0c7edfac25cbd241f82edbb1ce1476" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -362,13 +378,13 @@
         <name>applyTransformation</name>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1afec5f43815879ddfcb5051dd7ac40009">applyTransformation</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_1acae5fb88afef113a24cc77a3b536a2c9">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3a157e132491ce9f98561dff3c4959d4">applyTransformation</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_1a0d3a24eba42a2d7449259b890d0bb30f">applyTransformation</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1aa0b9b22f3a53b89d79056596490bbb0d">applyTransformation</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a876015bf7a3b8667b8cb94627435a920">applyTransformation</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3a157e132491ce9f98561dff3c4959d4">applyTransformation</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a678b14d476c41b11372b86e9db54b3a6">applyTransformation</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1aa1fd52d4955be0b4ee647ac2971e72bf">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a876015bf7a3b8667b8cb94627435a920">applyTransformation</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a98902fdd8d77f9f6f0d6f833fa007ada">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1aa1fd52d4955be0b4ee647ac2971e72bf">applyTransformation</reimplementedby>
         <param>
           <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
           <declname>aTransformation</declname>
@@ -377,6 +393,9 @@
 <para>Apply transformation to object. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Point<sp/>point(0.0,<sp/>0.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">point.applyTransformation(aTransformation)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aTransformation</parametername>
@@ -390,7 +409,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="126" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="157" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -411,6 +430,8 @@
 <para>Output stream operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>Point(0.0,<sp/>0.0)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOutputStream</parametername>
@@ -434,13 +455,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="72" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="72" bodyend="77"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="92" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="72" bodyend="77"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>2D object </para>
     </briefdescription>
     <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Point<sp/>point(0.0,<sp/>0.0)<sp/>;<sp/><sp/></highlight><highlight class="comment">//<sp/>Point<sp/>is<sp/>a<sp/>concrete<sp/>2D<sp/>Object</highlight></codeline>
+</programlisting> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="3">
@@ -502,7 +525,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="27" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" bodystart="26" bodyend="127"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" line="29" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp" bodystart="28" bodyend="158"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1add0c7edfac25cbd241f82edbb1ce1476" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d2::Object</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af63da855554f9114803103fe2390f5eb" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d2::Object</scope><name>clone</name></member>

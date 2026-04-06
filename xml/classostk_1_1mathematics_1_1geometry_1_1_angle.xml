@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="37" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="36" bodyend="46"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="39" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="38" bodyend="48"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="171" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="171" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="511" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="511" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a610baa9759c5ed85af6536ab04279263" prot="private" static="no" mutable="no">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref></type>
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="172" column="17" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="172" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="512" column="17" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="512" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -133,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="57" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="15" bodyend="19"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="58" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="15" bodyend="19"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aa3dc7dc0bc06636a3e3b1d5628344833" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -145,12 +145,27 @@
           <declname>anAngle</declname>
         </param>
         <briefdescription>
+<para>Check if two angles are equal. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0)<sp/>==<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if angles are equal </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="59" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="21" bodyend="76"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="68" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="21" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae42710386b7e29dc17623d606c2f81bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -162,12 +177,27 @@
           <declname>anAngle</declname>
         </param>
         <briefdescription>
+<para>Check if two angles are not equal. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0)<sp/>!=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(45.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if angles are not equal </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="61" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="78" bodyend="81"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="78" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="78" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a12ba141f8f4820c9c1e6afe51cb7a369" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -179,12 +209,27 @@
           <declname>anAngle</declname>
         </param>
         <briefdescription>
+<para>Addition operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0)<sp/>+<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(45.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle to add </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Sum of the two angles </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="63" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="83" bodyend="91"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="88" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="83" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a1b5c4413ac72edd05608f270b76d2cd1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -196,12 +241,27 @@
           <declname>anAngle</declname>
         </param>
         <briefdescription>
+<para>Subtraction operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0)<sp/>-<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(45.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle to subtract </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Difference of the two angles </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="65" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="93" bodyend="101"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="98" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="93" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a01a9520273856cb589ef31dd0a9710c7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -213,12 +273,27 @@
           <declname>aReal</declname>
         </param>
         <briefdescription>
+<para>Multiplication operator (angle * scalar) </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0)<sp/>*<sp/>2.0;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aReal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scalar multiplier </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Scaled angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="67" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="103" bodyend="116"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="108" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="103" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf9b2d8e3017045706b1fbebc37dc7f1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -230,12 +305,27 @@
           <declname>aReal</declname>
         </param>
         <briefdescription>
+<para>Division operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0)<sp/>/<sp/>2.0;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aReal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scalar divisor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Scaled angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="69" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="118" bodyend="136"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="118" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="118" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a3802b86b410a7fbeb832b4337246157d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
@@ -247,12 +337,28 @@
           <declname>anAngle</declname>
         </param>
         <briefdescription>
+<para>Addition assignment operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>+=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(45.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle to add </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the modified angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="71" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="138" bodyend="148"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="129" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="138" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a7a027ef61f229719c429a3b6125944ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
@@ -264,12 +370,28 @@
           <declname>anAngle</declname>
         </param>
         <briefdescription>
+<para>Subtraction assignment operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>-=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(45.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle to subtract </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the modified angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="73" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="150" bodyend="160"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="140" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="150" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a52d09c6892551e102b46db00745d1792" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
@@ -281,12 +403,28 @@
           <declname>aReal</declname>
         </param>
         <briefdescription>
+<para>Multiplication assignment operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>*=<sp/>2.0;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aReal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scalar multiplier </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the modified angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="75" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="162" bodyend="177"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="151" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="162" bodyend="177"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad219f85f3e1821c423afed35cdacfd52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
@@ -298,12 +436,28 @@
           <declname>aReal</declname>
         </param>
         <briefdescription>
+<para>Division assignment operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+<codeline><highlight class="normal">angle<sp/>/=<sp/>2.0;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aReal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scalar divisor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the modified angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="77" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="179" bodyend="199"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="162" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="179" bodyend="199"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac5f8554956c2af987e09227b3f80476b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -311,12 +465,18 @@
         <argsstring>() const</argsstring>
         <name>operator+</name>
         <briefdescription>
+<para>Unary positive operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/>+<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Copy of the angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="81" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="216" bodyend="224"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="182" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="216" bodyend="224"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a44f10fb317a8616cbfe8f2a6acfbdf54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -324,12 +484,18 @@
         <argsstring>() const</argsstring>
         <name>operator-</name>
         <briefdescription>
+<para>Unary negative operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/>-<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Negated angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="83" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="226" bodyend="234"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="191" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="226" bodyend="234"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad99d5ff3a95e93b3599248c72b631ff1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -337,12 +503,18 @@
         <argsstring>() const</argsstring>
         <name>isDefined</name>
         <briefdescription>
+<para>Check if the angle is defined. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad99d5ff3a95e93b3599248c72b631ff1" kindref="member">isDefined</ref>();<sp/><sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if the angle is defined </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="87" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="248" bodyend="251"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="211" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="248" bodyend="251"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a17449f940c75bc182a9eaa069ae59342" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -350,12 +522,18 @@
         <argsstring>() const</argsstring>
         <name>isZero</name>
         <briefdescription>
+<para>Check if the angle is zero. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a8e6ae32f87c8dd9dbb5b13f0403bb93b" kindref="member">Angle::Zero</ref>().<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a17449f940c75bc182a9eaa069ae59342" kindref="member">isZero</ref>();<sp/><sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if the angle is zero </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="89" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="253" bodyend="261"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="220" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="253" bodyend="261"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a80267bbfcf53ac84f70e8c64c0ae4162" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -374,7 +552,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="99" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="263" bodyend="271"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="229" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="263" bodyend="271"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a93759a5dc36449aaa68d749d270fa736" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -421,7 +599,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="114" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="273" bodyend="292"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="243" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="273" bodyend="292"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aaf5a6fca6315e78ec77c6b4bbc3dd5c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref></type>
@@ -429,12 +607,18 @@
         <argsstring>() const</argsstring>
         <name>getUnit</name>
         <briefdescription>
+<para>Get the unit of the angle. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref><sp/>unit<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1aaf5a6fca6315e78ec77c6b4bbc3dd5c9" kindref="member">getUnit</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The angle unit </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="116" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="294" bodyend="302"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="252" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="294" bodyend="302"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a5a4a660668c35df6cc2ad47e02727b7e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -446,12 +630,27 @@
           <declname>aUnit</declname>
         </param>
         <briefdescription>
+<para>Get the angle value in the specified unit. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Real<sp/>value<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a5a4a660668c35df6cc2ad47e02727b7e" kindref="member">in</ref>(<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371a50c62e3ca8d8ec8732a7f968a3bf2c7c" kindref="member">Angle::Unit::Radian</ref>);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aUnit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle unit </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle value in the specified unit </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="118" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="304" bodyend="317"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="262" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="304" bodyend="317"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae07e7bb66c4f60565d19343124ff0cc7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -459,12 +658,18 @@
         <argsstring>() const</argsstring>
         <name>inRadians</name>
         <briefdescription>
+<para>Get the angle value in radians. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(180.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae07e7bb66c4f60565d19343124ff0cc7" kindref="member">inRadians</ref>();<sp/><sp/></highlight><highlight class="comment">//<sp/>~3.14159</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The angle value in radians </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="120" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="319" bodyend="322"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="271" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="319" bodyend="322"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1acfb4ab5bc33ca5bf005bcffae8c02073" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -480,12 +685,35 @@
           <declname>anUpperBound</declname>
         </param>
         <briefdescription>
+<para>Get the angle value in radians, reduced to a specified range. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(270.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae07e7bb66c4f60565d19343124ff0cc7" kindref="member">inRadians</ref>(0.0,<sp/>Real::TwoPi());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLowerBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lower bound of the range (in radians) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anUpperBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An upper bound of the range (in radians) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle value in radians within the specified range </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="122" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="324" bodyend="342"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="282" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="324" bodyend="342"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a31b1cd5ca5d3ca1c5c866b0274933edb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -493,12 +721,18 @@
         <argsstring>() const</argsstring>
         <name>inDegrees</name>
         <briefdescription>
+<para>Get the angle value in degrees. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac8d7459ae201e96eabd5e5d86eff5cb0" kindref="member">Angle::Radians</ref>(Real::Pi()).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a31b1cd5ca5d3ca1c5c866b0274933edb" kindref="member">inDegrees</ref>();<sp/><sp/></highlight><highlight class="comment">//<sp/>180.0</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The angle value in degrees </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="124" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="344" bodyend="347"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="291" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="344" bodyend="347"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a4d56166e0b2512567cedf1e4f267d29e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -514,12 +748,35 @@
           <declname>anUpperBound</declname>
         </param>
         <briefdescription>
+<para>Get the angle value in degrees, reduced to a specified range. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(370.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a31b1cd5ca5d3ca1c5c866b0274933edb" kindref="member">inDegrees</ref>(0.0,<sp/>360.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLowerBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lower bound of the range (in degrees) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anUpperBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An upper bound of the range (in degrees) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle value in degrees within the specified range </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="126" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="349" bodyend="367"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="302" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="349" bodyend="367"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad9ceffd9a91e117a415248f8b40429d2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -527,12 +784,18 @@
         <argsstring>() const</argsstring>
         <name>inArcminutes</name>
         <briefdescription>
+<para>Get the angle value in arcminutes. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(1.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad9ceffd9a91e117a415248f8b40429d2" kindref="member">inArcminutes</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The angle value in arcminutes </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="128" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="369" bodyend="372"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="311" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="369" bodyend="372"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae865c49d71cb316df83a11f2a7f9996b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -548,12 +811,35 @@
           <declname>anUpperBound</declname>
         </param>
         <briefdescription>
+<para>Get the angle value in arcminutes, reduced to a specified range. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a73f3742b596248a4ea84db75712cd40a" kindref="member">Angle::Arcminutes</ref>(100.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad9ceffd9a91e117a415248f8b40429d2" kindref="member">inArcminutes</ref>(0.0,<sp/>60.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLowerBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lower bound of the range (in arcminutes) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anUpperBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An upper bound of the range (in arcminutes) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle value in arcminutes within the specified range </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="130" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="374" bodyend="392"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="322" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="374" bodyend="392"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a2a14798865b6afe512b1d21797092c84" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -561,12 +847,18 @@
         <argsstring>() const</argsstring>
         <name>inArcseconds</name>
         <briefdescription>
+<para>Get the angle value in arcseconds. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(1.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a2a14798865b6afe512b1d21797092c84" kindref="member">inArcseconds</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The angle value in arcseconds </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="132" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="394" bodyend="397"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="331" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="394" bodyend="397"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a20aa823cd2cd954365f0daaba9e77c6d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -582,12 +874,35 @@
           <declname>anUpperBound</declname>
         </param>
         <briefdescription>
+<para>Get the angle value in arcseconds, reduced to a specified range. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad8845fbfd652eb58936c0b01da672c07" kindref="member">Angle::Arcseconds</ref>(5000.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a2a14798865b6afe512b1d21797092c84" kindref="member">inArcseconds</ref>(0.0,<sp/>3600.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLowerBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lower bound of the range (in arcseconds) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anUpperBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An upper bound of the range (in arcseconds) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle value in arcseconds within the specified range </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="134" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="399" bodyend="417"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="342" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="399" bodyend="417"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aff2915c9dfacf75a3c601688b3ab0d6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -595,12 +910,18 @@
         <argsstring>() const</argsstring>
         <name>inRevolutions</name>
         <briefdescription>
+<para>Get the angle value in revolutions. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(360.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1aff2915c9dfacf75a3c601688b3ab0d6b" kindref="member">inRevolutions</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The angle value in revolutions </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="136" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="419" bodyend="422"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="351" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="419" bodyend="422"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a007118f6ad1382acb3ed86ba69f8daf6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -613,12 +934,27 @@
           <defval>Integer::Undefined()</defval>
         </param>
         <briefdescription>
+<para>Convert the angle to a string representation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a007118f6ad1382acb3ed86ba69f8daf6" kindref="member">toString</ref>();<sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;90.0<sp/>[deg]&quot;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPrecision</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional) A precision for the value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String representation of the angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="138" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="424" bodyend="432"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="361" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="424" bodyend="432"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -636,12 +972,35 @@
           <declname>anAngle</declname>
         </param>
         <briefdescription>
+<para>Multiplication operator (scalar * angle) </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/>2.0<sp/>*<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aReal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scalar multiplier </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Scaled angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="79" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="201" bodyend="214"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="173" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="201" bodyend="214"/>
       </memberdef>
       <memberdef kind="friend" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0846b77ee3281e8a559197c3c3208eed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend std::ostream &amp;</type>
@@ -657,12 +1016,35 @@
           <declname>anAngle</declname>
         </param>
         <briefdescription>
+<para>Output stream operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the output stream </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="85" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="236" bodyend="246"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="202" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="236" bodyend="246"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -672,12 +1054,18 @@
         <argsstring>()</argsstring>
         <name>Undefined</name>
         <briefdescription>
+<para>Construct an undefined angle. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae07abb07ad2d332bfd5ac200bf68f0dd" kindref="member">Angle::Undefined</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>An undefined angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="140" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="434" bodyend="437"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="370" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="434" bodyend="437"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a8e6ae32f87c8dd9dbb5b13f0403bb93b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -685,12 +1073,18 @@
         <argsstring>()</argsstring>
         <name>Zero</name>
         <briefdescription>
+<para>Construct a zero angle. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a8e6ae32f87c8dd9dbb5b13f0403bb93b" kindref="member">Angle::Zero</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>A zero angle in radians </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="142" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="439" bodyend="442"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="379" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="439" bodyend="442"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a3902ff6a057fc65e17b462d2d31e9cd2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -698,12 +1092,18 @@
         <argsstring>()</argsstring>
         <name>HalfPi</name>
         <briefdescription>
+<para>Construct an angle of pi/2 radians (90 degrees) </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a3902ff6a057fc65e17b462d2d31e9cd2" kindref="member">Angle::HalfPi</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>A pi/2 radian angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="144" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="444" bodyend="447"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="388" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="444" bodyend="447"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ab52a6ac8a09b8e96ff5ce6f8c429eb25" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -711,12 +1111,18 @@
         <argsstring>()</argsstring>
         <name>Pi</name>
         <briefdescription>
+<para>Construct an angle of pi radians (180 degrees) </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ab52a6ac8a09b8e96ff5ce6f8c429eb25" kindref="member">Angle::Pi</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>A pi radian angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="146" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="449" bodyend="452"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="397" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="449" bodyend="452"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac282022eaa53c2f999a181c241b358b0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -724,12 +1130,18 @@
         <argsstring>()</argsstring>
         <name>TwoPi</name>
         <briefdescription>
+<para>Construct an angle of 2*pi radians (360 degrees) </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac282022eaa53c2f999a181c241b358b0" kindref="member">Angle::TwoPi</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>A 2*pi radian angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="148" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="454" bodyend="457"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="406" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="454" bodyend="457"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac8d7459ae201e96eabd5e5d86eff5cb0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -741,12 +1153,27 @@
           <declname>aValue</declname>
         </param>
         <briefdescription>
+<para>Construct an angle from a value in radians. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac8d7459ae201e96eabd5e5d86eff5cb0" kindref="member">Angle::Radians</ref>(3.14159);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value in radians </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="150" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="459" bodyend="462"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="416" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="459" bodyend="462"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -758,12 +1185,27 @@
           <declname>aValue</declname>
         </param>
         <briefdescription>
+<para>Construct an angle from a value in degrees. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value in degrees </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="152" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="464" bodyend="467"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="426" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="464" bodyend="467"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a73f3742b596248a4ea84db75712cd40a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -775,12 +1217,27 @@
           <declname>aValue</declname>
         </param>
         <briefdescription>
+<para>Construct an angle from a value in arcminutes. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a73f3742b596248a4ea84db75712cd40a" kindref="member">Angle::Arcminutes</ref>(30.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value in arcminutes </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="154" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="469" bodyend="472"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="436" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="469" bodyend="472"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad8845fbfd652eb58936c0b01da672c07" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -792,12 +1249,27 @@
           <declname>aValue</declname>
         </param>
         <briefdescription>
+<para>Construct an angle from a value in arcseconds. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad8845fbfd652eb58936c0b01da672c07" kindref="member">Angle::Arcseconds</ref>(3600.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value in arcseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="156" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="474" bodyend="477"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="446" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="474" bodyend="477"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a14eb58729720306e1d9def33d93278f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -809,12 +1281,27 @@
           <declname>aValue</declname>
         </param>
         <briefdescription>
+<para>Construct an angle from a value in revolutions. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a14eb58729720306e1d9def33d93278f6" kindref="member">Angle::Revolutions</ref>(0.5);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value in revolutions </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="158" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="479" bodyend="482"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="456" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="479" bodyend="482"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aa09f2fa86b1ebb2f5b83f4e79f5b2c94" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -830,12 +1317,35 @@
           <declname>aSecondVector</declname>
         </param>
         <briefdescription>
+<para>Compute the angle between two 2D vectors. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1aa09f2fa86b1ebb2f5b83f4e79f5b2c94" kindref="member">Angle::Between</ref>({1.0,<sp/>0.0},<sp/>{0.0,<sp/>1.0});</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first 2D vector </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second 2D vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle between the two vectors </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="160" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="489" bodyend="524"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="467" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="489" bodyend="524"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a4eb394d49e185968a7ee16b6b40dc0c5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -851,12 +1361,35 @@
           <declname>aSecondVector</declname>
         </param>
         <briefdescription>
+<para>Compute the angle between two 3D vectors. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1aa09f2fa86b1ebb2f5b83f4e79f5b2c94" kindref="member">Angle::Between</ref>({1.0,<sp/>0.0,<sp/>0.0},<sp/>{0.0,<sp/>1.0,<sp/>0.0});</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first 3D vector </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second 3D vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle between the two vectors </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="162" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="526" bodyend="561"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="478" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="526" bodyend="561"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ace183366972c47b1f54c7b372e4ac0ff" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -868,12 +1401,27 @@
           <declname>aString</declname>
         </param>
         <briefdescription>
+<para>Parse an angle from a string representation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ace183366972c47b1f54c7b372e4ac0ff" kindref="member">Angle::Parse</ref>(</highlight><highlight class="stringliteral">&quot;90.0<sp/>[deg]&quot;</highlight><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string to parse </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An angle </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="164" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="488" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aa8a1a9c33c0f6bd09dabd9580436fa9c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -885,12 +1433,27 @@
           <declname>aUnit</declname>
         </param>
         <briefdescription>
+<para>Get the string name of an angle unit. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>name<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1aa8a1a9c33c0f6bd09dabd9580436fa9c" kindref="member">Angle::StringFromUnit</ref>(<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371a6669c4dc00cb161446821b3529ca07d8" kindref="member">Angle::Unit::Degree</ref>);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aUnit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle unit </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The string name of the unit </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="166" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="563" bodyend="591"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="498" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="563" bodyend="591"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aef349823dc4fc1bd9aae2f3893c9a248" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -902,12 +1465,27 @@
           <declname>aUnit</declname>
         </param>
         <briefdescription>
+<para>Get the symbol of an angle unit. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>symbol<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1aef349823dc4fc1bd9aae2f3893c9a248" kindref="member">Angle::SymbolFromUnit</ref>(<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371a6669c4dc00cb161446821b3529ca07d8" kindref="member">Angle::Unit::Degree</ref>);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aUnit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle unit </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The symbol of the unit (e.g., &quot;deg&quot;, &quot;rad&quot;) </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="168" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="593" bodyend="618"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="508" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="593" bodyend="618"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -926,7 +1504,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="174" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="620" bodyend="645"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="514" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="620" bodyend="645"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a64d304c973cd116036e199a943b0ce4d" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -951,7 +1529,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="176" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="647" bodyend="671"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="516" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="647" bodyend="671"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -961,9 +1539,11 @@
 <para><verbatim>                        In plane geometry, an angle is the figure formed by two rays, called the sides of the
                         angle, sharing a common endpoint, called the vertex of the angle.
 </verbatim></para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+</programlisting></para>
 <para><ulink url="https://en.wikipedia.org/wiki/Angle">https://en.wikipedia.org/wiki/Angle</ulink> </para>
     </detaileddescription>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="34" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="33" bodyend="177"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="36" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="35" bodyend="517"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0514385b3b70596b16568a4f6a8b89f7" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>Angle</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a73f3742b596248a4ea84db75712cd40a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>Arcminutes</name></member>

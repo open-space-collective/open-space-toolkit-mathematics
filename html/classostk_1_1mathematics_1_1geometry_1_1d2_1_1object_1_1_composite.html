@@ -228,7 +228,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html" title="Composite object.">Composite</a> object. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a46840777485fc459449f36c304ef8989">Composite</a> composite(Point(0.0, 0.0)) ;</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a34efd57a99c61f2e4e63fd6444dae04f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a34efd57a99c61f2e4e63fd6444dae04f">&#9670;&nbsp;</a></span>ConstIterator</h2>
 
@@ -269,7 +270,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a46840777485fc459449f36c304ef8989">Composite</a> composite(Point(0.0, 0.0)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
   </table>
@@ -303,7 +305,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Unique&lt;Object&gt; objectUPtr = std::make_unique&lt;Point&gt;(0.0, 0.0) ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a46840777485fc459449f36c304ef8989">Composite</a> composite(objectUPtr) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObjectUPtr</td><td>A unique pointer to object </td></tr>
   </table>
@@ -337,7 +341,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Array&lt;Unique&lt;Object&gt;&gt; objects ;</div>
+<div class="line">objects.add(std::make_unique&lt;Point&gt;(0.0, 0.0)) ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a46840777485fc459449f36c304ef8989">Composite</a> composite(std::move(objects)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObjectArray</td><td>An array of unique pointers to object </td></tr>
   </table>
@@ -363,7 +370,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copy constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a46840777485fc459449f36c304ef8989">Composite</a> copiedComposite(composite) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aComposite</td><td>A composite </td></tr>
   </table>
@@ -390,7 +398,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Access object at index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a15a959fd5b624d6fcc6725982a8cddf8">Object</a>&amp; <span class="keywordtype">object</span> = composite.accessObjectAt(0) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anIndex</td><td>An object index </td></tr>
   </table>
@@ -416,7 +425,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Access objects in composite. </p>
-<dl class="section return"><dt>Returns</dt><dd>Reference to objects in composite </dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">const</span> Array&lt;Unique&lt;Object&gt;&gt;&amp; objects = composite.accessObjects() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Reference to objects in composite </dd></dl>
 
 </div>
 </div>
@@ -437,7 +447,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if composite contains composite. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">compositeA.anyContains(compositeB) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aComposite</td><td>A composite </td></tr>
   </table>
@@ -464,7 +475,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if composite contains object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">composite.anyContains(Point(0.0, 0.0)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
   </table>
@@ -499,7 +511,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to composite. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">composite.applyTransformation(aTransformation) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -536,7 +549,9 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Access composite as its underlying object. </p>
-<pre class="fragment">                Only valid if the composite only contains one object.
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a46840777485fc459449f36c304ef8989">Composite</a> composite(Point(0.0, 0.0)) ;</div>
+<div class="line"><span class="keyword">const</span> Point&amp; point = composite.as&lt;Point&gt;() ;</div>
+</div><!-- fragment --> <pre class="fragment">                Only valid if the composite only contains one object.
 </pre><dl class="section return"><dt>Returns</dt><dd>Reference to underlying object </dd></dl>
 
 </div>
@@ -557,13 +572,17 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Compute intersection of composite with object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><span class="comment">// Intersection intersection = composite.intersectionWith(anObject) ;</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html" title="2D intersection">Intersection</a> of composite with object </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html" title="2D intersection">Intersection</a> of composite with object</dd></dl>
+<p>Get const iterator to begin</p>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> it = composite.begin() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Const iterator to begin </dd></dl>
 
 </div>
 </div>
@@ -591,7 +610,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Clone composite. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned composite </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a46840777485fc459449f36c304ef8989">Composite</a>* clonePtr = composite.clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned composite </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#af63da855554f9114803103fe2390f5eb">ostk::mathematics::geometry::d2::Object</a>.</p>
 
@@ -614,7 +634,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Check if composite contains composite. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">compositeA.contains(compositeB) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aComposite</td><td>A composite </td></tr>
   </table>
@@ -649,7 +670,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Check if composite contains object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">composite.contains(Point(0.0, 0.0)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
   </table>
@@ -706,7 +728,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Get const iterator to end. </p>
-<dl class="section return"><dt>Returns</dt><dd>Const iterator to end </dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> it = composite.end() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Const iterator to end </dd></dl>
 
 </div>
 </div>
@@ -726,7 +749,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Get number of objects in composite. </p>
-<dl class="section return"><dt>Returns</dt><dd>Number of objects in composite </dd></dl>
+<div class="fragment"><div class="line">Size count = composite.getObjectCount() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Number of objects in composite </dd></dl>
 
 </div>
 </div>
@@ -747,7 +771,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Check if composite intersects composite. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">compositeA.intersects(compositeB) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aComposite</td><td>A composite </td></tr>
   </table>
@@ -782,7 +807,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Check if composite intersects object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">composite.intersects(Point(0.0, 0.0)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
   </table>
@@ -820,7 +846,9 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns true if composite can be converted to underlying object. </p>
-<pre class="fragment">                Only valid if the composite only contains one object.
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a46840777485fc459449f36c304ef8989">Composite</a> composite(Point(0.0, 0.0)) ;</div>
+<div class="line"><span class="keywordtype">bool</span> isPoint = composite.is&lt;Point&gt;() ; <span class="comment">// True</span></div>
+</div><!-- fragment --> <pre class="fragment">                Only valid if the composite only contains one object.
 </pre><dl class="section return"><dt>Returns</dt><dd>True if composite can be converted to underlying object </dd></dl>
 
 </div>
@@ -894,7 +922,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">compositeA != compositeB ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aComposite</td><td>A composite object </td></tr>
   </table>
@@ -921,7 +950,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Addition operator (composite concatenation) </p>
-<pre class="fragment">                Concatenate (merge) composite with another composite.
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a46840777485fc459449f36c304ef8989">Composite</a> compositeC = compositeA + compositeB ;</div>
+</div><!-- fragment --> <pre class="fragment">                Concatenate (merge) composite with another composite.
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aComposite</td><td>A composite </td></tr>
@@ -949,7 +979,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Addition assignment operator (composite concatenation) </p>
-<pre class="fragment">                Concatenate (merge) composite with another composite.
+<div class="fragment"><div class="line">compositeA += compositeB ;</div>
+</div><!-- fragment --> <pre class="fragment">                Concatenate (merge) composite with another composite.
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aComposite</td><td>A composite </td></tr>
@@ -977,7 +1008,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Copy assignment operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a46840777485fc459449f36c304ef8989">Composite</a> compositeB = compositeA ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aComposite</td><td>A composite </td></tr>
   </table>
@@ -1004,7 +1036,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">compositeA == compositeB ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aComposite</td><td>A composite object </td></tr>
   </table>
@@ -1049,7 +1082,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Print composite. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">composite.print(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -1096,7 +1130,8 @@ template&lt;class Type &gt; </div>
 </div><div class="memdoc">
 
 <p>Get string representation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">String str = composite.toString() ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aFormat</td><td>A format </td></tr>
   </table>
@@ -1146,6 +1181,7 @@ template&lt;class Type &gt; </div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_html_a46840777485fc459449f36c304ef8989"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a46840777485fc459449f36c304ef8989">ostk::mathematics::geometry::d2::object::Composite::Composite</a></div><div class="ttdeci">Composite(const Object &amp;anObject)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Composite.cpp:21</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_html_a68ef0c5cbb3fde1c662f60c5f137fe60"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a68ef0c5cbb3fde1c662f60c5f137fe60">ostk::mathematics::geometry::d2::object::Composite::Undefined</a></div><div class="ttdeci">static Composite Undefined()</div><div class="ttdoc">Constructs an undefined composite.</div><div class="ttdef"><b>Definition:</b> Composite.cpp:547</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_html_a5704d4c2404b89ef12ccf562fd48a7f5"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a5704d4c2404b89ef12ccf562fd48a7f5">ostk::mathematics::geometry::d2::object::Composite::Empty</a></div><div class="ttdeci">static Composite Empty()</div><div class="ttdoc">Constructs an empty composite.</div><div class="ttdef"><b>Definition:</b> Composite.cpp:556</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_html_a15a959fd5b624d6fcc6725982a8cddf8"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a15a959fd5b624d6fcc6725982a8cddf8">ostk::mathematics::geometry::d2::Object::Object</a></div><div class="ttdeci">Object()=default</div><div class="ttdoc">Default constructor.</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

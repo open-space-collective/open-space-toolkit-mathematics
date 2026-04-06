@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="99" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" bodystart="99" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="108" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" bodystart="108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a2162028cba3136649306ac35cd653d33" prot="private" static="no" mutable="no">
         <type>VectorXd</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="100" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" bodystart="100" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="109" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" bodystart="109" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="53" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="18" bodyend="32"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="58" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="18" bodyend="32"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a6e6d93d0ac658408b32a8bb8dd66d069" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -86,10 +86,12 @@
 <para>Destructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Called<sp/>automatically<sp/>when<sp/>the<sp/>Linear<sp/>interpolator<sp/>goes<sp/>out<sp/>of<sp/>scope</highlight></codeline>
+</programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="56" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="34" bodyend="34"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="65" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="34" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1ac1332768995f471149cd3852b3ba2782" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>VectorXd</type>
@@ -122,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="66" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="36" bodyend="46"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="75" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="36" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a741b61d24af15b3332721b0751ec3a7a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -155,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="76" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="48" bodyend="68"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="85" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="48" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a24f276d8242c407b246d7aed10ce5285" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -188,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="86" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="70" bodyend="83"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="95" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="70" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1aa3bad32623ca7a926776fac3c5a7f9e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>VectorXd</type>
@@ -221,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="96" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="85" bodyend="95"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="105" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="85" bodyend="95"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -240,7 +242,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="102" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="97" bodyend="112"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="111" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp" bodystart="97" bodyend="112"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -251,6 +253,11 @@
                         polynomials to construct new data points within the range of a discrete set of known
                         data points.
 </verbatim></para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>x<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>2.0,<sp/>3.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>y<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>4.0,<sp/>9.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a66f13250b306128dacc988a56961eda8" kindref="member">Linear</ref><sp/>interpolator(x,<sp/>y);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>interpolator.evaluate(1.5);</highlight></codeline>
+</programlisting></para>
 <para><ulink url="https://en.wikipedia.org/wiki/Linear_interpolator#">https://en.wikipedia.org/wiki/Linear_interpolator#</ulink>:~:text=In%20mathematics%2C%20linear%20interpolator%20is,set%20of%20known%20data%20points. </para>
     </detaileddescription>
     <inheritancegraph>
@@ -277,7 +284,7 @@
         <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="41" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" bodystart="40" bodyend="103"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp" bodystart="45" bodyend="112"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a24f276d8242c407b246d7aed10ce5285" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::Linear</scope><name>computeDerivative</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1aa3bad32623ca7a926776fac3c5a7f9e0" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::Linear</scope><name>computeDerivative</name></member>

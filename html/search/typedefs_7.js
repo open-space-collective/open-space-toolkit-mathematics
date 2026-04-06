@@ -1,13 +1,7 @@
 var searchData=
 [
-  ['vector2d_820',['Vector2d',['../namespaceostk_1_1mathematics_1_1object.html#ac86e8f85187dc85c1f935627d56c1beb',1,'ostk::mathematics::object']]],
-  ['vector2i_821',['Vector2i',['../namespaceostk_1_1mathematics_1_1object.html#ad80cd7b98ff80674edeb802fc9cda7df',1,'ostk::mathematics::object']]],
-  ['vector3d_822',['Vector3d',['../namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23',1,'ostk::mathematics::object']]],
-  ['vector3i_823',['Vector3i',['../namespaceostk_1_1mathematics_1_1object.html#ac4d313022be5530ea8ff4587b1738177',1,'ostk::mathematics::object']]],
-  ['vector4d_824',['Vector4d',['../namespaceostk_1_1mathematics_1_1object.html#a4a69dcd1bf9592d64b93139e22f15beb',1,'ostk::mathematics::object']]],
-  ['vector4i_825',['Vector4i',['../namespaceostk_1_1mathematics_1_1object.html#a3eb95cd6c5c7d6642071579eadd72e6f',1,'ostk::mathematics::object']]],
-  ['vector6d_826',['Vector6d',['../namespaceostk_1_1mathematics_1_1object.html#a709e40375d597c36635def856021a648',1,'ostk::mathematics::object']]],
-  ['vectorxd_827',['VectorXd',['../namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84',1,'ostk::mathematics::object']]],
-  ['vectorxi_828',['VectorXi',['../namespaceostk_1_1mathematics_1_1object.html#a2b9807c143e8b3bf0dba3aeab50baa57',1,'ostk::mathematics::object']]],
-  ['vertex_829',['Vertex',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#adf15f8325e848f3c4e310169aa8e0657',1,'ostk::mathematics::geometry::d2::object::Polygon::Vertex()'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#ad7320e905fa787d1ccdadefd58ceac7b',1,'ostk::mathematics::geometry::d3::object::Cuboid::Vertex()'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a33d84704d7e18430f2a86399103eb84d',1,'ostk::mathematics::geometry::d3::object::Polygon::Vertex()']]]
+  ['solution_838',['Solution',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#aef6d06e4478e44fbe3354dbe8f80b94d',1,'ostk::mathematics::solver::NumericalSolver']]],
+  ['statevector_839',['StateVector',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a321c69ab0db9e09939b690580685a4b9',1,'ostk::mathematics::solver::NumericalSolver']]],
+  ['stepper_5ftype_5f4_840',['stepper_type_4',['../namespaceostk_1_1mathematics_1_1solver.html#a239397c5452cb7026b6b7bd5909c49ea',1,'ostk::mathematics::solver']]],
+  ['systemofequationswrapper_841',['SystemOfEquationsWrapper',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#af087a68c505e3da6f7ebfd0cfb1d2ef5',1,'ostk::mathematics::solver::NumericalSolver']]]
 ];

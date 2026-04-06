@@ -209,7 +209,8 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html" title="Pyramid.">Pyramid</a>. </p>
 <pre class="fragment">                        A pyramid is a polyhedron formed by connecting a polygonal base and a point, called the
                         apex. Each base edge and apex form a triangle, called a lateral face.
-</pre><p><a href="https://en.wikipedia.org/wiki/Pyramid_">https://en.wikipedia.org/wiki/Pyramid_</a>(geometry) </p>
+</pre><div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid(polygon, Point(0.0, 0.0, 1.0));</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Pyramid_">https://en.wikipedia.org/wiki/Pyramid_</a>(geometry) </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="adddec5b182cdca50f62190d899179460"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adddec5b182cdca50f62190d899179460">&#9670;&nbsp;</a></span>Pyramid()</h2>
@@ -277,7 +278,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to pyramid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">pyramid.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">Transformation::Translation</a>({ 1.0, 0.0, 0.0 })) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -312,7 +315,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone pyramid. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned pyramid </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a>* clonePtr = pyramid.clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned pyramid </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a8ea8d4074bfaaa3d996d760d5d5751db">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -454,7 +458,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get pyramid apex. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html" title="Pyramid.">Pyramid</a> apex </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">Point apex = pyramid.getApex() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html" title="Pyramid.">Pyramid</a> apex </dd></dl>
 
 </div>
 </div>
@@ -474,7 +480,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get pyramid base. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html" title="Pyramid.">Pyramid</a> base </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">Polygon base = pyramid.getBase() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html" title="Pyramid.">Pyramid</a> base </dd></dl>
 
 </div>
 </div>
@@ -495,7 +503,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get lateral face at index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">Polygon lateralFace = pyramid.getLateralFaceAt(0) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aLateralFaceIndex</td><td>A lateral face index </td></tr>
   </table>
@@ -521,7 +531,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get number of lateral faces. </p>
-<dl class="section return"><dt>Returns</dt><dd>Number of lateral faces </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">Size count = pyramid.getLateralFaceCount() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Number of lateral faces </dd></dl>
 
 </div>
 </div>
@@ -552,7 +564,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get rays of lateral face at index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">Array&lt;Ray&gt; rays = pyramid.getRaysOfLateralFaceAt(0, 2) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aLateralFaceIndex</td><td>A lateral face index </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aRayCount</td><td>A number of rays (at least 2) </td></tr>
@@ -580,7 +594,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get rays of lateral faces. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">Array&lt;Ray&gt; rays = pyramid.getRaysOfLateralFaces() ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aRayCount</td><td>A number of rays (at least face count) </td></tr>
   </table>
@@ -623,7 +639,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of pyramid with ellipsoid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">Ellipsoid ellipsoid = Ellipsoid(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>(), 1.0, 2.0, 3.0) ;</div>
+<div class="line">Intersection intersection = pyramid.intersectionWith(ellipsoid) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anEllipsoid</td><td>An ellipsoid </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">onlyInSight</td><td>(optional) If true, only return intersection points that are in sight </td></tr>
@@ -668,7 +687,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of pyramid with sphere. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">Sphere sphere = Sphere({ 0.0, 0.0, 0.0 }, 1.0) ;</div>
+<div class="line">Intersection intersection = pyramid.intersectionWith(sphere) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aSphere</td><td>A sphere </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">onlyInSight</td><td>(optional) If true, only return intersection points that are in sight </td></tr>
@@ -786,7 +808,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if pyramid is defined. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if pyramid is defined </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">pyramid.isDefined() ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if pyramid is defined </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a1962edbcdde0f851361b60324ab9ce2b">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -809,7 +833,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramidA = ... ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramidB = ... ;</div>
+<div class="line">pyramidA != pyramidB ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPyramid</td><td>A pyramid </td></tr>
   </table>
@@ -836,7 +863,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">pyramid == pyramid ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPyramid</td><td>A pyramid </td></tr>
   </table>
@@ -881,7 +910,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print pyramid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = ... ;</div>
+<div class="line">pyramid.print(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -917,7 +948,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs an undefined pyramid. </p>
-<dl class="section return"><dt>Returns</dt><dd>Undefined pyramid </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">Pyramid</a> pyramid = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a631ca947390c95b73c78b42c3d840b12">Pyramid::Undefined</a>() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Undefined pyramid </dd></dl>
 
 </div>
 </div>
@@ -927,6 +959,9 @@ Static Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_af9058de81115d953ab8d9b8922abe692"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">ostk::mathematics::geometry::d3::Transformation::Translation</a></div><div class="ttdeci">static Transformation Translation(const Vector3d &amp;aTranslationVector)</div><div class="ttdoc">Construct a translation transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:259</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a2e0dc90fe04fb9befb79ec9874dcebc4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">ostk::mathematics::geometry::d3::object::Point::Origin</a></div><div class="ttdeci">static Point Origin()</div><div class="ttdoc">Constructs a point at origin.</div><div class="ttdef"><b>Definition:</b> Point.cpp:204</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_html_a631ca947390c95b73c78b42c3d840b12"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a631ca947390c95b73c78b42c3d840b12">ostk::mathematics::geometry::d3::object::Pyramid::Undefined</a></div><div class="ttdeci">static Pyramid Undefined()</div><div class="ttdoc">Constructs an undefined pyramid.</div><div class="ttdef"><b>Definition:</b> Pyramid.cpp:526</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_html_adddec5b182cdca50f62190d899179460"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#adddec5b182cdca50f62190d899179460">ostk::mathematics::geometry::d3::object::Pyramid::Pyramid</a></div><div class="ttdeci">Pyramid(const Polygon &amp;aBase, const Point &amp;anApex)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Pyramid.cpp:31</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

@@ -10,6 +10,7 @@
         <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9aec0fc0100c4fc1ce4eea230c3dc10360" prot="public">
           <name>Undefined</name>
           <briefdescription>
+<para>Undefined transformation. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -17,6 +18,7 @@
         <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9ac9c5c65fb4af9cf90eb99b3b84424189" prot="public">
           <name>Identity</name>
           <briefdescription>
+<para>Identity transformation. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -24,6 +26,7 @@
         <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9a6dd08874f83507e9c7b23f1a46b7fa7c" prot="public">
           <name>Translation</name>
           <briefdescription>
+<para>Translation transformation. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -31,6 +34,7 @@
         <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9af1a42bd417390fc63b030a519624607a" prot="public">
           <name>Rotation</name>
           <briefdescription>
+<para>Rotation transformation. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -38,6 +42,7 @@
         <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9abc967dc2d57e6eff184a821bf7577a80" prot="public">
           <name>Scaling</name>
           <briefdescription>
+<para>Scaling transformation. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -45,6 +50,7 @@
         <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9aaea1e492943ccbad7ee270ec1e064758" prot="public">
           <name>Reflection</name>
           <briefdescription>
+<para>Reflection transformation. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -52,6 +58,7 @@
         <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9a02414922b70cc0f9d7c841b0c70a0f94" prot="public">
           <name>Shear</name>
           <briefdescription>
+<para>Shear transformation. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -59,6 +66,7 @@
         <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9a5b525aab6e200981a842101f1bcbafc6" prot="public">
           <name>Affine</name>
           <briefdescription>
+<para>General affine transformation. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -69,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="37" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" bodystart="36" bodyend="48"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" bodystart="45" bodyend="57"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -84,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="117" column="26" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" bodystart="117" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="300" column="26" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" bodystart="300" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a91e01677409adbbcbe9aadc8b15d8e65" prot="private" static="no" mutable="no">
         <type>Matrix3d</type>
@@ -97,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="118" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" bodystart="118" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="301" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" bodystart="301" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -114,6 +122,8 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>t(Matrix3d::Identity());</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aMatrix</parametername>
@@ -127,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="54" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="19" bodyend="23"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="66" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="19" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a97115f56b673ff7d0efcc45ff4de2566" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -139,12 +149,27 @@
           <declname>aTransformation</declname>
         </param>
         <briefdescription>
+<para>Equality operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>()<sp/>==<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if transformations are equal </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="56" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="25" bodyend="33"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="76" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="25" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a9c5841e272ccd57670de80bedf7c7ebc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -156,12 +181,27 @@
           <declname>aTransformation</declname>
         </param>
         <briefdescription>
+<para>Inequality operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>()<sp/>!=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ac20f9204fa06c83f5c3d5e487f2909e9" kindref="member">Transformation::Translation</ref>({1.0,<sp/>2.0});</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if transformations are not equal </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="58" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="35" bodyend="38"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="86" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="35" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1aa48ed3f10a583e3a3551e91b7286dbf7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref></type>
@@ -173,12 +213,27 @@
           <declname>aTransformation</declname>
         </param>
         <briefdescription>
+<para>Composition operator (multiply two transformations) </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>t<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ac20f9204fa06c83f5c3d5e487f2909e9" kindref="member">Transformation::Translation</ref>({1.0,<sp/>0.0})<sp/>*<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation to compose with </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The composed transformation </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="60" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="40" bodyend="47"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="96" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="40" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1af7a2de30793f13e62515d9d87b9e3bd8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Vector3d</type>
@@ -190,12 +245,27 @@
           <declname>aVector</declname>
         </param>
         <briefdescription>
+<para>Apply transformation to a vector. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/>v<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>()<sp/>*<sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref>(1.0,<sp/>2.0,<sp/>1.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A 3D homogeneous vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The transformed vector </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="62" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="49" bodyend="62"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="106" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="49" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1abfeafe6bbaef1ce522e1d8948a61f7f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
@@ -207,12 +277,28 @@
           <declname>aTransformation</declname>
         </param>
         <briefdescription>
+<para>Composition assignment operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>t<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>();</highlight></codeline>
+<codeline><highlight class="normal">t<sp/>*=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ac20f9204fa06c83f5c3d5e487f2909e9" kindref="member">Transformation::Translation</ref>({1.0,<sp/>2.0});</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation to compose with </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the modified transformation </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="64" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="64" bodyend="159"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="117" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="64" bodyend="159"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a7a810c3645491c671fae1953456257c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -220,12 +306,18 @@
         <argsstring>() const</argsstring>
         <name>isDefined</name>
         <briefdescription>
+<para>Check if the transformation is defined. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>().<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a7a810c3645491c671fae1953456257c4" kindref="member">isDefined</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if the transformation is defined </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="68" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="168" bodyend="171"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="137" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="168" bodyend="171"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1afc750037dcccec8a35ea8b6e959836cf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -233,12 +325,18 @@
         <argsstring>() const</argsstring>
         <name>isIdentity</name>
         <briefdescription>
+<para>Check if the transformation is the identity. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>().<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1afc750037dcccec8a35ea8b6e959836cf" kindref="member">isIdentity</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if the transformation is the identity </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="70" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="173" bodyend="176"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="146" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="173" bodyend="176"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a35e8e5478a46bdab58808ef63efc4f77" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -249,7 +347,8 @@
 <para>Returns true if transformation is rigid. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>                A rigid transformation preserves distances and angles.
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>().<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a35e8e5478a46bdab58808ef63efc4f77" kindref="member">isRigid</ref>();</highlight></codeline>
+</programlisting> <verbatim>                A rigid transformation preserves distances and angles.
                 It is either a translation, a rotation, or a reflection.
 </verbatim></para>
 <para><ulink url="https://en.wikipedia.org/wiki/Rigid_transformation">https://en.wikipedia.org/wiki/Rigid_transformation</ulink></para>
@@ -259,7 +358,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="81" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="178" bodyend="197"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="160" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="178" bodyend="197"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ad4af5f661b7219ddac4e96de8fb4c462" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9" kindref="member">Transformation::Type</ref></type>
@@ -267,12 +366,18 @@
         <argsstring>() const</argsstring>
         <name>getType</name>
         <briefdescription>
+<para>Get the type of the transformation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9" kindref="member">Transformation::Type</ref><sp/>type<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>().<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ad4af5f661b7219ddac4e96de8fb4c462" kindref="member">getType</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The transformation type </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="83" column="26" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="199" bodyend="207"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="169" column="26" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="199" bodyend="207"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a3b523e122e6023e9416269a0bcab7367" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Matrix3d</type>
@@ -280,12 +385,18 @@
         <argsstring>() const</argsstring>
         <name>getMatrix</name>
         <briefdescription>
+<para>Get the transformation matrix. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a9f8f6a9f4bd331fb6bc0c66a1aca5e30" kindref="member">Matrix3d</ref><sp/>matrix<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>().<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a3b523e122e6023e9416269a0bcab7367" kindref="member">getMatrix</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The 3x3 homogeneous transformation matrix </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="85" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="209" bodyend="217"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="178" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="209" bodyend="217"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a81ec04277231eb4c06a3daf04bbd5b22" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref></type>
@@ -293,12 +404,18 @@
         <argsstring>() const</argsstring>
         <name>getInverse</name>
         <briefdescription>
+<para>Get the inverse transformation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>inv<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ac20f9204fa06c83f5c3d5e487f2909e9" kindref="member">Transformation::Translation</ref>({1.0,<sp/>2.0}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a81ec04277231eb4c06a3daf04bbd5b22" kindref="member">getInverse</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The inverse transformation </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="87" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="219" bodyend="227"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="187" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="219" bodyend="227"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1acc8517da6833948aef8183180d0b59be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -310,12 +427,28 @@
           <declname>aPoint</declname>
         </param>
         <briefdescription>
+<para>Apply the transformation to a point. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>t<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ac20f9204fa06c83f5c3d5e487f2909e9" kindref="member">Transformation::Translation</ref>({1.0,<sp/>2.0});</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>p<sp/>=<sp/>t.<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1acc8517da6833948aef8183180d0b59be" kindref="member">applyTo</ref>(Point(0.0,<sp/>0.0));<sp/><sp/></highlight><highlight class="comment">//<sp/>(1.0,<sp/>2.0)</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The transformed point </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="89" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="229" bodyend="232"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="198" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="229" bodyend="232"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a5d1de9866945fa5b6057832b90f9e884" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Vector2d</type>
@@ -327,12 +460,27 @@
           <declname>aVector</declname>
         </param>
         <briefdescription>
+<para>Apply the transformation to a 2D vector. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1ac86e8f85187dc85c1f935627d56c1beb" kindref="member">Vector2d</ref><sp/>v<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>().<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1acc8517da6833948aef8183180d0b59be" kindref="member">applyTo</ref>(<ref refid="namespaceostk_1_1mathematics_1_1object_1ac86e8f85187dc85c1f935627d56c1beb" kindref="member">Vector2d</ref>(1.0,<sp/>2.0));</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A 2D vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The transformed vector </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="91" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="234" bodyend="237"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="208" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="234" bodyend="237"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1adfd45137a2eedea1ce1877a80abe12a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Unique&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref> &gt;</type>
@@ -344,12 +492,27 @@
           <declname>anObject</declname>
         </param>
         <briefdescription>
+<para>Apply the transformation to a 2D object. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Unique&lt;Object&gt;<sp/>transformed<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>().<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1acc8517da6833948aef8183180d0b59be" kindref="member">applyTo</ref>(anObject);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A unique pointer to a 2D object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The transformed object </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="93" column="12"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="218" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a3403dc8a6f1f18450a86a3e5868d2348" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -369,6 +532,8 @@
 <para>Print transformation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>().<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a3403dc8a6f1f18450a86a3e5868d2348" kindref="member">print</ref>(std::cout);</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOutputStream</parametername>
@@ -390,7 +555,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="100" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="250" bodyend="261"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="228" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="250" bodyend="261"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -408,12 +573,35 @@
           <declname>aTransformation</declname>
         </param>
         <briefdescription>
+<para>Output stream operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the output stream </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="66" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="161" bodyend="166"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="128" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="161" bodyend="166"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -423,12 +611,18 @@
         <argsstring>()</argsstring>
         <name>Undefined</name>
         <briefdescription>
+<para>Construct an undefined transformation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>t<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ae17a40e15a7800a2395825a16cbdea46" kindref="member">Transformation::Undefined</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>An undefined transformation </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="102" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="263" bodyend="266"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="237" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="263" bodyend="266"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref></type>
@@ -436,12 +630,18 @@
         <argsstring>()</argsstring>
         <name>Identity</name>
         <briefdescription>
+<para>Construct an identity transformation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>t<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>An identity transformation </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="104" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="268" bodyend="271"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="246" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="268" bodyend="271"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ac20f9204fa06c83f5c3d5e487f2909e9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref></type>
@@ -453,12 +653,27 @@
           <declname>aTranslationVector</declname>
         </param>
         <briefdescription>
+<para>Construct a translation transformation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>t<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ac20f9204fa06c83f5c3d5e487f2909e9" kindref="member">Transformation::Translation</ref>({1.0,<sp/>2.0});</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTranslationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A 2D translation vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A translation transformation </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="106" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="273" bodyend="285"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="256" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="273" bodyend="285"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1aae0d29a9d8b14e1234dddf22c072ff53" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref></type>
@@ -470,12 +685,27 @@
           <declname>aRotationAngle</declname>
         </param>
         <briefdescription>
+<para>Construct a rotation transformation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>t<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1aae0d29a9d8b14e1234dddf22c072ff53" kindref="member">Transformation::Rotation</ref>(<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(45.0));</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A rotation angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A rotation transformation </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="108" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="287" bodyend="305"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="266" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="287" bodyend="305"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a970c932524b54aa74373a1a3d50f51af" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref></type>
@@ -491,12 +721,35 @@
           <declname>aRotationAngle</declname>
         </param>
         <briefdescription>
+<para>Construct a rotation transformation around a given point. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>t<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a970c932524b54aa74373a1a3d50f51af" kindref="member">Transformation::RotationAround</ref>(Point(1.0,<sp/>0.0),<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0));</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A center point of rotation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A rotation angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A rotation transformation around the given point </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="110" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="307" bodyend="311"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="277" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="307" bodyend="311"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ab96e3a181ecfd0079fa589839fe963a5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -508,12 +761,27 @@
           <declname>aType</declname>
         </param>
         <briefdescription>
+<para>Get a string from a transformation type. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>str<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ab96e3a181ecfd0079fa589839fe963a5" kindref="member">Transformation::StringFromType</ref>(<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9ac9c5c65fb4af9cf90eb99b3b84424189" kindref="member">Transformation::Type::Identity</ref>);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The string name of the type </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="112" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="313" bodyend="347"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="287" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="313" bodyend="347"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a50b50b58b43aa9534849d2c0398bd710" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9" kindref="member">Transformation::Type</ref></type>
@@ -525,12 +793,27 @@
           <declname>aMatrix</declname>
         </param>
         <briefdescription>
+<para>Determine the transformation type from a matrix. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9" kindref="member">Transformation::Type</ref><sp/>type<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a50b50b58b43aa9534849d2c0398bd710" kindref="member">Transformation::TypeOfMatrix</ref>(Matrix3d::Identity());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A 3x3 transformation matrix </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The transformation type </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="114" column="33" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="349" bodyend="366"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="297" column="33" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="349" bodyend="366"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -553,14 +836,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="120" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="368" bodyend="372"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="303" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="368" bodyend="372"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>2D geometric transformation </para>
     </briefdescription>
     <detaileddescription>
+<para>Represents a 2D affine transformation using a 3x3 homogeneous matrix. Supports translation, rotation, scaling, reflection, shear, and their compositions.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>t<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a509eff4857f5c7e947fe3673269bc20f" kindref="member">Transformation::Identity</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a75793220f8bb3d271b771b7f060b636c" kindref="member">Transformation</ref><sp/>rotation<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1aae0d29a9d8b14e1234dddf22c072ff53" kindref="member">Transformation::Rotation</ref>(<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(45.0));</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>p<sp/>=<sp/>rotation.applyTo(Point(1.0,<sp/>0.0));</highlight></codeline>
+</programlisting> </para>
     </detaileddescription>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="34" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" bodystart="33" bodyend="121"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" line="43" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp" bodystart="42" bodyend="304"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1acc8517da6833948aef8183180d0b59be" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::Transformation</scope><name>applyTo</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a5d1de9866945fa5b6057832b90f9e884" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::Transformation</scope><name>applyTo</name></member>

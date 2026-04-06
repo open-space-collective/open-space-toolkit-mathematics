@@ -198,7 +198,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html" title="Line.">Line</a>. </p>
-<p><a href="https://en.wikipedia.org/wiki/Line_">https://en.wikipedia.org/wiki/Line_</a>(geometry) </p>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8">Line</a> line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Line_">https://en.wikipedia.org/wiki/Line_</a>(geometry) </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa953f89b8b41699dc8f14a465e2ef6b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa953f89b8b41699dc8f14a465e2ef6b8">&#9670;&nbsp;</a></span>Line()</h2>
@@ -264,7 +265,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8">Line</a> line = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8">Line</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">line.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">Transformation::Identity</a>()) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -299,7 +302,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone line. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned line </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8">Line</a>* linePtr = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8">Line</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a34fd0962885cf69d1a70a5d62395acc9">clone</a>() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned line </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a8ea8d4074bfaaa3d996d760d5d5751db">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -382,7 +386,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get distance to point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8">Line</a> line = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8">Line</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Real distance = line.distanceTo(Point(1.0, 0.0, 0.0)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -451,7 +457,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute intersection of line with plane. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8">Line</a> line = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8">Line</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Plane plane = Plane({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, 1.0 }) ;</div>
+<div class="line">Intersection intersection = line.intersectionWith(plane) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPlane</td><td>A plane </td></tr>
   </table>
@@ -747,7 +756,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8">Line</a>({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#adbfd6a95b2edf22a2540e449d07e499c">print</a>(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -795,10 +805,13 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_html_a2c137ebb5cbfe774410eb84644e5cdd4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a2c137ebb5cbfe774410eb84644e5cdd4">ostk::mathematics::geometry::d3::object::Line::Points</a></div><div class="ttdeci">static Line Points(const Point &amp;aFirstPoint, const Point &amp;aSecondPoint)</div><div class="ttdoc">Constructs a line using two points.</div><div class="ttdef"><b>Definition:</b> Line.cpp:254</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_html_adbfd6a95b2edf22a2540e449d07e499c"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#adbfd6a95b2edf22a2540e449d07e499c">ostk::mathematics::geometry::d3::object::Line::print</a></div><div class="ttdeci">virtual void print(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</div><div class="ttdoc">Print line.</div><div class="ttdef"><b>Definition:</b> Line.cpp:221</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_html_ae07b5282c948df716fc1fa5bedeec344"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#ae07b5282c948df716fc1fa5bedeec344">ostk::mathematics::geometry::d3::object::Line::isDefined</a></div><div class="ttdeci">virtual bool isDefined() const override</div><div class="ttdoc">Check if line is defined.</div><div class="ttdef"><b>Definition:</b> Line.cpp:65</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_html_ac14c45f446051372e0a4dc3f4a6d514c"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#ac14c45f446051372e0a4dc3f4a6d514c">ostk::mathematics::geometry::d3::object::Line::getDirection</a></div><div class="ttdeci">Vector3d getDirection() const</div><div class="ttdoc">Get line direction.</div><div class="ttdef"><b>Definition:</b> Line.cpp:166</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_html_a34fd0962885cf69d1a70a5d62395acc9"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a34fd0962885cf69d1a70a5d62395acc9">ostk::mathematics::geometry::d3::object::Line::clone</a></div><div class="ttdeci">virtual Line * clone() const override</div><div class="ttdoc">Clone line.</div><div class="ttdef"><b>Definition:</b> Line.cpp:40</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_html_aa953f89b8b41699dc8f14a465e2ef6b8"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8">ostk::mathematics::geometry::d3::object::Line::Line</a></div><div class="ttdeci">Line(const Point &amp;anOrigin, const Vector3d &amp;aDirection)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Line.cpp:24</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_html_a22a81cbf24719168493158361bb24ee7"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a22a81cbf24719168493158361bb24ee7">ostk::mathematics::geometry::d3::object::Line::Undefined</a></div><div class="ttdeci">static Line Undefined()</div><div class="ttdoc">Constructs an undefined line.</div><div class="ttdef"><b>Definition:</b> Line.cpp:249</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_a5cd654de32139306358aa773bbf8c291"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">ostk::mathematics::geometry::d3::Transformation::Identity</a></div><div class="ttdeci">static Transformation Identity()</div><div class="ttdoc">Construct an identity transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:254</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_html_a9dc7e990d3dde27a6cdb332c27df0422"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a9dc7e990d3dde27a6cdb332c27df0422">ostk::mathematics::geometry::d3::object::Line::getOrigin</a></div><div class="ttdeci">Point getOrigin() const</div><div class="ttdoc">Get line origin.</div><div class="ttdef"><b>Definition:</b> Line.cpp:156</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

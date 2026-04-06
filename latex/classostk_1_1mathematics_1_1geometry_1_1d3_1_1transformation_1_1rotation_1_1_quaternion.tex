@@ -60,7 +60,7 @@ Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformati
 Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab2c7e95b006839e078c0517a320636cf}{z}} () const
 \begin{DoxyCompactList}\small\item\em Get third component of vector part. \end{DoxyCompactList}\item 
 Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aa59ce9764110f86f725a3797bf834764}{s}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get scalar part. \end{DoxyCompactList}\item 
 Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a3c12f3cb5522ec354d8f2e369135430c}{get\+Vector\+Part}} () const
 \begin{DoxyCompactList}\small\item\em Get vector part. \end{DoxyCompactList}\item 
 Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_af25340ddd9f641d4e3b588b0fa110669}{get\+Scalar\+Part}} () const
@@ -129,7 +129,7 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transforma
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a896500b99a8ab9cf38bc7f402001d41b}{N\+L\+E\+RP}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+First\+Quaternion, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Second\+Quaternion, const Real \&a\+Ratio)
 \begin{DoxyCompactList}\small\item\em Normalized linear interpolator method. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a0f9b33ebd521725a1fd852e68cf3bfba}{S\+L\+E\+RP}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+First\+Quaternion, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Second\+Quaternion, const Real \&a\+Ratio)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Spherical linear interpolator method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -149,6 +149,12 @@ std\+::ostream \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_
 \end{DoxyVerb}
 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a473fe143aff59c8d0ef54b7e73138853}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab065862f2a77807e42f6feaadc0637e2}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0);}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Quaternion}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Quaternion}} \href{https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Quaternions\+\_\+and\+\_\+spatial\+\_\+rotation}} 
 
 \doxysubsection{Member Enumeration Documentation}
@@ -162,7 +168,11 @@ std\+::ostream \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_
 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} format. 
 
-\begin{DoxyEnumFields}{Enumerator}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a69f1621be80ba171c61830a76d481bfc}{Quaternion::Format}} format = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a69f1621be80ba171c61830a76d481bfca11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion::Format::XYZS}};}
+\end{DoxyCode}
+ \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{XYZS@{XYZS}!ostk::mathematics::geometry::d3::transformation::rotation::Quaternion@{ostk::mathematics::geometry::d3::transformation::rotation::Quaternion}}\index{ostk::mathematics::geometry::d3::transformation::rotation::Quaternion@{ostk::mathematics::geometry::d3::transformation::rotation::Quaternion}!XYZS@{XYZS}}}\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a69f1621be80ba171c61830a76d481bfca11c51ecd5dc6f86ba3c1ae79e21482f5}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a69f1621be80ba171c61830a76d481bfca11c51ecd5dc6f86ba3c1ae79e21482f5}} 
 X\+Y\+ZS&Vector-\/scalar format. \\
 \hline
@@ -306,6 +316,10 @@ Conjugate \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transfo
 
 Multiply \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} using cross multiplication. 
 
+Multiply quaternions using the Shuster/\+J\+PL convention, such that q\+\_\+1.\+cross\+Multiply(q\+\_\+2) == q\+\_\+2.\+dot\+Multiply(q\+\_\+1)
+
+\href{https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation\#Alternative_conventions}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Quaternions\+\_\+and\+\_\+spatial\+\_\+rotation\#\+Alternative\+\_\+conventions}} Markley F. L. — Fundamentals of Spacecraft Attitude Determination and Control, p.\+37
+
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a473fe143aff59c8d0ef54b7e73138853}{Quaternion}} q\_1 = ...}
@@ -331,6 +345,10 @@ Multiply \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transfor
 
 
 Multiply \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} using dot multiplication. 
+
+Multiply quaternions using the Hamiltonian convention
+
+\href{https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Quaternions\+\_\+and\+\_\+spatial\+\_\+rotation}} Markley F. L. — Fundamentals of Spacecraft Attitude Determination and Control, p.\+37
 
 
 \begin{DoxyCode}{0}
@@ -778,6 +796,13 @@ Vector
 
 Multiplication assignment operator (\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}}) 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a473fe143aff59c8d0ef54b7e73138853}{Quaternion}} q = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_affb9e0b77d6b66dfcfdccb17ec10d1bf}{Quaternion::Unit}}();}
+\DoxyCodeLine{q *= \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_affb9e0b77d6b66dfcfdccb17ec10d1bf}{Quaternion::Unit}}();}
+\end{DoxyCode}
+
+
 \begin{DoxyNote}{Note}
 This operator uses cross multiplication
 \end{DoxyNote}
@@ -826,6 +851,13 @@ Addition operator.
 Addition assignment operator (\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}}) 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a473fe143aff59c8d0ef54b7e73138853}{Quaternion}} q = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_affb9e0b77d6b66dfcfdccb17ec10d1bf}{Quaternion::Unit}}();}
+\DoxyCodeLine{q += \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_affb9e0b77d6b66dfcfdccb17ec10d1bf}{Quaternion::Unit}}();}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Quaternion} & A \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \\
 \hline
@@ -871,6 +903,13 @@ This is equivalent to multiplying with the inverse
 
 
 Division assignment operator (\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}}) 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a473fe143aff59c8d0ef54b7e73138853}{Quaternion}} q = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_affb9e0b77d6b66dfcfdccb17ec10d1bf}{Quaternion::Unit}}();}
+\DoxyCodeLine{q /= \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_affb9e0b77d6b66dfcfdccb17ec10d1bf}{Quaternion::Unit}}();}
+\end{DoxyCode}
+
 
 \begin{DoxyNote}{Note}
 This is equivalent to multiplying with the inverse
@@ -1086,7 +1125,9 @@ Markley F. L.\+: Fundamentals of Spacecraft Attitude Determination and Control, 
 \doxysubsubsection{\texorpdfstring{s()}{s()}}
 {\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-@bref Get scalar part
+
+
+Get scalar part. 
 
 
 \begin{DoxyCode}{0}
@@ -1129,7 +1170,9 @@ Construct \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transfo
 \doxysubsubsection{\texorpdfstring{SLERP()}{SLERP()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+S\+L\+E\+RP (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+First\+Quaternion,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Second\+Quaternion,  }\item[{const Real \&}]{a\+Ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Spherical linear interpolator method
+
+
+Spherical linear interpolator method. 
 
 \href{https://en.wikipedia.org/wiki/Slerp}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Slerp}}
 

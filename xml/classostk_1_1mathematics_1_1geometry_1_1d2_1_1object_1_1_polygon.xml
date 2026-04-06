@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="52" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="52" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="54" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1afe8fc2aa12ac96c61c7eb213a1be60b5" prot="public" static="no">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment" kindref="compound">Segment</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="53" column="21" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="53" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="55" column="21" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" prot="public" static="no">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string" kindref="compound">LineString</ref></type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="54" column="24" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="54" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="56" column="24" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="56" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="297" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="295" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="373" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="371" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -80,6 +80,8 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a5389f3ef22d7144b5f01e37c8a221e8e" kindref="member">Polygon</ref><sp/>polygon({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>1.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}<sp/>})<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOuterRing</parametername>
@@ -101,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="61" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="713" bodyend="717"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="66" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="713" bodyend="717"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4031148e40aa64e08fe9ee5acdfa9c27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -121,6 +123,9 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" kindref="member">Polygon::Ring</ref><sp/>outerRing<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a5389f3ef22d7144b5f01e37c8a221e8e" kindref="member">Polygon</ref><sp/>polygon(outerRing)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOuterRing</parametername>
@@ -142,7 +147,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="70" column="5"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="79" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adc2ef152c4cfc2b2842cf9e215116ea4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -157,6 +162,8 @@
 <para>Copy constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a5389f3ef22d7144b5f01e37c8a221e8e" kindref="member">Polygon</ref><sp/>copiedPolygon(polygon)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPolygon</parametername>
@@ -170,7 +177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="78" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="719" bodyend="723"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="90" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="719" bodyend="723"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ad145d668431abe12328dc010394684cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -181,10 +188,12 @@
 <para>Destructor (virtual) </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Destructor<sp/>is<sp/>called<sp/>automatically<sp/>when<sp/>polygon<sp/>goes<sp/>out<sp/>of<sp/>scope.</highlight></codeline>
+</programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="82" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="725" bodyend="725"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="97" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="725" bodyend="725"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1af999d9844abf33d70dae582222582fac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
@@ -199,6 +208,8 @@
 <para>Copy assignment operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a5389f3ef22d7144b5f01e37c8a221e8e" kindref="member">Polygon</ref><sp/>polygonB<sp/>=<sp/>polygonA<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPolygon</parametername>
@@ -214,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="89" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="727" bodyend="737"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="107" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="727" bodyend="737"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a290758ce99124ae08292c683a9d77fc3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> *</type>
@@ -226,13 +237,15 @@
 <para>Clone polygon. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a5389f3ef22d7144b5f01e37c8a221e8e" kindref="member">Polygon</ref>*<sp/>clonePtr<sp/>=<sp/>polygon.clone()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Pointer to cloned polygon </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="95" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="739" bodyend="742"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="116" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="739" bodyend="742"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e45da47629d49cbf83823682b399e54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -247,6 +260,8 @@
 <para>Equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">polygonA<sp/>==<sp/>polygonB<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPolygon</parametername>
@@ -262,7 +277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="102" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="744" bodyend="752"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="126" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="744" bodyend="752"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a9077d4bf7b3d74058f061ef4c2780b1a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -277,6 +292,8 @@
 <para>Not equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">polygonA<sp/>!=<sp/>polygonB<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPolygon</parametername>
@@ -292,7 +309,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="109" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="754" bodyend="757"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="136" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="754" bodyend="757"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a81f715c35ecd0fa424f2daf4ffe59bec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -304,13 +321,15 @@
 <para>Check if polygon is defined. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a5389f3ef22d7144b5f01e37c8a221e8e" kindref="member">Polygon</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>1.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a81f715c35ecd0fa424f2daf4ffe59bec" kindref="member">isDefined</ref>()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>True if polygon is defined </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="115" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="759" bodyend="762"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="145" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="759" bodyend="762"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ad5d51eaab4e20905884893b79ff6bf32" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -329,6 +348,8 @@
 <para>Check if polygon is near another polygon. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">polygon.isNear(anotherPolygon,<sp/>1e-15)<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPolygon</parametername>
@@ -352,7 +373,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="123" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="764" bodyend="799"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="156" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="764" bodyend="799"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a8292e74414aa470153d0bd6f0884e00d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -386,7 +407,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="136" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="801" bodyend="814"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="168" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="801" bodyend="814"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4b5a24cc8cb60cf10d710aa62f742478" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -420,7 +441,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="149" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="816" bodyend="829"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="180" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="816" bodyend="829"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ac1e78b5240370ba32bcfd6078793888c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -454,7 +475,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="162" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="831" bodyend="844"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="192" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="831" bodyend="844"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a0c4427854d9487e06ba35456128692fb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -488,7 +509,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="175" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="846" bodyend="859"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="204" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="846" bodyend="859"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ab0e7337f42aace5f1032bb56bd497d77" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -499,13 +520,15 @@
 <para>Get number of inner rings. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Size<sp/>count<sp/>=<sp/>polygon.getInnerRingCount()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Number of inner rings </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="181" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="861" bodyend="869"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="213" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="861" bodyend="869"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a8899fe8a17de74160cf594c41af36d6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -516,13 +539,15 @@
 <para>Get edge count. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Size<sp/>count<sp/>=<sp/>polygon.getEdgeCount()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Edge count </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="187" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="871" bodyend="879"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="222" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="871" bodyend="879"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ac95bb98116f2a2f8daa00c1f128d41d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -533,13 +558,15 @@
 <para>Get vertex count. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Size<sp/>count<sp/>=<sp/>polygon.getVertexCount()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Vertex count </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="193" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="881" bodyend="889"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="231" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="881" bodyend="889"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a8cf439cf1110d7046b793123ac10b99d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" kindref="member">Polygon::Ring</ref></type>
@@ -550,13 +577,15 @@
 <para>Get outer ring. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" kindref="member">Polygon::Ring</ref><sp/>outerRing<sp/>=<sp/>polygon.getOuterRing()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Outer ring </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="199" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="891" bodyend="899"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="240" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="891" bodyend="899"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ae6ca3b527769f810852bf4c7a05f6b53" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" kindref="member">Polygon::Ring</ref></type>
@@ -571,13 +600,15 @@
 <para>Get inner ring at index. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" kindref="member">Polygon::Ring</ref><sp/>innerRing<sp/>=<sp/>polygon.getInnerRingAt(0)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Inner ring at index </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="205" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="901" bodyend="909"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="249" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="901" bodyend="909"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1accd882308127423cb544a6baa5230e0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1afe8fc2aa12ac96c61c7eb213a1be60b5" kindref="member">Polygon::Edge</ref></type>
@@ -592,6 +623,8 @@
 <para>Get edge at index. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1afe8fc2aa12ac96c61c7eb213a1be60b5" kindref="member">Polygon::Edge</ref><sp/>edge<sp/>=<sp/>polygon.getEdgeAt(0)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anEdgeIndex</parametername>
@@ -607,7 +640,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="212" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="911" bodyend="919"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="259" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="911" bodyend="919"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a40e8429ba11bf27825295b9a4d467bf6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adf15f8325e848f3c4e310169aa8e0657" kindref="member">Polygon::Vertex</ref></type>
@@ -622,6 +655,8 @@
 <para>Get vertex at index. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adf15f8325e848f3c4e310169aa8e0657" kindref="member">Polygon::Vertex</ref><sp/>vertex<sp/>=<sp/>polygon.getVertexAt(0)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aVertexIndex</parametername>
@@ -637,7 +672,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="219" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="921" bodyend="929"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="269" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="921" bodyend="929"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ad96e3314523abd27276eca0a7b16f00d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1afe8fc2aa12ac96c61c7eb213a1be60b5" kindref="member">Polygon::Edge</ref> &gt;</type>
@@ -648,13 +683,15 @@
 <para>Get polygon edges. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Array&lt;Polygon::Edge&gt;<sp/>edges<sp/>=<sp/>polygon.getEdges()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> edges </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="225" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="931" bodyend="939"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="278" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="931" bodyend="939"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a3308ae10e5627e0427dab164bb4b41d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adf15f8325e848f3c4e310169aa8e0657" kindref="member">Polygon::Vertex</ref> &gt;</type>
@@ -665,13 +702,15 @@
 <para>Get polygon vertices. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Array&lt;Polygon::Vertex&gt;<sp/>vertices<sp/>=<sp/>polygon.getVertices()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> vertices </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="231" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="941" bodyend="949"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="287" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="941" bodyend="949"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a28f6ead5b5f3b2125330c318e2aee4c5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref></type>
@@ -682,7 +721,8 @@
 <para>Get polygon convex hull. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>                https://en.wikipedia.org/wiki/Convex_hull
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a5389f3ef22d7144b5f01e37c8a221e8e" kindref="member">Polygon</ref><sp/>convexHull<sp/>=<sp/>polygon.getConvexHull()<sp/>;</highlight></codeline>
+</programlisting> <verbatim>                https://en.wikipedia.org/wiki/Convex_hull
 </verbatim></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> convex hull </para>
 </simplesect>
@@ -690,7 +730,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="239" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="951" bodyend="959"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="298" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="951" bodyend="959"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1aeeedeff734bdf3fceae7d17dc9aa2097" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -705,6 +745,8 @@
 <para>Compute intersection of polygon with polygon. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>polygonA.intersectionWith(polygonB)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPolygon</parametername>
@@ -720,7 +762,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="246" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1001" bodyend="1009"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="308" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1001" bodyend="1009"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a7caedd5217a76f4739ae14c56d7c2387" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -735,6 +777,8 @@
 <para>Compute difference of polygon with polygon. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Intersection<sp/>difference<sp/>=<sp/>polygonA.differenceWith(polygonB)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPolygon</parametername>
@@ -750,7 +794,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="253" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1011" bodyend="1019"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="318" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1011" bodyend="1019"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1addbc0c8111c2f8c5ce1ff347135d54fe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon" kindref="compound">MultiPolygon</ref></type>
@@ -765,6 +809,8 @@
 <para>Compute union of polygon with polygon. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">MultiPolygon<sp/>unionResult<sp/>=<sp/>polygonA.unionWith(polygonB)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aPolygon</parametername>
@@ -780,7 +826,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="260" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1021" bodyend="1029"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="328" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1021" bodyend="1029"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1acae5758cc07f2787875897d4392a07a4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>String</type>
@@ -802,6 +848,8 @@
 <para>Get string representation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>str<sp/>=<sp/>polygon.toString()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aFormat</parametername>
@@ -817,7 +865,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="267" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1031" bodyend="1039"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="338" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1031" bodyend="1039"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e6da736abac853938c0a42e50984191" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -838,6 +886,8 @@
 <para>Print polygon. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">polygon.print(std::cout,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOutputStream</parametername>
@@ -859,7 +909,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="276" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="961" bodyend="999"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="350" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="961" bodyend="999"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a98902fdd8d77f9f6f0d6f833fa007ada" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -875,6 +925,8 @@
 <para>Apply transformation to polygon. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">polygon.applyTransformation(aTransformation)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aTransformation</parametername>
@@ -888,7 +940,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="282" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1041" bodyend="1054"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="359" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1041" bodyend="1054"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -909,14 +961,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="292" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1056" bodyend="1059"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="368" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1056" bodyend="1059"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref>. </para>
     </briefdescription>
     <detaileddescription>
-<para><verbatim>                        A plane figure that is bounded by a finite chain of straight line segments closing in a
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a5389f3ef22d7144b5f01e37c8a221e8e" kindref="member">Polygon</ref><sp/>polygon({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>1.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}<sp/>})<sp/>;</highlight></codeline>
+</programlisting> <verbatim>                        A plane figure that is bounded by a finite chain of straight line segments closing in a
                         loop to form a closed polygonal chain or circuit. These segments are called its edges,
                         and the points where two edges meet are the polygon&apos;s vertices.
 </verbatim></para>
@@ -946,7 +999,7 @@
         <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="50" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="49" bodyend="298"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="52" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="51" bodyend="374"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a98902fdd8d77f9f6f0d6f833fa007ada" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a290758ce99124ae08292c683a9d77fc3" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>clone</name></member>

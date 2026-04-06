@@ -12,7 +12,10 @@ var classostk_1_1mathematics_1_1solver_1_1_numerical_solver =
       [ "RungeKutta4", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a2ad1d4b322353ee07200045be21ffb58", null ],
       [ "RungeKuttaCashKarp54", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a646d9d3aaac989d6fd4990f308ba3a37", null ],
       [ "RungeKuttaFehlberg78", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a5002097811f3eb2dd4a34b826b1288e7", null ],
-      [ "RungeKuttaDopri5", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a3203013d28f8e40a899ed45ede9ad149", null ]
+      [ "RungeKuttaDopri5", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a3203013d28f8e40a899ed45ede9ad149", null ],
+      [ "AdamsBashforthMoulton5", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a65ca550a20efb224edd0f6fb324af7d3", null ],
+      [ "AdamsBashforthMoulton8", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a6d5c11acddf69b60055af372f885f751", null ],
+      [ "BulirschStoer", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97a031df4984d03b288981ec5bec64685db", null ]
     ] ],
     [ "NumericalSolver", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a1c5fd12a2d545bf7d090d992ffcbe17e", null ],
     [ "accessObservedStateVectors", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#ad7d60a1c86d369700734a572d6960da0", null ],

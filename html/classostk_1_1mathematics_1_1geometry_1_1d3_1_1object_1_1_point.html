@@ -192,7 +192,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html" title="Point.">Point</a>. </p>
-<p><a href="https://en.wikipedia.org/wiki/Point_">https://en.wikipedia.org/wiki/Point_</a>(geometry) </p>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a> point(1.0, 2.0, 3.0) ;</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Point_">https://en.wikipedia.org/wiki/Point_</a>(geometry) </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad2997c8a9695cb44004985034cb622b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad2997c8a9695cb44004985034cb622b8">&#9670;&nbsp;</a></span>Point()</h2>
@@ -265,7 +266,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a> point = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>() ;</div>
+<div class="line">point.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">Transformation::Identity</a>()) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -292,7 +295,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get vector representation of point. </p>
-<dl class="section return"><dt>Returns</dt><dd>Vector representation of point </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> vector = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a>(1.0, 2.0, 3.0).asVector() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Vector representation of point </dd></dl>
 
 </div>
 </div>
@@ -320,7 +324,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone point. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned point </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a>* pointPtr = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#adf6a7e433d64879df60ea17403bf4694">clone</a>() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned point </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a8ea8d4074bfaaa3d996d760d5d5751db">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -343,7 +348,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get distance to another point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Real distance = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a>(0.0, 0.0, 0.0).distanceTo(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a>(1.0, 0.0, 0.0)) ; <span class="comment">// 1.0</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -382,7 +388,6 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">   </div>
 <div class="line">    @param              [in] aVector A translation vector</div>
 <div class="line">    @<span class="keywordflow">return</span>             A point</div>
-<div class="line"> </div>
 <div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a> operator+(<span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a>&amp; aVector) <span class="keyword">const</span>;</div>
 <div class="line"> </div>
 <div class="line">    @brief              Subtraction <span class="keyword">operator</span>: translate point along opposite vector</div>
@@ -393,7 +398,6 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">   </div>
 <div class="line">    @param              [in] aVector A translation vector</div>
 <div class="line">    @<span class="keywordflow">return</span>             A point</div>
-<div class="line"> </div>
 <div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a> operator-(<span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a>&amp; aVector) <span class="keyword">const</span>;</div>
 <div class="line"> </div>
 <div class="line">    @brief              Subtraction <span class="keyword">operator</span>: get translation vector between two points</div>
@@ -404,7 +408,6 @@ Static Public Member Functions</h2></td></tr>
 <div class="line">   </div>
 <div class="line">    @param              [in] aPoint A point</div>
 <div class="line">    @<span class="keywordflow">return</span>             A translation vector</div>
-<div class="line"> </div>
 <div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> operator-(<span class="keyword">const</span> <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a>&amp; aPoint) <span class="keyword">const</span>;</div>
 <div class="line"> </div>
 <div class="line">    @brief              Check <span class="keywordflow">if</span> point <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#ad9e6f5027d14e3c7d7bead94052611ed">is</a> defined</div>
@@ -473,7 +476,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a>(0.0, 0.0, 0.0) != <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a>(1.0, 0.0, 0.0) ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -500,7 +504,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a>(0.0, 0.0, 0.0) == <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a>(0.0, 0.0, 0.0) ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -574,7 +579,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a9395ae58a8f65a13328bc581586955c3">print</a>(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -603,7 +609,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get string representation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">String str = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">Point</a>(1.0, 2.0, 3.0).toString() ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>aPrecision A precision </td></tr>
   </table>
@@ -741,12 +748,15 @@ Static Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_adf6a7e433d64879df60ea17403bf4694"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#adf6a7e433d64879df60ea17403bf4694">ostk::mathematics::geometry::d3::object::Point::clone</a></div><div class="ttdeci">virtual Point * clone() const override</div><div class="ttdoc">Clone point.</div><div class="ttdef"><b>Definition:</b> Point.cpp:28</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a2e0dc90fe04fb9befb79ec9874dcebc4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">ostk::mathematics::geometry::d3::object::Point::Origin</a></div><div class="ttdeci">static Point Origin()</div><div class="ttdoc">Constructs a point at origin.</div><div class="ttdef"><b>Definition:</b> Point.cpp:204</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a48d5b17426787474bdae338a5f154424"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a48d5b17426787474bdae338a5f154424">ostk::mathematics::geometry::d3::object::Point::Undefined</a></div><div class="ttdeci">static Point Undefined()</div><div class="ttdoc">Constructs an undefined point.</div><div class="ttdef"><b>Definition:</b> Point.cpp:199</div></div>
-<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a69d9a055814e9440af219eff448c6c23"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">ostk::mathematics::object::Vector3d</a></div><div class="ttdeci">Eigen::Vector3d Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:38</div></div>
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a69d9a055814e9440af219eff448c6c23"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">ostk::mathematics::object::Vector3d</a></div><div class="ttdeci">Eigen::Vector3d Vector3d</div><div class="ttdoc">3D double vector type alias for Eigen::Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:43</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_aa467c6aeea346a0a8d1d2c2b0397b069"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#aa467c6aeea346a0a8d1d2c2b0397b069">ostk::mathematics::geometry::d3::object::Point::Vector</a></div><div class="ttdeci">static Point Vector(const Vector3d &amp;aVector)</div><div class="ttdoc">Constructs a point from a vector.</div><div class="ttdef"><b>Definition:</b> Point.cpp:209</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_a5cd654de32139306358aa773bbf8c291"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">ostk::mathematics::geometry::d3::Transformation::Identity</a></div><div class="ttdeci">static Transformation Identity()</div><div class="ttdoc">Construct an identity transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:254</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a9395ae58a8f65a13328bc581586955c3"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a9395ae58a8f65a13328bc581586955c3">ostk::mathematics::geometry::d3::object::Point::print</a></div><div class="ttdeci">virtual void print(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</div><div class="ttdoc">Print point.</div><div class="ttdef"><b>Definition:</b> Point.cpp:173</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_ad2997c8a9695cb44004985034cb622b8"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#ad2997c8a9695cb44004985034cb622b8">ostk::mathematics::geometry::d3::object::Point::Point</a></div><div class="ttdeci">Point(const Real &amp;aFirstCoordinate, const Real &amp;aSecondCoordinate, const Real &amp;aThirdCoordinate)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Point.cpp:20</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_html_ad9e6f5027d14e3c7d7bead94052611ed"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#ad9e6f5027d14e3c7d7bead94052611ed">ostk::mathematics::geometry::d3::Object::is</a></div><div class="ttdeci">bool is() const</div><div class="ttdoc">Returns true if object can be converted to type.</div><div class="ttdef"><b>Definition:</b> Object.hpp:72</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_html_ad9e6f5027d14e3c7d7bead94052611ed"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#ad9e6f5027d14e3c7d7bead94052611ed">ostk::mathematics::geometry::d3::Object::is</a></div><div class="ttdeci">bool is() const</div><div class="ttdoc">Returns true if object can be converted to type.</div><div class="ttdef"><b>Definition:</b> Object.hpp:102</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

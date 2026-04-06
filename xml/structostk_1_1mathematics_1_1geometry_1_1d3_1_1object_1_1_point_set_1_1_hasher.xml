@@ -19,16 +19,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp" line="45" column="21" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp" bodystart="45" bodyend="57"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp" line="51" column="21" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp" bodystart="51" bodyend="63"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> hasher. </para>
     </briefdescription>
     <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">PointSet::Hasher<sp/>hasher<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">std::size_t<sp/>hash<sp/>=<sp/>hasher(<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a2e0dc90fe04fb9befb79ec9874dcebc4" kindref="member">Point::Origin</ref>())<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><ulink url="https://wjngkoh.wordpress.com/2015/03/04/c-hash-function-for-eigen-matrix-and-vector">https://wjngkoh.wordpress.com/2015/03/04/c-hash-function-for-eigen-matrix-and-vector</ulink>/ </para>
     </detaileddescription>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp" line="44" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp" bodystart="43" bodyend="58"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp" line="50" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp" bodystart="49" bodyend="64"/>
     <listofallmembers>
       <member refid="structostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1_1_hasher_1afb61191258aece00aa594b569fbd4edb" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::PointSet::Hasher</scope><name>operator()</name></member>
     </listofallmembers>

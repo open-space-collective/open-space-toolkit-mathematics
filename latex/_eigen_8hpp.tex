@@ -9,13 +9,13 @@
 bool \mbox{\hyperlink{_eigen_8hpp_aaa1d139fcb55b1f038ab29d736d07f3d}{is\+Defined}} () const
 \begin{DoxyCompactList}\small\item\em Apache License 2.\+0. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_eigen_8hpp_a0f14bad11d673c61a550d48d6777eae1}{is\+NaN}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Check if any element of the matrix/vector is NaN. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_eigen_8hpp_afe8246e867e93283cdfac59d16941411}{is\+Inf}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Check if any element of the matrix/vector is infinite. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_eigen_8hpp_add00b5fa2f33935acb910760aeea837c}{is\+Near}} (const Derived \&a\+Matrix, const Real\+Scalar a\+Tolerance) const
-\item 
+\begin{DoxyCompactList}\small\item\em Check if the matrix/vector is near another within a tolerance. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{_eigen_8hpp_a12b926fa5c60e26e4a170e5b4e870dea}{to\+String}} (int a\+Precision=-\/1) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Convert the matrix/vector to a string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -29,27 +29,108 @@ std\+::string \mbox{\hyperlink{_eigen_8hpp_a12b926fa5c60e26e4a170e5b4e870dea}{to
 
 Apache License 2.\+0. 
 
+Check if the matrix/vector is defined (not NaN and not Inf)
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} v(1.0, 2.0, 3.0);}
+\DoxyCodeLine{v.isDefined();  \textcolor{comment}{// true}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if all elements are finite and not NaN 
+\end{DoxyReturn}
 \mbox{\Hypertarget{_eigen_8hpp_afe8246e867e93283cdfac59d16941411}\label{_eigen_8hpp_afe8246e867e93283cdfac59d16941411}} 
 \index{Eigen.hpp@{Eigen.hpp}!isInf@{isInf}}
 \index{isInf@{isInf}!Eigen.hpp@{Eigen.hpp}}
 \doxysubsubsection{\texorpdfstring{isInf()}{isInf()}}
 {\footnotesize\ttfamily bool is\+Inf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Check if any element of the matrix/vector is infinite. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} v(1.0, std::numeric\_limits<double>::infinity(), 3.0);}
+\DoxyCodeLine{v.isInf();  \textcolor{comment}{// true}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if any element is infinite 
+\end{DoxyReturn}
 \mbox{\Hypertarget{_eigen_8hpp_a0f14bad11d673c61a550d48d6777eae1}\label{_eigen_8hpp_a0f14bad11d673c61a550d48d6777eae1}} 
 \index{Eigen.hpp@{Eigen.hpp}!isNaN@{isNaN}}
 \index{isNaN@{isNaN}!Eigen.hpp@{Eigen.hpp}}
 \doxysubsubsection{\texorpdfstring{isNaN()}{isNaN()}}
 {\footnotesize\ttfamily bool is\+NaN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Check if any element of the matrix/vector is NaN. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} v(1.0, std::numeric\_limits<double>::quiet\_NaN(), 3.0);}
+\DoxyCodeLine{v.isNaN();  \textcolor{comment}{// true}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if any element is NaN 
+\end{DoxyReturn}
 \mbox{\Hypertarget{_eigen_8hpp_add00b5fa2f33935acb910760aeea837c}\label{_eigen_8hpp_add00b5fa2f33935acb910760aeea837c}} 
 \index{Eigen.hpp@{Eigen.hpp}!isNear@{isNear}}
 \index{isNear@{isNear}!Eigen.hpp@{Eigen.hpp}}
 \doxysubsubsection{\texorpdfstring{isNear()}{isNear()}}
 {\footnotesize\ttfamily bool is\+Near (\begin{DoxyParamCaption}\item[{const Derived \&}]{a\+Matrix,  }\item[{const Real\+Scalar}]{a\+Tolerance }\end{DoxyParamCaption}) const}
 
+
+
+Check if the matrix/vector is near another within a tolerance. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} v1(1.0, 2.0, 3.0);}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} v2(1.0, 2.0, 3.0 + 1e-\/10);}
+\DoxyCodeLine{v1.isNear(v2, 1e-\/9);  \textcolor{comment}{// true}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Matrix} & A matrix/vector to compare against \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Tolerance} & A numerical tolerance on the norm of the difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the norm of the difference is within the tolerance 
+\end{DoxyReturn}
 \mbox{\Hypertarget{_eigen_8hpp_a12b926fa5c60e26e4a170e5b4e870dea}\label{_eigen_8hpp_a12b926fa5c60e26e4a170e5b4e870dea}} 
 \index{Eigen.hpp@{Eigen.hpp}!toString@{toString}}
 \index{toString@{toString}!Eigen.hpp@{Eigen.hpp}}
 \doxysubsubsection{\texorpdfstring{toString()}{toString()}}
 {\footnotesize\ttfamily std\+::string to\+String (\begin{DoxyParamCaption}\item[{int}]{a\+Precision = {\ttfamily -\/1} }\end{DoxyParamCaption}) const}
 
+
+
+Convert the matrix/vector to a string representation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} v(1.0, 2.0, 3.0);}
+\DoxyCodeLine{v.toString();  \textcolor{comment}{// "[1.0, 2.0, 3.0]"}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Precision} & A precision (number of decimal places, or -\/1 for automatic) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation of the matrix/vector 
+\end{DoxyReturn}

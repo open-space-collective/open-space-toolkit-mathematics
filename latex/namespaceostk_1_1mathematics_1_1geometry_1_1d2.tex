@@ -13,7 +13,7 @@ class \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersecti
 class \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object}{Object}}
 \begin{DoxyCompactList}\small\item\em 2D object \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation}{Transformation}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 2D geometric transformation \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -55,6 +55,12 @@ A reference to output stream
 {\footnotesize\ttfamily std\+::ostream\& ostk\+::mathematics\+::geometry\+::d2\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object}{Object}} \&}]{an\+Object }\end{DoxyParamCaption})}
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::cout << Point(0.0, 0.0) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
 \hline
@@ -70,3 +76,19 @@ A reference to output stream
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily std\+::ostream\& ostk\+::mathematics\+::geometry\+::d2\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})}
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::cout << \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_a509eff4857f5c7e947fe3673269bc20f}{Transformation::Identity}}();}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the output stream 
+\end{DoxyReturn}

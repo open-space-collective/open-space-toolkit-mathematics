@@ -80,6 +80,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 \end{DoxyVerb}
 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\end{DoxyCode}
+
+
 \href{https://en.wikipedia.org/wiki/Plane_}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Plane\+\_\+}}(geometry) 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -120,6 +126,13 @@ Constructor.
 Apply transformation to plane. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{plane.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5cd654de32139306358aa773bbf8c291}{Transformation::Identity}}()) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -137,6 +150,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_objec
 
 
 Clone plane. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}* planePtr = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a07a393740306e4f8363920a8d82823e7}{clone}}() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned plane 
@@ -324,6 +343,14 @@ Get plane point.
 Compute intersection of plane with line. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Line line = Line(\{ 0.0, 0.0, -\/1.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = plane.intersectionWith(line) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Line} & A line \\
 \hline
@@ -340,6 +367,13 @@ Compute intersection of plane with line.
 
 
 Compute intersection of plane with point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = plane.intersectionWith(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}()) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -360,6 +394,14 @@ Compute intersection of plane with point.
 Compute intersection of plane with point set. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{PointSet pointSet = PointSet(\{ \{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \} \}) ;}
+\DoxyCodeLine{Intersection intersection = plane.intersectionWith(pointSet) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
 \hline
@@ -378,6 +420,14 @@ Compute intersection of plane with point set.
 Compute intersection of plane with ray. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Ray ray = Ray(\{ 0.0, 0.0, -\/1.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = plane.intersectionWith(ray) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
 \hline
@@ -394,6 +444,14 @@ Compute intersection of plane with ray.
 
 
 Compute intersection of plane with segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Segment segment = Segment(\{ 0.0, 0.0, -\/1.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{Intersection intersection = plane.intersectionWith(segment) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -615,6 +673,12 @@ True if planes are equal
 
 
 Print plane. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a69cc28d37f97308cd2d0a9b58d50c18f}{print}}(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

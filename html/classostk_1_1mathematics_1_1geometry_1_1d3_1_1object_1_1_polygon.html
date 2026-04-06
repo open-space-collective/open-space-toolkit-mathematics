@@ -214,7 +214,8 @@ Static Public Member Functions</h2></td></tr>
 <pre class="fragment">                        A polygon is a plane figure that is bounded by a finite chain of straight line segments
                         closing in a loop to form a closed polygonal chain or circuit. These segments are called
                         its edges, and the points where two edges meet are the polygon's vertices.
-</pre><p><a href="https://en.wikipedia.org/wiki/Polygon">https://en.wikipedia.org/wiki/Polygon</a> </p>
+</pre><div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon(polygon2d, origin, xAxis, yAxis);</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Polygon">https://en.wikipedia.org/wiki/Polygon</a> </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a58c843dbce8d1d9eca6203b027477e11"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58c843dbce8d1d9eca6203b027477e11">&#9670;&nbsp;</a></span>Edge</h2>
@@ -341,7 +342,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to polygon. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line">polygon.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">Transformation::Translation</a>({ 1.0, 0.0, 0.0 })) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -376,7 +379,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone polygon. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned polygon </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a>* clonePtr = polygon.clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned polygon </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a8ea8d4074bfaaa3d996d760d5d5751db">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -399,7 +403,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get edge at index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a58c843dbce8d1d9eca6203b027477e11">Polygon::Edge</a> edge = polygon.getEdgeAt(0) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anEdgeIndex</td><td>An edge index </td></tr>
   </table>
@@ -425,7 +431,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get edge count. </p>
-<dl class="section return"><dt>Returns</dt><dd>Edge count </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line">Size edgeCount = polygon.getEdgeCount() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Edge count </dd></dl>
 
 </div>
 </div>
@@ -445,7 +453,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get polygon edges. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> edges </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line">Array&lt;Polygon::Edge&gt; edges = polygon.getEdges() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> edges </dd></dl>
 
 </div>
 </div>
@@ -465,7 +475,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get polygon normal vector. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> normal vector </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> normal = polygon.getNormalVector() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> normal vector </dd></dl>
 
 </div>
 </div>
@@ -485,7 +497,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get polygon origin. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> origin </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line">Point origin = polygon.getOrigin() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> origin </dd></dl>
 
 </div>
 </div>
@@ -505,7 +519,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get polygon 2D polygon. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> 2D polygon </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object.html#ae4c84293a1f85b2e2c0d2e8aa5f281c0">Polygon2d</a> polygon2d = polygon.getPolygon2d() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> 2D polygon </dd></dl>
 
 </div>
 </div>
@@ -526,7 +542,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get vertex at index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a33d84704d7e18430f2a86399103eb84d">Polygon::Vertex</a> vertex = polygon.getVertexAt(0) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aVertexIndex</td><td>A vertex index </td></tr>
   </table>
@@ -552,7 +570,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get vertex count. </p>
-<dl class="section return"><dt>Returns</dt><dd>Vertex count </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line">Size vertexCount = polygon.getVertexCount() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Vertex count </dd></dl>
 
 </div>
 </div>
@@ -572,7 +592,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get polygon vertices. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> vertices </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line">Array&lt;Polygon::Vertex&gt; vertices = polygon.getVertices() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> vertices </dd></dl>
 
 </div>
 </div>
@@ -592,7 +614,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get polygon X axis. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> X axis </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> xAxis = polygon.getXAxis() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> X axis </dd></dl>
 
 </div>
 </div>
@@ -612,7 +636,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get polygon Y axis. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> Y axis </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> yAxis = polygon.getYAxis() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html" title="Polygon.">Polygon</a> Y axis </dd></dl>
 
 </div>
 </div>
@@ -640,7 +666,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if polygon is defined. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if polygon is defined </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line">polygon.isDefined() ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if polygon is defined </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a1962edbcdde0f851361b60324ab9ce2b">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -673,7 +701,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if polygon is near another polygon. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> anotherPolygon = ... ;</div>
+<div class="line">polygon.isNear(anotherPolygon, 1e-15) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">aTolerance</td><td>A tolerance </td></tr>
@@ -701,7 +732,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygonA = ... ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygonB = ... ;</div>
+<div class="line">polygonA != polygonB ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
   </table>
@@ -728,7 +762,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line">polygon == polygon ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
   </table>
@@ -781,7 +817,9 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html" title="3D intersection">Intersection</a></dd></dl>
 <p>Print polygon</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = ... ;</div>
+<div class="line">polygon.print(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -817,7 +855,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs an undefined polygon. </p>
-<dl class="section return"><dt>Returns</dt><dd>Undefined polygon </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">Polygon</a> polygon = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a446de1b35f71c1ac2be694b9c258b6cc">Polygon::Undefined</a>() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Undefined polygon </dd></dl>
 
 </div>
 </div>
@@ -827,9 +866,13 @@ Static Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_html_ae4c84293a1f85b2e2c0d2e8aa5f281c0"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object.html#ae4c84293a1f85b2e2c0d2e8aa5f281c0">ostk::mathematics::geometry::d3::object::Polygon2d</a></div><div class="ttdeci">ostk::mathematics::geometry::d2::object::Polygon Polygon2d</div><div class="ttdef"><b>Definition:</b> Polygon.hpp:32</div></div>
-<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a69d9a055814e9440af219eff448c6c23"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">ostk::mathematics::object::Vector3d</a></div><div class="ttdeci">Eigen::Vector3d Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:38</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_html_a58c843dbce8d1d9eca6203b027477e11"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a58c843dbce8d1d9eca6203b027477e11">ostk::mathematics::geometry::d3::object::Polygon::Edge</a></div><div class="ttdeci">Segment Edge</div><div class="ttdef"><b>Definition:</b> Polygon.hpp:53</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_af9058de81115d953ab8d9b8922abe692"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">ostk::mathematics::geometry::d3::Transformation::Translation</a></div><div class="ttdeci">static Transformation Translation(const Vector3d &amp;aTranslationVector)</div><div class="ttdoc">Construct a translation transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:259</div></div>
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_html_ae4c84293a1f85b2e2c0d2e8aa5f281c0"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object.html#ae4c84293a1f85b2e2c0d2e8aa5f281c0">ostk::mathematics::geometry::d3::object::Polygon2d</a></div><div class="ttdeci">ostk::mathematics::geometry::d2::object::Polygon Polygon2d</div><div class="ttdef"><b>Definition:</b> Polygon.hpp:31</div></div>
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a69d9a055814e9440af219eff448c6c23"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">ostk::mathematics::object::Vector3d</a></div><div class="ttdeci">Eigen::Vector3d Vector3d</div><div class="ttdoc">3D double vector type alias for Eigen::Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:43</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_html_a4a3afb176b3e70d5f174d0a7f6b57272"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4a3afb176b3e70d5f174d0a7f6b57272">ostk::mathematics::geometry::d3::object::Polygon::Polygon</a></div><div class="ttdeci">Polygon(const Polygon2d &amp;aPolygon, const Point &amp;anOrigin, const Vector3d &amp;aXAxis, const Vector3d &amp;aYAxis)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Polygon.cpp:20</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_html_a446de1b35f71c1ac2be694b9c258b6cc"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a446de1b35f71c1ac2be694b9c258b6cc">ostk::mathematics::geometry::d3::object::Polygon::Undefined</a></div><div class="ttdeci">static Polygon Undefined()</div><div class="ttdoc">Constructs an undefined polygon.</div><div class="ttdef"><b>Definition:</b> Polygon.cpp:286</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_html_a33d84704d7e18430f2a86399103eb84d"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a33d84704d7e18430f2a86399103eb84d">ostk::mathematics::geometry::d3::object::Polygon::Vertex</a></div><div class="ttdeci">Point Vertex</div><div class="ttdef"><b>Definition:</b> Polygon.hpp:52</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

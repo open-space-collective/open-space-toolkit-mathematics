@@ -187,7 +187,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Multi <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html" title="Line.">Line</a> string. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#a2be4b3e1608f466d294ef5884684bab1">MultiLineString</a> multiLineString({ lineStringA, lineStringB }) ;</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a56904ee7e27c37e2c3a1c94359ec01c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56904ee7e27c37e2c3a1c94359ec01c9">&#9670;&nbsp;</a></span>ConstIterator</h2>
 
@@ -256,7 +257,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to multi line string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">multiLineString.applyTransformation(aTransformation) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -283,7 +285,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get begin const iterator. </p>
-<dl class="section return"><dt>Returns</dt><dd>Begin const iterator </dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> it = multiLineString.begin() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Begin const iterator </dd></dl>
 
 </div>
 </div>
@@ -311,7 +314,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone multi line string. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned multi line string </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#a2be4b3e1608f466d294ef5884684bab1">MultiLineString</a>* clonePtr = multiLineString.clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned multi line string </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#af63da855554f9114803103fe2390f5eb">ostk::mathematics::geometry::d2::Object</a>.</p>
 
@@ -362,7 +366,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get end const iterator. </p>
-<dl class="section return"><dt>Returns</dt><dd>End const iterator </dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> it = multiLineString.end() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>End const iterator </dd></dl>
 
 </div>
 </div>
@@ -382,7 +387,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get multi line string count. </p>
-<dl class="section return"><dt>Returns</dt><dd>multi <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html" title="Line.">Line</a> string count </dd></dl>
+<div class="fragment"><div class="line">Size count = multiLineString.getLineStringCount() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>multi <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html" title="Line.">Line</a> string count </dd></dl>
 
 </div>
 </div>
@@ -403,7 +409,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get point closest to another point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Point closest = multiLineString.getPointClosestTo(Point(0.0, 0.0)) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -429,7 +436,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get point count. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html" title="Point.">Point</a> count </dd></dl>
+<div class="fragment"><div class="line">Size count = multiLineString.getPointCount() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html" title="Point.">Point</a> count </dd></dl>
 
 </div>
 </div>
@@ -502,7 +510,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">multiLineStringA != multiLineStringB ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aMultiLineString</td><td>A multi multi line string </td></tr>
   </table>
@@ -529,7 +538,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">multiLineStringA == multiLineStringB ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aMultiLineString</td><td>A multi multi line string </td></tr>
   </table>
@@ -574,7 +584,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">multiLineString.print(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -621,7 +632,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get string representation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">String str = multiLineString.toString() ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aFormat</td><td>A format </td></tr>
   </table>

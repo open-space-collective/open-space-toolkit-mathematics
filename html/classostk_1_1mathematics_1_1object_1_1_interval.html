@@ -240,7 +240,8 @@ Additional Inherited Members</h2></td></tr>
 class ostk::mathematics::object::Interval&lt; T &gt;</h3>
 
 <p>Set of numbers with the property that any number that lies between two numbers in the set is also included in the set. </p>
-<p><a href="https://en.wikipedia.org/wiki/Interval_">https://en.wikipedia.org/wiki/Interval_</a>(mathematics) </p>
+<div class="fragment"><div class="line">Interval&lt;Real&gt; interval(0.0, 1.0, <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval_base.html#a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e">Interval&lt;Real&gt;::Type::Closed</a>);</div>
+</div><!-- fragment --><p><a href="https://en.wikipedia.org/wiki/Interval_">https://en.wikipedia.org/wiki/Interval_</a>(mathematics) </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a625893384a0eea6cedbe88172764a525"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a625893384a0eea6cedbe88172764a525">&#9670;&nbsp;</a></span>Interval()</h2>
@@ -1203,7 +1204,9 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html" title="Set of numbers with the property that any number that lies between two numbers in the set is also inc...">Interval</a> lower bound setter. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Interval&lt;Real&gt; interval = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(0.0, 1.0) ;</div>
+<div class="line">interval.setLowerBound(-1.0) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aLowerBound</td><td>A lower bound </td></tr>
   </table>
@@ -1231,7 +1234,9 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html" title="Set of numbers with the property that any number that lies between two numbers in the set is also inc...">Interval</a> type setter. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Interval&lt;Real&gt; interval = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(0.0, 1.0) ;</div>
+<div class="line">interval.setType(<a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval_base.html#a2ad76e98fc37333faeb21490c7b4f201ac3bf447eabe632720a3aa1a7ce401274">Interval&lt;Real&gt;::Type::Open</a>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aType</td><td>An interval type </td></tr>
   </table>
@@ -1259,7 +1264,9 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html" title="Set of numbers with the property that any number that lies between two numbers in the set is also inc...">Interval</a> upper bound setter. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line">Interval&lt;Real&gt; interval = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(0.0, 1.0) ;</div>
+<div class="line">interval.setUpperBound(2.0) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anUpperBound</td><td>An upper bound </td></tr>
   </table>
@@ -1479,6 +1486,7 @@ template&lt;class U &gt; </div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_base_html_a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval_base.html#a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e">ostk::mathematics::object::IntervalBase::Type::Closed</a></div><div class="ttdeci">@ Closed</div><div class="ttdoc">Closed interval type [a, b].</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_ad3ed5f62f822cf770b439c1aa6283639"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ad3ed5f62f822cf770b439c1aa6283639">ostk::mathematics::object::Interval::Clip</a></div><div class="ttdeci">static ctnr::Array&lt; Interval&lt; T &gt; &gt; Clip(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const Interval&lt; T &gt; &amp;anInterval)</div><div class="ttdoc">Creates a new array of Intervals clipped by the provided Interval.</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a906c45e8ea21c1d762015a491afa2254"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a906c45e8ea21c1d762015a491afa2254">ostk::mathematics::object::Interval::StringFromType</a></div><div class="ttdeci">static types::String StringFromType(const Interval::Type &amp;anIntervalType)</div><div class="ttdoc">Converts interval type to string.</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_base_html_a2ad76e98fc37333faeb21490c7b4f201ac3bf447eabe632720a3aa1a7ce401274"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval_base.html#a2ad76e98fc37333faeb21490c7b4f201ac3bf447eabe632720a3aa1a7ce401274">ostk::mathematics::object::IntervalBase::Type::Open</a></div><div class="ttdeci">@ Open</div><div class="ttdoc">Open interval type ]a, b[.</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a3d13b7bfa9bcfee7dd3a7f9998378c4b"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">ostk::mathematics::object::Interval::Closed</a></div><div class="ttdeci">static Interval&lt; T &gt; Closed(const T &amp;aLowerBound, const T &amp;anUpperBound)</div><div class="ttdoc">Constructs a closed interval.</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a67fd1bf9afb4a553eda2782c1f1e69d7"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a67fd1bf9afb4a553eda2782c1f1e69d7">ostk::mathematics::object::Interval::Sort</a></div><div class="ttdeci">static ctnr::Array&lt; Interval&lt; T &gt; &gt; Sort(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const bool &amp;byLowerBound=true, const bool &amp;ascending=true)</div><div class="ttdoc">Creates a new sorted array, the order based on the inputted parameters.</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_ac57a376cb40367712a31e57b82d4bf96"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac57a376cb40367712a31e57b82d4bf96">ostk::mathematics::object::Interval::Parse</a></div><div class="ttdeci">static Interval&lt; T &gt; Parse(const types::String &amp;aString)</div><div class="ttdoc">Constructs an interval from a given string.</div></div>

@@ -90,6 +90,12 @@ std\+::ostream \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_
 \doxysubsection{Detailed Description}
 2D intersection 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_abadbbcd1176ace347a7148ea89a0fdef}{Intersection}} intersection = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a557d7508624c7644f74a358959e3a7e2}{Intersection::Point}}(object::Point(0.0, 0.0)) ;}
+\end{DoxyCode}
+ 
+
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faae}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faae}} 
 \index{ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}!Type@{Type}}
@@ -149,6 +155,14 @@ Complex&\\
 Constructor. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Array<Unique<Object>> objects ;}
+\DoxyCodeLine{objects.add(std::make\_unique<object::Point>(0.0, 0.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_abadbbcd1176ace347a7148ea89a0fdef}{Intersection}} intersection(std::move(objects)) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Object\+Array} & An array of objects \\
 \hline
@@ -162,6 +176,12 @@ Constructor.
 
 
 Copy constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_abadbbcd1176ace347a7148ea89a0fdef}{Intersection}} copiedIntersection(intersection) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -179,6 +199,10 @@ Copy constructor.
 Destructor. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Destructor is called automatically when intersection goes out of scope.}}
+\end{DoxyCode}
+ 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a74ec0b78bab654fc7ae2ba9795b32778}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a74ec0b78bab654fc7ae2ba9795b32778}} 
@@ -190,6 +214,12 @@ Destructor.
 
 
 Access composite object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} Composite\& composite = intersection.accessComposite() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Reference to composite object 
@@ -205,7 +235,12 @@ const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersecti
 
 Access intersection as its underlying object. 
 
-\begin{DoxyVerb}                Only valid if the intersection only contains one object.
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_abadbbcd1176ace347a7148ea89a0fdef}{Intersection}} intersection = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a557d7508624c7644f74a358959e3a7e2}{Intersection::Point}}(object::Point(0.0, 0.0)) ;}
+\DoxyCodeLine{\textcolor{keyword}{const} object::Point\& point = intersection.as<object::Point>() ;}
+\end{DoxyCode}
+ \begin{DoxyVerb}                Only valid if the intersection only contains one object.
 \end{DoxyVerb}
 
 
@@ -241,6 +276,12 @@ Empty intersection
 
 Get intersection type. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faae}{Intersection::Type}} type = intersection.getType() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection}{Intersection}} type 
 \end{DoxyReturn}
@@ -255,7 +296,12 @@ bool ostk\+::mathematics\+::geometry\+::d2\+::\+Intersection\+::is (\begin{DoxyP
 
 Returns true if intersection can be converted to underlying object. 
 
-\begin{DoxyVerb}                Only valid if the intersection only contains one object.
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_abadbbcd1176ace347a7148ea89a0fdef}{Intersection}} intersection = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a557d7508624c7644f74a358959e3a7e2}{Intersection::Point}}(object::Point(0.0, 0.0)) ;}
+\DoxyCodeLine{\textcolor{keywordtype}{bool} isPoint = intersection.is<object::Point>() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+ \begin{DoxyVerb}                Only valid if the intersection only contains one object.
 \end{DoxyVerb}
 
 
@@ -272,7 +318,11 @@ True if intersection can be converted to underlying object
 
 Check if intersection is complex. 
 
-\begin{DoxyVerb}                A complex intersection contains more than one object.
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{intersection.isComplex() ; \textcolor{comment}{// False}}
+\end{DoxyCode}
+ \begin{DoxyVerb}                A complex intersection contains more than one object.
 \end{DoxyVerb}
 
 
@@ -289,6 +339,12 @@ True if intersection is complex
 
 Check if intersection is defined. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a4b1d39b9c1516c2b1129957e1aaeab61}{Intersection::Empty}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_aee7e7ede2e3ea269b9b2eb091da92b8f}{isDefined}}() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 True if intersection is defined 
 \end{DoxyReturn}
@@ -301,6 +357,12 @@ True if intersection is defined
 
 
 Check if intersection is empty. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a4b1d39b9c1516c2b1129957e1aaeab61}{Intersection::Empty}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a4908a1b0edd4fb1b77bf13051f524a70}{isEmpty}}() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 True if intersection is empty 
@@ -355,6 +417,12 @@ Line string intersection
 Not equal to operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{intersectionA != intersectionB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Intersection} & An intersection \\
 \hline
@@ -372,7 +440,11 @@ True if intersections are not equal
 
 Addition operator (intersection concatenation) 
 
-\begin{DoxyVerb}                Concatenate (merge) intersection with another intersection.
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_abadbbcd1176ace347a7148ea89a0fdef}{Intersection}} intersectionC = intersectionA + intersectionB ;}
+\end{DoxyCode}
+ \begin{DoxyVerb}                Concatenate (merge) intersection with another intersection.
 \end{DoxyVerb}
 
 
@@ -394,7 +466,11 @@ Concatenated intersection
 
 Addition assignment operator (intersection concatenation) 
 
-\begin{DoxyVerb}                Concatenate (merge) intersection with another intersection.
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{intersectionA += intersectionB ;}
+\end{DoxyCode}
+ \begin{DoxyVerb}                Concatenate (merge) intersection with another intersection.
 \end{DoxyVerb}
 
 
@@ -417,6 +493,12 @@ Reference to concatenated intersection
 Copy assignment operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_abadbbcd1176ace347a7148ea89a0fdef}{Intersection}} intersectionB = intersectionA ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Intersection} & An intersection \\
 \hline
@@ -433,6 +515,12 @@ Reference to intersection
 
 
 Equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{intersectionA == intersectionB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -527,6 +615,12 @@ Segment intersection
 
 
 Converts intersection type to string. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{String str = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a7b00ce84dad2ae6d6bc09ca964dd4e28}{Intersection::StringFromType}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaea2a3cd5946cfd317eb99c3d32e35e2d4c}{Intersection::Type::Point}}) ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 String 

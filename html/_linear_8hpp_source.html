@@ -84,75 +84,73 @@ $(document).ready(function(){initNavTree('_linear_8hpp_source.html',''); initRes
 <div class="title">Linear.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_linear_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_Linear__</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define __OpenSpaceToolkit_Mathematics_Interpolator_Linear__</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;OpenSpaceToolkit/Core/Container/Pair.hpp&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;OpenSpaceToolkit/Core/Type/Index.hpp&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;OpenSpaceToolkit/Core/Type/Real.hpp&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;OpenSpaceToolkit/Core/Type/Size.hpp&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_interpolator_8hpp.html">OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_vector_8hpp.html">OpenSpaceToolkit/Mathematics/Object/Vector.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceostk.html">ostk</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>mathematics</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span>curvefitting</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span>interpolator</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> ostk::core::container::Pair;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using</span> ostk::core::type::Index;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using</span> ostk::core::type::Real;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using</span> ostk::core::type::Size;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html">ostk::mathematics::curvefitting::Interpolator</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">ostk::mathematics::object::VectorXd</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html">Linear</a> : <span class="keyword">public</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html">Interpolator</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a66f13250b306128dacc988a56961eda8">Linear</a>(<span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a>&amp; anXVector, <span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a>&amp; aYVector);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a6e6d93d0ac658408b32a8bb8dd66d069">~Linear</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#ac1332768995f471149cd3852b3ba2782">evaluate</a>(<span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a>&amp; aQueryVector) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#ac1332768995f471149cd3852b3ba2782">evaluate</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; aQueryValue) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a24f276d8242c407b246d7aed10ce5285">computeDerivative</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; aQueryValue) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a24f276d8242c407b246d7aed10ce5285">computeDerivative</a>(<span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a>&amp; aQueryVector) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> x_;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> y_;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    Pair&lt;Index, Index&gt; findIndexRange(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; aQueryValue) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}  <span class="comment">// namespace interpolator</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}  <span class="comment">// namespace curvefitting</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}  <span class="comment">// namespace mathematics</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}  <span class="comment">// namespace ostk</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="_linear_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_Linear__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define __OpenSpaceToolkit_Mathematics_Interpolator_Linear__</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;OpenSpaceToolkit/Core/Container/Pair.hpp&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;OpenSpaceToolkit/Core/Type/Index.hpp&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;OpenSpaceToolkit/Core/Type/Real.hpp&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;OpenSpaceToolkit/Core/Type/Size.hpp&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_interpolator_8hpp.html">OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_vector_8hpp.html">OpenSpaceToolkit/Mathematics/Object/Vector.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceostk.html">ostk</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>mathematics</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>curvefitting</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span>interpolator</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> ostk::core::container::Pair;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> ostk::core::type::Index;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using</span> ostk::core::type::Real;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using</span> ostk::core::type::Size;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html">ostk::mathematics::curvefitting::Interpolator</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">ostk::mathematics::object::VectorXd</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html">Linear</a> : <span class="keyword">public</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html">Interpolator</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a66f13250b306128dacc988a56961eda8">Linear</a>(<span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a>&amp; anXVector, <span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a>&amp; aYVector);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a6e6d93d0ac658408b32a8bb8dd66d069">~Linear</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#ac1332768995f471149cd3852b3ba2782">evaluate</a>(<span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a>&amp; aQueryVector) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#ac1332768995f471149cd3852b3ba2782">evaluate</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; aQueryValue) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a24f276d8242c407b246d7aed10ce5285">computeDerivative</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; aQueryValue) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a24f276d8242c407b246d7aed10ce5285">computeDerivative</a>(<span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a>&amp; aQueryVector) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> x_;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> y_;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    Pair&lt;Index, Index&gt; findIndexRange(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; aQueryValue) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}  <span class="comment">// namespace interpolator</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}  <span class="comment">// namespace curvefitting</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}  <span class="comment">// namespace mathematics</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}  <span class="comment">// namespace ostk</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_html_a66f13250b306128dacc988a56961eda8"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a66f13250b306128dacc988a56961eda8">ostk::mathematics::curvefitting::interpolator::Linear::Linear</a></div><div class="ttdeci">Linear(const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Linear.cpp:18</div></div>
 <div class="ttc" id="a_vector_8hpp_html"><div class="ttname"><a href="_vector_8hpp.html">Vector.hpp</a></div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_html"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html">ostk::mathematics::curvefitting::interpolator::Linear</a></div><div class="ttdoc">Linear.</div><div class="ttdef"><b>Definition:</b> Linear.hpp:40</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_html"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html">ostk::mathematics::curvefitting::interpolator::Linear</a></div><div class="ttdoc">Linear.</div><div class="ttdef"><b>Definition:</b> Linear.hpp:45</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_html_ac1332768995f471149cd3852b3ba2782"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#ac1332768995f471149cd3852b3ba2782">ostk::mathematics::curvefitting::interpolator::Linear::evaluate</a></div><div class="ttdeci">virtual VectorXd evaluate(const VectorXd &amp;aQueryVector) const override</div><div class="ttdoc">Evaluate the linear interpolator.</div><div class="ttdef"><b>Definition:</b> Linear.cpp:36</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_html_a24f276d8242c407b246d7aed10ce5285"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a24f276d8242c407b246d7aed10ce5285">ostk::mathematics::curvefitting::interpolator::Linear::computeDerivative</a></div><div class="ttdeci">virtual double computeDerivative(const double &amp;aQueryValue) const override</div><div class="ttdoc">Get the derivative of the linear interpolator.</div><div class="ttdef"><b>Definition:</b> Linear.cpp:70</div></div>
-<div class="ttc" id="anamespaceostk_html"><div class="ttname"><a href="namespaceostk.html">ostk</a></div><div class="ttdoc">Apache License 2.0.</div><div class="ttdef"><b>Definition:</b> BarycentricRational.hpp:14</div></div>
+<div class="ttc" id="anamespaceostk_html"><div class="ttname"><a href="namespaceostk.html">ostk</a></div><div class="ttdoc">Apache License 2.0.</div><div class="ttdef"><b>Definition:</b> BarycentricRational.hpp:13</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_html_a6e6d93d0ac658408b32a8bb8dd66d069"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a6e6d93d0ac658408b32a8bb8dd66d069">ostk::mathematics::curvefitting::interpolator::Linear::~Linear</a></div><div class="ttdeci">virtual ~Linear() override</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> Linear.cpp:34</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1_interpolator_html"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html">ostk::mathematics::curvefitting::Interpolator</a></div><div class="ttdoc">Interpolator (abstract class)</div><div class="ttdef"><b>Definition:</b> Interpolator.hpp:31</div></div>
-<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a7353155bb00668655919bf5698f74c84"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">ostk::mathematics::object::VectorXd</a></div><div class="ttdeci">Eigen::VectorXd VectorXd</div><div class="ttdef"><b>Definition:</b> Vector.hpp:42</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1_interpolator_html"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html">ostk::mathematics::curvefitting::Interpolator</a></div><div class="ttdoc">Interpolator (abstract class)</div><div class="ttdef"><b>Definition:</b> Interpolator.hpp:35</div></div>
+<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a7353155bb00668655919bf5698f74c84"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">ostk::mathematics::object::VectorXd</a></div><div class="ttdeci">Eigen::VectorXd VectorXd</div><div class="ttdoc">Dynamic-size double vector type alias for Eigen::VectorXd.</div><div class="ttdef"><b>Definition:</b> Vector.hpp:50</div></div>
 <div class="ttc" id="a_interpolator_8hpp_html"><div class="ttname"><a href="_interpolator_8hpp.html">Interpolator.hpp</a></div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

@@ -5,10 +5,11 @@
     <innerclass refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational" prot="public">ostk::mathematics::curvefitting::interpolator::BarycentricRational</innerclass>
     <innerclass refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline" prot="public">ostk::mathematics::curvefitting::interpolator::CubicSpline</innerclass>
     <innerclass refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear" prot="public">ostk::mathematics::curvefitting::interpolator::Linear</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order" prot="public">ostk::mathematics::curvefitting::interpolator::ZeroOrder</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="21" column="1"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="20" column="1"/>
   </compounddef>
 </doxygen>

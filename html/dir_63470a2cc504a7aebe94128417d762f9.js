@@ -8,5 +8,8 @@ var dir_63470a2cc504a7aebe94128417d762f9 =
     ] ],
     [ "Linear.hpp", "_linear_8hpp.html", [
       [ "Linear", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear" ]
+    ] ],
+    [ "ZeroOrder.hpp", "_zero_order_8hpp.html", [
+      [ "ZeroOrder", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order" ]
     ] ]
 ];

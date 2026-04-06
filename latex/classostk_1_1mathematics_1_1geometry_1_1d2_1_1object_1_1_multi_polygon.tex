@@ -73,6 +73,12 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1
 \doxysubsection{Detailed Description}
 Multi-\/polygon. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_a387e29bd423e834d10e30d1b55e4a2d7}{MultiPolygon}} multiPolygon(\{ polygon \}) ;}
+\end{DoxyCode}
+ 
+
 \doxysubsection{Member Typedef Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_ac8c8663dfd3465fdc37f369adc826488}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_ac8c8663dfd3465fdc37f369adc826488}} 
 \index{ostk::mathematics::geometry::d2::object::MultiPolygon@{ostk::mathematics::geometry::d2::object::MultiPolygon}!ConstIterator@{ConstIterator}}
@@ -94,6 +100,12 @@ Multi-\/polygon.
 Constructor. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_a387e29bd423e834d10e30d1b55e4a2d7}{MultiPolygon}} multiPolygon(\{ polygon \}) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Polygon\+Array} & An array of polygons \\
 \hline
@@ -107,6 +119,12 @@ Constructor.
 
 
 Copy constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_a387e29bd423e834d10e30d1b55e4a2d7}{MultiPolygon}} copiedMultiPolygon(multiPolygon) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -124,6 +142,10 @@ Copy constructor.
 Destructor (virtual) 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Destructor is called automatically when multi-\/polygon goes out of scope.}}
+\end{DoxyCode}
+ 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_a876015bf7a3b8667b8cb94627435a920}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_a876015bf7a3b8667b8cb94627435a920}} 
@@ -135,6 +157,12 @@ Destructor (virtual)
 
 
 Apply transformation to multi-\/polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{multiPolygon.applyTransformation(aTransformation) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -155,6 +183,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 Get begin const iterator over polygons. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} it = multiPolygon.begin() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Const iterator 
 \end{DoxyReturn}
@@ -167,6 +201,12 @@ Const iterator
 
 
 Clone multi-\/polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_a387e29bd423e834d10e30d1b55e4a2d7}{MultiPolygon}}* clonePtr = multiPolygon.clone() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned multi-\/polygon 
@@ -237,6 +277,12 @@ True if multi-\/polygon contains point set
 
 Get end const iterator over polygons. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} it = multiPolygon.end() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Const iterator 
 \end{DoxyReturn}
@@ -250,7 +296,11 @@ Const iterator
 
 Get multi-\/polygon convex hull. 
 
-\begin{DoxyVerb}                https://en.wikipedia.org/wiki/Convex_hull
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d2_1_1object_ac1ef77832033c8e89498cf87b6e0e08e}{Polygon2d}} convexHull = multiPolygon.\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a28f6ead5b5f3b2125330c318e2aee4c5}{getConvexHull}}() ;}
+\end{DoxyCode}
+ \begin{DoxyVerb}                https://en.wikipedia.org/wiki/Convex_hull
 \end{DoxyVerb}
 
 
@@ -267,6 +317,12 @@ Multi-\/polygon convex hull
 
 Get number of polygons. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Size count = multiPolygon.getPolygonCount() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Number of polygons 
 \end{DoxyReturn}
@@ -280,6 +336,12 @@ Number of polygons
 
 Get polygons. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Array<Polygon2d> polygons = multiPolygon.getPolygons() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 Array of polygons 
 \end{DoxyReturn}
@@ -292,6 +354,12 @@ Array of polygons
 
 
 Check if multi-\/polygon is defined. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{multiPolygon.isDefined() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 True if multi-\/polygon is defined 
@@ -309,6 +377,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 
 Not equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{multiPolygonA != multiPolygonB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -329,6 +403,12 @@ True if multi-\/polygons are not equal
 Copy assignment operator. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_a387e29bd423e834d10e30d1b55e4a2d7}{MultiPolygon}} multiPolygonB = multiPolygonA ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Multi\+Polygon} & A multi-\/polygon \\
 \hline
@@ -345,6 +425,12 @@ Reference to multi-\/polygon
 
 
 Equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{multiPolygonA == multiPolygonB ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -384,6 +470,12 @@ Multi-\/polygon
 Print multi-\/polygon. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{multiPolygon.print(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
 \hline
@@ -403,6 +495,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 
 Get string representation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{String str = multiPolygon.toString() ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -444,6 +542,12 @@ Undefined multi-\/polygon
 
 
 Compute intersection of multi-\/polygon with multi-\/polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_a387e29bd423e834d10e30d1b55e4a2d7}{MultiPolygon}} unionResult = multiPolygonA.unionWith(multiPolygonB) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}

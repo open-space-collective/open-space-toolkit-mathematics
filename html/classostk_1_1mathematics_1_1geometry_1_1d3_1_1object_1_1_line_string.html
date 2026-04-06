@@ -195,7 +195,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html" title="Line.">Line</a> string. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a> lineString({{0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {1.0, 1.0, 0.0}});</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5bc4dc999137d0087978e3a1df1d8f7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5bc4dc999137d0087978e3a1df1d8f7b">&#9670;&nbsp;</a></span>ConstIterator</h2>
 
@@ -256,7 +257,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Access point at index. </p>
-<p>[in] anIndex A point index </p><dl class="section return"><dt>Returns</dt><dd>Reference to point at index </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a> lineString = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line"><span class="keyword">const</span> Point&amp; point = lineString.accessPointAt(0) ;</div>
+</div><!-- fragment --><p>[in] anIndex A point index </p><dl class="section return"><dt>Returns</dt><dd>Reference to point at index </dd></dl>
 
 </div>
 </div>
@@ -285,7 +288,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Apply transformation to line string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a> lineString = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line">lineString.applyTransformation(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">Transformation::Translation</a>({ 1.0, 0.0, 0.0 })) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
   </table>
@@ -312,7 +317,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get begin const iterator. </p>
-<dl class="section return"><dt>Returns</dt><dd>Begin const iterator </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a> lineString = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a5bc4dc999137d0087978e3a1df1d8f7b">LineString::ConstIterator</a> it = lineString.begin() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Begin const iterator </dd></dl>
 
 </div>
 </div>
@@ -340,7 +347,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clone line string. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to cloned line string </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a>* clonePtr = lineString.clone() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Pointer to cloned line string </dd></dl>
 
 <p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a8ea8d4074bfaaa3d996d760d5d5751db">ostk::mathematics::geometry::d3::Object</a>.</p>
 
@@ -391,7 +399,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get end const iterator. </p>
-<dl class="section return"><dt>Returns</dt><dd>End const iterator </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a> lineString = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a5bc4dc999137d0087978e3a1df1d8f7b">LineString::ConstIterator</a> it = lineString.end() ;</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>End const iterator </dd></dl>
 
 </div>
 </div>
@@ -412,7 +422,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get point closest to another point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a> lineString = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line">Point closest = lineString.getPointClosestTo({ 0.5, 1.0, 0.0 }) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
@@ -438,7 +450,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get point count. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html" title="Point.">Point</a> count </dd></dl>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a> lineString = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line">Size count = lineString.getPointCount() ; <span class="comment">// 2</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html" title="Point.">Point</a> count </dd></dl>
 
 </div>
 </div>
@@ -551,7 +565,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Not equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a> lineStringA = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a> lineStringB = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a>({ { 0.0, 0.0, 0.0 }, { 2.0, 0.0, 0.0 } }) ;</div>
+<div class="line">lineStringA != lineStringB ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aLineString</td><td>A line string </td></tr>
   </table>
@@ -578,7 +595,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equal to operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a> lineString = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line">lineString == lineString ; <span class="comment">// True</span></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aLineString</td><td>A line string </td></tr>
   </table>
@@ -623,7 +642,9 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a> lineString = <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">LineString</a>({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;</div>
+<div class="line">lineString.print(std::cout, <span class="keyword">true</span>) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
@@ -673,6 +694,8 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_html_a1cbd0b1900eded1596378ba9a65b4e4e"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a1cbd0b1900eded1596378ba9a65b4e4e">ostk::mathematics::geometry::d3::object::LineString::LineString</a></div><div class="ttdeci">LineString(const Array&lt; Point &gt; &amp;aPointArray)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> LineString.cpp:21</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_af9058de81115d953ab8d9b8922abe692"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">ostk::mathematics::geometry::d3::Transformation::Translation</a></div><div class="ttdeci">static Transformation Translation(const Vector3d &amp;aTranslationVector)</div><div class="ttdoc">Construct a translation transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:259</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_html_a5bc4dc999137d0087978e3a1df1d8f7b"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a5bc4dc999137d0087978e3a1df1d8f7b">ostk::mathematics::geometry::d3::object::LineString::ConstIterator</a></div><div class="ttdeci">Array&lt; Point &gt;::ConstIterator ConstIterator</div><div class="ttdef"><b>Definition:</b> LineString.hpp:41</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_html_ac80cff5419ed1a8cbeb2b1b6835d15ae"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#ac80cff5419ed1a8cbeb2b1b6835d15ae">ostk::mathematics::geometry::d3::object::LineString::isNear</a></div><div class="ttdeci">bool isNear(const LineString &amp;aLineString, const Real &amp;aTolerance) const</div><div class="ttdoc">Check if line string is near another line string.</div><div class="ttdef"><b>Definition:</b> LineString.cpp:52</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_html_a4a92c1b91c16ae49fe38a3bf347586c0"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a4a92c1b91c16ae49fe38a3bf347586c0">ostk::mathematics::geometry::d3::object::LineString::Segment</a></div><div class="ttdeci">static LineString Segment(const object::Segment &amp;aSegment)</div><div class="ttdoc">Constructs a line string from a segment.</div><div class="ttdef"><b>Definition:</b> LineString.cpp:165</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_html_a2be7308b9a8a52f43b920b01c41c7253"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a2be7308b9a8a52f43b920b01c41c7253">ostk::mathematics::geometry::d3::object::LineString::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Check if line string is empty.</div><div class="ttdef"><b>Definition:</b> LineString.cpp:47</div></div>

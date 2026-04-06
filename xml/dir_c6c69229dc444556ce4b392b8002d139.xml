@@ -5,6 +5,7 @@
     <innerfile refid="_barycentric_rational_8cpp">BarycentricRational.cpp</innerfile>
     <innerfile refid="_cubic_spline_8cpp">CubicSpline.cpp</innerfile>
     <innerfile refid="_linear_8cpp">Linear.cpp</innerfile>
+    <innerfile refid="_zero_order_8cpp">ZeroOrder.cpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

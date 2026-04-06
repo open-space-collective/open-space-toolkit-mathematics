@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="37" column="35" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="37" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="39" column="35" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="304" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="304" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="388" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="388" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a9f14c3882aa77b394b1fd325c9cbafe4" prot="private" static="no" mutable="no">
         <type>Array&lt; Unique&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref> &gt; &gt;</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="305" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="305" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="389" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="389" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -61,6 +61,8 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref><sp/>composite(Point(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anObject</parametername>
@@ -74,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="43" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="21" bodyend="27"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="48" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="21" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a40e91d9468ac09b2b87155b79d196d1d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -89,6 +91,9 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Unique&lt;Object&gt;<sp/>objectUPtr<sp/>=<sp/>std::make_unique&lt;Point&gt;(0.0,<sp/>0.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref><sp/>composite(objectUPtr)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anObjectUPtr</parametername>
@@ -102,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="49" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="29" bodyend="35"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="58" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="29" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a66437dec2907929057147bcf7e6cd364" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -117,6 +122,10 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Array&lt;Unique&lt;Object&gt;&gt;<sp/>objects<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">objects.add(std::make_unique&lt;Point&gt;(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref><sp/>composite(std::move(objects))<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anObjectArray</parametername>
@@ -130,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="55" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="37" bodyend="53"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="69" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="37" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1ae777b05fd25e69c98d8d664b6a3e4e14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -145,6 +154,8 @@
 <para>Copy constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref><sp/>copiedComposite(composite)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aComposite</parametername>
@@ -158,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="61" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="55" bodyend="71"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="78" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="55" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a19f3ba420ea69eefa3a2b948d59a2fab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref> *</type>
@@ -170,13 +181,15 @@
 <para>Clone composite. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref>*<sp/>clonePtr<sp/>=<sp/>composite.clone()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Pointer to cloned composite </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="67" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="73" bodyend="76"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="87" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="73" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a6ceb4ff7945166c63292269531ecf722" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref> &amp;</type>
@@ -191,6 +204,8 @@
 <para>Copy assignment operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref><sp/>compositeB<sp/>=<sp/>compositeA<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aComposite</parametername>
@@ -206,7 +221,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="74" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="78" bodyend="100"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="97" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="78" bodyend="100"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1aaa0ab4bcefcb11d05ddfcdea811f7d0b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -221,6 +236,8 @@
 <para>Equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">compositeA<sp/>==<sp/>compositeB<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aComposite</parametername>
@@ -236,7 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="81" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="102" bodyend="123"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="107" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="102" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a11fcec32f83c456a485ccd5e8bcdc98f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -251,6 +268,8 @@
 <para>Not equal to operator. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">compositeA<sp/>!=<sp/>compositeB<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aComposite</parametername>
@@ -266,7 +285,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="88" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="125" bodyend="128"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="117" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="125" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a6a1d39238f6b47334b4d6d5b57cd766d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref></type>
@@ -281,7 +300,8 @@
 <para>Addition operator (composite concatenation) </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>                Concatenate (merge) composite with another composite.
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref><sp/>compositeC<sp/>=<sp/>compositeA<sp/>+<sp/>compositeB<sp/>;</highlight></codeline>
+</programlisting> <verbatim>                Concatenate (merge) composite with another composite.
 </verbatim></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -298,7 +318,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="97" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="130" bodyend="166"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="129" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="130" bodyend="166"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1af5ed721c02883767d4a2270bfe32a155" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref> &amp;</type>
@@ -313,7 +333,8 @@
 <para>Addition assignment operator (composite concatenation) </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>                Concatenate (merge) composite with another composite.
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">compositeA<sp/>+=<sp/>compositeB<sp/>;</highlight></codeline>
+</programlisting> <verbatim>                Concatenate (merge) composite with another composite.
 </verbatim></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -330,7 +351,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="106" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="168" bodyend="193"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="141" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="168" bodyend="193"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a8978d917810e68bb9e6b484fc97524c3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -350,7 +371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="116" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="195" bodyend="205"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="150" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="195" bodyend="205"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1ac4ad3c0b11203ad5c8eb3e455edaf3a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -369,7 +390,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="126" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="207" bodyend="215"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="159" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="207" bodyend="215"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a569c373be972804901329c2b2886edba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -385,7 +406,9 @@
 <para>Returns true if composite can be converted to underlying object. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>                Only valid if the composite only contains one object.
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref><sp/>composite(Point(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isPoint<sp/>=<sp/>composite.is&lt;Point&gt;()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
+</programlisting> <verbatim>                Only valid if the composite only contains one object.
 </verbatim></para>
 <para><simplesect kind="return"><para>True if composite can be converted to underlying object </para>
 </simplesect>
@@ -393,7 +416,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="135" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="135" bodyend="143"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="172" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="172" bodyend="180"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a1736931ccff0a138dbbf02b87bd6b5a7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -409,7 +432,9 @@
 <para>Access composite as its underlying object. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>                Only valid if the composite only contains one object.
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref><sp/>composite(Point(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Point&amp;<sp/>point<sp/>=<sp/>composite.as&lt;Point&gt;()<sp/>;</highlight></codeline>
+</programlisting> <verbatim>                Only valid if the composite only contains one object.
 </verbatim></para>
 <para><simplesect kind="return"><para>Reference to underlying object </para>
 </simplesect>
@@ -417,7 +442,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="152" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="152" bodyend="172"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="193" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="193" bodyend="213"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a268fb26bb98a77e6ddca626901e9449e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -433,6 +458,8 @@
 <para>Check if composite intersects object. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">composite.intersects(Point(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anObject</parametername>
@@ -448,7 +475,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="179" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="217" bodyend="237"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="223" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="217" bodyend="237"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1ae79948364d0502c3b6f839ce90e00b45" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -463,6 +490,8 @@
 <para>Check if composite intersects composite. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">compositeA.intersects(compositeB)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aComposite</parametername>
@@ -478,7 +507,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="186" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="239" bodyend="259"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="233" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="239" bodyend="259"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a9c1fbdcbb36a4689a047ec6a9e887ebc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -494,6 +523,8 @@
 <para>Check if composite contains object. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">composite.contains(Point(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anObject</parametername>
@@ -509,7 +540,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="193" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="261" bodyend="286"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="243" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="261" bodyend="286"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1aff95d8fa19dde2346269555c4b8e05cf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -524,6 +555,8 @@
 <para>Check if composite contains composite. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">compositeA.contains(compositeB)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aComposite</parametername>
@@ -539,7 +572,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="200" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="288" bodyend="313"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="253" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="288" bodyend="313"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a2249520e6059ea385d2b7bd2ff4b78ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -554,6 +587,8 @@
 <para>Check if composite contains object. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">composite.anyContains(Point(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anObject</parametername>
@@ -569,7 +604,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="207" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="315" bodyend="340"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="263" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="315" bodyend="340"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1ae6722f4d87b91c43645c2176c7effe47" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -584,6 +619,8 @@
 <para>Check if composite contains composite. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">compositeA.anyContains(compositeB)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aComposite</parametername>
@@ -599,7 +636,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="214" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="342" bodyend="367"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="273" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="342" bodyend="367"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a05508e89ea2f4af51e9cc5c11f297bf9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref> &amp;</type>
@@ -614,6 +651,8 @@
 <para>Access object at index. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a15a959fd5b624d6fcc6725982a8cddf8" kindref="member">Object</ref>&amp;<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>=<sp/>composite.accessObjectAt(0)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anIndex</parametername>
@@ -629,7 +668,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="221" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="369" bodyend="382"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="283" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="369" bodyend="382"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a5559e88bf01995f1c798d9083712758c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const Array&lt; Unique&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref> &gt; &gt; &amp;</type>
@@ -640,13 +679,15 @@
 <para>Access objects in composite. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&lt;Unique&lt;Object&gt;&gt;&amp;<sp/>objects<sp/>=<sp/>composite.accessObjects()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Reference to objects in composite </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="227" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="384" bodyend="392"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="292" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="384" bodyend="392"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a823c0b72b4adcdd660b3d2eb874f0b93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -657,13 +698,15 @@
 <para>Get number of objects in composite. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Size<sp/>count<sp/>=<sp/>composite.getObjectCount()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Number of objects in composite </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="233" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="394" bodyend="402"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="301" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="394" bodyend="402"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a89beece656a90043d888c5cdd4504753" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a34efd57a99c61f2e4e63fd6444dae04f" kindref="member">Composite::ConstIterator</ref></type>
@@ -674,6 +717,8 @@
 <para>Compute intersection of composite with object. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Intersection<sp/>intersection<sp/>=<sp/>composite.intersectionWith(anObject)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anObject</parametername>
@@ -683,13 +728,18 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref> of composite with object </para>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref> of composite with object</para>
+</simplesect>
+Get const iterator to begin</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>composite.begin()<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Const iterator to begin </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="253" column="30" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="466" bodyend="474"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="327" column="30" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="466" bodyend="474"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a01d075d05560cae44d5fc4fa17f3594c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a34efd57a99c61f2e4e63fd6444dae04f" kindref="member">Composite::ConstIterator</ref></type>
@@ -700,13 +750,15 @@
 <para>Get const iterator to end. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>composite.end()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="return"><para>Const iterator to end </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="259" column="30" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="476" bodyend="484"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="336" column="30" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="476" bodyend="484"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a5b9183cde21c414bc8a12e2e079e4ed1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>String</type>
@@ -728,6 +780,8 @@
 <para>Get string representation. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>str<sp/>=<sp/>composite.toString()<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aFormat</parametername>
@@ -743,7 +797,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="266" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="486" bodyend="501"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="346" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="486" bodyend="501"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a68feee2a993e698e796db61bc27a6167" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -764,6 +818,8 @@
 <para>Print composite. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">composite.print(std::cout,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">anOutputStream</parametername>
@@ -785,7 +841,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="275" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="503" bodyend="522"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="358" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="503" bodyend="522"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1aa1fd52d4955be0b4ee647ac2971e72bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -801,6 +857,8 @@
 <para>Apply transformation to composite. </para>
         </briefdescription>
         <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">composite.applyTransformation(aTransformation)<sp/>;</highlight></codeline>
+</programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">aTransformation</parametername>
@@ -814,7 +872,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="281" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="524" bodyend="545"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="367" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="524" bodyend="545"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -835,7 +893,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="291" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="547" bodyend="554"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="376" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="547" bodyend="554"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a5704d4c2404b89ef12ccf562fd48a7f5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref></type>
@@ -854,13 +912,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="301" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="556" bodyend="559"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="385" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp" bodystart="556" bodyend="559"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref> object. </para>
     </briefdescription>
     <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref><sp/>composite(Point(0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+</programlisting> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -886,7 +946,7 @@
         <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="35" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="34" bodyend="306"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="37" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" bodystart="36" bodyend="390"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a05508e89ea2f4af51e9cc5c11f297bf9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Composite</scope><name>accessObjectAt</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a5559e88bf01995f1c798d9083712758c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Composite</scope><name>accessObjects</name></member>

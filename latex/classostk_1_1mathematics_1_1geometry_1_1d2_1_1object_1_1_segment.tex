@@ -67,7 +67,11 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment}{Segment}}. 
 
-\begin{DoxyVerb}                        A segment is a part of a line that is bounded by two distinct end points,
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ac5180c75994c3f3f1d824307a600874f}{Segment}} segment(\{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}) ;}
+\end{DoxyCode}
+ \begin{DoxyVerb}                        A segment is a part of a line that is bounded by two distinct end points,
                         and contains every point on the line between its endpoints.
 \end{DoxyVerb}
 
@@ -112,6 +116,13 @@ Constructor.
 Apply transformation to segment. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ac5180c75994c3f3f1d824307a600874f}{Segment}} segment(\{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}) ;}
+\DoxyCodeLine{segment.applyTransformation(aTransformation) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
 \hline
@@ -129,6 +140,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 
 Clone segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ac5180c75994c3f3f1d824307a600874f}{Segment}}* clonePtr = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ac5180c75994c3f3f1d824307a600874f}{Segment}}(\{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a354e489eed79ff4e87deea504eeccb54}{clone}}() ;}
+\end{DoxyCode}
+
 
 \begin{DoxyReturn}{Returns}
 Pointer to cloned segment 
@@ -200,6 +217,12 @@ True if segment contains point set
 Get distance to point. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Real distance = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ac5180c75994c3f3f1d824307a600874f}{Segment}}(\{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a0fa9db689dceda267581043aab6bc8b9}{distanceTo}}(Point(1.0, 0.0)) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
 \hline
@@ -216,6 +239,12 @@ Distance to point
 
 
 Get distance to point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Real distance = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ac5180c75994c3f3f1d824307a600874f}{Segment}}(\{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a0fa9db689dceda267581043aab6bc8b9}{distanceTo}}(pointSet) ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -421,6 +450,12 @@ True if segments are equal
 Print segment. 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ac5180c75994c3f3f1d824307a600874f}{Segment}}(\{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a104bbc842576324e46876838e92b18c9}{print}}(std::cout, \textcolor{keyword}{true}) ;}
+\end{DoxyCode}
+
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
 \hline
@@ -441,6 +476,12 @@ Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_objec
 
 Get line from segment. 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Line line = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ac5180c75994c3f3f1d824307a600874f}{Segment}}(\{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a12d65189283e7c180d4046238be766f0}{toLine}}() ;}
+\end{DoxyCode}
+
+
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line}{Line}} 
 \end{DoxyReturn}
@@ -453,6 +494,12 @@ Get line from segment.
 
 
 Get string representation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{String str = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ac5180c75994c3f3f1d824307a600874f}{Segment}}(\{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a336bfa4add0cea6ca7ce52a2e2b5e341}{toString}}() ;}
+\end{DoxyCode}
+
 
 
 \begin{DoxyParams}[1]{Parameters}
