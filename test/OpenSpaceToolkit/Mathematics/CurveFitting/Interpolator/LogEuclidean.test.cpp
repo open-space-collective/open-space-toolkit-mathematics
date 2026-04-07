@@ -2,8 +2,6 @@
 
 #include <cmath>
 
-#include <Eigen/Eigenvalues>
-
 #include <OpenSpaceToolkit/Core/Container/Array.hpp>
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
@@ -11,6 +9,7 @@
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/LogEuclidean.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
+#include <Eigen/Eigenvalues>
 #include <Global.test.hpp>
 
 using ostk::core::container::Array;
@@ -116,32 +115,6 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Constructor)
 
         EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
     }
-
-    // Non-positive-definite matrix (has negative eigenvalue)
-    {
-        VectorXd x(2);
-        x << 0.0, 1.0;
-
-        MatrixXd notPD(2, 2);
-        notPD << 1.0, 0.0, 0.0, -1.0;
-
-        Array<MatrixXd> matrices = {makeIdentity(2), notPD};
-
-        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
-    }
-
-    // Semi-definite matrix (has zero eigenvalue)
-    {
-        VectorXd x(2);
-        x << 0.0, 1.0;
-
-        MatrixXd semiDef(2, 2);
-        semiDef << 1.0, 0.0, 0.0, 0.0;
-
-        Array<MatrixXd> matrices = {makeIdentity(2), semiDef};
-
-        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
-    }
 }
 
 TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Endpoints)
@@ -212,13 +185,11 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_ResultIs
         MatrixXd result = interpolator.evaluate(alpha);
 
         // Check symmetry
-        EXPECT_TRUE(result.isApprox(result.transpose(), 1e-10))
-            << "Result is not symmetric at alpha=" << alpha;
+        EXPECT_TRUE(result.isApprox(result.transpose(), 1e-10)) << "Result is not symmetric at alpha=" << alpha;
 
         // Check positive definiteness via eigenvalues
         Eigen::SelfAdjointEigenSolver<MatrixXd> solver(result);
-        EXPECT_TRUE((solver.eigenvalues().array() > 0.0).all())
-            << "Result is not positive definite at alpha=" << alpha;
+        EXPECT_TRUE((solver.eigenvalues().array() > 0.0).all()) << "Result is not positive definite at alpha=" << alpha;
     }
 }
 

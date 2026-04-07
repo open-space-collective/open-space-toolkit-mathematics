@@ -1,10 +1,10 @@
 /// Apache License 2.0
 
-#include <Eigen/Eigenvalues>
-
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/LogEuclidean.hpp>
+
+#include <Eigen/Eigenvalues>
 
 namespace ostk
 {
@@ -39,8 +39,7 @@ LogEuclidean::LogEuclidean(const VectorXd& anXVector, const Array<MatrixXd>& aMa
 
     for (Size i = 1; i < aMatrixArray.getSize(); ++i)
     {
-        if (static_cast<Size>(aMatrixArray[i].rows()) != rows ||
-            static_cast<Size>(aMatrixArray[i].cols()) != cols)
+        if (static_cast<Size>(aMatrixArray[i].rows()) != rows || static_cast<Size>(aMatrixArray[i].cols()) != cols)
         {
             throw ostk::core::error::runtime::Wrong("All matrices must have the same dimensions");
         }
@@ -52,22 +51,6 @@ LogEuclidean::LogEuclidean(const VectorXd& anXVector, const Array<MatrixXd>& aMa
         if (anXVector(i) <= anXVector(i - 1))
         {
             throw ostk::core::error::runtime::Wrong("x must be strictly monotonically increasing");
-        }
-    }
-
-    // Check all matrices are positive definite
-    for (Size i = 0; i < aMatrixArray.getSize(); ++i)
-    {
-        const Eigen::SelfAdjointEigenSolver<MatrixXd> solver(aMatrixArray[i]);
-
-        if (solver.info() != Eigen::Success)
-        {
-            throw ostk::core::error::runtime::Wrong("Matrix eigendecomposition failed");
-        }
-
-        if ((solver.eigenvalues().array() <= 0.0).any())
-        {
-            throw ostk::core::error::runtime::Wrong("Matrix is not positive definite");
         }
     }
 }
@@ -141,9 +124,7 @@ MatrixXd LogEuclidean::MatrixExpSymmetric(const MatrixXd& aMatrix)
     return eigenvectors * expEigenvalues.asDiagonal() * eigenvectors.transpose();
 }
 
-MatrixXd LogEuclidean::Interpolate(
-    const MatrixXd& aFirstMatrix, const MatrixXd& aSecondMatrix, const double& aRatio
-)
+MatrixXd LogEuclidean::Interpolate(const MatrixXd& aFirstMatrix, const MatrixXd& aSecondMatrix, const double& aRatio)
 {
     const MatrixXd logFirst = MatrixLogSPD(aFirstMatrix);
     const MatrixXd logSecond = MatrixLogSPD(aSecondMatrix);

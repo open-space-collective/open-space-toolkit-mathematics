@@ -104,9 +104,7 @@ class LogEuclidean
     /// @param aSecondMatrix Second symmetric positive definite matrix
     /// @param aRatio Interpolation ratio in [0, 1] where 0 returns aFirstMatrix and 1 returns aSecondMatrix
     /// @return Interpolated symmetric positive definite matrix
-    static MatrixXd Interpolate(
-        const MatrixXd& aFirstMatrix, const MatrixXd& aSecondMatrix, const double& aRatio
-    );
+    static MatrixXd Interpolate(const MatrixXd& aFirstMatrix, const MatrixXd& aSecondMatrix, const double& aRatio);
 
    private:
     VectorXd x_;
