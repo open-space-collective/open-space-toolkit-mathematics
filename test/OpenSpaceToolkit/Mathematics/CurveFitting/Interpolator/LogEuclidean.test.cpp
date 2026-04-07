@@ -96,6 +96,52 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Constructor)
 
         EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
     }
+
+    // Non-monotonic x (decreasing)
+    {
+        VectorXd x(3);
+        x << 0.0, 2.0, 1.0;
+
+        Array<MatrixXd> matrices = {makeIdentity(2), makeSPD(2, 2.0), makeSPD(2, 3.0)};
+
+        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
+    }
+
+    // Non-monotonic x (duplicate values)
+    {
+        VectorXd x(3);
+        x << 0.0, 1.0, 1.0;
+
+        Array<MatrixXd> matrices = {makeIdentity(2), makeSPD(2, 2.0), makeSPD(2, 3.0)};
+
+        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
+    }
+
+    // Non-positive-definite matrix (has negative eigenvalue)
+    {
+        VectorXd x(2);
+        x << 0.0, 1.0;
+
+        MatrixXd notPD(2, 2);
+        notPD << 1.0, 0.0, 0.0, -1.0;
+
+        Array<MatrixXd> matrices = {makeIdentity(2), notPD};
+
+        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
+    }
+
+    // Semi-definite matrix (has zero eigenvalue)
+    {
+        VectorXd x(2);
+        x << 0.0, 1.0;
+
+        MatrixXd semiDef(2, 2);
+        semiDef << 1.0, 0.0, 0.0, 0.0;
+
+        Array<MatrixXd> matrices = {makeIdentity(2), semiDef};
+
+        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
+    }
 }
 
 TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Endpoints)

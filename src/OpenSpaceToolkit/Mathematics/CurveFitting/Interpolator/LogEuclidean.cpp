@@ -45,6 +45,31 @@ LogEuclidean::LogEuclidean(const VectorXd& anXVector, const Array<MatrixXd>& aMa
             throw ostk::core::error::runtime::Wrong("All matrices must have the same dimensions");
         }
     }
+
+    // Check x is strictly monotonically increasing
+    for (int i = 1; i < anXVector.size(); ++i)
+    {
+        if (anXVector(i) <= anXVector(i - 1))
+        {
+            throw ostk::core::error::runtime::Wrong("x must be strictly monotonically increasing");
+        }
+    }
+
+    // Check all matrices are positive definite
+    for (Size i = 0; i < aMatrixArray.getSize(); ++i)
+    {
+        const Eigen::SelfAdjointEigenSolver<MatrixXd> solver(aMatrixArray[i]);
+
+        if (solver.info() != Eigen::Success)
+        {
+            throw ostk::core::error::runtime::Wrong("Matrix eigendecomposition failed");
+        }
+
+        if ((solver.eigenvalues().array() <= 0.0).any())
+        {
+            throw ostk::core::error::runtime::Wrong("Matrix is not positive definite");
+        }
+    }
 }
 
 LogEuclidean::~LogEuclidean() {}

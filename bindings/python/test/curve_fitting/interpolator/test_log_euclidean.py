@@ -43,6 +43,36 @@ class TestLogEuclidean:
                 matrices=[identity_3x3],
             )
 
+    def test_constructor_non_monotonic_x(self, identity_3x3):
+        with pytest.raises(RuntimeError):
+            LogEuclidean(
+                x=np.array([0.0, 2.0, 1.0]),
+                matrices=[identity_3x3, identity_3x3, identity_3x3],
+            )
+
+    def test_constructor_duplicate_x(self, identity_3x3):
+        with pytest.raises(RuntimeError):
+            LogEuclidean(
+                x=np.array([0.0, 1.0, 1.0]),
+                matrices=[identity_3x3, identity_3x3, identity_3x3],
+            )
+
+    def test_constructor_not_positive_definite(self):
+        not_pd = np.array([[1.0, 0.0], [0.0, -1.0]])
+        with pytest.raises(RuntimeError):
+            LogEuclidean(
+                x=np.array([0.0, 1.0]),
+                matrices=[np.eye(2), not_pd],
+            )
+
+    def test_constructor_semi_definite(self):
+        semi_def = np.array([[1.0, 0.0], [0.0, 0.0]])
+        with pytest.raises(RuntimeError):
+            LogEuclidean(
+                x=np.array([0.0, 1.0]),
+                matrices=[np.eye(2), semi_def],
+            )
+
     def test_evaluate_endpoints(self, interpolator, identity_3x3, diagonal_spd):
         result_0 = interpolator.evaluate(0.0)
         np.testing.assert_allclose(result_0, identity_3x3, atol=1e-10)
