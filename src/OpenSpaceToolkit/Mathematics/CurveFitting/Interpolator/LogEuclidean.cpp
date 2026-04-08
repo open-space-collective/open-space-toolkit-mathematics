@@ -90,7 +90,7 @@ MatrixXd LogEuclidean::MatrixLogSPD(const MatrixXd& aMatrix)
 
     if (solver.info() != Eigen::Success)
     {
-        throw ostk::core::error::RuntimeError("Eigendecomposition failed.");
+        throw ostk::core::error::RuntimeError("Eigen decomposition failed.");
     }
 
     const VectorXd& eigenvalues = solver.eigenvalues();
@@ -115,7 +115,7 @@ MatrixXd LogEuclidean::MatrixExpSymmetric(const MatrixXd& aMatrix)
 
     if (solver.info() != Eigen::Success)
     {
-        throw ostk::core::error::RuntimeError("Eigendecomposition failed.");
+        throw ostk::core::error::RuntimeError("Eigen decomposition failed.");
     }
 
     const VectorXd expEigenvalues = solver.eigenvalues().array().exp().matrix();
