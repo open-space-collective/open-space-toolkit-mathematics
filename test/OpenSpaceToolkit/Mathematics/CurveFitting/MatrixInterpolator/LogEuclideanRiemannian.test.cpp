@@ -44,6 +44,7 @@ class OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian : p
 
 TEST_F(OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian, Constructor)
 {
+    // Success
     {
         VectorXd x(2);
         x << 0.0, 1.0;

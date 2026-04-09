@@ -22,12 +22,12 @@ LogEuclideanRiemannian::LogEuclideanRiemannian(const VectorXd& anXVector, const 
 {
     if (anXVector.size() < 2)
     {
-        throw ostk::core::error::runtime::Wrong("x");
+        throw ostk::core::error::runtime::Wrong("x", "Insufficient data points.");
     }
 
     if (Size(anXVector.size()) != aMatrixArray.getSize())
     {
-        throw ostk::core::error::runtime::Wrong("x and matrices");
+        throw ostk::core::error::runtime::Wrong("x and matrices", "Sizes are not consistent.");
     }
 
     const Size rows = static_cast<Size>(aMatrixArray[0].rows());
@@ -42,7 +42,7 @@ LogEuclideanRiemannian::LogEuclideanRiemannian(const VectorXd& anXVector, const 
     {
         if (static_cast<Size>(aMatrixArray[i].rows()) != rows || static_cast<Size>(aMatrixArray[i].cols()) != cols)
         {
-            throw ostk::core::error::runtime::Wrong("All matrices must have the same dimensions");
+            throw ostk::core::error::runtime::Wrong("matrices", "All matrices must have the same dimensions.");
         }
     }
 
@@ -51,7 +51,7 @@ LogEuclideanRiemannian::LogEuclideanRiemannian(const VectorXd& anXVector, const 
     {
         if (anXVector(i) <= anXVector(i - 1))
         {
-            throw ostk::core::error::runtime::Wrong("x must be strictly monotonically increasing");
+            throw ostk::core::error::runtime::Wrong("x", "Must be strictly monotonically increasing.");
         }
     }
 
