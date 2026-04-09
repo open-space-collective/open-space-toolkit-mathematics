@@ -6,7 +6,7 @@
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/LogEuclidean.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
 #include <Eigen/Eigenvalues>
@@ -16,11 +16,11 @@ using ostk::core::container::Array;
 using ostk::core::type::Real;
 using ostk::core::type::Size;
 
-using ostk::mathematics::curvefitting::interpolator::LogEuclidean;
+using ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian;
 using ostk::mathematics::object::MatrixXd;
 using ostk::mathematics::object::VectorXd;
 
-class OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean : public ::testing::Test
+class OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian : public ::testing::Test
 {
    protected:
     MatrixXd makeIdentity(int size) const
@@ -42,7 +42,7 @@ class OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean : public ::testing:
     }
 };
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Constructor)
+TEST_F(OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian, Constructor)
 {
     {
         VectorXd x(2);
@@ -50,7 +50,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Constructor)
 
         Array<MatrixXd> matrices = {makeIdentity(3), makeSPD(3, 2.0)};
 
-        EXPECT_NO_THROW(LogEuclidean(x, matrices));
+        EXPECT_NO_THROW(LogEuclideanRiemannian(x, matrices));
     }
 
     // Mismatched sizes
@@ -60,7 +60,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Constructor)
 
         Array<MatrixXd> matrices = {makeIdentity(3), makeSPD(3, 2.0)};
 
-        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
+        EXPECT_THROW(LogEuclideanRiemannian(x, matrices), ostk::core::error::runtime::Wrong);
     }
 
     // Too few points
@@ -70,7 +70,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Constructor)
 
         Array<MatrixXd> matrices = {makeIdentity(3)};
 
-        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
+        EXPECT_THROW(LogEuclideanRiemannian(x, matrices), ostk::core::error::runtime::Wrong);
     }
 
     // Non-square matrix
@@ -83,7 +83,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Constructor)
 
         Array<MatrixXd> matrices = {rect, rect};
 
-        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
+        EXPECT_THROW(LogEuclideanRiemannian(x, matrices), ostk::core::error::runtime::Wrong);
     }
 
     // Inconsistent matrix dimensions
@@ -93,7 +93,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Constructor)
 
         Array<MatrixXd> matrices = {makeIdentity(3), makeIdentity(4)};
 
-        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
+        EXPECT_THROW(LogEuclideanRiemannian(x, matrices), ostk::core::error::runtime::Wrong);
     }
 
     // Non-monotonic x (decreasing)
@@ -103,7 +103,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Constructor)
 
         Array<MatrixXd> matrices = {makeIdentity(2), makeSPD(2, 2.0), makeSPD(2, 3.0)};
 
-        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
+        EXPECT_THROW(LogEuclideanRiemannian(x, matrices), ostk::core::error::runtime::Wrong);
     }
 
     // Non-monotonic x (duplicate values)
@@ -113,11 +113,24 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Constructor)
 
         Array<MatrixXd> matrices = {makeIdentity(2), makeSPD(2, 2.0), makeSPD(2, 3.0)};
 
-        EXPECT_THROW(LogEuclidean(x, matrices), ostk::core::error::runtime::Wrong);
+        EXPECT_THROW(LogEuclideanRiemannian(x, matrices), ostk::core::error::runtime::Wrong);
+    }
+
+    // Non-positive-definite matrix should throw
+    {
+        VectorXd x(2);
+        x << 0.0, 1.0;
+
+        MatrixXd notPD(2, 2);
+        notPD << 1.0, 0.0, 0.0, -1.0;
+
+        Array<MatrixXd> matrices = {makeIdentity(2), notPD};
+
+        EXPECT_THROW(LogEuclideanRiemannian(x, matrices), ostk::core::error::RuntimeError);
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Endpoints)
+TEST_F(OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian, Evaluate_Endpoints)
 {
     const MatrixXd P0 = makeIdentity(3);
     const MatrixXd P1 = makeSPD(3, 4.0);
@@ -126,7 +139,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Endpoint
     x << 0.0, 1.0;
 
     Array<MatrixXd> matrices = {P0, P1};
-    LogEuclidean interpolator(x, matrices);
+    LogEuclideanRiemannian interpolator(x, matrices);
 
     // At x=0, should return P0
     {
@@ -141,7 +154,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Endpoint
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Midpoint_Diagonal)
+TEST_F(OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian, Evaluate_Midpoint_Diagonal)
 {
     // For diagonal SPD matrices, log-euclidean midpoint should be the geometric mean
     // P0 = diag(1, 1, 1), P1 = diag(4, 9, 16)
@@ -156,7 +169,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Midpoint
     x << 0.0, 1.0;
 
     Array<MatrixXd> matrices = {P0, P1};
-    LogEuclidean interpolator(x, matrices);
+    LogEuclideanRiemannian interpolator(x, matrices);
 
     MatrixXd result = interpolator.evaluate(0.5);
 
@@ -166,7 +179,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Midpoint
     EXPECT_TRUE(result.isApprox(expected, 1e-10));
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_ResultIsSPD)
+TEST_F(OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian, Evaluate_ResultIsSPD)
 {
     const MatrixXd P0 = makeSPD3x3();
 
@@ -177,7 +190,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_ResultIs
     x << 0.0, 1.0;
 
     Array<MatrixXd> matrices = {P0, P1};
-    LogEuclidean interpolator(x, matrices);
+    LogEuclideanRiemannian interpolator(x, matrices);
 
     // Test multiple interpolation points
     for (double alpha = 0.1; alpha <= 0.9; alpha += 0.1)
@@ -193,7 +206,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_ResultIs
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_MultipleSegments)
+TEST_F(OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian, Evaluate_MultipleSegments)
 {
     VectorXd x(3);
     x << 0.0, 1.0, 2.0;
@@ -207,7 +220,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Multiple
     P2 << 16.0, 0.0, 0.0, 16.0;
 
     Array<MatrixXd> matrices = {P0, P1, P2};
-    LogEuclidean interpolator(x, matrices);
+    LogEuclideanRiemannian interpolator(x, matrices);
 
     // At x=0.5, interpolate between P0 and P1
     {
@@ -226,7 +239,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Multiple
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Vector)
+TEST_F(OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian, Evaluate_Vector)
 {
     VectorXd x(2);
     x << 0.0, 1.0;
@@ -236,7 +249,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Vector)
     P1 << 4.0, 0.0, 0.0, 9.0;
 
     Array<MatrixXd> matrices = {P0, P1};
-    LogEuclidean interpolator(x, matrices);
+    LogEuclideanRiemannian interpolator(x, matrices);
 
     VectorXd query(3);
     query << 0.0, 0.5, 1.0;
@@ -253,7 +266,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Vector)
     EXPECT_TRUE(results[1].isApprox(expectedMid, 1e-10));
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Extrapolation)
+TEST_F(OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian, Evaluate_Extrapolation)
 {
     VectorXd x(2);
     x << 0.0, 1.0;
@@ -263,7 +276,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Extrapol
     P1 << 4.0, 0.0, 0.0, 4.0;
 
     Array<MatrixXd> matrices = {P0, P1};
-    LogEuclidean interpolator(x, matrices);
+    LogEuclideanRiemannian interpolator(x, matrices);
 
     // Before range: clamp to first
     {
@@ -278,93 +291,20 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Evaluate_Extrapol
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, MatrixLogSPD)
+TEST_F(OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian, GetMatrices)
 {
-    // log(I) = 0
-    {
-        MatrixXd identity = makeIdentity(3);
-        MatrixXd result = LogEuclidean::MatrixLogSPD(identity);
-        EXPECT_TRUE(result.isApprox(MatrixXd::Zero(3, 3), 1e-10));
-    }
+    VectorXd x(2);
+    x << 0.0, 1.0;
 
-    // log(diag(e, e^2, e^3)) = diag(1, 2, 3)
-    {
-        MatrixXd diag(3, 3);
-        diag << std::exp(1.0), 0.0, 0.0, 0.0, std::exp(2.0), 0.0, 0.0, 0.0, std::exp(3.0);
-
-        MatrixXd expected(3, 3);
-        expected << 1.0, 0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 3.0;
-
-        MatrixXd result = LogEuclidean::MatrixLogSPD(diag);
-        EXPECT_TRUE(result.isApprox(expected, 1e-10));
-    }
-
-    // Non-positive-definite matrix should throw
-    {
-        MatrixXd notPD(2, 2);
-        notPD << 1.0, 0.0, 0.0, -1.0;
-
-        EXPECT_THROW(LogEuclidean::MatrixLogSPD(notPD), ostk::core::error::RuntimeError);
-    }
-}
-
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, MatrixExpSymmetric)
-{
-    // exp(0) = I
-    {
-        MatrixXd zero = MatrixXd::Zero(3, 3);
-        MatrixXd result = LogEuclidean::MatrixExpSymmetric(zero);
-        EXPECT_TRUE(result.isApprox(makeIdentity(3), 1e-10));
-    }
-
-    // exp(diag(1, 2, 3)) = diag(e, e^2, e^3)
-    {
-        MatrixXd diag(3, 3);
-        diag << 1.0, 0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 3.0;
-
-        MatrixXd expected(3, 3);
-        expected << std::exp(1.0), 0.0, 0.0, 0.0, std::exp(2.0), 0.0, 0.0, 0.0, std::exp(3.0);
-
-        MatrixXd result = LogEuclidean::MatrixExpSymmetric(diag);
-        EXPECT_TRUE(result.isApprox(expected, 1e-10));
-    }
-}
-
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, LogExpRoundTrip)
-{
-    const MatrixXd P = makeSPD3x3();
-
-    MatrixXd logP = LogEuclidean::MatrixLogSPD(P);
-    MatrixXd result = LogEuclidean::MatrixExpSymmetric(logP);
-
-    EXPECT_TRUE(result.isApprox(P, 1e-10));
-}
-
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean, Interpolate_Static)
-{
     MatrixXd P0 = makeIdentity(3);
-    MatrixXd P1(3, 3);
-    P1 << 4.0, 0.0, 0.0, 0.0, 9.0, 0.0, 0.0, 0.0, 16.0;
+    MatrixXd P1 = makeSPD(3, 4.0);
 
-    // alpha=0 returns P0
-    {
-        MatrixXd result = LogEuclidean::Interpolate(P0, P1, 0.0);
-        EXPECT_TRUE(result.isApprox(P0, 1e-10));
-    }
+    Array<MatrixXd> matrices = {P0, P1};
+    LogEuclideanRiemannian interpolator(x, matrices);
 
-    // alpha=1 returns P1
-    {
-        MatrixXd result = LogEuclidean::Interpolate(P0, P1, 1.0);
-        EXPECT_TRUE(result.isApprox(P1, 1e-10));
-    }
+    Array<MatrixXd> result = interpolator.getMatrices();
 
-    // alpha=0.5 returns geometric mean for diagonal matrices
-    {
-        MatrixXd result = LogEuclidean::Interpolate(P0, P1, 0.5);
-
-        MatrixXd expected(3, 3);
-        expected << 2.0, 0.0, 0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 4.0;
-
-        EXPECT_TRUE(result.isApprox(expected, 1e-10));
-    }
+    EXPECT_EQ(result.getSize(), Size(2));
+    EXPECT_TRUE(result[0].isApprox(P0, 1e-10));
+    EXPECT_TRUE(result[1].isApprox(P1, 1e-10));
 }

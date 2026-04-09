@@ -1,6 +1,6 @@
 /// Apache License 2.0
-#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean__
-#define __OpenSpaceToolkit_Mathematics_Interpolator_LogEuclidean__
+#ifndef __OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian__
+#define __OpenSpaceToolkit_Mathematics_MatrixInterpolator_LogEuclideanRiemannian__
 
 #include <OpenSpaceToolkit/Core/Container/Array.hpp>
 #include <OpenSpaceToolkit/Core/Container/Pair.hpp>
@@ -16,7 +16,7 @@ namespace mathematics
 {
 namespace curvefitting
 {
-namespace interpolator
+namespace matrixinterpolator
 {
 
 using ostk::core::container::Array;
@@ -28,7 +28,7 @@ using ostk::core::type::Size;
 using ostk::mathematics::object::MatrixXd;
 using ostk::mathematics::object::VectorXd;
 
-/// @brief Log-Euclidean interpolator for symmetric positive definite matrices
+/// @brief Log-Euclidean Riemannian interpolator for symmetric positive definite matrices
 ///
 /// Performs interpolation of symmetric positive definite (SPD) matrices using the
 /// Log-Euclidean Riemannian metric. This method maps SPD matrices to the tangent space
@@ -36,32 +36,43 @@ using ostk::mathematics::object::VectorXd;
 /// space, and maps back via the matrix exponential. This ensures the interpolated result
 /// is always symmetric positive definite.
 ///
+/// The input matrices must be symmetric positive definite (SPD). A matrix M is SPD if:
+/// - M is symmetric: M = M^T
+/// - All eigenvalues of M are strictly positive
+///
 /// @code{.cpp}
 ///     VectorXd x(2);
 ///     x << 0.0, 1.0;
-///     Array<MatrixXd> matrices = {P0, P1};
-///     LogEuclidean interpolator(x, matrices);
+///     Array<MatrixXd> matrices = {P0, P1};  // symmetric positive definite matrices
+///     LogEuclideanRiemannian interpolator(x, matrices);
 ///     MatrixXd result = interpolator.evaluate(0.5);
 /// @endcode
 ///
-/// @ref https://hal.inria.fr/inria-00071250/document
-class LogEuclidean
+/// @ref https://inria.hal.science/inria-00070423/document
+class LogEuclideanRiemannian
 {
    public:
     /// @brief Constructor
     ///
+    /// Constructs a Log-Euclidean Riemannian interpolator from x-coordinates and
+    /// corresponding symmetric positive definite matrices. The matrix logarithms are
+    /// precomputed at construction time for efficient interpolation.
+    ///
     /// @code{.cpp}
-    ///     LogEuclidean interpolator(x, matrices);
+    ///     LogEuclideanRiemannian interpolator(x, matrices);
     /// @endcode
     ///
-    /// @param anXVector A vector of x values (sorted in ascending order)
-    /// @param aMatrixArray An array of symmetric positive definite matrices
-    LogEuclidean(const VectorXd& anXVector, const Array<MatrixXd>& aMatrixArray);
+    /// @param anXVector A vector of x values (strictly monotonically increasing)
+    /// @param aMatrixArray An array of symmetric positive definite matrices (all same dimensions)
+    LogEuclideanRiemannian(const VectorXd& anXVector, const Array<MatrixXd>& aMatrixArray);
 
     /// @brief Destructor
-    ~LogEuclidean();
+    ~LogEuclideanRiemannian();
 
     /// @brief Evaluate the interpolator at a single point
+    ///
+    /// Returns the interpolated symmetric positive definite matrix at the given x value.
+    /// Values outside the x range are clamped to the nearest endpoint matrix.
     ///
     /// @code{.cpp}
     ///     MatrixXd result = interpolator.evaluate(0.5);
@@ -81,39 +92,27 @@ class LogEuclidean
     /// @return Array of interpolated symmetric positive definite matrices
     Array<MatrixXd> evaluate(const VectorXd& aQueryVector) const;
 
-    /// @brief Compute the matrix logarithm of a symmetric positive definite matrix
+    /// @brief Get the symmetric positive definite matrices provided at construction
     ///
-    /// Uses spectral decomposition: log(P) = Q * log(Lambda) * Q^T
+    /// @code{.cpp}
+    ///     Array<MatrixXd> matrices = interpolator.getMatrices();
+    /// @endcode
     ///
-    /// @param aMatrix A symmetric positive definite matrix
-    /// @return The matrix logarithm
-    /// @throws RuntimeError if the matrix is not positive definite
-    static MatrixXd MatrixLogSPD(const MatrixXd& aMatrix);
-
-    /// @brief Compute the matrix exponential of a symmetric matrix
-    ///
-    /// Uses spectral decomposition: exp(S) = Q * exp(Lambda) * Q^T
-    ///
-    /// @param aMatrix A symmetric matrix
-    /// @return The matrix exponential (guaranteed symmetric positive definite)
-    static MatrixXd MatrixExpSymmetric(const MatrixXd& aMatrix);
-
-    /// @brief Interpolate between two SPD matrices using the Log-Euclidean metric
-    ///
-    /// @param aFirstMatrix First symmetric positive definite matrix
-    /// @param aSecondMatrix Second symmetric positive definite matrix
-    /// @param aRatio Interpolation ratio in [0, 1] where 0 returns aFirstMatrix and 1 returns aSecondMatrix
-    /// @return Interpolated symmetric positive definite matrix
-    static MatrixXd Interpolate(const MatrixXd& aFirstMatrix, const MatrixXd& aSecondMatrix, const double& aRatio);
+    /// @return The array of symmetric positive definite matrices
+    Array<MatrixXd> getMatrices() const;
 
    private:
     VectorXd x_;
     Array<MatrixXd> matrices_;
+    Array<MatrixXd> logMatrices_;
 
     Pair<Index, Index> findIndexRange(const double& aQueryValue) const;
+
+    static MatrixXd MatrixLogSPD(const MatrixXd& aMatrix);
+    static MatrixXd MatrixExpSymmetric(const MatrixXd& aMatrix);
 };
 
-}  // namespace interpolator
+}  // namespace matrixinterpolator
 }  // namespace curvefitting
 }  // namespace mathematics
 }  // namespace ostk

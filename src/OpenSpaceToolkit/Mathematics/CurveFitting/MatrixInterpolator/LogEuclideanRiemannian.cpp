@@ -2,7 +2,7 @@
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/LogEuclidean.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp>
 
 #include <Eigen/Eigenvalues>
 
@@ -12,12 +12,13 @@ namespace mathematics
 {
 namespace curvefitting
 {
-namespace interpolator
+namespace matrixinterpolator
 {
 
-LogEuclidean::LogEuclidean(const VectorXd& anXVector, const Array<MatrixXd>& aMatrixArray)
+LogEuclideanRiemannian::LogEuclideanRiemannian(const VectorXd& anXVector, const Array<MatrixXd>& aMatrixArray)
     : x_(anXVector),
-      matrices_(aMatrixArray)
+      matrices_(aMatrixArray),
+      logMatrices_()
 {
     if (anXVector.size() < 2)
     {
@@ -53,11 +54,18 @@ LogEuclidean::LogEuclidean(const VectorXd& anXVector, const Array<MatrixXd>& aMa
             throw ostk::core::error::runtime::Wrong("x must be strictly monotonically increasing");
         }
     }
+
+    // Precompute matrix logarithms
+    logMatrices_.reserve(aMatrixArray.getSize());
+    for (Size i = 0; i < aMatrixArray.getSize(); ++i)
+    {
+        logMatrices_.add(MatrixLogSPD(aMatrixArray[i]));
+    }
 }
 
-LogEuclidean::~LogEuclidean() {}
+LogEuclideanRiemannian::~LogEuclideanRiemannian() {}
 
-MatrixXd LogEuclidean::evaluate(const double& aQueryValue) const
+MatrixXd LogEuclideanRiemannian::evaluate(const double& aQueryValue) const
 {
     const auto [previousIndex, nextIndex] = findIndexRange(aQueryValue);
 
@@ -68,10 +76,12 @@ MatrixXd LogEuclidean::evaluate(const double& aQueryValue) const
 
     const double ratio = (aQueryValue - x_(previousIndex)) / (x_(nextIndex) - x_(previousIndex));
 
-    return Interpolate(matrices_[previousIndex], matrices_[nextIndex], ratio);
+    const MatrixXd logInterpolated = logMatrices_[previousIndex] * (1.0 - ratio) + logMatrices_[nextIndex] * ratio;
+
+    return MatrixExpSymmetric(logInterpolated);
 }
 
-Array<MatrixXd> LogEuclidean::evaluate(const VectorXd& aQueryVector) const
+Array<MatrixXd> LogEuclideanRiemannian::evaluate(const VectorXd& aQueryVector) const
 {
     Array<MatrixXd> results;
     results.reserve(aQueryVector.size());
@@ -84,7 +94,12 @@ Array<MatrixXd> LogEuclidean::evaluate(const VectorXd& aQueryVector) const
     return results;
 }
 
-MatrixXd LogEuclidean::MatrixLogSPD(const MatrixXd& aMatrix)
+Array<MatrixXd> LogEuclideanRiemannian::getMatrices() const
+{
+    return matrices_;
+}
+
+MatrixXd LogEuclideanRiemannian::MatrixLogSPD(const MatrixXd& aMatrix)
 {
     const Eigen::SelfAdjointEigenSolver<MatrixXd> solver(aMatrix);
 
@@ -109,7 +124,7 @@ MatrixXd LogEuclidean::MatrixLogSPD(const MatrixXd& aMatrix)
     return eigenvectors * logEigenvalues.asDiagonal() * eigenvectors.transpose();
 }
 
-MatrixXd LogEuclidean::MatrixExpSymmetric(const MatrixXd& aMatrix)
+MatrixXd LogEuclideanRiemannian::MatrixExpSymmetric(const MatrixXd& aMatrix)
 {
     const Eigen::SelfAdjointEigenSolver<MatrixXd> solver(aMatrix);
 
@@ -124,17 +139,7 @@ MatrixXd LogEuclidean::MatrixExpSymmetric(const MatrixXd& aMatrix)
     return eigenvectors * expEigenvalues.asDiagonal() * eigenvectors.transpose();
 }
 
-MatrixXd LogEuclidean::Interpolate(const MatrixXd& aFirstMatrix, const MatrixXd& aSecondMatrix, const double& aRatio)
-{
-    const MatrixXd logFirst = MatrixLogSPD(aFirstMatrix);
-    const MatrixXd logSecond = MatrixLogSPD(aSecondMatrix);
-
-    const MatrixXd logInterpolated = logFirst * (1.0 - aRatio) + logSecond * aRatio;
-
-    return MatrixExpSymmetric(logInterpolated);
-}
-
-Pair<Index, Index> LogEuclidean::findIndexRange(const double& aQueryValue) const
+Pair<Index, Index> LogEuclideanRiemannian::findIndexRange(const double& aQueryValue) const
 {
     const Index index = std::distance(x_.begin(), std::lower_bound(x_.begin(), x_.end(), aQueryValue));
 
@@ -151,7 +156,7 @@ Pair<Index, Index> LogEuclidean::findIndexRange(const double& aQueryValue) const
     return {index - 1, index};
 }
 
-}  // namespace interpolator
+}  // namespace matrixinterpolator
 }  // namespace curvefitting
 }  // namespace mathematics
 }  // namespace ostk
