@@ -1,6 +1,7 @@
 /// Apache License 2.0
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/MatrixInterpolator.cpp>
 
 inline void OpenSpaceToolkitMathematicsPy_CurveFitting(pybind11::module& aModule)
 {
@@ -9,4 +10,5 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting(pybind11::module& aModule
 
     // Add object to python "interpolators" submodules
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(curve_fitting);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_MatrixInterpolator(curve_fitting);
 }
