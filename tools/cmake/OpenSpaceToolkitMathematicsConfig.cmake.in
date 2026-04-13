@@ -2,8 +2,58 @@
 
 SET (OpenSpaceToolkitMathematics_ROOT_DIR ${OpenSpaceToolkitMathematics_ROOT_DIR} @CMAKE_INSTALL_PREFIX@)
 
-FIND_PATH (OpenSpaceToolkitMathematics_INCLUDE_DIR "OpenSpaceToolkit/Mathematics/Object.hpp" PATHS ${OpenSpaceToolkitMathematics_ROOT_DIR} PATH_SUFFIXES "include" NO_DEFAULT_PATH)
-FIND_LIBRARY (OpenSpaceToolkitMathematics_LIBRARY NAMES "libopen-space-toolkit-mathematics.so" PATHS ${OpenSpaceToolkitMathematics_ROOT_DIR} PATH_SUFFIXES "lib" NO_DEFAULT_PATH)
+FIND_PATH (
+    OpenSpaceToolkitMathematics_INCLUDE_DIR
+    NAMES
+        "OpenSpaceToolkit/Mathematics/Object.hpp"
+    PATHS
+        ${OpenSpaceToolkitMathematics_ROOT_DIR}
+    PATH_SUFFIXES
+        "include"
+    NO_DEFAULT_PATH
+)
+
+IF (WIN32)
+
+    FIND_LIBRARY (
+        OpenSpaceToolkitMathematics_LIBRARY
+        NAMES
+            "open-space-toolkit-mathematics"
+            "libopen-space-toolkit-mathematics"
+        PATHS
+            ${OpenSpaceToolkitMathematics_ROOT_DIR}
+        PATH_SUFFIXES
+            "lib"
+        NO_DEFAULT_PATH
+    )
+
+    FIND_FILE (
+        OpenSpaceToolkitMathematics_RUNTIME_LIBRARY
+        NAMES
+            "open-space-toolkit-mathematics.dll"
+        PATHS
+            ${OpenSpaceToolkitMathematics_ROOT_DIR}
+        PATH_SUFFIXES
+            "bin"
+            "lib"
+        NO_DEFAULT_PATH
+    )
+
+ELSE ()
+
+    FIND_LIBRARY (
+        OpenSpaceToolkitMathematics_LIBRARY
+        NAMES
+            "libopen-space-toolkit-mathematics.so"
+            "open-space-toolkit-mathematics"
+        PATHS
+            ${OpenSpaceToolkitMathematics_ROOT_DIR}
+        PATH_SUFFIXES
+            "lib"
+        NO_DEFAULT_PATH
+    )
+
+ENDIF ()
 
 # MESSAGE (STATUS "OpenSpaceToolkitMathematics_ROOT_DIR = ${OpenSpaceToolkitMathematics_ROOT_DIR}")
 # MESSAGE (STATUS "OpenSpaceToolkitMathematics_INCLUDE_DIR = ${OpenSpaceToolkitMathematics_INCLUDE_DIR}")
@@ -12,10 +62,21 @@ FIND_LIBRARY (OpenSpaceToolkitMathematics_LIBRARY NAMES "libopen-space-toolkit-m
 
 IF (OpenSpaceToolkitMathematics_INCLUDE_DIR)
 
-    SET (OpenSpaceToolkitMathematics_INCLUDE_DIRS ${OpenSpaceToolkitMathematics_INCLUDE_DIR} ${OpenSpaceToolkitMathematics_INCLUDE_DIR}/OpenSpaceToolkit/Mathematics)
+    IF (EXISTS "${OpenSpaceToolkitMathematics_INCLUDE_DIR}/OpenSpaceToolkit/Mathematics/Object.hpp")
+        SET (
+            OpenSpaceToolkitMathematics_INCLUDE_DIRS
+            ${OpenSpaceToolkitMathematics_INCLUDE_DIR}
+            ${OpenSpaceToolkitMathematics_INCLUDE_DIR}/OpenSpaceToolkit/Mathematics
+        )
+    ELSE ()
+        SET (OpenSpaceToolkitMathematics_INCLUDE_DIRS ${OpenSpaceToolkitMathematics_INCLUDE_DIR})
+    ENDIF ()
+
     SET (OpenSpaceToolkitMathematics_LIBRARIES ${OpenSpaceToolkitMathematics_LIBRARY})
+    IF (WIN32 AND OpenSpaceToolkitMathematics_RUNTIME_LIBRARY)
+        SET (OpenSpaceToolkitMathematics_RUNTIME_LIBRARIES ${OpenSpaceToolkitMathematics_RUNTIME_LIBRARY})
+    ENDIF ()
 
     SET (OpenSpaceToolkitMathematics_FOUND TRUE)
 
 ENDIF ()
-

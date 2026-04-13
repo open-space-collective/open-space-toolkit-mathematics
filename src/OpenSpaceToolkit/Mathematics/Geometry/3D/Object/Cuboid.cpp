@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
-#include <Gte/Mathematics/GteIntrOrientedBox3Cone3.h>
-#include <Gte/Mathematics/GteIntrOrientedBox3Frustum3.h>
+#include <Gte/Mathematics/IntrOrientedBox3Cone3.h>
+#include <Gte/Mathematics/IntrOrientedBox3Frustum3.h>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
@@ -17,13 +17,13 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
-// #include <Gte/Mathematics/GteIntrOrientedBox3Cylinder3.h>
-#include <Gte/Mathematics/GteIntrLine3OrientedBox3.h>
-#include <Gte/Mathematics/GteIntrOrientedBox3OrientedBox3.h>
-#include <Gte/Mathematics/GteIntrOrientedBox3Sphere3.h>
-#include <Gte/Mathematics/GteIntrPlane3OrientedBox3.h>
-#include <Gte/Mathematics/GteIntrRay3OrientedBox3.h>
-#include <Gte/Mathematics/GteIntrSegment3OrientedBox3.h>
+// #include <Gte/Mathematics/IntrOrientedBox3Cylinder3.h>
+#include <Gte/Mathematics/IntrLine3OrientedBox3.h>
+#include <Gte/Mathematics/IntrOrientedBox3OrientedBox3.h>
+#include <Gte/Mathematics/IntrOrientedBox3Sphere3.h>
+#include <Gte/Mathematics/IntrPlane3OrientedBox3.h>
+#include <Gte/Mathematics/IntrRay3OrientedBox3.h>
+#include <Gte/Mathematics/IntrSegment3OrientedBox3.h>
 
 namespace ostk
 {
