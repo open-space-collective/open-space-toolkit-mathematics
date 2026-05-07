@@ -1,0 +1,4 @@
+var namespaceostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator =
+[
+    [ "LogEuclideanRiemannian", "classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian.html", "classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian" ]
+];

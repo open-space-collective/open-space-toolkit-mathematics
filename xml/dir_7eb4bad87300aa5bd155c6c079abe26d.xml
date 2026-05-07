@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_7eb4bad87300aa5bd155c6c079abe26d" kind="dir">
+    <compoundname>src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator</compoundname>
+    <innerfile refid="_log_euclidean_riemannian_8cpp">LogEuclideanRiemannian.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/"/>
+  </compounddef>
+</doxygen>

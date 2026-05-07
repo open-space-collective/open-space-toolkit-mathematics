@@ -3,6 +3,7 @@
   <compounddef id="dir_51aead8cec0dd9dbb6826afe5c2f58cd" kind="dir">
     <compoundname>src/OpenSpaceToolkit/Mathematics/CurveFitting</compoundname>
     <innerdir refid="dir_c6c69229dc444556ce4b392b8002d139">src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator</innerdir>
+    <innerdir refid="dir_7eb4bad87300aa5bd155c6c079abe26d">src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator</innerdir>
     <innerfile refid="_interpolator_8cpp">Interpolator.cpp</innerfile>
     <briefdescription>
     </briefdescription>

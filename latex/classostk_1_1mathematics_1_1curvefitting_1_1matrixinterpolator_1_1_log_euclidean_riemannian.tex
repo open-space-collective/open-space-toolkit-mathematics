@@ -1,0 +1,163 @@
+\hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian}{}\doxysection{ostk\+::mathematics\+::curvefitting\+::matrixinterpolator\+::Log\+Euclidean\+Riemannian Class Reference}
+\label{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian}\index{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian@{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian}}
+
+
+Log-\/\+Euclidean Riemannian interpolator for symmetric positive definite matrices.  
+
+
+
+
+{\ttfamily \#include $<$Log\+Euclidean\+Riemannian.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_a1162e9a1845a59a8eead4e1eb981d6ed}{Log\+Euclidean\+Riemannian}} (const Vector\+Xd \&an\+X\+Vector, const Array$<$ Matrix\+Xd $>$ \&a\+Matrix\+Array)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_a0d8060b39354363728b58cda3481671f}{$\sim$\+Log\+Euclidean\+Riemannian}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+Matrix\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_ad5ee94b53078432f9e7b1a4f77e6ef2b}{evaluate}} (const double \&a\+Query\+Value) const
+\begin{DoxyCompactList}\small\item\em Evaluate the interpolator at a single point. \end{DoxyCompactList}\item 
+Array$<$ Matrix\+Xd $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_a0a8136435551df4aba94824305bf26a7}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const
+\begin{DoxyCompactList}\small\item\em Evaluate the interpolator at multiple points. \end{DoxyCompactList}\item 
+Array$<$ Matrix\+Xd $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_af9443a78a5345e6907d01d620d1d8872}{get\+Matrices}} () const
+\begin{DoxyCompactList}\small\item\em Get the symmetric positive definite matrices provided at construction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Log-\/\+Euclidean Riemannian interpolator for symmetric positive definite matrices. 
+
+Performs interpolation of symmetric positive definite (S\+PD) matrices using the Log-\/\+Euclidean Riemannian metric. This method maps S\+PD matrices to the tangent space (symmetric matrices) via the matrix logarithm, performs linear interpolation in that space, and maps back via the matrix exponential. This ensures the interpolated result is always symmetric positive definite.
+
+The input matrices must be symmetric positive definite (S\+PD). A matrix M is S\+PD if\+:
+\begin{DoxyItemize}
+\item M is symmetric\+: M = M$^\wedge$T
+\item All eigenvalues of M are strictly positive
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} x(2);}
+\DoxyCodeLine{x << 0.0, 1.0;}
+\DoxyCodeLine{Array<MatrixXd> matrices = \{P0, P1\};  \textcolor{comment}{// symmetric positive definite matrices}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_a1162e9a1845a59a8eead4e1eb981d6ed}{LogEuclideanRiemannian}} interpolator(x, matrices);}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a8be483f9d27b70e9009978332171b614}{MatrixXd}} result = interpolator.evaluate(0.5);}
+\end{DoxyCode}
+
+
+\href{https://inria.hal.science/inria-00070423/document}{\texttt{ https\+://inria.\+hal.\+science/inria-\/00070423/document}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_a1162e9a1845a59a8eead4e1eb981d6ed}\label{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_a1162e9a1845a59a8eead4e1eb981d6ed}} 
+\index{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian@{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian}!LogEuclideanRiemannian@{LogEuclideanRiemannian}}
+\index{LogEuclideanRiemannian@{LogEuclideanRiemannian}!ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian@{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian}}
+\doxysubsubsection{\texorpdfstring{LogEuclideanRiemannian()}{LogEuclideanRiemannian()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::matrixinterpolator\+::\+Log\+Euclidean\+Riemannian\+::\+Log\+Euclidean\+Riemannian (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{an\+X\+Vector,  }\item[{const Array$<$ Matrix\+Xd $>$ \&}]{a\+Matrix\+Array }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Constructs a Log-\/\+Euclidean Riemannian interpolator from x-\/coordinates and corresponding symmetric positive definite matrices. The matrix logarithms are precomputed at construction time for efficient interpolation.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_a1162e9a1845a59a8eead4e1eb981d6ed}{LogEuclideanRiemannian}} interpolator(x, matrices);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em an\+X\+Vector} & A vector of x values (strictly monotonically increasing) \\
+\hline
+{\em a\+Matrix\+Array} & An array of symmetric positive definite matrices (all same dimensions) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_a0d8060b39354363728b58cda3481671f}\label{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_a0d8060b39354363728b58cda3481671f}} 
+\index{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian@{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian}!````~LogEuclideanRiemannian@{$\sim$LogEuclideanRiemannian}}
+\index{````~LogEuclideanRiemannian@{$\sim$LogEuclideanRiemannian}!ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian@{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian}}
+\doxysubsubsection{\texorpdfstring{$\sim$LogEuclideanRiemannian()}{~LogEuclideanRiemannian()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::matrixinterpolator\+::\+Log\+Euclidean\+Riemannian\+::$\sim$\+Log\+Euclidean\+Riemannian (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_ad5ee94b53078432f9e7b1a4f77e6ef2b}\label{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_ad5ee94b53078432f9e7b1a4f77e6ef2b}} 
+\index{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian@{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian@{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Matrix\+Xd ostk\+::mathematics\+::curvefitting\+::matrixinterpolator\+::\+Log\+Euclidean\+Riemannian\+::evaluate (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const}
+
+
+
+Evaluate the interpolator at a single point. 
+
+Returns the interpolated symmetric positive definite matrix at the given x value. Values outside the x range are clamped to the nearest endpoint matrix.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a8be483f9d27b70e9009978332171b614}{MatrixXd}} result = interpolator.evaluate(0.5);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Interpolated symmetric positive definite matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_a0a8136435551df4aba94824305bf26a7}\label{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_a0a8136435551df4aba94824305bf26a7}} 
+\index{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian@{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian@{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Array$<$ Matrix\+Xd $>$ ostk\+::mathematics\+::curvefitting\+::matrixinterpolator\+::\+Log\+Euclidean\+Riemannian\+::evaluate (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const}
+
+
+
+Evaluate the interpolator at multiple points. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Array<MatrixXd> results = interpolator.evaluate(queryVector);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of interpolated symmetric positive definite matrices 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_af9443a78a5345e6907d01d620d1d8872}\label{classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_af9443a78a5345e6907d01d620d1d8872}} 
+\index{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian@{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian}!getMatrices@{getMatrices}}
+\index{getMatrices@{getMatrices}!ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian@{ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian}}
+\doxysubsubsection{\texorpdfstring{getMatrices()}{getMatrices()}}
+{\footnotesize\ttfamily Array$<$ Matrix\+Xd $>$ ostk\+::mathematics\+::curvefitting\+::matrixinterpolator\+::\+Log\+Euclidean\+Riemannian\+::get\+Matrices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the symmetric positive definite matrices provided at construction. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Array<MatrixXd> matrices = interpolator.getMatrices();}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+The array of symmetric positive definite matrices 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Matrix\+Interpolator/\mbox{\hyperlink{_log_euclidean_riemannian_8hpp}{Log\+Euclidean\+Riemannian.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Matrix\+Interpolator/\mbox{\hyperlink{_log_euclidean_riemannian_8cpp}{Log\+Euclidean\+Riemannian.\+cpp}}\end{DoxyCompactItemize}

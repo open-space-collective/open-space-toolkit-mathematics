@@ -15,7 +15,19 @@ var hierarchy =
     [ "ostk::mathematics::object::IntervalBase", "classostk_1_1mathematics_1_1object_1_1_interval_base.html", [
       [ "ostk::mathematics::object::Interval< T >", "classostk_1_1mathematics_1_1object_1_1_interval.html", null ]
     ] ],
+    [ "ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian", "classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian.html", null ],
     [ "ostk::mathematics::solver::NumericalSolver", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html", null ],
+    [ "ostk::mathematics::geometry::d2::Object", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html", [
+      [ "ostk::mathematics::geometry::d2::object::Composite", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html", null ],
+      [ "ostk::mathematics::geometry::d2::object::Line", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html", null ],
+      [ "ostk::mathematics::geometry::d2::object::LineString", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html", null ],
+      [ "ostk::mathematics::geometry::d2::object::MultiLineString", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html", null ],
+      [ "ostk::mathematics::geometry::d2::object::MultiPolygon", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html", null ],
+      [ "ostk::mathematics::geometry::d2::object::Point", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html", null ],
+      [ "ostk::mathematics::geometry::d2::object::PointSet", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html", null ],
+      [ "ostk::mathematics::geometry::d2::object::Polygon", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html", null ],
+      [ "ostk::mathematics::geometry::d2::object::Segment", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html", null ]
+    ] ],
     [ "ostk::mathematics::geometry::d3::Object", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html", [
       [ "ostk::mathematics::geometry::d3::object::Composite", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html", null ],
       [ "ostk::mathematics::geometry::d3::object::Cone", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html", null ],
@@ -32,20 +44,9 @@ var hierarchy =
       [ "ostk::mathematics::geometry::d3::object::Segment", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html", null ],
       [ "ostk::mathematics::geometry::d3::object::Sphere", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html", null ]
     ] ],
-    [ "ostk::mathematics::geometry::d2::Object", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html", [
-      [ "ostk::mathematics::geometry::d2::object::Composite", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html", null ],
-      [ "ostk::mathematics::geometry::d2::object::Line", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line.html", null ],
-      [ "ostk::mathematics::geometry::d2::object::LineString", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string.html", null ],
-      [ "ostk::mathematics::geometry::d2::object::MultiLineString", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html", null ],
-      [ "ostk::mathematics::geometry::d2::object::MultiPolygon", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html", null ],
-      [ "ostk::mathematics::geometry::d2::object::Point", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html", null ],
-      [ "ostk::mathematics::geometry::d2::object::PointSet", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html", null ],
-      [ "ostk::mathematics::geometry::d2::object::Polygon", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html", null ],
-      [ "ostk::mathematics::geometry::d2::object::Segment", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html", null ]
-    ] ],
     [ "ostk::mathematics::geometry::d3::transformation::rotation::Quaternion", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html", null ],
     [ "ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html", null ],
     [ "ostk::mathematics::geometry::d3::transformation::rotation::RotationVector", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html", null ],
-    [ "ostk::mathematics::geometry::d2::Transformation", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html", null ],
-    [ "ostk::mathematics::geometry::d3::Transformation", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html", null ]
+    [ "ostk::mathematics::geometry::d3::Transformation", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html", null ],
+    [ "ostk::mathematics::geometry::d2::Transformation", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html", null ]
 ];

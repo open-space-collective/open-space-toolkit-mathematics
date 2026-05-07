@@ -1,5 +1,14 @@
 var NAVTREEINDEX3 =
 {
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a94c3c7588bf70c66f9ec2f170c6a4121":[5,0,1,0,1,1,0,4,10],
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a9dc7e990d3dde27a6cdb332c27df0422":[5,0,1,0,1,1,0,4,7],
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aa953f89b8b41699dc8f14a465e2ef6b8":[5,0,1,0,1,1,0,4,0],
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aae92782ed75f744c24c48e5d47cf0545":[5,0,1,0,1,1,0,4,12],
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aba1fb7d8d2c55f5622219263cb7e677b":[5,0,1,0,1,1,0,4,15],
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#ac14c45f446051372e0a4dc3f4a6d514c":[5,0,1,0,1,1,0,4,6],
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#ac1c03c840e6a7da0f4c7dd756181d7bb":[5,0,1,0,1,1,0,4,3],
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#adbfd6a95b2edf22a2540e449d07e499c":[5,0,1,0,1,1,0,4,16],
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#ae07b5282c948df716fc1fa5bedeec344":[5,0,1,0,1,1,0,4,13],
 "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aef0d21c794766aaaadb779dd364594d4":[5,0,1,0,1,1,0,4,14],
 "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html":[5,0,1,0,1,1,0,5],
 "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a06488a8c9956ec63215f8cceb6380b27":[5,0,1,0,1,1,0,5,2],
@@ -240,14 +249,5 @@ var NAVTREEINDEX3 =
 "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#a9bd92ff5c1e57bdc7572b2507363bd15":[5,0,1,0,1,1,1,0,1,19],
 "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#aa59ce9764110f86f725a3797bf834764":[5,0,1,0,1,1,1,0,1,33],
 "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#aa6ec77b7da4aa05500e6551a4797bbb3":[5,0,1,0,1,1,1,0,1,27],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ab2c7e95b006839e078c0517a320636cf":[5,0,1,0,1,1,1,0,1,43],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ab4698e830342864f4debb6cb5d4c66bd":[5,0,1,0,1,1,1,0,1,31],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ab9414dc117f260055d0a1a565eb93708":[5,0,1,0,1,1,1,0,1,45],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#abcc5bbb2b290710f39d2111f155ea8e3":[5,0,1,0,1,1,1,0,1,38],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#abd6b6809b6be6bff26bf99a4c2afbcdb":[5,0,1,0,1,1,1,0,1,34],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ac23b62bf5637ca0a7a533434641effb3":[5,0,1,0,1,1,1,0,1,40],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#acf750e6a9664f75b70c4c1afe50eff7d":[5,0,1,0,1,1,1,0,1,25],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ad0889624c3960610d94c44c2675fe2d7":[5,0,1,0,1,1,1,0,1,16],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ad3ca378d47be35fa0bf91e9755dd5096":[5,0,1,0,1,1,1,0,1,2],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#adac286e89986a4dc8cd2791c96bcb979":[5,0,1,0,1,1,1,0,1,17]
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ab2c7e95b006839e078c0517a320636cf":[5,0,1,0,1,1,1,0,1,43]
 };

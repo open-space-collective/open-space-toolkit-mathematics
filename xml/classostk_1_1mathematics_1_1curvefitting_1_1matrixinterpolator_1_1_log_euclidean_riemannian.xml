@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</compoundname>
+    <includes refid="_log_euclidean_riemannian_8hpp" local="no">LogEuclideanRiemannian.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a69b9550bc432fcf83880742e968a48f5" prot="private" static="no" mutable="no">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::x_</definition>
+        <argsstring></argsstring>
+        <name>x_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="105" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ac01e5c30b78f551f2a72f910b7740d5c" prot="private" static="no" mutable="no">
+        <type>Array&lt; MatrixXd &gt;</type>
+        <definition>Array&lt;MatrixXd&gt; ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::matrices_</definition>
+        <argsstring></argsstring>
+        <name>matrices_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="106" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a85de79319451bbee7885259a228501bf" prot="private" static="no" mutable="no">
+        <type>Array&lt; MatrixXd &gt;</type>
+        <definition>Array&lt;MatrixXd&gt; ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::logMatrices_</definition>
+        <argsstring></argsstring>
+        <name>logMatrices_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="107" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a1162e9a1845a59a8eead4e1eb981d6ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::LogEuclideanRiemannian</definition>
+        <argsstring>(const VectorXd &amp;anXVector, const Array&lt; MatrixXd &gt; &amp;aMatrixArray)</argsstring>
+        <name>LogEuclideanRiemannian</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>anXVector</declname>
+        </param>
+        <param>
+          <type>const Array&lt; MatrixXd &gt; &amp;</type>
+          <declname>aMatrixArray</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a Log-Euclidean Riemannian interpolator from x-coordinates and corresponding symmetric positive definite matrices. The matrix logarithms are precomputed at construction time for efficient interpolation.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a1162e9a1845a59a8eead4e1eb981d6ed" kindref="member">LogEuclideanRiemannian</ref><sp/>interpolator(x,<sp/>matrices);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>anXVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values (strictly monotonically increasing) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aMatrixArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of symmetric positive definite matrices (all same dimensions) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="67" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="18" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a0d8060b39354363728b58cda3481671f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::~LogEuclideanRiemannian</definition>
+        <argsstring>()</argsstring>
+        <name>~LogEuclideanRiemannian</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="70" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ad5ee94b53078432f9e7b1a4f77e6ef2b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>MatrixXd</type>
+        <definition>MatrixXd ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::evaluate</definition>
+        <argsstring>(const double &amp;aQueryValue) const</argsstring>
+        <name>evaluate</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the interpolator at a single point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the interpolated symmetric positive definite matrix at the given x value. Values outside the x range are clamped to the nearest endpoint matrix.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a8be483f9d27b70e9009978332171b614" kindref="member">MatrixXd</ref><sp/>result<sp/>=<sp/>interpolator.evaluate(0.5);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Interpolated symmetric positive definite matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="83" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="68" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a0a8136435551df4aba94824305bf26a7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Array&lt; MatrixXd &gt;</type>
+        <definition>Array&lt; MatrixXd &gt; ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::evaluate</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const</argsstring>
+        <name>evaluate</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the interpolator at multiple points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Array&lt;MatrixXd&gt;<sp/>results<sp/>=<sp/>interpolator.evaluate(queryVector);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Array of interpolated symmetric positive definite matrices </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="93" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="84" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1af9443a78a5345e6907d01d620d1d8872" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Array&lt; MatrixXd &gt;</type>
+        <definition>Array&lt; MatrixXd &gt; ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::getMatrices</definition>
+        <argsstring>() const</argsstring>
+        <name>getMatrices</name>
+        <briefdescription>
+<para>Get the symmetric positive definite matrices provided at construction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Array&lt;MatrixXd&gt;<sp/>matrices<sp/>=<sp/>interpolator.getMatrices();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The array of symmetric positive definite matrices </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="102" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="97" bodyend="100"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ac271611a6b07f428d4f18ef3fcaf827d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Pair&lt; Index, Index &gt;</type>
+        <definition>Pair&lt; Index, Index &gt; ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::findIndexRange</definition>
+        <argsstring>(const double &amp;aQueryValue) const</argsstring>
+        <name>findIndexRange</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="109" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="142" bodyend="157"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a8afcd454e620f5ab159ab4605ba8b2b1" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MatrixXd</type>
+        <definition>MatrixXd ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::MatrixLogSPD</definition>
+        <argsstring>(const MatrixXd &amp;aMatrix)</argsstring>
+        <name>MatrixLogSPD</name>
+        <param>
+          <type>const MatrixXd &amp;</type>
+          <declname>aMatrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="111" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="102" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1af4b8981278b4b6c3bdc954c925fe94cf" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MatrixXd</type>
+        <definition>MatrixXd ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::MatrixExpSymmetric</definition>
+        <argsstring>(const MatrixXd &amp;aMatrix)</argsstring>
+        <name>MatrixExpSymmetric</name>
+        <param>
+          <type>const MatrixXd &amp;</type>
+          <declname>aMatrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="112" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="127" bodyend="140"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Log-Euclidean Riemannian interpolator for symmetric positive definite matrices. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Performs interpolation of symmetric positive definite (SPD) matrices using the Log-Euclidean Riemannian metric. This method maps SPD matrices to the tangent space (symmetric matrices) via the matrix logarithm, performs linear interpolation in that space, and maps back via the matrix exponential. This ensures the interpolated result is always symmetric positive definite.</para>
+<para>The input matrices must be symmetric positive definite (SPD). A matrix M is SPD if:<itemizedlist>
+<listitem><para>M is symmetric: M = M^T</para>
+</listitem><listitem><para>All eigenvalues of M are strictly positive</para>
+</listitem></itemizedlist>
+</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>x(2);</highlight></codeline>
+<codeline><highlight class="normal">x<sp/>&lt;&lt;<sp/>0.0,<sp/>1.0;</highlight></codeline>
+<codeline><highlight class="normal">Array&lt;MatrixXd&gt;<sp/>matrices<sp/>=<sp/>{P0,<sp/>P1};<sp/><sp/></highlight><highlight class="comment">//<sp/>symmetric<sp/>positive<sp/>definite<sp/>matrices</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a1162e9a1845a59a8eead4e1eb981d6ed" kindref="member">LogEuclideanRiemannian</ref><sp/>interpolator(x,<sp/>matrices);</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a8be483f9d27b70e9009978332171b614" kindref="member">MatrixXd</ref><sp/>result<sp/>=<sp/>interpolator.evaluate(0.5);</highlight></codeline>
+</programlisting></para>
+<para><ulink url="https://inria.hal.science/inria-00070423/document">https://inria.hal.science/inria-00070423/document</ulink> </para>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="53" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="52" bodyend="113"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ad5ee94b53078432f9e7b1a4f77e6ef2b" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a0a8136435551df4aba94824305bf26a7" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ac271611a6b07f428d4f18ef3fcaf827d" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>findIndexRange</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1af9443a78a5345e6907d01d620d1d8872" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>getMatrices</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a1162e9a1845a59a8eead4e1eb981d6ed" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>LogEuclideanRiemannian</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a85de79319451bbee7885259a228501bf" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>logMatrices_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ac01e5c30b78f551f2a72f910b7740d5c" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>matrices_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1af4b8981278b4b6c3bdc954c925fe94cf" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>MatrixExpSymmetric</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a8afcd454e620f5ab159ab4605ba8b2b1" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>MatrixLogSPD</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a69b9550bc432fcf83880742e968a48f5" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>x_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a0d8060b39354363728b58cda3481671f" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>~LogEuclideanRiemannian</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
