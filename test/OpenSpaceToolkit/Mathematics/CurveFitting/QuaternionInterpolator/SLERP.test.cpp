@@ -6,9 +6,9 @@
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/QuaternionInterpolator/SLERP.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
 #include <Global.test.hpp>
