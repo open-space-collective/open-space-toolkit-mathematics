@@ -6,7 +6,6 @@ import pytest
 
 import ostk.mathematics as mathematics
 
-
 Transformation = mathematics.geometry.d2.Transformation
 Type = Transformation.Type
 Point = mathematics.geometry.d2.object.Point

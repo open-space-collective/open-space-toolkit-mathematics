@@ -2,7 +2,6 @@
 
 import ostk.mathematics as mathematics
 
-
 Angle = mathematics.geometry.Angle
 
 Point2d = mathematics.geometry.d2.object.Point

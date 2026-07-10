@@ -6,7 +6,6 @@ import math
 
 import ostk.mathematics as mathematics
 
-
 Angle = mathematics.geometry.Angle
 Unit = Angle.Unit
 

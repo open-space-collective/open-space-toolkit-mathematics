@@ -6,7 +6,6 @@ import numpy as np
 
 import ostk.mathematics as mathematics
 
-
 Object = mathematics.geometry.d3.Object
 Point = mathematics.geometry.d3.object.Point
 PointSet = mathematics.geometry.d3.object.PointSet

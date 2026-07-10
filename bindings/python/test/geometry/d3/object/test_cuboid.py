@@ -8,7 +8,6 @@ import ostk.mathematics as mathematics
 
 from ostk.core.type import String
 
-
 Point3d = mathematics.geometry.d3.object.Point
 Point2d = mathematics.geometry.d2.object.Point
 Polygon3d = mathematics.geometry.d3.object.Polygon
