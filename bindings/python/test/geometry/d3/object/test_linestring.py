@@ -10,7 +10,6 @@ from ostk.core.type import String
 
 import ostk.mathematics as mathematics
 
-
 Object = mathematics.geometry.d3.Object
 Point = mathematics.geometry.d3.object.Point
 LineString = mathematics.geometry.d3.object.LineString

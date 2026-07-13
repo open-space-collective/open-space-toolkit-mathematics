@@ -4,7 +4,6 @@ import pytest
 
 import ostk.mathematics as mathematics
 
-
 Object = mathematics.geometry.d2.Object
 Format = Object.Format
 
