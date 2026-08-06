@@ -437,6 +437,7 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
             .value("NoLog", NumericalSolver::LogType::NoLog)
             .value("LogConstant", NumericalSolver::LogType::LogConstant)
             .value("LogAdaptive", NumericalSolver::LogType::LogAdaptive)
+            .value("NoLogNoObserve", NumericalSolver::LogType::NoLogNoObserve)
 
             ;
     }
