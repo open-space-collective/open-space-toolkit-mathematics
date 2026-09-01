@@ -40,7 +40,11 @@ class Interpolator
         BarycentricRational,
         CubicSpline,
         Linear,
-        ZeroOrder
+        ZeroOrder,
+        CubicHermite,
+        CardinalCubicHermite,
+        QuinticHermite,
+        CardinalQuinticHermite
     };
 
     /// @brief Constructor (can only be called by derived classes since it is pure virtual)
@@ -118,6 +122,9 @@ class Interpolator
     /// @param anXVector A vector of x values
     /// @param aYVector A vector of y values
     /// @return Shared pointer to correct Interpolator
+    ///
+    /// @warning The Hermite types cannot be generated here, as they additionally require
+    /// derivative data. Construct them directly instead.
     static const Shared<const Interpolator> GenerateInterpolator(
         const Type& aType, const VectorXd& anXVector, const VectorXd& aYVector
     );

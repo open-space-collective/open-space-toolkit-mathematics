@@ -2,6 +2,7 @@
 
 #include <gmock/gmock.h>
 
+#include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Shared.hpp>
 
@@ -74,5 +75,19 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator, GenerateInterpolator)
             Interpolator::GenerateInterpolator(Interpolator::Type::Linear, x, y);
         EXPECT_TRUE(interpolatorSPtr != nullptr);
         EXPECT_EQ(Interpolator::Type::Linear, interpolatorSPtr->getInterpolationType());
+    }
+
+    {
+        // The Hermite interpolators additionally require derivative data, and so cannot be generated here
+
+        for (const Interpolator::Type& type : {
+                 Interpolator::Type::CubicHermite,
+                 Interpolator::Type::CardinalCubicHermite,
+                 Interpolator::Type::QuinticHermite,
+                 Interpolator::Type::CardinalQuinticHermite,
+             })
+        {
+            EXPECT_THROW(Interpolator::GenerateInterpolator(type, x, y), ostk::core::error::RuntimeError);
+        }
     }
 }

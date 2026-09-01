@@ -46,6 +46,13 @@ const Shared<const Interpolator> Interpolator::GenerateInterpolator(
             return std::make_shared<Linear>(anXVector, aYVector);
         case Type::ZeroOrder:
             return std::make_shared<ZeroOrder>(anXVector, aYVector);
+        case Type::CubicHermite:
+        case Type::CardinalCubicHermite:
+        case Type::QuinticHermite:
+        case Type::CardinalQuinticHermite:
+            throw ostk::core::error::RuntimeError(
+                "Hermite interpolators require derivative data, and cannot be generated from x and y only."
+            );
         default:
             throw ostk::core::error::runtime::Wrong("Invalid interpolation type.");
     }
