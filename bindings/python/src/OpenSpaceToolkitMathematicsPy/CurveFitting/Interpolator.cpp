@@ -4,7 +4,9 @@
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/BarycentricRational.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CardinalCubicHermite.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CardinalQuadraticSpline.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CardinalQuinticHermite.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CardinalQuinticSpline.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CubicHermite.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CubicSpline.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/Linear.cpp>
@@ -61,6 +63,8 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
         .value("CardinalCubicHermite", Interpolator::Type::CardinalCubicHermite)
         .value("QuinticHermite", Interpolator::Type::QuinticHermite)
         .value("CardinalQuinticHermite", Interpolator::Type::CardinalQuinticHermite)
+        .value("CardinalQuadraticSpline", Interpolator::Type::CardinalQuadraticSpline)
+        .value("CardinalQuinticSpline", Interpolator::Type::CardinalQuinticSpline)
 
         ;
 
@@ -214,7 +218,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
     // Add object to python "interpolator" submodules
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricRational(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalCubicHermite(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuadraticSpline(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuinticHermite(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuinticSpline(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicHermite(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(interpolator);

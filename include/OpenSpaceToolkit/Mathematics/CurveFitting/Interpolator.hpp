@@ -44,7 +44,9 @@ class Interpolator
         CubicHermite,
         CardinalCubicHermite,
         QuinticHermite,
-        CardinalQuinticHermite
+        CardinalQuinticHermite,
+        CardinalQuadraticSpline,
+        CardinalQuinticSpline
     };
 
     /// @brief Constructor (can only be called by derived classes since it is pure virtual)

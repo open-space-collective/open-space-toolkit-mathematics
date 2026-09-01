@@ -78,6 +78,28 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator, GenerateInterpolator)
     }
 
     {
+        const Shared<const Interpolator> interpolatorSPtr =
+            Interpolator::GenerateInterpolator(Interpolator::Type::CardinalQuadraticSpline, x, y);
+        EXPECT_TRUE(interpolatorSPtr != nullptr);
+        EXPECT_EQ(Interpolator::Type::CardinalQuadraticSpline, interpolatorSPtr->getInterpolationType());
+    }
+
+    {
+        // The cardinal quintic spline requires at least 8 points
+
+        VectorXd longX(10);
+        longX << 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0;
+
+        VectorXd longY(10);
+        longY << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0, 18.0, 20.0, 25.0, 33.0;
+
+        const Shared<const Interpolator> interpolatorSPtr =
+            Interpolator::GenerateInterpolator(Interpolator::Type::CardinalQuinticSpline, longX, longY);
+        EXPECT_TRUE(interpolatorSPtr != nullptr);
+        EXPECT_EQ(Interpolator::Type::CardinalQuinticSpline, interpolatorSPtr->getInterpolationType());
+    }
+
+    {
         // The Hermite interpolators additionally require derivative data, and so cannot be generated here
 
         for (const Interpolator::Type& type : {
