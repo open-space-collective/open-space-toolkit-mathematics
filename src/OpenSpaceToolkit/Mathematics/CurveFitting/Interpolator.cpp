@@ -4,6 +4,8 @@
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CardinalQuadraticSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CardinalQuinticSpline.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp>
@@ -16,6 +18,8 @@ namespace curvefitting
 {
 
 using ostk::mathematics::curvefitting::interpolator::BarycentricRational;
+using ostk::mathematics::curvefitting::interpolator::CardinalQuadraticSpline;
+using ostk::mathematics::curvefitting::interpolator::CardinalQuinticSpline;
 using ostk::mathematics::curvefitting::interpolator::CubicSpline;
 using ostk::mathematics::curvefitting::interpolator::Linear;
 using ostk::mathematics::curvefitting::interpolator::ZeroOrder;
@@ -46,6 +50,10 @@ const Shared<const Interpolator> Interpolator::GenerateInterpolator(
             return std::make_shared<Linear>(anXVector, aYVector);
         case Type::ZeroOrder:
             return std::make_shared<ZeroOrder>(anXVector, aYVector);
+        case Type::CardinalQuadraticSpline:
+            return std::make_shared<CardinalQuadraticSpline>(anXVector, aYVector);
+        case Type::CardinalQuinticSpline:
+            return std::make_shared<CardinalQuinticSpline>(anXVector, aYVector);
         case Type::CubicHermite:
         case Type::CardinalCubicHermite:
         case Type::QuinticHermite:
