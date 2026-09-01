@@ -3,8 +3,12 @@
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/BarycentricRational.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CardinalCubicHermite.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CardinalQuinticHermite.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CubicHermite.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CubicSpline.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/Linear.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/QuinticHermite.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/ZeroOrder.cpp>
 
 using namespace pybind11;
@@ -53,6 +57,10 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
         .value("CubicSpline", Interpolator::Type::CubicSpline)
         .value("Linear", Interpolator::Type::Linear)
         .value("ZeroOrder", Interpolator::Type::ZeroOrder)
+        .value("CubicHermite", Interpolator::Type::CubicHermite)
+        .value("CardinalCubicHermite", Interpolator::Type::CardinalCubicHermite)
+        .value("QuinticHermite", Interpolator::Type::QuinticHermite)
+        .value("CardinalQuinticHermite", Interpolator::Type::CardinalQuinticHermite)
 
         ;
 
@@ -182,6 +190,10 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
                 Returns:
                     Interpolator: The created interpolator.
 
+                Note:
+                    The Hermite types cannot be generated here, as they additionally require derivative data.
+                    Construct them directly instead.
+
                 Example:
                     >>> x = np.array([0.0, 1.0, 2.0])
                     >>> y = np.array([0.0, 2.0, 4.0])
@@ -201,7 +213,11 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
 
     // Add object to python "interpolator" submodules
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricRational(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalCubicHermite(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuinticHermite(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicHermite(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermite(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_ZeroOrder(interpolator);
 }
