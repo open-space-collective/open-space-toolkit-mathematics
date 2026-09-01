@@ -7,7 +7,6 @@ import numpy as np
 from ostk.mathematics.curve_fitting import Interpolator
 from ostk.mathematics.curve_fitting.interpolator import CardinalCubicHermite
 
-
 # Sampled from f(x) = x^3 - 2 * x^2 + 3 * x - 1, on a uniform grid
 
 X: list[float] = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0]
