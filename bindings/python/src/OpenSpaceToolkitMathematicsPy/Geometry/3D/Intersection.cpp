@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
     using ostk::core::type::Unique;
@@ -38,7 +38,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
 
     // Define constructor
     // intersection.def("__init__",
-    //     [] (Intersection& anIntersection, const pybind11::list& anObjectList)
+    //     [] (Intersection& anIntersection, const nanobind::list& anObjectList)
     //         {
 
     //             Array<Unique<Object>> anObjectArray = {} ;
@@ -59,11 +59,42 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
     // ) ;
 
     // Define methods
-    intersection.def(self == self)
-        .def(self != self)
+    intersection
+        .def(
+            "__eq__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self + self)
-        .def(self += self)
+        .def(
+            "__add__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self + other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__iadd__",
+            [](Intersection& self, const Intersection& other) -> Intersection&
+            {
+                self += other;
+                return self;
+            },
+            nanobind::rv_policy::none,
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Intersection>))
         .def("__repr__", &(shiftToString<Intersection>))
@@ -519,7 +550,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
         .def(
             "access_composite",
             &Intersection::accessComposite,
-            return_value_policy::reference,
+            rv_policy::reference,
             R"doc(
                 Access the composite object in the intersection.
 

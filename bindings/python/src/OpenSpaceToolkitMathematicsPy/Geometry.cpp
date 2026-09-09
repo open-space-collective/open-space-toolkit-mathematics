@@ -4,7 +4,7 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/Angle.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry(nanobind::module_& aModule)
 {
     // Create "geometry" python submodule
     auto geometry = aModule.def_submodule("geometry");

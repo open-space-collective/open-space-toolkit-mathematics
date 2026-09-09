@@ -3,9 +3,9 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Real;
     using ostk::core::type::Size;
@@ -52,8 +52,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
             )doc"
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Pyramid& self, const Pyramid& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Pyramid& self, const Pyramid& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Pyramid>))
         .def("__repr__", &(shiftToString<Pyramid>))

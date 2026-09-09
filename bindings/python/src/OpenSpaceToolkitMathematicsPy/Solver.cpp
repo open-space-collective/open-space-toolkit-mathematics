@@ -2,7 +2,7 @@
 
 #include <OpenSpaceToolkitMathematicsPy/Solver/NumericalSolver.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Solver(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Solver(nanobind::module_& aModule)
 {
     // Create "object" python submodule
     auto solver = aModule.def_submodule("solver");

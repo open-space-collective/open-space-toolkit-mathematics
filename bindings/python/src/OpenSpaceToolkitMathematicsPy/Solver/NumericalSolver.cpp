@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
     using ostk::core::type::Integer;
@@ -54,8 +54,22 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
                 arg("absolute_tolerance")
             )
 
-            .def(self == self)
-            .def(self != self)
+            .def(
+                "__eq__",
+                [](const NumericalSolver& self, const NumericalSolver& other)
+                {
+                    return self == other;
+                },
+                nanobind::is_operator()
+            )
+            .def(
+                "__ne__",
+                [](const NumericalSolver& self, const NumericalSolver& other)
+                {
+                    return self != other;
+                },
+                nanobind::is_operator()
+            )
 
             .def("__str__", &(shiftToString<NumericalSolver>))
             .def("__repr__", &(shiftToString<NumericalSolver>))
@@ -169,7 +183,7 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
                     const object& aSystemOfEquationsObject)
                 {
                     const auto pythonDynamicsEquation =
-                        pybind11::cast<pythonSystemOfEquationsSignature>(aSystemOfEquationsObject);
+                        nanobind::cast<pythonSystemOfEquationsSignature>(aSystemOfEquationsObject);
 
                     const NumericalSolver::SystemOfEquationsWrapper& systemOfEquations =
                         [&](const NumericalSolver::StateVector& x, NumericalSolver::StateVector& dxdt, const double t
@@ -211,7 +225,7 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
                     const object& aSystemOfEquationsObject)
                 {
                     const auto pythonDynamicsEquation =
-                        pybind11::cast<pythonSystemOfEquationsSignature>(aSystemOfEquationsObject);
+                        nanobind::cast<pythonSystemOfEquationsSignature>(aSystemOfEquationsObject);
 
                     const NumericalSolver::SystemOfEquationsWrapper& systemOfEquations =
                         [&](const NumericalSolver::StateVector& x, NumericalSolver::StateVector& dxdt, const double t
@@ -255,7 +269,7 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
                     const object& aSystemOfEquationsObject)
                 {
                     const auto pythonDynamicsEquation =
-                        pybind11::cast<pythonSystemOfEquationsSignature>(aSystemOfEquationsObject);
+                        nanobind::cast<pythonSystemOfEquationsSignature>(aSystemOfEquationsObject);
 
                     const NumericalSolver::SystemOfEquationsWrapper& systemOfEquations =
                         [&](const NumericalSolver::StateVector& x, NumericalSolver::StateVector& dxdt, const double t
@@ -299,7 +313,7 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
                     const object& aSystemOfEquationsObject)
                 {
                     const auto pythonDynamicsEquation =
-                        pybind11::cast<pythonSystemOfEquationsSignature>(aSystemOfEquationsObject);
+                        nanobind::cast<pythonSystemOfEquationsSignature>(aSystemOfEquationsObject);
 
                     const NumericalSolver::SystemOfEquationsWrapper& systemOfEquations =
                         [&](const NumericalSolver::StateVector& x, NumericalSolver::StateVector& dxdt, const double t

@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <nanobind/trampoline.h>
+
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/BarycentricRational.cpp>
@@ -7,7 +9,7 @@
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/Linear.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/ZeroOrder.cpp>
 
-using namespace pybind11;
+using namespace nanobind;
 
 using ostk::core::type::Shared;
 
@@ -18,34 +20,34 @@ using ostk::mathematics::object::VectorXd;
 class PyInterpolator : public Interpolator
 {
    public:
-    using Interpolator::Interpolator;
+    NB_TRAMPOLINE(Interpolator, 4);
 
     // Trampoline (need one for each virtual function)
 
     VectorXd evaluate(const VectorXd& aQueryVector) const override
     {
-        PYBIND11_OVERRIDE_PURE(VectorXd, Interpolator, evaluate, aQueryVector);
+        NB_OVERRIDE_PURE(evaluate, aQueryVector);
     }
 
     double evaluate(const double& aQueryValue) const override
     {
-        PYBIND11_OVERRIDE_PURE(double, Interpolator, evaluate, aQueryValue);
+        NB_OVERRIDE_PURE(evaluate, aQueryValue);
     }
 
     double computeDerivative(const double& aQueryValue) const override
     {
-        PYBIND11_OVERRIDE_PURE(double, Interpolator, computeDerivative, aQueryValue);
+        NB_OVERRIDE_PURE(computeDerivative, aQueryValue);
     }
 
     VectorXd computeDerivative(const VectorXd& aQueryVector) const override
     {
-        PYBIND11_OVERRIDE_PURE(VectorXd, Interpolator, computeDerivative, aQueryVector);
+        NB_OVERRIDE_PURE(computeDerivative, aQueryVector);
     }
 };
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(nanobind::module_& aModule)
 {
-    class_<Interpolator, PyInterpolator, Shared<Interpolator>> interpolator_class(aModule, "Interpolator");
+    class_<Interpolator, PyInterpolator> interpolator_class(aModule, "Interpolator");
 
     enum_<Interpolator::Type>(interpolator_class, "Type")
 

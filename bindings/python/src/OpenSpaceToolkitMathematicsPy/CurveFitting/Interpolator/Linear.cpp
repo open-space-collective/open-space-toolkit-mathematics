@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Shared;
 
@@ -13,7 +13,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(pybin
 
     using ostk::mathematics::curvefitting::interpolator::Linear;
 
-    class_<Linear, Interpolator, Shared<Linear>>(aModule, "Linear")
+    class_<Linear, Interpolator>(aModule, "Linear")
 
         .def(
             init<const VectorXd&, const VectorXd&>(),

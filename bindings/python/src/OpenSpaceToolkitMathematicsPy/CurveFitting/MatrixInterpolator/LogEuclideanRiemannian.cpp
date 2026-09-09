@@ -3,10 +3,10 @@
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp>
 
 inline void OpenSpaceToolkitMathematicsPy_CurveFitting_MatrixInterpolator_LogEuclideanRiemannian(
-    pybind11::module& aModule
+    nanobind::module_& aModule
 )
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
 
