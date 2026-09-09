@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Real;
 
@@ -39,8 +39,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(pybind11::mo
             arg("radius")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Sphere& self, const Sphere& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Sphere& self, const Sphere& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Sphere>))
         .def("__repr__", &(shiftToString<Sphere>))

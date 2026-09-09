@@ -14,9 +14,9 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Polygon.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Segment.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(pybind11::module &aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(nanobind::module_ &aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d2::Object;
 

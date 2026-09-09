@@ -3,9 +3,9 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Real;
 
@@ -23,22 +23,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::mo
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::object::Vector3d;
 
-    //     scope in_Cuboid = class_<Cuboid, Shared<Cuboid>, bases<Object>>("Cuboid", no_init)
+    //     scope in_Cuboid = class_<Cuboid, bases<Object>>("Cuboid", no_init)
     class_<Cuboid, Object>(aModule, "Cuboid")
 
         .def(
             "__init__",
-            [](Cuboid& aCuboid, const Point& aCenter, const pybind11::list& anAxisList, const pybind11::list& anExtent)
+            [](Cuboid& aCuboid, const Point& aCenter, const nanobind::list& anAxisList, const nanobind::list& anExtent)
             {
                 const std::array<Vector3d, 3> axes = {
-                    pybind11::cast<Vector3d>(anAxisList[0]),
-                    pybind11::cast<Vector3d>(anAxisList[1]),
-                    pybind11::cast<Vector3d>(anAxisList[2])
+                    nanobind::cast<Vector3d>(anAxisList[0]),
+                    nanobind::cast<Vector3d>(anAxisList[1]),
+                    nanobind::cast<Vector3d>(anAxisList[2])
                 };
                 const std::array<Real, 3> extent = {
-                    pybind11::cast<Real>(anExtent[0]),
-                    pybind11::cast<Real>(anExtent[1]),
-                    pybind11::cast<Real>(anExtent[2])
+                    nanobind::cast<Real>(anExtent[0]),
+                    nanobind::cast<Real>(anExtent[1]),
+                    nanobind::cast<Real>(anExtent[2])
                 };
 
                 new (&aCuboid) Cuboid(aCenter, axes, extent);
@@ -66,8 +66,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::mo
             arg("extent")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Cuboid& self, const Cuboid& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Cuboid& self, const Cuboid& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Cuboid>))
         .def("__repr__", &(shiftToString<Cuboid>))
