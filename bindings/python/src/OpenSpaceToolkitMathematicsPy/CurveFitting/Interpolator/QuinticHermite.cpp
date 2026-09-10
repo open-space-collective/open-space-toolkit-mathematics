@@ -6,6 +6,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermi
 {
     using namespace pybind11;
 
+    using ostk::core::type::Real;
     using ostk::core::type::Shared;
 
     using ostk::mathematics::curvefitting::Interpolator;
@@ -37,6 +38,30 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermi
             arg("y"),
             arg("dydx"),
             arg("d2ydx2")
+        )
+        .def(
+            init<const VectorXd&, const VectorXd&, const VectorXd&, const Real&, const Real&>(),
+            R"doc(
+                Create a quintic Hermite interpolator with uniform spacing.
+
+                Args:
+                    y (np.array): The y-coordinates of data points.
+                    dydx (np.array): The first derivatives at the data points.
+                    d2ydx2 (np.array): The second derivatives at the data points.
+                    x_0 (float): The starting x-coordinate.
+                    h (float): The uniform spacing between x-coordinates.
+
+                Example:
+                    >>> y = np.array([0.0, 1.0, 4.0, 9.0])
+                    >>> dydx = np.array([0.0, 2.0, 4.0, 6.0])
+                    >>> d2ydx2 = np.array([2.0, 2.0, 2.0, 2.0])
+                    >>> interpolator = QuinticHermite(y, dydx, d2ydx2, 0.0, 1.0)  # x = [0, 1, 2, 3]
+            )doc",
+            arg("y"),
+            arg("dydx"),
+            arg("d2ydx2"),
+            arg("x_0"),
+            arg("h")
         )
 
         .def(

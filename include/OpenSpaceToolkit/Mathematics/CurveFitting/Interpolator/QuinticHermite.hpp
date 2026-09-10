@@ -2,6 +2,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite__
 #define __OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite__
 
+#include <optional>
 #include <vector>
 
 #include <boost/math/interpolators/quintic_hermite.hpp>
@@ -27,14 +28,19 @@ using ostk::core::type::Size;
 using ostk::mathematics::curvefitting::Interpolator;
 using ostk::mathematics::object::VectorXd;
 
+using boost::math::interpolators::cardinal_quintic_hermite;
 using boost::math::interpolators::quintic_hermite;
 
 /// @brief QuinticHermite
 ///
 /// A quintic Hermite spline is a piecewise fifth-degree polynomial which matches the value,
 /// the first derivative and the second derivative of the underlying function at every node.
-/// The resulting interpolant is C2 continuous. Nodes may be arbitrarily (non-uniformly)
-/// spaced.
+/// The resulting interpolant is C2 continuous.
+///
+/// Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with
+/// a cardinal Hermite spline, which finds the containing interval in constant time rather
+/// than searching for it, and is therefore faster to evaluate. Which of the two is used is
+/// decided from the data and is not otherwise observable.
 ///
 /// @code{.cpp}
 ///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
@@ -63,6 +69,27 @@ class QuinticHermite : public Interpolator
     /// @warning The x values must be sorted in strictly ascending order
     QuinticHermite(
         const VectorXd& anXVector, const VectorXd& aYVector, const VectorXd& aDyDxVector, const VectorXd& aD2yDx2Vector
+    );
+
+    /// @brief Constructor
+    ///
+    /// @code{.cpp}
+    ///                     QuinticHermite quinticHermite(y, dydx, d2ydx2, 0.0, 1.0);
+    /// @endcode
+    ///
+    /// @param aYVector A vector of y values
+    /// @param aDyDxVector A vector of first derivative values
+    /// @param aD2yDx2Vector A vector of second derivative values
+    /// @param x0 The first x value
+    /// @param h The spacing between x values
+    ///
+    /// @warning The spacing must be strictly positive
+    QuinticHermite(
+        const VectorXd& aYVector,
+        const VectorXd& aDyDxVector,
+        const VectorXd& aD2yDx2Vector,
+        const Real& x0,
+        const Real& h
     );
 
     /// @brief Destructor
@@ -135,7 +162,7 @@ class QuinticHermite : public Interpolator
     /// @brief Compute the second derivatives at multiple query values
     ///
     /// @code{.cpp}
-    ///                     VectorXd secondDerivatives = quinticHermite.computeSecondDerivative({1.0, 1.5, 2.0}) ;
+    ///                     VectorXd secondDerivatives = quinticHermite.computeSecondDerivative({1.0, 2.0}) ;
     /// @endcode
     ///
     /// @param aQueryVector A vector of x values
@@ -145,11 +172,30 @@ class QuinticHermite : public Interpolator
     VectorXd computeSecondDerivative(const VectorXd& aQueryVector) const;
 
    private:
-    quintic_hermite<std::vector<double>> interpolator_;
+    // Exactly one of the two is engaged, depending on whether the nodes are uniformly spaced.
+    //
+    // The cardinal interpolant is built over the normalized abscissa s = (x - x0) / h, i.e. over the unit grid
+    // s = 0, 1, ..., n - 1, with the derivatives scaled accordingly, and the results scaled back on the way out.
+    // This is needed because boost::math::interpolators::cardinal_quintic_hermite::double_prime omits the 1 / h^2
+    // factor on its first derivative terms, and is therefore only correct for a unit spacing. Still unfixed as of
+    // Boost 1.92 (verified on the develop branch too), so this cannot simply be dropped on a Boost upgrade.
 
-    static quintic_hermite<std::vector<double>> BuildInterpolator(
-        const VectorXd& anXVector, const VectorXd& aYVector, const VectorXd& aDyDxVector, const VectorXd& aD2yDx2Vector
+    std::optional<cardinal_quintic_hermite<std::vector<double>>> cardinalInterpolator_;
+    std::optional<quintic_hermite<std::vector<double>>> interpolator_;
+
+    double x0_;
+    double h_;
+    Size size_;
+
+    void initializeCardinalInterpolator(
+        const VectorXd& aYVector,
+        const VectorXd& aDyDxVector,
+        const VectorXd& aD2yDx2Vector,
+        const Real& x0,
+        const Real& h
     );
+
+    double normalizeQueryValue(const double& aQueryValue) const;
 };
 
 }  // namespace interpolator

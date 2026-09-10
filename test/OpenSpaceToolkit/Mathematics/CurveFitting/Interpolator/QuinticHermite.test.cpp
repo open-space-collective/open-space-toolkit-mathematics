@@ -15,8 +15,9 @@ using ostk::mathematics::curvefitting::Interpolator;
 using ostk::mathematics::curvefitting::interpolator::QuinticHermite;
 using ostk::mathematics::object::VectorXd;
 
-// Reference data sampled from f(x) = x^4 - 3 * x^2 + 2, on a non-uniform grid.
-// A quintic Hermite spline reproduces any polynomial of degree up to 5 exactly.
+// Reference data sampled from f(x) = x^4 - 3 * x^2 + 2, on a non-uniform grid unless stated
+// otherwise. A quintic Hermite spline reproduces any polynomial of degree up to 5 exactly,
+// whether or not its nodes are uniformly spaced.
 
 class OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite : public ::testing::Test
 {
@@ -74,6 +75,35 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite, Constructor)
 
     {
         EXPECT_THROW(QuinticHermite(x_, y_, dydx_, d2ydx2_.head(5)), ostk::core::error::runtime::Wrong);
+    }
+}
+
+TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite, SecondConstructor)
+{
+    {
+        EXPECT_NO_THROW(QuinticHermite(y_, dydx_, d2ydx2_, 0.0, 1.0));
+    }
+
+    {
+        EXPECT_THROW(
+            QuinticHermite(y_.head(1), dydx_.head(1), d2ydx2_.head(1), 0.0, 1.0), ostk::core::error::runtime::Wrong
+        );
+    }
+
+    {
+        EXPECT_THROW(QuinticHermite(y_, dydx_.head(5), d2ydx2_, 0.0, 1.0), ostk::core::error::runtime::Wrong);
+    }
+
+    {
+        EXPECT_THROW(QuinticHermite(y_, dydx_, d2ydx2_.head(5), 0.0, 1.0), ostk::core::error::runtime::Wrong);
+    }
+
+    {
+        EXPECT_THROW(QuinticHermite(y_, dydx_, d2ydx2_, 0.0, 0.0), ostk::core::error::runtime::Wrong);
+    }
+
+    {
+        EXPECT_THROW(QuinticHermite(y_, dydx_, d2ydx2_, 0.0, -1.0), ostk::core::error::runtime::Wrong);
     }
 }
 
@@ -171,4 +201,84 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite, ComputeSecondDe
         EXPECT_THROW(interpolator.computeSecondDerivative(-1.0), std::domain_error);
         EXPECT_THROW(interpolator.computeSecondDerivative(8.0), std::domain_error);
     }
+}
+
+TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite, UniformNodes)
+{
+    // The same reference function, sampled on a uniform grid. Uniformly spaced nodes are
+    // interpolated with the cardinal implementation, which must describe the same curve.
+
+    VectorXd x(6);
+    x << 0.0, 1.0, 2.0, 3.0, 4.0, 5.0;
+
+    VectorXd y(6);
+    y << 2.0, 0.0, 6.0, 56.0, 210.0, 552.0;
+
+    VectorXd dydx(6);
+    dydx << 0.0, -2.0, 20.0, 90.0, 232.0, 470.0;
+
+    VectorXd d2ydx2(6);
+    d2ydx2 << -6.0, 6.0, 42.0, 102.0, 186.0, 294.0;
+
+    const QuinticHermite interpolator = {x, y, dydx, d2ydx2};
+
+    {
+        EXPECT_NEAR(interpolator.evaluate(1.5), 0.3125, 1e-9);
+        EXPECT_NEAR(interpolator.evaluate(3.5), 115.3125, 1e-9);
+
+        EXPECT_NEAR(interpolator.computeDerivative(1.5), 4.5, 1e-9);
+        EXPECT_NEAR(interpolator.computeDerivative(3.5), 150.5, 1e-9);
+
+        EXPECT_NEAR(interpolator.computeSecondDerivative(1.5), 21.0, 1e-8);
+        EXPECT_NEAR(interpolator.computeSecondDerivative(3.5), 141.0, 1e-8);
+    }
+
+    {
+        // Both constructors describe the same interpolant
+
+        const QuinticHermite otherInterpolator = {y, dydx, d2ydx2, 0.0, 1.0};
+
+        EXPECT_NEAR(interpolator.evaluate(1.5), otherInterpolator.evaluate(1.5), 1e-12);
+        EXPECT_NEAR(interpolator.computeDerivative(1.5), otherInterpolator.computeDerivative(1.5), 1e-12);
+        EXPECT_NEAR(interpolator.computeSecondDerivative(1.5), otherInterpolator.computeSecondDerivative(1.5), 1e-12);
+    }
+
+    {
+        EXPECT_THROW(interpolator.evaluate(-1.0), std::domain_error);
+        EXPECT_THROW(interpolator.evaluate(6.0), std::domain_error);
+
+        EXPECT_THROW(interpolator.computeDerivative(-1.0), std::domain_error);
+        EXPECT_THROW(interpolator.computeDerivative(6.0), std::domain_error);
+
+        EXPECT_THROW(interpolator.computeSecondDerivative(-1.0), std::domain_error);
+        EXPECT_THROW(interpolator.computeSecondDerivative(6.0), std::domain_error);
+    }
+}
+
+TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite, NonUnitSpacing)
+{
+    // The cardinal path rescales the abscissa to a unit grid to work around a Boost defect in
+    // double_prime, so a spacing other than 1 is worth exercising on its own
+
+    VectorXd x(6);
+    x << 0.0, 2.0, 4.0, 6.0, 8.0, 10.0;
+
+    VectorXd y(6);
+    y << 2.0, 6.0, 210.0, 1190.0, 3906.0, 9702.0;
+
+    VectorXd dydx(6);
+    dydx << 0.0, 20.0, 232.0, 828.0, 2000.0, 3940.0;
+
+    VectorXd d2ydx2(6);
+    d2ydx2 << -6.0, 42.0, 186.0, 426.0, 762.0, 1194.0;
+
+    const QuinticHermite interpolator = {x, y, dydx, d2ydx2};
+
+    EXPECT_NEAR(interpolator.evaluate(3.0), 56.0, 1e-8);
+    EXPECT_NEAR(interpolator.computeDerivative(3.0), 90.0, 1e-8);
+    EXPECT_NEAR(interpolator.computeSecondDerivative(3.0), 102.0, 1e-7);
+
+    EXPECT_NEAR(interpolator.evaluate(7.0), 2256.0, 1e-8);
+    EXPECT_NEAR(interpolator.computeDerivative(7.0), 1330.0, 1e-8);
+    EXPECT_NEAR(interpolator.computeSecondDerivative(7.0), 582.0, 1e-7);
 }

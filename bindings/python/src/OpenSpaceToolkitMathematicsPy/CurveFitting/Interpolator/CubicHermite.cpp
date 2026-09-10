@@ -6,6 +6,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicHermite
 {
     using namespace pybind11;
 
+    using ostk::core::type::Real;
     using ostk::core::type::Shared;
 
     using ostk::mathematics::curvefitting::Interpolator;
@@ -34,6 +35,27 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicHermite
             arg("x"),
             arg("y"),
             arg("dydx")
+        )
+        .def(
+            init<const VectorXd&, const VectorXd&, const Real&, const Real&>(),
+            R"doc(
+                Create a cubic Hermite interpolator with uniform spacing.
+
+                Args:
+                    y (np.array): The y-coordinates of data points.
+                    dydx (np.array): The first derivatives at the data points.
+                    x_0 (float): The starting x-coordinate.
+                    h (float): The uniform spacing between x-coordinates.
+
+                Example:
+                    >>> y = np.array([0.0, 1.0, 4.0, 9.0])
+                    >>> dydx = np.array([0.0, 2.0, 4.0, 6.0])
+                    >>> interpolator = CubicHermite(y, dydx, 0.0, 1.0)  # x = [0, 1, 2, 3]
+            )doc",
+            arg("y"),
+            arg("dydx"),
+            arg("x_0"),
+            arg("h")
         )
 
         .def(

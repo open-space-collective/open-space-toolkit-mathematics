@@ -42,11 +42,9 @@ class Interpolator
         Linear,
         ZeroOrder,
         CubicHermite,
-        CardinalCubicHermite,
         QuinticHermite,
-        CardinalQuinticHermite,
-        CardinalQuadraticSpline,
-        CardinalQuinticSpline
+        QuadraticSpline,
+        QuinticSpline
     };
 
     /// @brief Constructor (can only be called by derived classes since it is pure virtual)
@@ -130,6 +128,23 @@ class Interpolator
     static const Shared<const Interpolator> GenerateInterpolator(
         const Type& aType, const VectorXd& anXVector, const VectorXd& aYVector
     );
+
+   protected:
+    /// @brief Check whether a vector of x values is uniformly spaced
+    ///
+    /// Interpolators that have both a uniform and a non-uniform implementation use this to
+    /// decide which one to build. A vector counts as uniformly spaced when every one of its
+    /// values lies on the reconstructed grid x0 + i * h, where h is the mean spacing, to
+    /// within a tolerance that accounts both for a small slack relative to the total span and
+    /// for the precision with which the values themselves can be represented.
+    ///
+    /// @code{.cpp}
+    ///                     const bool isUniform = Interpolator::IsUniformlySpaced(x);
+    /// @endcode
+    ///
+    /// @param anXVector A vector of x values, sorted in ascending order
+    /// @return True if the x values are uniformly spaced
+    static bool IsUniformlySpaced(const VectorXd& anXVector);
 
    private:
     const Type type_;

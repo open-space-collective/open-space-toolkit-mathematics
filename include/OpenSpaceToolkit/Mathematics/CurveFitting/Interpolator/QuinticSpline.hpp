@@ -1,12 +1,14 @@
 /// Apache License 2.0
-#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_CardinalQuinticSpline__
-#define __OpenSpaceToolkit_Mathematics_Interpolator_CardinalQuinticSpline__
+#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_QuinticSpline__
+#define __OpenSpaceToolkit_Mathematics_Interpolator_QuinticSpline__
 
+#include <optional>
 #include <vector>
 
 #include <boost/math/interpolators/cardinal_quintic_b_spline.hpp>
 
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Shared.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
@@ -22,6 +24,7 @@ namespace interpolator
 {
 
 using ostk::core::type::Real;
+using ostk::core::type::Shared;
 using ostk::core::type::Size;
 
 using ostk::mathematics::curvefitting::Interpolator;
@@ -29,44 +32,50 @@ using ostk::mathematics::object::VectorXd;
 
 using boost::math::interpolators::cardinal_quintic_b_spline;
 
-/// @brief CardinalQuinticSpline
+class NonUniformBSpline;
+
+/// @brief QuinticSpline
 ///
-/// A cardinal quintic spline is a quintic B-spline over uniformly spaced nodes, fitted so that
-/// it passes through the given data points. The resulting interpolant is C4 continuous, and
-/// reproduces quintic polynomials exactly. It is the highest order of the cardinal B-spline
-/// interpolators, and is the natural choice when a smooth second derivative is needed.
+/// A quintic spline is a piecewise fifth-degree polynomial fitted so that it passes through
+/// the given data points. The resulting interpolant is C4 continuous, and reproduces quintic
+/// polynomials exactly. It is the highest order of the spline interpolators, and is the
+/// natural choice when a smooth second derivative is needed.
 ///
 /// The first and second derivatives at the two end points are estimated from the data.
+///
+/// Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with
+/// a cardinal B-spline, which finds the containing interval in constant time rather than
+/// searching for it, and is therefore faster to evaluate. Which of the two is used is decided
+/// from the data and is not otherwise observable.
 ///
 /// @code{.cpp}
 ///     VectorXd x = {{0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0}};
 ///     VectorXd y = {{2.0, 0.0, 6.0, 56.0, 210.0, 552.0, 1190.0, 2256.0}};
-///     CardinalQuinticSpline interpolator(x, y);
+///     QuinticSpline interpolator(x, y);
 ///     double value = interpolator.evaluate(1.5);
 /// @endcode
 ///
 /// @ref https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/cardinal_quintic_b.html
-class CardinalQuinticSpline : public Interpolator
+class QuinticSpline : public Interpolator
 {
    public:
     /// @brief Constructor
     ///
     /// @code{.cpp}
-    ///                     CardinalQuinticSpline cardinalQuinticSpline(x, y);
+    ///                     QuinticSpline quinticSpline(x, y);
     /// @endcode
     ///
     /// @param anXVector A vector of x values
     /// @param aYVector A vector of y values
     ///
-    /// @warning The x values must be sorted in ascending order
-    /// @warning The x values must be equally spaced
+    /// @warning The x values must be sorted in strictly ascending order
     /// @warning At least 8 data points are required
-    CardinalQuinticSpline(const VectorXd& anXVector, const VectorXd& aYVector);
+    QuinticSpline(const VectorXd& anXVector, const VectorXd& aYVector);
 
     /// @brief Constructor
     ///
     /// @code{.cpp}
-    ///                     CardinalQuinticSpline cardinalQuinticSpline(y, 0.0, 1.0);
+    ///                     QuinticSpline quinticSpline(y, 0.0, 1.0);
     /// @endcode
     ///
     /// @param aYVector A vector of y values
@@ -75,19 +84,19 @@ class CardinalQuinticSpline : public Interpolator
     ///
     /// @warning The spacing must be strictly positive
     /// @warning At least 8 data points are required
-    CardinalQuinticSpline(const VectorXd& aYVector, const Real& x0, const Real& h);
+    QuinticSpline(const VectorXd& aYVector, const Real& x0, const Real& h);
 
     /// @brief Destructor
     ///
     /// @code{.cpp}
-    ///                     // Called automatically when the CardinalQuinticSpline goes out of scope
+    ///                     // Called automatically when the QuinticSpline goes out of scope
     /// @endcode
-    virtual ~CardinalQuinticSpline() override;
+    virtual ~QuinticSpline() override;
 
-    /// @brief Evaluate the cardinal quintic spline interpolator
+    /// @brief Evaluate the quintic spline interpolator
     ///
     /// @code{.cpp}
-    ///                     VectorXd values = cardinalQuinticSpline.evaluate({1.0, 1.5, 2.0}) ;
+    ///                     VectorXd values = quinticSpline.evaluate({1.0, 1.5, 2.0}) ;
     /// @endcode
     ///
     /// @param aQueryVector A vector of x values
@@ -96,10 +105,10 @@ class CardinalQuinticSpline : public Interpolator
     /// @warning The query values must lie within the interpolation domain
     virtual VectorXd evaluate(const VectorXd& aQueryVector) const override;
 
-    /// @brief Evaluate the cardinal quintic spline interpolator
+    /// @brief Evaluate the quintic spline interpolator
     ///
     /// @code{.cpp}
-    ///                     double value = cardinalQuinticSpline.evaluate(1.5) ;
+    ///                     double value = quinticSpline.evaluate(1.5) ;
     /// @endcode
     ///
     /// @param aQueryValue An x value
@@ -111,7 +120,7 @@ class CardinalQuinticSpline : public Interpolator
     /// @brief Compute the derivative at a specific query value
     ///
     /// @code{.cpp}
-    ///                     double derivative = cardinalQuinticSpline.computeDerivative(1.5) ;
+    ///                     double derivative = quinticSpline.computeDerivative(1.5) ;
     /// @endcode
     ///
     /// @param aQueryValue An x value
@@ -123,7 +132,7 @@ class CardinalQuinticSpline : public Interpolator
     /// @brief Compute the derivatives at multiple query values
     ///
     /// @code{.cpp}
-    ///                     VectorXd derivatives = cardinalQuinticSpline.computeDerivative({1.0, 1.5, 2.0}) ;
+    ///                     VectorXd derivatives = quinticSpline.computeDerivative({1.0, 1.5, 2.0}) ;
     /// @endcode
     ///
     /// @param aQueryVector A vector of x values
@@ -135,7 +144,7 @@ class CardinalQuinticSpline : public Interpolator
     /// @brief Compute the second derivative at a specific query value
     ///
     /// @code{.cpp}
-    ///                     double secondDerivative = cardinalQuinticSpline.computeSecondDerivative(1.5) ;
+    ///                     double secondDerivative = quinticSpline.computeSecondDerivative(1.5) ;
     /// @endcode
     ///
     /// @param aQueryValue An x value
@@ -147,7 +156,7 @@ class CardinalQuinticSpline : public Interpolator
     /// @brief Compute the second derivatives at multiple query values
     ///
     /// @code{.cpp}
-    ///                     VectorXd secondDerivatives = cardinalQuinticSpline.computeSecondDerivative({1.0, 2.0}) ;
+    ///                     VectorXd secondDerivatives = quinticSpline.computeSecondDerivative({1.0, 2.0}) ;
     /// @endcode
     ///
     /// @param aQueryVector A vector of x values
@@ -157,11 +166,10 @@ class CardinalQuinticSpline : public Interpolator
     VectorXd computeSecondDerivative(const VectorXd& aQueryVector) const;
 
    private:
-    cardinal_quintic_b_spline<double> interpolator_;
+    // Exactly one of the two is engaged, depending on whether the nodes are uniformly spaced
 
-    static cardinal_quintic_b_spline<double> BuildInterpolator(const VectorXd& anXVector, const VectorXd& aYVector);
-
-    static cardinal_quintic_b_spline<double> BuildInterpolator(const VectorXd& aYVector, const Real& x0, const Real& h);
+    std::optional<cardinal_quintic_b_spline<double>> cardinalInterpolator_;
+    Shared<const NonUniformBSpline> interpolator_;
 };
 
 }  // namespace interpolator

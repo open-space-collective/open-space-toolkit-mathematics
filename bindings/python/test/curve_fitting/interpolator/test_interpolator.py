@@ -74,9 +74,7 @@ class TestInterpolator:
         "parametrized_interpolation_type",
         [
             Interpolator.Type.CubicHermite,
-            Interpolator.Type.CardinalCubicHermite,
             Interpolator.Type.QuinticHermite,
-            Interpolator.Type.CardinalQuinticHermite,
         ],
     )
     def test_generate_interpolators_hermite_failure(

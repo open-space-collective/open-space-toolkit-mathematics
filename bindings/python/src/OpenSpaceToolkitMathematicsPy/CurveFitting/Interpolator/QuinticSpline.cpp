@@ -1,8 +1,8 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CardinalQuinticSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuinticSpline(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticSpline(pybind11::module& aModule)
 {
     using namespace pybind11;
 
@@ -12,23 +12,23 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuin
     using ostk::mathematics::curvefitting::Interpolator;
     using ostk::mathematics::object::VectorXd;
 
-    using ostk::mathematics::curvefitting::interpolator::CardinalQuinticSpline;
+    using ostk::mathematics::curvefitting::interpolator::QuinticSpline;
 
-    class_<CardinalQuinticSpline, Interpolator, Shared<CardinalQuinticSpline>>(aModule, "CardinalQuinticSpline")
+    class_<QuinticSpline, Interpolator, Shared<QuinticSpline>>(aModule, "QuinticSpline")
 
         .def(
             init<const VectorXd&, const VectorXd&>(),
             R"doc(
-                Create a cardinal quintic spline interpolator with data points.
+                Create a quintic spline interpolator with data points.
 
                 Args:
-                    x (np.array): The x-coordinates of data points, sorted in ascending order and equally spaced.
+                    x (np.array): The x-coordinates of data points, sorted in strictly ascending order. They need not be equally spaced.
                     y (np.array): The y-coordinates of data points. At least 8 are required.
 
                 Example:
                     >>> x = np.arange(8.0)
                     >>> y = np.array([2.0, 0.0, 6.0, 56.0, 210.0, 552.0, 1190.0, 2256.0])
-                    >>> interpolator = CardinalQuinticSpline(x, y)
+                    >>> interpolator = QuinticSpline(x, y)
             )doc",
             arg("x"),
             arg("y")
@@ -36,7 +36,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuin
         .def(
             init<const VectorXd&, const Real&, const Real&>(),
             R"doc(
-                Create a cardinal quintic spline interpolator with uniform spacing.
+                Create a quintic spline interpolator with uniform spacing.
 
                 Args:
                     y (np.array): The y-coordinates of data points. At least 8 are required.
@@ -45,7 +45,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuin
 
                 Example:
                     >>> y = np.array([2.0, 0.0, 6.0, 56.0, 210.0, 552.0, 1190.0, 2256.0])
-                    >>> interpolator = CardinalQuinticSpline(y, 0.0, 1.0)  # x = [0, 1, ..., 7]
+                    >>> interpolator = QuinticSpline(y, 0.0, 1.0)  # x = [0, 1, ..., 7]
             )doc",
             arg("y"),
             arg("x_0"),
@@ -54,9 +54,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuin
 
         .def(
             "evaluate",
-            overload_cast<const VectorXd&>(&CardinalQuinticSpline::evaluate, const_),
+            overload_cast<const VectorXd&>(&QuinticSpline::evaluate, const_),
             R"doc(
-                Evaluate the cardinal quintic spline interpolation at multiple points.
+                Evaluate the quintic spline interpolation at multiple points.
 
                 Args:
                     x (np.array): The x-coordinates to evaluate at. Must lie within the interpolation domain.
@@ -65,16 +65,16 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuin
                     (np.array): The interpolated y-values.
 
                 Example:
-                    >>> interpolator = CardinalQuinticSpline(y, 0.0, 1.0)
+                    >>> interpolator = QuinticSpline(y, 0.0, 1.0)
                     >>> result = interpolator.evaluate([1.5, 3.5])
             )doc",
             arg("x")
         )
         .def(
             "evaluate",
-            overload_cast<const double&>(&CardinalQuinticSpline::evaluate, const_),
+            overload_cast<const double&>(&QuinticSpline::evaluate, const_),
             R"doc(
-                Evaluate the cardinal quintic spline interpolation at a single point.
+                Evaluate the quintic spline interpolation at a single point.
 
                 Args:
                     x (float): The x-coordinate to evaluate at. Must lie within the interpolation domain.
@@ -83,16 +83,16 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuin
                     float: The interpolated y-value.
 
                 Example:
-                    >>> interpolator = CardinalQuinticSpline(y, 0.0, 1.0)
+                    >>> interpolator = QuinticSpline(y, 0.0, 1.0)
                     >>> result = interpolator.evaluate(1.5)
             )doc",
             arg("x")
         )
         .def(
             "compute_derivative",
-            overload_cast<const double&>(&CardinalQuinticSpline::computeDerivative, const_),
+            overload_cast<const double&>(&QuinticSpline::computeDerivative, const_),
             R"doc(
-                Compute the derivative of the cardinal quintic spline at a single point.
+                Compute the derivative of the quintic spline at a single point.
 
                 Args:
                     x (float): The x-coordinate to compute derivative at. Must lie within the interpolation domain.
@@ -101,16 +101,16 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuin
                     float: The derivative value.
 
                 Example:
-                    >>> interpolator = CardinalQuinticSpline(y, 0.0, 1.0)
+                    >>> interpolator = QuinticSpline(y, 0.0, 1.0)
                     >>> derivative = interpolator.compute_derivative(1.5)
             )doc",
             arg("x")
         )
         .def(
             "compute_derivative",
-            overload_cast<const VectorXd&>(&CardinalQuinticSpline::computeDerivative, const_),
+            overload_cast<const VectorXd&>(&QuinticSpline::computeDerivative, const_),
             R"doc(
-                Compute the derivative of the cardinal quintic spline at multiple points.
+                Compute the derivative of the quintic spline at multiple points.
 
                 Args:
                     x (np.array): The x-coordinates to compute derivatives at. Must lie within the interpolation domain.
@@ -119,16 +119,16 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuin
                     (np.array): The derivative values.
 
                 Example:
-                    >>> interpolator = CardinalQuinticSpline(y, 0.0, 1.0)
+                    >>> interpolator = QuinticSpline(y, 0.0, 1.0)
                     >>> derivatives = interpolator.compute_derivative([1.5, 3.5])
             )doc",
             arg("x")
         )
         .def(
             "compute_second_derivative",
-            overload_cast<const double&>(&CardinalQuinticSpline::computeSecondDerivative, const_),
+            overload_cast<const double&>(&QuinticSpline::computeSecondDerivative, const_),
             R"doc(
-                Compute the second derivative of the cardinal quintic spline at a single point.
+                Compute the second derivative of the quintic spline at a single point.
 
                 Args:
                     x (float): The x-coordinate to compute the second derivative at. Must lie within the interpolation domain.
@@ -137,16 +137,16 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuin
                     float: The second derivative value.
 
                 Example:
-                    >>> interpolator = CardinalQuinticSpline(y, 0.0, 1.0)
+                    >>> interpolator = QuinticSpline(y, 0.0, 1.0)
                     >>> second_derivative = interpolator.compute_second_derivative(1.5)
             )doc",
             arg("x")
         )
         .def(
             "compute_second_derivative",
-            overload_cast<const VectorXd&>(&CardinalQuinticSpline::computeSecondDerivative, const_),
+            overload_cast<const VectorXd&>(&QuinticSpline::computeSecondDerivative, const_),
             R"doc(
-                Compute the second derivative of the cardinal quintic spline at multiple points.
+                Compute the second derivative of the quintic spline at multiple points.
 
                 Args:
                     x (np.array): The x-coordinates to compute the second derivatives at. Must lie within the interpolation domain.
@@ -155,7 +155,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuin
                     (np.array): The second derivative values.
 
                 Example:
-                    >>> interpolator = CardinalQuinticSpline(y, 0.0, 1.0)
+                    >>> interpolator = QuinticSpline(y, 0.0, 1.0)
                     >>> second_derivatives = interpolator.compute_second_derivative([1.5, 3.5])
             )doc",
             arg("x")
