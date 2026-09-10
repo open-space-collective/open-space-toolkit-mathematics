@@ -2,9 +2,12 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline__
 #define __OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline__
 
+#include <optional>
+
 #include <boost/math/interpolators/cardinal_cubic_b_spline.hpp>
 
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Shared.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
@@ -20,6 +23,7 @@ namespace interpolator
 {
 
 using ostk::core::type::Real;
+using ostk::core::type::Shared;
 using ostk::core::type::Size;
 
 using ostk::mathematics::curvefitting::Interpolator;
@@ -27,21 +31,29 @@ using ostk::mathematics::object::VectorXd;
 
 using boost::math::interpolators::cardinal_cubic_b_spline;
 
+class NonUniformBSpline;
+
 /// @brief CubicSpline
 ///
-/// A cubic Spline interpolator is a spline where each piece is a third-degree polynomial
-/// specified in Spline form, that is by its values and first derivatives at the end points
-/// of the corresponding domain interval.
+/// A cubic spline interpolator is a spline where each piece is a third-degree polynomial
+/// specified in spline form, that is by its values and first derivatives at the end points
+/// of the corresponding domain interval. The resulting interpolant is C2 continuous.
+///
+/// The derivatives at the two end points are estimated from the data.
+///
+/// Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with
+/// a cardinal B-spline, which finds the containing interval in constant time rather than
+/// searching for it, and is therefore faster to evaluate. Which of the two is used is decided
+/// from the data and is not otherwise observable.
 ///
 /// @code{.cpp}
-///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
-///     VectorXd y = {{0.0, 1.0, 4.0, 9.0}};
+///     VectorXd x = {{0.0, 1.0, 2.0, 3.0, 4.0}};
+///     VectorXd y = {{0.0, 1.0, 4.0, 9.0, 16.0}};
 ///     CubicSpline interpolator(x, y);
 ///     double value = interpolator.evaluate(1.5);
 /// @endcode
 ///
-/// @ref
-/// https://en.wikipedia.org/wiki/Cubic_Spline_spline#:~:text=In%20numerical%20analysis%2C%20a%20cubic,of%20the%20corresponding%20domain%20interval.
+/// @ref https://en.wikipedia.org/wiki/Spline_interpolation
 class CubicSpline : public Interpolator
 {
    public:
@@ -54,8 +66,8 @@ class CubicSpline : public Interpolator
     /// @param anXVector A vector of x values
     /// @param aYVector A vector of y values
     ///
-    /// @warning The x values must be sorted in ascending order
-    /// @warning The x values must be equally spaced
+    /// @warning The x values must be sorted in strictly ascending order
+    /// @warning At least 5 data points are required
     CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector);
 
     /// @brief Constructor
@@ -68,8 +80,8 @@ class CubicSpline : public Interpolator
     /// @param x0 The first x value
     /// @param h The spacing between x values
     ///
-    /// @warning The x values must be sorted in ascending order
-    /// @warning The x values must be equally spaced
+    /// @warning The spacing must be strictly positive
+    /// @warning At least 5 data points are required
     CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h);
 
     /// @brief Destructor
@@ -120,7 +132,10 @@ class CubicSpline : public Interpolator
     virtual VectorXd computeDerivative(const VectorXd& aQueryVector) const override;
 
    private:
-    cardinal_cubic_b_spline<double> interpolator_;
+    // Exactly one of the two is engaged, depending on whether the nodes are uniformly spaced
+
+    std::optional<cardinal_cubic_b_spline<double>> cardinalInterpolator_;
+    Shared<const NonUniformBSpline> interpolator_;
 };
 
 }  // namespace interpolator

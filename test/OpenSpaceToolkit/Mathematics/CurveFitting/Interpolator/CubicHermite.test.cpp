@@ -15,8 +15,9 @@ using ostk::mathematics::curvefitting::Interpolator;
 using ostk::mathematics::curvefitting::interpolator::CubicHermite;
 using ostk::mathematics::object::VectorXd;
 
-// Reference data sampled from f(x) = x^3 - 2 * x^2 + 3 * x - 1, on a non-uniform grid.
-// A cubic Hermite spline reproduces any cubic polynomial exactly.
+// Reference data sampled from f(x) = x^3 - 2 * x^2 + 3 * x - 1, on a non-uniform grid unless
+// stated otherwise. A cubic Hermite spline reproduces any cubic polynomial exactly, whether or
+// not its nodes are uniformly spaced.
 
 class OpenSpaceToolkit_Mathematics_Interpolator_CubicHermite : public ::testing::Test
 {
@@ -63,6 +64,29 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_CubicHermite, Constructor)
 
     {
         EXPECT_THROW(CubicHermite(x_, y_, dydx_.head(5)), ostk::core::error::runtime::Wrong);
+    }
+}
+
+TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_CubicHermite, SecondConstructor)
+{
+    {
+        EXPECT_NO_THROW(CubicHermite(y_, dydx_, 0.0, 1.0));
+    }
+
+    {
+        EXPECT_THROW(CubicHermite(y_.head(1), dydx_.head(1), 0.0, 1.0), ostk::core::error::runtime::Wrong);
+    }
+
+    {
+        EXPECT_THROW(CubicHermite(y_, dydx_.head(5), 0.0, 1.0), ostk::core::error::runtime::Wrong);
+    }
+
+    {
+        EXPECT_THROW(CubicHermite(y_, dydx_, 0.0, 0.0), ostk::core::error::runtime::Wrong);
+    }
+
+    {
+        EXPECT_THROW(CubicHermite(y_, dydx_, 0.0, -1.0), ostk::core::error::runtime::Wrong);
     }
 }
 
@@ -131,5 +155,47 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_CubicHermite, ComputeDerivative
     {
         EXPECT_THROW(interpolator.computeDerivative(-1.0), std::domain_error);
         EXPECT_THROW(interpolator.computeDerivative(8.0), std::domain_error);
+    }
+}
+
+TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_CubicHermite, UniformNodes)
+{
+    // The same reference function, sampled on a uniform grid. Uniformly spaced nodes are
+    // interpolated with the cardinal implementation, which must describe the same curve.
+
+    VectorXd x(6);
+    x << 0.0, 1.0, 2.0, 3.0, 4.0, 5.0;
+
+    VectorXd y(6);
+    y << -1.0, 1.0, 5.0, 17.0, 43.0, 89.0;
+
+    VectorXd dydx(6);
+    dydx << 3.0, 2.0, 7.0, 18.0, 35.0, 58.0;
+
+    const CubicHermite interpolator = {x, y, dydx};
+
+    {
+        EXPECT_NEAR(interpolator.evaluate(1.5), 2.375, 1e-9);
+        EXPECT_NEAR(interpolator.evaluate(3.5), 27.875, 1e-9);
+
+        EXPECT_NEAR(interpolator.computeDerivative(1.5), 3.75, 1e-9);
+        EXPECT_NEAR(interpolator.computeDerivative(3.5), 25.75, 1e-9);
+    }
+
+    {
+        // Both constructors describe the same interpolant
+
+        const CubicHermite otherInterpolator = {y, dydx, 0.0, 1.0};
+
+        EXPECT_NEAR(interpolator.evaluate(1.5), otherInterpolator.evaluate(1.5), 1e-12);
+        EXPECT_NEAR(interpolator.computeDerivative(1.5), otherInterpolator.computeDerivative(1.5), 1e-12);
+    }
+
+    {
+        EXPECT_THROW(interpolator.evaluate(-1.0), std::domain_error);
+        EXPECT_THROW(interpolator.evaluate(6.0), std::domain_error);
+
+        EXPECT_THROW(interpolator.computeDerivative(-1.0), std::domain_error);
+        EXPECT_THROW(interpolator.computeDerivative(6.0), std::domain_error);
     }
 }

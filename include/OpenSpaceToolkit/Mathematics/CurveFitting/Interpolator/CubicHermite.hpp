@@ -2,6 +2,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator_CubicHermite__
 #define __OpenSpaceToolkit_Mathematics_Interpolator_CubicHermite__
 
+#include <optional>
 #include <vector>
 
 #include <boost/math/interpolators/cubic_hermite.hpp>
@@ -27,13 +28,19 @@ using ostk::core::type::Size;
 using ostk::mathematics::curvefitting::Interpolator;
 using ostk::mathematics::object::VectorXd;
 
+using boost::math::interpolators::cardinal_cubic_hermite;
 using boost::math::interpolators::cubic_hermite;
 
 /// @brief CubicHermite
 ///
 /// A cubic Hermite spline is a piecewise third-degree polynomial which matches both the
 /// value and the first derivative of the underlying function at every node. The resulting
-/// interpolant is C1 continuous. Nodes may be arbitrarily (non-uniformly) spaced.
+/// interpolant is C1 continuous.
+///
+/// Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with
+/// a cardinal Hermite spline, which finds the containing interval in constant time rather
+/// than searching for it, and is therefore faster to evaluate. Which of the two is used is
+/// decided from the data and is not otherwise observable.
 ///
 /// @code{.cpp}
 ///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
@@ -59,6 +66,20 @@ class CubicHermite : public Interpolator
     ///
     /// @warning The x values must be sorted in strictly ascending order
     CubicHermite(const VectorXd& anXVector, const VectorXd& aYVector, const VectorXd& aDyDxVector);
+
+    /// @brief Constructor
+    ///
+    /// @code{.cpp}
+    ///                     CubicHermite cubicHermite(y, dydx, 0.0, 1.0);
+    /// @endcode
+    ///
+    /// @param aYVector A vector of y values
+    /// @param aDyDxVector A vector of first derivative values
+    /// @param x0 The first x value
+    /// @param h The spacing between x values
+    ///
+    /// @warning The spacing must be strictly positive
+    CubicHermite(const VectorXd& aYVector, const VectorXd& aDyDxVector, const Real& x0, const Real& h);
 
     /// @brief Destructor
     ///
@@ -116,11 +137,10 @@ class CubicHermite : public Interpolator
     virtual VectorXd computeDerivative(const VectorXd& aQueryVector) const override;
 
    private:
-    cubic_hermite<std::vector<double>> interpolator_;
+    // Exactly one of the two is engaged, depending on whether the nodes are uniformly spaced
 
-    static cubic_hermite<std::vector<double>> BuildInterpolator(
-        const VectorXd& anXVector, const VectorXd& aYVector, const VectorXd& aDyDxVector
-    );
+    std::optional<cardinal_cubic_hermite<std::vector<double>>> cardinalInterpolator_;
+    std::optional<cubic_hermite<std::vector<double>>> interpolator_;
 };
 
 }  // namespace interpolator

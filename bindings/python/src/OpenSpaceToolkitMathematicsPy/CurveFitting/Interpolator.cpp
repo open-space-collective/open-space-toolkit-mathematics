@@ -3,14 +3,12 @@
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/BarycentricRational.cpp>
-#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CardinalCubicHermite.cpp>
-#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CardinalQuadraticSpline.cpp>
-#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CardinalQuinticHermite.cpp>
-#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CardinalQuinticSpline.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CubicHermite.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CubicSpline.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/Linear.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/QuadraticSpline.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/QuinticHermite.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/QuinticSpline.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/ZeroOrder.cpp>
 
 using namespace pybind11;
@@ -60,11 +58,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
         .value("Linear", Interpolator::Type::Linear)
         .value("ZeroOrder", Interpolator::Type::ZeroOrder)
         .value("CubicHermite", Interpolator::Type::CubicHermite)
-        .value("CardinalCubicHermite", Interpolator::Type::CardinalCubicHermite)
         .value("QuinticHermite", Interpolator::Type::QuinticHermite)
-        .value("CardinalQuinticHermite", Interpolator::Type::CardinalQuinticHermite)
-        .value("CardinalQuadraticSpline", Interpolator::Type::CardinalQuadraticSpline)
-        .value("CardinalQuinticSpline", Interpolator::Type::CardinalQuinticSpline)
+        .value("QuadraticSpline", Interpolator::Type::QuadraticSpline)
+        .value("QuinticSpline", Interpolator::Type::QuinticSpline)
 
         ;
 
@@ -217,13 +213,11 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
 
     // Add object to python "interpolator" submodules
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricRational(interpolator);
-    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalCubicHermite(interpolator);
-    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuadraticSpline(interpolator);
-    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuinticHermite(interpolator);
-    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CardinalQuinticSpline(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicHermite(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuadraticSpline(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermite(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticSpline(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_ZeroOrder(interpolator);
 }
