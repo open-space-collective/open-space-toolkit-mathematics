@@ -16,15 +16,22 @@ def interpolator() -> CubicSpline:
 
 
 class TestCubicSpline:
-    def test_constructor_success(self, interpolator: CubicSpline):
+    def test_constructor_success(
+        self,
+        interpolator: CubicSpline,
+    ):
         assert interpolator is not None
         assert isinstance(interpolator, Interpolator)
         assert isinstance(interpolator, CubicSpline)
 
-    def test_default_constructor_2(self):
+    def test_default_constructor_2(
+        self,
+    ):
         CubicSpline(y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0], x_0=0.0, h=1.0)
 
-    def test_evaluate(self):
+    def test_evaluate(
+        self,
+    ):
         y: list[float] = [
             -4.632122947015880607e06,
             -4.638362755234977230e06,
@@ -44,7 +51,9 @@ class TestCubicSpline:
 
         assert pytest.approx(interpolator.evaluate(np.linspace(0.0, 90.0, 10))) == y
 
-    def test_compute_derivative(self):
+    def test_compute_derivative(
+        self,
+    ):
         interpolator = CubicSpline(
             x=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0],
             y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0],

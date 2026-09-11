@@ -69,3 +69,23 @@ class TestInterpolator:
         assert interpolator is not None
         assert isinstance(interpolator, Interpolator)
         assert interpolator.get_interpolation_type() == parametrized_interpolation_type
+
+    @pytest.mark.parametrize(
+        "parametrized_interpolation_type",
+        [
+            Interpolator.Type.CubicHermite,
+            Interpolator.Type.QuinticHermite,
+        ],
+    )
+    def test_generate_interpolators_hermite_failure(
+        self,
+        parametrized_interpolation_type: Interpolator.Type,
+    ):
+        # The Hermite interpolators additionally require derivative data
+
+        with pytest.raises(Exception):
+            Interpolator.generate_interpolator(
+                interpolation_type=parametrized_interpolation_type,
+                x=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0],
+                y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0],
+            )
