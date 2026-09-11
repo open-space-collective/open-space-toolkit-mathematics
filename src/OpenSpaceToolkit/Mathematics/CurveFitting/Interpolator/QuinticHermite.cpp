@@ -1,9 +1,6 @@
 /// Apache License 2.0
 
-#include <algorithm>
-#include <limits>
-#include <sstream>
-#include <stdexcept>
+#include <boost/version.hpp>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
@@ -21,10 +18,7 @@ namespace interpolator
 QuinticHermite::QuinticHermite(
     const VectorXd& anXVector, const VectorXd& aYVector, const VectorXd& aDyDxVector, const VectorXd& aD2yDx2Vector
 )
-    : Interpolator(Interpolator::Type::QuinticHermite),
-      x0_(0.0),
-      h_(0.0),
-      size_(aYVector.size())
+    : Interpolator(Interpolator::Type::QuinticHermite)
 {
     if (aYVector.size() < 2)
     {
@@ -52,7 +46,13 @@ QuinticHermite::QuinticHermite(
 
         const double h = (anXVector(size - 1) - anXVector(0)) / double(size - 1);
 
-        this->initializeCardinalInterpolator(aYVector, aDyDxVector, aD2yDx2Vector, anXVector(0), h);
+        cardinalInterpolator_.emplace(
+            std::vector<double>(aYVector.begin(), aYVector.end()),
+            std::vector<double>(aDyDxVector.begin(), aDyDxVector.end()),
+            std::vector<double>(aD2yDx2Vector.begin(), aD2yDx2Vector.end()),
+            anXVector(0),
+            h
+        );
     }
     else
     {
@@ -68,10 +68,7 @@ QuinticHermite::QuinticHermite(
 QuinticHermite::QuinticHermite(
     const VectorXd& aYVector, const VectorXd& aDyDxVector, const VectorXd& aD2yDx2Vector, const Real& x0, const Real& h
 )
-    : Interpolator(Interpolator::Type::QuinticHermite),
-      x0_(0.0),
-      h_(0.0),
-      size_(aYVector.size())
+    : Interpolator(Interpolator::Type::QuinticHermite)
 {
     if (aYVector.size() < 2)
     {
@@ -93,7 +90,13 @@ QuinticHermite::QuinticHermite(
         throw ostk::core::error::runtime::Wrong("h");
     }
 
-    this->initializeCardinalInterpolator(aYVector, aDyDxVector, aD2yDx2Vector, x0, h);
+    cardinalInterpolator_.emplace(
+        std::vector<double>(aYVector.begin(), aYVector.end()),
+        std::vector<double>(aDyDxVector.begin(), aDyDxVector.end()),
+        std::vector<double>(aD2yDx2Vector.begin(), aD2yDx2Vector.end()),
+        x0,
+        h
+    );
 }
 
 QuinticHermite::~QuinticHermite() {}
@@ -112,13 +115,12 @@ VectorXd QuinticHermite::evaluate(const VectorXd& aQueryVector) const
 
 double QuinticHermite::evaluate(const double& aQueryValue) const
 {
-    return cardinalInterpolator_.has_value() ? (*cardinalInterpolator_)(this->normalizeQueryValue(aQueryValue))
-                                             : (*interpolator_)(aQueryValue);
+    return cardinalInterpolator_.has_value() ? (*cardinalInterpolator_)(aQueryValue) : (*interpolator_)(aQueryValue);
 }
 
 double QuinticHermite::computeDerivative(const double& aQueryValue) const
 {
-    return cardinalInterpolator_.has_value() ? cardinalInterpolator_->prime(this->normalizeQueryValue(aQueryValue)) / h_
+    return cardinalInterpolator_.has_value() ? cardinalInterpolator_->prime(aQueryValue)
                                              : interpolator_->prime(aQueryValue);
 }
 
@@ -136,9 +138,20 @@ VectorXd QuinticHermite::computeDerivative(const VectorXd& aQueryVector) const
 
 double QuinticHermite::computeSecondDerivative(const double& aQueryValue) const
 {
-    return cardinalInterpolator_.has_value()
-             ? cardinalInterpolator_->double_prime(this->normalizeQueryValue(aQueryValue)) / (h_ * h_)
-             : interpolator_->double_prime(aQueryValue);
+    if (cardinalInterpolator_.has_value())
+    {
+#if BOOST_VERSION < 109300
+        throw ostk::core::error::RuntimeError(
+            "The second derivative of a quintic Hermite interpolator with uniformly spaced nodes is only available "
+            "with Boost 1.93 or later: boost::math::interpolators::cardinal_quintic_hermite::double_prime is wrong "
+            "for a spacing other than 1 in earlier versions."
+        );
+#else
+        return cardinalInterpolator_->double_prime(aQueryValue);
+#endif
+    }
+
+    return interpolator_->double_prime(aQueryValue);
 }
 
 VectorXd QuinticHermite::computeSecondDerivative(const VectorXd& aQueryVector) const
@@ -151,50 +164,6 @@ VectorXd QuinticHermite::computeSecondDerivative(const VectorXd& aQueryVector) c
     }
 
     return yOutput;
-}
-
-void QuinticHermite::initializeCardinalInterpolator(
-    const VectorXd& aYVector, const VectorXd& aDyDxVector, const VectorXd& aD2yDx2Vector, const Real& x0, const Real& h
-)
-{
-    x0_ = x0;
-    h_ = h;
-
-    // Scale the derivatives with respect to the normalized abscissa s = (x - x0) / h
-
-    std::vector<double> scaledDyDx(aDyDxVector.size());
-    std::vector<double> scaledD2yDx2(aD2yDx2Vector.size());
-
-    for (int i = 0; i < aYVector.size(); ++i)
-    {
-        scaledDyDx[i] = aDyDxVector(i) * h_;
-        scaledD2yDx2[i] = aD2yDx2Vector(i) * h_ * h_;
-    }
-
-    cardinalInterpolator_.emplace(
-        std::vector<double>(aYVector.begin(), aYVector.end()), std::move(scaledDyDx), std::move(scaledD2yDx2), 0.0, 1.0
-    );
-}
-
-double QuinticHermite::normalizeQueryValue(const double& aQueryValue) const
-{
-    const double sf = double(size_) - 1.0;
-    const double xf = x0_ + sf * h_;
-
-    if ((aQueryValue < x0_) || (aQueryValue > xf))
-    {
-        std::ostringstream oss;
-
-        oss.precision(std::numeric_limits<double>::digits10 + 3);
-        oss << "Requested abscissa x = " << aQueryValue << ", which is outside of allowed range [" << x0_ << ", " << xf
-            << "]";
-
-        throw std::domain_error(oss.str());
-    }
-
-    // Guard against the normalized value falling marginally outside of [0, size - 1] due to rounding
-
-    return std::min(std::max((aQueryValue - x0_) / h_, 0.0), sf);
 }
 
 }  // namespace interpolator

@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <boost/version.hpp>
+
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
@@ -228,9 +230,6 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite, UniformNodes)
 
         EXPECT_NEAR(interpolator.computeDerivative(1.5), 4.5, 1e-9);
         EXPECT_NEAR(interpolator.computeDerivative(3.5), 150.5, 1e-9);
-
-        EXPECT_NEAR(interpolator.computeSecondDerivative(1.5), 21.0, 1e-8);
-        EXPECT_NEAR(interpolator.computeSecondDerivative(3.5), 141.0, 1e-8);
     }
 
     {
@@ -240,7 +239,6 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite, UniformNodes)
 
         EXPECT_NEAR(interpolator.evaluate(1.5), otherInterpolator.evaluate(1.5), 1e-12);
         EXPECT_NEAR(interpolator.computeDerivative(1.5), otherInterpolator.computeDerivative(1.5), 1e-12);
-        EXPECT_NEAR(interpolator.computeSecondDerivative(1.5), otherInterpolator.computeSecondDerivative(1.5), 1e-12);
     }
 
     {
@@ -249,16 +247,12 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite, UniformNodes)
 
         EXPECT_THROW(interpolator.computeDerivative(-1.0), std::domain_error);
         EXPECT_THROW(interpolator.computeDerivative(6.0), std::domain_error);
-
-        EXPECT_THROW(interpolator.computeSecondDerivative(-1.0), std::domain_error);
-        EXPECT_THROW(interpolator.computeSecondDerivative(6.0), std::domain_error);
     }
 }
 
 TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite, NonUnitSpacing)
 {
-    // The cardinal path rescales the abscissa to a unit grid to work around a Boost defect in
-    // double_prime, so a spacing other than 1 is worth exercising on its own
+    // The same reference function, sampled on a uniform grid with a spacing other than 1
 
     VectorXd x(6);
     x << 0.0, 2.0, 4.0, 6.0, 8.0, 10.0;
@@ -276,9 +270,100 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite, NonUnitSpacing)
 
     EXPECT_NEAR(interpolator.evaluate(3.0), 56.0, 1e-8);
     EXPECT_NEAR(interpolator.computeDerivative(3.0), 90.0, 1e-8);
-    EXPECT_NEAR(interpolator.computeSecondDerivative(3.0), 102.0, 1e-7);
 
     EXPECT_NEAR(interpolator.evaluate(7.0), 2256.0, 1e-8);
     EXPECT_NEAR(interpolator.computeDerivative(7.0), 1330.0, 1e-8);
-    EXPECT_NEAR(interpolator.computeSecondDerivative(7.0), 582.0, 1e-7);
+
+    {
+        // Both constructors describe the same interpolant
+
+        const QuinticHermite otherInterpolator = {y, dydx, d2ydx2, 0.0, 2.0};
+
+        EXPECT_NEAR(interpolator.evaluate(3.0), otherInterpolator.evaluate(3.0), 1e-12);
+        EXPECT_NEAR(interpolator.computeDerivative(3.0), otherInterpolator.computeDerivative(3.0), 1e-12);
+    }
+}
+
+TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_QuinticHermite, ComputeSecondDerivativeUniformNodes)
+{
+    // boost::math::interpolators::cardinal_quintic_hermite::double_prime is wrong for a spacing other than 1 up to
+    // Boost 1.92 (boostorg/math#1101). The second derivative of uniformly spaced nodes is therefore withheld until
+    // the fix ships with Boost 1.93.
+
+    VectorXd x(6);
+    x << 0.0, 2.0, 4.0, 6.0, 8.0, 10.0;
+
+    VectorXd y(6);
+    y << 2.0, 6.0, 210.0, 1190.0, 3906.0, 9702.0;
+
+    VectorXd dydx(6);
+    dydx << 0.0, 20.0, 232.0, 828.0, 2000.0, 3940.0;
+
+    VectorXd d2ydx2(6);
+    d2ydx2 << -6.0, 42.0, 186.0, 426.0, 762.0, 1194.0;
+
+    const QuinticHermite interpolator = {x, y, dydx, d2ydx2};
+    const QuinticHermite otherInterpolator = {y, dydx, d2ydx2, 0.0, 2.0};
+
+    VectorXd query(2);
+    query << 3.0, 7.0;
+
+#if BOOST_VERSION < 109300
+
+    {
+        EXPECT_THROW(interpolator.computeSecondDerivative(3.0), ostk::core::error::RuntimeError);
+        EXPECT_THROW(interpolator.computeSecondDerivative(query), ostk::core::error::RuntimeError);
+
+        EXPECT_THROW(otherInterpolator.computeSecondDerivative(3.0), ostk::core::error::RuntimeError);
+        EXPECT_THROW(otherInterpolator.computeSecondDerivative(query), ostk::core::error::RuntimeError);
+    }
+
+    {
+        // A unit spacing is not special-cased
+
+        const QuinticHermite unitSpacingInterpolator = {y_, dydx_, d2ydx2_, 0.0, 1.0};
+
+        EXPECT_THROW(unitSpacingInterpolator.computeSecondDerivative(1.5), ostk::core::error::RuntimeError);
+    }
+
+    {
+        // The error names the Boost version to update to
+
+        try
+        {
+            interpolator.computeSecondDerivative(3.0);
+
+            FAIL() << "Expected ostk::core::error::RuntimeError";
+        }
+        catch (const ostk::core::error::RuntimeError& anError)
+        {
+            EXPECT_NE(std::string::npos, std::string(anError.getMessage()).find("Boost 1.93"));
+        }
+    }
+
+#else
+
+    {
+        EXPECT_NEAR(interpolator.computeSecondDerivative(3.0), 102.0, 1e-7);
+        EXPECT_NEAR(interpolator.computeSecondDerivative(7.0), 582.0, 1e-7);
+
+        const VectorXd secondDerivatives = interpolator.computeSecondDerivative(query);
+
+        EXPECT_EQ(2, secondDerivatives.size());
+        EXPECT_NEAR(secondDerivatives(0), 102.0, 1e-7);
+        EXPECT_NEAR(secondDerivatives(1), 582.0, 1e-7);
+    }
+
+    {
+        // Both constructors describe the same interpolant
+
+        EXPECT_NEAR(interpolator.computeSecondDerivative(3.0), otherInterpolator.computeSecondDerivative(3.0), 1e-12);
+    }
+
+    {
+        EXPECT_THROW(interpolator.computeSecondDerivative(-1.0), std::domain_error);
+        EXPECT_THROW(interpolator.computeSecondDerivative(11.0), std::domain_error);
+    }
+
+#endif
 }

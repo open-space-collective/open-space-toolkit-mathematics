@@ -40,7 +40,9 @@ using boost::math::interpolators::quintic_hermite;
 /// Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with
 /// a cardinal Hermite spline, which finds the containing interval in constant time rather
 /// than searching for it, and is therefore faster to evaluate. Which of the two is used is
-/// decided from the data and is not otherwise observable.
+/// decided from the data and is not otherwise observable, with one exception: the second
+/// derivative of the cardinal Hermite spline is only available with Boost 1.93 or later
+/// (see computeSecondDerivative).
 ///
 /// @code{.cpp}
 ///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
@@ -157,6 +159,8 @@ class QuinticHermite : public Interpolator
     /// @return The second derivative at the given x value
     ///
     /// @warning The query value must lie within the interpolation domain
+    /// @warning Throws for uniformly spaced nodes when built against Boost older than 1.93, whose
+    ///          cardinal quintic Hermite spline computes a wrong second derivative for a spacing other than 1
     double computeSecondDerivative(const double& aQueryValue) const;
 
     /// @brief Compute the second derivatives at multiple query values
@@ -169,33 +173,20 @@ class QuinticHermite : public Interpolator
     /// @return A vector of second derivatives at the given x values
     ///
     /// @warning The query values must lie within the interpolation domain
+    /// @warning Throws for uniformly spaced nodes when built against Boost older than 1.93, whose
+    ///          cardinal quintic Hermite spline computes a wrong second derivative for a spacing other than 1
     VectorXd computeSecondDerivative(const VectorXd& aQueryVector) const;
 
    private:
     // Exactly one of the two is engaged, depending on whether the nodes are uniformly spaced.
     //
-    // The cardinal interpolant is built over the normalized abscissa s = (x - x0) / h, i.e. over the unit grid
-    // s = 0, 1, ..., n - 1, with the derivatives scaled accordingly, and the results scaled back on the way out.
-    // This is needed because boost::math::interpolators::cardinal_quintic_hermite::double_prime omits the 1 / h^2
-    // factor on its first derivative terms, and is therefore only correct for a unit spacing. Still unfixed as of
-    // Boost 1.92 (verified on the develop branch too), so this cannot simply be dropped on a Boost upgrade.
+    // boost::math::interpolators::cardinal_quintic_hermite::double_prime omits the 1 / h^2 factor on its first
+    // derivative terms up to and including Boost 1.92, and is therefore only correct for a unit spacing. The fix
+    // (boostorg/math#1101) is on the Boost develop branch and ships with Boost 1.93, so the second derivative of
+    // the cardinal interpolant is withheld when built against an older Boost.
 
     std::optional<cardinal_quintic_hermite<std::vector<double>>> cardinalInterpolator_;
     std::optional<quintic_hermite<std::vector<double>>> interpolator_;
-
-    double x0_;
-    double h_;
-    Size size_;
-
-    void initializeCardinalInterpolator(
-        const VectorXd& aYVector,
-        const VectorXd& aDyDxVector,
-        const VectorXd& aD2yDx2Vector,
-        const Real& x0,
-        const Real& h
-    );
-
-    double normalizeQueryValue(const double& aQueryValue) const;
 };
 
 }  // namespace interpolator

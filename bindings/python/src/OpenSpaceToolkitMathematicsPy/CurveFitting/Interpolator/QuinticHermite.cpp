@@ -148,6 +148,11 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermi
                 Returns:
                     float: The second derivative value.
 
+                Note:
+                    Only available for uniformly spaced nodes when built against Boost 1.93 or later. With an
+                    older Boost, a RuntimeError is raised instead, as Boost's cardinal quintic Hermite spline
+                    computes a wrong second derivative for a spacing other than 1 in those versions.
+
                 Example:
                     >>> interpolator = QuinticHermite([0.0, 1.0], [0.0, 1.0], [0.0, 2.0], [2.0, 2.0])
                     >>> second_derivative = interpolator.compute_second_derivative(0.5)
@@ -165,6 +170,11 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermi
 
                 Returns:
                     (np.array): The second derivative values.
+
+                Note:
+                    Only available for uniformly spaced nodes when built against Boost 1.93 or later. With an
+                    older Boost, a RuntimeError is raised instead, as Boost's cardinal quintic Hermite spline
+                    computes a wrong second derivative for a spacing other than 1 in those versions.
 
                 Example:
                     >>> interpolator = QuinticHermite([0.0, 1.0], [0.0, 1.0], [0.0, 2.0], [2.0, 2.0])
