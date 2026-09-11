@@ -161,6 +161,4 @@ class TestCubicHermite:
             h=1.0,
         )
 
-        assert other.evaluate(1.5) == pytest.approx(
-            interpolator.evaluate(1.5), abs=1e-12
-        )
+        assert other.evaluate(1.5) == pytest.approx(interpolator.evaluate(1.5), abs=1e-12)
