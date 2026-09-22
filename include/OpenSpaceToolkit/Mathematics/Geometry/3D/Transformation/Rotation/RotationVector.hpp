@@ -197,6 +197,22 @@ class RotationVector
     /// @return                 Rotation Vector
     static RotationVector Quaternion(const rotation::Quaternion& aQuaternion);
 
+    /// @brief                  Construct Rotation Vector from Quaternion, optionally rectifying it first
+    ///
+    ///                         When the rectify flag is set, the quaternion is normalized and rectified (positive
+    ///                         scalar part) before conversion. The resulting rotation angle is then within [0, π].
+    ///                         When the flag is not set, the quaternion must already be unitary and the resulting
+    ///                         rotation angle is within [0, 2π].
+    ///
+    /// @code
+    ///                         RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, -0.7071, -0.7071), true);
+    /// @endcode
+    ///
+    /// @param                  [in] aQuaternion A quaternion
+    /// @param                  [in] aRectifyFlag If true, normalize and rectify the quaternion before conversion
+    /// @return                 Rotation Vector
+    static RotationVector Quaternion(const rotation::Quaternion& aQuaternion, const bool& aRectifyFlag);
+
     /// @brief                  Construct Rotation Vector from Rotation Matrix
     ///
     /// @code

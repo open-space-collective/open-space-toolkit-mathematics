@@ -546,6 +546,112 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
     }
 }
 
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Quaternion_Rectify)
+{
+    // Flag disabled: identical to the single-argument overload
+
+    {
+        EXPECT_EQ(RotationVector::Unit(), RotationVector::Quaternion(Quaternion::Unit(), false));
+
+        const Quaternion quaternion = Quaternion::XYZS(0.9999619230641713, 0.0, 0.0, -0.008726535498373997);
+
+        EXPECT_EQ(RotationVector::Quaternion(quaternion), RotationVector::Quaternion(quaternion, false));
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(181.0)), RotationVector::Quaternion(quaternion, false)
+        );
+
+        EXPECT_ANY_THROW(RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 1.0, 1.0), false));
+        EXPECT_ANY_THROW(RotationVector::Quaternion(Quaternion::Undefined(), false));
+    }
+
+    // Flag enabled: unit quaternion
+
+    {
+        EXPECT_EQ(RotationVector::Unit(), RotationVector::Quaternion(Quaternion::Unit(), true));
+        EXPECT_EQ(RotationVector::Unit(), RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.0, -1.0), true));
+        EXPECT_EQ(RotationVector::Unit(), RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.0, 2.0), true));
+    }
+
+    // Flag enabled: negative scalar part is rectified, yielding the short-way rotation (angle in [0, π])
+
+    {
+        const Quaternion quaternion = Quaternion::XYZS(0.9999619230641713, 0.0, 0.0, -0.008726535498373997);
+
+        const RotationVector rotationVector = RotationVector::Quaternion(quaternion, true);
+
+        EXPECT_EQ(RotationVector::Quaternion(quaternion.toRectify()), rotationVector);
+        EXPECT_NEAR(179.0, rotationVector.getAngle().inDegrees(), 1e-9);
+        EXPECT_NEAR(-1.0, rotationVector.getAxis().x(), 1e-12);
+        EXPECT_NEAR(0.0, rotationVector.getAxis().y(), 1e-12);
+        EXPECT_NEAR(0.0, rotationVector.getAxis().z(), 1e-12);
+    }
+
+    {
+        const Quaternion quaternion = Quaternion::XYZS(0.0, 0.0, -0.7071067811865476, -0.7071067811865476);
+
+        const RotationVector rotationVector = RotationVector::Quaternion(quaternion, true);
+
+        EXPECT_NEAR(90.0, rotationVector.getAngle().inDegrees(), 1e-9);
+        EXPECT_NEAR(0.0, rotationVector.getAxis().x(), 1e-12);
+        EXPECT_NEAR(0.0, rotationVector.getAxis().y(), 1e-12);
+        EXPECT_NEAR(1.0, rotationVector.getAxis().z(), 1e-12);
+
+        EXPECT_NEAR(270.0, RotationVector::Quaternion(quaternion, false).getAngle().inDegrees(), 1e-9);
+    }
+
+    // Flag enabled: non-unitary quaternion is normalized instead of throwing
+
+    {
+        const Quaternion quaternion = Quaternion::XYZS(0.0, 0.0, 1.0, 1.0);
+
+        EXPECT_ANY_THROW(RotationVector::Quaternion(quaternion));
+
+        const RotationVector rotationVector = RotationVector::Quaternion(quaternion, true);
+
+        EXPECT_NEAR(90.0, rotationVector.getAngle().inDegrees(), 1e-9);
+        EXPECT_NEAR(0.0, rotationVector.getAxis().x(), 1e-12);
+        EXPECT_NEAR(0.0, rotationVector.getAxis().y(), 1e-12);
+        EXPECT_NEAR(1.0, rotationVector.getAxis().z(), 1e-12);
+    }
+
+    {
+        const Quaternion quaternion = Quaternion::XYZS(0.0, -2.0, 0.0, -2.0);
+
+        const RotationVector rotationVector = RotationVector::Quaternion(quaternion, true);
+
+        EXPECT_NEAR(90.0, rotationVector.getAngle().inDegrees(), 1e-9);
+        EXPECT_NEAR(0.0, rotationVector.getAxis().x(), 1e-12);
+        EXPECT_NEAR(1.0, rotationVector.getAxis().y(), 1e-12);
+        EXPECT_NEAR(0.0, rotationVector.getAxis().z(), 1e-12);
+    }
+
+    // Flag enabled: rectified result is always the short-way rotation
+
+    {
+        for (const auto angle_deg : {10.0, 90.0, 179.0, 181.0, 200.0, 270.0, 350.0})
+        {
+            const RotationVector rotationVector = RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(angle_deg));
+            const Quaternion quaternion = Quaternion::RotationVector(rotationVector);
+
+            const RotationVector rectifiedRotationVector = RotationVector::Quaternion(quaternion, true);
+
+            EXPECT_LE(rectifiedRotationVector.getAngle().inRadians(), Angle::Pi().inRadians() + 1e-12);
+            EXPECT_GE(rectifiedRotationVector.getAngle().inRadians(), 0.0);
+
+            // Same physical rotation as the original
+
+            EXPECT_TRUE(Quaternion::RotationVector(rectifiedRotationVector).isNear(quaternion, Angle::Degrees(1e-9)));
+        }
+    }
+
+    // Flag enabled: degenerate inputs still throw
+
+    {
+        EXPECT_ANY_THROW(RotationVector::Quaternion(Quaternion::Undefined(), true));
+        EXPECT_ANY_THROW(RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.0, 0.0), true));
+    }
+}
+
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, EulerAngle)
 {
     {

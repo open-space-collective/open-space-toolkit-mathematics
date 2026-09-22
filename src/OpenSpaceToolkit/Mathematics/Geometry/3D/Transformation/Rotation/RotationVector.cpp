@@ -177,23 +177,34 @@ RotationVector RotationVector::Z(const Angle& anAngle)
 
 RotationVector RotationVector::Quaternion(const rotation::Quaternion& aQuaternion)
 {
+    return RotationVector::Quaternion(aQuaternion, false);
+}
+
+RotationVector RotationVector::Quaternion(const rotation::Quaternion& aQuaternion, const bool& aRectifyFlag)
+{
     if (!aQuaternion.isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Quaternion");
     }
 
-    if (!aQuaternion.isUnitary())
+    rotation::Quaternion quaternion = aQuaternion;
+
+    if (aRectifyFlag)
+    {
+        quaternion.normalize().rectify();
+    }
+    else if (!quaternion.isUnitary())
     {
         throw ostk::core::error::RuntimeError("Quaternion is not unitary.");
     }
 
-    if ((aQuaternion == Quaternion::Unit()) || (aQuaternion.s().abs() == 1.0))
+    if ((quaternion == Quaternion::Unit()) || (quaternion.s().abs() == 1.0))
     {
         return RotationVector::Unit();
     }
 
-    const Vector3d axis = (aQuaternion.getVectorPart() / (1.0 - aQuaternion.s() * aQuaternion.s()).sqrt()).normalized();
-    const Angle angle = Angle::Radians(2.0 * std::acos(aQuaternion.s()));
+    const Vector3d axis = (quaternion.getVectorPart() / (1.0 - quaternion.s() * quaternion.s()).sqrt()).normalized();
+    const Angle angle = Angle::Radians(2.0 * std::acos(quaternion.s()));
 
     return RotationVector(axis, angle);
 }
