@@ -43,5 +43,21 @@ class TestRotationVector:
     def test_quaternion_success(self, rotation_vector: RotationVector):
         assert RotationVector.quaternion(Quaternion.unit()) == rotation_vector
 
+    def test_quaternion_rectify_success(self, rotation_vector: RotationVector):
+        assert RotationVector.quaternion(Quaternion.unit(), False) == rotation_vector
+        assert RotationVector.quaternion(Quaternion.unit(), True) == rotation_vector
+        assert (
+            RotationVector.quaternion(Quaternion.unit(), rectify=True) == rotation_vector
+        )
+
+        quaternion: Quaternion = Quaternion.xyzs(0.0, 0.0, -1.0, -1.0)
+
+        with pytest.raises(RuntimeError):
+            RotationVector.quaternion(quaternion, rectify=False)
+
+        assert isinstance(
+            RotationVector.quaternion(quaternion, rectify=True), RotationVector
+        )
+
     def test_euler_angle_success(self, rotation_vector: RotationVector):
         assert RotationVector.euler_angle(EulerAngle.unit()) == rotation_vector

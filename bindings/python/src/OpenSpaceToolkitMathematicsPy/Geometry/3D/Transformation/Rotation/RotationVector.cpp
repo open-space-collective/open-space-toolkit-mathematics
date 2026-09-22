@@ -13,6 +13,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
     using ostk::core::type::String;
 
     using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
     using ostk::mathematics::object::Vector3d;
 
@@ -239,9 +240,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         )
         .def_static(
             "quaternion",
-            &RotationVector::Quaternion,
+            overload_cast<const Quaternion&>(&RotationVector::Quaternion),
             R"doc(
                 Create a rotation vector from a quaternion.
+
+                The quaternion must be unitary. The resulting rotation angle is within [0, 2π].
 
                 Args:
                     quaternion (Quaternion): The quaternion to convert.
@@ -254,6 +257,31 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
                     >>> rot_vector = RotationVector.quaternion(q)
             )doc",
             arg("quaternion")
+        )
+        .def_static(
+            "quaternion",
+            overload_cast<const Quaternion&, const bool&>(&RotationVector::Quaternion),
+            R"doc(
+                Create a rotation vector from a quaternion, optionally rectifying it first.
+
+                When `rectify` is True, the quaternion is normalized and rectified (positive scalar part)
+                before conversion, so the resulting rotation angle is within [0, π].
+                When `rectify` is False, the quaternion must already be unitary and the resulting rotation
+                angle is within [0, 2π].
+
+                Args:
+                    quaternion (Quaternion): The quaternion to convert.
+                    rectify (bool): If True, normalize and rectify the quaternion before conversion.
+
+                Returns:
+                    RotationVector: The equivalent rotation vector.
+
+                Example:
+                    >>> q = Quaternion.xyzs(0.0, 0.0, -0.70710678118, -0.70710678118)
+                    >>> rot_vector = RotationVector.quaternion(q, rectify=True)
+            )doc",
+            arg("quaternion"),
+            arg("rectify")
         )
         .def_static(
             "rotation_matrix",
