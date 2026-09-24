@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Segment(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Segment(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
@@ -35,8 +35,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Segment(pybind11::m
             arg("second_point")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Segment& self, const Segment& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Segment& self, const Segment& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Segment>))
         .def("__repr__", &(shiftToString<Segment>))

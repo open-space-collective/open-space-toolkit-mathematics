@@ -5,7 +5,7 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformation/Rotation/RotationVector.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation(nanobind::module_& aModule)
 {
     // Create "rotation" python submodule
     auto rotation = aModule.def_submodule("rotation");

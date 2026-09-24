@@ -4,7 +4,7 @@
 
 // #include <OpenSpaceToolkitMathematicsPy/Object/Vector.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Object(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Object(nanobind::module_& aModule)
 {
     // Create "object" python submodule
     auto object = aModule.def_submodule("object");

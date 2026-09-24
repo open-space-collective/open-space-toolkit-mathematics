@@ -3,9 +3,9 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Real;
     using ostk::core::type::Size;
@@ -48,8 +48,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
             arg("angle")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Cone& self, const Cone& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Cone& self, const Cone& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Cone>))
         .def("__repr__", &(shiftToString<Cone>))

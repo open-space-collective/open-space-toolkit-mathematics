@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Integer;
     using ostk::core::type::Real;
@@ -36,14 +36,56 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
         )
 
         // Define methods
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Angle& self, const Angle& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Angle& self, const Angle& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self + self)
-        .def(self - self)
+        .def(
+            "__add__",
+            [](const Angle& self, const Angle& other)
+            {
+                return self + other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__sub__",
+            [](const Angle& self, const Angle& other)
+            {
+                return self - other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(+self)
-        .def(-self)
+        .def(
+            "__pos__",
+            [](const Angle& self)
+            {
+                return +self;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__neg__",
+            [](const Angle& self)
+            {
+                return -self;
+            },
+            nanobind::is_operator()
+        )
 
         // Real has default constructor deleted
         // https://docs.python.org/3/library/operator.html
@@ -84,8 +126,26 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
             is_operator()
         )
 
-        .def(self += self)
-        .def(self -= self)
+        .def(
+            "__iadd__",
+            [](Angle& self, const Angle& other) -> Angle&
+            {
+                self += other;
+                return self;
+            },
+            nanobind::rv_policy::none,
+            nanobind::is_operator()
+        )
+        .def(
+            "__isub__",
+            [](Angle& self, const Angle& other) -> Angle&
+            {
+                self -= other;
+                return self;
+            },
+            nanobind::rv_policy::none,
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Angle>))
         .def(
@@ -351,7 +411,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
                     >>> angle = Angle.degrees(90.0)
                     >>> angle.to_string()  # "90.0 [deg]"
             )doc",
-            arg_v("precision", Integer::Undefined(), "Integer.undefined()")
+            arg("precision").sig("Integer.undefined()") = Integer::Undefined()
         )
 
         // Define static methods

@@ -4,9 +4,9 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_RotationMatrix(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_RotationMatrix(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Pair;
     using ostk::core::type::Real;
@@ -74,11 +74,39 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         )
 
         // Define methods
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const RotationMatrix& self, const RotationMatrix& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const RotationMatrix& self, const RotationMatrix& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self * self)
-        .def(self * Vector3d())
+        .def(
+            "__mul__",
+            [](const RotationMatrix& self, const RotationMatrix& other)
+            {
+                return self * other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__mul__",
+            [](const RotationMatrix& self, const Vector3d& other)
+            {
+                return self * other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<RotationMatrix>))
         .def("__repr__", &(shiftToString<RotationMatrix>))

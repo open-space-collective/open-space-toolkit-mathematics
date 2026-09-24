@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
@@ -36,8 +36,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(pybind11::mod
             arg("normal_vector")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Plane& self, const Plane& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Plane& self, const Plane& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Plane>))
         .def("__repr__", &(shiftToString<Plane>))

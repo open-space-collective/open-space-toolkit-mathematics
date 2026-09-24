@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
     using ostk::core::type::Unique;
@@ -23,11 +23,41 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
 
     intersection
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self + self)
-        .def(self += self)
+        .def(
+            "__add__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self + other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__iadd__",
+            [](Intersection& self, const Intersection& other) -> Intersection&
+            {
+                self += other;
+                return self;
+            },
+            nanobind::rv_policy::none,
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Intersection>))
         .def("__repr__", &(shiftToString<Intersection>))
@@ -365,7 +395,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
                     >>> intersection = Intersection.point(Point(1.0, 2.0))
                     >>> composite = intersection.access_composite()
             )doc",
-            return_value_policy::reference
+            rv_policy::reference
         )
 
         .def(

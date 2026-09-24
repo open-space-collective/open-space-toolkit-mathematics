@@ -11,9 +11,9 @@ void set_point_3_array(const Array<ostk::mathematics::geometry::d3::object::Poin
     (void)anArray;
 }
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Integer;
     using ostk::core::type::Real;
@@ -46,13 +46,48 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(pybind11::mod
             arg("third_coordinate")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Point& self, const Point& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Point& self, const Point& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self + Vector3d())
-        .def(self - Vector3d())
+        .def(
+            "__add__",
+            [](const Point& self, const Vector3d& other)
+            {
+                return self + other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__sub__",
+            [](const Point& self, const Vector3d& other)
+            {
+                return self - other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self - self)
+        .def(
+            "__sub__",
+            [](const Point& self, const Point& other)
+            {
+                return self - other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Point>))
         .def("__repr__", &(shiftToString<Point>))
@@ -106,7 +141,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(pybind11::mod
                     >>> point = Point(1.0, 2.0, 3.0)
                     >>> point.x()  # 1.0
             )doc",
-            return_value_policy::reference
+            rv_policy::reference
         )
         .def(
             "y",
@@ -121,7 +156,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(pybind11::mod
                     >>> point = Point(1.0, 2.0, 3.0)
                     >>> point.y()  # 2.0
             )doc",
-            return_value_policy::reference
+            rv_policy::reference
         )
         .def(
             "z",
@@ -136,7 +171,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(pybind11::mod
                     >>> point = Point(1.0, 2.0, 3.0)
                     >>> point.z()  # 3.0
             )doc",
-            return_value_policy::reference
+            rv_policy::reference
         )
         .def(
             "as_vector",

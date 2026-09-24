@@ -3,7 +3,7 @@
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/MatrixInterpolator.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting(nanobind::module_& aModule)
 {
     // Create "curve fitting" python submodule
     auto curve_fitting = aModule.def_submodule("curve_fitting");

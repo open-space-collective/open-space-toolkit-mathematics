@@ -17,9 +17,9 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Segment.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Sphere.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d3::Object;
     using ostk::mathematics::geometry::d3::object::Cone;
