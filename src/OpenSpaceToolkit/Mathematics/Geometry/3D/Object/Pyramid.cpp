@@ -11,8 +11,18 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wshadow"
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wint-in-bool-context"
+
+#include <Eigen/Cholesky>
+
+#pragma GCC diagnostic pop
 
 namespace ostk
 {
@@ -37,11 +47,126 @@ Vector3d PyramidRotateVector(
            (((1.0 - aCosine) * aUnitAxis.dot(aVector)) * aUnitAxis);
 }
 
+/// Lateral face filter that keeps every face.
+bool PyramidKeepLateralFace(const Vector3d& aFirstRayDirection, const Vector3d& aSecondRayDirection)
+{
+    (void)aFirstRayDirection;
+    (void)aSecondRayDirection;
+
+    return true;
+}
+
+/// Whether a ray from an apex, with a direction in the wedge spanned by two directions, can intersect the unit ball
+/// centered at the origin.
+///
+/// The rays of a lateral face all have their directions in the wedge spanned by the face's first and last rays. The
+/// face's rays can only intersect the unit ball if the wedge {apex + s * first + t * second, s >= 0, t >= 0} does, that
+/// is if the distance from the origin to the wedge is at most one: the distance to the wedge's plane when the origin
+/// projects inside the wedge, and to the closer of its two boundary rays otherwise.
+///
+/// Returns true when in doubt, and for directions less than a microradian apart.
+bool PyramidWedgeMayIntersectUnitBall(
+    const Vector3d& anApex, const Vector3d& aFirstDirection, const Vector3d& aSecondDirection
+)
+{
+    // Slack for the rounding of the rays and of the ray tests, which grows with the apex distance
+
+    const double margin = 1e-9 + 1e-15 * anApex.squaredNorm();
+    const double squaredMaximumDistance = (1.0 + margin) * (1.0 + margin);
+
+    const auto squaredDistanceToRay = [&anApex](const Vector3d& aUnitDirection) -> double
+    {
+        return (anApex + std::max(0.0, -anApex.dot(aUnitDirection)) * aUnitDirection).squaredNorm();
+    };
+
+    const Vector3d firstDirection = aFirstDirection.normalized();
+    const Vector3d secondDirection = aSecondDirection.normalized();
+
+    const double squaredDistanceToBoundary =
+        std::min(squaredDistanceToRay(firstDirection), squaredDistanceToRay(secondDirection));
+
+    if (!(squaredDistanceToBoundary > squaredMaximumDistance))
+    {
+        return true;
+    }
+
+    const Vector3d normal = firstDirection.cross(secondDirection);
+
+    if (!(normal.norm() > 1e-6))
+    {
+        return true;
+    }
+
+    const Vector3d unitNormal = normal.normalized();
+
+    // Origin projected onto the wedge's plane, relative to the apex, against the two boundary directions
+
+    const Vector3d projection = -anApex + unitNormal.dot(anApex) * unitNormal;
+
+    const bool isInsideWedge = (firstDirection.cross(projection).dot(unitNormal) >= 0.0) &&
+                               (projection.cross(secondDirection).dot(unitNormal) >= 0.0);
+
+    if (!isInsideWedge)
+    {
+        return false;
+    }
+
+    const double distanceToPlane = unitNormal.dot(anApex);
+
+    return !((distanceToPlane * distanceToPlane) > squaredMaximumDistance);
+}
+
+/// Lateral face filter keeping the faces whose rays can intersect the solid mapped onto the unit ball by
+/// x -> aLinearMap * (x - aCenter).
+///
+/// The map is affine, so it takes rays to rays and a face's wedge to a wedge: a ray intersects the solid if and only if
+/// its image intersects the unit ball.
+auto PyramidLateralFaceFilter(const Point& anApex, const Matrix3d& aLinearMap, const Vector3d& aCenter)
+{
+    const Vector3d apex = aLinearMap * (anApex.asVector() - aCenter);
+
+    return [apex, aLinearMap](const Vector3d& aFirstRayDirection, const Vector3d& aSecondRayDirection) -> bool
+    {
+        return PyramidWedgeMayIntersectUnitBall(
+            apex, aLinearMap * aFirstRayDirection, aLinearMap * aSecondRayDirection
+        );
+    };
+}
+
+/// Lateral face filter keeping the faces whose rays can intersect a sphere.
+auto PyramidLateralFaceFilter(const Point& anApex, const Sphere& aSphere)
+{
+    return PyramidLateralFaceFilter(anApex, Matrix3d::Identity() / aSphere.getRadius(), aSphere.getCenter().asVector());
+}
+
+/// Lateral face filter keeping the faces whose rays can intersect an ellipsoid.
+auto PyramidLateralFaceFilter(const Point& anApex, const Ellipsoid& anEllipsoid)
+{
+    // The ellipsoid is (x - c)^T * M * (x - c) <= 1, so any L with L^T * L = M, such as the transpose of the Cholesky
+    // factor of M, maps it onto the unit ball
+
+    const Matrix3d matrix = anEllipsoid.getMatrix();
+
+    const Eigen::LLT<Matrix3d> cholesky(matrix);
+
+    if (cholesky.info() != Eigen::Success)  // Degenerate ellipsoid: keep every face
+    {
+        return PyramidLateralFaceFilter(
+            anApex, Matrix3d::Constant(std::numeric_limits<double>::quiet_NaN()), Vector3d::Zero()
+        );
+    }
+
+    return PyramidLateralFaceFilter(
+        anApex, Matrix3d(cholesky.matrixL().transpose()), anEllipsoid.getCenter().asVector()
+    );
+}
+
 /// Visits the rays of a lateral face of a pyramid, in the order Pyramid::getRaysOfLateralFaceAt returns them, until the
-/// visitor returns false.
-template <typename Visitor>
+/// visitor returns false. The face is skipped when the filter, given the directions of its first and last rays,
+/// returns false.
+template <typename FaceFilter, typename Visitor>
 void PyramidVisitRaysOfLateralFace(
-    const Point& anApex, const Segment& aBaseEdge, const Size aRayCount, Visitor&& aVisitor
+    const Point& anApex, const Segment& aBaseEdge, const Size aRayCount, FaceFilter&& aFaceFilter, Visitor&& aVisitor
 )
 {
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
@@ -51,7 +176,10 @@ void PyramidVisitRaysOfLateralFace(
 
     if (firstRayDirection == secondRayDirection)
     {
-        aVisitor(Ray(anApex, firstRayDirection));
+        if (aFaceFilter(firstRayDirection, secondRayDirection))
+        {
+            aVisitor(Ray(anApex, firstRayDirection));
+        }
 
         return;
     }
@@ -60,6 +188,11 @@ void PyramidVisitRaysOfLateralFace(
 
     const Vector3d rotationAxis =
         RotationVector(firstRayDirection.cross(secondRayDirection).normalized(), Angle::Zero()).getAxis();
+
+    if (!aFaceFilter(firstRayDirection, secondRayDirection))
+    {
+        return;
+    }
 
     // Same angles as Interval<Real>::Closed(0.0, angleBetweenRays).generateArrayWithSize(aRayCount)
 
@@ -84,10 +217,15 @@ void PyramidVisitRaysOfLateralFace(
 }
 
 /// Visits the rays of all lateral faces of a pyramid, in the order Pyramid::getRaysOfLateralFaces returns them, until
-/// the visitor returns false.
-template <typename Visitor>
+/// the visitor returns false. The faces for which the filter returns false are skipped.
+template <typename FaceFilter, typename Visitor>
 void PyramidVisitRaysOfLateralFaces(
-    const Point& anApex, const Polygon& aBase, const Size aLateralFaceCount, const Size aRayCount, Visitor&& aVisitor
+    const Point& anApex,
+    const Polygon& aBase,
+    const Size aLateralFaceCount,
+    const Size aRayCount,
+    FaceFilter&& aFaceFilter,
+    Visitor&& aVisitor
 )
 {
     if (aRayCount < aLateralFaceCount)
@@ -107,6 +245,7 @@ void PyramidVisitRaysOfLateralFaces(
             anApex,
             aBase.getEdgeAt(lateralFaceIndex),
             lateralRayCount,
+            aFaceFilter,
             [&aVisitor, &isVisiting](const Ray& aRay) -> bool
             {
                 isVisiting = aVisitor(aRay);
@@ -168,6 +307,7 @@ bool Pyramid::intersects(const Sphere& aSphere, const Size aDiscretizationLevel)
         base_,
         this->getLateralFaceCount(),
         aDiscretizationLevel,
+        PyramidLateralFaceFilter(apex_, aSphere),
         [&aSphere, &intersects](const Ray& aRay) -> bool
         {
             intersects = aRay.intersects(aSphere);
@@ -198,6 +338,7 @@ bool Pyramid::intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizatio
         base_,
         this->getLateralFaceCount(),
         aDiscretizationLevel,
+        PyramidLateralFaceFilter(apex_, anEllipsoid),
         [&anEllipsoid, &intersects](const Ray& aRay) -> bool
         {
             intersects = aRay.intersects(anEllipsoid);
@@ -386,6 +527,7 @@ Array<Ray> Pyramid::getRaysOfLateralFaceAt(const Index aLateralFaceIndex, const 
         apex_,
         base_.getEdgeAt(aLateralFaceIndex),
         aRayCount,
+        PyramidKeepLateralFace,
         [&rays](const Ray& aRay) -> bool
         {
             rays.add(aRay);
@@ -412,6 +554,7 @@ Array<Ray> Pyramid::getRaysOfLateralFaces(const Size aRayCount) const
         base_,
         lateralFaceCount,
         aRayCount,
+        PyramidKeepLateralFace,
         [&rays](const Ray& aRay) -> bool
         {
             rays.add(aRay);
@@ -439,38 +582,47 @@ Intersection Pyramid::intersectionWith(const Sphere& aSphere, const bool onlyInS
     Array<Point> firstIntersectionPoints = Array<Point>::Empty();
     Array<Point> secondIntersectionPoints = Array<Point>::Empty();
 
-    for (const auto& ray : this->getRaysOfLateralFaces(aDiscretizationLevel))
-    {
-        const Intersection intersection = ray.intersectionWith(aSphere, onlyInSight);
-
-        if (!intersection.isEmpty())
+    PyramidVisitRaysOfLateralFaces(
+        apex_,
+        base_,
+        this->getLateralFaceCount(),
+        aDiscretizationLevel,
+        PyramidLateralFaceFilter(apex_, aSphere),
+        [&aSphere, onlyInSight, &firstIntersectionPoints, &secondIntersectionPoints](const Ray& aRay) -> bool
         {
-            if (intersection.accessComposite().is<Point>())
-            {
-                firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
-            }
-            else if (intersection.accessComposite().is<PointSet>())
-            {
-                const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
+            const Intersection intersection = aRay.intersectionWith(aSphere, onlyInSight);
 
-                bool secondIntersectionPointAdded = false;
-
-                for (const auto& point : pointSet)
+            if (!intersection.isEmpty())
+            {
+                if (intersection.accessComposite().is<Point>())
                 {
-                    if (!secondIntersectionPointAdded)
-                    {
-                        secondIntersectionPoints.add(point);
+                    firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
+                }
+                else if (intersection.accessComposite().is<PointSet>())
+                {
+                    const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
 
-                        secondIntersectionPointAdded = true;
-                    }
-                    else
+                    bool secondIntersectionPointAdded = false;
+
+                    for (const auto& point : pointSet)
                     {
-                        firstIntersectionPoints.add(point);
+                        if (!secondIntersectionPointAdded)
+                        {
+                            secondIntersectionPoints.add(point);
+
+                            secondIntersectionPointAdded = true;
+                        }
+                        else
+                        {
+                            firstIntersectionPoints.add(point);
+                        }
                     }
                 }
             }
+
+            return true;
         }
-    }
+    );
 
     if ((!firstIntersectionPoints.isEmpty()) && (!secondIntersectionPoints.isEmpty()) && (!onlyInSight))
     {
@@ -506,58 +658,67 @@ Intersection Pyramid::intersectionWith(
     Array<Point> firstIntersectionPoints = Array<Point>::Empty();
     Array<Point> secondIntersectionPoints = Array<Point>::Empty();
 
-    for (const auto& ray : this->getRaysOfLateralFaces(aDiscretizationLevel))
-    {
-        const Intersection intersection = ray.intersectionWith(anEllipsoid, onlyInSight);
-
-        if (!intersection.isEmpty())
+    PyramidVisitRaysOfLateralFaces(
+        apex_,
+        base_,
+        this->getLateralFaceCount(),
+        aDiscretizationLevel,
+        PyramidLateralFaceFilter(apex_, anEllipsoid),
+        [this, &anEllipsoid, onlyInSight, &firstIntersectionPoints, &secondIntersectionPoints](const Ray& aRay) -> bool
         {
-            if (intersection.accessComposite().is<Point>())
+            const Intersection intersection = aRay.intersectionWith(anEllipsoid, onlyInSight);
+
+            if (!intersection.isEmpty())
             {
-                firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
-            }
-            else if (intersection.accessComposite().is<PointSet>())
-            {
-                const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
-
-                const Point closestPointToApex = pointSet.getPointClosestTo(apex_);
-
-                firstIntersectionPoints.add(closestPointToApex);
-
-                for (const auto& point : pointSet)
+                if (intersection.accessComposite().is<Point>())
                 {
-                    if (point != closestPointToApex)
-                    {
-                        secondIntersectionPoints.add(point);
-
-                        break;
-                    }
+                    firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
                 }
+                else if (intersection.accessComposite().is<PointSet>())
+                {
+                    const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
 
-                // firstIntersectionPoints.add(pointSet.getPointClosestTo(apex_)) ;
+                    const Point closestPointToApex = pointSet.getPointClosestTo(apex_);
 
-                // bool secondIntersectionPointAdded = false ;
+                    firstIntersectionPoints.add(closestPointToApex);
 
-                // for (const auto& point : pointSet)
-                // {
+                    for (const auto& point : pointSet)
+                    {
+                        if (point != closestPointToApex)
+                        {
+                            secondIntersectionPoints.add(point);
 
-                //     if (!secondIntersectionPointAdded)
-                //     {
+                            break;
+                        }
+                    }
 
-                //         secondIntersectionPoints.add(point) ;
+                    // firstIntersectionPoints.add(pointSet.getPointClosestTo(apex_)) ;
 
-                //         secondIntersectionPointAdded = true ;
+                    // bool secondIntersectionPointAdded = false ;
 
-                //     }
-                //     else
-                //     {
-                //         firstIntersectionPoints.add(point) ;
-                //     }
+                    // for (const auto& point : pointSet)
+                    // {
 
-                // }
+                    //     if (!secondIntersectionPointAdded)
+                    //     {
+
+                    //         secondIntersectionPoints.add(point) ;
+
+                    //         secondIntersectionPointAdded = true ;
+
+                    //     }
+                    //     else
+                    //     {
+                    //         firstIntersectionPoints.add(point) ;
+                    //     }
+
+                    // }
+                }
             }
+
+            return true;
         }
-    }
+    );
 
     if ((!firstIntersectionPoints.isEmpty()) && (!secondIntersectionPoints.isEmpty()) && (!onlyInSight))
     {
