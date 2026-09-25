@@ -3,7 +3,9 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 
 #include <Global.test.hpp>
@@ -148,12 +150,58 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IsDefined)
     }
 }
 
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Intersects_Sphere)
+{
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Sphere;
+
+    {
+        const Polygon base = {
+            {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
+            {0.0, 0.0, 1.0},
+            {1.0, 0.0, 0.0},
+            {0.0, 1.0, 0.0}
+        };
+        const Point apex = {0.0, 0.0, 0.0};
+
+        const Pyramid pyramid = {base, apex};
+
+        EXPECT_TRUE(pyramid.intersects(Sphere({0.0, 0.0, 10.0}, 5.0)));
+
+        // Apex inside the sphere
+
+        EXPECT_TRUE(pyramid.intersects(Sphere({0.0, 0.5, 0.0}, 1.0)));
+
+        // Across a lateral face, or just beside it
+
+        EXPECT_TRUE(pyramid.intersects(Sphere({1.2, 0.0, 10.0}, 0.3)));
+        EXPECT_FALSE(pyramid.intersects(Sphere({1.4, 0.0, 10.0}, 0.3)));
+
+        // Behind the apex
+
+        EXPECT_FALSE(pyramid.intersects(Sphere({0.0, 0.0, -10.0}, 5.0)));
+
+        // Only the rays of the lateral faces are tested: none reaches a sphere wholly inside the pyramid
+
+        EXPECT_FALSE(pyramid.intersects(Sphere({0.0, 0.0, 10.0}, 0.5)));
+    }
+
+    {
+        EXPECT_ANY_THROW(Pyramid::Undefined().intersects(Sphere::Undefined()));
+    }
+}
+
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Intersects_Ellipsoid)
 {
+    using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
     using ostk::mathematics::object::Vector3d;
 
     {
@@ -179,6 +227,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Intersects_Ellipso
         // Hit by some of the rays of the last lateral face only, and missed by the rays through the base vertices
 
         EXPECT_TRUE(pyramid.intersects(Ellipsoid({0.0, -2.0, 10.0}, 1.2, 1.2, 1.2)));
+
+        // Apex inside the ellipsoid
+
+        EXPECT_TRUE(pyramid.intersects(Ellipsoid({0.0, 0.0, 0.5}, 1.0, 2.0, 3.0)));
+
+        // Elongated ellipsoids across a lateral face, or just beside it
+
+        const Quaternion quarterTurn = Quaternion::RotationVector(RotationVector(Vector3d::Z(), Angle::Degrees(90.0)));
+
+        EXPECT_TRUE(pyramid.intersects(Ellipsoid({1.3, 0.0, 10.0}, 0.35, 0.3, 0.1)));
+        EXPECT_TRUE(pyramid.intersects(Ellipsoid({1.3, 0.0, 10.0}, 0.3, 0.35, 0.1, quarterTurn)));
+        EXPECT_FALSE(pyramid.intersects(Ellipsoid({1.4, 0.0, 10.0}, 0.35, 0.3, 0.1)));
+        EXPECT_FALSE(pyramid.intersects(Ellipsoid({1.3, 0.0, 10.0}, 0.35, 0.3, 0.1, quarterTurn)));
 
         EXPECT_ANY_THROW(pyramid.intersects(ellipsoid, 3));
     }
@@ -540,6 +601,45 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetRaysOfLateralFa
     }
 }
 
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IntersectionWith_Sphere)
+{
+    using ostk::mathematics::geometry::d3::Intersection;
+    using ostk::mathematics::geometry::d3::object::LineString;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Sphere;
+
+    {
+        const Polygon base = {
+            {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
+            {0.0, 0.0, 1.0},
+            {1.0, 0.0, 0.0},
+            {0.0, 1.0, 0.0}
+        };
+        const Point apex = {0.0, 0.0, 0.0};
+
+        const Pyramid pyramid = {base, apex};
+
+        {
+            const Intersection intersection = pyramid.intersectionWith(Sphere({0.0, 0.0, 10.0}, 5.0), true, 8);
+
+            EXPECT_TRUE(intersection.accessComposite().is<LineString>());
+            EXPECT_EQ(8, intersection.accessComposite().as<LineString>().getPointCount());
+        }
+
+        EXPECT_FALSE(pyramid.intersectionWith(Sphere({1.2, 0.0, 10.0}, 0.3)).isEmpty());
+
+        EXPECT_TRUE(pyramid.intersectionWith(Sphere({1.4, 0.0, 10.0}, 0.3)).isEmpty());
+        EXPECT_TRUE(pyramid.intersectionWith(Sphere({0.0, 0.0, -10.0}, 5.0)).isEmpty());
+        EXPECT_TRUE(pyramid.intersectionWith(Sphere({0.0, 0.0, 10.0}, 0.5)).isEmpty());
+    }
+
+    {
+        EXPECT_ANY_THROW(Pyramid::Undefined().intersectionWith(Sphere::Undefined()));
+    }
+}
+
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IntersectionWith_Ellipsoid)
 {
     using ostk::core::type::Real;
@@ -587,6 +687,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IntersectionWith_E
         };
 
         EXPECT_TRUE(intersectionLineString.isNear(referenceLineString, 1e-10));
+
+        EXPECT_FALSE(pyramid.intersectionWith(Ellipsoid({1.3, 0.0, 10.0}, 0.35, 0.3, 0.1)).isEmpty());
+
+        EXPECT_TRUE(pyramid.intersectionWith(Ellipsoid({1.4, 0.0, 10.0}, 0.35, 0.3, 0.1)).isEmpty());
+        EXPECT_TRUE(pyramid.intersectionWith(Ellipsoid({0.0, 0.0, -10.0}, 5.0, 5.0, 5.0)).isEmpty());
     }
 
     {

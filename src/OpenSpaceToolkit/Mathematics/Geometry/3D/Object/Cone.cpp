@@ -34,11 +34,86 @@ Vector3d ConeRotateVector(const Vector3d& aVector, const Vector3d& aUnitAxis, co
            (((1.0 - aCosine) * aUnitAxis.dot(aVector)) * aUnitAxis);
 }
 
+/// Whether a ray of the lateral surface of a cone can intersect a ball.
+///
+/// Every ray of the lateral surface makes the cone angle with the cone axis. Seen from the apex, the ball covers the
+/// directions within its angular radius of the direction to its center, so no such ray can reach it when the angle
+/// between the axis and the ball center differs from the cone angle by more than that angular radius. This also holds
+/// when the ball is wholly inside the cone, between the rays.
+///
+/// Returns true when in doubt.
+bool ConeLateralSurfaceMayIntersectBall(
+    const Point& anApex, const Vector3d& aUnitAxis, const double anAngle_rad, const Point& aCenter, const double aRadius
+)
+{
+    const Vector3d apexToCenter = aCenter - anApex;
+    const double distance = apexToCenter.norm();
+
+    // Slack for the rounding of the rays and of the ray tests, which grows with the distance
+
+    const double distanceInRadii = distance / aRadius;
+    const double radius = aRadius * (1.0 + 1e-9 + 1e-15 * distanceInRadii * distanceInRadii);
+
+    if (!(distance > radius))
+    {
+        return true;
+    }
+
+    const double angleToCenter = std::atan2(aUnitAxis.cross(apexToCenter).norm(), aUnitAxis.dot(apexToCenter));
+    const double coneAngle = std::abs(std::remainder(anAngle_rad, 2.0 * M_PI));
+    const double angularRadius = std::asin(radius / distance);
+
+    return !(std::abs(angleToCenter - coneAngle) > (angularRadius + 1e-9));
+}
+
+/// Lateral surface filter that keeps the surface.
+bool ConeKeepLateralSurface(const Vector3d& aUnitAxis, const double anAngle_rad)
+{
+    (void)aUnitAxis;
+    (void)anAngle_rad;
+
+    return true;
+}
+
+/// Lateral surface filter keeping the surface when its rays can intersect a sphere.
+auto ConeLateralSurfaceFilter(const Point& anApex, const Sphere& aSphere)
+{
+    return [&anApex, &aSphere](const Vector3d& aUnitAxis, const double anAngle_rad) -> bool
+    {
+        return ConeLateralSurfaceMayIntersectBall(
+            anApex, aUnitAxis, anAngle_rad, aSphere.getCenter(), aSphere.getRadius()
+        );
+    };
+}
+
+/// Lateral surface filter keeping the surface when its rays can intersect the bounding sphere of an ellipsoid.
+auto ConeLateralSurfaceFilter(const Point& anApex, const Ellipsoid& anEllipsoid)
+{
+    return [&anApex, &anEllipsoid](const Vector3d& aUnitAxis, const double anAngle_rad) -> bool
+    {
+        const double boundingRadius = std::max(
+            {static_cast<double>(anEllipsoid.getFirstPrincipalSemiAxis()),
+             static_cast<double>(anEllipsoid.getSecondPrincipalSemiAxis()),
+             static_cast<double>(anEllipsoid.getThirdPrincipalSemiAxis())}
+        );
+
+        return ConeLateralSurfaceMayIntersectBall(
+            anApex, aUnitAxis, anAngle_rad, anEllipsoid.getCenter(), boundingRadius
+        );
+    };
+}
+
 /// Visits the rays of the lateral surface of a cone, in the order Cone::getRaysOfLateralSurface returns them, until the
-/// visitor returns false.
-template <typename Visitor>
+/// visitor returns false. No ray is visited when the filter, given the unit axis and the angle in radians, returns
+/// false.
+template <typename SurfaceFilter, typename Visitor>
 void ConeVisitRaysOfLateralSurface(
-    const Point& anApex, const Vector3d& anAxis, const Angle& anAngle, const Size aRayCount, Visitor&& aVisitor
+    const Point& anApex,
+    const Vector3d& anAxis,
+    const Angle& anAngle,
+    const Size aRayCount,
+    SurfaceFilter&& aSurfaceFilter,
+    Visitor&& aVisitor
 )
 {
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
@@ -53,6 +128,11 @@ void ConeVisitRaysOfLateralSurface(
     const Vector3d lateralRotationAxis = RotationVector(anAxis, anAngle).getAxis();
 
     const double angle_rad = anAngle.inRadians();
+
+    if (!aSurfaceFilter(lateralRotationAxis, angle_rad))
+    {
+        return;
+    }
 
     const Ray referenceRay = {
         anApex, ConeRotateVector(anAxis, referenceRotationAxis, std::cos(angle_rad), std::sin(angle_rad))
@@ -163,18 +243,37 @@ bool Cone::intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizationLe
         throw ostk::core::error::runtime::Wrong("Ray count");
     }
 
+    // The rays are tested in order until one hits. Past a first ray that misses, the remaining ones are only tested if
+    // the lateral surface can reach the ellipsoid's bounding sphere at all.
+
+    const auto mayIntersect = ConeLateralSurfaceFilter(apex_, anEllipsoid);
+
     bool intersects = false;
+    bool isFirstRay = true;
 
     ConeVisitRaysOfLateralSurface(
         apex_,
         axis_,
         angle_,
         aDiscretizationLevel,
-        [&anEllipsoid, &intersects](const Ray& aRay) -> bool
+        ConeKeepLateralSurface,
+        [this, &anEllipsoid, &mayIntersect, &intersects, &isFirstRay](const Ray& aRay) -> bool
         {
             intersects = aRay.intersects(anEllipsoid);
 
-            return !intersects;
+            if (intersects)
+            {
+                return false;
+            }
+
+            if (isFirstRay)
+            {
+                isFirstRay = false;
+
+                return mayIntersect(axis_.normalized(), angle_.inRadians());
+            }
+
+            return true;
         }
     );
 
@@ -333,6 +432,7 @@ Array<Ray> Cone::getRaysOfLateralSurface(const Size aRayCount) const
         axis_,
         angle_,
         aRayCount,
+        ConeKeepLateralSurface,
         [&rays](const Ray& aRay) -> bool
         {
             rays.add(aRay);
@@ -409,38 +509,52 @@ Intersection Cone::intersectionWith(const Sphere& aSphere, const bool onlyInSigh
     Array<Point> firstIntersectionPoints = Array<Point>::Empty();
     Array<Point> secondIntersectionPoints = Array<Point>::Empty();
 
-    for (const auto& ray : this->getRaysOfLateralSurface(aDiscretizationLevel))
+    if (aDiscretizationLevel == 0)
     {
-        const Intersection intersection = ray.intersectionWith(aSphere, onlyInSight);
+        throw ostk::core::error::runtime::Wrong("Ray count");
+    }
 
-        if (!intersection.isEmpty())
+    ConeVisitRaysOfLateralSurface(
+        apex_,
+        axis_,
+        angle_,
+        aDiscretizationLevel,
+        ConeLateralSurfaceFilter(apex_, aSphere),
+        [&aSphere, onlyInSight, &firstIntersectionPoints, &secondIntersectionPoints](const Ray& aRay) -> bool
         {
-            if (intersection.accessComposite().is<Point>())
-            {
-                firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
-            }
-            else if (intersection.accessComposite().is<PointSet>())
-            {
-                const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
+            const Intersection intersection = aRay.intersectionWith(aSphere, onlyInSight);
 
-                bool secondIntersectionPointAdded = false;
-
-                for (const auto& point : pointSet)
+            if (!intersection.isEmpty())
+            {
+                if (intersection.accessComposite().is<Point>())
                 {
-                    if (!secondIntersectionPointAdded)
-                    {
-                        secondIntersectionPoints.add(point);
+                    firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
+                }
+                else if (intersection.accessComposite().is<PointSet>())
+                {
+                    const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
 
-                        secondIntersectionPointAdded = true;
-                    }
-                    else
+                    bool secondIntersectionPointAdded = false;
+
+                    for (const auto& point : pointSet)
                     {
-                        firstIntersectionPoints.add(point);
+                        if (!secondIntersectionPointAdded)
+                        {
+                            secondIntersectionPoints.add(point);
+
+                            secondIntersectionPointAdded = true;
+                        }
+                        else
+                        {
+                            firstIntersectionPoints.add(point);
+                        }
                     }
                 }
             }
+
+            return true;
         }
-    }
+    );
 
     if ((!firstIntersectionPoints.isEmpty()) && (!secondIntersectionPoints.isEmpty()) && (!onlyInSight))
     {
@@ -476,36 +590,50 @@ Intersection Cone::intersectionWith(
     Array<Point> firstIntersectionPoints = Array<Point>::Empty();
     Array<Point> secondIntersectionPoints = Array<Point>::Empty();
 
-    for (const auto& ray : this->getRaysOfLateralSurface(aDiscretizationLevel))
+    if (aDiscretizationLevel == 0)
     {
-        const Intersection intersection = ray.intersectionWith(anEllipsoid, onlyInSight);
+        throw ostk::core::error::runtime::Wrong("Ray count");
+    }
 
-        if (!intersection.isEmpty())
+    ConeVisitRaysOfLateralSurface(
+        apex_,
+        axis_,
+        angle_,
+        aDiscretizationLevel,
+        ConeLateralSurfaceFilter(apex_, anEllipsoid),
+        [this, &anEllipsoid, onlyInSight, &firstIntersectionPoints, &secondIntersectionPoints](const Ray& aRay) -> bool
         {
-            if (intersection.accessComposite().is<Point>())
+            const Intersection intersection = aRay.intersectionWith(anEllipsoid, onlyInSight);
+
+            if (!intersection.isEmpty())
             {
-                firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
-            }
-            else if (intersection.accessComposite().is<PointSet>())
-            {
-                const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
-
-                const Point closestPointToApex = pointSet.getPointClosestTo(apex_);
-
-                firstIntersectionPoints.add(closestPointToApex);
-
-                for (const auto& point : pointSet)
+                if (intersection.accessComposite().is<Point>())
                 {
-                    if (point != closestPointToApex)
-                    {
-                        secondIntersectionPoints.add(point);
+                    firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
+                }
+                else if (intersection.accessComposite().is<PointSet>())
+                {
+                    const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
 
-                        break;
+                    const Point closestPointToApex = pointSet.getPointClosestTo(apex_);
+
+                    firstIntersectionPoints.add(closestPointToApex);
+
+                    for (const auto& point : pointSet)
+                    {
+                        if (point != closestPointToApex)
+                        {
+                            secondIntersectionPoints.add(point);
+
+                            break;
+                        }
                     }
                 }
             }
+
+            return true;
         }
-    }
+    );
 
     if ((!firstIntersectionPoints.isEmpty()) && (!secondIntersectionPoints.isEmpty()) && (!onlyInSight))
     {

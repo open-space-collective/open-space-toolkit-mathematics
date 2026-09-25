@@ -277,6 +277,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Intersects_Ellipsoid)
         EXPECT_FALSE(cone.intersects(Ellipsoid({-20.0, 0.0, 10.0}, 5.0, 5.0, 5.0)));
         EXPECT_FALSE(cone.intersects(Ellipsoid({0.0, 10.0, 10.0}, 5.0, 5.0, 5.0)));
 
+        // Apex inside the ellipsoid
+
+        EXPECT_TRUE(cone.intersects(Ellipsoid({-10.5, 0.0, 10.0}, 1.0, 2.0, 3.0)));
+
+        // Across the lateral surface, or just beside it
+
+        EXPECT_TRUE(cone.intersects(Ellipsoid({10.0, 3.5, 10.0}, 1.0, 1.0, 1.0)));
+        EXPECT_FALSE(cone.intersects(Ellipsoid({10.0, 5.0, 10.0}, 1.0, 1.0, 1.0)));
+
+        // Only the rays of the lateral surface are tested: none reaches an ellipsoid wholly inside the cone
+
+        EXPECT_FALSE(cone.intersects(Ellipsoid({10.0, 0.0, 10.0}, 1.0, 1.0, 1.0)));
+
         EXPECT_ANY_THROW(cone.intersects(ellipsoid, 0));
         EXPECT_ANY_THROW(Cone(apex, 2.0 * axis, angle).intersects(ellipsoid));
     }
@@ -628,7 +641,54 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, IntersectionWith_Elli
     }
 
     {
+        const Point apex = {-10.0, 0.0, 10.0};
+        const Vector3d axis = Vector3d::X();
+        const Angle angle = Angle::Degrees(10.0);
+
+        const Cone cone = {apex, axis, angle};
+
+        EXPECT_FALSE(cone.intersectionWith(Ellipsoid({10.0, 3.5, 10.0}, 1.0, 1.0, 1.0)).isEmpty());
+
+        // Beside the cone, or wholly inside it: no ray of the lateral surface reaches the ellipsoid
+
+        EXPECT_TRUE(cone.intersectionWith(Ellipsoid({10.0, 5.0, 10.0}, 1.0, 1.0, 1.0)).isEmpty());
+        EXPECT_TRUE(cone.intersectionWith(Ellipsoid({10.0, 0.0, 10.0}, 1.0, 1.0, 1.0)).isEmpty());
+
+        EXPECT_ANY_THROW(cone.intersectionWith(Ellipsoid({10.0, 5.0, 10.0}, 1.0, 1.0, 1.0), false, 0));
+        EXPECT_ANY_THROW(Cone(apex, 2.0 * axis, angle).intersectionWith(Ellipsoid({10.0, 50.0, 10.0}, 1.0, 1.0, 1.0)));
+    }
+
+    {
         EXPECT_ANY_THROW(Cone::Undefined().intersectionWith(Ellipsoid::Undefined()));
+    }
+}
+
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, IntersectionWith_Sphere)
+{
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::object::Cone;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Sphere;
+    using ostk::mathematics::object::Vector3d;
+
+    {
+        const Point apex = {-10.0, 0.0, 10.0};
+        const Vector3d axis = Vector3d::X();
+        const Angle angle = Angle::Degrees(10.0);
+
+        const Cone cone = {apex, axis, angle};
+
+        EXPECT_FALSE(cone.intersectionWith(Sphere({10.0, 3.5, 10.0}, 1.0)).isEmpty());
+
+        EXPECT_TRUE(cone.intersectionWith(Sphere({10.0, 5.0, 10.0}, 1.0)).isEmpty());
+        EXPECT_TRUE(cone.intersectionWith(Sphere({-20.0, 0.0, 10.0}, 1.0)).isEmpty());
+
+        EXPECT_ANY_THROW(cone.intersectionWith(Sphere({10.0, 5.0, 10.0}, 1.0), false, 0));
+        EXPECT_ANY_THROW(Cone(apex, 2.0 * axis, angle).intersectionWith(Sphere({10.0, 50.0, 10.0}, 1.0)));
+    }
+
+    {
+        EXPECT_ANY_THROW(Cone::Undefined().intersectionWith(Sphere::Undefined()));
     }
 }
 
