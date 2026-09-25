@@ -190,31 +190,23 @@ bool Ellipsoid::intersects(const Line& aLine) const
         throw ostk::core::error::runtime::Undefined("Line");
     }
 
-    // Line
+    // The test gte::TIQuery<Line3, Ellipsoid3> performs, on the cached matrix instead of a gte::Ellipsoid3 rebuilt
+    // from the axes. The line X = P + t * D meets the ellipsoid (X - K)^T * M * (X - K) = 1 when
+    // a2 * t^2 + 2 * a1 * t + a0 = 0 has real roots.
 
-    const gte::Line3<double> line = {
-        EllipsoidGteVectorFromPoint(aLine.getOrigin()), EllipsoidGteVectorFromVector3d(aLine.getDirection())
-    };
+    const Matrix3d M = this->getMatrix();
 
-    // Ellipsoid
+    const Vector3d direction = aLine.getDirection();
+    const Vector3d diff = aLine.getOrigin().asVector() - center_.asVector();
 
-    const gte::Vector3<double> center = EllipsoidGteVectorFromPoint(center_);
-    const std::array<gte::Vector3<double>, 3> axes = {
-        EllipsoidGteVectorFromVector3d(this->getFirstAxis()),
-        EllipsoidGteVectorFromVector3d(this->getSecondAxis()),
-        EllipsoidGteVectorFromVector3d(this->getThirdAxis())
-    };
-    const gte::Vector3<double> extent = {a_, b_, c_};
+    const Vector3d matDir = M * direction;
+    const Vector3d matDiff = M * diff;
 
-    const gte::Ellipsoid3<double> ellipsoid = {center, axes, extent};
+    const double a2 = direction.dot(matDir);
+    const double a1 = direction.dot(matDiff);
+    const double a0 = diff.dot(matDiff) - 1.0;
 
-    // Intersection
-
-    gte::TIQuery<double, gte::Line3<double>, gte::Ellipsoid3<double>> intersectionQuery;
-
-    auto intersectionResult = intersectionQuery(line, ellipsoid);
-
-    return intersectionResult.intersect;
+    return ((a1 * a1) - (a0 * a2)) >= 0.0;
 }
 
 bool Ellipsoid::intersects(const Ray& aRay) const
@@ -229,31 +221,28 @@ bool Ellipsoid::intersects(const Ray& aRay) const
         throw ostk::core::error::runtime::Undefined("Ray");
     }
 
-    // Ray
+    // The test gte::TIQuery<Ray3, Ellipsoid3> performs, on the cached matrix instead of a gte::Ellipsoid3 rebuilt from
+    // the axes: the line's quadratic a2 * t^2 + 2 * a1 * t + a0 = 0 has real roots, and the ray starts inside the
+    // ellipsoid or heads towards it.
 
-    const gte::Ray3<double> ray = {
-        EllipsoidGteVectorFromPoint(aRay.getOrigin()), EllipsoidGteVectorFromVector3d(aRay.getDirection())
-    };
+    const Matrix3d M = this->getMatrix();
 
-    // Ellipsoid
+    const Vector3d direction = aRay.getDirection();
+    const Vector3d diff = aRay.getOrigin().asVector() - center_.asVector();
 
-    const gte::Vector3<double> center = EllipsoidGteVectorFromPoint(center_);
-    const std::array<gte::Vector3<double>, 3> axes = {
-        EllipsoidGteVectorFromVector3d(this->getFirstAxis()),
-        EllipsoidGteVectorFromVector3d(this->getSecondAxis()),
-        EllipsoidGteVectorFromVector3d(this->getThirdAxis())
-    };
-    const gte::Vector3<double> extent = {a_, b_, c_};
+    const Vector3d matDir = M * direction;
+    const Vector3d matDiff = M * diff;
 
-    const gte::Ellipsoid3<double> ellipsoid = {center, axes, extent};
+    const double a2 = direction.dot(matDir);
+    const double a1 = direction.dot(matDiff);
+    const double a0 = diff.dot(matDiff) - 1.0;
 
-    // Intersection
+    if (((a1 * a1) - (a0 * a2)) < 0.0)
+    {
+        return false;
+    }
 
-    gte::TIQuery<double, gte::Ray3<double>, gte::Ellipsoid3<double>> intersectionQuery;
-
-    auto intersectionResult = intersectionQuery(ray, ellipsoid);
-
-    return intersectionResult.intersect;
+    return (a0 <= 0.0) || (a1 < 0.0);
 }
 
 bool Ellipsoid::intersects(const Segment& aSegment) const
