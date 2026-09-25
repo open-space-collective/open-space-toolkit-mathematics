@@ -37,19 +37,8 @@ Composite::Composite(const Unique<Object>& anObjectUPtr)
 Composite::Composite(Array<Unique<Object>>&& anObjectArray)
     : Object(),
       defined_(true),
-      objects_(Array<Unique<Object>>::Empty())
+      objects_(std::move(anObjectArray))
 {
-    objects_.reserve(anObjectArray.getSize());
-
-    std::transform(
-        anObjectArray.begin(),
-        anObjectArray.end(),
-        std::back_inserter(objects_),
-        [](const Unique<Object>& anObjectUPtr) -> Unique<Object>
-        {
-            return Unique<Object>(anObjectUPtr->clone());
-        }
-    );
 }
 
 Composite::Composite(const Composite& aComposite)
@@ -68,6 +57,13 @@ Composite::Composite(const Composite& aComposite)
             return Unique<Object>(anObjectUPtr->clone());
         }
     );
+}
+
+Composite::Composite(Composite&& aComposite) noexcept
+    : Object(),
+      defined_(aComposite.defined_),
+      objects_(std::move(aComposite.objects_))
+{
 }
 
 Composite* Composite::clone() const
@@ -94,6 +90,18 @@ Composite& Composite::operator=(const Composite& aComposite)
                 return Unique<Object>(anObjectUPtr->clone());
             }
         );
+    }
+
+    return *this;
+}
+
+Composite& Composite::operator=(Composite&& aComposite) noexcept
+{
+    if (this != &aComposite)
+    {
+        defined_ = aComposite.defined_;
+
+        objects_ = std::move(aComposite.objects_);
     }
 
     return *this;

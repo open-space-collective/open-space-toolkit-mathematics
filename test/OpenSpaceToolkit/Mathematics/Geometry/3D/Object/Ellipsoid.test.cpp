@@ -731,8 +731,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Pyram
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Contains_Point)
 {
+    using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     {
         ASSERT_TRUE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).contains(Point(+5.0, +2.0, +3.0)));
@@ -747,6 +751,34 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Contains_Point)
 
     {
         ASSERT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).contains(Point::Origin()));
+    }
+
+    // Rotated ellipsoid: the point is rotated with the orientation itself (q * X, q * Y and q * Z)
+
+    {
+        const Quaternion orientation =
+            Quaternion::RotationVector(RotationVector(Vector3d(1.0, 2.0, 3.0).normalized(), Angle::Degrees(30.0)));
+
+        const Point center = {1.0, 2.0, 3.0};
+
+        const Ellipsoid ellipsoid = {center, 4.0, 5.0, 6.0, orientation};
+
+        ASSERT_TRUE(ellipsoid.contains(center + 4.0 * (orientation * Vector3d::X())));
+        ASSERT_TRUE(ellipsoid.contains(center - 4.0 * (orientation * Vector3d::X())));
+        ASSERT_TRUE(ellipsoid.contains(center + 5.0 * (orientation * Vector3d::Y())));
+        ASSERT_TRUE(ellipsoid.contains(center - 5.0 * (orientation * Vector3d::Y())));
+        ASSERT_TRUE(ellipsoid.contains(center + 6.0 * (orientation * Vector3d::Z())));
+        ASSERT_TRUE(ellipsoid.contains(center - 6.0 * (orientation * Vector3d::Z())));
+
+        ASSERT_FALSE(ellipsoid.contains(center + 4.0 * (orientation * Vector3d::Y())));
+        ASSERT_FALSE(ellipsoid.contains(center));
+    }
+
+    // A non-unitary orientation is rejected
+
+    {
+        ASSERT_ANY_THROW(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0, Quaternion::XYZS(0.0, 0.0, 0.0, 2.0))
+                             .contains(Point(+5.0, +2.0, +3.0)));
     }
 
     {

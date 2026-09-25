@@ -170,6 +170,17 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Intersects_Ellipso
         const Ellipsoid ellipsoid = {{0.0, 0.0, 10.0}, 5.0, 5.0, 5.0};
 
         EXPECT_TRUE(pyramid.intersects(ellipsoid));
+
+        // Behind the apex, or beside the field of view
+
+        EXPECT_FALSE(pyramid.intersects(Ellipsoid({0.0, 0.0, -10.0}, 5.0, 5.0, 5.0)));
+        EXPECT_FALSE(pyramid.intersects(Ellipsoid({10.0, 0.0, 10.0}, 5.0, 5.0, 5.0)));
+
+        // Hit by some of the rays of the last lateral face only, and missed by the rays through the base vertices
+
+        EXPECT_TRUE(pyramid.intersects(Ellipsoid({0.0, -2.0, 10.0}, 1.2, 1.2, 1.2)));
+
+        EXPECT_ANY_THROW(pyramid.intersects(ellipsoid, 3));
     }
 
     {
@@ -400,6 +411,132 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetApex)
 
     {
         EXPECT_ANY_THROW(Pyramid::Undefined().getApex());
+    }
+}
+
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetRaysOfLateralFaceAt)
+{
+    using ostk::core::container::Array;
+    using ostk::core::type::Real;
+
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Ray;
+
+    const auto areNear = [](const Ray& aFirstRay, const Ray& aSecondRay) -> bool
+    {
+        return aFirstRay.getOrigin().isNear(aSecondRay.getOrigin(), Real::Epsilon()) &&
+               aFirstRay.getDirection().isNear(aSecondRay.getDirection(), Real::Epsilon());
+    };
+
+    {
+        const Polygon base = {
+            {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
+            {0.0, 0.0, 1.0},
+            {1.0, 0.0, 0.0},
+            {0.0, 1.0, 0.0}
+        };
+        const Point apex = {0.0, 0.0, 0.0};
+
+        const Pyramid pyramid = {base, apex};
+
+        {
+            const Array<Ray> referenceRays = {
+                {apex, {-0.099014754297667429, -0.099014754297667429, 0.99014754297667429}},
+                {apex, {-0.099503719020998901, 1.1102230246251565e-16, 0.99503719020998915}},
+                {apex, {-0.099014754297667429, 0.099014754297667665, 0.99014754297667429}},
+            };
+
+            EXPECT_TRUE(pyramid.getRaysOfLateralFaceAt(0, 3).isNear(referenceRays, areNear));
+        }
+
+        {
+            const Array<Ray> referenceRays = {
+                {apex, {0.099014754297667429, 0.099014754297667429, 0.99014754297667429}},
+            };
+
+            EXPECT_TRUE(pyramid.getRaysOfLateralFaceAt(2, 1).isNear(referenceRays, areNear));
+        }
+    }
+
+    {
+        const Polygon base = {
+            {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
+            {0.0, 2.0, 0.0},
+            {1.0, 0.0, 0.0},
+            {0.0, 0.0, -1.0}
+        };
+        const Point apex = {0.0, 1.0, 0.0};
+
+        const Pyramid pyramid = {base, apex};
+
+        const Array<Ray> referenceRays = {
+            {apex, {-0.099014754297667443, 0.9901475429766744, -0.099014754297667443}},
+            {apex, {-0.033053065624991253, 0.9944935000473486, -0.099449350004734857}},
+            {apex, {0.03305306562499033, 0.99449350004734871, -0.099449350004734885}},
+            {apex, {0.099014754297666513, 0.9901475429766744, -0.099014754297667443}},
+        };
+
+        EXPECT_TRUE(pyramid.getRaysOfLateralFaceAt(1, 4).isNear(referenceRays, areNear));
+    }
+
+    {
+        EXPECT_ANY_THROW(Pyramid::Undefined().getRaysOfLateralFaceAt(0, 2));
+    }
+}
+
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetRaysOfLateralFaces)
+{
+    using ostk::core::container::Array;
+    using ostk::core::type::Real;
+
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Ray;
+
+    {
+        const Polygon base = {
+            {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
+            {0.0, 0.0, 1.0},
+            {1.0, 0.0, 0.0},
+            {0.0, 1.0, 0.0}
+        };
+        const Point apex = {0.0, 0.0, 0.0};
+
+        const Pyramid pyramid = {base, apex};
+
+        // Two rays per lateral face, each face going from its first to its second base vertex
+
+        const Array<Ray> referenceRays = {
+            {apex, {-0.099014754297667429, -0.099014754297667429, 0.99014754297667429}},
+            {apex, {-0.099014754297667429, 0.099014754297667665, 0.99014754297667429}},
+            {apex, {-0.099014754297667429, 0.099014754297667429, 0.99014754297667429}},
+            {apex, {0.099014754297667665, 0.099014754297667429, 0.99014754297667429}},
+            {apex, {0.099014754297667429, 0.099014754297667429, 0.99014754297667429}},
+            {apex, {0.099014754297667429, -0.099014754297667665, 0.99014754297667429}},
+            {apex, {0.099014754297667429, -0.099014754297667429, 0.99014754297667429}},
+            {apex, {-0.099014754297667665, -0.099014754297667429, 0.99014754297667429}},
+        };
+
+        EXPECT_TRUE(pyramid.getRaysOfLateralFaces(8).isNear(
+            referenceRays,
+            [](const Ray& aFirstRay, const Ray& aSecondRay) -> bool
+            {
+                return aFirstRay.getOrigin().isNear(aSecondRay.getOrigin(), Real::Epsilon()) &&
+                       aFirstRay.getDirection().isNear(aSecondRay.getDirection(), Real::Epsilon());
+            }
+        ));
+
+        EXPECT_EQ(40, pyramid.getRaysOfLateralFaces(40).getSize());
+        EXPECT_EQ(40, pyramid.getRaysOfLateralFaces(43).getSize());
+
+        EXPECT_ANY_THROW(pyramid.getRaysOfLateralFaces(3));
+    }
+
+    {
+        EXPECT_ANY_THROW(Pyramid::Undefined().getRaysOfLateralFaces(8));
     }
 }
 

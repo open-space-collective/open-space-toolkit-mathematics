@@ -271,6 +271,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Intersects_Ellipsoid)
         const Ellipsoid ellipsoid = {{0.0, 0.0, 10.0}, 5.0, 5.0, 5.0};
 
         EXPECT_TRUE(cone.intersects(ellipsoid));
+
+        // Behind the apex, or beside the field of view
+
+        EXPECT_FALSE(cone.intersects(Ellipsoid({-20.0, 0.0, 10.0}, 5.0, 5.0, 5.0)));
+        EXPECT_FALSE(cone.intersects(Ellipsoid({0.0, 10.0, 10.0}, 5.0, 5.0, 5.0)));
+
+        EXPECT_ANY_THROW(cone.intersects(ellipsoid, 0));
+        EXPECT_ANY_THROW(Cone(apex, 2.0 * axis, angle).intersects(ellipsoid));
     }
 
     {
@@ -501,6 +509,35 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetRaysOfLateralSurfa
                        aFirstRay.getDirection().isNear(aSecondRay.getDirection(), Real::Epsilon());
             }
         ));
+    }
+
+    {
+        const Point apex = {1.0, 2.0, 3.0};
+        const Vector3d axis = Vector3d(1.0, 1.0, 1.0).normalized();
+        const Angle angle = Angle::Degrees(30.0);
+
+        const Cone cone = {apex, axis, angle};
+
+        const auto areNear = [](const Ray& aFirstRay, const Ray& aSecondRay) -> bool
+        {
+            return aFirstRay.getOrigin().isNear(aSecondRay.getOrigin(), Real::Epsilon()) &&
+                   aFirstRay.getDirection().isNear(aSecondRay.getDirection(), Real::Epsilon());
+        };
+
+        const Array<Ray> referenceRays = {
+            {apex, {0.29587585476806849, 0.90824829046386302, 0.29587585476806849}},
+            {apex, {0.091751709536136941, 0.70412414523193156, 0.70412414523193156}},
+            {apex, {0.29587585476806844, 0.29587585476806866, 0.90824829046386313}},
+            {apex, {0.70412414523193145, 0.091751709536137024, 0.70412414523193156}},
+            {apex, {0.90824829046386313, 0.29587585476806832, 0.29587585476806877}},
+            {apex, {0.70412414523193156, 0.70412414523193156, 0.091751709536136941}}
+        };
+
+        EXPECT_TRUE(cone.getRaysOfLateralSurface(6).isNear(referenceRays, areNear));
+        EXPECT_TRUE(cone.getRaysOfLateralSurface(1).isNear({referenceRays[0]}, areNear));
+
+        EXPECT_ANY_THROW(cone.getRaysOfLateralSurface(0));
+        EXPECT_ANY_THROW(Cone(apex, 2.0 * axis, angle).getRaysOfLateralSurface(6));
     }
 
     {

@@ -70,8 +70,6 @@ bool Segment::isDegenerate() const
 
 bool Segment::contains(const Point& aPoint) const
 {
-    using ostk::mathematics::object::Vector3d;
-
     if (!aPoint.isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Point");
@@ -82,21 +80,24 @@ bool Segment::contains(const Point& aPoint) const
         throw ostk::core::error::runtime::Undefined("Segment");
     }
 
-    if (this->isDegenerate())
+    if (firstPoint_ == secondPoint_)  // Degenerate segment
     {
         return firstPoint_ == aPoint;
     }
 
-    const Vector2d AB_2d = secondPoint_ - firstPoint_;
-    const Vector2d AC_2d = aPoint - firstPoint_;
+    const Vector2d A = firstPoint_.asVector();
 
-    const Vector3d AB = {AB_2d.x(), AB_2d.y(), 0.0};
-    const Vector3d AC = {AC_2d.x(), AC_2d.y(), 0.0};
+    const Vector2d AB = secondPoint_.asVector() - A;
+    const Vector2d AC = aPoint.asVector() - A;
 
-    if (AB.cross(AC).squaredNorm() == 0.0)  // Points are aligned
+    // Squared norm of the cross product of AB and AC, taken as 3D vectors in the plane z = 0
+
+    const double crossProduct = (AB.x() * AC.y()) - (AB.y() * AC.x());
+
+    if ((crossProduct * crossProduct) == 0.0)  // Points are aligned
     {
-        const Real K_AC = AB.dot(AC);
-        const Real K_AB = AB.dot(AB);
+        const double K_AC = AB.dot(AC);
+        const double K_AB = AB.dot(AB);
 
         return (0.0 <= K_AC) && (K_AC <= K_AB);  // C between A and B
     }
@@ -208,8 +209,6 @@ Real Segment::distanceTo(const Point& aPoint) const
 
 Real Segment::distanceTo(const PointSet& aPointSet) const
 {
-    using ostk::core::container::Array;
-
     if (aPointSet.isEmpty())
     {
         throw ostk::core::error::runtime::Undefined("Point Set");
@@ -220,15 +219,19 @@ Real Segment::distanceTo(const PointSet& aPointSet) const
         throw ostk::core::error::runtime::Undefined("Segment");
     }
 
-    const Array<Real> distances = Array<Point>(aPointSet.begin(), aPointSet.end())
-                                      .map<Real>(
-                                          [this](const Point& aPoint) -> Real
-                                          {
-                                              return this->distanceTo(aPoint);
-                                          }
-                                      );
+    Real minimumDistance = Real::Undefined();
 
-    return *std::min_element(distances.begin(), distances.end());
+    for (const auto& point : aPointSet)
+    {
+        const Real distance = this->distanceTo(point);
+
+        if ((!minimumDistance.isDefined()) || (distance < minimumDistance))
+        {
+            minimumDistance = distance;
+        }
+    }
+
+    return minimumDistance;
 }
 
 Line Segment::toLine() const

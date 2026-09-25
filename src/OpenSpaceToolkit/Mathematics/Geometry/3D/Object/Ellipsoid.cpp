@@ -62,6 +62,28 @@ Point EllipsoidPointFromGteVector(const gte::Vector3<double>& aVector)
     return {aVector[0], aVector[1], aVector[2]};
 }
 
+/// Matrix of the rotation Quaternion::operator*(Vector3d) applies to a vector.
+///
+/// These are the entries RotationMatrix::Quaternion computes, without the RotationMatrix constructor's orthonormality
+/// checks, whose tolerance is tighter than Quaternion::isUnitary's. The conjugate quaternion rotates by the transpose.
+Matrix3d EllipsoidRotationMatrixFromQuaternion(const Quaternion& aQuaternion)
+{
+    const double q_x = aQuaternion.x();
+    const double q_y = aQuaternion.y();
+    const double q_z = aQuaternion.z();
+    const double q_s = aQuaternion.s();
+
+    Matrix3d matrix;
+
+    matrix << (+q_x * q_x - q_y * q_y - q_z * q_z + q_s * q_s), (2.0 * (q_x * q_y + q_z * q_s)),
+        (2.0 * (q_x * q_z - q_y * q_s)), (2.0 * (q_y * q_x - q_z * q_s)),
+        (-q_x * q_x + q_y * q_y - q_z * q_z + q_s * q_s), (2.0 * (q_y * q_z + q_x * q_s)),
+        (2.0 * (q_z * q_x + q_y * q_s)), (2.0 * (q_z * q_y - q_x * q_s)),
+        (-q_x * q_x - q_y * q_y + q_z * q_z + q_s * q_s);
+
+    return matrix;
+}
+
 Ellipsoid::Ellipsoid(
     const Point& aCenter,
     const Real& aFirstPrincipalSemiAxis,
@@ -480,9 +502,21 @@ bool Ellipsoid::contains(const Point& aPoint) const
 
     Matrix3d dcm;
 
-    dcm.row(0) = q_ * Vector3d::X();
-    dcm.row(1) = q_ * Vector3d::Y();
-    dcm.row(2) = q_ * Vector3d::Z();
+    if (hasCachedAxes_)
+    {
+        // The rows q * X, q * Y and q * Z are the columns of the matrix whose rows are the cached axes
+        // (q.conjugate * X, ...), as rotating by the conjugate applies the transpose
+
+        dcm.col(0) = firstAxis_;
+        dcm.col(1) = secondAxis_;
+        dcm.col(2) = thirdAxis_;
+    }
+    else
+    {
+        dcm.row(0) = q_ * Vector3d::X();
+        dcm.row(1) = q_ * Vector3d::Y();
+        dcm.row(2) = q_ * Vector3d::Z();
+    }
 
     const Vector3d point = dcm * (aPoint - center_);
 
@@ -973,9 +1007,13 @@ void Ellipsoid::cacheAxes()
         return;
     }
 
-    firstAxis_ = this->computeFirstAxis();
-    secondAxis_ = this->computeSecondAxis();
-    thirdAxis_ = this->computeThirdAxis();
+    // q.conjugate * X, q.conjugate * Y and q.conjugate * Z are the rows of the matrix of the rotation by q
+
+    const Matrix3d rotationMatrix = EllipsoidRotationMatrixFromQuaternion(q_);
+
+    firstAxis_ = rotationMatrix.row(0).transpose();
+    secondAxis_ = rotationMatrix.row(1).transpose();
+    thirdAxis_ = rotationMatrix.row(2).transpose();
 
     hasCachedAxes_ = true;  // Set before computing the matrix, so that it is built from the axes just cached
 

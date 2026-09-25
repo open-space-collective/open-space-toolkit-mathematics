@@ -75,7 +75,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Constructor)
         objects.emplace_back(std::move(pyramidUPtr));
         objects.emplace_back(std::move(cuboidUPtr));
 
-        EXPECT_NO_THROW(Composite composite(std::move(objects)););
+        const Object* pyramidPtr = objects[0].get();
+        const Object* cuboidPtr = objects[1].get();
+
+        const Composite composite(std::move(objects));
+
+        // The composite takes ownership of the objects instead of cloning them
+
+        EXPECT_EQ(2, composite.getObjectCount());
+        EXPECT_EQ(pyramidPtr, &composite.accessObjectAt(0));
+        EXPECT_EQ(cuboidPtr, &composite.accessObjectAt(1));
     }
 }
 
@@ -120,6 +129,72 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, CopyConstructor)
         const Composite composite = Composite {pyramid};
 
         EXPECT_NO_THROW(Composite otherComposite(composite););
+    }
+}
+
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, MoveConstructor)
+{
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Composite;
+    using ostk::mathematics::geometry::d3::object::Point;
+
+    {
+        Composite composite = Composite(Point(1.0, 2.0, 3.0)) + Composite(Point(4.0, 5.0, 6.0));
+
+        const Object* firstObjectPtr = &composite.accessObjectAt(0);
+        const Object* secondObjectPtr = &composite.accessObjectAt(1);
+
+        const Composite movedComposite(std::move(composite));
+
+        EXPECT_TRUE(movedComposite.isDefined());
+        EXPECT_EQ(2, movedComposite.getObjectCount());
+        EXPECT_TRUE(movedComposite.accessObjectAt(0) == Point(1.0, 2.0, 3.0));
+        EXPECT_TRUE(movedComposite.accessObjectAt(1) == Point(4.0, 5.0, 6.0));
+
+        // The objects are moved, not cloned
+
+        EXPECT_EQ(firstObjectPtr, &movedComposite.accessObjectAt(0));
+        EXPECT_EQ(secondObjectPtr, &movedComposite.accessObjectAt(1));
+    }
+
+    {
+        Composite composite = Composite::Undefined();
+
+        const Composite movedComposite(std::move(composite));
+
+        EXPECT_FALSE(movedComposite.isDefined());
+    }
+}
+
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, MoveAssignmentOperator)
+{
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Composite;
+    using ostk::mathematics::geometry::d3::object::Point;
+
+    {
+        Composite composite = Composite(Point(1.0, 2.0, 3.0));
+
+        const Object* objectPtr = &composite.accessObjectAt(0);
+
+        Composite otherComposite = Composite::Undefined();
+
+        otherComposite = std::move(composite);
+
+        EXPECT_TRUE(otherComposite.isDefined());
+        EXPECT_EQ(1, otherComposite.getObjectCount());
+        EXPECT_TRUE(otherComposite.accessObjectAt(0) == Point(1.0, 2.0, 3.0));
+        EXPECT_EQ(objectPtr, &otherComposite.accessObjectAt(0));
+    }
+
+    {
+        Composite composite = Composite::Undefined();
+
+        Composite otherComposite = Composite(Point(1.0, 2.0, 3.0));
+
+        otherComposite = std::move(composite);
+
+        EXPECT_FALSE(otherComposite.isDefined());
     }
 }
 
