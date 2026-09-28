@@ -145,6 +145,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae2257efa00cf6358d7135f4fb67f42c0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html">RotationVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#ae2257efa00cf6358d7135f4fb67f42c0">Quaternion</a> (const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html">rotation::Quaternion</a> &amp;aQuaternion)</td></tr>
 <tr class="memdesc:ae2257efa00cf6358d7135f4fb67f42c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct Rotation Vector from <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html" title="Quaternion.">Quaternion</a>.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#ae2257efa00cf6358d7135f4fb67f42c0">More...</a><br /></td></tr>
 <tr class="separator:ae2257efa00cf6358d7135f4fb67f42c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a378dc2ffde8a6ae9d363c024e0a68292"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html">RotationVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a378dc2ffde8a6ae9d363c024e0a68292">Quaternion</a> (const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html">rotation::Quaternion</a> &amp;aQuaternion, const bool &amp;aRectifyFlag)</td></tr>
+<tr class="memdesc:a378dc2ffde8a6ae9d363c024e0a68292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct Rotation Vector from <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html" title="Quaternion.">Quaternion</a>, optionally rectifying it first.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a378dc2ffde8a6ae9d363c024e0a68292">More...</a><br /></td></tr>
+<tr class="separator:a378dc2ffde8a6ae9d363c024e0a68292"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b732b431882d3e29d63b5b350b88bc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html">RotationVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a11b732b431882d3e29d63b5b350b88bc">RotationMatrix</a> (const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html">rotation::RotationMatrix</a> &amp;aRotationMatrix)</td></tr>
 <tr class="memdesc:a11b732b431882d3e29d63b5b350b88bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct Rotation Vector from Rotation Matrix.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a11b732b431882d3e29d63b5b350b88bc">More...</a><br /></td></tr>
 <tr class="separator:a11b732b431882d3e29d63b5b350b88bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -396,7 +399,7 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a id="ae2257efa00cf6358d7135f4fb67f42c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2257efa00cf6358d7135f4fb67f42c0">&#9670;&nbsp;</a></span>Quaternion()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2257efa00cf6358d7135f4fb67f42c0">&#9670;&nbsp;</a></span>Quaternion() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -424,6 +427,57 @@ Friends</h2></td></tr>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aQuaternion</td><td>A quaternion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Rotation Vector </dd></dl>
+
+</div>
+</div>
+<a id="a378dc2ffde8a6ae9d363c024e0a68292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a378dc2ffde8a6ae9d363c024e0a68292">&#9670;&nbsp;</a></span>Quaternion() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html">RotationVector</a> ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::Quaternion </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html">rotation::Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>aQuaternion</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>aRectifyFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct Rotation Vector from <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html" title="Quaternion.">Quaternion</a>, optionally rectifying it first. </p>
+<pre class="fragment">                    When the rectify flag is set, the quaternion is normalized and rectified (positive
+                    scalar part) before conversion. The resulting rotation angle is then within [0, π].
+                    When the flag is not set, the quaternion must already be unitary and the resulting
+                    rotation angle is within [0, 2π].
+</pre><div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#ae2257efa00cf6358d7135f4fb67f42c0">RotationVector::Quaternion</a>(<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ab065862f2a77807e42f6feaadc0637e2">Quaternion::XYZS</a>(0.0, 0.0, -0.7071, -0.7071), <span class="keyword">true</span>);</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aQuaternion</td><td>A quaternion </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aRectifyFlag</td><td>If true, normalize and rectify the quaternion before conversion </td></tr>
   </table>
   </dd>
 </dl>
@@ -739,7 +793,7 @@ Friends</h2></td></tr>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_adf219273c9f6215c4a47a5530e0a3aa3"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf219273c9f6215c4a47a5530e0a3aa3">ostk::mathematics::geometry::Angle::Degrees</a></div><div class="ttdeci">static Angle Degrees(const Real &amp;aValue)</div><div class="ttdoc">Construct an angle from a value in degrees.</div><div class="ttdef"><b>Definition:</b> Angle.cpp:464</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_html_a970d830a551e4596701281e2cf0a1899"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#a970d830a551e4596701281e2cf0a1899">ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::Unit</a></div><div class="ttdeci">static EulerAngle Unit()</div><div class="ttdoc">Construct unitary Euler Angle.</div><div class="ttdef"><b>Definition:</b> EulerAngle.cpp:186</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_a177b242ce75f1631de02e15e50804958"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a177b242ce75f1631de02e15e50804958">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::getAxis</a></div><div class="ttdeci">Vector3d getAxis() const</div><div class="ttdoc">Get rotation axis.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:84</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_acfff1d3bbd3dc4b5998bed27cca91e7d"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#acfff1d3bbd3dc4b5998bed27cca91e7d">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::EulerAngle</a></div><div class="ttdeci">static RotationVector EulerAngle(const rotation::EulerAngle &amp;aEulerAngle)</div><div class="ttdoc">Construct Rotation Vector from Euler Angle.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:225</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_acfff1d3bbd3dc4b5998bed27cca91e7d"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#acfff1d3bbd3dc4b5998bed27cca91e7d">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::EulerAngle</a></div><div class="ttdeci">static RotationVector EulerAngle(const rotation::EulerAngle &amp;aEulerAngle)</div><div class="ttdoc">Construct Rotation Vector from Euler Angle.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:236</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_a31c276c930ed9d5ff4cb406be6a48f7e"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a31c276c930ed9d5ff4cb406be6a48f7e">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::Unit</a></div><div class="ttdeci">static RotationVector Unit()</div><div class="ttdoc">Construct a unitary Rotation Vector.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:143</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_ac296ba2d49497a1d7a5b1d1aa1628294"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#ac296ba2d49497a1d7a5b1d1aa1628294">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::Undefined</a></div><div class="ttdeci">static RotationVector Undefined()</div><div class="ttdoc">Construct an undefined Rotation Vector.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:138</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_ae2257efa00cf6358d7135f4fb67f42c0"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#ae2257efa00cf6358d7135f4fb67f42c0">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::Quaternion</a></div><div class="ttdeci">static RotationVector Quaternion(const rotation::Quaternion &amp;aQuaternion)</div><div class="ttdoc">Construct Rotation Vector from Quaternion.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:178</div></div>
@@ -748,7 +802,8 @@ Friends</h2></td></tr>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_ad5a563a069f6665a086b2ba5fc20ea76"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#ad5a563a069f6665a086b2ba5fc20ea76">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::X</a></div><div class="ttdeci">static RotationVector X(const Angle &amp;anAngle)</div><div class="ttdoc">Construct Rotation Vector around X-axis.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:148</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_a85786a4e81f7107c8367ed0ae783c79f"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a85786a4e81f7107c8367ed0ae783c79f">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::RotationVector</a></div><div class="ttdeci">RotationVector(const Vector3d &amp;anAxis, const Angle &amp;anAngle)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:24</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_a9c6a3ae1411b75a6c0cac397a6ace371a50c62e3ca8d8ec8732a7f968a3bf2c7c"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a9c6a3ae1411b75a6c0cac397a6ace371a50c62e3ca8d8ec8732a7f968a3bf2c7c">ostk::mathematics::geometry::Angle::Unit::Radian</a></div><div class="ttdeci">@ Radian</div><div class="ttdoc">Radian.</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_a11b732b431882d3e29d63b5b350b88bc"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a11b732b431882d3e29d63b5b350b88bc">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::RotationMatrix</a></div><div class="ttdeci">static RotationVector RotationMatrix(const rotation::RotationMatrix &amp;aRotationMatrix)</div><div class="ttdoc">Construct Rotation Vector from Rotation Matrix.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:201</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_html_ab065862f2a77807e42f6feaadc0637e2"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ab065862f2a77807e42f6feaadc0637e2">ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::XYZS</a></div><div class="ttdeci">static Quaternion XYZS(const Real &amp;aFirstComponent, const Real &amp;aSecondComponent, const Real &amp;aThirdComponent, const Real &amp;aFourthComponent)</div><div class="ttdoc">Construct Quaternion using the vector-scalar format.</div><div class="ttdef"><b>Definition:</b> Quaternion.cpp:503</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_a11b732b431882d3e29d63b5b350b88bc"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a11b732b431882d3e29d63b5b350b88bc">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::RotationMatrix</a></div><div class="ttdeci">static RotationVector RotationMatrix(const rotation::RotationMatrix &amp;aRotationMatrix)</div><div class="ttdoc">Construct Rotation Vector from Rotation Matrix.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:212</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_a02150f4e7ec88996f75eaae63b215cfb"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a02150f4e7ec88996f75eaae63b215cfb">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::rectify</a></div><div class="ttdeci">RotationVector &amp; rectify()</div><div class="ttdoc">Rectify Rotation Vector (enforce positive angle)</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:104</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_html_affb9e0b77d6b66dfcfdccb17ec10d1bf"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#affb9e0b77d6b66dfcfdccb17ec10d1bf">ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::Unit</a></div><div class="ttdeci">static Quaternion Unit()</div><div class="ttdoc">Construct unitary Quaternion.</div><div class="ttdef"><b>Definition:</b> Quaternion.cpp:498</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_a9ce94326aaddb6e9e967acc388b39f44"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a9ce94326aaddb6e9e967acc388b39f44">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::toString</a></div><div class="ttdeci">String toString(const Integer &amp;aPrecision=Integer::Undefined()) const</div><div class="ttdoc">Convert Rotation Vector to string representation.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:126</div></div>

@@ -64,9 +64,9 @@
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_1a28e9a96d726b5eea0da0696647912780">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ab67f8c5204e7d81204f80ca1298073a8">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a61cb86ec44359755cc1edc8dec1604c0">clone</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aca293bcf279702b8b59d72fe4dd09217">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1a0502f752850b36aa89c4fc443f7e4376">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a0c99b116c5a6f6e0915cb5375fc66149">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aca293bcf279702b8b59d72fe4dd09217">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a1ab0dfee99b56b4324e782a406ca1687">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a4d5a9ea98d5a028f2792d3b11e9fd6e8">clone</reimplementedby>
         <briefdescription>
