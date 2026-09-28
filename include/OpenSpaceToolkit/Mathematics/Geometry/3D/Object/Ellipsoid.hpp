@@ -2,6 +2,8 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid__
 
+#include <optional>
+
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
@@ -450,6 +452,23 @@ class Ellipsoid : public Object
     Real c_;
 
     Quaternion q_;
+
+    struct Axes
+    {
+        Vector3d first;
+        Vector3d second;
+        Vector3d third;
+        Matrix3d matrix;
+    };
+
+    std::optional<Axes> axes_;
+
+    void cacheAxes();
+
+    Vector3d computeFirstAxis() const;
+    Vector3d computeSecondAxis() const;
+    Vector3d computeThirdAxis() const;
+    Matrix3d computeMatrix(const Vector3d& aFirstAxis, const Vector3d& aSecondAxis, const Vector3d& aThirdAxis) const;
 };
 
 }  // namespace object
