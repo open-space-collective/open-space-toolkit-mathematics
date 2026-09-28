@@ -274,9 +274,6 @@ bool Ellipsoid::intersects(const Segment& aSegment) const
 
     // https://www.geometrictools.com/GTEngine/Include/Mathematics/GteIntrSegment3Ellipsoid3.h
 
-    // The segment's direction, center and half-length all come from one difference of its end points, giving the
-    // same values as the Segment accessors without recomputing that difference and re-checking the segment each time.
-
     const Point segmentFirstPoint = aSegment.getFirstPoint();
     const Vector3d segmentVector = aSegment.getSecondPoint() - segmentFirstPoint;
 
@@ -310,18 +307,12 @@ bool Ellipsoid::intersects(const Segment& aSegment) const
         const Real t0 = (-a1 - discriminantRoot) * a2_inverse;
         const Real t1 = (-a1 + discriminantRoot) * a2_inverse;
 
-        // Undefined roots (only possible for an infinite semi-axis, where a2 vanishes) are rejected, as they were when
-        // they bounded an Interval<Real>
+        // Undefined roots (only possible for an infinite semi-axis, where a2 vanishes) are rejected
 
         if ((!t0.isDefined()) || (!t1.isDefined()))
         {
             throw ostk::core::error::runtime::Undefined("Interval");
         }
-
-        // The closed interval of roots [t0, t1] against the closed segment interval [-h, +h], compared bound by bound
-        // exactly as Interval<Real>::contains and Interval<Real>::intersects do, without building either interval:
-        // the segment lies wholly inside the ellipsoid when the roots enclose it, and crosses its surface when the two
-        // merely overlap.
 
         const bool rootsContainSegment = (t0 <= -segmentHalfLength) && (t1 >= +segmentHalfLength);
         const bool rootsOverlapSegment = (t0 <= +segmentHalfLength) && (t1 >= -segmentHalfLength);
