@@ -4,7 +4,6 @@
     <compoundname>ostk::mathematics::geometry::d3::object::Ellipsoid</compoundname>
     <basecompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::Object</basecompoundref>
     <includes refid="_ellipsoid_8hpp" local="no">Ellipsoid.hpp</includes>
-    <innerclass refid="structostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1_1_axes" prot="private">ostk::mathematics::geometry::d3::object::Ellipsoid::Axes</innerclass>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a601664cd2702c1ef80dc8ea4e70fb90b" prot="private" static="no" mutable="no">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -17,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="448" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="448" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="446" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="446" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a26812a9cf0ec65f244dcfd23ec7904b2" prot="private" static="no" mutable="no">
         <type>Real</type>
@@ -30,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="450" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="450" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="448" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="448" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae642014abfaaaaefe425208d06fcf837" prot="private" static="no" mutable="no">
         <type>Real</type>
@@ -43,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="451" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="451" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="449" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="449" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae58ad12e3d5fe3c12f1ddbec7d5b9e63" prot="private" static="no" mutable="no">
         <type>Real</type>
@@ -56,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="452" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="452" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="450" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="450" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a18ef5e768659a7b9448f8a40ed2df3f5" prot="private" static="no" mutable="no">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
@@ -69,20 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="454" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="454" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ab5b6cc5a42b00958e867c2377c64e34d" prot="private" static="no" mutable="no">
-        <type>std::optional&lt; Axes &gt;</type>
-        <definition>std::optional&lt;Axes&gt; ostk::mathematics::geometry::d3::object::Ellipsoid::axes_</definition>
-        <argsstring></argsstring>
-        <name>axes_</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="464" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="464" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="452" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="452" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -163,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="65" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="65" bodyend="96"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="63" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="66" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aca293bcf279702b8b59d72fe4dd09217" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> *</type>
@@ -183,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="80" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="98" bodyend="101"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="78" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="96" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a24d5de8f8d462000ad16f99cb08b6bbe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -216,7 +202,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="91" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="103" bodyend="121"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="89" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="101" bodyend="119"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a6ad34b0e40e0a1b59ba503bbacb15db5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -248,7 +234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="101" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="123" bodyend="126"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="99" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="121" bodyend="124"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a3e36099693bccb2d2e68d8673d86e5f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -268,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="110" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="128" bodyend="131"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="108" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="126" bodyend="129"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a9b031c4f2a63121d6b5060dea2fd85dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -302,7 +288,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="122" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="133" bodyend="136"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="120" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="131" bodyend="134"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a8a8d5655286857611c174afd3e324d45" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -336,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="134" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="138" bodyend="153"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="132" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="136" bodyend="151"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae3f7633c6157c430980af3832d0a73b9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -370,7 +356,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="146" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="155" bodyend="192"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="144" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="153" bodyend="190"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae93d460a11c18dcc589501535db52622" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -404,7 +390,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="158" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="194" bodyend="231"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="156" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="192" bodyend="229"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a00bfb5a8d081333b080b586f4b81f8cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -438,7 +424,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="170" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="233" bodyend="337"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="168" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="231" bodyend="341"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ad0c47ee2cbdc18795a00c72a47f83a33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -472,7 +458,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="182" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="339" bodyend="380"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="180" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="343" bodyend="384"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a1d17071a0fe4ae568bffcbbb3a12aeb8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -506,7 +492,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="194" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="192" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a376af728b387ddc84152ad2fea9076ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -540,7 +526,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="206" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="204" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a7176ac82c4684066d3656db93673fe8c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -574,7 +560,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="218" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="444" bodyend="447"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="216" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="448" bodyend="451"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a9903921f3b39326751b64198af6e9044" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -608,7 +594,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="230" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="449" bodyend="452"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="228" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="453" bodyend="456"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1acd6265aa0324a0a42782255c6c68fd6c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -642,7 +628,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="242" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="454" bodyend="481"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="240" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="458" bodyend="485"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aa0d3177d1ed9985503ec6055f40768a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -676,7 +662,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="254" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="483" bodyend="498"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="252" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="487" bodyend="502"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a2f6d64044fbfaa53a018f3f0e62fa2ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -710,7 +696,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="266" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="500" bodyend="503"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="264" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="504" bodyend="507"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aaffdeef56c13f84501e5e303c932890a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -729,7 +715,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="275" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="505" bodyend="513"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="273" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="509" bodyend="517"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aee9a534a5fe0d981f240778a675592f0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -748,7 +734,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="284" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="515" bodyend="523"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="282" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="519" bodyend="527"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a87c58137ec69a852e079274838b1f1f5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -767,7 +753,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="293" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="525" bodyend="533"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="291" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="529" bodyend="537"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aca6b3792410def0bef84025ffd981836" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -786,7 +772,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="302" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="535" bodyend="543"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="300" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="539" bodyend="547"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a67ec6b3fcf80a18b0dbb6521c321e003" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Vector3d</type>
@@ -806,7 +792,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="312" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="545" bodyend="553"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="310" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="549" bodyend="557"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a71329b4763d0b8dc247f73167e69308c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Vector3d</type>
@@ -826,7 +812,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="322" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="555" bodyend="563"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="320" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="559" bodyend="567"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a5fe355055f5fdce92375fa04ff1851e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Vector3d</type>
@@ -846,7 +832,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="332" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="565" bodyend="573"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="330" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="569" bodyend="577"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a68cbd49084f102aa99f9135bd0fce3db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
@@ -866,7 +852,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="342" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="575" bodyend="583"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="340" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="579" bodyend="587"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ad28f3cc4c201d12054da52ce51bdb6a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Matrix3d</type>
@@ -886,7 +872,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="352" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="585" bodyend="594"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="350" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="589" bodyend="614"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a5c3062e7f2f271c470821e3addbd3698" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -920,7 +906,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="364" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="596" bodyend="654"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="362" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="616" bodyend="674"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a81a3f44b8b4a26c8c7db2fa5f1ea98c3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -967,7 +953,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="377" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="656" bodyend="744"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="375" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="676" bodyend="764"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ac3f1b3592db2bbfb25890382a2276878" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -1001,7 +987,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="389" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="746" bodyend="868"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="387" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="766" bodyend="888"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1abcbc9b4bbcb64628471f7b233639d645" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -1048,7 +1034,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="402" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="870" bodyend="873"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="400" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="890" bodyend="893"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a2d6ef8385352f67912edbf2b2db7e3c2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -1095,7 +1081,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="415" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="875" bodyend="878"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="413" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="895" bodyend="898"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a7c5c1f79b1c0533073ef48e38dc5e18b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1140,7 +1126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="426" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="880" bodyend="904"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="424" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="900" bodyend="924"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a3e8568dfcf2f261ea99c5a1c4edc2c1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1172,7 +1158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="436" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="906" bodyend="948"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="434" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="926" bodyend="966"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1193,86 +1179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="445" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="950" bodyend="953"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1afa7e23e1bdae5da01392a1818b56f647" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void ostk::mathematics::geometry::d3::object::Ellipsoid::cacheAxes</definition>
-        <argsstring>()</argsstring>
-        <name>cacheAxes</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="466" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="955" bodyend="969"/>
-      </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a266ba48fbe6ba949515d7f399c54c251" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Vector3d</type>
-        <definition>Vector3d ostk::mathematics::geometry::d3::object::Ellipsoid::computeFirstAxis</definition>
-        <argsstring>() const</argsstring>
-        <name>computeFirstAxis</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="468" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="971" bodyend="974"/>
-      </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1adede939f2b2ea905d14db588733cf7b6" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Vector3d</type>
-        <definition>Vector3d ostk::mathematics::geometry::d3::object::Ellipsoid::computeSecondAxis</definition>
-        <argsstring>() const</argsstring>
-        <name>computeSecondAxis</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="469" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="976" bodyend="979"/>
-      </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ac9d0f8b7270a31d291e8c192ab1caae3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Vector3d</type>
-        <definition>Vector3d ostk::mathematics::geometry::d3::object::Ellipsoid::computeThirdAxis</definition>
-        <argsstring>() const</argsstring>
-        <name>computeThirdAxis</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="470" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="981" bodyend="984"/>
-      </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ab4e2e337d4c50416b7469ba90e9ad8c4" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Matrix3d</type>
-        <definition>Matrix3d ostk::mathematics::geometry::d3::object::Ellipsoid::computeMatrix</definition>
-        <argsstring>(const Vector3d &amp;aFirstAxis, const Vector3d &amp;aSecondAxis, const Vector3d &amp;aThirdAxis) const</argsstring>
-        <name>computeMatrix</name>
-        <param>
-          <type>const Vector3d &amp;</type>
-          <declname>aFirstAxis</declname>
-        </param>
-        <param>
-          <type>const Vector3d &amp;</type>
-          <declname>aSecondAxis</declname>
-        </param>
-        <param>
-          <type>const Vector3d &amp;</type>
-          <declname>aThirdAxis</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="471" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="986" bodyend="995"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="443" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="968" bodyend="971"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1307,21 +1214,15 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="52" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="51" bodyend="472"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="50" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="49" bodyend="453"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a26812a9cf0ec65f244dcfd23ec7904b2" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>a_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a3e8568dfcf2f261ea99c5a1c4edc2c1a" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>as</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ab5b6cc5a42b00958e867c2377c64e34d" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>axes_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae642014abfaaaaefe425208d06fcf837" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>b_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae58ad12e3d5fe3c12f1ddbec7d5b9e63" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>c_</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1afa7e23e1bdae5da01392a1818b56f647" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>cacheAxes</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a601664cd2702c1ef80dc8ea4e70fb90b" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>center_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aca293bcf279702b8b59d72fe4dd09217" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>clone</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a266ba48fbe6ba949515d7f399c54c251" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>computeFirstAxis</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ab4e2e337d4c50416b7469ba90e9ad8c4" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>computeMatrix</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1adede939f2b2ea905d14db588733cf7b6" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>computeSecondAxis</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ac9d0f8b7270a31d291e8c192ab1caae3" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>computeThirdAxis</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1acd6265aa0324a0a42782255c6c68fd6c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aa0d3177d1ed9985503ec6055f40768a8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a2f6d64044fbfaa53a018f3f0e62fa2ce" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>contains</name></member>

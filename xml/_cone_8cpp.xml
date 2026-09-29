@@ -85,7 +85,7 @@
       <node id="10">
         <label>Eigen/Core</label>
       </node>
-      <node id="34">
+      <node id="33">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp</label>
         <link refid="_plane_8hpp"/>
         <childnode refid="23" relation="include">
@@ -94,16 +94,16 @@
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="35">
+      <node id="34">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp</label>
         <link refid="3_d_2_object_2_point_set_8hpp"/>
         <childnode refid="19" relation="include">
@@ -122,15 +122,13 @@
       <node id="29">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp</label>
         <link refid="_ellipsoid_8hpp"/>
-        <childnode refid="30" relation="include">
-        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
       </node>
       <node id="19">
@@ -150,7 +148,7 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="32">
+      <node id="31">
         <label>OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</label>
         <link refid="_angle_8hpp"/>
         <childnode refid="7" relation="include">
@@ -186,7 +184,7 @@
       <node id="15">
         <label>OpenSpaceToolkit/Core/Type/Size.hpp</label>
       </node>
-      <node id="39">
+      <node id="38">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp</label>
         <link refid="_sphere_8hpp"/>
         <childnode refid="5" relation="include">
@@ -221,27 +219,24 @@
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
         <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
         </childnode>
         <childnode refid="42" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
-        </childnode>
       </node>
-      <node id="30">
-        <label>optional</label>
-      </node>
-      <node id="33">
+      <node id="32">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp</label>
         <link refid="3_d_2_object_2_line_string_8hpp"/>
         <childnode refid="13" relation="include">
@@ -265,7 +260,7 @@
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="38">
+      <node id="37">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp</label>
         <link refid="_pyramid_8hpp"/>
         <childnode refid="13" relation="include">
@@ -278,12 +273,12 @@
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
-        </childnode>
         <childnode refid="36" relation="include">
         </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
       </node>
-      <node id="31">
+      <node id="30">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp</label>
         <link refid="_quaternion_8hpp"/>
         <childnode refid="7" relation="include">
@@ -292,12 +287,12 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="41">
+      <node id="40">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp</label>
         <link refid="3_d_2_transformation_8hpp"/>
         <childnode refid="8" relation="include">
@@ -308,9 +303,9 @@
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
@@ -343,14 +338,14 @@
       <node id="7">
         <label>OpenSpaceToolkit/Core/Type/Integer.hpp</label>
       </node>
-      <node id="42">
+      <node id="41">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp</label>
         <link refid="_rotation_vector_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
@@ -378,23 +373,23 @@
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
-        </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
         <childnode refid="36" relation="include">
         </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
         <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
       </node>
       <node id="14">
@@ -424,7 +419,7 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="43">
+      <node id="42">
         <label>OpenSpaceToolkit/Mathematics/Object/Interval.hpp</label>
         <link refid="_interval_8hpp"/>
         <childnode refid="13" relation="include">
@@ -433,7 +428,7 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
       </node>
       <node id="13">
@@ -445,7 +440,7 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="40">
+      <node id="39">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp</label>
         <link refid="_cone_8hpp"/>
         <childnode refid="13" relation="include">
@@ -456,12 +451,12 @@
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
-      <node id="36">
+      <node id="35">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp</label>
         <link refid="_ray_8hpp"/>
         <childnode refid="5" relation="include">
@@ -471,7 +466,7 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="44">
+      <node id="43">
         <label>OpenSpaceToolkit/Mathematics/Object/Interval.tpp</label>
         <link refid="_interval_8tpp"/>
       </node>
@@ -491,7 +486,7 @@
         <childnode refid="23" relation="include">
         </childnode>
       </node>
-      <node id="37">
+      <node id="36">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.hpp</label>
         <link refid="3_d_2_object_2_polygon_8hpp"/>
         <childnode refid="13" relation="include">
@@ -504,9 +499,9 @@
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
