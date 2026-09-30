@@ -26,6 +26,20 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Constructor)
     {
         ASSERT_NO_THROW(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0, Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)));
     }
+
+    // A non-unitary orientation is accepted at construction, and only rejected by the queries that rotate with it
+
+    {
+        using ostk::mathematics::geometry::d3::object::Segment;
+
+        const Ellipsoid ellipsoid = {{1.0, 2.0, 3.0}, 4.0, 5.0, 6.0, Quaternion::XYZS(0.0, 0.0, 0.0, 2.0)};
+
+        ASSERT_TRUE(ellipsoid.isDefined());
+
+        ASSERT_ANY_THROW(ellipsoid.getFirstAxis());
+        ASSERT_ANY_THROW(ellipsoid.getMatrix());
+        ASSERT_ANY_THROW(ellipsoid.intersects(Segment({0.0, 0.0, 0.0}, {10.0, 0.0, 0.0})));
+    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Clone)
@@ -717,8 +731,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Pyram
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Contains_Point)
 {
+    using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     {
         ASSERT_TRUE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).contains(Point(+5.0, +2.0, +3.0)));
@@ -733,6 +751,34 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Contains_Point)
 
     {
         ASSERT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).contains(Point::Origin()));
+    }
+
+    // Rotated ellipsoid: the point is rotated with the orientation itself (q * X, q * Y and q * Z)
+
+    {
+        const Quaternion orientation =
+            Quaternion::RotationVector(RotationVector(Vector3d(1.0, 2.0, 3.0).normalized(), Angle::Degrees(30.0)));
+
+        const Point center = {1.0, 2.0, 3.0};
+
+        const Ellipsoid ellipsoid = {center, 4.0, 5.0, 6.0, orientation};
+
+        ASSERT_TRUE(ellipsoid.contains(center + 4.0 * (orientation * Vector3d::X())));
+        ASSERT_TRUE(ellipsoid.contains(center - 4.0 * (orientation * Vector3d::X())));
+        ASSERT_TRUE(ellipsoid.contains(center + 5.0 * (orientation * Vector3d::Y())));
+        ASSERT_TRUE(ellipsoid.contains(center - 5.0 * (orientation * Vector3d::Y())));
+        ASSERT_TRUE(ellipsoid.contains(center + 6.0 * (orientation * Vector3d::Z())));
+        ASSERT_TRUE(ellipsoid.contains(center - 6.0 * (orientation * Vector3d::Z())));
+
+        ASSERT_FALSE(ellipsoid.contains(center + 4.0 * (orientation * Vector3d::Y())));
+        ASSERT_FALSE(ellipsoid.contains(center));
+    }
+
+    // A non-unitary orientation is rejected
+
+    {
+        ASSERT_ANY_THROW(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0, Quaternion::XYZS(0.0, 0.0, 0.0, 2.0))
+                             .contains(Point(+5.0, +2.0, +3.0)));
     }
 
     {
@@ -1559,9 +1605,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, ApplyTransformat
 
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::Transformation;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Matrix3d;
     using ostk::mathematics::object::Vector3d;
 
     // Translation
@@ -1587,6 +1635,25 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, ApplyTransformat
             << referenceEllipsoid.getCenter().toString() << ellipsoid.getCenter().toString();
         ASSERT_TRUE(ellipsoid.getMatrix().isNear(referenceEllipsoid.getMatrix(), Real::Epsilon()))
             << referenceEllipsoid.getMatrix().toString() << ellipsoid.getMatrix().toString();
+
+        // The axes and the queries built on them follow the transformation too
+
+        const Matrix3d matrix = referenceEllipsoid.getMatrix();
+
+        for (const auto& [axis, semiAxis] :
+             {std::make_pair(ellipsoid.getFirstAxis(), ellipsoid.getFirstPrincipalSemiAxis()),
+              std::make_pair(ellipsoid.getSecondAxis(), ellipsoid.getSecondPrincipalSemiAxis()),
+              std::make_pair(ellipsoid.getThirdAxis(), ellipsoid.getThirdPrincipalSemiAxis())})
+        {
+            const Vector3d surfacePoint = semiAxis * axis;
+
+            ASSERT_NEAR(1.0, surfacePoint.dot(matrix * surfacePoint), 1e-12) << axis.toString();
+        }
+
+        // Wholly inside the rotated ellipsoid (semi-axis 6 along y), but crossing the original one (semi-axis 5)
+        ASSERT_FALSE(ellipsoid.intersects(Segment({1.0, 0.0, 3.0}, {1.0, 5.5, 3.0})));
+        // Crossing the rotated ellipsoid (semi-axis 5 along z), but wholly inside the original one (semi-axis 6)
+        ASSERT_TRUE(ellipsoid.intersects(Segment({1.0, 0.0, 3.0}, {1.0, 0.0, 8.5})));
     }
 
     {

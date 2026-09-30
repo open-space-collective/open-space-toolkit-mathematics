@@ -79,6 +79,16 @@ class Composite : public Object
     /// @param              [in] aComposite A composite
     Composite(const Composite& aComposite);
 
+    /// @brief              Move constructor
+    ///
+    /// @code{.cpp}
+    ///                     Composite composite = Composite(Point(0.0, 0.0, 0.0)) ;
+    ///                     Composite movedComposite = Composite(std::move(composite)) ;
+    /// @endcode
+    ///
+    /// @param              [in] aComposite A composite
+    Composite(Composite&& aComposite) noexcept;
+
     /// @brief              Clone composite
     ///
     /// @code{.cpp}
@@ -99,6 +109,18 @@ class Composite : public Object
     /// @param              [in] aComposite A composite
     /// @return             Reference to composite
     Composite& operator=(const Composite& aComposite);
+
+    /// @brief              Move assignment operator
+    ///
+    /// @code{.cpp}
+    ///                     Composite compositeA = Composite(Point(0.0, 0.0, 0.0)) ;
+    ///                     Composite compositeB = Composite::Undefined() ;
+    ///                     compositeB = std::move(compositeA) ;
+    /// @endcode
+    ///
+    /// @param              [in] aComposite A composite
+    /// @return             Reference to composite
+    Composite& operator=(Composite&& aComposite) noexcept;
 
     /// @brief              Equal to operator
     ///

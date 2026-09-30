@@ -90,6 +90,16 @@ class Intersection
     /// @param              [in] anIntersection An intersection
     Intersection(const Intersection& anIntersection);
 
+    /// @brief              Move constructor
+    ///
+    /// @code{.cpp}
+    ///                     Intersection intersection = Intersection::Point(object::Point(0.0, 0.0, 0.0)) ;
+    ///                     Intersection movedIntersection = Intersection(std::move(intersection)) ;
+    /// @endcode
+    ///
+    /// @param              [in] anIntersection An intersection
+    Intersection(Intersection&& anIntersection) noexcept;
+
     /// @brief              Destructor
     ///
     /// @code{.cpp}
@@ -109,6 +119,18 @@ class Intersection
     /// @param              [in] anIntersection An intersection
     /// @return             Reference to intersection
     Intersection& operator=(const Intersection& anIntersection);
+
+    /// @brief              Move assignment operator
+    ///
+    /// @code{.cpp}
+    ///                     Intersection intersectionA = Intersection::Empty() ;
+    ///                     Intersection intersectionB = Intersection::Point(object::Point(0.0, 0.0, 0.0)) ;
+    ///                     intersectionA = std::move(intersectionB) ;
+    /// @endcode
+    ///
+    /// @param              [in] anIntersection An intersection
+    /// @return             Reference to intersection
+    Intersection& operator=(Intersection&& anIntersection) noexcept;
 
     /// @brief              Equal to operator
     ///

@@ -241,8 +241,6 @@ Real Segment::distanceTo(const Point& aPoint) const
 
 Real Segment::distanceTo(const PointSet& aPointSet) const
 {
-    using ostk::core::container::Array;
-
     if (aPointSet.isEmpty())
     {
         throw ostk::core::error::runtime::Undefined("Point Set");
@@ -253,15 +251,19 @@ Real Segment::distanceTo(const PointSet& aPointSet) const
         throw ostk::core::error::runtime::Undefined("Segment");
     }
 
-    const Array<Real> distances = Array<Point>(aPointSet.begin(), aPointSet.end())
-                                      .map<Real>(
-                                          [this](const Point& aPoint) -> Real
-                                          {
-                                              return this->distanceTo(aPoint);
-                                          }
-                                      );
+    Real minimumDistance = Real::Undefined();
 
-    return *std::min_element(distances.begin(), distances.end());
+    for (const auto& point : aPointSet)
+    {
+        const Real distance = this->distanceTo(point);
+
+        if ((!minimumDistance.isDefined()) || (distance < minimumDistance))
+        {
+            minimumDistance = distance;
+        }
+    }
+
+    return minimumDistance;
 }
 
 Intersection Segment::intersectionWith(const Plane& aPlane) const

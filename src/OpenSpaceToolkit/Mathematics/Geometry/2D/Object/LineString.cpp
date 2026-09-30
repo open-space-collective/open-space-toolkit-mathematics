@@ -72,12 +72,7 @@ bool LineString::contains(const Point& aPoint) const
     {
         for (int index = 0; index < (pointCount - 1); index++)
         {
-            Point firstPoint = this->accessPointAt(index);
-            Point secondPoint = this->accessPointAt(index + 1);
-
-            object::Segment segment = object::Segment(firstPoint, secondPoint);
-
-            if (segment.contains(aPoint))
+            if (object::Segment(points_[index], points_[index + 1]).contains(aPoint))
             {
                 return true;
             }

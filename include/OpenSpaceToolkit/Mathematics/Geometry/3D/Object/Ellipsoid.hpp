@@ -450,6 +450,22 @@ class Ellipsoid : public Object
     Real c_;
 
     Quaternion q_;
+
+    // Derived from the orientation and the semi-axes, and computed once instead of on every query. The orientation is
+    // only checked for unitarity when it is used, so an ellipsoid whose orientation is not unitary keeps no cache and
+    // throws from the queries that need it, as it always has.
+    bool hasCachedAxes_;
+    Vector3d firstAxis_;
+    Vector3d secondAxis_;
+    Vector3d thirdAxis_;
+    Matrix3d matrix_;
+
+    void cacheAxes();
+
+    Vector3d computeFirstAxis() const;
+    Vector3d computeSecondAxis() const;
+    Vector3d computeThirdAxis() const;
+    Matrix3d computeMatrix() const;
 };
 
 }  // namespace object

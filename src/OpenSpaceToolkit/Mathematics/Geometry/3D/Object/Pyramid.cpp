@@ -12,10 +12,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
-#include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
 
 namespace ostk
 {
@@ -27,6 +24,98 @@ namespace d3
 {
 namespace object
 {
+
+/// Rotates a vector about a unit axis by the angle of the given cosine and sine (Rodrigues' rotation formula).
+///
+/// This is the rotation Quaternion::RotationVector(RotationVector(axis, angle)).conjugate() applies to a vector,
+/// evaluated directly instead of through two quaternion products.
+Vector3d PyramidRotateVector(
+    const Vector3d& aVector, const Vector3d& aUnitAxis, const double aCosine, const double aSine
+)
+{
+    return (aCosine * aVector) + (aSine * aUnitAxis.cross(aVector)) +
+           (((1.0 - aCosine) * aUnitAxis.dot(aVector)) * aUnitAxis);
+}
+
+/// Visits the rays of a lateral face of a pyramid, in the order Pyramid::getRaysOfLateralFaceAt returns them, until the
+/// visitor returns false.
+template <typename Visitor>
+void PyramidVisitRaysOfLateralFace(
+    const Point& anApex, const Segment& aBaseEdge, const Size aRayCount, Visitor&& aVisitor
+)
+{
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+
+    const Vector3d firstRayDirection = (aBaseEdge.getFirstPoint() - anApex).normalized();
+    const Vector3d secondRayDirection = (aBaseEdge.getSecondPoint() - anApex).normalized();
+
+    if (firstRayDirection == secondRayDirection)
+    {
+        aVisitor(Ray(anApex, firstRayDirection));
+
+        return;
+    }
+
+    // The rotation vector validates and normalizes the rotation axis, and throws for an axis that is not unitary.
+
+    const Vector3d rotationAxis =
+        RotationVector(firstRayDirection.cross(secondRayDirection).normalized(), Angle::Zero()).getAxis();
+
+    // Same angles as Interval<Real>::Closed(0.0, angleBetweenRays).generateArrayWithSize(aRayCount)
+
+    const double angleBetweenRays_rad = Angle::Between(firstRayDirection, secondRayDirection).inRadians();
+
+    const Size rayCount = (aRayCount > 1) ? aRayCount : 1;
+    const double angleStep_rad = (aRayCount > 1) ? (angleBetweenRays_rad / static_cast<double>(aRayCount - 1)) : 0.0;
+
+    double rayAngle_rad = 0.0;
+
+    for (Size rayIndex = 0; rayIndex < rayCount; ++rayIndex, rayAngle_rad += angleStep_rad)
+    {
+        const Ray ray = {
+            anApex, PyramidRotateVector(firstRayDirection, rotationAxis, std::cos(rayAngle_rad), std::sin(rayAngle_rad))
+        };
+
+        if (!aVisitor(ray))
+        {
+            return;
+        }
+    }
+}
+
+/// Visits the rays of all lateral faces of a pyramid, in the order Pyramid::getRaysOfLateralFaces returns them, until
+/// the visitor returns false.
+template <typename Visitor>
+void PyramidVisitRaysOfLateralFaces(
+    const Point& anApex, const Polygon& aBase, const Size aLateralFaceCount, const Size aRayCount, Visitor&& aVisitor
+)
+{
+    if (aRayCount < aLateralFaceCount)
+    {
+        throw ostk::core::error::RuntimeError(
+            "Ray count [{}] lower than lateral face count [{}].", aRayCount, aLateralFaceCount
+        );
+    }
+
+    const Size lateralRayCount = aRayCount / aLateralFaceCount;
+
+    bool isVisiting = true;
+
+    for (Index lateralFaceIndex = 0; isVisiting && (lateralFaceIndex < aLateralFaceCount); ++lateralFaceIndex)
+    {
+        PyramidVisitRaysOfLateralFace(
+            anApex,
+            aBase.getEdgeAt(lateralFaceIndex),
+            lateralRayCount,
+            [&aVisitor, &isVisiting](const Ray& aRay) -> bool
+            {
+                isVisiting = aVisitor(aRay);
+
+                return isVisiting;
+            }
+        );
+    }
+}
 
 Pyramid::Pyramid(const Polygon& aBase, const Point& anApex)
     : Object(),
@@ -72,16 +161,22 @@ bool Pyramid::intersects(const Sphere& aSphere, const Size aDiscretizationLevel)
         throw ostk::core::error::runtime::Undefined("Pyramid");
     }
 
-    for (const auto& ray :
-         this->getRaysOfLateralFaces(aDiscretizationLevel))  // [TBM] Could be improved by calculating rays on the fly
-    {
-        if (ray.intersects(aSphere))
-        {
-            return true;
-        }
-    }
+    bool intersects = false;
 
-    return false;
+    PyramidVisitRaysOfLateralFaces(
+        apex_,
+        base_,
+        this->getLateralFaceCount(),
+        aDiscretizationLevel,
+        [&aSphere, &intersects](const Ray& aRay) -> bool
+        {
+            intersects = aRay.intersects(aSphere);
+
+            return !intersects;
+        }
+    );
+
+    return intersects;
 }
 
 bool Pyramid::intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel) const
@@ -96,16 +191,22 @@ bool Pyramid::intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizatio
         throw ostk::core::error::runtime::Undefined("Pyramid");
     }
 
-    for (const auto& ray :
-         this->getRaysOfLateralFaces(aDiscretizationLevel))  // [TBM] Could be improved by calculating rays on the fly
-    {
-        if (ray.intersects(anEllipsoid))
-        {
-            return true;
-        }
-    }
+    bool intersects = false;
 
-    return false;
+    PyramidVisitRaysOfLateralFaces(
+        apex_,
+        base_,
+        this->getLateralFaceCount(),
+        aDiscretizationLevel,
+        [&anEllipsoid, &intersects](const Ray& aRay) -> bool
+        {
+            intersects = aRay.intersects(anEllipsoid);
+
+            return !intersects;
+        }
+    );
+
+    return intersects;
 }
 
 bool Pyramid::contains(const Point& aPoint) const
@@ -127,43 +228,49 @@ bool Pyramid::contains(const Point& aPoint) const
         return true;
     }
 
-    // Projection of the point onto the pyramid base plane, along the apex to point ray
+    // Projection of the point onto the pyramid base plane, along the apex to point ray (as Ray::intersectionWith(Plane)
+    // computes it, without building an Intersection)
+
+    const Vector3d baseXAxis = base_.getXAxis();
+    const Vector3d baseYAxis = base_.getYAxis();
 
     const Ray apexToPointRay = {apex_, aPoint - apex_};
 
-    const Plane basePlane = {base_.getOrigin(), base_.getNormalVector()};
+    const Plane basePlane = {base_.getOrigin(), baseXAxis.cross(baseYAxis).normalized()};
 
-    const Intersection rayPlaneIntersection = apexToPointRay.intersectionWith(basePlane);
+    const Vector3d rayDirection = apexToPointRay.getDirection();
+    const Vector3d baseNormal = basePlane.getNormalVector();
+    const Vector3d baseOrigin = basePlane.getPoint().asVector();
+    const Vector3d apex = apex_.asVector();
 
-    if (rayPlaneIntersection.isEmpty())
+    const double normalDotDirection = baseNormal.dot(rayDirection);
+
+    if (normalDotDirection == 0.0)  // Ray and base plane are parallel
+    {
+        if (baseNormal.dot(baseOrigin - apex) == 0.0)  // Ray is in the base plane
+        {
+            throw ostk::core::error::RuntimeError("Pyramid is degenerate.");
+        }
+
+        return false;
+    }
+
+    const double t = baseNormal.dot(baseOrigin - apex) / normalDotDirection;
+
+    if (t < 0.0)
     {
         return false;
     }
 
-    if (!rayPlaneIntersection.is<Point>())
-    {
-        throw ostk::core::error::RuntimeError("Pyramid is degenerate.");
-    }
+    const Vector3d intersectionPoint = apex + t * rayDirection;
 
-    const Point intersectionPoint = rayPlaneIntersection.as<Point>();
+    // Coordinates of the intersection point in the pyramid base frame
 
-    // Convert intersection point into pyramid base frame
+    const Vector3d baseOriginToIntersectionPoint = intersectionPoint - baseOrigin;
 
-    const Transformation translation = Transformation::Translation(-base_.getOrigin().asVector());
-
-    const Vector3d baseXAxis = base_.getXAxis();
-    const Vector3d baseYAxis = base_.getYAxis();
-    const Vector3d baseZAxis = base_.getNormalVector();
-
-    const RotationMatrix rotationMatrix = RotationMatrix::Columns(baseXAxis, baseYAxis, baseZAxis);
-
-    const Transformation rotation = Transformation::Rotation(rotationMatrix);
-
-    const Transformation combinedTransformation = rotation * translation;
-
-    const Point transformedPoint = combinedTransformation.applyTo(intersectionPoint);
-
-    const Point2d projectedPoint = {transformedPoint.x(), transformedPoint.y()};
+    const Point2d projectedPoint = {
+        baseXAxis.dot(baseOriginToIntersectionPoint), baseYAxis.dot(baseOriginToIntersectionPoint)
+    };
 
     // Query if projected point is within polygonal base
 
@@ -271,72 +378,47 @@ Polygon Pyramid::getLateralFaceAt(const Index aLateralFaceIndex) const
 
 Array<Ray> Pyramid::getRaysOfLateralFaceAt(const Index aLateralFaceIndex, const Size aRayCount) const
 {
-    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
-    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
-    using ostk::mathematics::object::Interval;
-
-    // if (aRayCount < 2)
-    // {
-    //     throw ostk::core::error::RuntimeError("Ray count [{}] lower than 2.", aRayCount) ;
-    // }
-
-    const Segment baseEdge = base_.getEdgeAt(aLateralFaceIndex);
-
-    const Vector3d firstRayDirection = (baseEdge.getFirstPoint() - apex_).normalized();
-    const Vector3d secondRayDirection = (baseEdge.getSecondPoint() - apex_).normalized();
-
-    if (firstRayDirection == secondRayDirection)
-    {
-        return {{apex_, firstRayDirection}};
-    }
-
-    const Vector3d rotationAxis = firstRayDirection.cross(secondRayDirection).normalized();
-
-    const Angle angleBetweenRays = Angle::Between(firstRayDirection, secondRayDirection);
-
-    const Array<Real> angles_rad =
-        (aRayCount > 1) ? Interval<Real>::Closed(0.0, angleBetweenRays.inRadians()).generateArrayWithSize(aRayCount)
-                        : Array<Real> {0.0};
-
     Array<Ray> rays = Array<Ray>::Empty();
 
-    rays.reserve(angles_rad.getSize());
+    rays.reserve((aRayCount > 1) ? aRayCount : 1);
 
-    for (const auto& angle_rad : angles_rad)
-    {
-        const Ray ray = {
-            apex_,
-            Quaternion::RotationVector(RotationVector(rotationAxis, Angle::Radians(angle_rad))).conjugate() *
-                firstRayDirection
-        };
+    PyramidVisitRaysOfLateralFace(
+        apex_,
+        base_.getEdgeAt(aLateralFaceIndex),
+        aRayCount,
+        [&rays](const Ray& aRay) -> bool
+        {
+            rays.add(aRay);
 
-        rays.emplace_back(ray);
-    }
+            return true;
+        }
+    );
 
     return rays;
 }
 
 Array<Ray> Pyramid::getRaysOfLateralFaces(const Size aRayCount) const
 {
-    if (aRayCount < this->getLateralFaceCount())
-    {
-        throw ostk::core::error::RuntimeError(
-            "Ray count [{}] lower than lateral face count [{}].", aRayCount, this->getLateralFaceCount()
-        );
-    }
-
-    Size lateralRayCount = aRayCount / this->getLateralFaceCount();
+    const Size lateralFaceCount = this->getLateralFaceCount();
 
     Array<Ray> rays = Array<Ray>::Empty();
 
-    for (Index lateralFaceIndex = 0; lateralFaceIndex < this->getLateralFaceCount(); ++lateralFaceIndex)
-    {
-        const Array<Ray> lateralFaceRays = this->getRaysOfLateralFaceAt(lateralFaceIndex, lateralRayCount);
+    rays.reserve(aRayCount);
 
-        // [TBM] Double counting rays
+    // [TBM] Double counting rays: adjacent lateral faces both return the ray through their shared base vertex
 
-        rays.add(lateralFaceRays);
-    }
+    PyramidVisitRaysOfLateralFaces(
+        apex_,
+        base_,
+        lateralFaceCount,
+        aRayCount,
+        [&rays](const Ray& aRay) -> bool
+        {
+            rays.add(aRay);
+
+            return true;
+        }
+    );
 
     return rays;
 }

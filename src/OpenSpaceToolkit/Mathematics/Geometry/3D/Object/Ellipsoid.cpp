@@ -16,7 +16,6 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
-#include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
 // #include <Gte/Mathematics/GteIntrHalfspace3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrLine3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrPlane3Ellipsoid3.h>
@@ -63,6 +62,28 @@ Point EllipsoidPointFromGteVector(const gte::Vector3<double>& aVector)
     return {aVector[0], aVector[1], aVector[2]};
 }
 
+/// Matrix of the rotation Quaternion::operator*(Vector3d) applies to a vector.
+///
+/// These are the entries RotationMatrix::Quaternion computes, without the RotationMatrix constructor's orthonormality
+/// checks, whose tolerance is tighter than Quaternion::isUnitary's. The conjugate quaternion rotates by the transpose.
+Matrix3d EllipsoidRotationMatrixFromQuaternion(const Quaternion& aQuaternion)
+{
+    const double q_x = aQuaternion.x();
+    const double q_y = aQuaternion.y();
+    const double q_z = aQuaternion.z();
+    const double q_s = aQuaternion.s();
+
+    Matrix3d matrix;
+
+    matrix << (+q_x * q_x - q_y * q_y - q_z * q_z + q_s * q_s), (2.0 * (q_x * q_y + q_z * q_s)),
+        (2.0 * (q_x * q_z - q_y * q_s)), (2.0 * (q_y * q_x - q_z * q_s)),
+        (-q_x * q_x + q_y * q_y - q_z * q_z + q_s * q_s), (2.0 * (q_y * q_z + q_x * q_s)),
+        (2.0 * (q_z * q_x + q_y * q_s)), (2.0 * (q_z * q_y - q_x * q_s)),
+        (-q_x * q_x - q_y * q_y + q_z * q_z + q_s * q_s);
+
+    return matrix;
+}
+
 Ellipsoid::Ellipsoid(
     const Point& aCenter,
     const Real& aFirstPrincipalSemiAxis,
@@ -75,7 +96,12 @@ Ellipsoid::Ellipsoid(
       a_(aFirstPrincipalSemiAxis),
       b_(aSecondPrincipalSemiAxis),
       c_(aThirdPrincipalSemiAxis),
-      q_(anOrientation)
+      q_(anOrientation),
+      hasCachedAxes_(false),
+      firstAxis_(Vector3d::Zero()),
+      secondAxis_(Vector3d::Zero()),
+      thirdAxis_(Vector3d::Zero()),
+      matrix_(Matrix3d::Zero())
 {
     if (a_.isDefined() && (a_ < 0.0))
     {
@@ -91,6 +117,8 @@ Ellipsoid::Ellipsoid(
     {
         throw ostk::core::error::RuntimeError("Third principal semi-axis is negative.");
     }
+
+    this->cacheAxes();
 }
 
 Ellipsoid* Ellipsoid::clone() const
@@ -162,31 +190,23 @@ bool Ellipsoid::intersects(const Line& aLine) const
         throw ostk::core::error::runtime::Undefined("Line");
     }
 
-    // Line
+    // The test gte::TIQuery<Line3, Ellipsoid3> performs, on the cached matrix instead of a gte::Ellipsoid3 rebuilt
+    // from the axes. The line X = P + t * D meets the ellipsoid (X - K)^T * M * (X - K) = 1 when
+    // a2 * t^2 + 2 * a1 * t + a0 = 0 has real roots.
 
-    const gte::Line3<double> line = {
-        EllipsoidGteVectorFromPoint(aLine.getOrigin()), EllipsoidGteVectorFromVector3d(aLine.getDirection())
-    };
+    const Matrix3d M = this->getMatrix();
 
-    // Ellipsoid
+    const Vector3d direction = aLine.getDirection();
+    const Vector3d diff = aLine.getOrigin().asVector() - center_.asVector();
 
-    const gte::Vector3<double> center = EllipsoidGteVectorFromPoint(center_);
-    const std::array<gte::Vector3<double>, 3> axes = {
-        EllipsoidGteVectorFromVector3d(this->getFirstAxis()),
-        EllipsoidGteVectorFromVector3d(this->getSecondAxis()),
-        EllipsoidGteVectorFromVector3d(this->getThirdAxis())
-    };
-    const gte::Vector3<double> extent = {a_, b_, c_};
+    const Vector3d matDir = M * direction;
+    const Vector3d matDiff = M * diff;
 
-    const gte::Ellipsoid3<double> ellipsoid = {center, axes, extent};
+    const double a2 = direction.dot(matDir);
+    const double a1 = direction.dot(matDiff);
+    const double a0 = diff.dot(matDiff) - 1.0;
 
-    // Intersection
-
-    gte::TIQuery<double, gte::Line3<double>, gte::Ellipsoid3<double>> intersectionQuery;
-
-    auto intersectionResult = intersectionQuery(line, ellipsoid);
-
-    return intersectionResult.intersect;
+    return ((a1 * a1) - (a0 * a2)) >= 0.0;
 }
 
 bool Ellipsoid::intersects(const Ray& aRay) const
@@ -201,37 +221,32 @@ bool Ellipsoid::intersects(const Ray& aRay) const
         throw ostk::core::error::runtime::Undefined("Ray");
     }
 
-    // Ray
+    // The test gte::TIQuery<Ray3, Ellipsoid3> performs, on the cached matrix instead of a gte::Ellipsoid3 rebuilt from
+    // the axes: the line's quadratic a2 * t^2 + 2 * a1 * t + a0 = 0 has real roots, and the ray starts inside the
+    // ellipsoid or heads towards it.
 
-    const gte::Ray3<double> ray = {
-        EllipsoidGteVectorFromPoint(aRay.getOrigin()), EllipsoidGteVectorFromVector3d(aRay.getDirection())
-    };
+    const Matrix3d M = this->getMatrix();
 
-    // Ellipsoid
+    const Vector3d direction = aRay.getDirection();
+    const Vector3d diff = aRay.getOrigin().asVector() - center_.asVector();
 
-    const gte::Vector3<double> center = EllipsoidGteVectorFromPoint(center_);
-    const std::array<gte::Vector3<double>, 3> axes = {
-        EllipsoidGteVectorFromVector3d(this->getFirstAxis()),
-        EllipsoidGteVectorFromVector3d(this->getSecondAxis()),
-        EllipsoidGteVectorFromVector3d(this->getThirdAxis())
-    };
-    const gte::Vector3<double> extent = {a_, b_, c_};
+    const Vector3d matDir = M * direction;
+    const Vector3d matDiff = M * diff;
 
-    const gte::Ellipsoid3<double> ellipsoid = {center, axes, extent};
+    const double a2 = direction.dot(matDir);
+    const double a1 = direction.dot(matDiff);
+    const double a0 = diff.dot(matDiff) - 1.0;
 
-    // Intersection
+    if (((a1 * a1) - (a0 * a2)) < 0.0)
+    {
+        return false;
+    }
 
-    gte::TIQuery<double, gte::Ray3<double>, gte::Ellipsoid3<double>> intersectionQuery;
-
-    auto intersectionResult = intersectionQuery(ray, ellipsoid);
-
-    return intersectionResult.intersect;
+    return (a0 <= 0.0) || (a1 < 0.0);
 }
 
 bool Ellipsoid::intersects(const Segment& aSegment) const
 {
-    using ostk::mathematics::object::Interval;
-
     if (!this->isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Ellipsoid");
@@ -274,9 +289,15 @@ bool Ellipsoid::intersects(const Segment& aSegment) const
 
     // https://www.geometrictools.com/GTEngine/Include/Mathematics/GteIntrSegment3Ellipsoid3.h
 
-    const Vector3d segmentDirection = aSegment.getDirection();
-    const Vector3d segmentCenter = aSegment.getCenter().asVector();
-    const Real segmentHalfLength = aSegment.getLength() / 2.0;
+    // The segment's direction, center and half-length all come from one difference of its end points, giving the
+    // same values as the Segment accessors without recomputing that difference and re-checking the segment each time.
+
+    const Point segmentFirstPoint = aSegment.getFirstPoint();
+    const Vector3d segmentVector = aSegment.getSecondPoint() - segmentFirstPoint;
+
+    const Vector3d segmentDirection = segmentVector.normalized();
+    const Vector3d segmentCenter = (segmentFirstPoint + segmentVector / 2.0).asVector();
+    const Real segmentHalfLength = segmentVector.norm() / 2.0;
 
     const Matrix3d M = this->getMatrix();
 
@@ -304,24 +325,23 @@ bool Ellipsoid::intersects(const Segment& aSegment) const
         const Real t0 = (-a1 - discriminantRoot) * a2_inverse;
         const Real t1 = (-a1 + discriminantRoot) * a2_inverse;
 
-        const Interval<Real> resultInterval = Interval<Real>::Closed(t0, t1);
-        const Interval<Real> segmentInterval = Interval<Real>::Closed(-segmentHalfLength, +segmentHalfLength);
+        // Undefined roots (only possible for an infinite semi-axis, where a2 vanishes) are rejected, as they were when
+        // they bounded an Interval<Real>
 
-        if (!resultInterval.contains(segmentInterval))
+        if ((!t0.isDefined()) || (!t1.isDefined()))
         {
-            if (resultInterval.intersects(segmentInterval))
-            {
-                return true;
-            }
-            else  // No intersection
-            {
-                return false;
-            }
+            throw ostk::core::error::runtime::Undefined("Interval");
         }
-        else
-        {
-            return false;
-        }
+
+        // The closed interval of roots [t0, t1] against the closed segment interval [-h, +h], compared bound by bound
+        // exactly as Interval<Real>::contains and Interval<Real>::intersects do, without building either interval:
+        // the segment lies wholly inside the ellipsoid when the roots enclose it, and crosses its surface when the two
+        // merely overlap.
+
+        const bool rootsContainSegment = (t0 <= -segmentHalfLength) && (t1 >= +segmentHalfLength);
+        const bool rootsOverlapSegment = (t0 <= +segmentHalfLength) && (t1 >= -segmentHalfLength);
+
+        return (!rootsContainSegment) && rootsOverlapSegment;
     }
     else  // One real root
     {
@@ -471,9 +491,21 @@ bool Ellipsoid::contains(const Point& aPoint) const
 
     Matrix3d dcm;
 
-    dcm.row(0) = q_ * Vector3d::X();
-    dcm.row(1) = q_ * Vector3d::Y();
-    dcm.row(2) = q_ * Vector3d::Z();
+    if (hasCachedAxes_)
+    {
+        // The rows q * X, q * Y and q * Z are the columns of the matrix whose rows are the cached axes
+        // (q.conjugate * X, ...), as rotating by the conjugate applies the transpose
+
+        dcm.col(0) = firstAxis_;
+        dcm.col(1) = secondAxis_;
+        dcm.col(2) = thirdAxis_;
+    }
+    else
+    {
+        dcm.row(0) = q_ * Vector3d::X();
+        dcm.row(1) = q_ * Vector3d::Y();
+        dcm.row(2) = q_ * Vector3d::Z();
+    }
 
     const Vector3d point = dcm * (aPoint - center_);
 
@@ -553,7 +585,7 @@ Vector3d Ellipsoid::getFirstAxis() const
         throw ostk::core::error::runtime::Undefined("Ellipsoid");
     }
 
-    return q_.toConjugate() * Vector3d::X();
+    return hasCachedAxes_ ? firstAxis_ : this->computeFirstAxis();
 }
 
 Vector3d Ellipsoid::getSecondAxis() const
@@ -563,7 +595,7 @@ Vector3d Ellipsoid::getSecondAxis() const
         throw ostk::core::error::runtime::Undefined("Ellipsoid");
     }
 
-    return q_.toConjugate() * Vector3d::Y();
+    return hasCachedAxes_ ? secondAxis_ : this->computeSecondAxis();
 }
 
 Vector3d Ellipsoid::getThirdAxis() const
@@ -573,7 +605,7 @@ Vector3d Ellipsoid::getThirdAxis() const
         throw ostk::core::error::runtime::Undefined("Ellipsoid");
     }
 
-    return q_.toConjugate() * Vector3d::Z();
+    return hasCachedAxes_ ? thirdAxis_ : this->computeThirdAxis();
 }
 
 Quaternion Ellipsoid::getOrientation() const
@@ -593,24 +625,7 @@ Matrix3d Ellipsoid::getMatrix() const
         throw ostk::core::error::runtime::Undefined("Ellipsoid");
     }
 
-    const Vector3d firstRatio = this->getFirstAxis() / a_;
-    const Vector3d secondRatio = this->getSecondAxis() / b_;
-    const Vector3d thirdRatio = this->getThirdAxis() / c_;
-
-    auto tensorProduct = [](const Vector3d& aFirstVector, const Vector3d& aSecondVector) -> Matrix3d
-    {
-        Matrix3d tensorProductMatrix;
-
-        tensorProductMatrix << aFirstVector(0) * aSecondVector(0), aFirstVector(0) * aSecondVector(1),
-            aFirstVector(0) * aSecondVector(2), aFirstVector(1) * aSecondVector(0), aFirstVector(1) * aSecondVector(1),
-            aFirstVector(1) * aSecondVector(2), aFirstVector(2) * aSecondVector(0), aFirstVector(2) * aSecondVector(1),
-            aFirstVector(2) * aSecondVector(2);
-
-        return tensorProductMatrix;
-    };
-
-    return tensorProduct(firstRatio, firstRatio) + tensorProduct(secondRatio, secondRatio) +
-           tensorProduct(thirdRatio, thirdRatio);
+    return hasCachedAxes_ ? matrix_ : this->computeMatrix();
 }
 
 Intersection Ellipsoid::intersectionWith(const Line& aLine) const
@@ -963,11 +978,72 @@ void Ellipsoid::applyTransformation(const Transformation& aTransformation)
     const Vector3d thirdAxis = firstAxis.cross(secondAxis);
 
     q_ = Quaternion::RotationMatrix(RotationMatrix::Columns(firstAxis, secondAxis, thirdAxis)).conjugate();
+
+    this->cacheAxes();
 }
 
 Ellipsoid Ellipsoid::Undefined()
 {
     return {Point::Undefined(), Real::Undefined(), Real::Undefined(), Real::Undefined(), Quaternion::Undefined()};
+}
+
+void Ellipsoid::cacheAxes()
+{
+    hasCachedAxes_ = false;
+
+    if ((!this->isDefined()) || (!q_.isUnitary()))
+    {
+        return;
+    }
+
+    // q.conjugate * X, q.conjugate * Y and q.conjugate * Z are the rows of the matrix of the rotation by q
+
+    const Matrix3d rotationMatrix = EllipsoidRotationMatrixFromQuaternion(q_);
+
+    firstAxis_ = rotationMatrix.row(0).transpose();
+    secondAxis_ = rotationMatrix.row(1).transpose();
+    thirdAxis_ = rotationMatrix.row(2).transpose();
+
+    hasCachedAxes_ = true;  // Set before computing the matrix, so that it is built from the axes just cached
+
+    matrix_ = this->computeMatrix();
+}
+
+Vector3d Ellipsoid::computeFirstAxis() const
+{
+    return q_.toConjugate() * Vector3d::X();
+}
+
+Vector3d Ellipsoid::computeSecondAxis() const
+{
+    return q_.toConjugate() * Vector3d::Y();
+}
+
+Vector3d Ellipsoid::computeThirdAxis() const
+{
+    return q_.toConjugate() * Vector3d::Z();
+}
+
+Matrix3d Ellipsoid::computeMatrix() const
+{
+    const Vector3d firstRatio = this->getFirstAxis() / a_;
+    const Vector3d secondRatio = this->getSecondAxis() / b_;
+    const Vector3d thirdRatio = this->getThirdAxis() / c_;
+
+    auto tensorProduct = [](const Vector3d& aFirstVector, const Vector3d& aSecondVector) -> Matrix3d
+    {
+        Matrix3d tensorProductMatrix;
+
+        tensorProductMatrix << aFirstVector(0) * aSecondVector(0), aFirstVector(0) * aSecondVector(1),
+            aFirstVector(0) * aSecondVector(2), aFirstVector(1) * aSecondVector(0), aFirstVector(1) * aSecondVector(1),
+            aFirstVector(1) * aSecondVector(2), aFirstVector(2) * aSecondVector(0), aFirstVector(2) * aSecondVector(1),
+            aFirstVector(2) * aSecondVector(2);
+
+        return tensorProductMatrix;
+    };
+
+    return tensorProduct(firstRatio, firstRatio) + tensorProduct(secondRatio, secondRatio) +
+           tensorProduct(thirdRatio, thirdRatio);
 }
 
 }  // namespace object

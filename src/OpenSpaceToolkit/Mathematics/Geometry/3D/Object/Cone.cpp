@@ -11,9 +11,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
-#include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
 
 namespace ostk
 {
@@ -25,6 +23,64 @@ namespace d3
 {
 namespace object
 {
+
+/// Rotates a vector about a unit axis by the angle of the given cosine and sine (Rodrigues' rotation formula).
+///
+/// This is the rotation Quaternion::RotationVector(RotationVector(axis, angle)).toConjugate() applies to a vector,
+/// evaluated directly instead of through two quaternion products.
+Vector3d ConeRotateVector(const Vector3d& aVector, const Vector3d& aUnitAxis, const double aCosine, const double aSine)
+{
+    return (aCosine * aVector) + (aSine * aUnitAxis.cross(aVector)) +
+           (((1.0 - aCosine) * aUnitAxis.dot(aVector)) * aUnitAxis);
+}
+
+/// Visits the rays of the lateral surface of a cone, in the order Cone::getRaysOfLateralSurface returns them, until the
+/// visitor returns false.
+template <typename Visitor>
+void ConeVisitRaysOfLateralSurface(
+    const Point& anApex, const Vector3d& anAxis, const Angle& anAngle, const Size aRayCount, Visitor&& aVisitor
+)
+{
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+
+    const Vector3d referenceDirection = (std::abs(anAxis.dot(Vector3d::X())) < 0.5)
+                                          ? anAxis.cross(Vector3d::X()).normalized()
+                                          : anAxis.cross(Vector3d::Y()).normalized();
+
+    // The rotation vectors validate and normalize the rotation axes, and throw for an axis that is not unitary.
+
+    const Vector3d referenceRotationAxis = RotationVector(referenceDirection, anAngle).getAxis();
+    const Vector3d lateralRotationAxis = RotationVector(anAxis, anAngle).getAxis();
+
+    const double angle_rad = anAngle.inRadians();
+
+    const Ray referenceRay = {
+        anApex, ConeRotateVector(anAxis, referenceRotationAxis, std::cos(angle_rad), std::sin(angle_rad))
+    };
+
+    const Vector3d referenceRayDirection = referenceRay.getDirection();
+
+    // Same angles as Interval<Real>::HalfOpenRight(0.0, 360.0).generateArrayWithSize(aRayCount)
+
+    const double angleStep_deg = (aRayCount > 1) ? (360.0 / static_cast<double>(aRayCount)) : 0.0;
+
+    double rayAngle_deg = 0.0;
+
+    for (Size rayIndex = 0; rayIndex < aRayCount; ++rayIndex, rayAngle_deg += angleStep_deg)
+    {
+        const double rayAngle_rad = rayAngle_deg * (M_PI / 180.0);
+
+        const Ray ray = {
+            anApex,
+            ConeRotateVector(referenceRayDirection, lateralRotationAxis, std::cos(rayAngle_rad), std::sin(rayAngle_rad))
+        };
+
+        if (!aVisitor(ray))
+        {
+            return;
+        }
+    }
+}
 
 Cone::Cone(const Point& anApex, const Vector3d& anAxis, const Angle& anAngle)
     : Object(),
@@ -102,16 +158,27 @@ bool Cone::intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizationLe
         throw ostk::core::error::runtime::Undefined("Cone");
     }
 
-    for (const auto& ray :
-         this->getRaysOfLateralSurface(aDiscretizationLevel))  // [TBM] Could be improved by calculating rays on the fly
+    if (aDiscretizationLevel == 0)
     {
-        if (ray.intersects(anEllipsoid))
-        {
-            return true;
-        }
+        throw ostk::core::error::runtime::Wrong("Ray count");
     }
 
-    return false;
+    bool intersects = false;
+
+    ConeVisitRaysOfLateralSurface(
+        apex_,
+        axis_,
+        angle_,
+        aDiscretizationLevel,
+        [&anEllipsoid, &intersects](const Ray& aRay) -> bool
+        {
+            intersects = aRay.intersects(anEllipsoid);
+
+            return !intersects;
+        }
+    );
+
+    return intersects;
 }
 
 bool Cone::contains(const Point& aPoint) const
@@ -247,41 +314,32 @@ Angle Cone::getAngle() const
 
 Array<Ray> Cone::getRaysOfLateralSurface(const Size aRayCount) const
 {
-    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
-    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
-    using ostk::mathematics::object::Interval;
-
     if (aRayCount == 0)
     {
         throw ostk::core::error::runtime::Wrong("Ray count");
     }
 
-    const Vector3d referenceDirection = (std::abs(axis_.dot(Vector3d::X())) < 0.5)
-                                          ? axis_.cross(Vector3d::X()).normalized()
-                                          : axis_.cross(Vector3d::Y()).normalized();
-
-    const Ray referenceRay = {
-        apex_, Quaternion::RotationVector(RotationVector(referenceDirection, angle_)).toConjugate() * axis_
-    };
-
-    const Array<Real> angles_rad = (aRayCount > 1)
-                                     ? Interval<Real>::HalfOpenRight(0.0, 360.0).generateArrayWithSize(aRayCount)
-                                     : Array<Real> {0.0};
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Cone");
+    }
 
     Array<Ray> rays = Array<Ray>::Empty();
 
-    rays.reserve(angles_rad.getSize());
+    rays.reserve(aRayCount);
 
-    for (const auto& angle_rad : angles_rad)
-    {
-        const Angle angle = Angle::Degrees(angle_rad);
+    ConeVisitRaysOfLateralSurface(
+        apex_,
+        axis_,
+        angle_,
+        aRayCount,
+        [&rays](const Ray& aRay) -> bool
+        {
+            rays.add(aRay);
 
-        const Ray ray = {
-            apex_, Quaternion::RotationVector(RotationVector(axis_, angle)).toConjugate() * referenceRay.getDirection()
-        };
-
-        rays.add(ray);
-    }
+            return true;
+        }
+    );
 
     return rays;
 }

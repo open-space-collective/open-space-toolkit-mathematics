@@ -26,6 +26,12 @@ Intersection::Intersection(const Intersection& anIntersection)
 {
 }
 
+Intersection::Intersection(Intersection&& anIntersection) noexcept
+    : type_(anIntersection.type_),
+      composite_(std::move(anIntersection.composite_))
+{
+}
+
 Intersection::~Intersection() {}
 
 Intersection& Intersection::operator=(const Intersection& anIntersection)
@@ -34,6 +40,17 @@ Intersection& Intersection::operator=(const Intersection& anIntersection)
     {
         type_ = anIntersection.type_;
         composite_ = anIntersection.composite_;
+    }
+
+    return *this;
+}
+
+Intersection& Intersection::operator=(Intersection&& anIntersection) noexcept
+{
+    if (this != &anIntersection)
+    {
+        type_ = anIntersection.type_;
+        composite_ = std::move(anIntersection.composite_);
     }
 
     return *this;

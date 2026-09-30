@@ -129,25 +129,17 @@ bool Sphere::intersects(const Line& aLine) const
         throw ostk::core::error::runtime::Undefined("Line");
     }
 
-    // Line
+    // The test gte::TIQuery<Line3, Sphere3> performs, without building the GTE objects: the line X = P + t * D meets
+    // the sphere when t^2 + 2 * a1 * t + a0 = 0 has real roots
 
-    const gte::Line3<double> line = {
-        SphereGteVectorFromPoint(aLine.getOrigin()), SphereGteVectorFromVector3d(aLine.getDirection())
-    };
+    const double radius = radius_;
 
-    // Sphere
+    const Vector3d diff = aLine.getOrigin().asVector() - center_.asVector();
 
-    const gte::Vector3<double> center = SphereGteVectorFromPoint(center_);
+    const double a0 = diff.dot(diff) - (radius * radius);
+    const double a1 = aLine.getDirection().dot(diff);
 
-    const gte::Sphere3<double> sphere = {center, radius_};
-
-    // Intersection
-
-    gte::TIQuery<double, gte::Line3<double>, gte::Sphere3<double>> intersectionQuery;
-
-    auto intersectionResult = intersectionQuery(line, sphere);
-
-    return intersectionResult.intersect;
+    return ((a1 * a1) - a0) >= 0.0;
 }
 
 bool Sphere::intersects(const Ray& aRay) const
@@ -162,25 +154,28 @@ bool Sphere::intersects(const Ray& aRay) const
         throw ostk::core::error::runtime::Undefined("Ray");
     }
 
-    // Ray
+    // The test gte::TIQuery<Ray3, Sphere3> performs, without building the GTE objects: the ray starts inside the
+    // sphere, or heads towards it and its line meets it
 
-    const gte::Ray3<double> ray = {
-        SphereGteVectorFromPoint(aRay.getOrigin()), SphereGteVectorFromVector3d(aRay.getDirection())
-    };
+    const double radius = radius_;
 
-    // Sphere
+    const Vector3d diff = aRay.getOrigin().asVector() - center_.asVector();
 
-    const gte::Vector3<double> center = SphereGteVectorFromPoint(center_);
+    const double a0 = diff.dot(diff) - (radius * radius);
 
-    const gte::Sphere3<double> sphere = {center, radius_};
+    if (a0 <= 0.0)
+    {
+        return true;
+    }
 
-    // Intersection
+    const double a1 = aRay.getDirection().dot(diff);
 
-    gte::TIQuery<double, gte::Ray3<double>, gte::Sphere3<double>> intersectionQuery;
+    if (a1 >= 0.0)
+    {
+        return false;
+    }
 
-    auto intersectionResult = intersectionQuery(ray, sphere);
-
-    return intersectionResult.intersect;
+    return ((a1 * a1) - a0) >= 0.0;
 }
 
 bool Sphere::intersects(const Segment& aSegment) const
@@ -195,25 +190,44 @@ bool Sphere::intersects(const Segment& aSegment) const
         throw ostk::core::error::runtime::Undefined("Segment");
     }
 
-    // Segment
+    // The test gte::TIQuery<Segment3, Sphere3> performs, without building the GTE objects. The segment is taken in the
+    // centered form GTE uses (center, unit direction and half-length, normalized by multiplying with the inverse of
+    // the length as GTE does), and Q(t) = t^2 + 2 * a1 * t + a0 is evaluated at both ends, t = -e and t = +e.
 
-    const gte::Segment3<double> segment = {
-        SphereGteVectorFromPoint(aSegment.getFirstPoint()), SphereGteVectorFromPoint(aSegment.getSecondPoint())
-    };
+    const Vector3d firstPoint = aSegment.getFirstPoint().asVector();
+    const Vector3d secondPoint = aSegment.getSecondPoint().asVector();
 
-    // Sphere
+    const Vector3d segmentCenter = 0.5 * (firstPoint + secondPoint);
+    const Vector3d segmentVector = secondPoint - firstPoint;
+    const double segmentLength = std::sqrt(segmentVector.dot(segmentVector));
+    const Vector3d segmentDirection =
+        (segmentLength > 0.0) ? Vector3d(segmentVector * (1.0 / segmentLength)) : Vector3d(Vector3d::Zero());
+    const double segmentExtent = 0.5 * segmentLength;
 
-    const gte::Vector3<double> center = SphereGteVectorFromPoint(center_);
+    const double radius = radius_;
 
-    const gte::Sphere3<double> sphere = {center, radius_};
+    const Vector3d diff = segmentCenter - center_.asVector();
 
-    // Intersection
+    const double a0 = diff.dot(diff) - (radius * radius);
+    const double a1 = segmentDirection.dot(diff);
 
-    gte::TIQuery<double, gte::Segment3<double>, gte::Sphere3<double>> intersectionQuery;
+    if (((a1 * a1) - a0) < 0.0)
+    {
+        return false;
+    }
 
-    auto intersectionResult = intersectionQuery(segment, sphere);
+    const double tmp0 = (segmentExtent * segmentExtent) + a0;
+    const double tmp1 = (2.0 * a1) * segmentExtent;
 
-    return intersectionResult.intersect;
+    const double qm = tmp0 - tmp1;
+    const double qp = tmp0 + tmp1;
+
+    if ((qm * qp) <= 0.0)
+    {
+        return true;
+    }
+
+    return (qm > 0.0) && (std::abs(a1) < segmentExtent);
 }
 
 bool Sphere::intersects(const Plane& aPlane) const
