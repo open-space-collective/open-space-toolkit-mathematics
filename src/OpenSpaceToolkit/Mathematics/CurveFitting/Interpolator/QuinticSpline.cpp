@@ -2,8 +2,8 @@
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp>
 
 namespace ostk
 {
@@ -14,10 +14,10 @@ namespace curvefitting
 namespace interpolator
 {
 
-CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
-    : Interpolator(Interpolator::Type::CubicSpline)
+QuinticSpline::QuinticSpline(const VectorXd& anXVector, const VectorXd& aYVector)
+    : Interpolator(Interpolator::Type::QuinticSpline)
 {
-    if (aYVector.size() < 5)
+    if (aYVector.size() < 8)
     {
         throw ostk::core::error::runtime::Wrong("y");
     }
@@ -33,22 +33,20 @@ CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
 
         const double h = (anXVector(size - 1) - anXVector(0)) / double(size - 1);
 
-        cardinalInterpolator_.emplace(aYVector.begin(), aYVector.end(), anXVector(0), h);
+        cardinalInterpolator_.emplace(std::vector<double>(aYVector.begin(), aYVector.end()), anXVector(0), h);
     }
     else
     {
         interpolator_ = std::make_shared<const NonUniformBSpline>(
-            // The cardinal cubic B-spline extrapolates rather than rejecting a query outside
-            // of the interpolation domain, so this path does the same
-            NonUniformBSpline::Interpolate(anXVector, aYVector, 3, NonUniformBSpline::DomainBehavior::Extrapolate)
+            NonUniformBSpline::Interpolate(anXVector, aYVector, 5, NonUniformBSpline::DomainBehavior::Throw)
         );
     }
 }
 
-CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
-    : Interpolator(Interpolator::Type::CubicSpline)
+QuinticSpline::QuinticSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
+    : Interpolator(Interpolator::Type::QuinticSpline)
 {
-    if (aYVector.size() < 5)
+    if (aYVector.size() < 8)
     {
         throw ostk::core::error::runtime::Wrong("y");
     }
@@ -58,12 +56,12 @@ CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h
         throw ostk::core::error::runtime::Wrong("h");
     }
 
-    cardinalInterpolator_.emplace(aYVector.begin(), aYVector.end(), x0, h);
+    cardinalInterpolator_.emplace(std::vector<double>(aYVector.begin(), aYVector.end()), x0, h);
 }
 
-CubicSpline::~CubicSpline() {}
+QuinticSpline::~QuinticSpline() {}
 
-VectorXd CubicSpline::evaluate(const VectorXd& aQueryVector) const
+VectorXd QuinticSpline::evaluate(const VectorXd& aQueryVector) const
 {
     VectorXd yOutput(aQueryVector.size());
 
@@ -75,25 +73,43 @@ VectorXd CubicSpline::evaluate(const VectorXd& aQueryVector) const
     return yOutput;
 }
 
-double CubicSpline::evaluate(const double& aQueryValue) const
+double QuinticSpline::evaluate(const double& aQueryValue) const
 {
     return cardinalInterpolator_.has_value() ? (*cardinalInterpolator_)(aQueryValue)
                                              : interpolator_->evaluate(aQueryValue);
 }
 
-double CubicSpline::computeDerivative(const double& aQueryValue) const
+double QuinticSpline::computeDerivative(const double& aQueryValue) const
 {
     return cardinalInterpolator_.has_value() ? cardinalInterpolator_->prime(aQueryValue)
                                              : interpolator_->computeDerivative(aQueryValue);
 }
 
-VectorXd CubicSpline::computeDerivative(const VectorXd& aQueryVector) const
+VectorXd QuinticSpline::computeDerivative(const VectorXd& aQueryVector) const
 {
     VectorXd yOutput(aQueryVector.size());
 
     for (int i = 0; i < aQueryVector.size(); ++i)
     {
         yOutput(i) = this->computeDerivative(aQueryVector(i));
+    }
+
+    return yOutput;
+}
+
+double QuinticSpline::computeSecondDerivative(const double& aQueryValue) const
+{
+    return cardinalInterpolator_.has_value() ? cardinalInterpolator_->double_prime(aQueryValue)
+                                             : interpolator_->computeSecondDerivative(aQueryValue);
+}
+
+VectorXd QuinticSpline::computeSecondDerivative(const VectorXd& aQueryVector) const
+{
+    VectorXd yOutput(aQueryVector.size());
+
+    for (int i = 0; i < aQueryVector.size(); ++i)
+    {
+        yOutput(i) = this->computeSecondDerivative(aQueryVector(i));
     }
 
     return yOutput;

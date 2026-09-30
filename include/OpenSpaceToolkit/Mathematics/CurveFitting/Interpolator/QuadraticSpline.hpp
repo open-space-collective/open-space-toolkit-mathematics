@@ -1,10 +1,11 @@
 /// Apache License 2.0
-#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline__
-#define __OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline__
+#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_QuadraticSpline__
+#define __OpenSpaceToolkit_Mathematics_Interpolator_QuadraticSpline__
 
 #include <optional>
+#include <vector>
 
-#include <boost/math/interpolators/cardinal_cubic_b_spline.hpp>
+#include <boost/math/interpolators/cardinal_quadratic_b_spline.hpp>
 
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Shared.hpp>
@@ -29,15 +30,16 @@ using ostk::core::type::Size;
 using ostk::mathematics::curvefitting::Interpolator;
 using ostk::mathematics::object::VectorXd;
 
-using boost::math::interpolators::cardinal_cubic_b_spline;
+using boost::math::interpolators::cardinal_quadratic_b_spline;
 
 class NonUniformBSpline;
 
-/// @brief CubicSpline
+/// @brief QuadraticSpline
 ///
-/// A cubic spline interpolator is a spline where each piece is a third-degree polynomial
-/// specified in spline form, that is by its values and first derivatives at the end points
-/// of the corresponding domain interval. The resulting interpolant is C2 continuous.
+/// A quadratic spline is a piecewise second-degree polynomial fitted so that it passes
+/// through the given data points. The resulting interpolant is C1 continuous, and reproduces
+/// quadratic polynomials exactly. It is cheaper and less oscillatory than a cubic spline, at
+/// the cost of a lower order of accuracy.
 ///
 /// The derivatives at the two end points are estimated from the data.
 ///
@@ -47,33 +49,33 @@ class NonUniformBSpline;
 /// from the data and is not otherwise observable.
 ///
 /// @code{.cpp}
-///     VectorXd x = {{0.0, 1.0, 2.0, 3.0, 4.0}};
-///     VectorXd y = {{0.0, 1.0, 4.0, 9.0, 16.0}};
-///     CubicSpline interpolator(x, y);
+///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
+///     VectorXd y = {{2.0, 0.0, 0.0, 2.0}};
+///     QuadraticSpline interpolator(x, y);
 ///     double value = interpolator.evaluate(1.5);
 /// @endcode
 ///
-/// @ref https://en.wikipedia.org/wiki/Spline_interpolation
-class CubicSpline : public Interpolator
+/// @ref https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/cardinal_quadratic_b.html
+class QuadraticSpline : public Interpolator
 {
    public:
     /// @brief Constructor
     ///
     /// @code{.cpp}
-    ///                     CubicSpline cubicSpline(x, y);
+    ///                     QuadraticSpline quadraticSpline(x, y);
     /// @endcode
     ///
     /// @param anXVector A vector of x values
     /// @param aYVector A vector of y values
     ///
     /// @warning The x values must be sorted in strictly ascending order
-    /// @warning At least 5 data points are required
-    CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector);
+    /// @warning At least 3 data points are required
+    QuadraticSpline(const VectorXd& anXVector, const VectorXd& aYVector);
 
     /// @brief Constructor
     ///
     /// @code{.cpp}
-    ///                     CubicSpline cubicSpline(y, x0, h) ;
+    ///                     QuadraticSpline quadraticSpline(y, 0.0, 1.0);
     /// @endcode
     ///
     /// @param aYVector A vector of y values
@@ -81,60 +83,68 @@ class CubicSpline : public Interpolator
     /// @param h The spacing between x values
     ///
     /// @warning The spacing must be strictly positive
-    /// @warning At least 5 data points are required
-    CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h);
+    /// @warning At least 3 data points are required
+    QuadraticSpline(const VectorXd& aYVector, const Real& x0, const Real& h);
 
     /// @brief Destructor
     ///
     /// @code{.cpp}
-    ///                     // Called automatically when the CubicSpline goes out of scope
+    ///                     // Called automatically when the QuadraticSpline goes out of scope
     /// @endcode
-    virtual ~CubicSpline() override;
+    virtual ~QuadraticSpline() override;
 
-    /// @brief Evaluate the cubic spline interpolator
+    /// @brief Evaluate the quadratic spline interpolator
     ///
     /// @code{.cpp}
-    ///                     VectorXd values = cubicSpline.evaluate({1.0, 5.0, 6.0}) ;
+    ///                     VectorXd values = quadraticSpline.evaluate({1.0, 1.5, 2.0}) ;
     /// @endcode
     ///
     /// @param aQueryVector A vector of x values
     /// @return Vector of y values
+    ///
+    /// @warning The query values must lie within the interpolation domain
     virtual VectorXd evaluate(const VectorXd& aQueryVector) const override;
 
-    /// @brief Evaluate the cubic spline interpolator
+    /// @brief Evaluate the quadratic spline interpolator
     ///
     /// @code{.cpp}
-    ///                     double values = cubicSpline.evaluate(5.0) ;
+    ///                     double value = quadraticSpline.evaluate(1.5) ;
     /// @endcode
     ///
     /// @param aQueryValue An x value
-    /// @return Vector of y values
+    /// @return The y value
+    ///
+    /// @warning The query value must lie within the interpolation domain
     virtual double evaluate(const double& aQueryValue) const override;
 
     /// @brief Compute the derivative at a specific query value
-    /// @param aQueryValue The x value to compute the derivative at
     ///
     /// @code{.cpp}
-    ///                     double derivative = cubicSpline.computeDerivative(5.0) ;
+    ///                     double derivative = quadraticSpline.computeDerivative(1.5) ;
     /// @endcode
     ///
+    /// @param aQueryValue An x value
     /// @return The derivative at the given x value
+    ///
+    /// @warning The query value must lie within the interpolation domain
     virtual double computeDerivative(const double& aQueryValue) const override;
 
     /// @brief Compute the derivatives at multiple query values
-    /// @param aQueryVector A vector of x values to compute the derivatives at
     ///
     /// @code{.cpp}
-    ///                     VectorXd derivatives = cubicSpline.computeDerivative({1.0, 5.0, 6.0}) ;
+    ///                     VectorXd derivatives = quadraticSpline.computeDerivative({1.0, 1.5, 2.0}) ;
     /// @endcode
     ///
+    /// @param aQueryVector A vector of x values
     /// @return A vector of derivatives at the given x values
+    ///
+    /// @warning The query values must lie within the interpolation domain
     virtual VectorXd computeDerivative(const VectorXd& aQueryVector) const override;
 
    private:
     // Exactly one of the two is engaged, depending on whether the nodes are uniformly spaced
 
-    std::optional<cardinal_cubic_b_spline<double>> cardinalInterpolator_;
+    std::optional<cardinal_quadratic_b_spline<double>> cardinalInterpolator_;
     Shared<const NonUniformBSpline> interpolator_;
 };
 

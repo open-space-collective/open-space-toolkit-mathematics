@@ -2,8 +2,8 @@
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp>
 
 namespace ostk
 {
@@ -14,10 +14,10 @@ namespace curvefitting
 namespace interpolator
 {
 
-CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
-    : Interpolator(Interpolator::Type::CubicSpline)
+QuadraticSpline::QuadraticSpline(const VectorXd& anXVector, const VectorXd& aYVector)
+    : Interpolator(Interpolator::Type::QuadraticSpline)
 {
-    if (aYVector.size() < 5)
+    if (aYVector.size() < 3)
     {
         throw ostk::core::error::runtime::Wrong("y");
     }
@@ -33,22 +33,20 @@ CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
 
         const double h = (anXVector(size - 1) - anXVector(0)) / double(size - 1);
 
-        cardinalInterpolator_.emplace(aYVector.begin(), aYVector.end(), anXVector(0), h);
+        cardinalInterpolator_.emplace(std::vector<double>(aYVector.begin(), aYVector.end()), anXVector(0), h);
     }
     else
     {
         interpolator_ = std::make_shared<const NonUniformBSpline>(
-            // The cardinal cubic B-spline extrapolates rather than rejecting a query outside
-            // of the interpolation domain, so this path does the same
-            NonUniformBSpline::Interpolate(anXVector, aYVector, 3, NonUniformBSpline::DomainBehavior::Extrapolate)
+            NonUniformBSpline::Interpolate(anXVector, aYVector, 2, NonUniformBSpline::DomainBehavior::Throw)
         );
     }
 }
 
-CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
-    : Interpolator(Interpolator::Type::CubicSpline)
+QuadraticSpline::QuadraticSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
+    : Interpolator(Interpolator::Type::QuadraticSpline)
 {
-    if (aYVector.size() < 5)
+    if (aYVector.size() < 3)
     {
         throw ostk::core::error::runtime::Wrong("y");
     }
@@ -58,12 +56,12 @@ CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h
         throw ostk::core::error::runtime::Wrong("h");
     }
 
-    cardinalInterpolator_.emplace(aYVector.begin(), aYVector.end(), x0, h);
+    cardinalInterpolator_.emplace(std::vector<double>(aYVector.begin(), aYVector.end()), x0, h);
 }
 
-CubicSpline::~CubicSpline() {}
+QuadraticSpline::~QuadraticSpline() {}
 
-VectorXd CubicSpline::evaluate(const VectorXd& aQueryVector) const
+VectorXd QuadraticSpline::evaluate(const VectorXd& aQueryVector) const
 {
     VectorXd yOutput(aQueryVector.size());
 
@@ -75,19 +73,19 @@ VectorXd CubicSpline::evaluate(const VectorXd& aQueryVector) const
     return yOutput;
 }
 
-double CubicSpline::evaluate(const double& aQueryValue) const
+double QuadraticSpline::evaluate(const double& aQueryValue) const
 {
     return cardinalInterpolator_.has_value() ? (*cardinalInterpolator_)(aQueryValue)
                                              : interpolator_->evaluate(aQueryValue);
 }
 
-double CubicSpline::computeDerivative(const double& aQueryValue) const
+double QuadraticSpline::computeDerivative(const double& aQueryValue) const
 {
     return cardinalInterpolator_.has_value() ? cardinalInterpolator_->prime(aQueryValue)
                                              : interpolator_->computeDerivative(aQueryValue);
 }
 
-VectorXd CubicSpline::computeDerivative(const VectorXd& aQueryVector) const
+VectorXd QuadraticSpline::computeDerivative(const VectorXd& aQueryVector) const
 {
     VectorXd yOutput(aQueryVector.size());
 
