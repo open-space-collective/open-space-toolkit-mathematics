@@ -43,8 +43,6 @@ class TestInterval:
         assert interval_3 is not None
         assert interval_4 is not None
 
-        # nanobind converts an int to the Real the constructor expects, where
-        # pybind11 required a float, so this now reaches the C++ bound check.
         with pytest.raises(RuntimeError):
             interval = RealInterval(3.0, 1, RealInterval.Type.Closed)
 

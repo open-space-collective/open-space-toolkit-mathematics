@@ -82,8 +82,6 @@ def test_angle_default_constructor():
     assert isinstance(angle, Angle)
     assert angle.in_revolutions() == 18.0
 
-    # nanobind converts an int to the Real the constructor expects, where
-    # pybind11 required a float.
     assert Angle(45, Unit.Degree).in_degrees() == 45.0
 
 
