@@ -20,7 +20,7 @@ using ostk::mathematics::object::VectorXd;
 class PyInterpolator : public Interpolator
 {
    public:
-    NB_TRAMPOLINE(Interpolator, 4);
+    NB_TRAMPOLINE(Interpolator);
 
     // Trampoline (need one for each virtual function)
 
