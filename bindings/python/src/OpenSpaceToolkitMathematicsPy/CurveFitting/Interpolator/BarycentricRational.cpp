@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricRational(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricRational(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Shared;
 
@@ -13,7 +13,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricR
 
     using ostk::mathematics::curvefitting::interpolator::BarycentricRational;
 
-    class_<BarycentricRational, Interpolator, Shared<BarycentricRational>>(aModule, "BarycentricRational")
+    class_<BarycentricRational, Interpolator>(aModule, "BarycentricRational")
 
         .def(
             init<const VectorXd&, const VectorXd&>(),

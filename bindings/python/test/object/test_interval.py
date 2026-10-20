@@ -43,8 +43,10 @@ class TestInterval:
         assert interval_3 is not None
         assert interval_4 is not None
 
-        with pytest.raises(TypeError):
+        with pytest.raises(RuntimeError):
             interval = RealInterval(3.0, 1, RealInterval.Type.Closed)
+
+        assert RealInterval(1, 3.0, RealInterval.Type.Closed).get_upper_bound() == 3.0
 
         interval_5 = RealInterval(Real(-4.31), Real(1.0), RealInterval.Type.Open)
         interval_6 = RealInterval(Real(-2.0), Real(-1.0), RealInterval.Type.Closed)

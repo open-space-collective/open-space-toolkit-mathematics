@@ -1,20 +1,32 @@
 /// Apache License 2.0
 
 #include <OpenSpaceToolkitMathematicsPy/Utility/ArrayCasting.hpp>
+#include <OpenSpaceToolkitMathematicsPy/Utility/EigenSequenceCasting.hpp>
 #include <OpenSpaceToolkitMathematicsPy/Utility/ShiftToString.hpp>
-#include <pybind11/eigen.h>
-#include <pybind11/functional.h>
-#include <pybind11/numpy.h>
-#include <pybind11/operators.h>
-#include <pybind11/pybind11.h>
-#include <pybind11/stl.h>
+#include <nanobind/eigen/dense.h>
+#include <nanobind/nanobind.h>
+#include <nanobind/ndarray.h>
+#include <nanobind/stl/array.h>
+#include <nanobind/stl/complex.h>
+#include <nanobind/stl/function.h>
+#include <nanobind/stl/map.h>
+#include <nanobind/stl/optional.h>
+#include <nanobind/stl/pair.h>
+#include <nanobind/stl/set.h>
+#include <nanobind/stl/shared_ptr.h>
+#include <nanobind/stl/string.h>
+#include <nanobind/stl/tuple.h>
+#include <nanobind/stl/unique_ptr.h>
+#include <nanobind/stl/unordered_map.h>
+#include <nanobind/stl/unordered_set.h>
+#include <nanobind/stl/vector.h>
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Object.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Solver.cpp>
 
-PYBIND11_MODULE(OpenSpaceToolkitMathematicsPy, m)
+NB_MODULE(OpenSpaceToolkitMathematicsPy, m)
 {
     // Add optional docstring for package OpenSpaceToolkitMathematicsPy
     m.doc() = "Geometry, curve fitting, optimization for OpenSpaceToolkit";

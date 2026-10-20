@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Line(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Line(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Real;
 
@@ -34,8 +34,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Line(pybind11::modu
             arg("direction")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Line& self, const Line& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Line& self, const Line& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Line>))
         .def("__repr__", &(shiftToString<Line>))

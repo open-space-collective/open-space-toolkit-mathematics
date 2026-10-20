@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::mathematics::object::Vector3d;
     using Polygon2d = ostk::mathematics::geometry::d2::object::Polygon;
@@ -46,8 +46,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
             )doc"
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Polygon& self, const Polygon& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Polygon& self, const Polygon& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Polygon>))
         .def("__repr__", &(shiftToString<Polygon>))

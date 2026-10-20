@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
     using ostk::core::type::Integer;
@@ -50,8 +50,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(pybind11::m
             arg("outer_ring")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Polygon& self, const Polygon& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Polygon& self, const Polygon& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Polygon>))
         .def("__repr__", &(shiftToString<Polygon>))

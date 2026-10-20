@@ -1,10 +1,12 @@
 /// Apache License 2.0
 
+#include <nanobind/make_iterator.h>
+
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
 
@@ -43,8 +45,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(pybind11
             arg("points")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const LineString& self, const LineString& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const LineString& self, const LineString& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<LineString>))
         .def("__repr__", &(shiftToString<LineString>))
@@ -102,7 +118,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(pybind11
         .def(
             "access_point_at",
             &LineString::accessPointAt,
-            return_value_policy::reference,
+            rv_policy::reference,
             R"doc(
                 Access a point at a given index.
 
@@ -213,14 +229,14 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(pybind11
             {
                 return aLineString.accessPointAt(anIndex);
             },
-            return_value_policy::reference_internal,
+            rv_policy::reference_internal,
             arg("index")
         )
         .def(
             "__iter__",
             [](const LineString& aLineString)
             {
-                return make_iterator(aLineString.begin(), aLineString.end());
+                return make_iterator(handle(), "LineStringIterator", aLineString.begin(), aLineString.end());
             },
             keep_alive<0, 1>()
         )  // Keep vector alive while iterator is used

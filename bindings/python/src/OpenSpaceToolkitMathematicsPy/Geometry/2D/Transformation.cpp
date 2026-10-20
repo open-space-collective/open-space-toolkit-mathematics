@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::Transformation;
@@ -30,8 +30,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(pybind11::m
             arg("matrix")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Transformation& self, const Transformation& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Transformation& self, const Transformation& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Transformation>))
         .def("__repr__", &(shiftToString<Transformation>))

@@ -6,9 +6,9 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Real;
     using ostk::core::type::Shared;
@@ -49,11 +49,41 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
             arg("object")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Composite& self, const Composite& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Composite& self, const Composite& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self + self)
-        .def(self += self)
+        .def(
+            "__add__",
+            [](const Composite& self, const Composite& other)
+            {
+                return self + other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__iadd__",
+            [](Composite& self, const Composite& other) -> Composite&
+            {
+                self += other;
+                return self;
+            },
+            nanobind::rv_policy::none,
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Composite>))
         .def("__repr__", &(shiftToString<Composite>))
@@ -699,7 +729,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
                     >>> obj = composite.access_object_at(0)
             )doc",
             arg("index"),
-            return_value_policy::reference
+            rv_policy::reference
         )
 
         .def(

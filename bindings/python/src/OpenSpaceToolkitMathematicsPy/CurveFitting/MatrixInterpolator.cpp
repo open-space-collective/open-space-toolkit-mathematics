@@ -2,7 +2,7 @@
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_MatrixInterpolator(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_MatrixInterpolator(nanobind::module_& aModule)
 {
     // Create "matrix_interpolator" python submodule
     auto matrix_interpolator = aModule.def_submodule("matrix_interpolator");

@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_ZeroOrder(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_ZeroOrder(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Shared;
 
@@ -13,7 +13,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_ZeroOrder(py
 
     using ostk::mathematics::curvefitting::interpolator::ZeroOrder;
 
-    class_<ZeroOrder, Interpolator, Shared<ZeroOrder>>(aModule, "ZeroOrder")
+    class_<ZeroOrder, Interpolator>(aModule, "ZeroOrder")
 
         .def(
             init<const VectorXd&, const VectorXd&>(),

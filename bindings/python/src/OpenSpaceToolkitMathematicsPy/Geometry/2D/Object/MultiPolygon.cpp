@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
     using ostk::core::type::Integer;
@@ -34,8 +34,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(pybind
             arg("polygons")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const MultiPolygon& self, const MultiPolygon& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const MultiPolygon& self, const MultiPolygon& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<MultiPolygon>))
         .def("__repr__", &(shiftToString<MultiPolygon>))

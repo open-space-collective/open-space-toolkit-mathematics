@@ -5,9 +5,9 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_EulerAngle(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_EulerAngle(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Real;
     using ostk::core::type::String;
@@ -62,8 +62,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Eu
         )
 
         // Define methods
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const EulerAngle& self, const EulerAngle& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const EulerAngle& self, const EulerAngle& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<EulerAngle>))
         .def("__repr__", &(shiftToString<EulerAngle>))
@@ -118,10 +132,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Eu
             arg("angular_tolerance")
         )
 
-        .def_property_readonly("phi", &EulerAngle::getPhi)
-        .def_property_readonly("theta", &EulerAngle::getTheta)
-        .def_property_readonly("psi", &EulerAngle::getPsi)
-        .def_property_readonly("axis_sequence", &EulerAngle::getAxisSequence)
+        .def_prop_ro("phi", &EulerAngle::getPhi)
+        .def_prop_ro("theta", &EulerAngle::getTheta)
+        .def_prop_ro("psi", &EulerAngle::getPsi)
+        .def_prop_ro("axis_sequence", &EulerAngle::getAxisSequence)
 
         .def(
             "to_vector",

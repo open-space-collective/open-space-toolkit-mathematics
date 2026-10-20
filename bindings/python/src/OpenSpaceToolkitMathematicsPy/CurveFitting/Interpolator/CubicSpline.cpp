@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::Real;
     using ostk::core::type::Shared;
@@ -14,7 +14,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(
 
     using ostk::mathematics::curvefitting::interpolator::CubicSpline;
 
-    class_<CubicSpline, Interpolator, Shared<CubicSpline>>(aModule, "CubicSpline")
+    class_<CubicSpline, Interpolator>(aModule, "CubicSpline")
 
         .def(
             init<const VectorXd&, const VectorXd&>(),
