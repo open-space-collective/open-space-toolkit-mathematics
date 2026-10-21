@@ -16,7 +16,6 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
-#include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
 // #include <Gte/Mathematics/GteIntrHalfspace3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrLine3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrPlane3Ellipsoid3.h>
@@ -75,7 +74,8 @@ Ellipsoid::Ellipsoid(
       a_(aFirstPrincipalSemiAxis),
       b_(aSecondPrincipalSemiAxis),
       c_(aThirdPrincipalSemiAxis),
-      q_(anOrientation)
+      q_(anOrientation),
+      axes_(std::nullopt)
 {
     if (a_.isDefined() && (a_ < 0.0))
     {
@@ -91,6 +91,8 @@ Ellipsoid::Ellipsoid(
     {
         throw ostk::core::error::RuntimeError("Third principal semi-axis is negative.");
     }
+
+    this->cacheAxes();
 }
 
 Ellipsoid* Ellipsoid::clone() const
@@ -230,8 +232,6 @@ bool Ellipsoid::intersects(const Ray& aRay) const
 
 bool Ellipsoid::intersects(const Segment& aSegment) const
 {
-    using ostk::mathematics::object::Interval;
-
     if (!this->isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Ellipsoid");
@@ -274,9 +274,12 @@ bool Ellipsoid::intersects(const Segment& aSegment) const
 
     // https://www.geometrictools.com/GTEngine/Include/Mathematics/GteIntrSegment3Ellipsoid3.h
 
-    const Vector3d segmentDirection = aSegment.getDirection();
-    const Vector3d segmentCenter = aSegment.getCenter().asVector();
-    const Real segmentHalfLength = aSegment.getLength() / 2.0;
+    const Point segmentFirstPoint = aSegment.getFirstPoint();
+    const Vector3d segmentVector = aSegment.getSecondPoint() - segmentFirstPoint;
+
+    const Vector3d segmentDirection = segmentVector.normalized();
+    const Vector3d segmentCenter = (segmentFirstPoint + segmentVector / 2.0).asVector();
+    const Real segmentHalfLength = segmentVector.norm() / 2.0;
 
     const Matrix3d M = this->getMatrix();
 
@@ -304,24 +307,17 @@ bool Ellipsoid::intersects(const Segment& aSegment) const
         const Real t0 = (-a1 - discriminantRoot) * a2_inverse;
         const Real t1 = (-a1 + discriminantRoot) * a2_inverse;
 
-        const Interval<Real> resultInterval = Interval<Real>::Closed(t0, t1);
-        const Interval<Real> segmentInterval = Interval<Real>::Closed(-segmentHalfLength, +segmentHalfLength);
+        // Undefined roots (only possible for an infinite semi-axis, where a2 vanishes) are rejected
 
-        if (!resultInterval.contains(segmentInterval))
+        if ((!t0.isDefined()) || (!t1.isDefined()))
         {
-            if (resultInterval.intersects(segmentInterval))
-            {
-                return true;
-            }
-            else  // No intersection
-            {
-                return false;
-            }
+            throw ostk::core::error::runtime::Undefined("Interval");
         }
-        else
-        {
-            return false;
-        }
+
+        const bool rootsContainSegment = (t0 <= -segmentHalfLength) && (t1 >= +segmentHalfLength);
+        const bool rootsOverlapSegment = (t0 <= +segmentHalfLength) && (t1 >= -segmentHalfLength);
+
+        return (!rootsContainSegment) && rootsOverlapSegment;
     }
     else  // One real root
     {
@@ -553,7 +549,7 @@ Vector3d Ellipsoid::getFirstAxis() const
         throw ostk::core::error::runtime::Undefined("Ellipsoid");
     }
 
-    return q_.toConjugate() * Vector3d::X();
+    return axes_ ? axes_->first : this->computeFirstAxis();
 }
 
 Vector3d Ellipsoid::getSecondAxis() const
@@ -563,7 +559,7 @@ Vector3d Ellipsoid::getSecondAxis() const
         throw ostk::core::error::runtime::Undefined("Ellipsoid");
     }
 
-    return q_.toConjugate() * Vector3d::Y();
+    return axes_ ? axes_->second : this->computeSecondAxis();
 }
 
 Vector3d Ellipsoid::getThirdAxis() const
@@ -573,7 +569,7 @@ Vector3d Ellipsoid::getThirdAxis() const
         throw ostk::core::error::runtime::Undefined("Ellipsoid");
     }
 
-    return q_.toConjugate() * Vector3d::Z();
+    return axes_ ? axes_->third : this->computeThirdAxis();
 }
 
 Quaternion Ellipsoid::getOrientation() const
@@ -593,24 +589,8 @@ Matrix3d Ellipsoid::getMatrix() const
         throw ostk::core::error::runtime::Undefined("Ellipsoid");
     }
 
-    const Vector3d firstRatio = this->getFirstAxis() / a_;
-    const Vector3d secondRatio = this->getSecondAxis() / b_;
-    const Vector3d thirdRatio = this->getThirdAxis() / c_;
-
-    auto tensorProduct = [](const Vector3d& aFirstVector, const Vector3d& aSecondVector) -> Matrix3d
-    {
-        Matrix3d tensorProductMatrix;
-
-        tensorProductMatrix << aFirstVector(0) * aSecondVector(0), aFirstVector(0) * aSecondVector(1),
-            aFirstVector(0) * aSecondVector(2), aFirstVector(1) * aSecondVector(0), aFirstVector(1) * aSecondVector(1),
-            aFirstVector(1) * aSecondVector(2), aFirstVector(2) * aSecondVector(0), aFirstVector(2) * aSecondVector(1),
-            aFirstVector(2) * aSecondVector(2);
-
-        return tensorProductMatrix;
-    };
-
-    return tensorProduct(firstRatio, firstRatio) + tensorProduct(secondRatio, secondRatio) +
-           tensorProduct(thirdRatio, thirdRatio);
+    return axes_ ? axes_->matrix
+                 : this->computeMatrix(this->computeFirstAxis(), this->computeSecondAxis(), this->computeThirdAxis());
 }
 
 Intersection Ellipsoid::intersectionWith(const Line& aLine) const
@@ -963,11 +943,55 @@ void Ellipsoid::applyTransformation(const Transformation& aTransformation)
     const Vector3d thirdAxis = firstAxis.cross(secondAxis);
 
     q_ = Quaternion::RotationMatrix(RotationMatrix::Columns(firstAxis, secondAxis, thirdAxis)).conjugate();
+
+    this->cacheAxes();
 }
 
 Ellipsoid Ellipsoid::Undefined()
 {
     return {Point::Undefined(), Real::Undefined(), Real::Undefined(), Real::Undefined(), Quaternion::Undefined()};
+}
+
+void Ellipsoid::cacheAxes()
+{
+    axes_.reset();
+
+    if ((!this->isDefined()) || (!q_.isUnitary()))
+    {
+        return;
+    }
+
+    const Vector3d firstAxis = this->computeFirstAxis();
+    const Vector3d secondAxis = this->computeSecondAxis();
+    const Vector3d thirdAxis = this->computeThirdAxis();
+
+    axes_ = Axes {firstAxis, secondAxis, thirdAxis, this->computeMatrix(firstAxis, secondAxis, thirdAxis)};
+}
+
+Vector3d Ellipsoid::computeFirstAxis() const
+{
+    return q_.toConjugate() * Vector3d::X();
+}
+
+Vector3d Ellipsoid::computeSecondAxis() const
+{
+    return q_.toConjugate() * Vector3d::Y();
+}
+
+Vector3d Ellipsoid::computeThirdAxis() const
+{
+    return q_.toConjugate() * Vector3d::Z();
+}
+
+Matrix3d Ellipsoid::computeMatrix(const Vector3d& aFirstAxis, const Vector3d& aSecondAxis, const Vector3d& aThirdAxis)
+    const
+{
+    const Vector3d firstRatio = aFirstAxis / a_;
+    const Vector3d secondRatio = aSecondAxis / b_;
+    const Vector3d thirdRatio = aThirdAxis / c_;
+
+    return firstRatio * firstRatio.transpose() + secondRatio * secondRatio.transpose() +
+           thirdRatio * thirdRatio.transpose();
 }
 
 }  // namespace object
