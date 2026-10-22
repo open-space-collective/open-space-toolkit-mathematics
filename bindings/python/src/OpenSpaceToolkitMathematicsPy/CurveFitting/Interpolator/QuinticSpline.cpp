@@ -21,6 +21,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticSplin
             R"doc(
                 Create a quintic spline interpolator with data points.
 
+                Use when the data is smooth and only values are known, but smooth higher derivatives are needed, for
+                instance acceleration from positions. Higher order amplifies noise, so prefer clean data.
+
                 Args:
                     x (np.array): The x-coordinates of data points, sorted in strictly ascending order. They need not be equally spaced.
                     y (np.array): The y-coordinates of data points. At least 8 are required.

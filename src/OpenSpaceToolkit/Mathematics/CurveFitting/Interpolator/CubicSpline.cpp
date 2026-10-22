@@ -40,7 +40,9 @@ CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
         interpolator_ = std::make_shared<const NonUniformBSpline>(
             // The cardinal cubic B-spline extrapolates rather than rejecting a query outside
             // of the interpolation domain, so this path does the same
-            NonUniformBSpline::Interpolate(anXVector, aYVector, 3, NonUniformBSpline::DomainBehavior::Extrapolate)
+            NonUniformBSpline::GenerateInterpolator(
+                anXVector, aYVector, 3, NonUniformBSpline::DomainBehavior::Extrapolate
+            )
         );
     }
 }

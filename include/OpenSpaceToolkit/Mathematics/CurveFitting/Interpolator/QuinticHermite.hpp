@@ -44,6 +44,9 @@ using boost::math::interpolators::quintic_hermite;
 /// derivative of the cardinal Hermite spline is only available with Boost 1.93 or later
 /// (see computeSecondDerivative).
 ///
+/// Use when the first and second derivatives are known at every sample, for instance velocity and
+/// acceleration alongside position. They are honoured exactly, and each interval depends only on its two end nodes.
+///
 /// @code{.cpp}
 ///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
 ///     VectorXd y = {{0.0, 1.0, 4.0, 9.0}};

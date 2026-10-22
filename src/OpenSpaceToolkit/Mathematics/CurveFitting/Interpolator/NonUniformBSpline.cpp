@@ -343,7 +343,7 @@ NonUniformBSpline::NonUniformBSpline(
 {
 }
 
-NonUniformBSpline NonUniformBSpline::Interpolate(
+NonUniformBSpline NonUniformBSpline::GenerateInterpolator(
     const VectorXd& anXVector, const VectorXd& aYVector, const Size& aDegree, const DomainBehavior& aDomainBehavior
 )
 {

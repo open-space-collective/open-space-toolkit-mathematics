@@ -21,6 +21,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermi
             R"doc(
                 Create a quintic Hermite interpolator with data points and their first and second derivatives.
 
+                Use when the first and second derivatives are known at every sample, for instance velocity and
+                acceleration alongside position. They are honoured exactly, and each interval depends only on its two end nodes.
+
                 Args:
                     x (np.array): The x-coordinates of data points, sorted in strictly ascending order.
                     y (np.array): The y-coordinates of data points.

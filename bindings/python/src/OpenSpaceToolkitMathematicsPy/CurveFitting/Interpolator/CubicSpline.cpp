@@ -21,6 +21,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(
             R"doc(
                 Create a cubic spline interpolator with data points.
 
+                Use when the data is smooth and only values are known, and a continuous second derivative is wanted. It
+                is the default choice for smooth sampled data.
+
                 Args:
                     x (np.array): The x-coordinates of data points.
                     y (np.array): The y-coordinates of data points.

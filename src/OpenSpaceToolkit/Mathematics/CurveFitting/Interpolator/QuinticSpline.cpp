@@ -38,7 +38,7 @@ QuinticSpline::QuinticSpline(const VectorXd& anXVector, const VectorXd& aYVector
     else
     {
         interpolator_ = std::make_shared<const NonUniformBSpline>(
-            NonUniformBSpline::Interpolate(anXVector, aYVector, 5, NonUniformBSpline::DomainBehavior::Throw)
+            NonUniformBSpline::GenerateInterpolator(anXVector, aYVector, 5, NonUniformBSpline::DomainBehavior::Throw)
         );
     }
 }
