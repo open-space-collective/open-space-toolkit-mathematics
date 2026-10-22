@@ -33,6 +33,9 @@ using boost::math::interpolators::barycentric_rational;
 /// non-uniformly spaced samples. It requires 𝑶(N) time for construction, and 𝑶(N) time for
 /// each evaluation.
 ///
+/// Use when the data is smooth and irregularly spaced and high accuracy matters. Unlike a high-degree
+/// polynomial it does not oscillate wildly, and it has no poles within the data range.
+///
 /// @code{.cpp}
 ///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
 ///     VectorXd y = {{0.0, 1.0, 4.0, 9.0}};

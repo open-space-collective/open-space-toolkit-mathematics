@@ -3,6 +3,7 @@
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBSpline.hpp>
 
 namespace ostk
 {
@@ -26,17 +27,24 @@ CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
         throw ostk::core::error::runtime::Wrong("x and y");
     }
 
-    const double h = anXVector(1) - anXVector(0);
-
-    const VectorXd diff = anXVector.segment(1, anXVector.size() - 1) - anXVector.segment(0, anXVector.size() - 1);
-
-    if (!diff.isConstant(h, 1e-6))
+    if (Interpolator::IsUniformlySpaced(anXVector))
     {
-        throw ostk::core::error::runtime::Wrong("x must be uniformly spaced");
-    }
+        const Size size = anXVector.size();
 
-    interpolator_ =
-        boost::math::interpolators::cardinal_cubic_b_spline<double>(aYVector.begin(), aYVector.end(), anXVector(0), h);
+        const double h = (anXVector(size - 1) - anXVector(0)) / double(size - 1);
+
+        cardinalInterpolator_.emplace(aYVector.begin(), aYVector.end(), anXVector(0), h);
+    }
+    else
+    {
+        interpolator_ = std::make_shared<const NonUniformBSpline>(
+            // The cardinal cubic B-spline extrapolates rather than rejecting a query outside
+            // of the interpolation domain, so this path does the same
+            NonUniformBSpline::GenerateInterpolator(
+                anXVector, aYVector, 3, NonUniformBSpline::DomainBehavior::Extrapolate
+            )
+        );
+    }
 }
 
 CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
@@ -47,8 +55,12 @@ CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h
         throw ostk::core::error::runtime::Wrong("y");
     }
 
-    interpolator_ =
-        boost::math::interpolators::cardinal_cubic_b_spline<double>(aYVector.begin(), aYVector.end(), x0, h);
+    if (h <= 0.0)
+    {
+        throw ostk::core::error::runtime::Wrong("h");
+    }
+
+    cardinalInterpolator_.emplace(aYVector.begin(), aYVector.end(), x0, h);
 }
 
 CubicSpline::~CubicSpline() {}
@@ -59,7 +71,7 @@ VectorXd CubicSpline::evaluate(const VectorXd& aQueryVector) const
 
     for (int i = 0; i < aQueryVector.size(); ++i)
     {
-        yOutput(i) = interpolator_(aQueryVector(i));
+        yOutput(i) = this->evaluate(aQueryVector(i));
     }
 
     return yOutput;
@@ -67,12 +79,14 @@ VectorXd CubicSpline::evaluate(const VectorXd& aQueryVector) const
 
 double CubicSpline::evaluate(const double& aQueryValue) const
 {
-    return interpolator_(aQueryValue);
+    return cardinalInterpolator_.has_value() ? (*cardinalInterpolator_)(aQueryValue)
+                                             : interpolator_->evaluate(aQueryValue);
 }
 
 double CubicSpline::computeDerivative(const double& aQueryValue) const
 {
-    return interpolator_.prime(aQueryValue);
+    return cardinalInterpolator_.has_value() ? cardinalInterpolator_->prime(aQueryValue)
+                                             : interpolator_->computeDerivative(aQueryValue);
 }
 
 VectorXd CubicSpline::computeDerivative(const VectorXd& aQueryVector) const
@@ -81,7 +95,7 @@ VectorXd CubicSpline::computeDerivative(const VectorXd& aQueryVector) const
 
     for (int i = 0; i < aQueryVector.size(); ++i)
     {
-        yOutput(i) = interpolator_.prime(aQueryVector(i));
+        yOutput(i) = this->computeDerivative(aQueryVector(i));
     }
 
     return yOutput;

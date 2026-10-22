@@ -20,6 +20,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricR
             R"doc(
                 Create a barycentric rational interpolator with data points.
 
+                Use when the data is smooth and irregularly spaced and high accuracy matters. Unlike a high-degree
+                polynomial it does not oscillate wildly, and it has no poles within the data range.
+
                 Args:
                     x (np.array): The x-coordinates of data points.
                     y (np.array): The y-coordinates of data points.

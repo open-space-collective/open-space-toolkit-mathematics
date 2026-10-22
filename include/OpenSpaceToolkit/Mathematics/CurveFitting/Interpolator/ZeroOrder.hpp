@@ -31,6 +31,9 @@ using ostk::mathematics::object::VectorXd;
 ///                             For any query value x, it returns the y value of the largest data point
 ///                             x_i where x_i <= x. Also known as "zero-order hold" or "step" interpolation.
 ///
+///                             Use when the data is discrete or piecewise constant (states, modes,
+///                             commands), or when values must not be invented between samples.
+///
 /// @code{.cpp}
 ///                             VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
 ///                             VectorXd y = {{0.0, 1.0, 4.0, 9.0}};
