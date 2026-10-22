@@ -138,7 +138,6 @@ class CubicHermite : public Interpolator
 
    private:
     // Exactly one of the two is engaged, depending on whether the nodes are uniformly spaced
-
     std::optional<cardinal_cubic_hermite<std::vector<double>>> cardinalInterpolator_;
     std::optional<cubic_hermite<std::vector<double>>> interpolator_;
 };

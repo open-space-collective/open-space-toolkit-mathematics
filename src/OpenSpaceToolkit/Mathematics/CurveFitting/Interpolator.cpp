@@ -90,6 +90,7 @@ bool Interpolator::IsUniformlySpaced(const VectorXd& anXVector)
     // The x values are only known to within their own representation error, which for large
     // magnitudes can be coarser than any fixed fraction of the spacing, so allow for both.
 
+    // Looking at only first and last elements is sufficient here because the XVector can only be monotonically increasing and in order
     const double maximumMagnitude = std::max(std::abs(x0), std::abs(anXVector(size - 1)));
 
     const double tolerance = 1e-10 * span + 8.0 * std::numeric_limits<double>::epsilon() * maximumMagnitude;
