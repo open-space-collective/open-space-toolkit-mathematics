@@ -21,6 +21,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicHermite
             R"doc(
                 Create a cubic Hermite interpolator with data points and their first derivatives.
 
+                Use when the first derivative is known at every sample, for instance velocity alongside position. The
+                derivatives are honoured exactly, and each interval depends only on its two end nodes.
+
                 Args:
                     x (np.array): The x-coordinates of data points, sorted in strictly ascending order.
                     y (np.array): The y-coordinates of data points.

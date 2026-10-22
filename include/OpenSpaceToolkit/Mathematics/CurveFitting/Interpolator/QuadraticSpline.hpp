@@ -48,6 +48,9 @@ class NonUniformBSpline;
 /// searching for it, and is therefore faster to evaluate. Which of the two is used is decided
 /// from the data and is not otherwise observable.
 ///
+/// Use when the data is smooth and only values are known, and a continuous first derivative is enough. It
+/// is cheaper and less oscillatory than a cubic spline.
+///
 /// @code{.cpp}
 ///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
 ///     VectorXd y = {{2.0, 0.0, 0.0, 2.0}};

@@ -42,6 +42,9 @@ using boost::math::interpolators::cubic_hermite;
 /// than searching for it, and is therefore faster to evaluate. Which of the two is used is
 /// decided from the data and is not otherwise observable.
 ///
+/// Use when the first derivative is known at every sample, for instance velocity alongside position. The
+/// derivatives are honoured exactly, and each interval depends only on its two end nodes.
+///
 /// @code{.cpp}
 ///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
 ///     VectorXd y = {{0.0, 1.0, 4.0, 9.0}};

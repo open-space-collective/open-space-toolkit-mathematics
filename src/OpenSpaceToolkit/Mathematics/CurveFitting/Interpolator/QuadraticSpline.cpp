@@ -38,7 +38,7 @@ QuadraticSpline::QuadraticSpline(const VectorXd& anXVector, const VectorXd& aYVe
     else
     {
         interpolator_ = std::make_shared<const NonUniformBSpline>(
-            NonUniformBSpline::Interpolate(anXVector, aYVector, 2, NonUniformBSpline::DomainBehavior::Throw)
+            NonUniformBSpline::GenerateInterpolator(anXVector, aYVector, 2, NonUniformBSpline::DomainBehavior::Throw)
         );
     }
 }

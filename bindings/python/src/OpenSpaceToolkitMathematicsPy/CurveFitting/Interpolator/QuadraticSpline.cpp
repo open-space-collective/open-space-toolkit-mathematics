@@ -21,6 +21,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuadraticSpl
             R"doc(
                 Create a quadratic spline interpolator with data points.
 
+                Use when the data is smooth and only values are known, and a continuous first derivative is enough. It
+                is cheaper and less oscillatory than a cubic spline.
+
                 Args:
                     x (np.array): The x-coordinates of data points, sorted in strictly ascending order. They need not be equally spaced.
                     y (np.array): The y-coordinates of data points. At least 3 are required.

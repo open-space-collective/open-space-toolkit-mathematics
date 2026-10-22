@@ -61,7 +61,8 @@ const Shared<const Interpolator> Interpolator::GenerateInterpolator(
         case Type::CubicHermite:
         case Type::QuinticHermite:
             throw ostk::core::error::RuntimeError(
-                "Hermite interpolators require derivative data, and cannot be generated from x and y only."
+                "Hermite interpolators require derivative data, and cannot be generated from x and y only. Use class "
+                "constructors instead."
             );
         default:
             throw ostk::core::error::runtime::Wrong("Invalid interpolation type.");
@@ -92,6 +93,12 @@ bool Interpolator::IsUniformlySpaced(const VectorXd& anXVector)
 
     // Looking at only first and last elements is sufficient here because the XVector can only be monotonically increasing and in order
     const double maximumMagnitude = std::max(std::abs(x0), std::abs(anXVector(size - 1)));
+
+    // Tolerance on each node's deviation from x0 + i * h, the sum of two terms:
+    //   - a relative term, 1e-10 of the span, as slack that scales with the size of the grid
+    //   - an absolute term, 8 machine epsilons of the largest |x|, that covers the rounding error of
+    //     the x values themselves and of computing x0 + i * h (a few ulps), which dominates when
+    //     |x| >> span (e.g. epoch timestamps)
 
     const double tolerance = 1e-10 * span + 8.0 * std::numeric_limits<double>::epsilon() * maximumMagnitude;
 

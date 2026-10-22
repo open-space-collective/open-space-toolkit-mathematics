@@ -58,10 +58,13 @@ class NonUniformBSpline
     /// @param anXVector A vector of x values, sorted in strictly ascending order
     /// @param aYVector A vector of y values
     /// @param aDegree The degree of the spline
-    /// @param aDomainBehavior What to do with a query outside of the interpolation domain
+    /// @param aDomainBehavior What to do with a query outside of the interpolation domain (defaults to Throw)
     /// @return The interpolating B-spline
-    static NonUniformBSpline Interpolate(
-        const VectorXd& anXVector, const VectorXd& aYVector, const Size& aDegree, const DomainBehavior& aDomainBehavior
+    static NonUniformBSpline GenerateInterpolator(
+        const VectorXd& anXVector,
+        const VectorXd& aYVector,
+        const Size& aDegree,
+        const DomainBehavior& aDomainBehavior = DomainBehavior::Throw
     );
 
     /// @brief Evaluate the spline

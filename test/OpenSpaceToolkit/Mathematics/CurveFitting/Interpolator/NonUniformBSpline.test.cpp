@@ -83,7 +83,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, ReproducesPo
         }
 
         const NonUniformBSpline spline =
-            NonUniformBSpline::Interpolate(raggedX_, y, degree, NonUniformBSpline::DomainBehavior::Throw);
+            NonUniformBSpline::GenerateInterpolator(raggedX_, y, degree, NonUniformBSpline::DomainBehavior::Throw);
 
         for (const double x : {0.0, 0.17, 1.13, 2.0, 4.95, 7.3, 8.05, 10.0})
         {
@@ -107,7 +107,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, PassesThroug
     for (const Size degree : {Size(2), Size(3), Size(5)})
     {
         const NonUniformBSpline spline =
-            NonUniformBSpline::Interpolate(raggedX_, y, degree, NonUniformBSpline::DomainBehavior::Throw);
+            NonUniformBSpline::GenerateInterpolator(raggedX_, y, degree, NonUniformBSpline::DomainBehavior::Throw);
 
         for (int i = 0; i < raggedX_.size(); ++i)
         {
@@ -127,11 +127,11 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, AgreesWithTh
     const QuinticSpline cardinalQuintic = {uniformX_, uniformY_};
 
     const NonUniformBSpline quadratic =
-        NonUniformBSpline::Interpolate(uniformX_, uniformY_, 2, NonUniformBSpline::DomainBehavior::Throw);
+        NonUniformBSpline::GenerateInterpolator(uniformX_, uniformY_, 2, NonUniformBSpline::DomainBehavior::Throw);
     const NonUniformBSpline cubic =
-        NonUniformBSpline::Interpolate(uniformX_, uniformY_, 3, NonUniformBSpline::DomainBehavior::Throw);
+        NonUniformBSpline::GenerateInterpolator(uniformX_, uniformY_, 3, NonUniformBSpline::DomainBehavior::Throw);
     const NonUniformBSpline quintic =
-        NonUniformBSpline::Interpolate(uniformX_, uniformY_, 5, NonUniformBSpline::DomainBehavior::Throw);
+        NonUniformBSpline::GenerateInterpolator(uniformX_, uniformY_, 5, NonUniformBSpline::DomainBehavior::Throw);
 
     for (double x = 0.0; x <= 6.5; x += 0.017)
     {
@@ -159,7 +159,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, DomainBehavi
 
     {
         const NonUniformBSpline spline =
-            NonUniformBSpline::Interpolate(raggedX_, y, 3, NonUniformBSpline::DomainBehavior::Throw);
+            NonUniformBSpline::GenerateInterpolator(raggedX_, y, 3, NonUniformBSpline::DomainBehavior::Throw);
 
         EXPECT_NO_THROW(spline.evaluate(0.0));
         EXPECT_NO_THROW(spline.evaluate(10.0));
@@ -175,7 +175,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, DomainBehavi
         // reference data continues the same line
 
         const NonUniformBSpline spline =
-            NonUniformBSpline::Interpolate(raggedX_, y, 3, NonUniformBSpline::DomainBehavior::Extrapolate);
+            NonUniformBSpline::GenerateInterpolator(raggedX_, y, 3, NonUniformBSpline::DomainBehavior::Extrapolate);
 
         EXPECT_NO_THROW(spline.evaluate(-0.1));
         EXPECT_NO_THROW(spline.evaluate(10.1));
@@ -196,7 +196,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, RejectsNodes
         x << 0.0, 2.0, 1.0, 3.0, 4.0, 5.0;
 
         EXPECT_THROW(
-            NonUniformBSpline::Interpolate(x, y, 3, NonUniformBSpline::DomainBehavior::Throw),
+            NonUniformBSpline::GenerateInterpolator(x, y, 3, NonUniformBSpline::DomainBehavior::Throw),
             ostk::core::error::runtime::Wrong
         );
     }
@@ -207,7 +207,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, RejectsNodes
         x << 0.0, 1.0, 1.0, 3.0, 4.0, 5.0;
 
         EXPECT_THROW(
-            NonUniformBSpline::Interpolate(x, y, 3, NonUniformBSpline::DomainBehavior::Throw),
+            NonUniformBSpline::GenerateInterpolator(x, y, 3, NonUniformBSpline::DomainBehavior::Throw),
             ostk::core::error::runtime::Wrong
         );
     }
