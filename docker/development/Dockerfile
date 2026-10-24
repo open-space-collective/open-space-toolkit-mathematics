@@ -16,43 +16,8 @@ RUN apt-get update \
     && apt-get install -y jq \
     && rm -rf /var/lib/apt/lists/*
 
-## fmt
-
-ARG FMT_VERSION="5.2.0"
-
-RUN cd /tmp \
-    && git clone --branch ${FMT_VERSION} --depth 1 https://github.com/fmtlib/fmt.git \
-    && cd fmt \
-    && mkdir build \
-    && cd build \
-    && cmake -DCMAKE_POSITION_INDEPENDENT_CODE=TRUE .. \
-    && make --silent -j $(nproc) \
-    && make install \
-    && rm -rf /tmp/fmt
-
-## Eigen
-
-ARG EIGEN_VERSION="3.4.0"
-
-RUN mkdir /tmp/eigen \
-    && cd /tmp/eigen \
-    && wget --quiet https://gitlab.com/libeigen/eigen/-/archive/${EIGEN_VERSION}/eigen-${EIGEN_VERSION}.tar.gz \
-    && tar -xvf eigen-${EIGEN_VERSION}.tar.gz \
-    && cd eigen-${EIGEN_VERSION} \
-    && mkdir build \
-    && cd build \
-    && cmake .. \
-    && make install \
-    && rm -rf /tmp/eigen
-
-## Geometric Tools Engine
-
-ARG GEOMETRIC_TOOLS_ENGINE_VERSION="3.28"
-
-RUN git clone --branch ${GEOMETRIC_TOOLS_ENGINE_VERSION} --depth 1 https://github.com/lucas-bremond/geometric-tools-engine.git /tmp/geometric-tools-engine \
-    && cd /tmp/geometric-tools-engine \
-    && cp -r ./Include /usr/local/include/Gte \
-    && rm -rf /tmp/geometric-tools-engine
+COPY tools/dependencies /tmp/dependencies
+RUN /tmp/dependencies/install.sh && rm -rf /tmp/dependencies
 
 ## Open Space Toolkit ▸ Core
 
