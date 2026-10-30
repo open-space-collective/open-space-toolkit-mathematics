@@ -90,7 +90,8 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator, IsUniformlySpaced)
     }
 
     {
-        // A spacing that is not exactly representable still counts as uniform
+        // A spacing that is not exactly representable (due to the nature of floating point values) still counts as
+        // uniform
 
         std::vector<double> values;
 
@@ -122,6 +123,13 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator, IsUniformlySpaced)
         // A single node off the grid is enough
 
         EXPECT_FALSE(MockInterpolator::CallIsUniformlySpaced(vectorFrom({0.0, 1.0, 2.0, 3.01, 4.0, 5.0})));
+    }
+
+    {
+        // A single node only just beyond the tolerance is already non-uniform. For this grid (span 5, |x| <= 5) the
+        // tolerance on a node's deviation from the uniform grid is 1e-10 * 5 + 8 * epsilon * 5, about 5.0e-10
+
+        EXPECT_FALSE(MockInterpolator::CallIsUniformlySpaced(vectorFrom({0.0, 1.0, 2.0 + 6e-10, 3.0, 4.0, 5.0})));
     }
 
     {

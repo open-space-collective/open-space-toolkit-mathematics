@@ -17,7 +17,7 @@
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBasisSpline.hpp>
 
 namespace ostk
 {
@@ -330,7 +330,7 @@ double EstimateEndpointDerivative(
 
 }  // namespace
 
-NonUniformBSpline::NonUniformBSpline(
+NonUniformBasisSpline::NonUniformBasisSpline(
     const Size& aDegree,
     std::vector<double>&& aKnotArray,
     std::vector<double>&& aCoefficientArray,
@@ -343,7 +343,7 @@ NonUniformBSpline::NonUniformBSpline(
 {
 }
 
-NonUniformBSpline NonUniformBSpline::GenerateInterpolator(
+NonUniformBasisSpline NonUniformBasisSpline::GenerateInterpolator(
     const VectorXd& anXVector, const VectorXd& aYVector, const Size& aDegree, const DomainBehavior& aDomainBehavior
 )
 {
@@ -459,27 +459,27 @@ NonUniformBSpline NonUniformBSpline::GenerateInterpolator(
         throw ostk::core::error::RuntimeError("Cannot solve the spline interpolation system.");
     }
 
-    return NonUniformBSpline(
+    return NonUniformBasisSpline(
         aDegree, std::move(knots), std::vector<double>(coefficients.begin(), coefficients.end()), aDomainBehavior
     );
 }
 
-double NonUniformBSpline::evaluate(const double& aQueryValue) const
+double NonUniformBasisSpline::evaluate(const double& aQueryValue) const
 {
     return this->computeValue(aQueryValue, 0);
 }
 
-double NonUniformBSpline::computeDerivative(const double& aQueryValue) const
+double NonUniformBasisSpline::computeDerivative(const double& aQueryValue) const
 {
     return this->computeValue(aQueryValue, 1);
 }
 
-double NonUniformBSpline::computeSecondDerivative(const double& aQueryValue) const
+double NonUniformBasisSpline::computeSecondDerivative(const double& aQueryValue) const
 {
     return this->computeValue(aQueryValue, 2);
 }
 
-double NonUniformBSpline::computeValue(const double& aQueryValue, const Size& aDerivativeOrder) const
+double NonUniformBasisSpline::computeValue(const double& aQueryValue, const Size& aDerivativeOrder) const
 {
     const int degree = int(degree_);
 

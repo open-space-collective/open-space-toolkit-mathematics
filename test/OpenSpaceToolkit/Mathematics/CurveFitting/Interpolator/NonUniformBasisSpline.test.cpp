@@ -6,7 +6,7 @@
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBasisSpline.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
@@ -16,16 +16,16 @@
 using ostk::core::type::Size;
 
 using ostk::mathematics::curvefitting::interpolator::CubicSpline;
-using ostk::mathematics::curvefitting::interpolator::NonUniformBSpline;
+using ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline;
 using ostk::mathematics::curvefitting::interpolator::QuadraticSpline;
 using ostk::mathematics::curvefitting::interpolator::QuinticSpline;
 using ostk::mathematics::object::VectorXd;
 
-// NonUniformBSpline is the library-private engine that the spline interpolators fall back to
+// NonUniformBasisSpline is the library-private engine that the spline interpolators fall back to
 // when their nodes are not uniformly spaced. It is exercised through those interpolators
 // elsewhere; these tests pin down the properties the interpolators rely on.
 
-class OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline : public ::testing::Test
+class OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBasisSpline : public ::testing::Test
 {
    protected:
     void SetUp() override
@@ -55,7 +55,7 @@ class OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline : public ::tes
     VectorXd uniformY_;
 };
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, ReproducesPolynomialsOfItsOwnDegree)
+TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBasisSpline, ReproducesPolynomialsOfItsOwnDegree)
 {
     // A spline of degree p reproduces any polynomial of degree p exactly, however ragged the
     // spacing of its nodes. Both derivatives must come out exactly too.
@@ -82,8 +82,9 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, ReproducesPo
             y(i) = value(raggedX_(i));
         }
 
-        const NonUniformBSpline spline =
-            NonUniformBSpline::GenerateInterpolator(raggedX_, y, degree, NonUniformBSpline::DomainBehavior::Throw);
+        const NonUniformBasisSpline spline = NonUniformBasisSpline::GenerateInterpolator(
+            raggedX_, y, degree, NonUniformBasisSpline::DomainBehavior::Throw
+        );
 
         for (const double x : {0.0, 0.17, 1.13, 2.0, 4.95, 7.3, 8.05, 10.0})
         {
@@ -95,7 +96,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, ReproducesPo
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, PassesThroughEveryNode)
+TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBasisSpline, PassesThroughEveryNode)
 {
     VectorXd y(raggedX_.size());
 
@@ -106,8 +107,9 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, PassesThroug
 
     for (const Size degree : {Size(2), Size(3), Size(5)})
     {
-        const NonUniformBSpline spline =
-            NonUniformBSpline::GenerateInterpolator(raggedX_, y, degree, NonUniformBSpline::DomainBehavior::Throw);
+        const NonUniformBasisSpline spline = NonUniformBasisSpline::GenerateInterpolator(
+            raggedX_, y, degree, NonUniformBasisSpline::DomainBehavior::Throw
+        );
 
         for (int i = 0; i < raggedX_.size(); ++i)
         {
@@ -116,7 +118,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, PassesThroug
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, AgreesWithTheCardinalImplementation)
+TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBasisSpline, AgreesWithTheCardinalImplementation)
 {
     // The point of the merge: on uniformly spaced nodes the general implementation must
     // describe the same curve as the cardinal one that is used in its place, so that which of
@@ -126,12 +128,15 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, AgreesWithTh
     const CubicSpline cardinalCubic = {uniformX_, uniformY_};
     const QuinticSpline cardinalQuintic = {uniformX_, uniformY_};
 
-    const NonUniformBSpline quadratic =
-        NonUniformBSpline::GenerateInterpolator(uniformX_, uniformY_, 2, NonUniformBSpline::DomainBehavior::Throw);
-    const NonUniformBSpline cubic =
-        NonUniformBSpline::GenerateInterpolator(uniformX_, uniformY_, 3, NonUniformBSpline::DomainBehavior::Throw);
-    const NonUniformBSpline quintic =
-        NonUniformBSpline::GenerateInterpolator(uniformX_, uniformY_, 5, NonUniformBSpline::DomainBehavior::Throw);
+    const NonUniformBasisSpline quadratic = NonUniformBasisSpline::GenerateInterpolator(
+        uniformX_, uniformY_, 2, NonUniformBasisSpline::DomainBehavior::Throw
+    );
+    const NonUniformBasisSpline cubic = NonUniformBasisSpline::GenerateInterpolator(
+        uniformX_, uniformY_, 3, NonUniformBasisSpline::DomainBehavior::Throw
+    );
+    const NonUniformBasisSpline quintic = NonUniformBasisSpline::GenerateInterpolator(
+        uniformX_, uniformY_, 5, NonUniformBasisSpline::DomainBehavior::Throw
+    );
 
     for (double x = 0.0; x <= 6.5; x += 0.017)
     {
@@ -148,7 +153,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, AgreesWithTh
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, DomainBehavior)
+TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBasisSpline, DomainBehavior)
 {
     VectorXd y(raggedX_.size());
 
@@ -158,8 +163,8 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, DomainBehavi
     }
 
     {
-        const NonUniformBSpline spline =
-            NonUniformBSpline::GenerateInterpolator(raggedX_, y, 3, NonUniformBSpline::DomainBehavior::Throw);
+        const NonUniformBasisSpline spline =
+            NonUniformBasisSpline::GenerateInterpolator(raggedX_, y, 3, NonUniformBasisSpline::DomainBehavior::Throw);
 
         EXPECT_NO_THROW(spline.evaluate(0.0));
         EXPECT_NO_THROW(spline.evaluate(10.0));
@@ -174,8 +179,9 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, DomainBehavi
         // Extrapolating extends the polynomial of the nearest end span, which for this linear
         // reference data continues the same line
 
-        const NonUniformBSpline spline =
-            NonUniformBSpline::GenerateInterpolator(raggedX_, y, 3, NonUniformBSpline::DomainBehavior::Extrapolate);
+        const NonUniformBasisSpline spline = NonUniformBasisSpline::GenerateInterpolator(
+            raggedX_, y, 3, NonUniformBasisSpline::DomainBehavior::Extrapolate
+        );
 
         EXPECT_NO_THROW(spline.evaluate(-0.1));
         EXPECT_NO_THROW(spline.evaluate(10.1));
@@ -185,7 +191,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, DomainBehavi
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, RejectsNodesThatDoNotAscend)
+TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBasisSpline, RejectsNodesThatDoNotAscend)
 {
     VectorXd x(6);
 
@@ -196,7 +202,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, RejectsNodes
         x << 0.0, 2.0, 1.0, 3.0, 4.0, 5.0;
 
         EXPECT_THROW(
-            NonUniformBSpline::GenerateInterpolator(x, y, 3, NonUniformBSpline::DomainBehavior::Throw),
+            NonUniformBasisSpline::GenerateInterpolator(x, y, 3, NonUniformBasisSpline::DomainBehavior::Throw),
             ostk::core::error::runtime::Wrong
         );
     }
@@ -207,7 +213,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline, RejectsNodes
         x << 0.0, 1.0, 1.0, 3.0, 4.0, 5.0;
 
         EXPECT_THROW(
-            NonUniformBSpline::GenerateInterpolator(x, y, 3, NonUniformBSpline::DomainBehavior::Throw),
+            NonUniformBasisSpline::GenerateInterpolator(x, y, 3, NonUniformBasisSpline::DomainBehavior::Throw),
             ostk::core::error::runtime::Wrong
         );
     }

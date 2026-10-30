@@ -1,6 +1,6 @@
 /// Apache License 2.0
-#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline__
-#define __OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBSpline__
+#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBasisSpline__
+#define __OpenSpaceToolkit_Mathematics_Interpolator_NonUniformBasisSpline__
 
 #include <vector>
 
@@ -21,7 +21,7 @@ using ostk::core::type::Size;
 
 using ostk::mathematics::object::VectorXd;
 
-/// @brief NonUniformBSpline (library-private)
+/// @brief NonUniformBasisSpline (library-private)
 ///
 /// An interpolating B-spline of a given degree over arbitrarily spaced nodes. Boost only
 /// supplies B-spline interpolators for uniformly spaced nodes (the cardinal_*_b_spline
@@ -38,7 +38,7 @@ using ostk::mathematics::object::VectorXd;
 /// and is deliberately not installed as part of the public API.
 ///
 /// @ref Piegl and Tiller, The NURBS Book, 2nd edition, chapters 2 and 9.
-class NonUniformBSpline
+class NonUniformBasisSpline
 {
    public:
     /// @brief What to do with a query outside of the interpolation domain
@@ -60,7 +60,7 @@ class NonUniformBSpline
     /// @param aDegree The degree of the spline
     /// @param aDomainBehavior What to do with a query outside of the interpolation domain (defaults to Throw)
     /// @return The interpolating B-spline
-    static NonUniformBSpline GenerateInterpolator(
+    static NonUniformBasisSpline GenerateInterpolator(
         const VectorXd& anXVector,
         const VectorXd& aYVector,
         const Size& aDegree,
@@ -91,7 +91,7 @@ class NonUniformBSpline
     std::vector<double> coefficients_;
     DomainBehavior domainBehavior_;
 
-    NonUniformBSpline(
+    NonUniformBasisSpline(
         const Size& aDegree,
         std::vector<double>&& aKnotArray,
         std::vector<double>&& aCoefficientArray,

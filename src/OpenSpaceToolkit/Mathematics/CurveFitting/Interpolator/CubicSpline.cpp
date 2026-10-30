@@ -3,7 +3,7 @@
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBasisSpline.hpp>
 
 namespace ostk
 {
@@ -37,11 +37,11 @@ CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
     }
     else
     {
-        interpolator_ = std::make_shared<const NonUniformBSpline>(
-            // The cardinal cubic B-spline extrapolates rather than rejecting a query outside
-            // of the interpolation domain, so this path does the same
-            NonUniformBSpline::GenerateInterpolator(
-                anXVector, aYVector, 3, NonUniformBSpline::DomainBehavior::Extrapolate
+        interpolator_ = std::make_shared<const NonUniformBasisSpline>(
+            // Extrapolate outside of the interpolation domain to match the behaviour of Boost's
+            // cardinal_cubic_b_spline, which the uniformly spaced path above uses
+            NonUniformBasisSpline::GenerateInterpolator(
+                anXVector, aYVector, 3, NonUniformBasisSpline::DomainBehavior::Extrapolate
             )
         );
     }

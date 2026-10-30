@@ -32,7 +32,7 @@ using ostk::mathematics::object::VectorXd;
 
 using boost::math::interpolators::cardinal_quintic_b_spline;
 
-class NonUniformBSpline;
+class NonUniformBasisSpline;
 
 /// @brief QuinticSpline
 ///
@@ -172,7 +172,7 @@ class QuinticSpline : public Interpolator
     // Exactly one of the two is engaged, depending on whether the nodes are uniformly spaced
 
     std::optional<cardinal_quintic_b_spline<double>> cardinalInterpolator_;
-    Shared<const NonUniformBSpline> interpolator_;
+    Shared<const NonUniformBasisSpline> interpolator_;
 };
 
 }  // namespace interpolator

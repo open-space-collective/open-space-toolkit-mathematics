@@ -2,7 +2,7 @@
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBasisSpline.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp>
 
 namespace ostk
@@ -37,9 +37,9 @@ QuadraticSpline::QuadraticSpline(const VectorXd& anXVector, const VectorXd& aYVe
     }
     else
     {
-        interpolator_ = std::make_shared<const NonUniformBSpline>(
-            NonUniformBSpline::GenerateInterpolator(anXVector, aYVector, 2, NonUniformBSpline::DomainBehavior::Throw)
-        );
+        interpolator_ = std::make_shared<const NonUniformBasisSpline>(NonUniformBasisSpline::GenerateInterpolator(
+            anXVector, aYVector, 2, NonUniformBasisSpline::DomainBehavior::Throw
+        ));
     }
 }
 
