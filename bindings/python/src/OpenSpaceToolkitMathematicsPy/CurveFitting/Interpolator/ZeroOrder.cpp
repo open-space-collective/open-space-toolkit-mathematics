@@ -23,6 +23,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_ZeroOrder(py
                 For any query value x, returns the y value of the largest data point
                 x_i where x_i <= x. Also known as "step" or "previous value" interpolation.
 
+                Use when the data is discrete or piecewise constant (states, modes, commands), or when values must not
+                be invented between samples.
+
                 Args:
                     x (np.array): The x-coordinates of data points.
                     y (np.array): The y-coordinates of data points.

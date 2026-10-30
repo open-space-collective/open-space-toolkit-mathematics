@@ -1,11 +1,17 @@
 /// Apache License 2.0
 
+#include <algorithm>
+#include <cmath>
+#include <limits>
+
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp>
 
 namespace ostk
@@ -18,6 +24,8 @@ namespace curvefitting
 using ostk::mathematics::curvefitting::interpolator::BarycentricRational;
 using ostk::mathematics::curvefitting::interpolator::CubicSpline;
 using ostk::mathematics::curvefitting::interpolator::Linear;
+using ostk::mathematics::curvefitting::interpolator::QuadraticSpline;
+using ostk::mathematics::curvefitting::interpolator::QuinticSpline;
 using ostk::mathematics::curvefitting::interpolator::ZeroOrder;
 
 Interpolator::Interpolator(const Type& aType)
@@ -46,9 +54,64 @@ const Shared<const Interpolator> Interpolator::GenerateInterpolator(
             return std::make_shared<Linear>(anXVector, aYVector);
         case Type::ZeroOrder:
             return std::make_shared<ZeroOrder>(anXVector, aYVector);
+        case Type::QuadraticSpline:
+            return std::make_shared<QuadraticSpline>(anXVector, aYVector);
+        case Type::QuinticSpline:
+            return std::make_shared<QuinticSpline>(anXVector, aYVector);
+        case Type::CubicHermite:
+        case Type::QuinticHermite:
+            throw ostk::core::error::RuntimeError(
+                "Hermite interpolators require derivative data, and cannot be generated from x and y only. Use class "
+                "constructors instead."
+            );
         default:
             throw ostk::core::error::runtime::Wrong("Invalid interpolation type.");
     }
+}
+
+bool Interpolator::IsUniformlySpaced(const VectorXd& anXVector)
+{
+    const Size size = anXVector.size();
+
+    if (size < 3)
+    {
+        return true;
+    }
+
+    const double x0 = anXVector(0);
+    const double span = anXVector(size - 1) - x0;
+
+    if (span <= 0.0)
+    {
+        return false;
+    }
+
+    const double h = span / double(size - 1);
+
+    // The x values are only known to within their own representation error, which for large
+    // magnitudes can be coarser than any fixed fraction of the spacing, so allow for both.
+
+    // Looking at only first and last elements is sufficient here because the XVector can only be monotonically
+    // increasing and in order
+    const double maximumMagnitude = std::max(std::abs(x0), std::abs(anXVector(size - 1)));
+
+    // Tolerance on each node's deviation from x0 + i * h, the sum of two terms:
+    //   - a relative term, 1e-10 of the span, as slack that scales with the size of the grid
+    //   - an absolute term, 8 machine epsilons of the largest |x|, that covers the rounding error of
+    //     the x values themselves and of computing x0 + i * h (a few ulps), which dominates when
+    //     |x| >> span (e.g. epoch timestamps)
+
+    const double tolerance = 1e-10 * span + 8.0 * std::numeric_limits<double>::epsilon() * maximumMagnitude;
+
+    for (Size i = 1; i < size - 1; ++i)
+    {
+        if (std::abs(anXVector(i) - (x0 + double(i) * h)) > tolerance)
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 }  // namespace curvefitting

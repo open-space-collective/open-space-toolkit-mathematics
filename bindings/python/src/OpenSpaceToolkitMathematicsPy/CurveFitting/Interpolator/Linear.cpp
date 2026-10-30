@@ -20,6 +20,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(pybin
             R"doc(
                 Create a linear interpolator with data points.
 
+                Use when a cheap, robust estimate that never leaves the range of the neighbouring samples is enough,
+                and the smoothness of the result does not matter.
+
                 Args:
                     x (np.array): The x-coordinates of data points.
                     y (np.array): The y-coordinates of data points.

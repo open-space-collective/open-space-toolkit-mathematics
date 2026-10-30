@@ -33,6 +33,9 @@ using ostk::mathematics::object::VectorXd;
 ///                             polynomials to construct new data points within the range of a discrete set of known
 ///                             data points.
 ///
+///                             Use when a cheap, robust estimate that never leaves the range of the
+///                             neighbouring samples is enough, and the smoothness of the result does not matter.
+///
 /// @code{.cpp}
 ///                             VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
 ///                             VectorXd y = {{0.0, 1.0, 4.0, 9.0}};
