@@ -187,7 +187,7 @@ class Composite : public Object
             throw ostk::core::error::runtime::Undefined("Composite");
         }
 
-        return (objects_.getSize() == 1) && (dynamic_cast<const Type*>(objects_.accessFirst().get()) != nullptr);
+        return (objects_.getSize() == 1) && (dynamic_cast<const Type*>(objects_.getFirst().get()) != nullptr);
     }
 
     /// @brief              Access composite as its underlying object
@@ -213,7 +213,7 @@ class Composite : public Object
             throw ostk::core::error::RuntimeError("Cannot convert composite: it is complex.");
         }
 
-        const Type* objectPtr = dynamic_cast<const Type*>(objects_.accessFirst().get());
+        const Type* objectPtr = dynamic_cast<const Type*>(objects_.getFirst().get());
 
         if (objectPtr == nullptr)
         {

@@ -222,7 +222,7 @@ Intersection Plane::intersectionWith(const PointSet& aPointSet) const
     }
 
     return (!points.isEmpty())
-             ? ((points.getSize() == 1) ? Intersection::Point(points.accessFirst()) : Intersection::PointSet({points}))
+             ? ((points.getSize() == 1) ? Intersection::Point(points.getFirst()) : Intersection::PointSet({points}))
              : Intersection::Empty();
 }
 

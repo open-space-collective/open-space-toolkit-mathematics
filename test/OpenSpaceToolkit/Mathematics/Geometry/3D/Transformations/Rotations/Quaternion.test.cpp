@@ -844,18 +844,18 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Quaternion referenceQuaternion = Quaternion::XYZS(
-                                                       referenceDataRow[0].accessReal(),
-                                                       referenceDataRow[1].accessReal(),
-                                                       referenceDataRow[2].accessReal(),
-                                                       referenceDataRow[3].accessReal()
+                                                       referenceDataRow[0].getReal(),
+                                                       referenceDataRow[1].getReal(),
+                                                       referenceDataRow[2].getReal(),
+                                                       referenceDataRow[3].getReal()
             )
                                                        .normalize()
                                                        .rectify();
 
             const EulerAngle referenceEulerAngle = EulerAngle::XYZ(
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal()),
-                Angle::Radians(referenceDataRow[6].accessReal())
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal()),
+                Angle::Radians(referenceDataRow[6].getReal())
             );
 
             const Quaternion quaternion = Quaternion::EulerAngle(referenceEulerAngle).rectify();
@@ -886,18 +886,18 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Quaternion referenceQuaternion = Quaternion::XYZS(
-                                                       referenceDataRow[0].accessReal(),
-                                                       referenceDataRow[1].accessReal(),
-                                                       referenceDataRow[2].accessReal(),
-                                                       referenceDataRow[3].accessReal()
+                                                       referenceDataRow[0].getReal(),
+                                                       referenceDataRow[1].getReal(),
+                                                       referenceDataRow[2].getReal(),
+                                                       referenceDataRow[3].getReal()
             )
                                                        .normalize()
                                                        .rectify();
 
             const EulerAngle referenceEulerAngle = EulerAngle::ZXY(
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal()),
-                Angle::Radians(referenceDataRow[6].accessReal())
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal()),
+                Angle::Radians(referenceDataRow[6].getReal())
             );
 
             const Quaternion quaternion = Quaternion::EulerAngle(referenceEulerAngle).rectify();
@@ -928,18 +928,18 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Quaternion referenceQuaternion = Quaternion::XYZS(
-                                                       referenceDataRow[0].accessReal(),
-                                                       referenceDataRow[1].accessReal(),
-                                                       referenceDataRow[2].accessReal(),
-                                                       referenceDataRow[3].accessReal()
+                                                       referenceDataRow[0].getReal(),
+                                                       referenceDataRow[1].getReal(),
+                                                       referenceDataRow[2].getReal(),
+                                                       referenceDataRow[3].getReal()
             )
                                                        .normalize()
                                                        .rectify();
 
             const EulerAngle referenceEulerAngle = EulerAngle::ZYX(
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal()),
-                Angle::Radians(referenceDataRow[6].accessReal())
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal()),
+                Angle::Radians(referenceDataRow[6].getReal())
             );
 
             const Quaternion quaternion = Quaternion::EulerAngle(referenceEulerAngle).rectify();

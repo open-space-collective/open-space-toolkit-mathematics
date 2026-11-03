@@ -54,11 +54,11 @@ TEST(OpenSpaceToolkit_Mathematics_Interpolator_Linear, Evaluate)
     {
         const auto& referenceRow = referenceData[i];
 
-        referenceX(i) = referenceRow[0].accessReal();
+        referenceX(i) = referenceRow[0].getReal();
 
         for (Size j = 0; j < 6; ++j)
         {
-            referenceY(i, j) = referenceRow[j + 1].accessReal();
+            referenceY(i, j) = referenceRow[j + 1].getReal();
         }
     }
 
