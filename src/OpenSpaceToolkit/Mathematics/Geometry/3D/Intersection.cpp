@@ -270,7 +270,7 @@ String Intersection::StringFromType(const Intersection::Type& aType)
 
 Intersection::Intersection()
     : type_(Intersection::Type::Undefined),
-      composite_(Composite::Undefined())
+      composite_(Composite::Empty())
 {
 }
 

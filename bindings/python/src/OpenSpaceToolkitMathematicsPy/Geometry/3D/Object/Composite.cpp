@@ -64,7 +64,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
                 Check if the composite is defined.
 
                 Returns:
-                    bool: True if the composite is defined, False otherwise.
+                    bool: True if all objects of the composite are defined, False otherwise.
 
                 Example:
                     >>> composite = Composite(Point(1.0, 2.0, 3.0))
@@ -771,20 +771,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
             arg("transformation")
         )
 
-        .def_static(
-            "undefined",
-            &Composite::Undefined,
-            R"doc(
-                Create an undefined composite.
-
-                Returns:
-                    Composite: An undefined composite object.
-
-                Example:
-                    >>> undefined_composite = Composite.undefined()
-                    >>> undefined_composite.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "empty",
             &Composite::Empty,
