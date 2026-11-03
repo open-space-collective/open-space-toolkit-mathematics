@@ -75,7 +75,7 @@ bool LineString::isNear(const LineString& aLineString, double aTolerance) const
     return true;
 }
 
-const Point& LineString::accessPointAt(const Index& anIndex) const
+const Point& LineString::getPointAt(const Index& anIndex) const
 {
     if (anIndex >= points_.getSize())
     {

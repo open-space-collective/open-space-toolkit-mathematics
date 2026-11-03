@@ -132,7 +132,7 @@ class Polygon : public Object
     /// @endcode
     ///
     /// @return             Polygon 2D polygon
-    Polygon2d getPolygon2d() const;
+    const Polygon2d& getPolygon2d() const;
 
     /// @brief              Get polygon origin
     ///
@@ -142,7 +142,7 @@ class Polygon : public Object
     /// @endcode
     ///
     /// @return             Polygon origin
-    Point getOrigin() const;
+    const Point& getOrigin() const;
 
     /// @brief              Get polygon X axis
     ///
@@ -152,7 +152,7 @@ class Polygon : public Object
     /// @endcode
     ///
     /// @return             Polygon X axis
-    Vector3d getXAxis() const;
+    const Vector3d& getXAxis() const;
 
     /// @brief              Get polygon Y axis
     ///
@@ -162,7 +162,7 @@ class Polygon : public Object
     /// @endcode
     ///
     /// @return             Polygon Y axis
-    Vector3d getYAxis() const;
+    const Vector3d& getYAxis() const;
 
     /// @brief              Get polygon normal vector
     ///

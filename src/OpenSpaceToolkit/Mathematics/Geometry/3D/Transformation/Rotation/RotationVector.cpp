@@ -83,7 +83,7 @@ bool RotationVector::isDefined() const
     return axis_.isDefined() && angle_.isDefined();
 }
 
-Vector3d RotationVector::getAxis() const
+const Vector3d& RotationVector::getAxis() const
 {
     if (!this->isDefined())
     {
@@ -93,7 +93,7 @@ Vector3d RotationVector::getAxis() const
     return axis_;
 }
 
-Angle RotationVector::getAngle() const
+const Angle& RotationVector::getAngle() const
 {
     if (!this->isDefined())
     {
@@ -218,7 +218,7 @@ RotationVector RotationVector::RotationMatrix(const rotation::RotationMatrix& aR
         throw ostk::core::error::runtime::Undefined("Rotation matrix");
     }
 
-    const Angle angle = Angle::Radians(std::acos((aRotationMatrix.accessMatrix().trace() - 1.0) / 2.0));
+    const Angle angle = Angle::Radians(std::acos((aRotationMatrix.getMatrix().trace() - 1.0) / 2.0));
 
     if (std::abs(angle.inRadians()) < 1e-15)
     {

@@ -111,16 +111,16 @@ class LineString : public Object
     /// @return             True if line string is near another line string
     bool isNear(const LineString& aLineString, double aTolerance) const;
 
-    /// @brief              Access point at index
+    /// @brief              Get point at index
     ///
     /// @code{.cpp}
     ///                     LineString lineString = LineString({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }) ;
-    ///                     const Point& point = lineString.accessPointAt(0) ;
+    ///                     const Point& point = lineString.getPointAt(0) ;
     /// @endcode
     ///
     /// @brief              [in] anIndex A point index
-    /// @return             Reference to point at index
-    const Point& accessPointAt(const Index& anIndex) const;
+    /// @return             Const reference to point at index
+    const Point& getPointAt(const Index& anIndex) const;
 
     /// @brief              Get point count
     ///

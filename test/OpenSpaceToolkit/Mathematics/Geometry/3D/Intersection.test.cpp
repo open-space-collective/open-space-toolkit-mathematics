@@ -111,16 +111,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Intersection, AdditionOperator)
         intersection += Intersection::Point(Point(1.0, 0.0, 0.0));
 
         EXPECT_EQ(Intersection::Type::Point, intersection.getType());
-        EXPECT_EQ(2, intersection.accessComposite().getObjectCount());
+        EXPECT_EQ(2, intersection.getComposite().getObjectCount());
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Intersection, AccessComposite)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Intersection, GetComposite)
 {
     using ostk::mathematics::geometry::d3::Intersection;
 
     {
-        EXPECT_TRUE(Intersection::Empty().accessComposite().isEmpty());
+        EXPECT_TRUE(Intersection::Empty().getComposite().isEmpty());
     }
 }
 

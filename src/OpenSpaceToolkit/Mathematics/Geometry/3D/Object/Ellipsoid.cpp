@@ -508,7 +508,7 @@ bool Ellipsoid::contains(const Segment& aSegment) const
     return this->contains(aSegment.getFirstPoint()) && this->contains(aSegment.getSecondPoint());
 }
 
-Point Ellipsoid::getCenter() const
+const Point& Ellipsoid::getCenter() const
 {
     if (!this->isDefined())
     {
@@ -578,7 +578,7 @@ Vector3d Ellipsoid::getThirdAxis() const
     return axes_ ? axes_->third : this->computeThirdAxis();
 }
 
-Quaternion Ellipsoid::getOrientation() const
+const Quaternion& Ellipsoid::getOrientation() const
 {
     if (!this->isDefined())
     {

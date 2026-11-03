@@ -802,9 +802,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
                 const Quaternion quaternion_A_B = Quaternion::RotationMatrix(rotationMatrix_A_B);
 
-                EXPECT_TRUE(rotationMatrix_A_B.accessMatrix().isNear(
-                    RotationMatrix::Quaternion(quaternion_A_B).accessMatrix(), 1e-14
-                ));
+                EXPECT_TRUE(
+                    rotationMatrix_A_B.getMatrix().isNear(RotationMatrix::Quaternion(quaternion_A_B).getMatrix(), 1e-14)
+                );
 
                 for (auto vectorIdx = 0; vectorIdx < 100; ++vectorIdx)
                 {

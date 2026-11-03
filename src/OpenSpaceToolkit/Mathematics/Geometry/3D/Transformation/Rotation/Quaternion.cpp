@@ -539,7 +539,7 @@ Quaternion Quaternion::RotationMatrix(const rotation::RotationMatrix& aRotationM
     /// @note Should we use this method instead?
     /// https://d3cw3dd2w32x2b.cloudfront.net/wp-content/uploads/2015/01/matrix-to-quat.pdf
 
-    const double trace = aRotationMatrix.accessMatrix().trace();
+    const double trace = aRotationMatrix.getMatrix().trace();
 
     const double rotationMatrix_11 = aRotationMatrix(0, 0);
     const double rotationMatrix_12 = aRotationMatrix(0, 1);

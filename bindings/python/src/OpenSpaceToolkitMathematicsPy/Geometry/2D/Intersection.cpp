@@ -339,17 +339,20 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
         )
 
         .def(
-            "access_composite",
-            &Intersection::accessComposite,
+            "get_composite",
+            [](const Intersection& anIntersection) -> const Composite&
+            {
+                return anIntersection.getComposite();
+            },
             R"doc(
-                Access the composite representation of the intersection.
+                Get the composite representation of the intersection.
 
                 Returns:
                     Composite: Reference to the composite containing all intersection objects.
 
                 Example:
                     >>> intersection = Intersection.point(Point(1.0, 2.0))
-                    >>> composite = intersection.access_composite()
+                    >>> composite = intersection.get_composite()
             )doc",
             return_value_policy::reference
         )

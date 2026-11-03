@@ -164,7 +164,7 @@ class Line : public Object
     /// @endcode
     ///
     /// @return             Line origin
-    Point getOrigin() const;
+    const Point& getOrigin() const;
 
     /// @brief              Get line direction
     ///
@@ -173,7 +173,7 @@ class Line : public Object
     /// @endcode
     ///
     /// @return             Line direction
-    Vector3d getDirection() const;
+    const Vector3d& getDirection() const;
 
     /// @brief              Get distance to point
     ///

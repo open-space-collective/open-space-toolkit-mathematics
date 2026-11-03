@@ -152,7 +152,7 @@ bool Ray::contains(const PointSet& aPointSet) const
                                      );
 }
 
-Point Ray::getOrigin() const
+const Point& Ray::getOrigin() const
 {
     if (!this->isDefined())
     {
@@ -162,7 +162,7 @@ Point Ray::getOrigin() const
     return origin_;
 }
 
-Vector3d Ray::getDirection() const
+const Vector3d& Ray::getDirection() const
 {
     if (!this->isDefined())
     {

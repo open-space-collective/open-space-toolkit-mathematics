@@ -498,7 +498,7 @@ Intersection Polygon::Impl::intersectionWith(const Polygon& aPolygon) const
 
             if (lineStringIsValid)
             {
-                Composite intersectionComposite = intersection.accessComposite();
+                Composite intersectionComposite = intersection.getComposite();
 
                 if (!intersectionComposite.anyContains(lineString))
                 {
@@ -516,7 +516,7 @@ Intersection Polygon::Impl::intersectionWith(const Polygon& aPolygon) const
         {
             Point point = Point({boostPoint.x(), boostPoint.y()});
 
-            Composite intersectionComposite = intersection.accessComposite();
+            Composite intersectionComposite = intersection.getComposite();
 
             if (!intersectionComposite.anyContains(point))
             {

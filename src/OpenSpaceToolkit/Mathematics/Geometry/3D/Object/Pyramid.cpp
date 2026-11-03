@@ -209,7 +209,7 @@ bool Pyramid::contains(const Ellipsoid& anEllipsoid) const
     return false;
 }
 
-Polygon Pyramid::getBase() const
+const Polygon& Pyramid::getBase() const
 {
     if (!this->isDefined())
     {
@@ -219,7 +219,7 @@ Polygon Pyramid::getBase() const
     return base_;
 }
 
-Point Pyramid::getApex() const
+const Point& Pyramid::getApex() const
 {
     if (!this->isDefined())
     {
@@ -363,13 +363,13 @@ Intersection Pyramid::intersectionWith(const Sphere& aSphere, const bool onlyInS
 
         if (!intersection.isEmpty())
         {
-            if (intersection.accessComposite().is<Point>())
+            if (intersection.getComposite().is<Point>())
             {
-                firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
+                firstIntersectionPoints.add(intersection.getComposite().as<Point>());
             }
-            else if (intersection.accessComposite().is<PointSet>())
+            else if (intersection.getComposite().is<PointSet>())
             {
-                const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
+                const PointSet& pointSet = intersection.getComposite().as<PointSet>();
 
                 bool secondIntersectionPointAdded = false;
 
@@ -430,13 +430,13 @@ Intersection Pyramid::intersectionWith(
 
         if (!intersection.isEmpty())
         {
-            if (intersection.accessComposite().is<Point>())
+            if (intersection.getComposite().is<Point>())
             {
-                firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
+                firstIntersectionPoints.add(intersection.getComposite().as<Point>());
             }
-            else if (intersection.accessComposite().is<PointSet>())
+            else if (intersection.getComposite().is<PointSet>())
             {
-                const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
+                const PointSet& pointSet = intersection.getComposite().as<PointSet>();
 
                 const Point closestPointToApex = pointSet.getPointClosestTo(apex_);
 

@@ -170,7 +170,7 @@ class Ray : public Object
     /// @endcode
     ///
     /// @return             Ray origin
-    Point getOrigin() const;
+    const Point& getOrigin() const;
 
     /// @brief              Get ray direction
     ///
@@ -179,7 +179,7 @@ class Ray : public Object
     /// @endcode
     ///
     /// @return             Ray direction
-    Vector3d getDirection() const;
+    const Vector3d& getDirection() const;
 
     /// @brief              Get distance to point
     ///

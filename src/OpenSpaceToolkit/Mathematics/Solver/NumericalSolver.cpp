@@ -151,16 +151,6 @@ void NumericalSolver::print(std::ostream& anOutputStream, bool displayDecorator)
     displayDecorator ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
 
-const Array<NumericalSolver::Solution>& NumericalSolver::accessObservedStateVectors() const
-{
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("NumericalSolver");
-    }
-
-    return this->observedStateVectors_;
-}
-
 NumericalSolver::LogType NumericalSolver::getLogType() const
 {
     if (!this->isDefined())
@@ -211,9 +201,14 @@ double NumericalSolver::getAbsoluteTolerance() const
     return this->absoluteTolerance_;
 }
 
-Array<NumericalSolver::Solution> NumericalSolver::getObservedStateVectors() const
+const Array<NumericalSolver::Solution>& NumericalSolver::getObservedStateVectors() const
 {
-    return this->accessObservedStateVectors();
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("NumericalSolver");
+    }
+
+    return this->observedStateVectors_;
 }
 
 Array<NumericalSolver::Solution> NumericalSolver::integrateTime(

@@ -170,7 +170,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, IsNear)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, AccessPointAt)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, GetPointAt)
 {
     using ostk::mathematics::geometry::d3::object::LineString;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -178,28 +178,28 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, AccessPointAt)
     {
         EXPECT_EQ(
             Point(0.0, 0.0, 0.0),
-            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).accessPointAt(0)
+            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).getPointAt(0)
         );
         EXPECT_EQ(
             Point(0.0, 1.0, 0.0),
-            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).accessPointAt(1)
+            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).getPointAt(1)
         );
         EXPECT_EQ(
             Point(1.0, 0.0, 0.0),
-            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).accessPointAt(2)
+            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).getPointAt(2)
         );
         EXPECT_EQ(
             Point(0.0, 0.0, 0.0),
-            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).accessPointAt(3)
+            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).getPointAt(3)
         );
 
-        EXPECT_ANY_THROW(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}
-        ).accessPointAt(5));
+        EXPECT_ANY_THROW(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).getPointAt(5)
+        );
     }
 
     {
-        EXPECT_ANY_THROW(LineString::Empty().accessPointAt(0));
-        EXPECT_ANY_THROW(LineString::Empty().accessPointAt(1));
+        EXPECT_ANY_THROW(LineString::Empty().getPointAt(0));
+        EXPECT_ANY_THROW(LineString::Empty().getPointAt(1));
     }
 }
 

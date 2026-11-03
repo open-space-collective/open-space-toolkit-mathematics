@@ -81,15 +81,15 @@ class TestComposite:
 
         assert Composite(polygon).is_polygon()
 
-    def test_access_object_at_success(
+    def test_get_object_at_success(
         self,
         composite: Composite,
         polygon: Polygon,
         point: Point,
     ):
         assert composite.get_object_count() == 2
-        assert composite.access_object_at(0) == polygon
-        assert composite.access_object_at(1) == point
+        assert composite.get_object_at(0) == polygon
+        assert composite.get_object_at(1) == point
 
         with pytest.raises(RuntimeError):
-            composite.access_object_at(2)
+            composite.get_object_at(2)

@@ -100,11 +100,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(pybind11
         )
 
         .def(
-            "access_point_at",
-            &LineString::accessPointAt,
+            "get_point_at",
+            &LineString::getPointAt,
             return_value_policy::reference,
             R"doc(
-                Access a point at a given index.
+                Get a point at a given index.
 
                 Args:
                     index (int): The index of the point.
@@ -115,7 +115,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(pybind11
                 Example:
                     >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
                     >>> line_string = LineString(points)
-                    >>> line_string.access_point_at(0)  # Point(0.0, 0.0)
+                    >>> line_string.get_point_at(0)  # Point(0.0, 0.0)
             )doc",
             arg("index")
         )
@@ -211,7 +211,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(pybind11
             "__getitem__",
             +[](const LineString& aLineString, const size_t anIndex) -> const Point&
             {
-                return aLineString.accessPointAt(anIndex);
+                return aLineString.getPointAt(anIndex);
             },
             return_value_policy::reference_internal,
             arg("index")

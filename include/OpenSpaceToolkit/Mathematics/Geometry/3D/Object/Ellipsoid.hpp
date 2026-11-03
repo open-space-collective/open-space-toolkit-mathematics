@@ -268,7 +268,7 @@ class Ellipsoid : public Object
     /// @endcode
     ///
     /// @return             Ellipsoid center
-    Point getCenter() const;
+    const Point& getCenter() const;
 
     /// @brief              Get ellipsoid first principal semi-axis
     ///
@@ -335,7 +335,7 @@ class Ellipsoid : public Object
     /// @endcode
     ///
     /// @return             Ellipsoid orientation
-    Quaternion getOrientation() const;
+    const Quaternion& getOrientation() const;
 
     /// @brief              Get ellipsoid matrix
     ///

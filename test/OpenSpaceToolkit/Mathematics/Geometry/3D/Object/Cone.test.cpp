@@ -570,9 +570,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, IntersectionWith_Elli
         const Intersection intersection = cone.intersectionWith(ellipsoid, true, 4);
 
         EXPECT_FALSE(intersection.isEmpty());
-        EXPECT_TRUE(intersection.accessComposite().is<LineString>());
+        EXPECT_TRUE(intersection.getComposite().is<LineString>());
 
-        const LineString intersectionLineString = intersection.accessComposite().as<LineString>();
+        const LineString intersectionLineString = intersection.getComposite().as<LineString>();
 
         EXPECT_EQ(4, intersectionLineString.getPointCount());
 

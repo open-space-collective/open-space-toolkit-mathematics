@@ -163,7 +163,7 @@ class EulerAngle
     /// @endcode
     ///
     /// @return                 First angle of rotation
-    Angle getPhi() const;
+    const Angle& getPhi() const;
 
     /// @brief                  Get second angle of rotation (theta)
     ///
@@ -172,7 +172,7 @@ class EulerAngle
     /// @endcode
     ///
     /// @return                 Second angle of rotation
-    Angle getTheta() const;
+    const Angle& getTheta() const;
 
     /// @brief                  Get third angle of rotation (psi)
     ///
@@ -181,7 +181,7 @@ class EulerAngle
     /// @endcode
     ///
     /// @return                 Third angle of rotation
-    Angle getPsi() const;
+    const Angle& getPsi() const;
 
     /// @brief                  Get axis sequence
     ///

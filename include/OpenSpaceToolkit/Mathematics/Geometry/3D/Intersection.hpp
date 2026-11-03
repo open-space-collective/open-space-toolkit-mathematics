@@ -227,15 +227,24 @@ class Intersection
         return composite_.as<Type>();
     }
 
-    /// @brief              Access composite object
+    /// @brief              Get composite object
     ///
     /// @code{.cpp}
     ///                     Intersection intersection = Intersection::Point(object::Point(0.0, 0.0, 0.0)) ;
-    ///                     const Composite& composite = intersection.accessComposite() ;
+    ///                     const Composite& composite = intersection.getComposite() ;
     /// @endcode
     ///
-    /// @return             Reference to composite object
-    const Composite& accessComposite() const;
+    /// @return             Const reference to composite object
+    const Composite& getComposite() const&;
+
+    /// @brief              Get composite object of a temporary intersection
+    ///
+    /// @code{.cpp}
+    ///                     for (const auto& object : lineA.intersectionWith(lineB).getComposite()) { ... }
+    /// @endcode
+    ///
+    /// @return             Composite object (copy, so that it does not dangle)
+    Composite getComposite() &&;
 
     /// @brief              Get intersection type
     ///

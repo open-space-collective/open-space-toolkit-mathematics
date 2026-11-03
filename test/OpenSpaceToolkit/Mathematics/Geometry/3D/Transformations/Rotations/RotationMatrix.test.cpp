@@ -73,29 +73,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
     // TBI
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, AccessMatrix)
-{
-    {
-        const RotationMatrix rotationMatrix = {1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, -1.0, 0.0};
-
-        const Matrix3d& matrix = rotationMatrix.accessMatrix();
-
-        EXPECT_EQ(1.0, matrix(0, 0));
-        EXPECT_EQ(0.0, matrix(0, 1));
-        EXPECT_EQ(0.0, matrix(0, 2));
-        EXPECT_EQ(0.0, matrix(1, 0));
-        EXPECT_EQ(0.0, matrix(1, 1));
-        EXPECT_EQ(1.0, matrix(1, 2));
-        EXPECT_EQ(0.0, matrix(2, 0));
-        EXPECT_EQ(-1.0, matrix(2, 1));
-        EXPECT_EQ(0.0, matrix(2, 2));
-    }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::Undefined().accessMatrix());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, GetRowAt)
 {
     {
@@ -133,7 +110,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
     {
         const RotationMatrix rotationMatrix = {1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, -1.0, 0.0};
 
-        const Matrix3d matrix = rotationMatrix.getMatrix();
+        const Matrix3d& matrix = rotationMatrix.getMatrix();
 
         EXPECT_EQ(1.0, matrix(0, 0));
         EXPECT_EQ(0.0, matrix(0, 1));
@@ -144,6 +121,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         EXPECT_EQ(0.0, matrix(2, 0));
         EXPECT_EQ(-1.0, matrix(2, 1));
         EXPECT_EQ(0.0, matrix(2, 2));
+    }
+
+    {
+        const RotationMatrix rotationMatrix = RotationMatrix::Unit();
+
+        EXPECT_EQ(&rotationMatrix.getMatrix(), &rotationMatrix.getMatrix());
     }
 
     {

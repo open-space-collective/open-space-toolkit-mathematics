@@ -192,7 +192,7 @@ class Pyramid : public Object
     /// @endcode
     ///
     /// @return             Pyramid base
-    Polygon getBase() const;
+    const Polygon& getBase() const;
 
     /// @brief              Get pyramid apex
     ///
@@ -202,7 +202,7 @@ class Pyramid : public Object
     /// @endcode
     ///
     /// @return             Pyramid apex
-    Point getApex() const;
+    const Point& getApex() const;
 
     /// @brief              Get number of lateral faces
     ///

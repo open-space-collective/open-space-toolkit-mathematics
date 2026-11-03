@@ -808,62 +808,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsInterval)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Object_Interval, AccessLowerBound)
-{
-    {
-        EXPECT_EQ(0.0, Interval<double>(0.0, 1.0, Interval<double>::Type::Closed).accessLowerBound());
-        EXPECT_EQ(0.0, Interval<double>(0.0, 1.0, Interval<double>::Type::Open).accessLowerBound());
-        EXPECT_EQ(0.0, Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenLeft).accessLowerBound());
-        EXPECT_EQ(0.0, Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenRight).accessLowerBound());
-        EXPECT_EQ(1.0, Interval<double>(1.0, 1.0, Interval<double>::Type::Closed).accessLowerBound());
-    }
-
-    {
-        EXPECT_EQ(-1.0, Interval<double>(-1.0, +1.0, Interval<double>::Type::Closed).accessLowerBound());
-        EXPECT_EQ(-1.0, Interval<double>(-1.0, +1.0, Interval<double>::Type::Open).accessLowerBound());
-        EXPECT_EQ(-1.0, Interval<double>(-1.0, +1.0, Interval<double>::Type::HalfOpenLeft).accessLowerBound());
-        EXPECT_EQ(-1.0, Interval<double>(-1.0, +1.0, Interval<double>::Type::HalfOpenRight).accessLowerBound());
-    }
-
-    {
-        Interval<double> interval(0.0, 1.0, Interval<double>::Type::Closed);
-
-        EXPECT_EQ(&interval.accessLowerBound(), &interval.accessLowerBound());
-    }
-
-    {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().accessLowerBound());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Object_Interval, AccessUpperBound)
-{
-    {
-        EXPECT_EQ(1.0, Interval<double>(0.0, 1.0, Interval<double>::Type::Closed).accessUpperBound());
-        EXPECT_EQ(1.0, Interval<double>(0.0, 1.0, Interval<double>::Type::Open).accessUpperBound());
-        EXPECT_EQ(1.0, Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenLeft).accessUpperBound());
-        EXPECT_EQ(1.0, Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenRight).accessUpperBound());
-        EXPECT_EQ(1.0, Interval<double>(1.0, 1.0, Interval<double>::Type::Closed).accessUpperBound());
-    }
-
-    {
-        EXPECT_EQ(+1.0, Interval<double>(-1.0, +1.0, Interval<double>::Type::Closed).accessUpperBound());
-        EXPECT_EQ(+1.0, Interval<double>(-1.0, +1.0, Interval<double>::Type::Open).accessUpperBound());
-        EXPECT_EQ(+1.0, Interval<double>(-1.0, +1.0, Interval<double>::Type::HalfOpenLeft).accessUpperBound());
-        EXPECT_EQ(+1.0, Interval<double>(-1.0, +1.0, Interval<double>::Type::HalfOpenRight).accessUpperBound());
-    }
-
-    {
-        Interval<double> interval(0.0, 1.0, Interval<double>::Type::Closed);
-
-        EXPECT_EQ(&interval.accessUpperBound(), &interval.accessUpperBound());
-    }
-
-    {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().accessUpperBound());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetType)
 {
     {
@@ -902,6 +846,12 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetLowerBound)
     }
 
     {
+        Interval<double> interval(0.0, 1.0, Interval<double>::Type::Closed);
+
+        EXPECT_EQ(&interval.getLowerBound(), &interval.getLowerBound());
+    }
+
+    {
         EXPECT_ANY_THROW(Interval<double>::Undefined().getLowerBound());
     }
 }
@@ -921,6 +871,12 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUpperBound)
         EXPECT_EQ(+1.0, Interval<double>(-1.0, +1.0, Interval<double>::Type::Open).getUpperBound());
         EXPECT_EQ(+1.0, Interval<double>(-1.0, +1.0, Interval<double>::Type::HalfOpenLeft).getUpperBound());
         EXPECT_EQ(+1.0, Interval<double>(-1.0, +1.0, Interval<double>::Type::HalfOpenRight).getUpperBound());
+    }
+
+    {
+        Interval<double> interval(0.0, 1.0, Interval<double>::Type::Closed);
+
+        EXPECT_EQ(&interval.getUpperBound(), &interval.getUpperBound());
     }
 
     {

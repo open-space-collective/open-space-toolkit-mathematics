@@ -154,7 +154,7 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment first point
-    Point getFirstPoint() const;
+    const Point& getFirstPoint() const;
 
     /// @brief              Get segment second point
     ///
@@ -163,7 +163,7 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment second point
-    Point getSecondPoint() const;
+    const Point& getSecondPoint() const;
 
     /// @brief              Get segment center
     ///

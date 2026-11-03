@@ -278,13 +278,6 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Print)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Accessors)
-{
-    {
-        EXPECT_NO_THROW(defaultRK54_.accessObservedStateVectors());
-    }
-}
-
 TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, GetType)
 {
     {

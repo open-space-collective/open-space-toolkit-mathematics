@@ -321,9 +321,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IntersectionWith_Plane
     {
         const Intersection intersection = aRay.intersectionWith(aPlane);
 
-        ASSERT_TRUE(intersection.accessComposite().is<Ray>());
+        ASSERT_TRUE(intersection.getComposite().is<Ray>());
 
-        const Ray ray = intersection.accessComposite().as<Ray>();
+        const Ray ray = intersection.getComposite().as<Ray>();
 
         EXPECT_EQ(anIntersectionRay, ray);
     };
@@ -333,9 +333,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IntersectionWith_Plane
     {
         const Intersection intersection = aRay.intersectionWith(aPlane);
 
-        ASSERT_TRUE(intersection.accessComposite().is<Point>());
+        ASSERT_TRUE(intersection.getComposite().is<Point>());
 
-        const Point point = intersection.accessComposite().as<Point>();
+        const Point point = intersection.getComposite().as<Point>();
 
         EXPECT_TRUE(point.isNear(anIntersectionPoint, 1e-15));
     };

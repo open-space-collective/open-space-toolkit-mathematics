@@ -200,24 +200,24 @@ class Test3DComposite:
         with pytest.raises(RuntimeError):
             composite_3 += Composite(Point.undefined())
 
-    def test_geometry_d3_object_composite_access_object_at(
+    def test_geometry_d3_object_composite_get_object_at(
         self,
         composite_with_polygon: Composite,
     ):
-        object: Object = composite_with_polygon.access_object_at(0)
+        object: Object = composite_with_polygon.get_object_at(0)
 
         assert object is not None
         assert isinstance(object, Object)
         assert isinstance(object, Segment)
 
-        object_2: Object = composite_with_polygon.access_object_at(1)
+        object_2: Object = composite_with_polygon.get_object_at(1)
 
         assert object_2 is not None
         assert isinstance(object_2, Object)
         assert isinstance(object_2, Polygon)
 
         with pytest.raises(RuntimeError):
-            composite_with_polygon.access_object_at(2)
+            composite_with_polygon.get_object_at(2)
 
     @pytest.mark.parametrize(
         "geometry_name",

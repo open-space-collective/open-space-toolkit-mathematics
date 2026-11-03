@@ -268,28 +268,6 @@ bool Interval<T>::contains(const Interval& anInterval) const
 }
 
 template <class T>
-const T& Interval<T>::accessLowerBound() const
-{
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Interval");
-    }
-
-    return lowerBound_;
-}
-
-template <class T>
-const T& Interval<T>::accessUpperBound() const
-{
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Interval");
-    }
-
-    return upperBound_;
-}
-
-template <class T>
 typename Interval<T>::Type Interval<T>::getType() const
 {
     if (!this->isDefined())
@@ -301,7 +279,7 @@ typename Interval<T>::Type Interval<T>::getType() const
 }
 
 template <class T>
-T Interval<T>::getLowerBound() const
+const T& Interval<T>::getLowerBound() const
 {
     if (!this->isDefined())
     {
@@ -312,7 +290,7 @@ T Interval<T>::getLowerBound() const
 }
 
 template <class T>
-T Interval<T>::getUpperBound() const
+const T& Interval<T>::getUpperBound() const
 {
     if (!this->isDefined())
     {
@@ -500,14 +478,14 @@ ctnr::Array<T> Interval<T>::generateArrayWithStep(const U& aStep) const
 
     if (internal::IsPositive(aStep))
     {
-        T value = this->accessLowerBound();
+        T value = this->getLowerBound();
 
         if ((type_ == Interval<T>::Type::Open) || (type_ == Interval<T>::Type::HalfOpenLeft))
         {
             value += aStep;
         }
 
-        while (value < this->accessUpperBound())
+        while (value < this->getUpperBound())
         {
             grid.add(value);
 
@@ -516,19 +494,19 @@ ctnr::Array<T> Interval<T>::generateArrayWithStep(const U& aStep) const
 
         if ((type_ == Interval<T>::Type::Closed) || (type_ == Interval<T>::Type::HalfOpenLeft))
         {
-            grid.add(this->accessUpperBound());
+            grid.add(this->getUpperBound());
         }
     }
     else
     {
-        T value = this->accessUpperBound();
+        T value = this->getUpperBound();
 
         if ((type_ == Interval<T>::Type::Open) || (type_ == Interval<T>::Type::HalfOpenRight))
         {
             value += aStep;
         }
 
-        while (value > this->accessLowerBound())
+        while (value > this->getLowerBound())
         {
             grid.add(value);
 
@@ -537,7 +515,7 @@ ctnr::Array<T> Interval<T>::generateArrayWithStep(const U& aStep) const
 
         if ((type_ == Interval<T>::Type::Closed) || (type_ == Interval<T>::Type::HalfOpenRight))
         {
-            grid.add(this->accessLowerBound());
+            grid.add(this->getLowerBound());
         }
     }
 
@@ -558,23 +536,23 @@ ctnr::Array<T> Interval<T>::generateArrayWithSize(const types::Size& anArraySize
     switch (type_)
     {
         case Interval<T>::Type::Closed:
-            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize - 1);
-            value = this->accessLowerBound();
+            step = (this->getUpperBound() - this->getLowerBound()) / static_cast<T>(anArraySize - 1);
+            value = this->getLowerBound();
             break;
 
         case Interval<T>::Type::Open:
-            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize + 1);
-            value = this->accessLowerBound() + step;
+            step = (this->getUpperBound() - this->getLowerBound()) / static_cast<T>(anArraySize + 1);
+            value = this->getLowerBound() + step;
             break;
 
         case Interval<T>::Type::HalfOpenLeft:
-            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize);
-            value = this->accessLowerBound() + step;
+            step = (this->getUpperBound() - this->getLowerBound()) / static_cast<T>(anArraySize);
+            value = this->getLowerBound() + step;
             break;
 
         case Interval<T>::Type::HalfOpenRight:
-            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize);
-            value = this->accessLowerBound();
+            step = (this->getUpperBound() - this->getLowerBound()) / static_cast<T>(anArraySize);
+            value = this->getLowerBound();
             break;
 
         default:

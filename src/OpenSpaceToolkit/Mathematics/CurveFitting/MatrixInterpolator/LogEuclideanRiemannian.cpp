@@ -94,7 +94,7 @@ Array<MatrixXd> LogEuclideanRiemannian::evaluate(const VectorXd& aQueryVector) c
     return results;
 }
 
-Array<MatrixXd> LogEuclideanRiemannian::getMatrices() const
+const Array<MatrixXd>& LogEuclideanRiemannian::getMatrices() const
 {
     return matrices_;
 }

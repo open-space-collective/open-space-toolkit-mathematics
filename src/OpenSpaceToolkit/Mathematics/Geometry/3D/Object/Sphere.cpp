@@ -300,7 +300,7 @@ bool Sphere::contains(const PointSet& aPointSet) const
                                      );
 }
 
-Point Sphere::getCenter() const
+const Point& Sphere::getCenter() const
 {
     if (!this->isDefined())
     {
