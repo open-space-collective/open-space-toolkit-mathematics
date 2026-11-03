@@ -744,7 +744,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
         const Polygon referencePolygon = {{{0.5, 1.0}, {1.0, 1.0}, {1.0, 0.0}, {0.5, 0.0}}};
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_FALSE(intersection.isEmpty());
         EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1);
         EXPECT_TRUE(intersection.accessComposite().is<Polygon>());
@@ -773,7 +772,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1);
         EXPECT_TRUE(intersection.accessComposite().is<Point>());
     }
@@ -789,7 +787,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_FALSE(intersection.isEmpty());
         EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1);
         EXPECT_TRUE(intersection.accessComposite().is<Polygon>());
@@ -806,7 +803,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_FALSE(intersection.isEmpty());
         EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 2);
     }
@@ -820,7 +816,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_TRUE(intersection.isEmpty());
         EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 0);
     }
@@ -834,7 +829,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1);
         EXPECT_TRUE(intersection.accessComposite().is<LineString>());
     }
@@ -872,7 +866,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_FALSE(intersection.isEmpty());
         EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1);
         EXPECT_TRUE(intersection.accessComposite().is<Polygon>());
@@ -904,7 +897,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, DifferenceWith)
 
         Intersection difference = polygon_1.differenceWith(polygon_2);
 
-        EXPECT_TRUE(difference.isDefined());
         EXPECT_FALSE(difference.isEmpty());
         EXPECT_TRUE(difference.accessComposite().getObjectCount() == 1);
         EXPECT_TRUE(difference.accessComposite().is<Polygon>());
@@ -944,13 +936,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, DifferenceWith)
 
         Intersection difference1minus2 = polygon_1.differenceWith(polygon_2);
 
-        EXPECT_TRUE(difference1minus2.isDefined());
         EXPECT_FALSE(difference1minus2.isEmpty());
         EXPECT_TRUE(difference1minus2.accessComposite().getObjectCount() == 5);
 
         Intersection difference2minus1 = polygon_2.differenceWith(polygon_1);
 
-        EXPECT_TRUE(difference2minus1.isDefined());
         EXPECT_FALSE(difference2minus1.isEmpty());
         EXPECT_TRUE(difference2minus1.accessComposite().getObjectCount() == 6);
     }
