@@ -4,7 +4,7 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Transformation.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D(nanobind::module_& aModule)
 {
     // Create "d2" python submodule
     auto d2 = aModule.def_submodule("d2");

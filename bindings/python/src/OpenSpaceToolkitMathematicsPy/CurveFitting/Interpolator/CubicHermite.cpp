@@ -2,18 +2,16 @@
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicHermite(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicHermite(nanobind::module_& aModule)
 {
-    using namespace pybind11;
-
-    using ostk::core::type::Shared;
+    using namespace nanobind;
 
     using ostk::mathematics::curvefitting::Interpolator;
     using ostk::mathematics::object::VectorXd;
 
     using ostk::mathematics::curvefitting::interpolator::CubicHermite;
 
-    class_<CubicHermite, Interpolator, Shared<CubicHermite>>(aModule, "CubicHermite")
+    class_<CubicHermite, Interpolator>(aModule, "CubicHermite")
 
         .def(
             init<const VectorXd&, const VectorXd&, const VectorXd&>(),

@@ -349,3 +349,9 @@ def test_angle_in_arcseconds_reduction():
 
     angle: Angle = Angle(180.0 * 3600.0, Unit.Arcsecond)
     assert angle.in_arcseconds(-180.0 * 3600.0, 180.0 * 3600.0) == -180.0 * 3600.0
+
+
+def test_angle_is_unhashable():
+    # Angle defines __eq__ without __hash__, so like any such Python class it is unhashable.
+    with pytest.raises(TypeError):
+        hash(Angle.degrees(1.0))

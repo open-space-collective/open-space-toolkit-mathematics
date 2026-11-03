@@ -12,9 +12,9 @@ void set_quaternion_array(const Array<Quaternion>& anArray)
     (void)anArray;
 }
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Quaternion(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Quaternion(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::type::String;
 
@@ -96,13 +96,48 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
             arg("quaternion")
         )
 
-        .def(self == self)
-        .def(self != self)
-
-        .def(self + self)
-        .def(self += self)
         .def(
-            self * self,
+            "__eq__",
+            [](const Quaternion& self, const Quaternion& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Quaternion& self, const Quaternion& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
+
+        .def(
+            "__add__",
+            [](const Quaternion& self, const Quaternion& other)
+            {
+                return self + other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__iadd__",
+            [](Quaternion& self, const Quaternion& other) -> Quaternion&
+            {
+                self += other;
+                return self;
+            },
+            nanobind::rv_policy::none,
+            nanobind::is_operator()
+        )
+        .def(
+            "__mul__",
+            [](const Quaternion& self, const Quaternion& other)
+            {
+                return self * other;
+            },
+            nanobind::is_operator(),
             R"doc(
                 Multiplication operator (Quaternion).
 
@@ -119,11 +154,39 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
                     Quaternion: The result of cross multiplication.
             )doc"
         )
-        .def(self * Vector3d())
-        .def(self * double())
-        .def(double() * self)
+        .def(
+            "__mul__",
+            [](const Quaternion& self, const Vector3d& other)
+            {
+                return self * other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__mul__",
+            [](const Quaternion& self, double other)
+            {
+                return self * other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__rmul__",
+            [](const Quaternion& self, double other)
+            {
+                return other * self;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self / self)
+        .def(
+            "__truediv__",
+            [](const Quaternion& self, const Quaternion& other)
+            {
+                return self / other;
+            },
+            nanobind::is_operator()
+        )
 
         .def(
             "__pow__",
@@ -156,7 +219,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
         .def(
             "is_unitary",
             &Quaternion::isUnitary,
-            arg_v("norm_tolerance", 1e-15, "1e-15"),
+            arg("norm_tolerance").sig("1e-15") = 1e-15,
             R"doc(
                 Check if the quaternion is unitary.
 
@@ -442,7 +505,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
                     >>> rotated = q.rotate_vector(vector)
             )doc",
             arg("vector"),
-            arg_v("norm_tolerance", 1e-15, "1e-15")
+            arg("norm_tolerance").sig("1e-15") = 1e-15
         )
         .def(
             "to_vector",

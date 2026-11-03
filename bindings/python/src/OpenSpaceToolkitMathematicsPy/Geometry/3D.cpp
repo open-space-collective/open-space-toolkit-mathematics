@@ -4,7 +4,7 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformation.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D(nanobind::module_& aModule)
 {
     // Create "d3" python submodule
     auto d3 = aModule.def_submodule("d3");

@@ -3,9 +3,9 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
@@ -26,20 +26,20 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::mo
 
         .def(
             "__init__",
-            [](Cuboid& aCuboid, const Point& aCenter, const pybind11::list& anAxisList, const pybind11::list& anExtent)
+            [](Cuboid* aCuboid, const Point& aCenter, const nanobind::list& anAxisList, const nanobind::list& anExtent)
             {
                 const std::array<Vector3d, 3> axes = {
-                    pybind11::cast<Vector3d>(anAxisList[0]),
-                    pybind11::cast<Vector3d>(anAxisList[1]),
-                    pybind11::cast<Vector3d>(anAxisList[2])
+                    nanobind::cast<Vector3d>(anAxisList[0]),
+                    nanobind::cast<Vector3d>(anAxisList[1]),
+                    nanobind::cast<Vector3d>(anAxisList[2])
                 };
                 const std::array<double, 3> extent = {
-                    pybind11::cast<double>(anExtent[0]),
-                    pybind11::cast<double>(anExtent[1]),
-                    pybind11::cast<double>(anExtent[2])
+                    nanobind::cast<double>(anExtent[0]),
+                    nanobind::cast<double>(anExtent[1]),
+                    nanobind::cast<double>(anExtent[2])
                 };
 
-                new (&aCuboid) Cuboid(aCenter, axes, extent);
+                new (aCuboid) Cuboid(aCenter, axes, extent);
                 // Default policy is unique pointer
                 // return std::make_shared<Cuboid>(aCenter, axes, extent) ;
                 // return std::shared_ptr<Cuboid>(new Cuboid(aCenter, axes, extent)) ;  // Check if that one provides
@@ -64,8 +64,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::mo
             arg("extent")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Cuboid& self, const Cuboid& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Cuboid& self, const Cuboid& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Cuboid>))
         .def("__repr__", &(shiftToString<Cuboid>))
