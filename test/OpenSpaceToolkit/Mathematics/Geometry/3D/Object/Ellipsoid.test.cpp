@@ -1003,7 +1003,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(line);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<PointSet>());
@@ -1021,7 +1020,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(line);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<PointSet>());
@@ -1039,7 +1037,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(line);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<PointSet>());
@@ -1057,7 +1054,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(line);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
@@ -1073,7 +1069,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(line);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
@@ -1113,7 +1108,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(ray);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
@@ -1129,7 +1123,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(ray);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<PointSet>());
@@ -1147,7 +1140,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(ray);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<PointSet>());
@@ -1165,7 +1157,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(ray);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<PointSet>());
@@ -1183,7 +1174,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(ray);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<PointSet>());
@@ -1213,7 +1203,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
     //     const Intersection intersection = ellipsoid.intersectionWith(ray) ;
 
-    //     ASSERT_TRUE(intersection.isDefined()) ;
     //     ASSERT_TRUE(intersection.accessComposite().isDefined()) ;
 
     //     ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
@@ -1231,7 +1220,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
     //     const Intersection intersection = ellipsoid.intersectionWith(ray) ;
 
-    //     ASSERT_TRUE(intersection.isDefined()) ;
     //     ASSERT_TRUE(intersection.accessComposite().isDefined()) ;
 
     //     ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
@@ -1259,7 +1247,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(ray, true);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
@@ -1275,7 +1262,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(ray, true);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
@@ -1303,7 +1289,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
     //     const Intersection intersection = ellipsoid.intersectionWith(ray, true) ;
 
-    //     ASSERT_TRUE(intersection.isDefined()) ;
     //     ASSERT_TRUE(intersection.accessComposite().isDefined()) ;
 
     //     ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
@@ -1321,7 +1306,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
     //     const Intersection intersection = ellipsoid.intersectionWith(ray, true) ;
 
-    //     ASSERT_TRUE(intersection.isDefined()) ;
     //     ASSERT_TRUE(intersection.accessComposite().isDefined()) ;
 
     //     ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
@@ -1360,7 +1344,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
@@ -1376,7 +1359,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
@@ -1392,7 +1374,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
@@ -1408,7 +1389,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
@@ -1424,7 +1404,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<PointSet>());
@@ -1442,7 +1421,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<PointSet>());
@@ -1460,7 +1438,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         // Have to do this check as due to double precision accuracy with -O0 we are getting an output
@@ -1492,7 +1469,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.isDefined());
         ASSERT_TRUE(intersection.accessComposite().isDefined());
 
         ASSERT_TRUE(intersection.accessComposite().is<Point>());

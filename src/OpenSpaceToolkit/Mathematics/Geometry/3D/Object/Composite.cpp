@@ -349,7 +349,7 @@ Intersection Composite::intersectionWith(const Object& anObject) const
     {
         const Intersection objectToObjectIntersection = objectUPtr->intersectionWith(anObject);
 
-        if (objectToObjectIntersection.isDefined() && (!objectToObjectIntersection.isEmpty()))
+        if (!objectToObjectIntersection.isEmpty())
         {
             intersection += objectToObjectIntersection;
         }
@@ -376,7 +376,7 @@ Intersection Composite::intersectionWith(const Composite& aComposite) const
     {
         const Intersection compositeToObjectIntersection = this->intersectionWith(*objectUPtr);
 
-        if (compositeToObjectIntersection.isDefined() && (!compositeToObjectIntersection.isEmpty()))
+        if (!compositeToObjectIntersection.isEmpty())
         {
             intersection += compositeToObjectIntersection;
         }

@@ -379,8 +379,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Poi
     {
         const Intersection intersection = aPlane.intersectionWith(aPoint);
 
-        EXPECT_TRUE(intersection.isDefined());
-
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
 
         const Point point = intersection.accessComposite().as<Point>();
@@ -392,7 +390,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Poi
     {
         const Intersection intersection = aPlane.intersectionWith(aPoint);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_TRUE(intersection.isEmpty());
     };
 
@@ -431,8 +428,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Poi
     {
         const Intersection intersection = aPlane.intersectionWith(aPointSet);
 
-        EXPECT_TRUE(intersection.isDefined());
-
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
 
         const Point point = intersection.accessComposite().as<Point>();
@@ -445,8 +440,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Poi
     {
         const Intersection intersection = aPlane.intersectionWith(aPointSet);
 
-        EXPECT_TRUE(intersection.isDefined());
-
         ASSERT_TRUE(intersection.accessComposite().is<PointSet>());
 
         const PointSet pointSet = intersection.accessComposite().as<PointSet>();
@@ -458,7 +451,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Poi
     {
         const Intersection intersection = aPlane.intersectionWith(aPointSet);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_TRUE(intersection.isEmpty());
     };
 

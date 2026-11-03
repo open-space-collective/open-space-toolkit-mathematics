@@ -351,8 +351,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IntersectionWith_P
     {
         const Intersection intersection = aSegment.intersectionWith(aPlane);
 
-        EXPECT_TRUE(intersection.isDefined());
-
         ASSERT_TRUE(intersection.accessComposite().is<Segment>());
 
         const Segment segment = intersection.accessComposite().as<Segment>();
@@ -365,8 +363,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IntersectionWith_P
     {
         const Intersection intersection = aSegment.intersectionWith(aPlane);
 
-        EXPECT_TRUE(intersection.isDefined());
-
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
 
         const Point point = intersection.accessComposite().as<Point>();
@@ -378,7 +374,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IntersectionWith_P
     {
         const Intersection intersection = aSegment.intersectionWith(aPlane);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_TRUE(intersection.isEmpty());
     };
 
