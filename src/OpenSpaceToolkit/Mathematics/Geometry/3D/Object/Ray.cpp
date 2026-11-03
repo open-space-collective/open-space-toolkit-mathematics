@@ -172,7 +172,7 @@ Vector3d Ray::getDirection() const
     return direction_;
 }
 
-Real Ray::distanceTo(const Point& aPoint) const
+double Ray::distanceTo(const Point& aPoint) const
 {
     if (!aPoint.isDefined())
     {

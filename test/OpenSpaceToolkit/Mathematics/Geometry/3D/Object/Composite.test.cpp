@@ -1,7 +1,5 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp>
@@ -21,7 +19,6 @@
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Constructor)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -66,7 +63,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Constructor)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
@@ -126,7 +123,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, CopyConstructor)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, EqualToOperator)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -162,7 +158,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, EqualToOperator)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
@@ -190,7 +186,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, EqualToOperator)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -211,7 +207,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, EqualToOperator)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
@@ -251,7 +247,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, EqualToOperator)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, NotEqualToOperator)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -287,7 +282,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, NotEqualToOperat
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
@@ -315,7 +310,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, NotEqualToOperat
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -336,7 +331,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, NotEqualToOperat
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
@@ -376,7 +371,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, NotEqualToOperat
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AdditionOperator)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -418,7 +412,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AdditionOperator
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AdditionAssignmentOperator)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -460,7 +453,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AdditionAssignme
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, StreamOperator)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -492,7 +484,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, StreamOperator)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, IsDefined)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -524,7 +515,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, IsDefined)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, IsEmpty)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -560,7 +550,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, IsEmpty)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Intersects)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -605,7 +594,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Intersects)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Contains)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -650,7 +638,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Contains)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Is)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -684,7 +671,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Is)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, As)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -718,7 +704,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, As)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjectAt)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -756,7 +741,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjectAt)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
@@ -781,7 +766,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjectAt)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjects)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -817,7 +801,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjects)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
@@ -839,7 +823,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjects)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjectCount)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -875,7 +858,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjectCount)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
@@ -897,7 +880,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjectCount)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;
@@ -938,7 +920,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
@@ -970,7 +952,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ApplyTransformation)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
     using ostk::core::type::Unique;
 
     using ostk::mathematics::geometry::d3::Object;

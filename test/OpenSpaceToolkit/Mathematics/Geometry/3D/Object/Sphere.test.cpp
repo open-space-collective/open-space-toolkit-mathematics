@@ -177,8 +177,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_PointSet
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Line)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Sphere;
@@ -308,7 +306,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Line)
     }
 
     {
-        const Real equatorialRadius_m = 6378136.3;
+        const double equatorialRadius_m = 6378136.3;
 
         const Sphere sphere = {Point::Origin(), equatorialRadius_m};
 
@@ -334,8 +332,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Line)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Ray)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Ray;
     using ostk::mathematics::geometry::d3::object::Sphere;
@@ -465,7 +461,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Ray)
     }
 
     {
-        const Real equatorialRadius_m = 6378136.3;
+        const double equatorialRadius_m = 6378136.3;
 
         const Sphere sphere = {Point::Origin(), equatorialRadius_m};
 
@@ -513,8 +509,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Ray)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Segment)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::object::Sphere;
@@ -561,7 +555,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Segment)
     }
 
     {
-        const Real equatorialRadius_m = 6378136.3;
+        const double equatorialRadius_m = 6378136.3;
 
         const Sphere sphere = {Point::Origin(), equatorialRadius_m};
 
@@ -639,8 +633,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Segment)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Plane)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Sphere;
@@ -796,8 +788,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, GetRadius)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Sphere;
     using ostk::mathematics::geometry::d3::Transformation;
@@ -823,7 +813,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, ApplyTransformation
 
         const Sphere referenceSphere = {{1.0, 0.0, 2.0}, 4.0};
 
-        EXPECT_TRUE(sphere.getCenter().isNear(referenceSphere.getCenter(), Real::Epsilon()));
+        EXPECT_TRUE(sphere.getCenter().isNear(referenceSphere.getCenter(), 1e-15));
         EXPECT_EQ(referenceSphere.getRadius(), sphere.getRadius());
     }
 

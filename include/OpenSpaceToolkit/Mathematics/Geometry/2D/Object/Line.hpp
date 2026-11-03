@@ -2,8 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line__
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
@@ -18,8 +16,6 @@ namespace d2
 {
 namespace object
 {
-
-using ostk::core::type::Real;
 
 using ostk::mathematics::geometry::d2::Object;
 using ostk::mathematics::geometry::d2::object::Point;
@@ -154,12 +150,12 @@ class Line : public Object
     /// @brief              Get distance to point
     ///
     /// @code{.cpp}
-    ///                     Real distance = Line({ 0.0, 0.0 }, { 0.0, 1.0 }).distanceTo(Point(1.0, 0.0)) ;
+    ///                     double distance = Line({ 0.0, 0.0 }, { 0.0, 1.0 }).distanceTo(Point(1.0, 0.0)) ;
     /// @endcode
     ///
     /// @param              [in] aPoint A point
     /// @return             Distance to point
-    Real distanceTo(const Point& aPoint) const;
+    double distanceTo(const Point& aPoint) const;
 
     /// @brief              Get string representation
     ///
@@ -169,9 +165,8 @@ class Line : public Object
     ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-    virtual String toString(
-        const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
-    ) const override;
+    virtual String toString(const Object::Format& aFormat = Object::Format::Standard, int aPrecision = -1)
+        const override;
 
     /// @brief              Print line
     ///

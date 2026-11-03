@@ -2,8 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point__
 
-#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
@@ -20,14 +18,12 @@ namespace d3
 namespace object
 {
 
-using ostk::core::type::Integer;
-using ostk::core::type::Real;
 using ostk::core::type::String;
 
 using ostk::mathematics::geometry::d3::Object;
 using ostk::mathematics::object::Vector3d;
 
-#define DEFAULT_PRECISION Integer::Undefined()
+#define DEFAULT_PRECISION -1
 
 /// @brief                      Point
 ///
@@ -48,7 +44,7 @@ class Point : public Object
     /// @param              [in] aFirstCoordinate A first coordinate
     /// @param              [in] aSecondCoordinate A second coordinate
     /// @param              [in] aThirdCoordinate A third coordinate
-    Point(const Real& aFirstCoordinate, const Real& aSecondCoordinate, const Real& aThirdCoordinate);
+    Point(double aFirstCoordinate, double aSecondCoordinate, double aThirdCoordinate);
 
     /// @brief              Clone point
     ///
@@ -127,7 +123,7 @@ class Point : public Object
     /// @param              [in] aPoint A point
     /// @param              [in] aTolerance A tolerance
     /// @return             True if point is near another point
-    bool isNear(const Point& aPoint, const Real& aTolerance) const;
+    bool isNear(const Point& aPoint, double aTolerance) const;
 
     /// @brief              Get reference to first coordinate
     ///
@@ -136,7 +132,7 @@ class Point : public Object
     /// @endcode
     ///
     /// @return             Reference to first coordinate
-    const Real& x() const;
+    const double& x() const;
 
     /// @brief              Get reference to second coordinate
     ///
@@ -145,7 +141,7 @@ class Point : public Object
     /// @endcode
     ///
     /// @return             Reference to second coordinate
-    const Real& y() const;
+    const double& y() const;
 
     /// @brief              Get reference to third coordinate
     ///
@@ -154,7 +150,7 @@ class Point : public Object
     /// @endcode
     ///
     /// @return             Reference to third coordinate
-    const Real& z() const;
+    const double& z() const;
 
     /// @brief              Get vector representation of point
     ///
@@ -168,12 +164,12 @@ class Point : public Object
     /// @brief              Get distance to another point
     ///
     /// @code{.cpp}
-    ///                     Real distance = Point(0.0, 0.0, 0.0).distanceTo(Point(1.0, 0.0, 0.0)) ; // 1.0
+    ///                     double distance = Point(0.0, 0.0, 0.0).distanceTo(Point(1.0, 0.0, 0.0)) ; // 1.0
     /// @endcode
     ///
     /// @param              [in] aPoint A point
     /// @return             Distance to point
-    Real distanceTo(const Point& aPoint) const;
+    double distanceTo(const Point& aPoint) const;
 
     /// @brief              Get string representation
     ///
@@ -183,7 +179,7 @@ class Point : public Object
     ///
     /// @param              [in] (optional) aPrecision A precision
     /// @return             String representation
-    String toString(const Integer& aPrecision = DEFAULT_PRECISION) const;
+    String toString(int aPrecision = DEFAULT_PRECISION) const;
 
     /// @brief              Print point
     ///
@@ -233,9 +229,9 @@ class Point : public Object
     static Point Vector(const Vector3d& aVector);
 
    private:
-    Real x_;
-    Real y_;
-    Real z_;
+    double x_;
+    double y_;
+    double z_;
 };
 
 }  // namespace object

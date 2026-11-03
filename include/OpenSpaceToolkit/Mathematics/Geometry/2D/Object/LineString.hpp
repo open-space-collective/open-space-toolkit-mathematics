@@ -121,7 +121,7 @@ class LineString : public Object
     /// @param              [in] aLineString A line string
     /// @param              [in] aTolerance A tolerance
     /// @return             True if line string is near another line string
-    bool isNear(const LineString& aLineString, const Real& aTolerance) const;
+    bool isNear(const LineString& aLineString, double aTolerance) const;
 
     /// @brief              Get point array
     ///
@@ -170,9 +170,8 @@ class LineString : public Object
     ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-    virtual String toString(
-        const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
-    ) const override;
+    virtual String toString(const Object::Format& aFormat = Object::Format::Standard, int aPrecision = -1)
+        const override;
 
     /// @brief              Print point
     ///

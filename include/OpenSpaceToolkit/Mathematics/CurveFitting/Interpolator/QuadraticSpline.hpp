@@ -7,7 +7,6 @@
 
 #include <boost/math/interpolators/cardinal_quadratic_b_spline.hpp>
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Shared.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
@@ -23,7 +22,6 @@ namespace curvefitting
 namespace interpolator
 {
 
-using ostk::core::type::Real;
 using ostk::core::type::Shared;
 using ostk::core::type::Size;
 
@@ -87,7 +85,7 @@ class QuadraticSpline : public Interpolator
     ///
     /// @warning The spacing must be strictly positive
     /// @warning At least 3 data points are required
-    QuadraticSpline(const VectorXd& aYVector, const Real& x0, const Real& h);
+    QuadraticSpline(const VectorXd& aYVector, double x0, double h);
 
     /// @brief Destructor
     ///

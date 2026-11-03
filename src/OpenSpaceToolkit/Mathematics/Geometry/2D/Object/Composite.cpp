@@ -483,7 +483,7 @@ Composite::ConstIterator Composite::end() const
     return objects_.end();
 }
 
-String Composite::toString(const Object::Format& aFormat, const Integer& aPrecision) const
+String Composite::toString(const Object::Format& aFormat, int aPrecision) const
 {
     (void)aPrecision;
 

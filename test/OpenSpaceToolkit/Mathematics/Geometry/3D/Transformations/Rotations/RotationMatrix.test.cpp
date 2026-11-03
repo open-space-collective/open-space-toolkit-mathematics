@@ -14,7 +14,6 @@
 using ostk::core::container::Table;
 using ostk::core::filesystem::File;
 using ostk::core::filesystem::Path;
-using ostk::core::type::Real;
 using ostk::core::type::String;
 
 using ostk::mathematics::geometry::Angle;
@@ -452,7 +451,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
             true
         );
 
-        const Real tolerance = 1e-10;
+        const double tolerance = 1e-10;
 
         for (const auto& referenceDataRow : referenceDataTable)
         {

@@ -7,7 +7,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
     using namespace pybind11;
 
     using ostk::core::container::Array;
-    using ostk::core::type::Integer;
 
     using ostk::mathematics::geometry::d2::Object;
     using ostk::mathematics::geometry::d2::object::LineString;
@@ -128,7 +127,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
 
                 Args:
                     format (Object.Format, optional): The output format. Defaults to Standard.
-                    precision (int, optional): The precision for floating point numbers. Defaults to undefined.
+                    precision (int, optional): The precision for floating point numbers. Defaults to -1 (automatic).
 
                 Returns:
                     str: String representation of the line string.
@@ -139,7 +138,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
                     >>> line_string.to_string()
             )doc",
             arg("format") = Object::Format::Standard,
-            arg("precision") = Integer::Undefined()
+            arg("precision") = -1
         )
 
         .def(

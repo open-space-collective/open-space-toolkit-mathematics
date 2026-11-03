@@ -6,7 +6,6 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermi
 {
     using namespace pybind11;
 
-    using ostk::core::type::Real;
     using ostk::core::type::Shared;
 
     using ostk::mathematics::curvefitting::Interpolator;
@@ -43,7 +42,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermi
             arg("d2ydx2")
         )
         .def(
-            init<const VectorXd&, const VectorXd&, const VectorXd&, const Real&, const Real&>(),
+            init<const VectorXd&, const VectorXd&, const VectorXd&, double, double>(),
             R"doc(
                 Create a quintic Hermite interpolator with uniform spacing.
 

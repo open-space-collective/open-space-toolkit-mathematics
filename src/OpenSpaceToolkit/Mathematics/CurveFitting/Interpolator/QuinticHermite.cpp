@@ -66,7 +66,7 @@ QuinticHermite::QuinticHermite(
 }
 
 QuinticHermite::QuinticHermite(
-    const VectorXd& aYVector, const VectorXd& aDyDxVector, const VectorXd& aD2yDx2Vector, const Real& x0, const Real& h
+    const VectorXd& aYVector, const VectorXd& aDyDxVector, const VectorXd& aD2yDx2Vector, double x0, double h
 )
     : Interpolator(Interpolator::Type::QuinticHermite)
 {

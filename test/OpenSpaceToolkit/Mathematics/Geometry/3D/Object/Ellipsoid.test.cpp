@@ -231,8 +231,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Point
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Line)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -350,8 +348,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Line)
     }
 
     {
-        const Real equatorialRadius_m = 6378136.3;
-        const Real polarRadius_m = equatorialRadius_m * (1.0 - 0.003352810664747);
+        const double equatorialRadius_m = 6378136.3;
+        const double polarRadius_m = equatorialRadius_m * (1.0 - 0.003352810664747);
 
         const Ellipsoid ellipsoid = {Point::Origin(), equatorialRadius_m, equatorialRadius_m, polarRadius_m};
 
@@ -377,8 +375,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Line)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Ray)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Ray;
@@ -496,8 +492,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Ray)
     }
 
     {
-        const Real equatorialRadius_m = 6378136.3;
-        const Real polarRadius_m = equatorialRadius_m * (1.0 - 0.003352810664747);
+        const double equatorialRadius_m = 6378136.3;
+        const double polarRadius_m = equatorialRadius_m * (1.0 - 0.003352810664747);
 
         const Ellipsoid ellipsoid = {Point::Origin(), equatorialRadius_m, equatorialRadius_m, polarRadius_m};
 
@@ -545,8 +541,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Ray)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Segment)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Segment;
@@ -593,8 +587,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Segme
     }
 
     {
-        const Real equatorialRadius_m = 6378136.3;
-        const Real polarRadius_m = equatorialRadius_m * (1.0 - 0.003352810664747);
+        const double equatorialRadius_m = 6378136.3;
+        const double polarRadius_m = equatorialRadius_m * (1.0 - 0.003352810664747);
 
         const Ellipsoid ellipsoid = {Point::Origin(), equatorialRadius_m, equatorialRadius_m, polarRadius_m};
 
@@ -668,8 +662,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Segme
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Plane)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -851,8 +843,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetThirdPrincipa
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetFirstAxis)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
@@ -870,7 +860,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetFirstAxis)
                         Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0)))
         )
                         .getFirstAxis()
-                        .isNear(Vector3d(1.0, 1.0, 0.0).normalized(), Real::Epsilon()));
+                        .isNear(Vector3d(1.0, 1.0, 0.0).normalized(), 1e-15));
     }
 
     {
@@ -880,8 +870,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetFirstAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetSecondAxis)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
@@ -899,7 +887,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetSecondAxis)
                         Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0)))
         )
                         .getSecondAxis()
-                        .isNear(Vector3d(-1.0, 1.0, 0.0).normalized(), Real::Epsilon()));
+                        .isNear(Vector3d(-1.0, 1.0, 0.0).normalized(), 1e-15));
     }
 
     {
@@ -909,8 +897,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetSecondAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetThirdAxis)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
@@ -928,7 +914,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetThirdAxis)
                         Quaternion::RotationVector(RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(45.0)))
         )
                         .getThirdAxis()
-                        .isNear(Vector3d(0.0, -1.0, 1.0).normalized(), Real::Epsilon()));
+                        .isNear(Vector3d(0.0, -1.0, 1.0).normalized(), 1e-15));
     }
 
     {
@@ -959,8 +945,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetOrientation)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetMatrix)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
@@ -974,9 +958,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetMatrix)
         referenceEllipsoidMatrix << 1.0 / (4.0 * 4.0), 0.0, 0.0, 0.0, 1.0 / (5.0 * 5.0), 0.0, 0.0, 0.0,
             1.0 / (6.0 * 6.0);
 
-        ASSERT_TRUE(
-            Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getMatrix().isNear(referenceEllipsoidMatrix, Real::Epsilon())
-        );
+        ASSERT_TRUE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getMatrix().isNear(referenceEllipsoidMatrix, 1e-15));
     }
 
     {
@@ -999,7 +981,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetMatrix)
                         Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0)))
         )
                         .getMatrix()
-                        .isNear(referenceEllipsoidMatrix, Real::Epsilon()));
+                        .isNear(referenceEllipsoidMatrix, 1e-15));
     }
 
     {
@@ -1009,8 +991,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetMatrix)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith_Line)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Line;
@@ -1032,7 +1012,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         ASSERT_EQ(2, pointSet.getSize());
 
-        ASSERT_TRUE(pointSet.isNear(PointSet({{-1.0, 0.0, 0.0}, {+1.0, 0.0, 0.0}}), Real::Epsilon()));
+        ASSERT_TRUE(pointSet.isNear(PointSet({{-1.0, 0.0, 0.0}, {+1.0, 0.0, 0.0}}), 1e-15));
     }
 
     {
@@ -1050,7 +1030,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         ASSERT_EQ(2, pointSet.getSize());
 
-        ASSERT_TRUE(pointSet.isNear(PointSet({{0.0, 0.0, -3.0}, {0.0, 0.0, +3.0}}), Real::Epsilon()));
+        ASSERT_TRUE(pointSet.isNear(PointSet({{0.0, 0.0, -3.0}, {0.0, 0.0, +3.0}}), 1e-15));
     }
 
     {
@@ -1068,7 +1048,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         ASSERT_EQ(2, pointSet.getSize());
 
-        ASSERT_TRUE(pointSet.isNear(PointSet({{0.0, 0.0, -3.0}, {0.0, 0.0, +3.0}}), Real::Epsilon()));
+        ASSERT_TRUE(pointSet.isNear(PointSet({{0.0, 0.0, -3.0}, {0.0, 0.0, +3.0}}), 1e-15));
     }
 
     {
@@ -1084,7 +1064,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon()));
+        ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), 1e-15));
     }
 
     {
@@ -1100,7 +1080,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        ASSERT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), Real::Epsilon()));
+        ASSERT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), 1e-15));
     }
 
     {
@@ -1119,8 +1099,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith_Ray)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -1142,7 +1120,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        ASSERT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), Real::Epsilon()));
+        ASSERT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), 1e-15));
     }
 
     {
@@ -1160,7 +1138,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         ASSERT_EQ(2, pointSet.getSize());
 
-        ASSERT_TRUE(pointSet.isNear(PointSet({{0.0, 0.0, -3.0}, {0.0, 0.0, +3.0}}), Real::Epsilon()));
+        ASSERT_TRUE(pointSet.isNear(PointSet({{0.0, 0.0, -3.0}, {0.0, 0.0, +3.0}}), 1e-15));
     }
 
     {
@@ -1242,7 +1220,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
     //     const Point point = intersection.accessComposite().as<Point>() ;
 
-    //     ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon())) ;
+    //     ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), 1e-15)) ;
 
     // }
 
@@ -1260,7 +1238,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
     //     const Point point = intersection.accessComposite().as<Point>() ;
 
-    //     ASSERT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), Real::Epsilon())) ;
+    //     ASSERT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), 1e-15)) ;
 
     // }
 
@@ -1288,7 +1266,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        ASSERT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), Real::Epsilon()));
+        ASSERT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), 1e-15));
     }
 
     {
@@ -1304,7 +1282,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        ASSERT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), Real::Epsilon()));
+        ASSERT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), 1e-15));
     }
 
     {
@@ -1332,7 +1310,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
     //     const Point point = intersection.accessComposite().as<Point>() ;
 
-    //     ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon())) ;
+    //     ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), 1e-15)) ;
 
     // }
 
@@ -1350,7 +1328,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
     //     const Point point = intersection.accessComposite().as<Point>() ;
 
-    //     ASSERT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), Real::Epsilon())) ;
+    //     ASSERT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), 1e-15)) ;
 
     // }
 
@@ -1370,8 +1348,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith_Segment)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -1391,7 +1367,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        ASSERT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), Real::Epsilon()));
+        ASSERT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), 1e-15));
     }
 
     {
@@ -1407,7 +1383,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        ASSERT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), Real::Epsilon()));
+        ASSERT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), 1e-15));
     }
 
     {
@@ -1423,7 +1399,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        ASSERT_TRUE(point.isNear(Point(-1.0, 0.0, 0.0), Real::Epsilon()));
+        ASSERT_TRUE(point.isNear(Point(-1.0, 0.0, 0.0), 1e-15));
     }
 
     {
@@ -1439,7 +1415,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        ASSERT_TRUE(point.isNear(Point(-1.0, 0.0, 0.0), Real::Epsilon()));
+        ASSERT_TRUE(point.isNear(Point(-1.0, 0.0, 0.0), 1e-15));
     }
 
     {
@@ -1457,7 +1433,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         ASSERT_EQ(2, pointSet.getSize());
 
-        ASSERT_TRUE(pointSet.isNear(PointSet({{-1.0, 0.0, 0.0}, {+1.0, 0.0, 0.0}}), Real::Epsilon()));
+        ASSERT_TRUE(pointSet.isNear(PointSet({{-1.0, 0.0, 0.0}, {+1.0, 0.0, 0.0}}), 1e-15));
     }
 
     {
@@ -1475,7 +1451,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         ASSERT_EQ(2, pointSet.getSize());
 
-        ASSERT_TRUE(pointSet.isNear(PointSet({{-1.0, 0.0, 0.0}, {+1.0, 0.0, 0.0}}), Real::Epsilon()));
+        ASSERT_TRUE(pointSet.isNear(PointSet({{-1.0, 0.0, 0.0}, {+1.0, 0.0, 0.0}}), 1e-15));
     }
 
     {
@@ -1497,7 +1473,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
             for (const auto& point : pointSet)
             {
-                ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon()));
+                ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), 1e-15));
             }
         }
         else
@@ -1506,7 +1482,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
             const Point point = intersection.accessComposite().accessObjectAt(0).as<Point>();
 
-            ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon()));
+            ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), 1e-15));
         }
     }
 
@@ -1523,7 +1499,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon()));
+        ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), 1e-15));
     }
 
     {
@@ -1569,8 +1545,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Segment;
@@ -1599,9 +1573,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, ApplyTransformat
 
         const Ellipsoid referenceEllipsoid = {{1.0, 0.0, 3.0}, 4.0, 6.0, 5.0};
 
-        ASSERT_TRUE(ellipsoid.getCenter().isNear(referenceEllipsoid.getCenter(), Real::Epsilon()))
+        ASSERT_TRUE(ellipsoid.getCenter().isNear(referenceEllipsoid.getCenter(), 1e-15))
             << referenceEllipsoid.getCenter().toString() << ellipsoid.getCenter().toString();
-        ASSERT_TRUE(ellipsoid.getMatrix().isNear(referenceEllipsoid.getMatrix(), Real::Epsilon()))
+        ASSERT_TRUE(ellipsoid.getMatrix().isNear(referenceEllipsoid.getMatrix(), 1e-15))
             << referenceEllipsoid.getMatrix().toString() << ellipsoid.getMatrix().toString();
 
         // The axes and the queries built on them follow the transformation too

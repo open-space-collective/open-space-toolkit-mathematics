@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <cmath>
+
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
@@ -26,7 +28,7 @@ Polygon::Polygon(const Polygon2d& aPolygon, const Point& anOrigin, const Vector3
 {
     if (xAxis_.isDefined() && yAxis_.isDefined())
     {
-        if (std::abs(xAxis_.dot(yAxis_)) > Real::Epsilon())
+        if (std::abs(xAxis_.dot(yAxis_)) > 1e-15)
         {
             throw ostk::core::error::RuntimeError("X and Y axes are not orthogonal.");
         }
@@ -61,14 +63,14 @@ bool Polygon::isDefined() const
     return polygon_.isDefined() && origin_.isDefined() && xAxis_.isDefined() && yAxis_.isDefined();
 }
 
-bool Polygon::isNear(const Polygon& aPolygon, const Real& aTolerance) const
+bool Polygon::isNear(const Polygon& aPolygon, double aTolerance) const
 {
     if (!aPolygon.isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    if (!aTolerance.isDefined())
+    if (std::isnan(aTolerance))
     {
         throw ostk::core::error::runtime::Undefined("Tolerance");
     }

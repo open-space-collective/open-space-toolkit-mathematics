@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <limits>
+
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.hpp>
@@ -16,8 +18,6 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Constructor)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -27,7 +27,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Constructor)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_NO_THROW(Cuboid(center, axes, extent));
     }
@@ -35,8 +35,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Clone)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -46,7 +44,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Clone)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_NO_THROW(const Cuboid* cuboidPtr = Cuboid(center, axes, extent).clone(); delete cuboidPtr;);
     }
@@ -54,8 +52,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, EqualToOperator)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -65,7 +61,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, EqualToOperator)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_TRUE(Cuboid(center, axes, extent) == Cuboid(center, axes, extent));
     }
@@ -101,7 +97,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, EqualToOperator)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_FALSE(Cuboid(center, axes, extent) == Cuboid::Undefined());
         EXPECT_FALSE(Cuboid::Undefined() == Cuboid(center, axes, extent));
@@ -111,8 +107,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, NotEqualToOperator)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -122,7 +116,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, NotEqualToOperator)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_FALSE(Cuboid(center, axes, extent) != Cuboid(center, axes, extent));
     }
@@ -158,7 +152,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, NotEqualToOperator)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_TRUE(Cuboid(center, axes, extent) != Cuboid::Undefined());
         EXPECT_TRUE(Cuboid::Undefined() != Cuboid(center, axes, extent));
@@ -168,8 +162,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, NotEqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, StreamOperator)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -179,7 +171,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, StreamOperator)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         testing::internal::CaptureStdout();
 
@@ -191,8 +183,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsDefined)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -202,7 +192,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsDefined)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_TRUE(Cuboid(center, axes, extent).isDefined());
     }
@@ -214,8 +204,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsNear)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -225,7 +213,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsNear)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -237,7 +225,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsNear)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid firstCuboid = {center, axes, extent};
         const Cuboid secondCuboid = {{0.0, 0.0, 1e-6}, axes, extent};
@@ -250,7 +238,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsNear)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid firstCuboid = {center, axes, extent};
         const Cuboid secondCuboid = {center, axes, {1.0 + 1e-6, 2.0, 3.0}};
@@ -263,7 +251,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsNear)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid firstCuboid = {center, axes, extent};
         const Cuboid secondCuboid = {center, axes, {1.0 + 1e-4, 2.0, 3.0}};
@@ -276,21 +264,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsNear)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
-        EXPECT_ANY_THROW(Cuboid::Undefined().isNear(Cuboid::Undefined(), Real::Undefined()));
-        EXPECT_ANY_THROW(cuboid.isNear(Cuboid::Undefined(), Real::Undefined()));
-        EXPECT_ANY_THROW(Cuboid::Undefined().isNear(cuboid, Real::Undefined()));
-        EXPECT_ANY_THROW(cuboid.isNear(cuboid, Real::Undefined()));
+        EXPECT_ANY_THROW(Cuboid::Undefined().isNear(Cuboid::Undefined(), std::numeric_limits<double>::quiet_NaN()));
+        EXPECT_ANY_THROW(cuboid.isNear(Cuboid::Undefined(), std::numeric_limits<double>::quiet_NaN()));
+        EXPECT_ANY_THROW(Cuboid::Undefined().isNear(cuboid, std::numeric_limits<double>::quiet_NaN()));
+        EXPECT_ANY_THROW(cuboid.isNear(cuboid, std::numeric_limits<double>::quiet_NaN()));
     }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Point)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -300,7 +286,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Point)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -337,7 +323,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Point)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_ANY_THROW(Cuboid(center, axes, extent).intersects(Point::Undefined()));
         EXPECT_ANY_THROW(Cuboid::Undefined().intersects(Point(0.0, 0.0, 0.0)));
@@ -347,8 +333,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_PointSet)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
@@ -359,7 +343,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_PointSet
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -390,7 +374,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_PointSet
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -422,7 +406,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_PointSet
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -439,8 +423,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_PointSet
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Line)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -452,7 +434,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Line)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -514,7 +496,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Line)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -526,8 +508,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Line)
 
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Ray)
 // {
-
-//     using ostk::core::type::Real ;
 
 //     using ostk::mathematics::geometry::d3::object::Point ;
 //     using ostk::mathematics::geometry::d3::object::Ray ;
@@ -546,8 +526,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Line)
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Segment)
 // {
 
-//     using ostk::core::type::Real ;
-
 //     using ostk::mathematics::geometry::d3::object::Point ;
 //     using ostk::mathematics::geometry::d3::object::Segment ;
 //     using ostk::mathematics::geometry::d3::object::Cuboid ;
@@ -562,8 +540,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Line)
 
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Plane)
 // {
-
-//     using ostk::core::type::Real ;
 
 //     using ostk::mathematics::geometry::d3::object::Point ;
 //     using ostk::mathematics::geometry::d3::object::Plane ;
@@ -596,8 +572,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Line)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_Point)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -607,7 +581,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_Point)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -644,7 +618,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_Point)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_ANY_THROW(Cuboid(center, axes, extent).contains(Point::Undefined()));
         EXPECT_ANY_THROW(Cuboid::Undefined().contains(Point(0.0, 0.0, 0.0)));
@@ -654,8 +628,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_PointSet)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
@@ -666,7 +638,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_PointSet)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -697,7 +669,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_PointSet)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -729,7 +701,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_PointSet)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -746,8 +718,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_PointSet)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetCenter)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -757,7 +727,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetCenter)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_EQ(center, Cuboid(center, axes, extent).getCenter());
     }
@@ -769,8 +739,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetCenter)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetFirstAxis)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -780,7 +748,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetFirstAxis)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_EQ(axes[0], Cuboid(center, axes, extent).getFirstAxis());
     }
@@ -792,8 +760,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetFirstAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetSecondAxis)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -803,7 +769,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetSecondAxis)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_EQ(axes[1], Cuboid(center, axes, extent).getSecondAxis());
     }
@@ -815,8 +781,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetSecondAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdAxis)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -826,7 +790,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdAxis)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_EQ(axes[2], Cuboid(center, axes, extent).getThirdAxis());
     }
@@ -838,8 +802,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetFirstExtent)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -849,7 +811,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetFirstExtent)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_EQ(extent[0], Cuboid(center, axes, extent).getFirstExtent());
     }
@@ -861,8 +823,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetFirstExtent)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetSecondExtent)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -872,7 +832,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetSecondExtent)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_EQ(extent[1], Cuboid(center, axes, extent).getSecondExtent());
     }
@@ -884,8 +844,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetSecondExtent)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdExtent)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::object::Vector3d;
@@ -895,7 +853,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdExtent)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_EQ(extent[2], Cuboid(center, axes, extent).getThirdExtent());
     }
@@ -908,7 +866,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdExtent)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetVertices)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -919,7 +876,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetVertices)
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
 
@@ -945,8 +902,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetVertices)
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IntersectionWith_Line)
 // {
 
-//     using ostk::core::type::Real ;
-
 //     using ostk::mathematics::geometry::d3::object::Point ;
 //     using ostk::mathematics::geometry::d3::object::PointSet ;
 //     using ostk::mathematics::geometry::d3::object::Line ;
@@ -970,8 +925,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetVertices)
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IntersectionWith_Ray)
 // {
 
-//     using ostk::core::type::Real ;
-
 //     using ostk::mathematics::geometry::d3::object::Point ;
 //     using ostk::mathematics::geometry::d3::object::PointSet ;
 //     using ostk::mathematics::geometry::d3::object::Ray ;
@@ -994,8 +947,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetVertices)
 
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IntersectionWith_Segment)
 // {
-
-//     using ostk::core::type::Real ;
 
 //     using ostk::mathematics::geometry::d3::object::Point ;
 //     using ostk::mathematics::geometry::d3::object::PointSet ;
@@ -1040,8 +991,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetVertices)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -1057,7 +1006,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, ApplyTransformation
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         Cuboid cuboid = {center, axes, extent};
 
@@ -1075,7 +1024,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, ApplyTransformation
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         Cuboid cuboid = {center, axes, extent};
 
@@ -1083,7 +1032,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, ApplyTransformation
 
         const Cuboid referenceCuboid = {{1.0, 0.0, 2.0}, axes, {1.0, 3.0, 2.0}};
 
-        EXPECT_TRUE(cuboid.isNear(referenceCuboid, Real::Epsilon())) << referenceCuboid << cuboid;
+        EXPECT_TRUE(cuboid.isNear(referenceCuboid, 1e-15)) << referenceCuboid << cuboid;
     }
 
     {
@@ -1091,7 +1040,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, ApplyTransformation
         const std::array<Vector3d, 3> axes = {
             Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
         };
-        const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
+        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         Cuboid cuboid = {center, axes, extent};
 

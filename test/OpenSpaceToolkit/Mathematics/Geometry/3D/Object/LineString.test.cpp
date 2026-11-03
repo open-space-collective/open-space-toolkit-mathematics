@@ -146,37 +146,26 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, IsEmpty)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, IsNear)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::LineString;
 
     {
         EXPECT_TRUE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}
-        ).isNear(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}), Real::Epsilon()));
+        ).isNear(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}), 1e-15));
 
-        EXPECT_TRUE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}})
-                        .isNear(
-                            LineString({{0.0, Real::Epsilon(), 0.0}, {Real::Epsilon(), 1.0, 0.0}, {1.0, 0.0, 1.0}}),
-                            Real::Epsilon()
-                        ));
+        EXPECT_TRUE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}
+        ).isNear(LineString({{0.0, 1e-15, 0.0}, {1e-15, 1.0, 0.0}, {1.0, 0.0, 1.0}}), 1e-15));
     }
 
     {
-        EXPECT_FALSE(
-            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}})
-                .isNear(
-                    LineString({{0.0, 2.0 * Real::Epsilon(), 0.0}, {Real::Epsilon(), 1.0, 0.0}, {1.0, 0.0, 1.0}}),
-                    Real::Epsilon()
-                )
-        );
-    }
-
-    {
-        EXPECT_FALSE(LineString::Empty().isNear(LineString::Empty(), Real::Epsilon()));
         EXPECT_FALSE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}
-        ).isNear(LineString::Empty(), Real::Epsilon()));
-        EXPECT_FALSE(
-            LineString::Empty().isNear(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}), Real::Epsilon())
+        ).isNear(LineString({{0.0, 2.0 * 1e-15, 0.0}, {1e-15, 1.0, 0.0}, {1.0, 0.0, 1.0}}), 1e-15));
+    }
+
+    {
+        EXPECT_FALSE(LineString::Empty().isNear(LineString::Empty(), 1e-15));
+        EXPECT_FALSE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}).isNear(LineString::Empty(), 1e-15)
+        );
+        EXPECT_FALSE(LineString::Empty().isNear(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}), 1e-15)
         );
     }
 }
@@ -285,8 +274,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, ConstIterator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::LineString;
     using ostk::mathematics::geometry::d3::object::Point;

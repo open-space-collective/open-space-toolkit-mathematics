@@ -1,23 +1,19 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
 
 inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aModule)
 {
     using namespace pybind11;
 
-    using ostk::core::type::Real;
-
     using ostk::mathematics::object::Interval;
 
-    class_<Interval<Real>> real_interval(aModule, "RealInterval");
+    class_<Interval<double>> real_interval(aModule, "RealInterval");
 
     // Define constructor
     real_interval
         .def(
-            init<const Real&, const Real&, const Interval<Real>::Type&>(),
+            init<double, double, const Interval<double>::Type&>(),
             R"doc(
                 Create an interval with specified bounds and type.
 
@@ -39,12 +35,12 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shiftToString<Interval<Real>>))
-        .def("__repr__", &(shiftToString<Interval<Real>>))
+        .def("__str__", &(shiftToString<Interval<double>>))
+        .def("__repr__", &(shiftToString<Interval<double>>))
 
         .def(
             "is_defined",
-            &Interval<Real>::isDefined,
+            &Interval<double>::isDefined,
             R"doc(
                 Check if the interval is defined.
 
@@ -58,7 +54,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def(
             "is_degenerate",
-            &Interval<Real>::isDegenerate,
+            &Interval<double>::isDegenerate,
             R"doc(
                 Check if the interval is degenerate (single point).
 
@@ -72,7 +68,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def(
             "intersects",
-            &Interval<Real>::intersects,
+            &Interval<double>::intersects,
             R"doc(
                 Check if this interval intersects with another interval.
 
@@ -91,7 +87,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def(
             "contains",
-            overload_cast<const Real&>(&Interval<Real>::contains, const_),
+            overload_cast<const double&>(&Interval<double>::contains, const_),
             R"doc(
                 Check if the interval contains a real number.
 
@@ -110,7 +106,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def(
             "contains",
-            overload_cast<const Interval<Real>&>(&Interval<Real>::contains, const_),
+            overload_cast<const Interval<double>&>(&Interval<double>::contains, const_),
             R"doc(
                 Check if this interval contains another interval.
 
@@ -129,7 +125,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def(
             "get_intersection_with",
-            &Interval<Real>::getIntersectionWith,
+            &Interval<double>::getIntersectionWith,
             R"doc(
                 Get the intersection of this interval with another interval.
 
@@ -149,7 +145,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def(
             "get_union_with",
-            &Interval<Real>::getUnionWith,
+            &Interval<double>::getUnionWith,
             R"doc(
                 Get the union of this interval with another interval.
 
@@ -170,7 +166,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
 
         .def(
             "get_lower_bound",
-            &Interval<Real>::getLowerBound,
+            &Interval<double>::getLowerBound,
             R"doc(
                 Get the lower bound of the interval.
 
@@ -184,7 +180,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def(
             "get_upper_bound",
-            &Interval<Real>::getUpperBound,
+            &Interval<double>::getUpperBound,
             R"doc(
                 Get the upper bound of the interval.
 
@@ -198,7 +194,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def(
             "to_string",
-            &Interval<Real>::toString,
+            &Interval<double>::toString,
             R"doc(
                 Convert the interval to a string representation.
 
@@ -214,7 +210,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         // Define static methods
         .def_static(
             "undefined",
-            &Interval<Real>::Undefined,
+            &Interval<double>::Undefined,
             R"doc(
                 Create an undefined interval.
 
@@ -228,7 +224,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def_static(
             "closed",
-            &Interval<Real>::Closed,
+            &Interval<double>::Closed,
             R"doc(
                 Create a closed interval [a, b].
 
@@ -249,7 +245,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def_static(
             "open",
-            &Interval<Real>::Open,
+            &Interval<double>::Open,
             R"doc(
                 Create an open interval (a, b).
 
@@ -271,7 +267,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def_static(
             "half_open_left",
-            &Interval<Real>::HalfOpenLeft,
+            &Interval<double>::HalfOpenLeft,
             R"doc(
                 Create a half-open interval (a, b].
 
@@ -292,7 +288,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def_static(
             "half_open_right",
-            &Interval<Real>::HalfOpenRight,
+            &Interval<double>::HalfOpenRight,
             R"doc(
                 Create a half-open interval [a, b).
 
@@ -313,7 +309,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def_static(
             "clip",
-            &Interval<Real>::Clip,
+            &Interval<double>::Clip,
             R"doc(
                 Clip a list of intervals with a clipping interval.
 
@@ -334,7 +330,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def_static(
             "sort",
-            &Interval<Real>::Sort,
+            &Interval<double>::Sort,
             R"doc(
                 Sort a list of intervals.
 
@@ -356,7 +352,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def_static(
             "merge",
-            &Interval<Real>::Merge,
+            &Interval<double>::Merge,
             R"doc(
                 Merge overlapping intervals in a list.
 
@@ -374,7 +370,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def_static(
             "get_gaps",
-            &Interval<Real>::GetGaps,
+            &Interval<double>::GetGaps,
             R"doc(
                 Find gaps between intervals in a list.
 
@@ -390,11 +386,11 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
                     >>> gaps = RealInterval.get_gaps(intervals)  # Gap from 1.0 to 2.0
             )doc",
             arg("intervals"),
-            arg_v("bound", Interval<Real>::Undefined(), "RealInterval.undefined()")
+            arg_v("bound", Interval<double>::Undefined(), "RealInterval.undefined()")
         )
         .def_static(
             "logical_or",
-            &Interval<Real>::LogicalOr,
+            &Interval<double>::LogicalOr,
             R"doc(
                 Perform logical OR operation on two lists of intervals.
 
@@ -415,7 +411,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def_static(
             "logical_and",
-            &Interval<Real>::LogicalAnd,
+            &Interval<double>::LogicalAnd,
             R"doc(
                 Perform logical AND operation on two lists of intervals.
 
@@ -441,13 +437,13 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
     // ...
 
     // Define emuneration type for "real_interval"
-    enum_<Interval<Real>::Type>(real_interval, "Type")
+    enum_<Interval<double>::Type>(real_interval, "Type")
 
-        .value("Undefined", Interval<Real>::Type::Undefined)
-        .value("Closed", Interval<Real>::Type::Closed)
-        .value("Open", Interval<Real>::Type::Open)
-        .value("HalfOpenLeft", Interval<Real>::Type::HalfOpenLeft)
-        .value("HalfOpenRight", Interval<Real>::Type::HalfOpenRight)
+        .value("Undefined", Interval<double>::Type::Undefined)
+        .value("Closed", Interval<double>::Type::Closed)
+        .value("Open", Interval<double>::Type::Open)
+        .value("HalfOpenLeft", Interval<double>::Type::HalfOpenLeft)
+        .value("HalfOpenRight", Interval<double>::Type::HalfOpenRight)
 
         ;
 }

@@ -47,7 +47,7 @@ CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
     }
 }
 
-CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
+CubicSpline::CubicSpline(const VectorXd& aYVector, double x0, double h)
     : Interpolator(Interpolator::Type::CubicSpline)
 {
     if (aYVector.size() < 5)

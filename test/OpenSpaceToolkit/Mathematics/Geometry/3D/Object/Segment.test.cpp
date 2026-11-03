@@ -341,8 +341,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, DistanceToPointSet
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IntersectionWith_Plane)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -373,7 +371,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IntersectionWith_P
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        EXPECT_TRUE(point.isNear(anIntersectionPoint, Real::Epsilon()));
+        EXPECT_TRUE(point.isNear(anIntersectionPoint, 1e-15));
     };
 
     const auto expectEmptyIntersection = [](const Segment& aSegment, const Plane& aPlane) -> void
@@ -464,8 +462,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, ToLine)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::Transformation;
@@ -491,8 +487,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, ApplyTransformatio
 
         const Segment referenceSegment = {{0.0, 0.0, 0.5}, {0.0, 0.0, 1.0}};
 
-        EXPECT_TRUE(segment.getFirstPoint().isNear(referenceSegment.getFirstPoint(), Real::Epsilon()));
-        EXPECT_TRUE(segment.getSecondPoint().isNear(referenceSegment.getSecondPoint(), Real::Epsilon()));
+        EXPECT_TRUE(segment.getFirstPoint().isNear(referenceSegment.getFirstPoint(), 1e-15));
+        EXPECT_TRUE(segment.getSecondPoint().isNear(referenceSegment.getSecondPoint(), 1e-15));
     }
 
     {

@@ -1,10 +1,14 @@
 /// Apache License 2.0
 
+#include <cmath>
+#include <limits>
+
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Utility.hpp>
 
 namespace ostk
 {
@@ -17,7 +21,9 @@ namespace d2
 namespace object
 {
 
-Point::Point(const Real& aFirstCoordinate, const Real& aSecondCoordinate)
+using ostk::mathematics::utility::DoubleToString;
+
+Point::Point(double aFirstCoordinate, double aSecondCoordinate)
     : Object(),
       x_(aFirstCoordinate),
       y_(aSecondCoordinate)
@@ -91,12 +97,12 @@ Vector2d Point::operator-(const Point& aPoint) const
 
 bool Point::isDefined() const
 {
-    return x_.isDefined() && y_.isDefined();
+    return !std::isnan(x_) && !std::isnan(y_);
 }
 
-bool Point::isNear(const Point& aPoint, const Real& aTolerance) const
+bool Point::isNear(const Point& aPoint, double aTolerance) const
 {
-    if (!aTolerance.isDefined())
+    if (std::isnan(aTolerance))
     {
         throw ostk::core::error::runtime::Undefined("Tolerance");
     }
@@ -104,7 +110,7 @@ bool Point::isNear(const Point& aPoint, const Real& aTolerance) const
     return this->distanceTo(aPoint) <= aTolerance;
 }
 
-const Real& Point::x() const
+const double& Point::x() const
 {
     if (!this->isDefined())
     {
@@ -114,7 +120,7 @@ const Real& Point::x() const
     return x_;
 }
 
-const Real& Point::y() const
+const double& Point::y() const
 {
     if (!this->isDefined())
     {
@@ -134,7 +140,7 @@ Vector2d Point::asVector() const
     return {x_, y_};
 }
 
-Real Point::distanceTo(const Point& aPoint) const
+double Point::distanceTo(const Point& aPoint) const
 {
     if (!aPoint.isDefined())
     {
@@ -149,7 +155,7 @@ Real Point::distanceTo(const Point& aPoint) const
     return ((*this) - aPoint).norm();
 }
 
-String Point::toString(const Object::Format& aFormat, const Integer& aPrecision) const
+String Point::toString(const Object::Format& aFormat, int aPrecision) const
 {
     if (!this->isDefined())
     {
@@ -159,10 +165,10 @@ String Point::toString(const Object::Format& aFormat, const Integer& aPrecision)
     switch (aFormat)
     {
         case Object::Format::Standard:
-            return String::Format("[{}, {}]", x_.toString(aPrecision), y_.toString(aPrecision));
+            return String::Format("[{}, {}]", DoubleToString(x_, aPrecision), DoubleToString(y_, aPrecision));
 
         case Object::Format::WKT:
-            return String::Format("POINT({} {})", x_.toString(aPrecision), y_.toString(aPrecision));
+            return String::Format("POINT({} {})", DoubleToString(x_, aPrecision), DoubleToString(y_, aPrecision));
 
         default:
             throw ostk::core::error::runtime::Wrong("Format");
@@ -176,8 +182,8 @@ void Point::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
     displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Point") : void();
 
-    ostk::core::utils::Print::Line(anOutputStream) << "X:" << (x_.isDefined() ? x_.toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream) << "Y:" << (y_.isDefined() ? y_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "X:" << DoubleToString(x_);
+    ostk::core::utils::Print::Line(anOutputStream) << "Y:" << DoubleToString(y_);
 
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
@@ -199,7 +205,7 @@ void Point::applyTransformation(const Transformation& aTransformation)
 
 Point Point::Undefined()
 {
-    return {Real::Undefined(), Real::Undefined()};
+    return {std::numeric_limits<double>::quiet_NaN(), std::numeric_limits<double>::quiet_NaN()};
 }
 
 Point Point::Origin()

@@ -405,8 +405,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetApex)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IntersectionWith_Ellipsoid)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::LineString;
@@ -459,8 +457,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IntersectionWith_E
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
@@ -510,9 +506,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, ApplyTransformatio
 
         const Pyramid referencePyramid = {referenceBase, referenceApex};
 
-        EXPECT_TRUE(pyramid.getBase().isNear(referencePyramid.getBase(), Real::Epsilon()))
+        EXPECT_TRUE(pyramid.getBase().isNear(referencePyramid.getBase(), 1e-15))
             << referencePyramid.getBase() << pyramid.getBase();
-        EXPECT_TRUE(pyramid.getApex().isNear(referencePyramid.getApex(), Real::Epsilon()))
+        EXPECT_TRUE(pyramid.getApex().isNear(referencePyramid.getApex(), 1e-15))
             << referencePyramid.getApex().toString() << pyramid.getApex().toString();
     }
 

@@ -294,9 +294,9 @@ Array<Ray> Pyramid::getRaysOfLateralFaceAt(const Index aLateralFaceIndex, const 
 
     const Angle angleBetweenRays = Angle::Between(firstRayDirection, secondRayDirection);
 
-    const Array<Real> angles_rad =
-        (aRayCount > 1) ? Interval<Real>::Closed(0.0, angleBetweenRays.inRadians()).generateArrayWithSize(aRayCount)
-                        : Array<Real> {0.0};
+    const Array<double> angles_rad =
+        (aRayCount > 1) ? Interval<double>::Closed(0.0, angleBetweenRays.inRadians()).generateArrayWithSize(aRayCount)
+                        : Array<double> {0.0};
 
     Array<Ray> rays = Array<Ray>::Empty();
 

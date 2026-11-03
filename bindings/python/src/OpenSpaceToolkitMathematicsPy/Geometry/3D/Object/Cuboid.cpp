@@ -7,8 +7,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::mo
 {
     using namespace pybind11;
 
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
     using ostk::mathematics::geometry::d3::object::Cuboid;
@@ -35,10 +33,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::mo
                     pybind11::cast<Vector3d>(anAxisList[1]),
                     pybind11::cast<Vector3d>(anAxisList[2])
                 };
-                const std::array<Real, 3> extent = {
-                    pybind11::cast<Real>(anExtent[0]),
-                    pybind11::cast<Real>(anExtent[1]),
-                    pybind11::cast<Real>(anExtent[2])
+                const std::array<double, 3> extent = {
+                    pybind11::cast<double>(anExtent[0]),
+                    pybind11::cast<double>(anExtent[1]),
+                    pybind11::cast<double>(anExtent[2])
                 };
 
                 new (&aCuboid) Cuboid(aCenter, axes, extent);

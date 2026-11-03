@@ -1,5 +1,8 @@
 /// Apache License 2.0
 
+#include <cmath>
+#include <limits>
+
 #include <OpenSpaceToolkit/Core/Container/Array.hpp>
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
@@ -49,7 +52,7 @@ bool PointSet::isEmpty() const
     return points_.empty();
 }
 
-bool PointSet::isNear(const PointSet& aPointSet, const Real& aTolerance) const
+bool PointSet::isNear(const PointSet& aPointSet, double aTolerance) const
 {
     if ((this->isEmpty()) || (aPointSet.isEmpty()))
     {
@@ -104,7 +107,7 @@ Size PointSet::getSize() const
     return points_.size();
 }
 
-Real PointSet::distanceTo(const Point& aPoint) const
+double PointSet::distanceTo(const Point& aPoint) const
 {
     using ostk::core::container::Array;
 
@@ -118,13 +121,13 @@ Real PointSet::distanceTo(const Point& aPoint) const
         throw ostk::core::error::runtime::Undefined("Point Set");
     }
 
-    const Array<Real> distances = Array<Point>(this->begin(), this->end())
-                                      .map<Real>(
-                                          [&aPoint](const Point& anOtherPoint) -> Real
-                                          {
-                                              return aPoint.distanceTo(anOtherPoint);
-                                          }
-                                      );
+    const Array<double> distances = Array<Point>(this->begin(), this->end())
+                                        .map<double>(
+                                            [&aPoint](const Point& anOtherPoint) -> double
+                                            {
+                                                return aPoint.distanceTo(anOtherPoint);
+                                            }
+                                        );
 
     return *std::min_element(distances.begin(), distances.end());
 }
@@ -142,13 +145,13 @@ Point PointSet::getPointClosestTo(const Point& aPoint) const
     }
 
     Point const* pointPtr = nullptr;
-    Real minDistance = Real::Undefined();
+    double minDistance = std::numeric_limits<double>::quiet_NaN();
 
     for (const auto& point : points_)
     {
-        const Real distance = (point - aPoint).squaredNorm();
+        const double distance = (point - aPoint).squaredNorm();
 
-        if ((!minDistance.isDefined()) || (distance < minDistance))
+        if ((std::isnan(minDistance)) || (distance < minDistance))
         {
             pointPtr = &point;
 

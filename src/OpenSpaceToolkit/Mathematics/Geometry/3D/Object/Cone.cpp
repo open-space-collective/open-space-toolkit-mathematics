@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <cmath>
+
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
@@ -264,9 +266,9 @@ Array<Ray> Cone::getRaysOfLateralSurface(const Size aRayCount) const
         apex_, Quaternion::RotationVector(RotationVector(referenceDirection, angle_)).toConjugate() * axis_
     };
 
-    const Array<Real> angles_rad = (aRayCount > 1)
-                                     ? Interval<Real>::HalfOpenRight(0.0, 360.0).generateArrayWithSize(aRayCount)
-                                     : Array<Real> {0.0};
+    const Array<double> angles_rad = (aRayCount > 1)
+                                       ? Interval<double>::HalfOpenRight(0.0, 360.0).generateArrayWithSize(aRayCount)
+                                       : Array<double> {0.0};
 
     Array<Ray> rays = Array<Ray>::Empty();
 
@@ -286,7 +288,7 @@ Array<Ray> Cone::getRaysOfLateralSurface(const Size aRayCount) const
     return rays;
 }
 
-Real Cone::distanceTo(const Point& aPoint) const
+double Cone::distanceTo(const Point& aPoint) const
 {
     if (!aPoint.isDefined())
     {
@@ -314,13 +316,13 @@ Real Cone::distanceTo(const Point& aPoint) const
 
     Vector3d nAxis;
 
-    if (this->axis_.cross(apexToPoint).norm() > Real::Epsilon())
+    if (this->axis_.cross(apexToPoint).norm() > 1e-15)
     {
         nAxis = (this->axis_.cross(apexToPoint)).cross(this->axis_).normalized();
     }
     else
     {
-        if (this->axis_.cross(Vector3d {1.0, 0.0, 0.0}).norm() > Real::Epsilon())
+        if (this->axis_.cross(Vector3d {1.0, 0.0, 0.0}).norm() > 1e-15)
         {
             nAxis = (this->axis_.cross(Vector3d {1.0, 0.0, 0.0})).cross(this->axis_).normalized();
         }

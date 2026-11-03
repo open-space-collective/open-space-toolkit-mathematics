@@ -6,8 +6,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Line(pybind11::modu
 {
     using namespace pybind11;
 
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;

@@ -7,8 +7,6 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
     using namespace pybind11;
 
     using ostk::core::container::Array;
-    using ostk::core::type::Integer;
-    using ostk::core::type::Real;
     using ostk::core::type::String;
 
     using ostk::mathematics::solver::NumericalSolver;
@@ -24,12 +22,7 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
         numericalSolver
 
             .def(
-                init<
-                    const NumericalSolver::LogType&,
-                    const NumericalSolver::StepperType&,
-                    const Real&,
-                    const Real&,
-                    const Real&>(),
+                init<const NumericalSolver::LogType&, const NumericalSolver::StepperType&, double, double, double>(),
                 R"doc(
                     Create a numerical solver with specified parameters.
 
@@ -165,7 +158,7 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
                 "integrate_duration",
                 +[](NumericalSolver& aNumericalSolver,
                     const NumericalSolver::StateVector& aStateVector,
-                    const Real& aDurationInSeconds,
+                    double aDurationInSeconds,
                     const object& aSystemOfEquationsObject)
                 {
                     const auto pythonDynamicsEquation =
@@ -207,7 +200,7 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
                 "integrate_duration",
                 +[](NumericalSolver& aNumericalSolver,
                     const NumericalSolver::StateVector& aStateVector,
-                    const Array<Real>& aDurationArray,
+                    const Array<double>& aDurationArray,
                     const object& aSystemOfEquationsObject)
                 {
                     const auto pythonDynamicsEquation =
@@ -250,8 +243,8 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
                 "integrate_time",
                 +[](NumericalSolver& aNumericalSolver,
                     const NumericalSolver::StateVector& aStateVector,
-                    const Real& aStartTime,
-                    const Real& anEndTime,
+                    double aStartTime,
+                    double anEndTime,
                     const object& aSystemOfEquationsObject)
                 {
                     const auto pythonDynamicsEquation =
@@ -294,8 +287,8 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
                 "integrate_time",
                 +[](NumericalSolver& aNumericalSolver,
                     const NumericalSolver::StateVector& aStateVector,
-                    const Real& aStartTime,
-                    const Array<Real>& aTimeArray,
+                    double aStartTime,
+                    const Array<double>& aTimeArray,
                     const object& aSystemOfEquationsObject)
                 {
                     const auto pythonDynamicsEquation =

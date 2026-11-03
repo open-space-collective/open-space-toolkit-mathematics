@@ -312,8 +312,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, DistanceTo_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IntersectionWith_Plane)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -343,7 +341,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IntersectionWith_Plane
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        EXPECT_TRUE(point.isNear(anIntersectionPoint, Real::Epsilon()));
+        EXPECT_TRUE(point.isNear(anIntersectionPoint, 1e-15));
     };
 
     const auto expectEmptyIntersection = [](const Ray& aRay, const Plane& aPlane) -> void
@@ -422,8 +420,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IntersectionWith_Ellip
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ray;
     using ostk::mathematics::geometry::d3::Transformation;
@@ -449,8 +445,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, ApplyTransformation)
 
         const Ray referenceRay = {{0.0, 0.0, 0.5}, {0.0, -1.0, 0.0}};
 
-        EXPECT_TRUE(ray.getOrigin().isNear(referenceRay.getOrigin(), Real::Epsilon()));
-        EXPECT_TRUE(ray.getDirection().isNear(referenceRay.getDirection(), Real::Epsilon()));
+        EXPECT_TRUE(ray.getOrigin().isNear(referenceRay.getOrigin(), 1e-15));
+        EXPECT_TRUE(ray.getDirection().isNear(referenceRay.getDirection(), 1e-15));
     }
 
     {

@@ -217,27 +217,25 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, Contains)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, IsNear)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d2::object::LineString;
 
     {
         EXPECT_TRUE(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}
-        ).isNear(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}), Real::Epsilon()));
+        ).isNear(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}), 1e-15));
 
         EXPECT_TRUE(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}
-        ).isNear(LineString({{0.0, Real::Epsilon()}, {Real::Epsilon(), 1.0}, {1.0, 0.0}}), Real::Epsilon()));
+        ).isNear(LineString({{0.0, 1e-15}, {1e-15, 1.0}, {1.0, 0.0}}), 1e-15));
     }
 
     {
         EXPECT_FALSE(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}
-        ).isNear(LineString({{0.0, 2.0 * Real::Epsilon()}, {Real::Epsilon(), 1.0}, {1.0, 0.0}}), Real::Epsilon()));
+        ).isNear(LineString({{0.0, 2.0 * 1e-15}, {1e-15, 1.0}, {1.0, 0.0}}), 1e-15));
     }
 
     {
-        EXPECT_FALSE(LineString::Empty().isNear(LineString::Empty(), Real::Epsilon()));
-        EXPECT_FALSE(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}).isNear(LineString::Empty(), Real::Epsilon()));
-        EXPECT_FALSE(LineString::Empty().isNear(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}), Real::Epsilon()));
+        EXPECT_FALSE(LineString::Empty().isNear(LineString::Empty(), 1e-15));
+        EXPECT_FALSE(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}).isNear(LineString::Empty(), 1e-15));
+        EXPECT_FALSE(LineString::Empty().isNear(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}), 1e-15));
     }
 }
 

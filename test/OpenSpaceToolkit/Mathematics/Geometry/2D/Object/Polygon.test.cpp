@@ -1,6 +1,7 @@
 /// Apache License 2.0
 
 #include <deque>
+#include <limits>
 
 #include <boost/foreach.hpp>
 #include <boost/geometry.hpp>
@@ -194,8 +195,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IsNear)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d2::object::Polygon;
 
     // Is near ifself
@@ -235,7 +234,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IsNear)
 
         EXPECT_ANY_THROW(Polygon::Undefined().isNear(polygon, 0.0));
         EXPECT_ANY_THROW(polygon.isNear(Polygon::Undefined(), 0.0));
-        EXPECT_ANY_THROW(polygon.isNear(polygon, Real::Undefined()));
+        EXPECT_ANY_THROW(polygon.isNear(polygon, std::numeric_limits<double>::quiet_NaN()));
     }
 }
 

@@ -153,7 +153,7 @@ class Polygon : public Object
     /// @param              [in] aPolygon A polygon
     /// @param              [in] aTolerance A tolerance
     /// @return             True if polygon is near another polygon
-    bool isNear(const Polygon& aPolygon, const Real& aTolerance) const;
+    bool isNear(const Polygon& aPolygon, double aTolerance) const;
 
     /// @brief              Check if polygon intersects polygon
     ///
@@ -335,9 +335,8 @@ class Polygon : public Object
     ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-    virtual String toString(
-        const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
-    ) const override;
+    virtual String toString(const Object::Format& aFormat = Object::Format::Standard, int aPrecision = -1)
+        const override;
 
     /// @brief              Print polygon
     ///

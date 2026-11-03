@@ -7,8 +7,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
 {
     using namespace pybind11;
 
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
     using ostk::mathematics::geometry::d3::object::Cone;
@@ -26,7 +24,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
     class_<Ellipsoid, Object>(aModule, "Ellipsoid")
 
         .def(
-            init<const Point&, const Real&, const Real&, const Real&>(),
+            init<const Point&, double, double, double>(),
             R"doc(
                 Create an ellipsoid with specified center and semi-axes.
 
@@ -47,7 +45,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
         )
 
         .def(
-            init<const Point&, const Real&, const Real&, const Real&, const Quaternion&>(),
+            init<const Point&, double, double, double, const Quaternion&>(),
             R"doc(
                 Create an ellipsoid with specified center, semi-axes, and orientation.
 

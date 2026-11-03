@@ -6,7 +6,6 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuadraticSpl
 {
     using namespace pybind11;
 
-    using ostk::core::type::Real;
     using ostk::core::type::Shared;
 
     using ostk::mathematics::curvefitting::Interpolator;
@@ -37,7 +36,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuadraticSpl
             arg("y")
         )
         .def(
-            init<const VectorXd&, const Real&, const Real&>(),
+            init<const VectorXd&, double, double>(),
             R"doc(
                 Create a quadratic spline interpolator with uniform spacing.
 

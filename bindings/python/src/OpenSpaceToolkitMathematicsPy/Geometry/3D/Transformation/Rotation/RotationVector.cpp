@@ -8,8 +8,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
 {
     using namespace pybind11;
 
-    using ostk::core::type::Integer;
-    using ostk::core::type::Real;
     using ostk::core::type::String;
 
     using ostk::mathematics::geometry::Angle;
@@ -123,7 +121,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         )
         .def(
             "to_string",
-            +[](const RotationVector& aRotationVector, const Integer& aPrecision) -> String
+            +[](const RotationVector& aRotationVector, int aPrecision) -> String
             {
                 return aRotationVector.toString(aPrecision);
             },

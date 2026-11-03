@@ -7,7 +7,6 @@
 
 #include <boost/math/interpolators/cubic_hermite.hpp>
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
@@ -22,7 +21,6 @@ namespace curvefitting
 namespace interpolator
 {
 
-using ostk::core::type::Real;
 using ostk::core::type::Size;
 
 using ostk::mathematics::curvefitting::Interpolator;
@@ -82,7 +80,7 @@ class CubicHermite : public Interpolator
     /// @param h The spacing between x values
     ///
     /// @warning The spacing must be strictly positive
-    CubicHermite(const VectorXd& aYVector, const VectorXd& aDyDxVector, const Real& x0, const Real& h);
+    CubicHermite(const VectorXd& aYVector, const VectorXd& aDyDxVector, double x0, double h);
 
     /// @brief Destructor
     ///

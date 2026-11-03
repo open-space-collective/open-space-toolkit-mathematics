@@ -122,7 +122,7 @@ class Polygon : public Object
     /// @param              [in] aPolygon A polygon
     /// @param              [in] aTolerance A tolerance
     /// @return             True if polygon is near another polygon
-    bool isNear(const Polygon& aPolygon, const Real& aTolerance) const;
+    bool isNear(const Polygon& aPolygon, double aTolerance) const;
 
     /// @brief              Get polygon 2D polygon
     ///
