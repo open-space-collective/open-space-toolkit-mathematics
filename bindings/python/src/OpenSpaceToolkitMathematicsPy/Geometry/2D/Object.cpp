@@ -144,7 +144,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(pybind11::module &a
 
     enum_<Object::Format>(ob, "Format")
 
-        .value("Undefined", Object::Format::Undefined)
         .value("Standard", Object::Format::Standard)
         .value("WKT", Object::Format::WKT)
 

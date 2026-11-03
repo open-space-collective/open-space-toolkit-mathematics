@@ -29,9 +29,8 @@ class Object
     enum class Format
     {
 
-        Undefined,  ///< Undefined format
-        Standard,   ///< Standard format
-        WKT         ///< Well-Known Text (WKT) format
+        Standard,  ///< Standard format
+        WKT        ///< Well-Known Text (WKT) format
 
     };
 
