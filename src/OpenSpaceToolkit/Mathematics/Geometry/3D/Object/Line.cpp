@@ -173,7 +173,7 @@ Vector3d Line::getDirection() const
     return direction_;
 }
 
-Real Line::distanceTo(const Point& aPoint) const
+double Line::distanceTo(const Point& aPoint) const
 {
     if (!this->isDefined())
     {

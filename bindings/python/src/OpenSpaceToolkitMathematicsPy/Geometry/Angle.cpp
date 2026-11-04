@@ -6,8 +6,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
 {
     using namespace pybind11;
 
-    using ostk::core::type::Integer;
-    using ostk::core::type::Real;
     using ostk::core::type::String;
 
     using ostk::mathematics::geometry::Angle;
@@ -19,7 +17,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
     // Define constructor
     angle
         .def(
-            init<Real, Angle::Unit>(),
+            init<double, Angle::Unit>(),
             R"doc(
                 Create an angle with specified value and unit.
 
@@ -45,15 +43,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
         .def(+self)
         .def(-self)
 
-        // Real has default constructor deleted
         // https://docs.python.org/3/library/operator.html
-        // .def(self * Real())
-        // .def(self / Real())
-        // .def(self *= Real())
-        // .def(self /= Real())
         .def(
             "__mul__",
-            [](const Angle& anAngle, Real aReal)
+            [](const Angle& anAngle, double aReal)
             {
                 return anAngle * aReal;
             },
@@ -61,7 +54,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
         )
         .def(
             "__truediv__",
-            [](const Angle& anAngle, Real aReal)
+            [](const Angle& anAngle, double aReal)
             {
                 return anAngle / aReal;
             },
@@ -69,7 +62,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
         )
         .def(
             "__imul__",
-            [](const Angle& anAngle, Real aReal)
+            [](const Angle& anAngle, double aReal)
             {
                 return anAngle * aReal;
             },
@@ -77,7 +70,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
         )
         .def(
             "__itruediv__",
-            [](const Angle& anAngle, Real aReal)
+            [](const Angle& anAngle, double aReal)
             {
                 return anAngle / aReal;
             },
@@ -209,7 +202,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
         )
         .def(
             "in_radians",
-            overload_cast<const Real&, const Real&>(&Angle::inRadians, const_),
+            overload_cast<double, double>(&Angle::inRadians, const_),
             R"doc(
                 Get the angle value in radians within specified bounds.
 
@@ -243,7 +236,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
         )
         .def(
             "in_degrees",
-            overload_cast<const Real&, const Real&>(&Angle::inDegrees, const_),
+            overload_cast<double, double>(&Angle::inDegrees, const_),
             R"doc(
                 Get the angle value in degrees within specified bounds.
 
@@ -277,7 +270,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
         )
         .def(
             "in_arcminutes",
-            overload_cast<const Real&, const Real&>(&Angle::inArcminutes, const_),
+            overload_cast<double, double>(&Angle::inArcminutes, const_),
             R"doc(
                 Get the angle value in arcminutes within specified bounds.
 
@@ -307,7 +300,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
         )
         .def(
             "in_arcseconds",
-            overload_cast<const Real&, const Real&>(&Angle::inArcseconds, const_),
+            overload_cast<double, double>(&Angle::inArcseconds, const_),
             R"doc(
                 Get the angle value in arcseconds within specified bounds.
 
@@ -342,7 +335,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
                 Convert the angle to a string representation.
 
                 Args:
-                    precision (int, optional): The precision for floating point numbers. Defaults to Integer.undefined().
+                    precision (int, optional): The precision for floating point numbers. Defaults to -1 (automatic).
 
                 Returns:
                     str: String representation of the angle.
@@ -351,7 +344,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
                     >>> angle = Angle.degrees(90.0)
                     >>> angle.to_string()  # "90.0 [deg]"
             )doc",
-            arg_v("precision", Integer::Undefined(), "Integer.undefined()")
+            arg_v("precision", -1, "-1")
         )
 
         // Define static methods

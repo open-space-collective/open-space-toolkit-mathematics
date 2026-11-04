@@ -2,7 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector__
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
@@ -21,7 +20,6 @@ namespace transformation
 namespace rotation
 {
 
-using ostk::core::type::Real;
 using ostk::core::type::String;
 
 using ostk::mathematics::geometry::Angle;
@@ -128,7 +126,7 @@ class RotationVector
     ///
     /// @param                  [in] (optional) aPrecision A precision
     /// @return                 String representation
-    String toString(const Integer& aPrecision = Integer::Undefined()) const;
+    String toString(int aPrecision = -1) const;
 
     /// @brief                  Rectify Rotation Vector (enforce positive angle)
     ///

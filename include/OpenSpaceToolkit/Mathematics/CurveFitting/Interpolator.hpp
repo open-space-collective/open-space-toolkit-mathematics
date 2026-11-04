@@ -2,7 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator__
 #define __OpenSpaceToolkit_Mathematics_Interpolator__
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Shared.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
@@ -15,7 +14,6 @@ namespace mathematics
 namespace curvefitting
 {
 
-using ostk::core::type::Real;
 using ostk::core::type::Shared;
 using ostk::core::type::Size;
 

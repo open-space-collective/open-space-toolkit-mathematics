@@ -7,7 +7,6 @@
 
 #include <boost/math/interpolators/quintic_hermite.hpp>
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
@@ -22,7 +21,6 @@ namespace curvefitting
 namespace interpolator
 {
 
-using ostk::core::type::Real;
 using ostk::core::type::Size;
 
 using ostk::mathematics::curvefitting::Interpolator;
@@ -90,11 +88,7 @@ class QuinticHermite : public Interpolator
     ///
     /// @warning The spacing must be strictly positive
     QuinticHermite(
-        const VectorXd& aYVector,
-        const VectorXd& aDyDxVector,
-        const VectorXd& aD2yDx2Vector,
-        const Real& x0,
-        const Real& h
+        const VectorXd& aYVector, const VectorXd& aDyDxVector, const VectorXd& aD2yDx2Vector, double x0, double h
     );
 
     /// @brief Destructor

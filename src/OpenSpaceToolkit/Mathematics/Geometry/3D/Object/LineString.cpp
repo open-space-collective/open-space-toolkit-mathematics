@@ -1,5 +1,8 @@
 /// Apache License 2.0
 
+#include <cmath>
+#include <limits>
+
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
@@ -49,7 +52,7 @@ bool LineString::isEmpty() const
     return points_.isEmpty();
 }
 
-bool LineString::isNear(const LineString& aLineString, const Real& aTolerance) const
+bool LineString::isNear(const LineString& aLineString, double aTolerance) const
 {
     if ((this->isEmpty()) || (aLineString.isEmpty()))
     {
@@ -100,13 +103,13 @@ Point LineString::getPointClosestTo(const Point& aPoint) const
     }
 
     Point const* pointPtr = nullptr;
-    Real minDistance = Real::Undefined();
+    double minDistance = std::numeric_limits<double>::quiet_NaN();
 
     for (const auto& point : points_)
     {
-        const Real distance = (point - aPoint).squaredNorm();
+        const double distance = (point - aPoint).squaredNorm();
 
-        if ((!minDistance.isDefined()) || (distance < minDistance))
+        if ((std::isnan(minDistance)) || (distance < minDistance))
         {
             pointPtr = &point;
 

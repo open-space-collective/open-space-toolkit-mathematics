@@ -6,8 +6,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(pybind11::mo
 {
     using namespace pybind11;
 
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
@@ -23,7 +21,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(pybind11::mo
     class_<Sphere, Object>(aModule, "Sphere")
 
         .def(
-            init<const Point&, const Real&>(),
+            init<const Point&, double>(),
             R"doc(
                 Create a 3D sphere with center and radius.
 

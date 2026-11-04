@@ -3,7 +3,6 @@
 #include <cmath>
 
 #include <OpenSpaceToolkit/Core/Container/Array.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp>
@@ -13,7 +12,6 @@
 #include <Global.test.hpp>
 
 using ostk::core::container::Array;
-using ostk::core::type::Real;
 using ostk::core::type::Size;
 
 using ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian;

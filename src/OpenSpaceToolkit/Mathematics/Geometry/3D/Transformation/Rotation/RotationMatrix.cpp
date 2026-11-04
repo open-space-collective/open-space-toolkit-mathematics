@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <cmath>
+
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
@@ -24,47 +26,47 @@ namespace rotation
 RotationMatrix::RotationMatrix(const Matrix3d& aMatrix)
     : matrix_(aMatrix)
 {
-    if ((matrix_.col(0).norm() - 1.0) > Real::Epsilon())
+    if ((matrix_.col(0).norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First column is not unitary.");
     }
 
-    if ((matrix_.col(1).norm() - 1.0) > Real::Epsilon())
+    if ((matrix_.col(1).norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Second column is not unitary.");
     }
 
-    if ((matrix_.col(2).norm() - 1.0) > Real::Epsilon())
+    if ((matrix_.col(2).norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Third column is not unitary.");
     }
 
-    if (std::abs(matrix_.col(0).dot(matrix_.col(1))) > Real::Epsilon())
+    if (std::abs(matrix_.col(0).dot(matrix_.col(1))) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First and second columns are not orthogonal.");
     }
 
-    if (std::abs(matrix_.col(1).dot(matrix_.col(2))) > Real::Epsilon())
+    if (std::abs(matrix_.col(1).dot(matrix_.col(2))) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Second and third columns are not orthogonal.");
     }
 
-    if (std::abs(matrix_.col(2).dot(matrix_.col(0))) > Real::Epsilon())
+    if (std::abs(matrix_.col(2).dot(matrix_.col(0))) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First and third columns are not orthogonal.");
     }
 }
 
 RotationMatrix::RotationMatrix(
-    const Real& aFirstCoefficient,
-    const Real& aSecondCoefficient,
-    const Real& aThirdCoefficient,
-    const Real& aFourthCoefficient,
-    const Real& aFifthCoefficient,
-    const Real& aSixthCoefficient,
-    const Real& aSeventhCoefficient,
-    const Real& aEighthCoefficient,
-    const Real& aNinthCoefficient
+    double aFirstCoefficient,
+    double aSecondCoefficient,
+    double aThirdCoefficient,
+    double aFourthCoefficient,
+    double aFifthCoefficient,
+    double aSixthCoefficient,
+    double aSeventhCoefficient,
+    double aEighthCoefficient,
+    double aNinthCoefficient
 )
     : matrix_((Matrix3d() << aFirstCoefficient,
                aSecondCoefficient,
@@ -77,32 +79,32 @@ RotationMatrix::RotationMatrix(
                aNinthCoefficient)
                   .finished())
 {
-    if ((matrix_.col(0).norm() - 1.0) > Real::Epsilon())
+    if ((matrix_.col(0).norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First column is not unitary.");
     }
 
-    if ((matrix_.col(1).norm() - 1.0) > Real::Epsilon())
+    if ((matrix_.col(1).norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Second column is not unitary.");
     }
 
-    if ((matrix_.col(2).norm() - 1.0) > Real::Epsilon())
+    if ((matrix_.col(2).norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Third column is not unitary.");
     }
 
-    if (std::abs(matrix_.col(0).dot(matrix_.col(1))) > Real::Epsilon())
+    if (std::abs(matrix_.col(0).dot(matrix_.col(1))) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First and second columns are not orthogonal.");
     }
 
-    if (std::abs(matrix_.col(1).dot(matrix_.col(2))) > Real::Epsilon())
+    if (std::abs(matrix_.col(1).dot(matrix_.col(2))) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Second and third columns are not orthogonal.");
     }
 
-    if (std::abs(matrix_.col(2).dot(matrix_.col(0))) > Real::Epsilon())
+    if (std::abs(matrix_.col(2).dot(matrix_.col(0))) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First and third columns are not orthogonal.");
     }
@@ -299,7 +301,7 @@ RotationMatrix RotationMatrix::RX(const Angle& aRotationAngle)
         throw ostk::core::error::runtime::Undefined("Rotation angle");
     }
 
-    const Real rotationAngle_rad = aRotationAngle.inRadians();
+    const double rotationAngle_rad = aRotationAngle.inRadians();
 
     Matrix3d matrix;
 
@@ -316,7 +318,7 @@ RotationMatrix RotationMatrix::RY(const Angle& aRotationAngle)
         throw ostk::core::error::runtime::Undefined("Rotation angle");
     }
 
-    const Real rotationAngle_rad = aRotationAngle.inRadians();
+    const double rotationAngle_rad = aRotationAngle.inRadians();
 
     Matrix3d matrix;
 
@@ -333,7 +335,7 @@ RotationMatrix RotationMatrix::RZ(const Angle& aRotationAngle)
         throw ostk::core::error::runtime::Undefined("Rotation angle");
     }
 
-    const Real rotationAngle_rad = aRotationAngle.inRadians();
+    const double rotationAngle_rad = aRotationAngle.inRadians();
 
     Matrix3d matrix;
 
@@ -360,32 +362,32 @@ RotationMatrix RotationMatrix::Rows(const Vector3d& aFirstRow, const Vector3d& a
         throw ostk::core::error::runtime::Undefined("Third row");
     }
 
-    if ((aFirstRow.norm() - 1.0) > Real::Epsilon())
+    if ((aFirstRow.norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First row is not unitary.");
     }
 
-    if ((aSecondRow.norm() - 1.0) > Real::Epsilon())
+    if ((aSecondRow.norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Second row is not unitary.");
     }
 
-    if ((aThirdRow.norm() - 1.0) > Real::Epsilon())
+    if ((aThirdRow.norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Third row is not unitary.");
     }
 
-    if (std::abs(aFirstRow.dot(aSecondRow)) > Real::Epsilon())
+    if (std::abs(aFirstRow.dot(aSecondRow)) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First and second columns are not orthogonal.");
     }
 
-    if (std::abs(aSecondRow.dot(aThirdRow)) > Real::Epsilon())
+    if (std::abs(aSecondRow.dot(aThirdRow)) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Second and third columns are not orthogonal.");
     }
 
-    if (std::abs(aThirdRow.dot(aFirstRow)) > Real::Epsilon())
+    if (std::abs(aThirdRow.dot(aFirstRow)) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First and third columns are not orthogonal.");
     }
@@ -417,32 +419,32 @@ RotationMatrix RotationMatrix::Columns(
         throw ostk::core::error::runtime::Undefined("Third column");
     }
 
-    if ((aFirstColumn.norm() - 1.0) > Real::Epsilon())
+    if ((aFirstColumn.norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First column is not unitary.");
     }
 
-    if ((aSecondColumn.norm() - 1.0) > Real::Epsilon())
+    if ((aSecondColumn.norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Second column is not unitary.");
     }
 
-    if ((aThirdColumn.norm() - 1.0) > Real::Epsilon())
+    if ((aThirdColumn.norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Third column is not unitary.");
     }
 
-    if (std::abs(aFirstColumn.dot(aSecondColumn)) > Real::Epsilon())
+    if (std::abs(aFirstColumn.dot(aSecondColumn)) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First and second columns are not orthogonal.");
     }
 
-    if (std::abs(aSecondColumn.dot(aThirdColumn)) > Real::Epsilon())
+    if (std::abs(aSecondColumn.dot(aThirdColumn)) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Second and third columns are not orthogonal.");
     }
 
-    if (std::abs(aThirdColumn.dot(aFirstColumn)) > Real::Epsilon())
+    if (std::abs(aThirdColumn.dot(aFirstColumn)) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First and third columns are not orthogonal.");
     }
@@ -591,22 +593,22 @@ RotationMatrix RotationMatrix::VectorBasis(
         throw ostk::core::error::runtime::Undefined("Second destination vector");
     }
 
-    if (aFirstSourceVector.norm() < Real::Epsilon())
+    if (aFirstSourceVector.norm() < 1e-15)
     {
         throw ostk::core::error::RuntimeError("First source vector is zero.");
     }
 
-    if (aSecondSourceVector.norm() < Real::Epsilon())
+    if (aSecondSourceVector.norm() < 1e-15)
     {
         throw ostk::core::error::RuntimeError("Second source vector is zero.");
     }
 
-    if (aFirstDestinationVector.norm() < Real::Epsilon())
+    if (aFirstDestinationVector.norm() < 1e-15)
     {
         throw ostk::core::error::RuntimeError("First destination vector is zero.");
     }
 
-    if (aSecondDestinationVector.norm() < Real::Epsilon())
+    if (aSecondDestinationVector.norm() < 1e-15)
     {
         throw ostk::core::error::RuntimeError("Second destination vector is zero.");
     }
@@ -614,7 +616,7 @@ RotationMatrix RotationMatrix::VectorBasis(
     // Check that source vectors are not parallel
     const Vector3d normalizedFirstSource = aFirstSourceVector.normalized();
     const Vector3d normalizedSecondSource = aSecondSourceVector.normalized();
-    if (std::abs(std::abs(normalizedFirstSource.dot(normalizedSecondSource)) - 1.0) < Real::Epsilon())
+    if (std::abs(std::abs(normalizedFirstSource.dot(normalizedSecondSource)) - 1.0) < 1e-15)
     {
         throw ostk::core::error::RuntimeError("Source vectors are parallel or anti-parallel.");
     }
@@ -622,7 +624,7 @@ RotationMatrix RotationMatrix::VectorBasis(
     // Check that destination vectors are not parallel
     const Vector3d normalizedFirstDestination = aFirstDestinationVector.normalized();
     const Vector3d normalizedSecondDestination = aSecondDestinationVector.normalized();
-    if (std::abs(std::abs(normalizedFirstDestination.dot(normalizedSecondDestination)) - 1.0) < Real::Epsilon())
+    if (std::abs(std::abs(normalizedFirstDestination.dot(normalizedSecondDestination)) - 1.0) < 1e-15)
     {
         throw ostk::core::error::RuntimeError("Destination vectors are parallel or anti-parallel.");
     }

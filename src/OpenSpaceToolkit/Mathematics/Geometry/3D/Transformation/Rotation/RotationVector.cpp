@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <cmath>
+
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
@@ -25,7 +27,7 @@ RotationVector::RotationVector(const Vector3d& anAxis, const Angle& anAngle)
     : axis_(anAxis.isDefined() ? anAxis.normalized() : Vector3d::Undefined()),
       angle_(anAngle)
 {
-    if (anAxis.isDefined() && (std::abs(anAxis.norm() - 1.0) > Real::Epsilon()))
+    if (anAxis.isDefined() && (std::abs(anAxis.norm() - 1.0) > 1e-15))
     {
         throw ostk::core::error::RuntimeError("Axis with norm [{}] is not unitary.", anAxis.norm());
     }
@@ -123,7 +125,7 @@ RotationVector& RotationVector::rectify()
     return *this;
 }
 
-String RotationVector::toString(const Integer& aPrecision) const
+String RotationVector::toString(int aPrecision) const
 {
     if (!this->isDefined())
     {
@@ -131,7 +133,7 @@ String RotationVector::toString(const Integer& aPrecision) const
     }
 
     return String::Format(
-        "{} : {}", (aPrecision.isDefined() ? axis_.toString(aPrecision) : axis_.toString()), angle_.toString(aPrecision)
+        "{} : {}", ((aPrecision >= 0) ? axis_.toString(aPrecision) : axis_.toString()), angle_.toString(aPrecision)
     );
 }
 
@@ -198,12 +200,12 @@ RotationVector RotationVector::Quaternion(const rotation::Quaternion& aQuaternio
         throw ostk::core::error::RuntimeError("Quaternion is not unitary.");
     }
 
-    if ((quaternion == Quaternion::Unit()) || (quaternion.s().abs() == 1.0))
+    if ((quaternion == Quaternion::Unit()) || (std::abs(quaternion.s()) == 1.0))
     {
         return RotationVector::Unit();
     }
 
-    const Vector3d axis = (quaternion.getVectorPart() / (1.0 - quaternion.s() * quaternion.s()).sqrt()).normalized();
+    const Vector3d axis = (quaternion.getVectorPart() / std::sqrt(1.0 - quaternion.s() * quaternion.s())).normalized();
     const Angle angle = Angle::Radians(2.0 * std::acos(quaternion.s()));
 
     return RotationVector(axis, angle);
@@ -218,7 +220,7 @@ RotationVector RotationVector::RotationMatrix(const rotation::RotationMatrix& aR
 
     const Angle angle = Angle::Radians(std::acos((aRotationMatrix.accessMatrix().trace() - 1.0) / 2.0));
 
-    if (angle.inRadians().abs() < Real::Epsilon())
+    if (std::abs(angle.inRadians()) < 1e-15)
     {
         return RotationVector(Vector3d::X(), angle);
     }

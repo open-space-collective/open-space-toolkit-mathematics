@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <limits>
+
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
@@ -134,8 +136,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, IsNear)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Point;
 
     {
@@ -146,10 +146,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, IsNear)
     }
 
     {
-        EXPECT_ANY_THROW(Point::Undefined().isNear(Point::Undefined(), Real::Undefined()));
+        EXPECT_ANY_THROW(Point::Undefined().isNear(Point::Undefined(), std::numeric_limits<double>::quiet_NaN()));
         EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).isNear(Point::Undefined(), 1e-15));
         EXPECT_ANY_THROW(Point::Undefined().isNear(Point(0.0, 0.0, 0.0), 1e-15));
-        EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).isNear(Point(0.0, 0.0, 0.0), Real::Undefined()));
+        EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).isNear(Point(0.0, 0.0, 0.0), std::numeric_limits<double>::quiet_NaN()));
     }
 }
 
@@ -169,8 +169,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, AsVector)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, DistanceTo)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Point;
 
     {
@@ -221,8 +219,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, DistanceTo)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::Transformation;
@@ -236,7 +232,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, ApplyTransformation)
 
         point.applyTransformation(Transformation::Translation({4.0, 5.0, 6.0}));
 
-        EXPECT_TRUE(point.isNear(Point(5.0, 7.0, 9.0), Real::Epsilon()));
+        EXPECT_TRUE(point.isNear(Point(5.0, 7.0, 9.0), 1e-15));
     }
 
     // Rotation
@@ -246,7 +242,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, ApplyTransformation)
 
         point.applyTransformation(Transformation::Rotation(RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(90.0))));
 
-        EXPECT_TRUE(point.isNear(Point(1.0, 0.0, 2.0), Real::Epsilon()));
+        EXPECT_TRUE(point.isNear(Point(1.0, 0.0, 2.0), 1e-15));
     }
 
     {

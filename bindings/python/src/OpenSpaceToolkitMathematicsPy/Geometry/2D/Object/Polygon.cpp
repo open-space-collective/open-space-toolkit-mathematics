@@ -7,7 +7,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(pybind11::m
     using namespace pybind11;
 
     using ostk::core::container::Array;
-    using ostk::core::type::Integer;
 
     using ostk::mathematics::geometry::d2::Object;
     using ostk::mathematics::geometry::d2::object::Point;
@@ -364,7 +363,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(pybind11::m
 
                 Args:
                     format (Object.Format, optional): The output format. Defaults to Standard.
-                    precision (int, optional): The precision for floating point numbers. Defaults to undefined.
+                    precision (int, optional): The precision for floating point numbers. Defaults to -1 (automatic).
 
                 Returns:
                     str: String representation of the polygon.
@@ -374,7 +373,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(pybind11::m
                     >>> polygon.to_string()
             )doc",
             arg("format") = Object::Format::Standard,
-            arg("precision") = Integer::Undefined()
+            arg("precision") = -1
         )
         .def(
             "apply_transformation",

@@ -2,8 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion__
 
-#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
@@ -22,8 +20,6 @@ namespace transformation
 namespace rotation
 {
 
-using ostk::core::type::Integer;
-using ostk::core::type::Real;
 using ostk::core::type::String;
 
 using ostk::mathematics::geometry::Angle;
@@ -75,10 +71,10 @@ class Quaternion
     /// @param                  [in] aFourthComponent A fourth component
     /// @param                  [in] aFormat A Quaternion format
     Quaternion(
-        const Real& aFirstComponent,
-        const Real& aSecondComponent,
-        const Real& aThirdComponent,
-        const Real& aFourthComponent,
+        double aFirstComponent,
+        double aSecondComponent,
+        double aThirdComponent,
+        double aFourthComponent,
         const Quaternion::Format& aFormat
     );
 
@@ -100,7 +96,7 @@ class Quaternion
     ///
     /// @param                  [in] aVectorPart A vector part
     /// @param                  [in] aVectorPart A scalar part
-    Quaternion(const Vector3d& aVectorPart, const Real& aScalarPart);
+    Quaternion(const Vector3d& aVectorPart, double aScalarPart);
 
     /// @brief                  Equal to operator
     ///
@@ -166,18 +162,18 @@ class Quaternion
     ///
     /// @code
     ///                         Quaternion q_1 = ... ;
-    ///                         Real scalar = ... ;
+    ///                         double scalar = ... ;
     ///                         Quaternion q_2 = q_1 * scalar ;
     /// @endcode
     ///
     /// @param                  [in] aScalar A scalar
     /// @return                 Quaternion
-    Quaternion operator*(const Real& aScalar) const;
+    Quaternion operator*(double aScalar) const;
 
     /// @brief                  Multiplication operator (scalar)
     ///
     /// @code
-    ///                         Real scalar = ... ;
+    ///                         double scalar = ... ;
     ///                         Quaternion q_1 = ... ;
     ///                         Quaternion q_2 = scalar * q_1 ;
     /// @endcode
@@ -185,7 +181,7 @@ class Quaternion
     /// @param                  [in] aScalar A scalar
     /// @param                  [in] aQuaternion A Quaternion
     /// @return                 Quaternion
-    friend Quaternion operator*(const Real& aScalar, const Quaternion& aQuaternion);
+    friend Quaternion operator*(double aScalar, const Quaternion& aQuaternion);
 
     /// @brief                  Division operator (Quaternion)
     ///
@@ -205,13 +201,13 @@ class Quaternion
     ///
     /// @code
     ///                         Quaternion q_1 = ... ;
-    ///                         Real scalar = ... ;
+    ///                         double scalar = ... ;
     ///                         Quaternion q_2 = q_1 ^ scalar ;
     /// @endcode
     ///
     /// @param                  [in] aScalar A scalar
     /// @return                 Quaternion
-    Quaternion operator^(const Real& aScalar) const;
+    Quaternion operator^(double aScalar) const;
 
     /// @brief                  Addition assignment operator (Quaternion)
     ///
@@ -277,7 +273,7 @@ class Quaternion
     /// @endcode
     ///
     /// @return                 True if Quaternion is unitary
-    bool isUnitary(const Real& aNormTolerance = Real::Epsilon()) const;
+    bool isUnitary(double aNormTolerance = 1e-15) const;
 
     /// @brief                  Check if Quaternion is near another Quaternion
     ///
@@ -299,8 +295,8 @@ class Quaternion
     ///                         Quaternion::Unit().x();
     /// @endcode
     ///
-    /// @return                 Real
-    Real x() const;
+    /// @return                 double
+    double x() const;
 
     /// @brief                  Get second component of vector part
     ///
@@ -308,8 +304,8 @@ class Quaternion
     ///                         Quaternion::Unit().y();
     /// @endcode
     ///
-    /// @return                 Real
-    Real y() const;
+    /// @return                 double
+    double y() const;
 
     /// @brief                  Get third component of vector part
     ///
@@ -317,8 +313,8 @@ class Quaternion
     ///                         Quaternion::Unit().z();
     /// @endcode
     ///
-    /// @return                 Real
-    Real z() const;
+    /// @return                 double
+    double z() const;
 
     /// @brief                  Get scalar part
     ///
@@ -326,8 +322,8 @@ class Quaternion
     ///                         Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).s();
     /// @endcode
     ///
-    /// @return                 Real
-    Real s() const;
+    /// @return                 double
+    double s() const;
 
     /// @brief                  Get vector part
     ///
@@ -344,8 +340,8 @@ class Quaternion
     ///                         Quaternion::Unit().getScalarPart();
     /// @endcode
     ///
-    /// @return                 Real
-    Real getScalarPart() const;
+    /// @return                 double
+    double getScalarPart() const;
 
     /// @brief                  Calculate normalized Quaternion
     ///
@@ -407,13 +403,13 @@ class Quaternion
     ///
     /// @code
     ///                         Quaternion q_1 = ...
-    ///                         Real scalar = ...
+    ///                         double scalar = ...
     ///                         Quaternion q_2 = q_1 ^ scalar ;
     /// @endcode
     ///
     /// @param                  [in] aValue A power value
     /// @return                 Quaternion
-    Quaternion pow(const Real& aValue) const;
+    Quaternion pow(double aValue) const;
 
     /// @brief                  Calculate norm of Quaternion
     ///
@@ -422,7 +418,7 @@ class Quaternion
     /// @endcode
     ///
     /// @return                 Quaternion norm
-    Real norm() const;
+    double norm() const;
 
     /// @brief                  Multiply Quaternion using cross multiplication
     ///
@@ -464,12 +460,12 @@ class Quaternion
     /// @code
     ///                         Quaternion q_1 = ...
     ///                         Quaternion q_2 = ...
-    ///                         Real q_3 = q_1.dotProduct(q_2)
+    ///                         double q_3 = q_1.dotProduct(q_2)
     /// @endcode
     ///
     /// @param                  [in] aQuaternion A Quaternion
     /// @return                 Quaternion
-    Real dotProduct(const Quaternion& aQuaternion) const;
+    double dotProduct(const Quaternion& aQuaternion) const;
 
     /// @brief                  Rotate vector using Quaternion
     ///
@@ -480,7 +476,7 @@ class Quaternion
     ///
     /// @param                  [in] aQuaternion A Quaternion
     /// @return                 Vector
-    Vector3d rotateVector(const Vector3d& aVector, const Real& aNormTolerance = Real::Epsilon()) const;
+    Vector3d rotateVector(const Vector3d& aVector, double aNormTolerance = 1e-15) const;
 
     /// @brief                  Convert Quaternion to its vector representation
     ///
@@ -503,9 +499,7 @@ class Quaternion
     /// @return                 String representation
     String toString(const Quaternion::Format& aFormat) const;
 
-    String toString(
-        const Integer& aPrecision = Integer::Undefined(), const Quaternion::Format& aFormat = Quaternion::Format::XYZS
-    ) const;
+    String toString(int aPrecision = -1, const Quaternion::Format& aFormat = Quaternion::Format::XYZS) const;
 
     /// @brief                  Normalize Quaternion
     ///
@@ -583,10 +577,7 @@ class Quaternion
     /// @param                  [in] aFourthComponent A fourth component
     /// @return                 Quaternion
     static Quaternion XYZS(
-        const Real& aFirstComponent,
-        const Real& aSecondComponent,
-        const Real& aThirdComponent,
-        const Real& aFourthComponent
+        double aFirstComponent, double aSecondComponent, double aThirdComponent, double aFourthComponent
     );
 
     /// @brief                  Construct Quaternion from rotation vector
@@ -653,7 +644,7 @@ class Quaternion
     /// @param                  [in] aSecondQuaternion A second Quaternion
     /// @param                  [in] aRatio An interpolator ratio
     /// @return                 Quaternion
-    static Quaternion LERP(const Quaternion& aFirstQuaternion, const Quaternion& aSecondQuaternion, const Real& aRatio);
+    static Quaternion LERP(const Quaternion& aFirstQuaternion, const Quaternion& aSecondQuaternion, double aRatio);
 
     /// @brief                  Normalized linear interpolator method
     ///
@@ -667,9 +658,7 @@ class Quaternion
     /// @param                  [in] aSecondQuaternion A second Quaternion
     /// @param                  [in] aRatio An interpolator ratio
     /// @return                 Quaternion
-    static Quaternion NLERP(
-        const Quaternion& aFirstQuaternion, const Quaternion& aSecondQuaternion, const Real& aRatio
-    );
+    static Quaternion NLERP(const Quaternion& aFirstQuaternion, const Quaternion& aSecondQuaternion, double aRatio);
 
     /// @brief                  Spherical linear interpolator method
     ///
@@ -685,15 +674,13 @@ class Quaternion
     /// @param                  [in] aSecondQuaternion A second Quaternion
     /// @param                  [in] aRatio An interpolator ratio
     /// @return                 Quaternion
-    static Quaternion SLERP(
-        const Quaternion& aFirstQuaternion, const Quaternion& aSecondQuaternion, const Real& aRatio
-    );
+    static Quaternion SLERP(const Quaternion& aFirstQuaternion, const Quaternion& aSecondQuaternion, double aRatio);
 
    private:
-    Real x_;
-    Real y_;
-    Real z_;
-    Real s_;
+    double x_;
+    double y_;
+    double z_;
+    double s_;
 };
 
 }  // namespace rotation

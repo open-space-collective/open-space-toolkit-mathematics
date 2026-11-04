@@ -82,9 +82,16 @@ def test_angle_default_constructor():
     assert isinstance(angle, Angle)
     assert angle.in_revolutions() == 18.0
 
+    # Python ints are accepted and converted to float
+    angle: Angle = Angle(45, Unit.Degree)
+
+    assert angle is not None
+    assert isinstance(angle, Angle)
+    assert angle.in_degrees() == 45.0
+
     # Invalid construction
     with pytest.raises(TypeError):
-        angle: Angle = Angle(45, Unit.Degree)
+        angle: Angle = Angle("45", Unit.Degree)
 
 
 def test_angle_undefined_constructor():

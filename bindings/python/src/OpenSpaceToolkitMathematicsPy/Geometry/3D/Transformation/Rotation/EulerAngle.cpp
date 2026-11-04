@@ -9,7 +9,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Eu
 {
     using namespace pybind11;
 
-    using ostk::core::type::Real;
     using ostk::core::type::String;
 
     using ostk::mathematics::geometry::Angle;

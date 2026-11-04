@@ -2,7 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object__
 
-#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 namespace ostk
@@ -17,7 +16,6 @@ namespace d2
 class Transformation;
 class Intersection;
 
-using ostk::core::type::Integer;
 using ostk::core::type::String;
 
 /// @brief                      2D object
@@ -132,9 +130,7 @@ class Object
     ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-    virtual String toString(
-        const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
-    ) const = 0;
+    virtual String toString(const Object::Format& aFormat = Object::Format::Standard, int aPrecision = -1) const = 0;
 
     /// @brief              Print object
     ///

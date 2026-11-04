@@ -43,7 +43,7 @@ QuadraticSpline::QuadraticSpline(const VectorXd& anXVector, const VectorXd& aYVe
     }
 }
 
-QuadraticSpline::QuadraticSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
+QuadraticSpline::QuadraticSpline(const VectorXd& aYVector, double x0, double h)
     : Interpolator(Interpolator::Type::QuadraticSpline)
 {
     if (aYVector.size() < 3)

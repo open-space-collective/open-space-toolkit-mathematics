@@ -1,7 +1,5 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp>

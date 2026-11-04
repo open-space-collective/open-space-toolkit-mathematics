@@ -6,7 +6,6 @@
 
 #include <boost/math/interpolators/cardinal_cubic_b_spline.hpp>
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Shared.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
@@ -22,7 +21,6 @@ namespace curvefitting
 namespace interpolator
 {
 
-using ostk::core::type::Real;
 using ostk::core::type::Shared;
 using ostk::core::type::Size;
 
@@ -85,7 +83,7 @@ class CubicSpline : public Interpolator
     ///
     /// @warning The spacing must be strictly positive
     /// @warning At least 5 data points are required
-    CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h);
+    CubicSpline(const VectorXd& aYVector, double x0, double h);
 
     /// @brief Destructor
     ///

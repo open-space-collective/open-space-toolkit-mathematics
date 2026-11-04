@@ -1,5 +1,8 @@
 /// Apache License 2.0
 
+#include <cmath>
+#include <limits>
+
 #include <Gte/Mathematics/GteIntrEllipsoid3Ellipsoid3.h>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
@@ -16,6 +19,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
+#include <OpenSpaceToolkit/Mathematics/Utility.hpp>
 // #include <Gte/Mathematics/GteIntrHalfspace3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrLine3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrPlane3Ellipsoid3.h>
@@ -47,6 +51,8 @@ namespace d3
 namespace object
 {
 
+using ostk::mathematics::utility::DoubleToString;
+
 gte::Vector3<double> EllipsoidGteVectorFromPoint(const Point& aPoint)
 {
     return {aPoint.x(), aPoint.y(), aPoint.z()};
@@ -64,9 +70,9 @@ Point EllipsoidPointFromGteVector(const gte::Vector3<double>& aVector)
 
 Ellipsoid::Ellipsoid(
     const Point& aCenter,
-    const Real& aFirstPrincipalSemiAxis,
-    const Real& aSecondPrincipalSemiAxis,
-    const Real& aThirdPrincipalSemiAxis,
+    double aFirstPrincipalSemiAxis,
+    double aSecondPrincipalSemiAxis,
+    double aThirdPrincipalSemiAxis,
     const Quaternion& anOrientation
 )
     : Object(),
@@ -77,17 +83,17 @@ Ellipsoid::Ellipsoid(
       q_(anOrientation),
       axes_(std::nullopt)
 {
-    if (a_.isDefined() && (a_ < 0.0))
+    if (!std::isnan(a_) && (a_ < 0.0))
     {
         throw ostk::core::error::RuntimeError("First principal semi-axis is negative.");
     }
 
-    if (b_.isDefined() && (b_ < 0.0))
+    if (!std::isnan(b_) && (b_ < 0.0))
     {
         throw ostk::core::error::RuntimeError("Second principal semi-axis is negative.");
     }
 
-    if (c_.isDefined() && (c_ < 0.0))
+    if (!std::isnan(c_) && (c_ < 0.0))
     {
         throw ostk::core::error::RuntimeError("Third principal semi-axis is negative.");
     }
@@ -114,7 +120,7 @@ bool Ellipsoid::operator==(const Ellipsoid& anEllipsoid) const
             return true;
         }
 
-        return this->getMatrix().isNear(anEllipsoid.getMatrix(), Real::Epsilon());
+        return this->getMatrix().isNear(anEllipsoid.getMatrix(), 1e-15);
     }
 
     return false;
@@ -127,7 +133,7 @@ bool Ellipsoid::operator!=(const Ellipsoid& anEllipsoid) const
 
 bool Ellipsoid::isDefined() const
 {
-    return center_.isDefined() && a_.isDefined() && b_.isDefined() && c_.isDefined() && q_.isDefined();
+    return center_.isDefined() && !std::isnan(a_) && !std::isnan(b_) && !std::isnan(c_) && q_.isDefined();
 }
 
 bool Ellipsoid::intersects(const Point& aPoint) const
@@ -279,7 +285,7 @@ bool Ellipsoid::intersects(const Segment& aSegment) const
 
     const Vector3d segmentDirection = segmentVector.normalized();
     const Vector3d segmentCenter = (segmentFirstPoint + segmentVector / 2.0).asVector();
-    const Real segmentHalfLength = segmentVector.norm() / 2.0;
+    const double segmentHalfLength = segmentVector.norm() / 2.0;
 
     const Matrix3d M = this->getMatrix();
 
@@ -287,13 +293,13 @@ bool Ellipsoid::intersects(const Segment& aSegment) const
     const Vector3d matDir = M * segmentDirection;
     const Vector3d matDiff = M * diff;
 
-    const Real a2 = segmentDirection.dot(matDir);
-    const Real a1 = segmentDirection.dot(matDiff);
-    const Real a0 = diff.dot(matDiff) - 1.0;
+    const double a2 = segmentDirection.dot(matDir);
+    const double a1 = segmentDirection.dot(matDiff);
+    const double a0 = diff.dot(matDiff) - 1.0;
 
-    const Real discriminant = (a1 * a1) - (a0 * a2);
+    const double discriminant = (a1 * a1) - (a0 * a2);
 
-    static const Real tolerance = 1e-25;  // [TBM] Tolerance parameter should be dynamic
+    static const double tolerance = 1e-25;  // [TBM] Tolerance parameter should be dynamic
 
     if (discriminant < -tolerance)  // No real roots
     {
@@ -301,15 +307,15 @@ bool Ellipsoid::intersects(const Segment& aSegment) const
     }
     else if (discriminant > tolerance)  // Two real roots
     {
-        const Real discriminantRoot = std::sqrt(discriminant);
-        const Real a2_inverse = 1.0 / a2;
+        const double discriminantRoot = std::sqrt(discriminant);
+        const double a2_inverse = 1.0 / a2;
 
-        const Real t0 = (-a1 - discriminantRoot) * a2_inverse;
-        const Real t1 = (-a1 + discriminantRoot) * a2_inverse;
+        const double t0 = (-a1 - discriminantRoot) * a2_inverse;
+        const double t1 = (-a1 + discriminantRoot) * a2_inverse;
 
         // Undefined roots (only possible for an infinite semi-axis, where a2 vanishes) are rejected
 
-        if ((!t0.isDefined()) || (!t1.isDefined()))
+        if ((std::isnan(t0)) || (std::isnan(t1)))
         {
             throw ostk::core::error::runtime::Undefined("Interval");
         }
@@ -321,7 +327,7 @@ bool Ellipsoid::intersects(const Segment& aSegment) const
     }
     else  // One real root
     {
-        const Real t0 = -a1 / a2;
+        const double t0 = -a1 / a2;
 
         if (std::abs(t0) <= segmentHalfLength)  // Single intersection
         {
@@ -473,11 +479,11 @@ bool Ellipsoid::contains(const Point& aPoint) const
 
     const Vector3d point = dcm * (aPoint - center_);
 
-    const Real& x = point.x();
-    const Real& y = point.y();
-    const Real& z = point.z();
+    const double& x = point.x();
+    const double& y = point.y();
+    const double& z = point.z();
 
-    return std::abs((x * x) / (a_ * a_) + (y * y) / (b_ * b_) + (z * z) / (c_ * c_) - 1.0) < Real::Epsilon();
+    return std::abs((x * x) / (a_ * a_) + (y * y) / (b_ * b_) + (z * z) / (c_ * c_) - 1.0) < 1e-15;
 }
 
 bool Ellipsoid::contains(const PointSet& aPointSet) const
@@ -512,7 +518,7 @@ Point Ellipsoid::getCenter() const
     return center_;
 }
 
-Real Ellipsoid::getFirstPrincipalSemiAxis() const
+double Ellipsoid::getFirstPrincipalSemiAxis() const
 {
     if (!this->isDefined())
     {
@@ -522,7 +528,7 @@ Real Ellipsoid::getFirstPrincipalSemiAxis() const
     return a_;
 }
 
-Real Ellipsoid::getSecondPrincipalSemiAxis() const
+double Ellipsoid::getSecondPrincipalSemiAxis() const
 {
     if (!this->isDefined())
     {
@@ -532,7 +538,7 @@ Real Ellipsoid::getSecondPrincipalSemiAxis() const
     return b_;
 }
 
-Real Ellipsoid::getThirdPrincipalSemiAxis() const
+double Ellipsoid::getThirdPrincipalSemiAxis() const
 {
     if (!this->isDefined())
     {
@@ -724,7 +730,7 @@ Intersection Ellipsoid::intersectionWith(const Ray& aRay, const bool onlyInSight
                 }
             }
 
-            if ((firstPoint - secondPoint).norm() < Real::Epsilon())
+            if ((firstPoint - secondPoint).norm() < 1e-15)
             {
                 return Intersection::Point(firstPoint);
             }
@@ -884,12 +890,9 @@ void Ellipsoid::print(std::ostream& anOutputStream, bool displayDecorators) cons
     ostk::core::utils::Print::Line(anOutputStream)
         << "Center:" << (center_.isDefined() ? center_.toString() : "Undefined");
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "First principal semi-axis:" << (a_.isDefined() ? a_.toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Second principal semi-axis:" << (b_.isDefined() ? b_.toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Third principal semi-axis:" << (c_.isDefined() ? c_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "First principal semi-axis:" << DoubleToString(a_);
+    ostk::core::utils::Print::Line(anOutputStream) << "Second principal semi-axis:" << DoubleToString(b_);
+    ostk::core::utils::Print::Line(anOutputStream) << "Third principal semi-axis:" << DoubleToString(c_);
 
     ostk::core::utils::Print::Line(anOutputStream)
         << "First axis:" << (q_.isDefined() ? this->getFirstAxis().toString() : "Undefined");
@@ -949,7 +952,13 @@ void Ellipsoid::applyTransformation(const Transformation& aTransformation)
 
 Ellipsoid Ellipsoid::Undefined()
 {
-    return {Point::Undefined(), Real::Undefined(), Real::Undefined(), Real::Undefined(), Quaternion::Undefined()};
+    return {
+        Point::Undefined(),
+        std::numeric_limits<double>::quiet_NaN(),
+        std::numeric_limits<double>::quiet_NaN(),
+        std::numeric_limits<double>::quiet_NaN(),
+        Quaternion::Undefined()
+    };
 }
 
 void Ellipsoid::cacheAxes()

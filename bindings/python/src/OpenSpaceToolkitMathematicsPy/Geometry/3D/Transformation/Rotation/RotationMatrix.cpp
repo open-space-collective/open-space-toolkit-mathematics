@@ -9,7 +9,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
     using namespace pybind11;
 
     using ostk::core::container::Pair;
-    using ostk::core::type::Real;
     using ostk::core::type::String;
 
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
@@ -35,16 +34,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         )
 
         .def(
-            init<
-                const Real&,
-                const Real&,
-                const Real&,
-                const Real&,
-                const Real&,
-                const Real&,
-                const Real&,
-                const Real&,
-                const Real&>(),
+            init<double, double, double, double, double, double, double, double, double>(),
             R"doc(
                 Create a rotation matrix from nine coefficients (row-major order).
 

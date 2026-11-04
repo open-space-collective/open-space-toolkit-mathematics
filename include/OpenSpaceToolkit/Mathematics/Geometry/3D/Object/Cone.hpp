@@ -254,12 +254,12 @@ class Cone : public Object
     ///
     /// @code{.cpp}
     ///                     Cone cone = { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }, Angle::Degrees(15.0) } ;
-    ///                     Real distance = cone.distanceTo({ 1.0, 0.0, 0.0 }) ;
+    ///                     double distance = cone.distanceTo({ 1.0, 0.0, 0.0 }) ;
     /// @endcode
     ///
     /// @param              [in] aPoint A point
     /// @return             Distance of cone to point
-    Real distanceTo(const Point& aPoint) const;
+    double distanceTo(const Point& aPoint) const;
 
     /// @brief              Compute intersection of cone with sphere
     ///

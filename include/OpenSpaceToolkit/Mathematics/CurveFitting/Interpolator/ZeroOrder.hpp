@@ -3,7 +3,6 @@
 #define __OpenSpaceToolkit_Mathematics_Interpolator_ZeroOrder__
 
 #include <OpenSpaceToolkit/Core/Type/Index.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
@@ -19,7 +18,6 @@ namespace interpolator
 {
 
 using ostk::core::type::Index;
-using ostk::core::type::Real;
 using ostk::core::type::Size;
 
 using ostk::mathematics::curvefitting::Interpolator;

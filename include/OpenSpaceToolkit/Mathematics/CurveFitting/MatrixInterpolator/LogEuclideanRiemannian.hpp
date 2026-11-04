@@ -5,7 +5,6 @@
 #include <OpenSpaceToolkit/Core/Container/Array.hpp>
 #include <OpenSpaceToolkit/Core/Container/Pair.hpp>
 #include <OpenSpaceToolkit/Core/Type/Index.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
@@ -22,7 +21,6 @@ namespace matrixinterpolator
 using ostk::core::container::Array;
 using ostk::core::container::Pair;
 using ostk::core::type::Index;
-using ostk::core::type::Real;
 using ostk::core::type::Size;
 
 using ostk::mathematics::object::MatrixXd;

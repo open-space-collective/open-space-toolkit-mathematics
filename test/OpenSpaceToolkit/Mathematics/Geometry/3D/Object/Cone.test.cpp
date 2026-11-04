@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <cmath>
+
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp>
@@ -374,8 +376,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Ray)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Sphere)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Cone;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -391,9 +391,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Sphere)
 
         EXPECT_FALSE(cone.contains(Sphere {apex, 1.0}));
         EXPECT_FALSE(cone.contains(Sphere {apex + Vector3d {1.0, 0.0, 0.0}, 1.0}));
-        EXPECT_FALSE(cone.contains(Sphere {apex + Vector3d {std::sqrt(2.0) - Real::Epsilon(), 0.0, 0.0}, 1.0}));
+        EXPECT_FALSE(cone.contains(Sphere {apex + Vector3d {std::sqrt(2.0) - 1e-15, 0.0, 0.0}, 1.0}));
 
-        EXPECT_TRUE(cone.contains(Sphere {apex + Vector3d {std::sqrt(2.0) + Real::Epsilon(), 0.0, 0.0}, 1.0}));
+        EXPECT_TRUE(cone.contains(Sphere {apex + Vector3d {std::sqrt(2.0) + 1e-15, 0.0, 0.0}, 1.0}));
         EXPECT_TRUE(cone.contains(Sphere {apex + Vector3d {2.0, 0.0, 0.0}, 1.0}));
 
         EXPECT_FALSE(cone.contains(Sphere {(apex - Vector3d {0.5, 0.0, 0.0}), 1.0}));
@@ -471,7 +471,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetAngle)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetRaysOfLateralSurface)
 {
     using ostk::core::container::Array;
-    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Cone;
@@ -497,8 +496,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetRaysOfLateralSurfa
             referenceRays,
             [](const Ray& aFirstRay, const Ray& aSecondRay) -> bool
             {
-                return aFirstRay.getOrigin().isNear(aSecondRay.getOrigin(), Real::Epsilon()) &&
-                       aFirstRay.getDirection().isNear(aSecondRay.getDirection(), Real::Epsilon());
+                return aFirstRay.getOrigin().isNear(aSecondRay.getOrigin(), 1e-15) &&
+                       aFirstRay.getDirection().isNear(aSecondRay.getDirection(), 1e-15);
             }
         ));
     }
@@ -551,8 +550,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, DistanceTo_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, IntersectionWith_Ellipsoid)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::object::Cone;
@@ -597,8 +594,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, IntersectionWith_Elli
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Cone;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -637,11 +632,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, ApplyTransformation)
 
         const Cone referenceCone = {referenceApex, referenceAxis, referenceAngle};
 
-        EXPECT_TRUE(cone.getApex().isNear(referenceCone.getApex(), Real::Epsilon()))
+        EXPECT_TRUE(cone.getApex().isNear(referenceCone.getApex(), 1e-15))
             << referenceCone.getApex().toString() << cone.getApex().toString();
-        EXPECT_TRUE(cone.getAxis().isNear(referenceCone.getAxis(), Real::Epsilon()))
+        EXPECT_TRUE(cone.getAxis().isNear(referenceCone.getAxis(), 1e-15))
             << referenceCone.getAxis().toString() << cone.getAxis().toString();
-        EXPECT_TRUE(cone.getAngle().inDegrees().isNear(referenceCone.getAngle().inDegrees(), Real::Epsilon()))
+        EXPECT_NEAR(cone.getAngle().inDegrees(), referenceCone.getAngle().inDegrees(), 1e-15)
             << referenceCone.getAngle().toString() << cone.getAngle().toString();
     }
 

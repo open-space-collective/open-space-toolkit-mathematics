@@ -54,7 +54,7 @@ CubicHermite::CubicHermite(const VectorXd& anXVector, const VectorXd& aYVector, 
     }
 }
 
-CubicHermite::CubicHermite(const VectorXd& aYVector, const VectorXd& aDyDxVector, const Real& x0, const Real& h)
+CubicHermite::CubicHermite(const VectorXd& aYVector, const VectorXd& aDyDxVector, double x0, double h)
     : Interpolator(Interpolator::Type::CubicHermite)
 {
     if (aYVector.size() < 2)

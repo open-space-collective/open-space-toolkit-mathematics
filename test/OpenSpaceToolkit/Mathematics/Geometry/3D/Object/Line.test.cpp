@@ -288,8 +288,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, GetDirection)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, DistanceTo_Point)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::Point;
 
@@ -331,8 +329,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, DistanceTo_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, IntersectionWith_Plane)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::Plane;
@@ -363,7 +359,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, IntersectionWith_Plan
 
         const Point point = intersection.accessComposite().as<Point>();
 
-        EXPECT_TRUE(point.isNear(anIntersectionPoint, Real::Epsilon()));
+        EXPECT_TRUE(point.isNear(anIntersectionPoint, 1e-15));
     };
 
     const auto expectEmptyIntersection = [](const Line& aLine, const Plane& aPlane) -> void
@@ -427,8 +423,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, IntersectionWith_Plan
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::Transformation;
@@ -454,8 +448,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, ApplyTransformation)
 
         const Line referenceLine = {{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}};
 
-        EXPECT_TRUE(line.getOrigin().isNear(referenceLine.getOrigin(), Real::Epsilon()));
-        EXPECT_TRUE(line.getDirection().isNear(referenceLine.getDirection(), Real::Epsilon()));
+        EXPECT_TRUE(line.getOrigin().isNear(referenceLine.getOrigin(), 1e-15));
+        EXPECT_TRUE(line.getDirection().isNear(referenceLine.getDirection(), 1e-15));
     }
 
     {

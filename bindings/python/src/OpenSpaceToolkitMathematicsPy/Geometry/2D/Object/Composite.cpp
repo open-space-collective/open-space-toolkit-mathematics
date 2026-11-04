@@ -9,7 +9,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Composite(pybind11:
 {
     using namespace pybind11;
 
-    using ostk::core::type::Real;
     using ostk::core::type::Shared;
 
     using ostk::mathematics::geometry::d2::Intersection;

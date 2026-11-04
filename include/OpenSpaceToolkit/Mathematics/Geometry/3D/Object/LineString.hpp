@@ -109,7 +109,7 @@ class LineString : public Object
     /// @param              [in] aLineString A line string
     /// @param              [in] aTolerance A tolerance
     /// @return             True if line string is near another line string
-    bool isNear(const LineString& aLineString, const Real& aTolerance) const;
+    bool isNear(const LineString& aLineString, double aTolerance) const;
 
     /// @brief              Access point at index
     ///

@@ -43,7 +43,7 @@ QuinticSpline::QuinticSpline(const VectorXd& anXVector, const VectorXd& aYVector
     }
 }
 
-QuinticSpline::QuinticSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
+QuinticSpline::QuinticSpline(const VectorXd& aYVector, double x0, double h)
     : Interpolator(Interpolator::Type::QuinticSpline)
 {
     if (aYVector.size() < 8)

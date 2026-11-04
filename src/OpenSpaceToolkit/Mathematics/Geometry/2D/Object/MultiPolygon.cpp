@@ -63,7 +63,7 @@ class MultiPolygon::Impl
 
     MultiPolygon::Impl unionWith(const MultiPolygon::Impl& aMultiPolygon) const;
 
-    String toString(const Object::Format& aFormat, const Integer& aPrecision) const;
+    String toString(const Object::Format& aFormat, int aPrecision) const;
 
     void applyTransformation(const Transformation& aTransformation);
 
@@ -200,7 +200,7 @@ MultiPolygon::Impl MultiPolygon::Impl::unionWith(const MultiPolygon::Impl& aMult
     }
 }
 
-String MultiPolygon::Impl::toString(const Object::Format& aFormat, const Integer& aPrecision) const
+String MultiPolygon::Impl::toString(const Object::Format& aFormat, int aPrecision) const
 {
     switch (aFormat)
     {
@@ -209,7 +209,7 @@ String MultiPolygon::Impl::toString(const Object::Format& aFormat, const Integer
         {
             std::stringstream stringStream;
 
-            if (aPrecision.isDefined())
+            if (aPrecision >= 0)
             {
                 stringStream << std::fixed << std::setprecision(aPrecision) << boost::geometry::wkt(multiPolygon_);
             }
@@ -460,7 +460,7 @@ MultiPolygon MultiPolygon::unionWith(const MultiPolygon& aMultiPolygon) const
     return unionMultiPolygon;
 }
 
-String MultiPolygon::toString(const Object::Format& aFormat, const Integer& aPrecision) const
+String MultiPolygon::toString(const Object::Format& aFormat, int aPrecision) const
 {
     if (!this->isDefined())
     {

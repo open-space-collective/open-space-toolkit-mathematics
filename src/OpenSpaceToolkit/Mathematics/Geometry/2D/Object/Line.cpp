@@ -94,7 +94,7 @@ bool Line::contains(const Point& aPoint) const
         return aPoint.x() == p_1.x();
     }
 
-    const Real m = (p_2.y() - p_1.y()) / (p_2.x() - p_1.x());
+    const double m = (p_2.y() - p_1.y()) / (p_2.x() - p_1.x());
 
     return aPoint.y() == m * (aPoint.x() - p_1.x()) + p_1.y();
 }
@@ -142,7 +142,7 @@ Vector2d Line::getDirection() const
     return direction_;
 }
 
-Real Line::distanceTo(const Point& aPoint) const
+double Line::distanceTo(const Point& aPoint) const
 {
     if (!this->isDefined())
     {
@@ -158,7 +158,7 @@ Real Line::distanceTo(const Point& aPoint) const
     return ((p - a) - ((p - a).dot(n)) * n).norm();
 }
 
-String Line::toString(const Object::Format& aFormat, const Integer& aPrecision) const
+String Line::toString(const Object::Format& aFormat, int aPrecision) const
 {
     switch (aFormat)
     {
