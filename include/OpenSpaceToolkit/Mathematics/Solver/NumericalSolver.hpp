@@ -137,15 +137,6 @@ class NumericalSolver
     /// @param                  [in] (optional) displayDecorators If true, display decorators
     void print(std::ostream& anOutputStream, bool displayDecorator = true) const;
 
-    /// @brief                  Access observed state vectors
-    ///
-    /// @code{.cpp}
-    ///                         const Array<Solution>& states = numericalSolver.accessObservedStateVectors();
-    /// @endcode
-    ///
-    /// @return                 Observed state vectors
-    const Array<Solution>& accessObservedStateVectors() const;
-
     /// @brief                  Get integration logging enum
     ///
     /// @code
@@ -193,12 +184,12 @@ class NumericalSolver
 
     /// @brief                  Get observed state vectors
     ///
-    /// @code
-    ///                         numericalSolver.getObservedStateVectors();
+    /// @code{.cpp}
+    ///                         const Array<Solution>& states = numericalSolver.getObservedStateVectors();
     /// @endcode
     ///
-    /// @return                 Observed state vectors
-    Array<Solution> getObservedStateVectors() const;
+    /// @return                 Const reference to observed state vectors
+    const Array<Solution>& getObservedStateVectors() const;
 
     /// @brief                  Perform numerical integration from a start time to an array of times
     ///

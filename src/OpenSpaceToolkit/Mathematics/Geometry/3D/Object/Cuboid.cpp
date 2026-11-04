@@ -344,7 +344,7 @@ bool Cuboid::contains(const Segment& aSegment) const
     return this->contains(aSegment.getFirstPoint()) && this->contains(aSegment.getSecondPoint());
 }
 
-Point Cuboid::getCenter() const
+const Point& Cuboid::getCenter() const
 {
     if (!this->isDefined())
     {
@@ -354,7 +354,7 @@ Point Cuboid::getCenter() const
     return center_;
 }
 
-Vector3d Cuboid::getFirstAxis() const
+const Vector3d& Cuboid::getFirstAxis() const
 {
     if (!this->isDefined())
     {
@@ -364,7 +364,7 @@ Vector3d Cuboid::getFirstAxis() const
     return axes_[0];
 }
 
-Vector3d Cuboid::getSecondAxis() const
+const Vector3d& Cuboid::getSecondAxis() const
 {
     if (!this->isDefined())
     {
@@ -374,7 +374,7 @@ Vector3d Cuboid::getSecondAxis() const
     return axes_[1];
 }
 
-Vector3d Cuboid::getThirdAxis() const
+const Vector3d& Cuboid::getThirdAxis() const
 {
     if (!this->isDefined())
     {

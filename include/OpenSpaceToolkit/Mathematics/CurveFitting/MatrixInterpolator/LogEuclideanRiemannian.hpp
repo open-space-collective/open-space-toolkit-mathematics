@@ -97,7 +97,7 @@ class LogEuclideanRiemannian
     /// @endcode
     ///
     /// @return The array of symmetric positive definite matrices
-    Array<MatrixXd> getMatrices() const;
+    const Array<MatrixXd>& getMatrices() const;
 
    private:
     VectorXd x_;

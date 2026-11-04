@@ -360,7 +360,7 @@ bool Composite::anyContains(const Composite& aComposite) const
     );
 }
 
-const Object& Composite::accessObjectAt(const Index& anIndex) const
+const Object& Composite::getObjectAt(const Index& anIndex) const
 {
     if (!this->isDefined())
     {
@@ -375,7 +375,7 @@ const Object& Composite::accessObjectAt(const Index& anIndex) const
     return *(objects_.at(anIndex).get());
 }
 
-const Array<Unique<Object>>& Composite::accessObjects() const
+const Array<Unique<Object>>& Composite::getObjects() const
 {
     if (!this->isDefined())
     {

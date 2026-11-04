@@ -240,7 +240,7 @@ class Sphere : public Object
     /// @endcode
     ///
     /// @return             Sphere center
-    Point getCenter() const;
+    const Point& getCenter() const;
 
     /// @brief              Get sphere radius
     ///

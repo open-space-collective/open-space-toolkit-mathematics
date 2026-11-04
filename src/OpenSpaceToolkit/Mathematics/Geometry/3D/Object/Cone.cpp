@@ -217,7 +217,7 @@ bool Cone::contains(const Ellipsoid& anEllipsoid) const
     return false;  // TBI
 }
 
-Point Cone::getApex() const
+const Point& Cone::getApex() const
 {
     if (!this->isDefined())
     {
@@ -227,7 +227,7 @@ Point Cone::getApex() const
     return apex_;
 }
 
-Vector3d Cone::getAxis() const
+const Vector3d& Cone::getAxis() const
 {
     if (!this->isDefined())
     {
@@ -237,7 +237,7 @@ Vector3d Cone::getAxis() const
     return axis_;
 }
 
-Angle Cone::getAngle() const
+const Angle& Cone::getAngle() const
 {
     if (!this->isDefined())
     {
@@ -359,13 +359,13 @@ Intersection Cone::intersectionWith(const Sphere& aSphere, const bool onlyInSigh
 
         if (!intersection.isEmpty())
         {
-            if (intersection.accessComposite().is<Point>())
+            if (intersection.getComposite().is<Point>())
             {
-                firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
+                firstIntersectionPoints.add(intersection.getComposite().as<Point>());
             }
-            else if (intersection.accessComposite().is<PointSet>())
+            else if (intersection.getComposite().is<PointSet>())
             {
-                const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
+                const PointSet& pointSet = intersection.getComposite().as<PointSet>();
 
                 bool secondIntersectionPointAdded = false;
 
@@ -426,13 +426,13 @@ Intersection Cone::intersectionWith(
 
         if (!intersection.isEmpty())
         {
-            if (intersection.accessComposite().is<Point>())
+            if (intersection.getComposite().is<Point>())
             {
-                firstIntersectionPoints.add(intersection.accessComposite().as<Point>());
+                firstIntersectionPoints.add(intersection.getComposite().as<Point>());
             }
-            else if (intersection.accessComposite().is<PointSet>())
+            else if (intersection.getComposite().is<PointSet>())
             {
-                const PointSet& pointSet = intersection.accessComposite().as<PointSet>();
+                const PointSet& pointSet = intersection.getComposite().as<PointSet>();
 
                 const Point closestPointToApex = pointSet.getPointClosestTo(apex_);
 

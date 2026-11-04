@@ -136,7 +136,7 @@ class Line : public Object
     /// @endcode
     ///
     /// @return             Line origin
-    Point getOrigin() const;
+    const Point& getOrigin() const;
 
     /// @brief              Get line direction
     ///
@@ -145,7 +145,7 @@ class Line : public Object
     /// @endcode
     ///
     /// @return             Line direction
-    Vector2d getDirection() const;
+    const Vector2d& getDirection() const;
 
     /// @brief              Get distance to point
     ///

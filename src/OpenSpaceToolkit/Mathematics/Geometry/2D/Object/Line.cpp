@@ -122,7 +122,7 @@ bool Line::contains(const PointSet& aPointSet) const
     return true;
 }
 
-Point Line::getOrigin() const
+const Point& Line::getOrigin() const
 {
     if (!this->isDefined())
     {
@@ -132,7 +132,7 @@ Point Line::getOrigin() const
     return origin_;
 }
 
-Vector2d Line::getDirection() const
+const Vector2d& Line::getDirection() const
 {
     if (!this->isDefined())
     {

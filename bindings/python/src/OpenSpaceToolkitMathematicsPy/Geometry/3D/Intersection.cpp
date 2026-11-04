@@ -501,19 +501,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
             )doc"
         )
 
-        // .def("access_composite", &Intersection::accessComposite, return_value_policy<reference_existing_object>())
+        // .def("get_composite", &Intersection::getComposite, return_value_policy<reference_existing_object>())
         .def(
-            "access_composite",
-            &Intersection::accessComposite,
+            "get_composite",
+            [](const Intersection& anIntersection) -> const Composite&
+            {
+                return anIntersection.getComposite();
+            },
             return_value_policy::reference,
             R"doc(
-                Access the composite object in the intersection.
+                Get the composite object in the intersection.
 
                 Returns:
                     Composite: Reference to the composite object.
                 
                 Example:
-                    >>> composite = intersection.access_composite()
+                    >>> composite = intersection.get_composite()
             )doc"
         )
 

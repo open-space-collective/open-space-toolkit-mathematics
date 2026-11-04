@@ -429,9 +429,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IntersectionWith_E
         const Intersection intersection = pyramid.intersectionWith(ellipsoid, true, 8);
 
         EXPECT_FALSE(intersection.isEmpty());
-        EXPECT_TRUE(intersection.accessComposite().is<LineString>());
+        EXPECT_TRUE(intersection.getComposite().is<LineString>());
 
-        const LineString intersectionLineString = intersection.accessComposite().as<LineString>();
+        const LineString intersectionLineString = intersection.getComposite().as<LineString>();
 
         EXPECT_EQ(8, intersectionLineString.getPointCount());
 

@@ -115,7 +115,7 @@ bool EulerAngle::isNear(const EulerAngle& aEulerAngle, const Angle& anAngularTol
     return Quaternion::EulerAngle(*this).isNear(Quaternion::EulerAngle(aEulerAngle), anAngularTolerance);
 }
 
-Angle EulerAngle::getPhi() const
+const Angle& EulerAngle::getPhi() const
 {
     if (!this->isDefined())
     {
@@ -125,7 +125,7 @@ Angle EulerAngle::getPhi() const
     return phi_;
 }
 
-Angle EulerAngle::getTheta() const
+const Angle& EulerAngle::getTheta() const
 {
     if (!this->isDefined())
     {
@@ -135,7 +135,7 @@ Angle EulerAngle::getTheta() const
     return theta_;
 }
 
-Angle EulerAngle::getPsi() const
+const Angle& EulerAngle::getPsi() const
 {
     if (!this->isDefined())
     {

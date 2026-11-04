@@ -179,7 +179,7 @@ bool Plane::contains(const Segment& aSegment) const
     return this->contains(aSegment.getFirstPoint()) && this->contains(aSegment.getSecondPoint());
 }
 
-Point Plane::getPoint() const
+const Point& Plane::getPoint() const
 {
     if (!this->isDefined())
     {
@@ -189,7 +189,7 @@ Point Plane::getPoint() const
     return point_;
 }
 
-Vector3d Plane::getNormalVector() const
+const Vector3d& Plane::getNormalVector() const
 {
     if (!this->isDefined())
     {

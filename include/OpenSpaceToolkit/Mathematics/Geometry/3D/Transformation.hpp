@@ -182,7 +182,7 @@ class Transformation
     /// @endcode
     ///
     /// @return             The 4x4 homogeneous transformation matrix
-    Matrix4d getMatrix() const;
+    const Matrix4d& getMatrix() const;
 
     /// @brief              Get the inverse transformation
     ///

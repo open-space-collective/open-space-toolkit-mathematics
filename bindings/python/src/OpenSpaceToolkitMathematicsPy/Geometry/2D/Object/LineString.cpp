@@ -192,7 +192,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
             "__getitem__",
             +[](const LineString& aLineString, const size_t anIndex) -> const Point&
             {
-                return aLineString.accessPointAt(anIndex);
+                return aLineString.getPointAt(anIndex);
             },
             R"doc(
                 Access a point by index (Python indexing support).

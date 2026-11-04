@@ -206,7 +206,7 @@ Transformation::Type Transformation::getType() const
     return type_;
 }
 
-Matrix3d Transformation::getMatrix() const
+const Matrix3d& Transformation::getMatrix() const
 {
     if (!this->isDefined())
     {

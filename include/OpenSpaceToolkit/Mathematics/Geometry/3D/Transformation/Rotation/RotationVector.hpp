@@ -107,7 +107,7 @@ class RotationVector
     /// @endcode
     ///
     /// @return                 Rotation axis
-    Vector3d getAxis() const;
+    const Vector3d& getAxis() const;
 
     /// @brief                  Get rotation angle
     ///
@@ -116,7 +116,7 @@ class RotationVector
     /// @endcode
     ///
     /// @return                 Rotation angle
-    Angle getAngle() const;
+    const Angle& getAngle() const;
 
     /// @brief                  Convert Rotation Vector to string representation
     ///

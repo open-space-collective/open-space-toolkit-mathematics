@@ -132,15 +132,15 @@ class LineString : public Object
     /// @return             Point array
     const Array<Point>& getPointArray() const;
 
-    /// @brief              Access point at index
+    /// @brief              Get point at index
     ///
     /// @code{.cpp}
-    ///                     const Point& point = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).accessPointAt(0) ;
+    ///                     Point point = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).getPointAt(0) ;
     /// @endcode
     ///
     /// @brief              [in] anIndex A point index
-    /// @return             Reference to point at index
-    const Point& accessPointAt(const Index& anIndex) const;
+    /// @return             Const reference to point at index
+    const Point& getPointAt(const Index& anIndex) const;
 
     /// @brief              Get point count
     ///

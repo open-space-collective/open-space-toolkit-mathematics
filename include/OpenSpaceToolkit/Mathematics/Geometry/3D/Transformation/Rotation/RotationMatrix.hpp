@@ -167,15 +167,6 @@ class RotationMatrix
     /// @return                 True if Rotation Matrix is defined
     bool isDefined() const;
 
-    /// @brief                  Access underlying 3D Matrix
-    ///
-    /// @code{.cpp}
-    ///                         const Matrix3d& matrix = RotationMatrix::Unit().accessMatrix();
-    /// @endcode
-    ///
-    /// @return                 Matrix reference
-    const Matrix3d& accessMatrix() const;
-
     /// @brief                  Get row at index
     ///
     /// @code{.cpp}
@@ -202,8 +193,8 @@ class RotationMatrix
     ///                         Matrix3d matrix = RotationMatrix::Unit().getMatrix();
     /// @endcode
     ///
-    /// @return                 Matrix
-    Matrix3d getMatrix() const;
+    /// @return                 Const reference to matrix
+    const Matrix3d& getMatrix() const;
 
     /// @brief                  Calculate transposed Rotation Matrix
     ///

@@ -745,9 +745,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
         const Polygon referencePolygon = {{{0.5, 1.0}, {1.0, 1.0}, {1.0, 0.0}, {0.5, 0.0}}};
 
         EXPECT_FALSE(intersection.isEmpty());
-        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1);
-        EXPECT_TRUE(intersection.accessComposite().is<Polygon>());
-        EXPECT_TRUE(intersection.accessComposite().as<Polygon>() == referencePolygon);
+        EXPECT_TRUE(intersection.getComposite().getObjectCount() == 1);
+        EXPECT_TRUE(intersection.getComposite().is<Polygon>());
+        EXPECT_TRUE(intersection.getComposite().as<Polygon>() == referencePolygon);
     }
 
     // Check symmetry of intersection
@@ -772,8 +772,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
-        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1);
-        EXPECT_TRUE(intersection.accessComposite().is<Point>());
+        EXPECT_TRUE(intersection.getComposite().getObjectCount() == 1);
+        EXPECT_TRUE(intersection.getComposite().is<Point>());
     }
 
     // Polygon intersection between 1 simple convex polygon and 1 complex polygon with one hole
@@ -788,8 +788,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
         EXPECT_FALSE(intersection.isEmpty());
-        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1);
-        EXPECT_TRUE(intersection.accessComposite().is<Polygon>());
+        EXPECT_TRUE(intersection.getComposite().getObjectCount() == 1);
+        EXPECT_TRUE(intersection.getComposite().is<Polygon>());
     }
 
     // Composite intersection between 1 simple convex polygon and 1 complex polygon with one hole
@@ -804,7 +804,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
         EXPECT_FALSE(intersection.isEmpty());
-        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 2);
+        EXPECT_TRUE(intersection.getComposite().getObjectCount() == 2);
     }
 
     // Intersection between two non-intersecting simple convex polygons
@@ -817,7 +817,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
         EXPECT_TRUE(intersection.isEmpty());
-        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 0);
+        EXPECT_TRUE(intersection.getComposite().getObjectCount() == 0);
     }
 
     // Line string intersection between two intersecting convex polygons
@@ -829,8 +829,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
-        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1);
-        EXPECT_TRUE(intersection.accessComposite().is<LineString>());
+        EXPECT_TRUE(intersection.getComposite().getObjectCount() == 1);
+        EXPECT_TRUE(intersection.getComposite().is<LineString>());
     }
 
     // Polygon intersection between two intersecting non-convex polygons
@@ -867,8 +867,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
         EXPECT_FALSE(intersection.isEmpty());
-        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1);
-        EXPECT_TRUE(intersection.accessComposite().is<Polygon>());
+        EXPECT_TRUE(intersection.getComposite().getObjectCount() == 1);
+        EXPECT_TRUE(intersection.getComposite().is<Polygon>());
     }
 }
 
@@ -898,8 +898,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, DifferenceWith)
         Intersection difference = polygon_1.differenceWith(polygon_2);
 
         EXPECT_FALSE(difference.isEmpty());
-        EXPECT_TRUE(difference.accessComposite().getObjectCount() == 1);
-        EXPECT_TRUE(difference.accessComposite().is<Polygon>());
+        EXPECT_TRUE(difference.getComposite().getObjectCount() == 1);
+        EXPECT_TRUE(difference.getComposite().is<Polygon>());
     }
 
     // Polygon difference between intersecting complex polygons
@@ -937,12 +937,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, DifferenceWith)
         Intersection difference1minus2 = polygon_1.differenceWith(polygon_2);
 
         EXPECT_FALSE(difference1minus2.isEmpty());
-        EXPECT_TRUE(difference1minus2.accessComposite().getObjectCount() == 5);
+        EXPECT_TRUE(difference1minus2.getComposite().getObjectCount() == 5);
 
         Intersection difference2minus1 = polygon_2.differenceWith(polygon_1);
 
         EXPECT_FALSE(difference2minus1.isEmpty());
-        EXPECT_TRUE(difference2minus1.accessComposite().getObjectCount() == 6);
+        EXPECT_TRUE(difference2minus1.getComposite().getObjectCount() == 6);
     }
 }
 

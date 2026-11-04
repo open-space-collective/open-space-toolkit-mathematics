@@ -71,15 +71,15 @@ bool LineString::contains(const Point& aPoint) const
 
     if (pointCount == 1)
     {
-        return (this->accessPointAt(0) == aPoint);
+        return (this->getPointAt(0) == aPoint);
     }
 
     else
     {
         for (int index = 0; index < (pointCount - 1); index++)
         {
-            Point firstPoint = this->accessPointAt(index);
-            Point secondPoint = this->accessPointAt(index + 1);
+            Point firstPoint = this->getPointAt(index);
+            Point secondPoint = this->getPointAt(index + 1);
 
             object::Segment segment = object::Segment(firstPoint, secondPoint);
 
@@ -121,7 +121,7 @@ const Array<Point>& LineString::getPointArray() const
     return points_;
 }
 
-const Point& LineString::accessPointAt(const Index& anIndex) const
+const Point& LineString::getPointAt(const Index& anIndex) const
 {
     if (anIndex >= points_.getSize())
     {

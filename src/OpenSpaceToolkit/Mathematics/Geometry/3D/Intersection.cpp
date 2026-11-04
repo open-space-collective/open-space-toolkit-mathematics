@@ -55,7 +55,7 @@ Intersection Intersection::operator+(const Intersection& anIntersection) const
 
     intersection.composite_ = composite_ + anIntersection.composite_;
 
-    intersection.type_ = Intersection::TypeFromObjects(intersection.composite_.accessObjects());
+    intersection.type_ = Intersection::TypeFromObjects(intersection.composite_.getObjects());
 
     return intersection;
 }
@@ -64,7 +64,7 @@ Intersection& Intersection::operator+=(const Intersection& anIntersection)
 {
     composite_ += anIntersection.composite_;
 
-    type_ = Intersection::TypeFromObjects(composite_.accessObjects());
+    type_ = Intersection::TypeFromObjects(composite_.getObjects());
 
     return *this;
 }
@@ -94,9 +94,14 @@ bool Intersection::isComplex() const
     return type_ == Intersection::Type::Complex;
 }
 
-const Composite& Intersection::accessComposite() const
+const Composite& Intersection::getComposite() const&
 {
     return composite_;
+}
+
+Composite Intersection::getComposite() &&
+{
+    return this->getComposite();
 }
 
 Intersection::Type Intersection::getType() const

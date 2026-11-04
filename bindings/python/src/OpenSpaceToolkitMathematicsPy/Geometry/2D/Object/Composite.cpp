@@ -472,10 +472,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Composite(pybind11:
         )
 
         .def(
-            "access_object_at",
-            &Composite::accessObjectAt,
+            "get_object_at",
+            &Composite::getObjectAt,
             R"doc(
-                Access the object at a specific index in the 2D composite.
+                Get the object at a specific index in the 2D composite.
 
                 Args:
                     index (int): The index of the object to access.
@@ -488,7 +488,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Composite(pybind11:
 
                 Example:
                     >>> composite = Composite(Point(1.0, 2.0))
-                    >>> obj = composite.access_object_at(0)
+                    >>> obj = composite.get_object_at(0)
             )doc",
             return_value_policy::reference,
             arg("index")

@@ -100,7 +100,7 @@ bool Polygon::isNear(const Polygon& aPolygon, double aTolerance) const
     return true;
 }
 
-Polygon2d Polygon::getPolygon2d() const
+const Polygon2d& Polygon::getPolygon2d() const
 {
     if (!this->isDefined())
     {
@@ -110,7 +110,7 @@ Polygon2d Polygon::getPolygon2d() const
     return polygon_;
 }
 
-Point Polygon::getOrigin() const
+const Point& Polygon::getOrigin() const
 {
     if (!this->isDefined())
     {
@@ -120,7 +120,7 @@ Point Polygon::getOrigin() const
     return origin_;
 }
 
-Vector3d Polygon::getXAxis() const
+const Vector3d& Polygon::getXAxis() const
 {
     if (!this->isDefined())
     {
@@ -130,7 +130,7 @@ Vector3d Polygon::getXAxis() const
     return xAxis_;
 }
 
-Vector3d Polygon::getYAxis() const
+const Vector3d& Polygon::getYAxis() const
 {
     if (!this->isDefined())
     {

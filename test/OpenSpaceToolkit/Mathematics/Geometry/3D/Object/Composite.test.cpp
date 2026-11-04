@@ -701,7 +701,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, As)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjectAt)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjectAt)
 {
     using ostk::core::container::Array;
     using ostk::core::type::Unique;
@@ -724,9 +724,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjectAt)
 
         const Composite composite = Composite {pyramid};
 
-        EXPECT_TRUE(composite.accessObjectAt(0).is<Pyramid>());
+        EXPECT_TRUE(composite.getObjectAt(0).is<Pyramid>());
 
-        EXPECT_ANY_THROW(composite.accessObjectAt(1));
+        EXPECT_ANY_THROW(composite.getObjectAt(1));
     }
 
     {
@@ -752,18 +752,18 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjectAt)
 
         const Composite composite = Composite {std::move(objects)};
 
-        EXPECT_TRUE(composite.accessObjectAt(0).is<Pyramid>());
-        EXPECT_TRUE(composite.accessObjectAt(1).is<Cuboid>());
+        EXPECT_TRUE(composite.getObjectAt(0).is<Pyramid>());
+        EXPECT_TRUE(composite.getObjectAt(1).is<Cuboid>());
 
-        EXPECT_ANY_THROW(composite.accessObjectAt(2));
+        EXPECT_ANY_THROW(composite.getObjectAt(2));
     }
 
     {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).accessObjectAt(0));
+        EXPECT_ANY_THROW(Composite(Point::Undefined()).getObjectAt(0));
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjects)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjects)
 {
     using ostk::core::container::Array;
     using ostk::core::type::Unique;
@@ -786,7 +786,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjects)
 
         const Composite composite = Composite {pyramid};
 
-        EXPECT_EQ(1, composite.accessObjects().getSize());
+        EXPECT_EQ(1, composite.getObjects().getSize());
     }
 
     {
@@ -812,11 +812,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjects)
 
         const Composite composite = Composite {std::move(objects)};
 
-        EXPECT_EQ(2, composite.accessObjects().getSize());
+        EXPECT_EQ(2, composite.getObjects().getSize());
     }
 
     {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).accessObjects());
+        EXPECT_ANY_THROW(Composite(Point::Undefined()).getObjects());
     }
 }
 

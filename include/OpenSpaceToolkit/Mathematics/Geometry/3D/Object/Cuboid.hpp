@@ -263,7 +263,7 @@ class Cuboid : public Object
     /// @endcode
     ///
     /// @return             Cuboid center
-    Point getCenter() const;
+    const Point& getCenter() const;
 
     /// @brief              Get cuboid first axis
     ///
@@ -273,7 +273,7 @@ class Cuboid : public Object
     /// @endcode
     ///
     /// @return             Cuboid first axis
-    Vector3d getFirstAxis() const;
+    const Vector3d& getFirstAxis() const;
 
     /// @brief              Get cuboid second axis
     ///
@@ -283,7 +283,7 @@ class Cuboid : public Object
     /// @endcode
     ///
     /// @return             Cuboid second axis
-    Vector3d getSecondAxis() const;
+    const Vector3d& getSecondAxis() const;
 
     /// @brief              Get cuboid third axis
     ///
@@ -293,7 +293,7 @@ class Cuboid : public Object
     /// @endcode
     ///
     /// @return             Cuboid third axis
-    Vector3d getThirdAxis() const;
+    const Vector3d& getThirdAxis() const;
 
     /// @brief              Get cuboid first extent
     ///

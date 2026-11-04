@@ -272,24 +272,24 @@ class Composite : public Object
     /// @return             True if any objects in composite contains composite
     bool anyContains(const Composite& aComposite) const;
 
-    /// @brief              Access object at index
+    /// @brief              Get object at index
     ///
     /// @code{.cpp}
-    ///                     const Object& object = composite.accessObjectAt(0) ;
+    ///                     const Object& object = composite.getObjectAt(0) ;
     /// @endcode
     ///
     /// @param              [in] anIndex An object index
-    /// @return             Reference to object
-    const Object& accessObjectAt(const Index& anIndex) const;
+    /// @return             Const reference to object
+    const Object& getObjectAt(const Index& anIndex) const;
 
-    /// @brief              Access objects in composite
+    /// @brief              Get objects in composite
     ///
     /// @code{.cpp}
-    ///                     const Array<Unique<Object>>& objects = composite.accessObjects() ;
+    ///                     const Array<Unique<Object>>& objects = composite.getObjects() ;
     /// @endcode
     ///
-    /// @return             Reference to objects in composite
-    const Array<Unique<Object>>& accessObjects() const;
+    /// @return             Const reference to objects in composite
+    const Array<Unique<Object>>& getObjects() const;
 
     /// @brief              Get number of objects in composite
     ///

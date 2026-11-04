@@ -145,26 +145,6 @@ class Interval : public IntervalBase
     /// @return             True if interval contains another interval
     bool contains(const Interval& anInterval) const;
 
-    /// @brief              Get reference to lower bound
-    ///
-    /// @code
-    ///                     Interval<double> interval = Interval<double>::Closed(0.0, 1.0) ;
-    ///                     interval.accessLowerBound() ; // &0.0
-    /// @endcode
-    ///
-    /// @return             Reference to lower bound
-    const T& accessLowerBound() const;
-
-    /// @brief              Get reference to upper bound
-    ///
-    /// @code
-    ///                     Interval<double> interval = Interval<double>::Closed(0.0, 1.0) ;
-    ///                     interval.accessUpperBound() ; // &1.0
-    /// @endcode
-    ///
-    /// @return             Reference to upper bound
-    const T& accessUpperBound() const;
-
     /// @brief              Get interval type
     ///
     /// @code
@@ -182,8 +162,8 @@ class Interval : public IntervalBase
     ///                     interval.getLowerBound() ; // 0.0
     /// @endcode
     ///
-    /// @return             Lower bound
-    T getLowerBound() const;
+    /// @return             Const reference to lower bound
+    const T& getLowerBound() const;
 
     /// @brief              Get upper bound
     ///
@@ -192,8 +172,8 @@ class Interval : public IntervalBase
     ///                     interval.getUpperBound() ; // 1.0
     /// @endcode
     ///
-    /// @return             Upper bound
-    T getUpperBound() const;
+    /// @return             Const reference to upper bound
+    const T& getUpperBound() const;
 
     /// @brief              Get intersecting interval with another interval
     ///

@@ -557,7 +557,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, As)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AccessObjectAt)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, GetObjectAt)
 {
     using ostk::mathematics::geometry::d2::object::Composite;
     using ostk::mathematics::geometry::d2::object::Point;
@@ -568,8 +568,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AccessObjectAt)
 
         const Composite composite = Composite {polygon};
 
-        EXPECT_EQ(composite.accessObjectAt(0), polygon);
-        EXPECT_ANY_THROW(composite.accessObjectAt(1));
+        EXPECT_EQ(composite.getObjectAt(0), polygon);
+        EXPECT_ANY_THROW(composite.getObjectAt(1));
     }
 
     {
@@ -582,17 +582,17 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AccessObjectAt)
 
         composite += otherComposite;
 
-        EXPECT_EQ(composite.accessObjectAt(0), polygon);
-        EXPECT_EQ(composite.accessObjectAt(1), point);
-        EXPECT_ANY_THROW(composite.accessObjectAt(2));
+        EXPECT_EQ(composite.getObjectAt(0), polygon);
+        EXPECT_EQ(composite.getObjectAt(1), point);
+        EXPECT_ANY_THROW(composite.getObjectAt(2));
     }
 
     {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).accessObjectAt(0));
+        EXPECT_ANY_THROW(Composite(Point::Undefined()).getObjectAt(0));
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AccessObjects)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, GetObjects)
 {
     using ostk::core::container::Array;
     using ostk::core::type::Unique;
@@ -607,15 +607,15 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AccessObjects)
 
         const Composite composite = Composite {polygon};
 
-        EXPECT_EQ(1, composite.accessObjects().getSize());
+        EXPECT_EQ(1, composite.getObjects().getSize());
     }
 
     {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).accessObjects());
+        EXPECT_ANY_THROW(Composite(Point::Undefined()).getObjects());
     }
 
     {
-        EXPECT_EQ(Array<Unique<Object>>::Empty(), Composite::Empty().accessObjects());
+        EXPECT_EQ(Array<Unique<Object>>::Empty(), Composite::Empty().getObjects());
     }
 }
 

@@ -217,7 +217,7 @@ class Cone : public Object
     /// @endcode
     ///
     /// @return             Cone apex
-    Point getApex() const;
+    const Point& getApex() const;
 
     /// @brief              Get cone axis
     ///
@@ -227,7 +227,7 @@ class Cone : public Object
     /// @endcode
     ///
     /// @return             Cone axis
-    Vector3d getAxis() const;
+    const Vector3d& getAxis() const;
 
     /// @brief              Get cone angle
     ///
@@ -237,7 +237,7 @@ class Cone : public Object
     /// @endcode
     ///
     /// @return             Cone angle
-    Angle getAngle() const;
+    const Angle& getAngle() const;
 
     /// @brief              Get rays of lateral surface
     ///

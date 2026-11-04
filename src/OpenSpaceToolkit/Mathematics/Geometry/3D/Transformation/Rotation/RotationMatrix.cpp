@@ -211,16 +211,6 @@ bool RotationMatrix::isDefined() const
     return matrix_.isDefined();
 }
 
-const Matrix3d& RotationMatrix::accessMatrix() const
-{
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix");
-    }
-
-    return matrix_;
-}
-
 Vector3d RotationMatrix::getRowAt(const Index& aRowIndex) const
 {
     if (aRowIndex >= 3)
@@ -251,7 +241,7 @@ Vector3d RotationMatrix::getColumnAt(const Index& aColumnIndex) const
     return matrix_.block<3, 1>(0, aColumnIndex);
 }
 
-Matrix3d RotationMatrix::getMatrix() const
+const Matrix3d& RotationMatrix::getMatrix() const
 {
     if (!this->isDefined())
     {

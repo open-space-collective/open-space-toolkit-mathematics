@@ -175,7 +175,7 @@ class Transformation
     /// @endcode
     ///
     /// @return             The 3x3 homogeneous transformation matrix
-    Matrix3d getMatrix() const;
+    const Matrix3d& getMatrix() const;
 
     /// @brief              Get the inverse transformation
     ///

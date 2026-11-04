@@ -149,7 +149,7 @@ bool Segment::contains(const Point& aPoint) const
 
 // }
 
-Point Segment::getFirstPoint() const
+const Point& Segment::getFirstPoint() const
 {
     if (!this->isDefined())
     {
@@ -159,7 +159,7 @@ Point Segment::getFirstPoint() const
     return firstPoint_;
 }
 
-Point Segment::getSecondPoint() const
+const Point& Segment::getSecondPoint() const
 {
     if (!this->isDefined())
     {
