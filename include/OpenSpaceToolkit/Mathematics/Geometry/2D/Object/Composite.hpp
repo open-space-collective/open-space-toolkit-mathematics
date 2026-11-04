@@ -146,7 +146,7 @@ class Composite : public Object
     ///                     Composite(...).isDefined() ;
     /// @endcode
     ///
-    /// @return             True if composite is defined
+    /// @return             True if all objects of the composite are defined
     virtual bool isDefined() const override;
 
     /// @brief              Check if composite is empty
@@ -365,15 +365,6 @@ class Composite : public Object
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
-    /// @brief              Constructs an undefined composite
-    ///
-    /// @code
-    ///                     Composite composite = Composite::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined composite
-    static Composite Undefined();
-
     /// @brief              Constructs an empty composite
     ///
     /// @code
@@ -384,7 +375,6 @@ class Composite : public Object
     static Composite Empty();
 
    private:
-    bool defined_;
     Array<Unique<Object>> objects_;
 };
 

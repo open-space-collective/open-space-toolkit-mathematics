@@ -339,8 +339,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, IntersectionWith_Plan
     {
         const Intersection intersection = aLine.intersectionWith(aPlane);
 
-        EXPECT_TRUE(intersection.isDefined());
-
         ASSERT_TRUE(intersection.accessComposite().is<Line>());
 
         const Line line = intersection.accessComposite().as<Line>();
@@ -353,8 +351,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, IntersectionWith_Plan
     {
         const Intersection intersection = aLine.intersectionWith(aPlane);
 
-        EXPECT_TRUE(intersection.isDefined());
-
         ASSERT_TRUE(intersection.accessComposite().is<Point>());
 
         const Point point = intersection.accessComposite().as<Point>();
@@ -366,7 +362,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, IntersectionWith_Plan
     {
         const Intersection intersection = aLine.intersectionWith(aPlane);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_TRUE(intersection.isEmpty());
     };
 

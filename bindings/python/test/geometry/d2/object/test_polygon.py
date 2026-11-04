@@ -329,7 +329,6 @@ class TestPolygon:
 
         assert intersection is not None
         assert isinstance(intersection, Intersection)
-        assert intersection.is_defined()
         assert intersection.is_polygon()
 
         assert intersection.as_polygon() == square_1
@@ -338,12 +337,15 @@ class TestPolygon:
 
         assert intersection_2 is not None
         assert isinstance(intersection_2, Intersection)
-        assert intersection_2.is_defined()
         assert intersection_2.is_line_string()
         assert intersection_2.as_line_string() == LineString(
             [Point(0.5, 0.5), Point(0.5, -0.5)]
         )
         assert intersection_2.get_type() == Intersection.Type.LineString
+
+        assert not hasattr(Intersection, "undefined")
+        assert not hasattr(Intersection, "is_defined")
+        assert not hasattr(Intersection.Type, "Undefined")
 
     def test_difference_with(
         self,
@@ -354,14 +356,12 @@ class TestPolygon:
 
         assert difference is not None
         assert isinstance(difference, Intersection)
-        assert difference.is_defined()
         assert difference.is_empty()
 
         difference_2: Intersection = square_1.difference_with(square_3)
 
         assert difference_2 is not None
         assert isinstance(difference_2, Intersection)
-        assert difference_2.is_defined()
         assert difference_2.is_polygon()
         assert difference_2.as_polygon() == Polygon(
             [Point(0.0, 0.5), Point(-0.5, 0.5), Point(-0.5, -0.5), Point(0.0, -0.5)]

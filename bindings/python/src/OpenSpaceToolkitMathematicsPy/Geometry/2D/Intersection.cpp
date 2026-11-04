@@ -33,20 +33,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
         .def("__repr__", &(shiftToString<Intersection>))
 
         .def(
-            "is_defined",
-            &Intersection::isDefined,
-            R"doc(
-                Check if the intersection is defined.
-
-                Returns:
-                    bool: True if the intersection is defined, False otherwise.
-
-                Example:
-                    >>> intersection = Intersection.point(Point(1.0, 2.0))
-                    >>> intersection.is_defined()  # True
-            )doc"
-        )
-        .def(
             "is_empty",
             &Intersection::isEmpty,
             R"doc(
@@ -385,20 +371,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
 
         // Define static methods
         .def_static(
-            "undefined",
-            &Intersection::Undefined,
-            R"doc(
-                Create an undefined intersection.
-
-                Returns:
-                    Intersection: An undefined intersection.
-
-                Example:
-                    >>> undefined_intersection = Intersection.undefined()
-                    >>> undefined_intersection.is_defined()  # False
-            )doc"
-        )
-        .def_static(
             "empty",
             &Intersection::Empty,
             R"doc(
@@ -508,7 +480,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
     // Define Intersection types
     enum_<Intersection::Type>(intersection, "Type")
 
-        .value("Undefined", Intersection::Type::Undefined)
         .value("Empty", Intersection::Type::Empty)
         .value("Point", Intersection::Type::Point)
         .value("PointSet", Intersection::Type::PointSet)

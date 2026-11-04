@@ -69,20 +69,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
         .def("__repr__", &(shiftToString<Intersection>))
 
         .def(
-            "is_defined",
-            &Intersection::isDefined,
-            R"doc(
-                Check if the intersection is defined.
-
-                Returns:
-                    bool: True if the intersection is defined.
-                
-                Example:
-                    >>> intersection = Intersection.point(Point(1.0, 2.0, 3.0))
-                    >>> intersection.is_defined()  # True
-            )doc"
-        )
-        .def(
             "is_empty",
             &Intersection::isEmpty,
             R"doc(
@@ -548,20 +534,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
 
         // Define static methods
         .def_static(
-            "undefined",
-            &Intersection::Undefined,
-            R"doc(
-                Create an undefined intersection.
-
-                Returns:
-                    Intersection: An undefined intersection.
-                
-                Example:
-                    >>> intersection = Intersection.undefined()
-                    >>> intersection.is_defined()  # False
-            )doc"
-        )
-        .def_static(
             "empty",
             &Intersection::Empty,
             R"doc(
@@ -590,7 +562,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                 
                 Example:
                     >>> intersection = Intersection.point(Point(1.0, 2.0, 3.0))
-                    >>> intersection.is_defined()  # True
+                    >>> intersection.is_point()  # True
             )doc"
         )
         .def_static(
@@ -608,7 +580,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                 
                 Example:
                     >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)]))
-                    >>> intersection.is_defined()  # True
+                    >>> intersection.is_point_set()  # True
             )doc"
         )
         .def_static(
@@ -626,7 +598,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                 
                 Example:
                     >>> intersection = Intersection.line(Line(Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)))
-                    >>> intersection.is_defined()  # True
+                    >>> intersection.is_line()  # True
             )doc"
         )
         .def_static(
@@ -644,7 +616,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                 
                 Example:
                     >>> intersection = Intersection.ray(Ray(Point(1.0, 2.0, 3.0), Vector(3.0, 4.0, 5.0)))
-                    >>> intersection.is_defined()  # True
+                    >>> intersection.is_ray()  # True
             )doc"
         )
         .def_static(
@@ -662,7 +634,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                 
                 Example:
                     >>> intersection = Intersection.segment(Segment(Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)))
-                    >>> intersection.is_defined()  # True
+                    >>> intersection.is_segment()  # True
             )doc"
         )
 
@@ -689,7 +661,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
     // Define Intersection types
     enum_<Intersection::Type>(intersection, "Type")
 
-        .value("Undefined", Intersection::Type::Undefined)
         .value("Empty", Intersection::Type::Empty)
         .value("Point", Intersection::Type::Point)
         .value("PointSet", Intersection::Type::PointSet)
