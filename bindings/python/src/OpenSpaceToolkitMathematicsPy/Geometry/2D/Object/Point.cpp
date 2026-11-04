@@ -16,9 +16,9 @@ void set_point_2_array(const Array<Array<Point>>& anArray)
     (void)anArray;
 }
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d2::Object;
     using ostk::mathematics::geometry::d2::object::Point;
@@ -44,13 +44,48 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
             arg("y")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Point& self, const Point& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Point& self, const Point& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self - self)
+        .def(
+            "__sub__",
+            [](const Point& self, const Point& other)
+            {
+                return self - other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self + Vector2d())
-        .def(self - Vector2d())
+        .def(
+            "__add__",
+            [](const Point& self, const Vector2d& other)
+            {
+                return self + other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__sub__",
+            [](const Point& self, const Vector2d& other)
+            {
+                return self - other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Point>))
         .def(
@@ -110,7 +145,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
                     >>> point = Point(1.0, 2.0)
                     >>> point.x()  # 1.0
             )doc",
-            return_value_policy::reference_internal
+            rv_policy::reference_internal
         )
         .def(
             "y",
@@ -125,7 +160,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
                     >>> point = Point(1.0, 2.0)
                     >>> point.y()  # 2.0
             )doc",
-            return_value_policy::reference_internal
+            rv_policy::reference_internal
         )
         .def(
             "as_vector",

@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ray(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ray(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
@@ -36,8 +36,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ray(pybind11::modul
             arg("direction")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Ray& self, const Ray& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Ray& self, const Ray& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Ray>))
         .def("__repr__", &(shiftToString<Ray>))

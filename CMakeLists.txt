@@ -307,7 +307,7 @@ ENDIF ()
 
 ### Open Space Toolkit ▸ Core [5.x.y]
 
-FIND_PACKAGE ("OpenSpaceToolkitCore" "5" REQUIRED)
+FIND_PACKAGE ("OpenSpaceToolkitCore" "6" REQUIRED)
 
 IF (NOT OpenSpaceToolkitCore_FOUND)
 

@@ -2,18 +2,16 @@
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticSpline(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticSpline(nanobind::module_& aModule)
 {
-    using namespace pybind11;
-
-    using ostk::core::type::Shared;
+    using namespace nanobind;
 
     using ostk::mathematics::curvefitting::Interpolator;
     using ostk::mathematics::object::VectorXd;
 
     using ostk::mathematics::curvefitting::interpolator::QuinticSpline;
 
-    class_<QuinticSpline, Interpolator, Shared<QuinticSpline>>(aModule, "QuinticSpline")
+    class_<QuinticSpline, Interpolator>(aModule, "QuinticSpline")
 
         .def(
             init<const VectorXd&, const VectorXd&>(),

@@ -2,18 +2,16 @@
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuadraticSpline(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuadraticSpline(nanobind::module_& aModule)
 {
-    using namespace pybind11;
-
-    using ostk::core::type::Shared;
+    using namespace nanobind;
 
     using ostk::mathematics::curvefitting::Interpolator;
     using ostk::mathematics::object::VectorXd;
 
     using ostk::mathematics::curvefitting::interpolator::QuadraticSpline;
 
-    class_<QuadraticSpline, Interpolator, Shared<QuadraticSpline>>(aModule, "QuadraticSpline")
+    class_<QuadraticSpline, Interpolator>(aModule, "QuadraticSpline")
 
         .def(
             init<const VectorXd&, const VectorXd&>(),

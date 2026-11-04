@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
 
@@ -29,8 +29,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
             arg("points")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const LineString& self, const LineString& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const LineString& self, const LineString& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<LineString>))
         .def("__repr__", &(shiftToString<LineString>))
@@ -211,14 +225,16 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
                     >>> line_string = LineString(points)
                     >>> first_point = line_string[0]  # Point(0.0, 0.0)
             )doc",
-            return_value_policy::reference_internal,
+            rv_policy::reference_internal,
             arg("index")
         )
         .def(
             "__iter__",
             [](const LineString& aLineString)
             {
-                return make_iterator(aLineString.begin(), aLineString.end());
+                return make_iterator<rv_policy::reference_internal>(
+                    type<LineString>(), "LineString2dIterator", aLineString.begin(), aLineString.end()
+                );
             },
             R"doc(
                 Make the line string iterable (Python for loop support).

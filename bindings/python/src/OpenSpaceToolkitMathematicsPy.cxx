@@ -1,20 +1,21 @@
 /// Apache License 2.0
 
 #include <OpenSpaceToolkitMathematicsPy/Utility/ArrayCasting.hpp>
+#include <OpenSpaceToolkitMathematicsPy/Utility/EigenCasting.hpp>
+#include <OpenSpaceToolkitMathematicsPy/Utility/Hash.hpp>
 #include <OpenSpaceToolkitMathematicsPy/Utility/ShiftToString.hpp>
-#include <pybind11/eigen.h>
-#include <pybind11/functional.h>
-#include <pybind11/numpy.h>
-#include <pybind11/operators.h>
-#include <pybind11/pybind11.h>
-#include <pybind11/stl.h>
+#include <nanobind/eigen/dense.h>
+#include <nanobind/make_iterator.h>
+#include <nanobind/nanobind.h>
+#include <nanobind/stl/function.h>
+#include <nanobind/trampoline.h>
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Object.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Solver.cpp>
 
-PYBIND11_MODULE(OpenSpaceToolkitMathematicsPy, m)
+NB_MODULE(OpenSpaceToolkitMathematicsPy, m)
 {
     // Add optional docstring for package OpenSpaceToolkitMathematicsPy
     m.doc() = "Geometry, curve fitting, optimization for OpenSpaceToolkit";
@@ -34,4 +35,7 @@ PYBIND11_MODULE(OpenSpaceToolkitMathematicsPy, m)
     OpenSpaceToolkitMathematicsPy_Geometry(m);
     OpenSpaceToolkitMathematicsPy_CurveFitting(m);
     OpenSpaceToolkitMathematicsPy_Solver(m);
+
+    // Restore pybind11's (and Python's) rule: a class that defines __eq__ without __hash__ is unhashable
+    disableHashOnEquality(m);
 }

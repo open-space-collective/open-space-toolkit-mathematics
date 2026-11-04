@@ -2,10 +2,11 @@
 
 #include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Object_Interval(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
+    using ostk::core::container::Array;
     using ostk::mathematics::object::Interval;
 
     class_<Interval<double>> real_interval(aModule, "RealInterval");
@@ -32,8 +33,22 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
 
         // Define methods
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Interval<double>& self, const Interval<double>& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Interval<double>& self, const Interval<double>& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Interval<double>>))
         .def("__repr__", &(shiftToString<Interval<double>>))
@@ -370,13 +385,15 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
         )
         .def_static(
             "get_gaps",
-            &Interval<double>::GetGaps,
+            [](const Array<Interval<double>>& anIntervalArray) -> Array<Interval<double>>
+            {
+                return Interval<double>::GetGaps(anIntervalArray);
+            },
             R"doc(
                 Find gaps between intervals in a list.
 
                 Args:
                     intervals (list): List of intervals to find gaps between.
-                    bound (RealInterval, optional): Bounding interval to consider gaps within. Defaults to undefined.
 
                 Returns:
                     list: List of intervals representing gaps.
@@ -385,8 +402,31 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
                     >>> intervals = [RealInterval.closed(0.0, 1.0), RealInterval.closed(2.0, 3.0)]
                     >>> gaps = RealInterval.get_gaps(intervals)  # Gap from 1.0 to 2.0
             )doc",
+            arg("intervals")
+        )
+        .def_static(
+            "get_gaps",
+            [](const Array<Interval<double>>& anIntervalArray,
+               const Interval<double>& aBound) -> Array<Interval<double>>
+            {
+                return Interval<double>::GetGaps(anIntervalArray, aBound);
+            },
+            R"doc(
+                Find gaps between intervals in a list, within a bounding interval.
+
+                Args:
+                    intervals (list): List of intervals to find gaps between.
+                    bound (RealInterval): Bounding interval to consider gaps within.
+
+                Returns:
+                    list: List of intervals representing gaps.
+
+                Example:
+                    >>> intervals = [RealInterval.closed(0.0, 1.0), RealInterval.closed(2.0, 3.0)]
+                    >>> gaps = RealInterval.get_gaps(intervals, RealInterval.closed(-1.0, 4.0))
+            )doc",
             arg("intervals"),
-            arg_v("bound", Interval<double>::Undefined(), "RealInterval.undefined()")
+            arg("bound")
         )
         .def_static(
             "logical_or",

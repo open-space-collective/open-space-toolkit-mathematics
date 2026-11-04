@@ -4,9 +4,9 @@
 
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformation/Rotation.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::Transformation;
@@ -43,8 +43,23 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
     );
 
     // Define methods
-    transformation.def(self == self)
-        .def(self != self)
+    transformation
+        .def(
+            "__eq__",
+            [](const Transformation& self, const Transformation& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Transformation& self, const Transformation& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Transformation>))
         .def("__repr__", &(shiftToString<Transformation>))

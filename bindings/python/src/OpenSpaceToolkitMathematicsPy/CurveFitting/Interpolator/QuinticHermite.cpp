@@ -2,18 +2,16 @@
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermite(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermite(nanobind::module_& aModule)
 {
-    using namespace pybind11;
-
-    using ostk::core::type::Shared;
+    using namespace nanobind;
 
     using ostk::mathematics::curvefitting::Interpolator;
     using ostk::mathematics::object::VectorXd;
 
     using ostk::mathematics::curvefitting::interpolator::QuinticHermite;
 
-    class_<QuinticHermite, Interpolator, Shared<QuinticHermite>>(aModule, "QuinticHermite")
+    class_<QuinticHermite, Interpolator>(aModule, "QuinticHermite")
 
         .def(
             init<const VectorXd&, const VectorXd&, const VectorXd&, const VectorXd&>(),

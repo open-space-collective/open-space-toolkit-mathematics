@@ -966,7 +966,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, UnionWith)
 
             ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 1);
 
-            const Polygon unionPolygon = unionMultiPolygon.getPolygons().accessFirst();
+            const Polygon unionPolygon = unionMultiPolygon.getPolygons().getFirst();
 
             ASSERT_TRUE(unionPolygon == polygon);
         }
@@ -982,7 +982,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, UnionWith)
 
             ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 1);
 
-            const Polygon unionPolygon = unionMultiPolygon.getPolygons().accessFirst();
+            const Polygon unionPolygon = unionMultiPolygon.getPolygons().getFirst();
 
             ASSERT_TRUE(unionPolygon == secondPolygon);
         }
@@ -998,7 +998,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, UnionWith)
 
             ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 1);
 
-            const Polygon unionPolygon = unionMultiPolygon.getPolygons().accessFirst();
+            const Polygon unionPolygon = unionMultiPolygon.getPolygons().getFirst();
 
             const Polygon referencePolygon = {
                 {{0.5, 1.0}, {0.5, 1.5}, {1.5, 1.5}, {1.5, 0.5}, {1.0, 0.5}, {1.0, 0.0}, {0.0, 0.0}, {0.0, 1.0}}
@@ -1018,7 +1018,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, UnionWith)
 
             ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 1);
 
-            const Polygon unionPolygon = unionMultiPolygon.getPolygons().accessFirst();
+            const Polygon unionPolygon = unionMultiPolygon.getPolygons().getFirst();
 
             const Polygon referencePolygon = {{{0.0, 0.0}, {0.0, 1.0}, {2.0, 1.0}, {2.0, 0.0}}};
 
@@ -1036,8 +1036,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, UnionWith)
 
             ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 2);
 
-            ASSERT_TRUE(unionMultiPolygon.getPolygons().accessFirst() == firstPolygon);
-            ASSERT_TRUE(unionMultiPolygon.getPolygons().accessLast() == secondPolygon);
+            ASSERT_TRUE(unionMultiPolygon.getPolygons().getFirst() == firstPolygon);
+            ASSERT_TRUE(unionMultiPolygon.getPolygons().getLast() == secondPolygon);
         }
 
         // Union disjoint
@@ -1051,8 +1051,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, UnionWith)
 
             ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 2);
 
-            ASSERT_TRUE(unionMultiPolygon.getPolygons().accessFirst() == firstPolygon);
-            ASSERT_TRUE(unionMultiPolygon.getPolygons().accessLast() == secondPolygon);
+            ASSERT_TRUE(unionMultiPolygon.getPolygons().getFirst() == firstPolygon);
+            ASSERT_TRUE(unionMultiPolygon.getPolygons().getLast() == secondPolygon);
         }
     }
 

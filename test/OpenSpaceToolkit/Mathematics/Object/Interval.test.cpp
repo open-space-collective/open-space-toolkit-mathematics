@@ -1876,13 +1876,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(0.5);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.0, 0.5, 1.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.0, 0.5, 1.0}), 1e-15));
     }
 
     {
@@ -1890,13 +1884,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(-0.5);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({1.0, 0.5, 0.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({1.0, 0.5, 0.0}), 1e-15));
     }
 
     {
@@ -1904,13 +1892,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(2.0);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.0, 1.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.0, 1.0}), 1e-15));
     }
 
     {
@@ -1918,13 +1900,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(-2.0);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({1.0, 0.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({1.0, 0.0}), 1e-15));
     }
 
     // Open
@@ -1934,13 +1910,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(0.5);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.5}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.5}), 1e-15));
     }
 
     {
@@ -1948,13 +1918,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(-0.5);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.5}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.5}), 1e-15));
     }
 
     {
@@ -1980,13 +1944,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(0.5);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.5, 1.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.5, 1.0}), 1e-15));
     }
 
     {
@@ -1994,13 +1952,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(-0.5);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({1.0, 0.5}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({1.0, 0.5}), 1e-15));
     }
 
     {
@@ -2008,13 +1960,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(2.0);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({1.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({1.0}), 1e-15));
     }
 
     {
@@ -2022,13 +1968,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(-2.0);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({1.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({1.0}), 1e-15));
     }
 
     // Half-Open Right
@@ -2038,13 +1978,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(0.5);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.0, 0.5}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.0, 0.5}), 1e-15));
     }
 
     {
@@ -2052,13 +1986,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(-0.5);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.5, 0.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.5, 0.0}), 1e-15));
     }
 
     {
@@ -2066,13 +1994,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(2.0);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.0}), 1e-15));
     }
 
     {
@@ -2080,13 +2002,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
 
         const Array<double> array = interval.generateArrayWithStep(-2.0);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.0}), 1e-15));
     }
 
     {
@@ -2108,13 +2024,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithSize)
 
         const Array<double> array = interval.generateArrayWithSize(3);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.0, 0.5, 1.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.0, 0.5, 1.0}), 1e-15));
     }
 
     {
@@ -2122,13 +2032,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithSize)
 
         const Array<double> array = interval.generateArrayWithSize(5);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.0, 0.25, 0.5, 0.75, 1.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.0, 0.25, 0.5, 0.75, 1.0}), 1e-15));
     }
 
     {
@@ -2136,13 +2040,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithSize)
 
         const Array<double> array = interval.generateArrayWithSize(2);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.0, 1.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.0, 1.0}), 1e-15));
     }
 
     // Open
@@ -2152,13 +2050,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithSize)
 
         const Array<double> array = interval.generateArrayWithSize(3);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.25, 0.5, 0.75}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.25, 0.5, 0.75}), 1e-15));
     }
 
     {
@@ -2166,13 +2058,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithSize)
 
         const Array<double> array = interval.generateArrayWithSize(4);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.2, 0.4, 0.6, 0.8}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.2, 0.4, 0.6, 0.8}), 1e-15));
     }
 
     // Half-Open Left
@@ -2182,13 +2068,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithSize)
 
         const Array<double> array = interval.generateArrayWithSize(4);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.25, 0.5, 0.75, 1.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.25, 0.5, 0.75, 1.0}), 1e-15));
     }
 
     {
@@ -2196,13 +2076,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithSize)
 
         const Array<double> array = interval.generateArrayWithSize(5);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.2, 0.4, 0.6, 0.8, 1.0}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.2, 0.4, 0.6, 0.8, 1.0}), 1e-15));
     }
 
     // Half-Open Right
@@ -2212,13 +2086,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithSize)
 
         const Array<double> array = interval.generateArrayWithSize(4);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.0, 0.25, 0.5, 0.75}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.0, 0.25, 0.5, 0.75}), 1e-15));
     }
 
     {
@@ -2226,13 +2094,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithSize)
 
         const Array<double> array = interval.generateArrayWithSize(5);
 
-        EXPECT_TRUE(array.isNear(
-            Array<double>({0.0, 0.2, 0.4, 0.6, 0.8}),
-            [](const double& aFirstValue, const double& aSecondValue)
-            {
-                return std::abs(aFirstValue - aSecondValue) <= 1e-15;
-            }
-        ));
+        EXPECT_TRUE(array.isNear(Array<double>({0.0, 0.2, 0.4, 0.6, 0.8}), 1e-15));
     }
 
     {

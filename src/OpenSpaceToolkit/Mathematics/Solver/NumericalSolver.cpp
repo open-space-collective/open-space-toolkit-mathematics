@@ -237,7 +237,7 @@ Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
     }
 
     // Ensure integration starts in the correct direction with the initial time step guess
-    const double adjustedTimeStep = getSignedTimeStep(aTimeArray.accessLast());
+    const double adjustedTimeStep = getSignedTimeStep(aTimeArray.getLast());
 
     // Add start time to the start of array
     Array<double> durationArray(aTimeArray.begin(), aTimeArray.end());

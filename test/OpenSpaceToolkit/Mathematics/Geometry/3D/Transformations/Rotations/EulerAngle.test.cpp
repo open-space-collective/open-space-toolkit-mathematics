@@ -393,17 +393,17 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Quaternion quaternion = Quaternion::XYZS(
-                                              referenceDataRow[0].accessReal(),
-                                              referenceDataRow[1].accessReal(),
-                                              referenceDataRow[2].accessReal(),
-                                              referenceDataRow[3].accessReal()
+                                              referenceDataRow[0].getReal(),
+                                              referenceDataRow[1].getReal(),
+                                              referenceDataRow[2].getReal(),
+                                              referenceDataRow[3].getReal()
             )
                                               .normalize();
 
             const EulerAngle referenceEulerAngle = EulerAngle::ZYX(
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal()),
-                Angle::Radians(referenceDataRow[6].accessReal())
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal()),
+                Angle::Radians(referenceDataRow[6].getReal())
             );
 
             const EulerAngle eulerAngle = EulerAngle::Quaternion(quaternion, EulerAngle::AxisSequence::XYZ);
@@ -432,17 +432,17 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Quaternion quaternion = Quaternion::XYZS(
-                                              referenceDataRow[0].accessReal(),
-                                              referenceDataRow[1].accessReal(),
-                                              referenceDataRow[2].accessReal(),
-                                              referenceDataRow[3].accessReal()
+                                              referenceDataRow[0].getReal(),
+                                              referenceDataRow[1].getReal(),
+                                              referenceDataRow[2].getReal(),
+                                              referenceDataRow[3].getReal()
             )
                                               .normalize();
 
             const EulerAngle referenceEulerAngle = EulerAngle::ZXY(
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal()),
-                Angle::Radians(referenceDataRow[6].accessReal())
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal()),
+                Angle::Radians(referenceDataRow[6].getReal())
             );
 
             const EulerAngle eulerAngle = EulerAngle::Quaternion(quaternion, EulerAngle::AxisSequence::ZXY);
@@ -471,17 +471,17 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Quaternion quaternion = Quaternion::XYZS(
-                                              referenceDataRow[0].accessReal(),
-                                              referenceDataRow[1].accessReal(),
-                                              referenceDataRow[2].accessReal(),
-                                              referenceDataRow[3].accessReal()
+                                              referenceDataRow[0].getReal(),
+                                              referenceDataRow[1].getReal(),
+                                              referenceDataRow[2].getReal(),
+                                              referenceDataRow[3].getReal()
             )
                                               .normalize();
 
             const EulerAngle referenceEulerAngle = EulerAngle::ZYX(
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal()),
-                Angle::Radians(referenceDataRow[6].accessReal())
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal()),
+                Angle::Radians(referenceDataRow[6].getReal())
             );
 
             const EulerAngle eulerAngle = EulerAngle::Quaternion(quaternion, EulerAngle::AxisSequence::ZYX);
@@ -524,16 +524,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const RotationVector rotationVector = RotationVector(
-                Vector3d(
-                    referenceDataRow[0].accessReal(), referenceDataRow[1].accessReal(), referenceDataRow[2].accessReal()
-                ),
+                Vector3d(referenceDataRow[0].getReal(), referenceDataRow[1].getReal(), referenceDataRow[2].getReal()),
                 Angle::Unit::Radian
             );
 
             const EulerAngle referenceEulerAngle = EulerAngle::XYZ(
-                Angle::Radians(referenceDataRow[3].accessReal()),
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal())
+                Angle::Radians(referenceDataRow[3].getReal()),
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal())
             );
 
             const EulerAngle eulerAngle = EulerAngle::RotationVector(rotationVector, EulerAngle::AxisSequence::XYZ);
@@ -562,16 +560,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const RotationVector rotationVector = RotationVector(
-                Vector3d(
-                    referenceDataRow[0].accessReal(), referenceDataRow[1].accessReal(), referenceDataRow[2].accessReal()
-                ),
+                Vector3d(referenceDataRow[0].getReal(), referenceDataRow[1].getReal(), referenceDataRow[2].getReal()),
                 Angle::Unit::Radian
             );
 
             const EulerAngle referenceEulerAngle = EulerAngle::ZXY(
-                Angle::Radians(referenceDataRow[3].accessReal()),
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal())
+                Angle::Radians(referenceDataRow[3].getReal()),
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal())
             );
 
             const EulerAngle eulerAngle = EulerAngle::RotationVector(rotationVector, EulerAngle::AxisSequence::ZXY);
@@ -600,16 +596,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const RotationVector rotationVector = RotationVector(
-                Vector3d(
-                    referenceDataRow[0].accessReal(), referenceDataRow[1].accessReal(), referenceDataRow[2].accessReal()
-                ),
+                Vector3d(referenceDataRow[0].getReal(), referenceDataRow[1].getReal(), referenceDataRow[2].getReal()),
                 Angle::Unit::Radian
             );
 
             const EulerAngle referenceEulerAngle = EulerAngle::ZYX(
-                Angle::Radians(referenceDataRow[3].accessReal()),
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal())
+                Angle::Radians(referenceDataRow[3].getReal()),
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal())
             );
 
             const EulerAngle eulerAngle = EulerAngle::RotationVector(rotationVector, EulerAngle::AxisSequence::ZYX);
@@ -652,15 +646,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Vector3d x =
-                Vector3d(
-                    referenceDataRow[0].accessReal(), referenceDataRow[1].accessReal(), referenceDataRow[2].accessReal()
-                )
+                Vector3d(referenceDataRow[0].getReal(), referenceDataRow[1].getReal(), referenceDataRow[2].getReal())
                     .normalized();
 
             Vector3d y =
-                Vector3d(
-                    referenceDataRow[3].accessReal(), referenceDataRow[4].accessReal(), referenceDataRow[5].accessReal()
-                )
+                Vector3d(referenceDataRow[3].getReal(), referenceDataRow[4].getReal(), referenceDataRow[5].getReal())
                     .normalized();
 
             const Vector3d z = x.cross(y);
@@ -671,9 +661,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
             const RotationMatrix rotationMatrix = RotationMatrix::Rows(x, y, z);
 
             const EulerAngle referenceEulerAngle = EulerAngle::XYZ(
-                Angle::Radians(referenceDataRow[9].accessReal()),
-                Angle::Radians(referenceDataRow[10].accessReal()),
-                Angle::Radians(referenceDataRow[11].accessReal())
+                Angle::Radians(referenceDataRow[9].getReal()),
+                Angle::Radians(referenceDataRow[10].getReal()),
+                Angle::Radians(referenceDataRow[11].getReal())
             );
 
             const EulerAngle eulerAngle = EulerAngle::RotationMatrix(rotationMatrix, EulerAngle::AxisSequence::XYZ);
@@ -702,15 +692,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Vector3d x =
-                Vector3d(
-                    referenceDataRow[0].accessReal(), referenceDataRow[1].accessReal(), referenceDataRow[2].accessReal()
-                )
+                Vector3d(referenceDataRow[0].getReal(), referenceDataRow[1].getReal(), referenceDataRow[2].getReal())
                     .normalized();
 
             Vector3d y =
-                Vector3d(
-                    referenceDataRow[3].accessReal(), referenceDataRow[4].accessReal(), referenceDataRow[5].accessReal()
-                )
+                Vector3d(referenceDataRow[3].getReal(), referenceDataRow[4].getReal(), referenceDataRow[5].getReal())
                     .normalized();
 
             const Vector3d z = x.cross(y);
@@ -721,9 +707,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
             const RotationMatrix rotationMatrix = RotationMatrix::Rows(x, y, z);
 
             const EulerAngle referenceEulerAngle = EulerAngle::ZXY(
-                Angle::Radians(referenceDataRow[9].accessReal()),
-                Angle::Radians(referenceDataRow[10].accessReal()),
-                Angle::Radians(referenceDataRow[11].accessReal())
+                Angle::Radians(referenceDataRow[9].getReal()),
+                Angle::Radians(referenceDataRow[10].getReal()),
+                Angle::Radians(referenceDataRow[11].getReal())
             );
 
             const EulerAngle eulerAngle = EulerAngle::RotationMatrix(rotationMatrix, EulerAngle::AxisSequence::ZXY);
@@ -752,15 +738,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Vector3d x =
-                Vector3d(
-                    referenceDataRow[0].accessReal(), referenceDataRow[1].accessReal(), referenceDataRow[2].accessReal()
-                )
+                Vector3d(referenceDataRow[0].getReal(), referenceDataRow[1].getReal(), referenceDataRow[2].getReal())
                     .normalized();
 
             Vector3d y =
-                Vector3d(
-                    referenceDataRow[3].accessReal(), referenceDataRow[4].accessReal(), referenceDataRow[5].accessReal()
-                )
+                Vector3d(referenceDataRow[3].getReal(), referenceDataRow[4].getReal(), referenceDataRow[5].getReal())
                     .normalized();
 
             const Vector3d z = x.cross(y);
@@ -771,9 +753,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
             const RotationMatrix rotationMatrix = RotationMatrix::Rows(x, y, z);
 
             const EulerAngle referenceEulerAngle = EulerAngle::ZYX(
-                Angle::Radians(referenceDataRow[9].accessReal()),
-                Angle::Radians(referenceDataRow[10].accessReal()),
-                Angle::Radians(referenceDataRow[11].accessReal())
+                Angle::Radians(referenceDataRow[9].getReal()),
+                Angle::Radians(referenceDataRow[10].getReal()),
+                Angle::Radians(referenceDataRow[11].getReal())
             );
 
             const EulerAngle eulerAngle = EulerAngle::RotationMatrix(rotationMatrix, EulerAngle::AxisSequence::ZYX);
