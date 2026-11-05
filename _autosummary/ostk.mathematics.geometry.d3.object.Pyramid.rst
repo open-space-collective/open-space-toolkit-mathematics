@@ -42,7 +42,6 @@ ostk.mathematics.geometry.d3.object.Pyramid
       ~Pyramid.intersection_with
       ~Pyramid.intersects
       ~Pyramid.is_cone
-      ~Pyramid.is_defined
       ~Pyramid.is_ellipsoid
       ~Pyramid.is_line
       ~Pyramid.is_line_string
@@ -54,6 +53,5 @@ ostk.mathematics.geometry.d3.object.Pyramid
       ~Pyramid.is_ray
       ~Pyramid.is_segment
       ~Pyramid.is_sphere
-      ~Pyramid.undefined
    
    

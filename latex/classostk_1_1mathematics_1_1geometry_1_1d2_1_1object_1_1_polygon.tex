@@ -43,8 +43,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_p
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a9077d4bf7b3d74058f061ef4c2780b1a}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a81f715c35ecd0fa424f2daf4ffe59bec}{is\+Defined}} () const override
-\begin{DoxyCompactList}\small\item\em Check if polygon is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a687fbfa7aadad5f8ab581895e71286a6}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon, double a\+Tolerance) const
 \begin{DoxyCompactList}\small\item\em Check if polygon is near another polygon. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a8292e74414aa470153d0bd6f0884e00d}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon) const
@@ -87,11 +85,6 @@ virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1obje
 \begin{DoxyCompactList}\small\item\em Print polygon. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a98902fdd8d77f9f6f0d6f833fa007ada}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation}{Transformation}} \&a\+Transformation) override
 \begin{DoxyCompactList}\small\item\em Apply transformation to polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_adcfe062c3f4fdf897e701399f3d6fd3c}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -618,29 +611,6 @@ Check if polygon intersects polygon.
 \begin{DoxyReturn}{Returns}
 True if polygon intersects polygon 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a81f715c35ecd0fa424f2daf4ffe59bec}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a81f715c35ecd0fa424f2daf4ffe59bec}} 
-\index{ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Polygon\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Check if polygon is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a5389f3ef22d7144b5f01e37c8a221e8e}{Polygon}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \}, \{ 1.0, 1.0 \}, \{ 0.0, 1.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a81f715c35ecd0fa424f2daf4ffe59bec}{isDefined}}() ; \textcolor{comment}{// True}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if polygon is defined 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_abe5ea18c13bc259fc0da0b0c49fa0dca}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
-
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a687fbfa7aadad5f8ab581895e71286a6}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a687fbfa7aadad5f8ab581895e71286a6}} 
 \index{ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}!isNear@{isNear}}
 \index{isNear@{isNear}!ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}}
@@ -794,25 +764,6 @@ String representation
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a2da129348eb0c204c65b2f374f5e5e7a}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_adcfe062c3f4fdf897e701399f3d6fd3c}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_adcfe062c3f4fdf897e701399f3d6fd3c}} 
-\index{ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Polygon\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined polygon. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a5389f3ef22d7144b5f01e37c8a221e8e}{Polygon}} polygon = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_adcfe062c3f4fdf897e701399f3d6fd3c}{Polygon::Undefined}}() ; \textcolor{comment}{// Undefined}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined polygon 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_addbc0c8111c2f8c5ce1ff347135d54fe}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_addbc0c8111c2f8c5ce1ff347135d54fe}} 
 \index{ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}!unionWith@{unionWith}}
 \index{unionWith@{unionWith}!ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}}

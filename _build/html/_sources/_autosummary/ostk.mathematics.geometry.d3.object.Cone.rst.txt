@@ -41,7 +41,6 @@ ostk.mathematics.geometry.d3.object.Cone
       ~Cone.intersection_with
       ~Cone.intersects
       ~Cone.is_cone
-      ~Cone.is_defined
       ~Cone.is_ellipsoid
       ~Cone.is_line
       ~Cone.is_line_string
@@ -53,6 +52,5 @@ ostk.mathematics.geometry.d3.object.Cone
       ~Cone.is_ray
       ~Cone.is_segment
       ~Cone.is_sphere
-      ~Cone.undefined
    
    

@@ -1,7 +1,6 @@
 var classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle =
 [
     [ "AxisSequence", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#ac0be9aa2bd8691e11c6b2838709c168c", [
-      [ "Undefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#ac0be9aa2bd8691e11c6b2838709c168caec0fc0100c4fc1ce4eea230c3dc10360", null ],
       [ "XYZ", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#ac0be9aa2bd8691e11c6b2838709c168cae65075d550f9b5bf9992fa1d71a131be", null ],
       [ "ZXY", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#ac0be9aa2bd8691e11c6b2838709c168ca07bb28478030fc8b86da84000c9860d3", null ],
       [ "ZYX", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#ac0be9aa2bd8691e11c6b2838709c168ca6811254e01b3550bdb2dc46f204730dc", null ]
@@ -12,7 +11,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1
     [ "getPhi", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#a9c4a190b789675734dec4a559f646cb4", null ],
     [ "getPsi", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#a1e5cf0ae33517a104d9d2873eb3024cf", null ],
     [ "getTheta", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#a33bd3f5498b2c7dc7f132369c69551d3", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#a5140298e4d18f9b63fe1791e2785938c", null ],
     [ "isNear", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#ab25e5b93b6cff6716c08d5b9de4ab2c5", null ],
     [ "isUnitary", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#a75a6bd4f088b43ba2f9e7a9a1a963e64", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#a5adfa3b7def412a62f25fcb4d154f160", null ],

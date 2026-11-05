@@ -39,7 +39,6 @@ ostk.mathematics.geometry.d3.object.Line
       ~Line.intersection_with
       ~Line.intersects
       ~Line.is_cone
-      ~Line.is_defined
       ~Line.is_ellipsoid
       ~Line.is_line
       ~Line.is_line_string
@@ -52,6 +51,5 @@ ostk.mathematics.geometry.d3.object.Line
       ~Line.is_segment
       ~Line.is_sphere
       ~Line.points
-      ~Line.undefined
    
    

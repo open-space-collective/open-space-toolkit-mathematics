@@ -25,8 +25,6 @@ ostk.mathematics.geometry.d2.object.Line
       ~Line.get_direction
       ~Line.get_origin
       ~Line.intersects
-      ~Line.is_defined
       ~Line.points
-      ~Line.undefined
    
    

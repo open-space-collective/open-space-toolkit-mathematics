@@ -25,7 +25,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon =
     [ "getVertices", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a3308ae10e5627e0427dab164bb4b41d8", null ],
     [ "intersectionWith", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#aeeedeff734bdf3fceae7d17dc9aa2097", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a8292e74414aa470153d0bd6f0884e00d", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a81f715c35ecd0fa424f2daf4ffe59bec", null ],
     [ "isNear", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a687fbfa7aadad5f8ab581895e71286a6", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a9077d4bf7b3d74058f061ef4c2780b1a", null ],
     [ "operator=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#af999d9844abf33d70dae582222582fac", null ],

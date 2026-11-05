@@ -141,9 +141,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1f2e1b5d801464dd1c151b41e9e833b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html">Composite</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a1f2e1b5d801464dd1c151b41e9e833b7">operator+=</a> (const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html">Composite</a> &amp;aComposite)</td></tr>
 <tr class="memdesc:a1f2e1b5d801464dd1c151b41e9e833b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addition assignment operator (composite concatenation)  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a1f2e1b5d801464dd1c151b41e9e833b7">More...</a><br /></td></tr>
 <tr class="separator:a1f2e1b5d801464dd1c151b41e9e833b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ccf639112d5c08aa7d2bb831072ca2f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a8ccf639112d5c08aa7d2bb831072ca2f">isDefined</a> () const override</td></tr>
-<tr class="memdesc:a8ccf639112d5c08aa7d2bb831072ca2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if composite is defined.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a8ccf639112d5c08aa7d2bb831072ca2f">More...</a><br /></td></tr>
-<tr class="separator:a8ccf639112d5c08aa7d2bb831072ca2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4212e7557991ad99f9d4dfe9cbf6b703"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a4212e7557991ad99f9d4dfe9cbf6b703">isEmpty</a> () const</td></tr>
 <tr class="memdesc:a4212e7557991ad99f9d4dfe9cbf6b703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if composite is empty.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a4212e7557991ad99f9d4dfe9cbf6b703">More...</a><br /></td></tr>
 <tr class="separator:a4212e7557991ad99f9d4dfe9cbf6b703"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -870,37 +867,6 @@ template&lt;class Type &gt; </div>
 
 </div>
 </div>
-<a id="a8ccf639112d5c08aa7d2bb831072ca2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ccf639112d5c08aa7d2bb831072ca2f">&#9670;&nbsp;</a></span>isDefined()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ostk::mathematics::geometry::d3::object::Composite::isDefined </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check if composite is defined. </p>
-<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#ad3c66a24df2c50819fbc8dbe288b85ee">Composite</a>(...).isDefined() ;</div>
-</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if all objects of the composite are defined </dd></dl>
-
-<p>Implements <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a1962edbcdde0f851361b60324ab9ce2b">ostk::mathematics::geometry::d3::Object</a>.</p>
-
-</div>
-</div>
 <a id="a4212e7557991ad99f9d4dfe9cbf6b703"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4212e7557991ad99f9d4dfe9cbf6b703">&#9670;&nbsp;</a></span>isEmpty()</h2>
 
@@ -1128,10 +1094,10 @@ template&lt;class Type &gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_af9058de81115d953ab8d9b8922abe692"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">ostk::mathematics::geometry::d3::Transformation::Translation</a></div><div class="ttdeci">static Transformation Translation(const Vector3d &amp;aTranslationVector)</div><div class="ttdoc">Construct a translation transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:259</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_af9058de81115d953ab8d9b8922abe692"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#af9058de81115d953ab8d9b8922abe692">ostk::mathematics::geometry::d3::Transformation::Translation</a></div><div class="ttdeci">static Transformation Translation(const Vector3d &amp;aTranslationVector)</div><div class="ttdoc">Construct a translation transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:183</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_html_ad3c66a24df2c50819fbc8dbe288b85ee"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#ad3c66a24df2c50819fbc8dbe288b85ee">ostk::mathematics::geometry::d3::object::Composite::Composite</a></div><div class="ttdeci">Composite(const Object &amp;anObject)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Composite.cpp:21</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_html_a3fb7f38a564e36224fb4753be74836ff"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a3fb7f38a564e36224fb4753be74836ff">ostk::mathematics::geometry::d3::object::Composite::ConstIterator</a></div><div class="ttdeci">Array&lt; Unique&lt; Object &gt; &gt;::ConstIterator ConstIterator</div><div class="ttdef"><b>Definition:</b> Composite.hpp:39</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_html_a2d1b2de30917d5cb24843a4590c45cf4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a2d1b2de30917d5cb24843a4590c45cf4">ostk::mathematics::geometry::d3::object::Composite::Empty</a></div><div class="ttdeci">static Composite Empty()</div><div class="ttdoc">Constructs an empty composite.</div><div class="ttdef"><b>Definition:</b> Composite.cpp:454</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_html_a2d1b2de30917d5cb24843a4590c45cf4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a2d1b2de30917d5cb24843a4590c45cf4">ostk::mathematics::geometry::d3::object::Composite::Empty</a></div><div class="ttdeci">static Composite Empty()</div><div class="ttdoc">Constructs an empty composite.</div><div class="ttdef"><b>Definition:</b> Composite.cpp:317</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_html_af003ad733beface98466830078a83875"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#af003ad733beface98466830078a83875">ostk::mathematics::geometry::d3::Object::Object</a></div><div class="ttdeci">Object()=default</div><div class="ttdoc">Default constructor (default)</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

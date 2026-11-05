@@ -25,7 +25,6 @@ ostk.mathematics.geometry.d2.object.LineString
       ~LineString.get_point_closest_to
       ~LineString.get_point_count
       ~LineString.intersects
-      ~LineString.is_defined
       ~LineString.is_empty
       ~LineString.is_near
       ~LineString.to_string

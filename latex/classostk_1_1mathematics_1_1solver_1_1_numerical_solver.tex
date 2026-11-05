@@ -45,8 +45,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a7
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af8c55a09c0934260c5e61574183aa7af}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver}{Numerical\+Solver}} \&a\+Numerical\+Solver) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae9123dc938fbfdf8497f804adf981f37}{is\+Defined}} () const
-\begin{DoxyCompactList}\small\item\em Check if numerical solver is defined. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad228bac87a6b39aeecc275e894178722}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorator=true) const
 \begin{DoxyCompactList}\small\item\em Print numerical solver. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad8a0c981770c8ee40f765cc17cf0c1a5}{Numerical\+Solver\+::\+Log\+Type}} \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_acc6274d68e4f0ec5f10089db23354a90}{get\+Log\+Type}} () const
@@ -76,8 +74,6 @@ static String \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_
 \begin{DoxyCompactList}\small\item\em Get string from the integration stepper type. \end{DoxyCompactList}\item 
 static String \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a7cee34ba53141a87ef6b43c8109b3444}{String\+From\+Log\+Type}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad8a0c981770c8ee40f765cc17cf0c1a5}{Numerical\+Solver\+::\+Log\+Type}} \&a\+Log\+Type)
 \begin{DoxyCompactList}\small\item\em Get string from the integration log type. \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver}{Numerical\+Solver}} \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1e196c06ce05721dd871501fd4df0500}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Undefined. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver}{Numerical\+Solver}} \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{Default}} ()
 \begin{DoxyCompactList}\small\item\em Default. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
@@ -500,25 +496,6 @@ Perform numerical integration from a start time to an end time.
 \begin{DoxyReturn}{Returns}
 Solution 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae9123dc938fbfdf8497f804adf981f37}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae9123dc938fbfdf8497f804adf981f37}} 
-\index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Check if numerical solver is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae9123dc938fbfdf8497f804adf981f37}{isDefined}}();}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if numerical solver is defined 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af8c55a09c0934260c5e61574183aa7af}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af8c55a09c0934260c5e61574183aa7af}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
@@ -531,7 +508,13 @@ Not equal to operator.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}() != \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1e196c06ce05721dd871501fd4df0500}{NumericalSolver::Undefined}}();}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}() != \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af09f15b0f5d10c8aff8b599672467e44}{NumericalSolver}}(}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad8a0c981770c8ee40f765cc17cf0c1a5ac224e58a49e83bb9b94e2bd594fd5231}{NumericalSolver::LogType::NoLog}},}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97a646d9d3aaac989d6fd4990f308ba3a37}{NumericalSolver::StepperType::RungeKuttaCashKarp54}},}
+\DoxyCodeLine{    1.0,}
+\DoxyCodeLine{    1e-\/6,}
+\DoxyCodeLine{    1e-\/6}
+\DoxyCodeLine{);}
 \end{DoxyCode}
 
 
@@ -633,25 +616,6 @@ Get string from the integration stepper type.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Stepper\+Type 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1e196c06ce05721dd871501fd4df0500}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1e196c06ce05721dd871501fd4df0500}} 
-\index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver}{Numerical\+Solver}} ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Undefined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af09f15b0f5d10c8aff8b599672467e44}{NumericalSolver}} solver = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1e196c06ce05721dd871501fd4df0500}{NumericalSolver::Undefined}}();}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-An undefined numerical solver 
 \end{DoxyReturn}
 
 

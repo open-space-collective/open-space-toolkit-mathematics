@@ -10,7 +10,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object =
     [ "clone", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#af63da855554f9114803103fe2390f5eb", null ],
     [ "contains", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a43eaa4a59d81e7eb36b80f6695de6ce1", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a553d7a1e388598c74d0f9fdd57d1ba9d", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#abe5ea18c13bc259fc0da0b0c49fa0dca", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#afe72ba03919d609d2847b0b4162d083d", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a9617246a3e26d57e5ba78e57387ae05a", null ],
     [ "print", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#aaf59b52c718ca92c6b6116660077d9f9", null ],

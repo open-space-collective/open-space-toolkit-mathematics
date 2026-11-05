@@ -11,7 +11,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set =
     [ "end", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a4939eefd0f54e0076af40960dfe93418", null ],
     [ "getPointClosestTo", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#ac94914cb9c81d2fadab4e700088be7da", null ],
     [ "getSize", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#af110ae77a421e673d3ede1b39bfea608", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a6b8187ba8b67220e7562357ad846edaa", null ],
     [ "isEmpty", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#ab40c84e9a4d76cf89471771c74c3126c", null ],
     [ "isNear", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#ad7f949840cc8ffe5739d595a2b6b3387", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#ac8021b04a413b2b37671eba1d04c126e", null ],

@@ -28,8 +28,6 @@ double \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transforma
 \begin{DoxyCompactList}\small\item\em Index function operator. \end{DoxyCompactList}\item 
 double \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a7950245c6fd96b7c75676843a63915be}{operator()}} (const Index \&a\+Row\+Index, const Index \&a\+Column\+Index)
 \begin{DoxyCompactList}\small\item\em Index function operator. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_ae17d3b16182ce6110a87534fd5aff6b4}{is\+Defined}} () const
-\begin{DoxyCompactList}\small\item\em Check if Rotation Matrix is defined. \end{DoxyCompactList}\item 
 Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a8f62d9ae197f5f94e168a612be0a9bb1}{get\+Row\+At}} (const Index \&a\+Row\+Index) const
 \begin{DoxyCompactList}\small\item\em Get row at index. \end{DoxyCompactList}\item 
 Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a2abb637de6747ef51067aaf00237d9bf}{get\+Column\+At}} (const Index \&a\+Column\+Index) const
@@ -43,8 +41,6 @@ const Matrix3d \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{Rotation\+Matrix}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_aeae6917c12ec1afe40af8d15bcd1ed0c}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Construct an undefined Rotation Matrix. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{Rotation\+Matrix}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a54cce35b27cb061a457bf0011f1312ba}{Unit}} ()
 \begin{DoxyCompactList}\small\item\em Construct unitary Rotation Matrix. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{Rotation\+Matrix}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_ad6019cbe46a2b47ad26470f996214bb0}{RX}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&a\+Rotation\+Angle)
@@ -264,25 +260,6 @@ Get row at index.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Vector 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_ae17d3b16182ce6110a87534fd5aff6b4}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_ae17d3b16182ce6110a87534fd5aff6b4}} 
-\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix@{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix@{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Matrix\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Check if Rotation Matrix is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a74d44755a8c72da68f52106af2bcfdea}{RotationMatrix}}(\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}}(0.0, 0.0, 1.0), \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(90.0)).isDefined();}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if Rotation Matrix is defined 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a24dd53bd3648655d4ab858d0ce0685b2}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a24dd53bd3648655d4ab858d0ce0685b2}} 
 \index{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix@{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix}!operator"!=@{operator"!=}}
@@ -623,25 +600,6 @@ Transpose Rotation Matrix.
 
 \begin{DoxyReturn}{Returns}
 Rotation Matrix reference 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_aeae6917c12ec1afe40af8d15bcd1ed0c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_aeae6917c12ec1afe40af8d15bcd1ed0c}} 
-\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix@{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix@{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{Rotation\+Matrix}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Matrix\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Construct an undefined Rotation Matrix. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_aeae6917c12ec1afe40af8d15bcd1ed0c}{RotationMatrix::Undefined}}();}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Rotation Matrix 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a54cce35b27cb061a457bf0011f1312ba}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a54cce35b27cb061a457bf0011f1312ba}} 
 \index{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix@{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix}!Unit@{Unit}}

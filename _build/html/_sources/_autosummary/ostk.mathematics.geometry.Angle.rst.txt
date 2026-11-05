@@ -31,7 +31,6 @@ ostk.mathematics.geometry.Angle
       ~Angle.in_radians
       ~Angle.in_revolutions
       ~Angle.in_unit
-      ~Angle.is_defined
       ~Angle.is_near
       ~Angle.is_negative
       ~Angle.is_zero
@@ -42,7 +41,6 @@ ostk.mathematics.geometry.Angle
       ~Angle.symbol_from_unit
       ~Angle.to_string
       ~Angle.two_pi
-      ~Angle.undefined
       ~Angle.zero
    
    

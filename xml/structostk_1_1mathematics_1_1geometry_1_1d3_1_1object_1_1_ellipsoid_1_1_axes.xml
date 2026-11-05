@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="454" column="18" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="454" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="436" column="18" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="436" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1_1_axes_1a3297ef2e8bc05dd0ca5e12ac212db470" prot="public" static="no" mutable="no">
         <type>Vector3d</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="455" column="18" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="455" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="437" column="18" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="437" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1_1_axes_1a24b38c3f96914b8d5db28495f6562b9e" prot="public" static="no" mutable="no">
         <type>Vector3d</type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="456" column="18" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="456" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="438" column="18" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="438" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1_1_axes_1a1a90bc4972166273ace8d9d35fad3ba8" prot="public" static="no" mutable="no">
         <type>Matrix3d</type>
@@ -53,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="457" column="18" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="457" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="439" column="18" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="439" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -79,7 +79,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="453" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="452" bodyend="458"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="435" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="434" bodyend="440"/>
     <listofallmembers>
       <member refid="structostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1_1_axes_1aa88ac6290483fe5f53700f61b8ab55f6" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid::Axes</scope><name>first</name></member>
       <member refid="structostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1_1_axes_1a1a90bc4972166273ace8d9d35fad3ba8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid::Axes</scope><name>matrix</name></member>

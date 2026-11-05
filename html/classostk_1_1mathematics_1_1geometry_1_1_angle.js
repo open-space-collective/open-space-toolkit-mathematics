@@ -1,7 +1,6 @@
 var classostk_1_1mathematics_1_1geometry_1_1_angle =
 [
     [ "Unit", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a9c6a3ae1411b75a6c0cac397a6ace371", [
-      [ "Undefined", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a9c6a3ae1411b75a6c0cac397a6ace371aec0fc0100c4fc1ce4eea230c3dc10360", null ],
       [ "Radian", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a9c6a3ae1411b75a6c0cac397a6ace371a50c62e3ca8d8ec8732a7f968a3bf2c7c", null ],
       [ "Degree", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a9c6a3ae1411b75a6c0cac397a6ace371a6669c4dc00cb161446821b3529ca07d8", null ],
       [ "Arcminute", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a9c6a3ae1411b75a6c0cac397a6ace371a6d59f6ca1b5de72cbdc10a6792bcf090", null ],
@@ -20,7 +19,6 @@ var classostk_1_1mathematics_1_1geometry_1_1_angle =
     [ "inRadians", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a97a1d772f17e955fa2cadcdd7d4f3d18", null ],
     [ "inRadians", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#aa4ee9ff2659517128c2f8a95cf467531", null ],
     [ "inRevolutions", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a5b4946a379a1b37780e74560ec31e7bf", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#ad99d5ff3a95e93b3599248c72b631ff1", null ],
     [ "isNear", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a93759a5dc36449aaa68d749d270fa736", null ],
     [ "isNegative", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a80267bbfcf53ac84f70e8c64c0ae4162", null ],
     [ "isZero", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a17449f940c75bc182a9eaa069ae59342", null ],

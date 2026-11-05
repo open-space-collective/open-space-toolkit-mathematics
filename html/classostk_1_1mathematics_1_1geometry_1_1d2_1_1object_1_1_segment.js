@@ -12,7 +12,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment =
     [ "getFirstPoint", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#aa3177bad36e3132464c454a9ac13f015", null ],
     [ "getLength", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#aec0b1748024b14f326ddd0e8e2a15581", null ],
     [ "getSecondPoint", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a1f061ad935c17979027c8cb66f0396e0", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a6a88d19e8e5978c2fe9eeeb88d6cf8d7", null ],
     [ "isDegenerate", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#ae83df71f8f42ef823a7976f78de97a3f", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#abbecdd12d67f8c102deaedc65a028aed", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a7efea6942753f879406cf983a8e55d19", null ],

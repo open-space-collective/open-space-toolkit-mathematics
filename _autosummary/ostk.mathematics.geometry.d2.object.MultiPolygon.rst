@@ -25,10 +25,8 @@ ostk.mathematics.geometry.d2.object.MultiPolygon
       ~MultiPolygon.get_polygon_count
       ~MultiPolygon.get_polygons
       ~MultiPolygon.intersects
-      ~MultiPolygon.is_defined
       ~MultiPolygon.polygon
       ~MultiPolygon.to_string
-      ~MultiPolygon.undefined
       ~MultiPolygon.union_with
    
    

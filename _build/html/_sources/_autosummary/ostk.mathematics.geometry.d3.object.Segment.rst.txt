@@ -42,7 +42,6 @@ ostk.mathematics.geometry.d3.object.Segment
       ~Segment.intersection_with
       ~Segment.intersects
       ~Segment.is_cone
-      ~Segment.is_defined
       ~Segment.is_degenerate
       ~Segment.is_ellipsoid
       ~Segment.is_line
@@ -56,6 +55,5 @@ ostk.mathematics.geometry.d3.object.Segment
       ~Segment.is_segment
       ~Segment.is_sphere
       ~Segment.to_line
-      ~Segment.undefined
    
    

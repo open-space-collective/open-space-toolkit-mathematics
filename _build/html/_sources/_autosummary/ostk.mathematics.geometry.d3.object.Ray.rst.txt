@@ -39,7 +39,6 @@ ostk.mathematics.geometry.d3.object.Ray
       ~Ray.intersection_with
       ~Ray.intersects
       ~Ray.is_cone
-      ~Ray.is_defined
       ~Ray.is_ellipsoid
       ~Ray.is_line
       ~Ray.is_line_string
@@ -51,6 +50,5 @@ ostk.mathematics.geometry.d3.object.Ray
       ~Ray.is_ray
       ~Ray.is_segment
       ~Ray.is_sphere
-      ~Ray.undefined
    
    

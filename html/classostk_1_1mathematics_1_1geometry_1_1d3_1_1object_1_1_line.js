@@ -13,7 +13,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line =
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a94c3c7588bf70c66f9ec2f170c6a4121", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#a2faa83f9795b399b706480d501d78d4b", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aae92782ed75f744c24c48e5d47cf0545", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#ae07b5282c948df716fc1fa5bedeec344", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aef0d21c794766aaaadb779dd364594d4", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#aba1fb7d8d2c55f5622219263cb7e677b", null ],
     [ "print", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#adbfd6a95b2edf22a2540e449d07e499c", null ]

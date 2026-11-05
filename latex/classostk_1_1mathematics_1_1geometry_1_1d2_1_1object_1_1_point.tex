@@ -26,10 +26,8 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_p
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a4591e0cef8606f3b6d4eadf6f3ffbb9f}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a5a81fa8426fe6a4be5addda02c888704}{is\+Defined}} () const override
-\begin{DoxyCompactList}\small\item\em Addition operator\+: translate point along vector. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af792edaa67f998d4992a3e5b0410a335}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \&a\+Point, double a\+Tolerance) const
-\begin{DoxyCompactList}\small\item\em Check if point is near another point. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Addition operator\+: translate point along vector. \end{DoxyCompactList}\item 
 const double \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a9f6257bf9ee5ea9b567c816595d12dfa}{x}} () const
 \begin{DoxyCompactList}\small\item\em Get reference to first coordinate. \end{DoxyCompactList}\item 
 const double \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a73a1c753276a0abae7687cb979b7a7b3}{y}} () const
@@ -47,8 +45,6 @@ virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1obje
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a71002eaa63a8305e0566b490ec7740ec}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined point. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a44fa9d92b862d8fb9a379440ee0e6a81}{Origin}} ()
 \begin{DoxyCompactList}\small\item\em Constructs a point at origin. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_ac1a68722649ac022d295b1e52cd715c5}{Vector}} (const Vector2d \&a\+Vector)
@@ -186,11 +182,11 @@ Get distance to another point.
 \begin{DoxyReturn}{Returns}
 Distance to point 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a5a81fa8426fe6a4be5addda02c888704}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a5a81fa8426fe6a4be5addda02c888704}} 
-\index{ostk::mathematics::geometry::d2::object::Point@{ostk::mathematics::geometry::d2::object::Point}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d2::object::Point@{ostk::mathematics::geometry::d2::object::Point}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Point\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af792edaa67f998d4992a3e5b0410a335}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af792edaa67f998d4992a3e5b0410a335}} 
+\index{ostk::mathematics::geometry::d2::object::Point@{ostk::mathematics::geometry::d2::object::Point}!isNear@{isNear}}
+\index{isNear@{isNear}!ostk::mathematics::geometry::d2::object::Point@{ostk::mathematics::geometry::d2::object::Point}}
+\doxysubsubsection{\texorpdfstring{isNear()}{isNear()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Point\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \&}]{a\+Point,  }\item[{double}]{a\+Tolerance }\end{DoxyParamCaption}) const}
 
 
 
@@ -225,33 +221,10 @@ Addition operator\+: translate point along vector.
 \DoxyCodeLine{    @\textcolor{keywordflow}{return}             A translation vector}
 \DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_ac86e8f85187dc85c1f935627d56c1beb}{Vector2d}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af781a2909ad42ea0225a1d06c955004f}{Point}}\& aPoint) \textcolor{keyword}{const};}
 \DoxyCodeLine{}
-\DoxyCodeLine{    @brief              Check \textcolor{keywordflow}{if} point is defined}
+\DoxyCodeLine{    @brief              Check \textcolor{keywordflow}{if} point is near another point}
 \DoxyCodeLine{   }
 \DoxyCodeLine{    @code}
-\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af781a2909ad42ea0225a1d06c955004f}{Point}}(0.0, 0.0).isDefined() ; \textcolor{comment}{// True}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if point is defined 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_abe5ea18c13bc259fc0da0b0c49fa0dca}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
-
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af792edaa67f998d4992a3e5b0410a335}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af792edaa67f998d4992a3e5b0410a335}} 
-\index{ostk::mathematics::geometry::d2::object::Point@{ostk::mathematics::geometry::d2::object::Point}!isNear@{isNear}}
-\index{isNear@{isNear}!ostk::mathematics::geometry::d2::object::Point@{ostk::mathematics::geometry::d2::object::Point}}
-\doxysubsubsection{\texorpdfstring{isNear()}{isNear()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Point\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \&}]{a\+Point,  }\item[{double}]{a\+Tolerance }\end{DoxyParamCaption}) const}
-
-
-
-Check if point is near another point. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af781a2909ad42ea0225a1d06c955004f}{Point}}(0.0, 0.0).isNear(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af781a2909ad42ea0225a1d06c955004f}{Point}}(0.0, 0.0), 1e-\/15) ; \textcolor{comment}{// True}}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af781a2909ad42ea0225a1d06c955004f}{Point}}(0.0, 0.0).isNear(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af781a2909ad42ea0225a1d06c955004f}{Point}}(0.0, 0.0), 1e-\/15) ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
 
@@ -389,25 +362,6 @@ String representation
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a2da129348eb0c204c65b2f374f5e5e7a}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a71002eaa63a8305e0566b490ec7740ec}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a71002eaa63a8305e0566b490ec7740ec}} 
-\index{ostk::mathematics::geometry::d2::object::Point@{ostk::mathematics::geometry::d2::object::Point}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d2::object::Point@{ostk::mathematics::geometry::d2::object::Point}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Point\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined point. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_af781a2909ad42ea0225a1d06c955004f}{Point}} point = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_a71002eaa63a8305e0566b490ec7740ec}{Point::Undefined}}() ; \textcolor{comment}{// Undefined}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined point 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_ac1a68722649ac022d295b1e52cd715c5}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_ac1a68722649ac022d295b1e52cd715c5}} 
 \index{ostk::mathematics::geometry::d2::object::Point@{ostk::mathematics::geometry::d2::object::Point}!Vector@{Vector}}
 \index{Vector@{Vector}!ostk::mathematics::geometry::d2::object::Point@{ostk::mathematics::geometry::d2::object::Point}}

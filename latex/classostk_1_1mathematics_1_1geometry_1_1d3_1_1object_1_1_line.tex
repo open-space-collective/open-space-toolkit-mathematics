@@ -26,8 +26,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_l
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_aef0d21c794766aaaadb779dd364594d4}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&a\+Line) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_ae07b5282c948df716fc1fa5bedeec344}{is\+Defined}} () const override
-\begin{DoxyCompactList}\small\item\em Check if line is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_a2faa83f9795b399b706480d501d78d4b}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Check if line intersects point. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_a94c3c7588bf70c66f9ec2f170c6a4121}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&a\+Plane) const
@@ -55,8 +53,6 @@ virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1obje
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_a22a81cbf24719168493158361bb24ee7}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined line. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_a2c137ebb5cbfe774410eb84644e5cdd4}{Points}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+First\+Point, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Second\+Point)
 \begin{DoxyCompactList}\small\item\em Constructs a line using two points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -393,29 +389,6 @@ Check if line intersects sphere.
 \begin{DoxyReturn}{Returns}
 True if line intersects sphere 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_ae07b5282c948df716fc1fa5bedeec344}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_ae07b5282c948df716fc1fa5bedeec344}} 
-\index{ostk::mathematics::geometry::d3::object::Line@{ostk::mathematics::geometry::d3::object::Line}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Line@{ostk::mathematics::geometry::d3::object::Line}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Line\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Check if line is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_aa953f89b8b41699dc8f14a465e2ef6b8}{Line}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_ae07b5282c948df716fc1fa5bedeec344}{isDefined}}() ; \textcolor{comment}{// True}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if line is defined 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
-
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_aef0d21c794766aaaadb779dd364594d4}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_aef0d21c794766aaaadb779dd364594d4}} 
 \index{ostk::mathematics::geometry::d3::object::Line@{ostk::mathematics::geometry::d3::object::Line}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::object::Line@{ostk::mathematics::geometry::d3::object::Line}}
@@ -514,25 +487,6 @@ Print line.
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_a22a81cbf24719168493158361bb24ee7}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_a22a81cbf24719168493158361bb24ee7}} 
-\index{ostk::mathematics::geometry::d3::object::Line@{ostk::mathematics::geometry::d3::object::Line}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Line@{ostk::mathematics::geometry::d3::object::Line}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Line\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined line. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_aa953f89b8b41699dc8f14a465e2ef6b8}{Line}} line = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_a22a81cbf24719168493158361bb24ee7}{Line::Undefined}}() ; \textcolor{comment}{// Undefined}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined line 
-\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -30,7 +30,6 @@ ostk.mathematics.object.RealInterval
       ~RealInterval.half_open_left
       ~RealInterval.half_open_right
       ~RealInterval.intersects
-      ~RealInterval.is_defined
       ~RealInterval.is_degenerate
       ~RealInterval.logical_and
       ~RealInterval.logical_or
@@ -38,6 +37,5 @@ ostk.mathematics.object.RealInterval
       ~RealInterval.open
       ~RealInterval.sort
       ~RealInterval.to_string
-      ~RealInterval.undefined
    
    

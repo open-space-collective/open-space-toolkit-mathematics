@@ -26,8 +26,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_p
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a3fa7abd7265937266cb59f19f63db3bf}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&a\+Pyramid) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8b85f9aa5f4b1cdf0047c8010fdb7645}{is\+Defined}} () const override
-\begin{DoxyCompactList}\small\item\em Check if pyramid is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a4676717f067f8fd710fc9073d0b1709d}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&a\+Sphere, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
 \begin{DoxyCompactList}\small\item\em Check if pyramid intersects sphere. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_ae2daf13e58b060a4085944e3c3171910}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
@@ -60,11 +58,6 @@ virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1obje
 \begin{DoxyCompactList}\small\item\em Print pyramid. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aec8ebca28ff89fd03a088d399de8e6e4}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
 \begin{DoxyCompactList}\small\item\em Apply transformation to pyramid. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a631ca947390c95b73c78b42c3d840b12}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined pyramid. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -518,30 +511,6 @@ Check if pyramid intersects sphere.
 \begin{DoxyReturn}{Returns}
 True if pyramid intersects sphere 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8b85f9aa5f4b1cdf0047c8010fdb7645}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8b85f9aa5f4b1cdf0047c8010fdb7645}} 
-\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Check if pyramid is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
-\DoxyCodeLine{pyramid.isDefined() ; \textcolor{comment}{// True}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if pyramid is defined 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
-
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a3fa7abd7265937266cb59f19f63db3bf}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a3fa7abd7265937266cb59f19f63db3bf}} 
 \index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
@@ -621,25 +590,6 @@ Print pyramid.
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a631ca947390c95b73c78b42c3d840b12}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a631ca947390c95b73c78b42c3d840b12}} 
-\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined pyramid. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a631ca947390c95b73c78b42c3d840b12}{Pyramid::Undefined}}() ;}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined pyramid 
-\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -28,6 +28,5 @@ ostk.mathematics.geometry.d2.Object
       ~Object.apply_transformation
       ~Object.contains
       ~Object.intersects
-      ~Object.is_defined
    
    

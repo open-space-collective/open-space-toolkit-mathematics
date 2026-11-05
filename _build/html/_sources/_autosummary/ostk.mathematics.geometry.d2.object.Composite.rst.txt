@@ -34,7 +34,6 @@ ostk.mathematics.geometry.d2.object.Composite
       ~Composite.get_object_count
       ~Composite.intersects
       ~Composite.is_composite
-      ~Composite.is_defined
       ~Composite.is_empty
       ~Composite.is_line
       ~Composite.is_line_string

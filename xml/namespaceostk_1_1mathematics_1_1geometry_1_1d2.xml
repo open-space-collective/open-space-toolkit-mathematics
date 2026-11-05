@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" line="72" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="72" bodyend="77"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" line="67" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp" bodystart="67" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d2_1ac4a11d280db705e9e72b70e303f427be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" line="161" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="161" bodyend="166"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" line="120" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp" bodystart="120" bodyend="125"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

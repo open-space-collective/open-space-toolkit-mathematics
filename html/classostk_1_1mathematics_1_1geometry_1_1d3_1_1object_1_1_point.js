@@ -5,7 +5,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point =
     [ "asVector", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a1d9614ed94b6049d6ce56ae529e7ca2b", null ],
     [ "clone", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#adf6a7e433d64879df60ea17403bf4694", null ],
     [ "distanceTo", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#af3a2ac5c27e84121aceeef0f8347c9d2", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a151a3020d20a0ae2847f5ce99bd7ee06", null ],
     [ "isNear", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#aa4c9f06cc393c63862e108c2fd74849e", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#abf23c8836ec513308a298cc7708aeb37", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a3134e01a0c43d6ad7b040f8f730b8e50", null ],

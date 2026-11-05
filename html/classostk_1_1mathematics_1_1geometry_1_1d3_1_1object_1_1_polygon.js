@@ -17,7 +17,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon =
     [ "getVertices", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#aa882c5688de60db3e90fb540f5016b65", null ],
     [ "getXAxis", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a87d39e6f4e4074d453563e4da0c3f819", null ],
     [ "getYAxis", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#abc5daa0cde4bc0a4ce168ec04150d774", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#ab2e3d42d2420cd0d3029f1d14e126a6c", null ],
     [ "isNear", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a4e6adce6f96198104c0532c213cd4f79", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#ab8c48ac69bca62018cbb75dda88d38a1", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#a31ea0eaea624719d90d2d5477234fbc4", null ],

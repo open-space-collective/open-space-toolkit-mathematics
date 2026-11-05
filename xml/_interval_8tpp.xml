@@ -48,6 +48,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">#include<sp/>&lt;cmath&gt;</highlight></codeline>
 <codeline><highlight class="normal">#include<sp/>&lt;limits&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;optional&gt;</highlight></codeline>
 <codeline><highlight class="normal">#include<sp/>&lt;sstream&gt;</highlight></codeline>
 <codeline><highlight class="normal">#include<sp/>&lt;type_traits&gt;</highlight></codeline>
 <codeline></codeline>
@@ -67,36 +68,10 @@
 <codeline></codeline>
 <codeline><highlight class="normal">using<sp/>ostk::core::type::Size;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">///<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Helpers<sp/>that<sp/>let<sp/>Interval&lt;T&gt;<sp/>work<sp/>with<sp/>both<sp/>floating-point<sp/>bounds<sp/>(where<sp/>NaN<sp/>means</highlight></codeline>
-<codeline><highlight class="normal">///<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>undefined)<sp/>and<sp/>class<sp/>bounds<sp/>exposing<sp/>isDefined(),<sp/>toString()<sp/>and<sp/>Undefined()</highlight></codeline>
+<codeline><highlight class="normal">///<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Helpers<sp/>that<sp/>let<sp/>Interval&lt;T&gt;<sp/>work<sp/>with<sp/>both<sp/>floating-point<sp/>bounds<sp/>and<sp/>class<sp/>bounds</highlight></codeline>
+<codeline><highlight class="normal">///<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exposing<sp/>toString(),<sp/>isZero()<sp/>and<sp/>isPositive()</highlight></codeline>
 <codeline><highlight class="normal">namespace<sp/>internal</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
-<codeline><highlight class="normal">bool<sp/>IsDefined(const<sp/>T&amp;<sp/>aValue)</highlight></codeline>
-<codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>constexpr<sp/>(std::is_floating_point&lt;T&gt;::value)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>!std::isnan(aValue);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>aValue.isDefined();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal">}</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
-<codeline><highlight class="normal">T<sp/>Undefined()</highlight></codeline>
-<codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>constexpr<sp/>(std::is_floating_point&lt;T&gt;::value)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>std::numeric_limits&lt;T&gt;::quiet_NaN();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>T::Undefined();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">types::String<sp/>ToString(const<sp/>T&amp;<sp/>aValue)</highlight></codeline>
@@ -172,28 +147,20 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lowerBound_(aLowerBound),</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>upperBound_(anUpperBound)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(internal::IsDefined(lowerBound_)<sp/>&amp;&amp;<sp/>internal::IsDefined(upperBound_))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(lowerBound_<sp/>&gt;<sp/>upperBound_)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(lowerBound_<sp/>&gt;<sp/>upperBound_)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::RuntimeError(&quot;Lower<sp/>bound<sp/>greater<sp/>than<sp/>upper<sp/>bound.&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::RuntimeError(&quot;Lower<sp/>bound<sp/>greater<sp/>than<sp/>upper<sp/>bound.&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(lowerBound_<sp/>==<sp/>upperBound_<sp/>&amp;&amp;<sp/>type_<sp/>!=<sp/>Interval&lt;T&gt;::Type::Closed)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::RuntimeError(&quot;Lower<sp/>bound<sp/>equal<sp/>to<sp/>upper<sp/>bound<sp/>in<sp/>a<sp/>non-closed<sp/>Interval.&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(lowerBound_<sp/>==<sp/>upperBound_<sp/>&amp;&amp;<sp/>type_<sp/>!=<sp/>Interval&lt;T&gt;::Type::Closed)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::RuntimeError(&quot;Lower<sp/>bound<sp/>equal<sp/>to<sp/>upper<sp/>bound<sp/>in<sp/>a<sp/>non-closed<sp/>Interval.&quot;);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::operator==(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>((!this-&gt;isDefined())<sp/>||<sp/>(!anInterval.isDefined()))</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>false;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(type_<sp/>==<sp/>anInterval.type_)<sp/>&amp;&amp;<sp/>(lowerBound_<sp/>==<sp/>anInterval.lowerBound_)<sp/>&amp;&amp;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(upperBound_<sp/>==<sp/>anInterval.upperBound_);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
@@ -219,35 +186,14 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
-<codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::isDefined()<sp/>const</highlight></codeline>
-<codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(type_<sp/>!=<sp/>Interval::Type::Undefined)<sp/>&amp;&amp;<sp/>internal::IsDefined(lowerBound_)<sp/>&amp;&amp;<sp/>internal::IsDefined(upperBound_);</highlight></codeline>
-<codeline><highlight class="normal">}</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::isDegenerate()<sp/>const</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>lowerBound_<sp/>==<sp/>upperBound_;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::intersects(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!anInterval.isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(this-&gt;checkAgainstLowerBound(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>anInterval.lowerBound_,</highlight></codeline>
@@ -275,32 +221,12 @@
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::contains(const<sp/>T&amp;<sp/>aValue)<sp/>const</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!internal::IsDefined(aValue))</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Value&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>this-&gt;checkAgainstLowerBound(aValue,<sp/>false,<sp/>false)<sp/>&amp;&amp;<sp/>this-&gt;checkAgainstUpperBound(aValue,<sp/>false,<sp/>false);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::contains(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!anInterval.isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>this-&gt;checkAgainstLowerBound(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>anInterval.lowerBound_,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>anInterval.type_<sp/>==<sp/>Interval&lt;T&gt;::Type::Open<sp/>||<sp/>anInterval.type_<sp/>==<sp/>Interval&lt;T&gt;::Type::HalfOpenLeft,</highlight></codeline>
@@ -316,55 +242,30 @@
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">typename<sp/>Interval&lt;T&gt;::Type<sp/>Interval&lt;T&gt;::getType()<sp/>const</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>type_;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">const<sp/>T&amp;<sp/>Interval&lt;T&gt;::getLowerBound()<sp/>const</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>lowerBound_;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">const<sp/>T&amp;<sp/>Interval&lt;T&gt;::getUpperBound()<sp/>const</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>upperBound_;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
-<codeline><highlight class="normal">Interval&lt;T&gt;<sp/>Interval&lt;T&gt;::getIntersectionWith(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">std::optional&lt;Interval&lt;T&gt;&gt;<sp/>Interval&lt;T&gt;::getIntersectionWith(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!anInterval.isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>T<sp/>lowerBound<sp/>=<sp/>std::max(lowerBound_,<sp/>anInterval.lowerBound_);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>T<sp/>upperBound<sp/>=<sp/>std::min(upperBound_,<sp/>anInterval.upperBound_);</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(lowerBound<sp/>&gt;<sp/>upperBound)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::Undefined();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>std::nullopt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>openLowerBound<sp/>=<sp/>false;</highlight></codeline>
@@ -405,7 +306,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(lowerBound<sp/>==<sp/>upperBound)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::Undefined();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>std::nullopt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::Open(lowerBound,<sp/>upperBound);</highlight></codeline>
@@ -415,7 +316,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(lowerBound<sp/>==<sp/>upperBound)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::Undefined();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>std::nullopt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::HalfOpenLeft(lowerBound,<sp/>upperBound);</highlight></codeline>
@@ -425,7 +326,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(lowerBound<sp/>==<sp/>upperBound)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::Undefined();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>std::nullopt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::HalfOpenRight(lowerBound,<sp/>upperBound);</highlight></codeline>
@@ -435,18 +336,8 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
-<codeline><highlight class="normal">Interval&lt;T&gt;<sp/>Interval&lt;T&gt;::getUnionWith(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">std::optional&lt;Interval&lt;T&gt;&gt;<sp/>Interval&lt;T&gt;::getUnionWith(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!anInterval.isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>((*this)<sp/>==<sp/>anInterval)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;(lowerBound_,<sp/>upperBound_,<sp/>type_);</highlight></codeline>
@@ -495,7 +386,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::buildInterval(lowerBound,<sp/>openLowerBound,<sp/>upperBound,<sp/>openUpperBound);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::Undefined();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>std::nullopt;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
@@ -504,16 +395,6 @@
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>using<sp/>ostk::core::type::Index;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>using<sp/>ostk::core::type::Size;</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!internal::IsDefined(aStep))</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Step&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(internal::IsZero(aStep))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -576,29 +457,29 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Wrong(&quot;Array<sp/>size&quot;);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>step<sp/>=<sp/>internal::Undefined&lt;T&gt;();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>value<sp/>=<sp/>internal::Undefined&lt;T&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>types::Size<sp/>divisor<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>offsetFirstValue<sp/>=<sp/>false;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>switch<sp/>(type_)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Closed:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>step<sp/>=<sp/>(this-&gt;getUpperBound()<sp/>-<sp/>this-&gt;getLowerBound())<sp/>/<sp/>static_cast&lt;T&gt;(anArraySize<sp/>-<sp/>1);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>this-&gt;getLowerBound();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>divisor<sp/>=<sp/>anArraySize<sp/>-<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offsetFirstValue<sp/>=<sp/>false;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Open:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>step<sp/>=<sp/>(this-&gt;getUpperBound()<sp/>-<sp/>this-&gt;getLowerBound())<sp/>/<sp/>static_cast&lt;T&gt;(anArraySize<sp/>+<sp/>1);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>this-&gt;getLowerBound()<sp/>+<sp/>step;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>divisor<sp/>=<sp/>anArraySize<sp/>+<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offsetFirstValue<sp/>=<sp/>true;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::HalfOpenLeft:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>step<sp/>=<sp/>(this-&gt;getUpperBound()<sp/>-<sp/>this-&gt;getLowerBound())<sp/>/<sp/>static_cast&lt;T&gt;(anArraySize);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>this-&gt;getLowerBound()<sp/>+<sp/>step;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>divisor<sp/>=<sp/>anArraySize;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offsetFirstValue<sp/>=<sp/>true;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::HalfOpenRight:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>step<sp/>=<sp/>(this-&gt;getUpperBound()<sp/>-<sp/>this-&gt;getLowerBound())<sp/>/<sp/>static_cast&lt;T&gt;(anArraySize);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>this-&gt;getLowerBound();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>divisor<sp/>=<sp/>anArraySize;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offsetFirstValue<sp/>=<sp/>false;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>default:</highlight></codeline>
@@ -606,13 +487,16 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ctnr::Array&lt;T&gt;<sp/>array(anArraySize,<sp/>internal::Undefined&lt;T&gt;());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>T<sp/>step<sp/>=<sp/>(this-&gt;getUpperBound()<sp/>-<sp/>this-&gt;getLowerBound())<sp/>/<sp/>static_cast&lt;T&gt;(divisor);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>value<sp/>=<sp/>offsetFirstValue<sp/>?<sp/>(this-&gt;getLowerBound()<sp/>+<sp/>step)<sp/>:<sp/>this-&gt;getLowerBound();</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>typename<sp/>ctnr::Array&lt;T&gt;::Iterator<sp/>arrayIt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ctnr::Array&lt;T&gt;<sp/>array;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(arrayIt<sp/>=<sp/>array.begin();<sp/>arrayIt<sp/>!=<sp/>array.end();<sp/>++arrayIt,<sp/>value<sp/>+=<sp/>step)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>array.reserve(anArraySize);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(types::Size<sp/>index<sp/>=<sp/>0;<sp/>index<sp/>&lt;<sp/>anArraySize;<sp/>++index,<sp/>value<sp/>+=<sp/>step)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*arrayIt<sp/>=<sp/>value;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>array.add(value);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>array;</highlight></codeline>
@@ -621,11 +505,6 @@
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">types::String<sp/>Interval&lt;T&gt;::toString()<sp/>const</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>switch<sp/>(type_)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Closed:</highlight></codeline>
@@ -652,23 +531,13 @@
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">void<sp/>Interval&lt;T&gt;::setType(const<sp/>Interval&lt;T&gt;::Type&amp;<sp/>aType)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>type_<sp/>=<sp/>aType;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">void<sp/>Interval&lt;T&gt;::setLowerBound(const<sp/>T&amp;<sp/>aLowerBound)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(internal::IsDefined(aLowerBound)<sp/>&amp;&amp;<sp/>internal::IsDefined(upperBound_)<sp/>&amp;&amp;<sp/>(aLowerBound<sp/>&gt;<sp/>upperBound_))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(aLowerBound<sp/>&gt;<sp/>upperBound_)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::RuntimeError(&quot;Lower<sp/>bound<sp/>greater<sp/>than<sp/>upper<sp/>bound.&quot;);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -679,23 +548,12 @@
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">void<sp/>Interval&lt;T&gt;::setUpperBound(const<sp/>T&amp;<sp/>anUpperBound)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(internal::IsDefined(anUpperBound)<sp/>&amp;&amp;<sp/>internal::IsDefined(lowerBound_)<sp/>&amp;&amp;<sp/>(anUpperBound<sp/>&lt;<sp/>lowerBound_))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anUpperBound<sp/>&lt;<sp/>lowerBound_)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::RuntimeError(&quot;Upper<sp/>bound<sp/>lower<sp/>than<sp/>lower<sp/>bound.&quot;);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>upperBound_<sp/>=<sp/>anUpperBound;</highlight></codeline>
-<codeline><highlight class="normal">}</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
-<codeline><highlight class="normal">Interval&lt;T&gt;<sp/>Interval&lt;T&gt;::Undefined()</highlight></codeline>
-<codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;(internal::Undefined&lt;T&gt;(),<sp/>internal::Undefined&lt;T&gt;(),<sp/>Interval::Type::Undefined);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
@@ -727,19 +585,14 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>ctnr::Array&lt;Interval&lt;T&gt;&gt;&amp;<sp/>anIntervalArray,<sp/>const<sp/>Interval&lt;T&gt;&amp;<sp/>anInterval</highlight></codeline>
 <codeline><highlight class="normal">)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!anInterval.isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ctnr::Array&lt;Interval&lt;T&gt;&gt;<sp/>clipped;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(Size<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>anIntervalArray.getSize();<sp/>++i)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>auto<sp/>checkIntersection<sp/>=<sp/>anIntervalArray[i].getIntersectionWith(anInterval);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checkIntersection.isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checkIntersection.has_value())</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clipped.add(checkIntersection);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clipped.add(checkIntersection.value());</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
@@ -753,18 +606,8 @@
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ctnr::Array&lt;Interval&lt;T&gt;&gt;<sp/>sorted<sp/>=<sp/>anIntervalArray;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anIntervalArray.size()<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>!anIntervalArray[0].isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>auto<sp/>comparator<sp/>=<sp/>[byLowerBound,<sp/>ascending](const<sp/>Interval&lt;T&gt;&amp;<sp/>anInterval,<sp/>const<sp/>Interval&lt;T&gt;&amp;<sp/>anotherInterval)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(!anInterval.isDefined()<sp/>||<sp/>!anotherInterval.isDefined())</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(byLowerBound)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>ascending<sp/>?<sp/>anInterval.lowerBound_<sp/>&lt;<sp/>anotherInterval.lowerBound_</highlight></codeline>
@@ -796,9 +639,9 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(Size<sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/>sorted.size();<sp/>++i)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto<sp/>checkUnion<sp/>=<sp/>nextUnion.getUnionWith(sorted[i]);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checkUnion.isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(checkUnion.has_value())</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nextUnion<sp/>=<sp/>checkUnion;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nextUnion<sp/>=<sp/>checkUnion.value();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>else</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -814,20 +657,20 @@
 <codeline></codeline>
 <codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal">ctnr::Array&lt;Interval&lt;T&gt;&gt;<sp/>Interval&lt;T&gt;::GetGaps(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>ctnr::Array&lt;Interval&lt;T&gt;&gt;&amp;<sp/>anIntervalArray,<sp/>const<sp/>Interval&lt;T&gt;&amp;<sp/>anInterval</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>ctnr::Array&lt;Interval&lt;T&gt;&gt;&amp;<sp/>anIntervalArray,<sp/>const<sp/>std::optional&lt;Interval&lt;T&gt;&gt;&amp;<sp/>anInterval</highlight></codeline>
 <codeline><highlight class="normal">)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ctnr::Array&lt;Interval&lt;T&gt;&gt;<sp/>sanitized<sp/>=<sp/>Interval&lt;T&gt;::Merge(anIntervalArray);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anInterval.isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anInterval.has_value())</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sanitized<sp/>=<sp/>Interval&lt;T&gt;::Clip(sanitized,<sp/>anInterval);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sanitized<sp/>=<sp/>Interval&lt;T&gt;::Clip(sanitized,<sp/>anInterval.value());</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(sanitized.size()<sp/>==<sp/>0)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(anInterval.isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(anInterval.has_value())</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>{anInterval};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>{anInterval.value()};</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>{};</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -835,14 +678,14 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ctnr::Array&lt;Interval&lt;T&gt;&gt;<sp/>gaps;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Deal<sp/>with<sp/>potential<sp/>leading<sp/>gap</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anInterval.isDefined()<sp/>&amp;&amp;<sp/>sanitized[0].lowerBound_<sp/>&gt;<sp/>anInterval.lowerBound_)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anInterval.has_value()<sp/>&amp;&amp;<sp/>sanitized[0].lowerBound_<sp/>&gt;<sp/>anInterval-&gt;lowerBound_)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>Interval&lt;T&gt;<sp/>upperInterval<sp/>=<sp/>sanitized[0];</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>T<sp/>lowerBound<sp/>=<sp/>anInterval.lowerBound_;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>T<sp/>lowerBound<sp/>=<sp/>anInterval-&gt;lowerBound_;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>T<sp/>upperBound<sp/>=<sp/>upperInterval.lowerBound_;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bool<sp/>openLowerBound<sp/>=<sp/>true;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(anInterval.type_<sp/>==<sp/>Interval&lt;T&gt;::Type::Closed<sp/>||<sp/>anInterval.type_<sp/>==<sp/>Interval&lt;T&gt;::Type::HalfOpenRight)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(anInterval-&gt;type_<sp/>==<sp/>Interval&lt;T&gt;::Type::Closed<sp/>||<sp/>anInterval-&gt;type_<sp/>==<sp/>Interval&lt;T&gt;::Type::HalfOpenRight)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>openLowerBound<sp/>=<sp/>false;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -880,11 +723,11 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Deal<sp/>with<sp/>potential<sp/>trailing<sp/>gap</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anInterval.isDefined()<sp/>&amp;&amp;<sp/>sanitized[sanitized.size()<sp/>-<sp/>1].upperBound_<sp/>&lt;<sp/>anInterval.upperBound_)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anInterval.has_value()<sp/>&amp;&amp;<sp/>sanitized[sanitized.size()<sp/>-<sp/>1].upperBound_<sp/>&lt;<sp/>anInterval-&gt;upperBound_)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>Interval&lt;T&gt;<sp/>lowerInterval<sp/>=<sp/>sanitized[sanitized.size()<sp/>-<sp/>1];</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>T<sp/>lowerBound<sp/>=<sp/>lowerInterval.upperBound_;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>T<sp/>upperBound<sp/>=<sp/>anInterval.upperBound_;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>T<sp/>upperBound<sp/>=<sp/>anInterval-&gt;upperBound_;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bool<sp/>openLowerBound<sp/>=<sp/>false;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(lowerInterval.type_<sp/>==<sp/>Interval&lt;T&gt;::Type::Closed<sp/>||<sp/>lowerInterval.type_<sp/>==<sp/>Interval&lt;T&gt;::Type::HalfOpenLeft)</highlight></codeline>
@@ -893,7 +736,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bool<sp/>openUpperBound<sp/>=<sp/>true;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(anInterval.type_<sp/>==<sp/>Interval&lt;T&gt;::Type::Closed<sp/>||<sp/>anInterval.type_<sp/>==<sp/>Interval&lt;T&gt;::Type::HalfOpenLeft)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(anInterval-&gt;type_<sp/>==<sp/>Interval&lt;T&gt;::Type::Closed<sp/>||<sp/>anInterval-&gt;type_<sp/>==<sp/>Interval&lt;T&gt;::Type::HalfOpenLeft)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>openUpperBound<sp/>=<sp/>false;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1031,9 +874,6 @@
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>switch<sp/>(anIntervalType)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Undefined:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>&quot;Undefined&quot;;</highlight></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Closed:</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>&quot;Closed&quot;;</highlight></codeline>
 <codeline></codeline>

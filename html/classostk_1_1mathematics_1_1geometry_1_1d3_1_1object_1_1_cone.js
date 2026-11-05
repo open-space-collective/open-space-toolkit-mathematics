@@ -18,7 +18,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone =
     [ "intersectionWith", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#aff8111459bf4fd52f4890d52ef468c0a", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#aa08f535f31cc63cc5675f434b20617e4", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#a801e263af20ca039858bcecdd579ff1c", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#a927c5cfa7196f425f8cd153efde8e90f", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#ae08043260d062f74a3daa54ba9593964", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#a218e8b5b2b28de0a632b102c0953f948", null ],
     [ "print", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#a4683504c6cc0933811bf909c96f5ef17", null ]

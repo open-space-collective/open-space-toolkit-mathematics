@@ -33,8 +33,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_c
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a1dbcaa8deafe0bb5a99a426725306b30}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} \&a\+Cuboid) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_ae9749637798c6670bb1c2b8cc2850ba8}{is\+Defined}} () const override
-\begin{DoxyCompactList}\small\item\em Check if cuboid is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a9919583ad7088da65c90dfb090b872bf}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} \&a\+Cuboid, double a\+Tolerance) const
 \begin{DoxyCompactList}\small\item\em Check if cuboid is near another cuboid. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a25720e902948424afe2f04f20e17aaad}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
@@ -94,8 +92,6 @@ virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1obje
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a137ba797d414aa5432154e59227c7cfc}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined cuboid. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a62ba17b6ee0e42e60ccebd66ddce3fed}{Cube}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Center, double an\+Extent)
 \begin{DoxyCompactList}\small\item\em Constructs a a cube. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -820,30 +816,6 @@ Check if cuboid intersects sphere.
 \begin{DoxyReturn}{Returns}
 True if cuboid intersects sphere 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_ae9749637798c6670bb1c2b8cc2850ba8}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_ae9749637798c6670bb1c2b8cc2850ba8}} 
-\index{ostk::mathematics::geometry::d3::object::Cuboid@{ostk::mathematics::geometry::d3::object::Cuboid}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Cuboid@{ostk::mathematics::geometry::d3::object::Cuboid}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cuboid\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Check if cuboid is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_ad1cf81f969ee388b7bdb80986d4f214d}{Cuboid}} cuboid = \{ \{ 0.0, 0.0, 0.0 \}, \{ \{ 1.0, 0.0, 0.0 \}, \{ 0.0, 1.0, 0.0 \}, \{ 0.0, 0.0, 1.0}
-\DoxyCodeLine{\} \}, \{ 1.0, 2.0, 3.0 \} \} ; cuboid.isDefined() ; \textcolor{comment}{// True}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if cuboid is defined 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
-
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a9919583ad7088da65c90dfb090b872bf}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a9919583ad7088da65c90dfb090b872bf}} 
 \index{ostk::mathematics::geometry::d3::object::Cuboid@{ostk::mathematics::geometry::d3::object::Cuboid}!isNear@{isNear}}
 \index{isNear@{isNear}!ostk::mathematics::geometry::d3::object::Cuboid@{ostk::mathematics::geometry::d3::object::Cuboid}}
@@ -948,25 +920,6 @@ Print cuboid.
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a137ba797d414aa5432154e59227c7cfc}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a137ba797d414aa5432154e59227c7cfc}} 
-\index{ostk::mathematics::geometry::d3::object::Cuboid@{ostk::mathematics::geometry::d3::object::Cuboid}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Cuboid@{ostk::mathematics::geometry::d3::object::Cuboid}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid}{Cuboid}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cuboid\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined cuboid. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_ad1cf81f969ee388b7bdb80986d4f214d}{Cuboid}} cuboid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a137ba797d414aa5432154e59227c7cfc}{Cuboid::Undefined}}() ; \textcolor{comment}{// Undefined}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined cuboid 
-\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

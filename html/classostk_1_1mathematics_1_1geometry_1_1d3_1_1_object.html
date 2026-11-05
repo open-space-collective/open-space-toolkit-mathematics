@@ -133,9 +133,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a550754b8f5576ce2465979657325d5df"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a550754b8f5576ce2465979657325d5df">operator!=</a> (const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html">Object</a> &amp;anObject) const</td></tr>
 <tr class="memdesc:a550754b8f5576ce2465979657325d5df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not equal to operator.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a550754b8f5576ce2465979657325d5df">More...</a><br /></td></tr>
 <tr class="separator:a550754b8f5576ce2465979657325d5df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1962edbcdde0f851361b60324ab9ce2b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a1962edbcdde0f851361b60324ab9ce2b">isDefined</a> () const =0</td></tr>
-<tr class="memdesc:a1962edbcdde0f851361b60324ab9ce2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if object is defined.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a1962edbcdde0f851361b60324ab9ce2b">More...</a><br /></td></tr>
-<tr class="separator:a1962edbcdde0f851361b60324ab9ce2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9e6f5027d14e3c7d7bead94052611ed"><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
 <tr class="memitem:ad9e6f5027d14e3c7d7bead94052611ed"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#ad9e6f5027d14e3c7d7bead94052611ed">is</a> () const</td></tr>
 <tr class="memdesc:ad9e6f5027d14e3c7d7bead94052611ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if object can be converted to type.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#ad9e6f5027d14e3c7d7bead94052611ed">More...</a><br /></td></tr>
@@ -481,37 +478,6 @@ template&lt;class Type &gt; </div>
 
 </div>
 </div>
-<a id="a1962edbcdde0f851361b60324ab9ce2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1962edbcdde0f851361b60324ab9ce2b">&#9670;&nbsp;</a></span>isDefined()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool ostk::mathematics::geometry::d3::Object::isDefined </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check if object is defined. </p>
-<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">Point::Origin</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a151a3020d20a0ae2847f5ce99bd7ee06">isDefined</a>() ; <span class="comment">// True</span></div>
-</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if object is defined </dd></dl>
-
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a8ccf639112d5c08aa7d2bb831072ca2f">ostk::mathematics::geometry::d3::object::Composite</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a151a3020d20a0ae2847f5ce99bd7ee06">ostk::mathematics::geometry::d3::object::Point</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html#a6b8187ba8b67220e7562357ad846edaa">ostk::mathematics::geometry::d3::object::PointSet</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone.html#a927c5cfa7196f425f8cd153efde8e90f">ostk::mathematics::geometry::d3::object::Cone</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html#ab2e3d42d2420cd0d3029f1d14e126a6c">ostk::mathematics::geometry::d3::object::Polygon</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a8b85f9aa5f4b1cdf0047c8010fdb7645">ostk::mathematics::geometry::d3::object::Pyramid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a3e36099693bccb2d2e68d8673d86e5f6">ostk::mathematics::geometry::d3::object::Ellipsoid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#ae9749637798c6670bb1c2b8cc2850ba8">ostk::mathematics::geometry::d3::object::Cuboid</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a5311446aca36ccadbd8ae323502dba44">ostk::mathematics::geometry::d3::object::Sphere</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a0a39c2a1bd1e330e8cc15aa4a5e19d47">ostk::mathematics::geometry::d3::object::Plane</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#a402bf991d7974383a2766f12367681cd">ostk::mathematics::geometry::d3::object::Ray</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#ac79b6efa23440fa61690181c6ade42ec">ostk::mathematics::geometry::d3::object::LineString</a>, <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment.html#a682162f29a5597e61f0eaac2f9762518">ostk::mathematics::geometry::d3::object::Segment</a>, and <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line.html#ae07b5282c948df716fc1fa5bedeec344">ostk::mathematics::geometry::d3::object::Line</a>.</p>
-
-</div>
-</div>
 <a id="a550754b8f5576ce2465979657325d5df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a550754b8f5576ce2465979657325d5df">&#9670;&nbsp;</a></span>operator!=()</h2>
 
@@ -672,10 +638,9 @@ template&lt;class Type &gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a151a3020d20a0ae2847f5ce99bd7ee06"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a151a3020d20a0ae2847f5ce99bd7ee06">ostk::mathematics::geometry::d3::object::Point::isDefined</a></div><div class="ttdeci">virtual bool isDefined() const override</div><div class="ttdoc">Addition operator: translate point along vector.</div><div class="ttdef"><b>Definition:</b> Point.cpp:99</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a2e0dc90fe04fb9befb79ec9874dcebc4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">ostk::mathematics::geometry::d3::object::Point::Origin</a></div><div class="ttdeci">static Point Origin()</div><div class="ttdoc">Constructs a point at origin.</div><div class="ttdef"><b>Definition:</b> Point.cpp:214</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_a5cd654de32139306358aa773bbf8c291"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">ostk::mathematics::geometry::d3::Transformation::Identity</a></div><div class="ttdeci">static Transformation Identity()</div><div class="ttdoc">Construct an identity transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:254</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a9395ae58a8f65a13328bc581586955c3"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a9395ae58a8f65a13328bc581586955c3">ostk::mathematics::geometry::d3::object::Point::print</a></div><div class="ttdeci">virtual void print(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</div><div class="ttdoc">Print point.</div><div class="ttdef"><b>Definition:</b> Point.cpp:179</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a2e0dc90fe04fb9befb79ec9874dcebc4"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a2e0dc90fe04fb9befb79ec9874dcebc4">ostk::mathematics::geometry::d3::object::Point::Origin</a></div><div class="ttdeci">static Point Origin()</div><div class="ttdoc">Constructs a point at origin.</div><div class="ttdef"><b>Definition:</b> Point.cpp:120</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_html_a5cd654de32139306358aa773bbf8c291"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html#a5cd654de32139306358aa773bbf8c291">ostk::mathematics::geometry::d3::Transformation::Identity</a></div><div class="ttdeci">static Transformation Identity()</div><div class="ttdoc">Construct an identity transformation.</div><div class="ttdef"><b>Definition:</b> Transformation.cpp:178</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_html_a9395ae58a8f65a13328bc581586955c3"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html#a9395ae58a8f65a13328bc581586955c3">ostk::mathematics::geometry::d3::object::Point::print</a></div><div class="ttdeci">virtual void print(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</div><div class="ttdoc">Print point.</div><div class="ttdef"><b>Definition:</b> Point.cpp:104</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_html_af003ad733beface98466830078a83875"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#af003ad733beface98466830078a83875">ostk::mathematics::geometry::d3::Object::Object</a></div><div class="ttdeci">Object()=default</div><div class="ttdoc">Default constructor (default)</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

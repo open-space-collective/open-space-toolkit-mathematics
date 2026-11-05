@@ -29,7 +29,6 @@ ostk.mathematics.geometry.d3.transformation.rotation.Quaternion
       ~Quaternion.get_scalar_part
       ~Quaternion.get_vector_part
       ~Quaternion.inverse
-      ~Quaternion.is_defined
       ~Quaternion.is_near
       ~Quaternion.is_unitary
       ~Quaternion.lerp
@@ -52,7 +51,6 @@ ostk.mathematics.geometry.d3.transformation.rotation.Quaternion
       ~Quaternion.to_rectify
       ~Quaternion.to_string
       ~Quaternion.to_vector
-      ~Quaternion.undefined
       ~Quaternion.unit
       ~Quaternion.x
       ~Quaternion.xyzs

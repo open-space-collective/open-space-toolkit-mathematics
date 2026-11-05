@@ -20,7 +20,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite =
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a5377ac1f13ee56f32d1c125a26d28a60", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#afb414dd80dce2ea9aad5513c8f466e94", null ],
     [ "is", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a1cfbb9bdbf5c56aae7fa6496b6e7c080", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a8ccf639112d5c08aa7d2bb831072ca2f", null ],
     [ "isEmpty", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a4212e7557991ad99f9d4dfe9cbf6b703", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a64f215f7a371f31396531b1fb166ca5f", null ],
     [ "operator+", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite.html#a9997d9bdb4f03aaf156511762d479f84", null ],

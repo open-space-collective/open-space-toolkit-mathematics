@@ -16,7 +16,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1
     [ "getScalarPart", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#adcd1e5d22432f5cf1f08eb3b04da6bdf", null ],
     [ "getVectorPart", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#a3c12f3cb5522ec354d8f2e369135430c", null ],
     [ "inverse", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#a08f5634f4f48c927635fe781843260fb", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#a25d3f5bd7307918ea70b3b21f80a3001", null ],
     [ "isNear", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#afab79d88d91c8fc0a6b888a91f0e52bd", null ],
     [ "isUnitary", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#a42152cab43335a5fbde81d562ae79268", null ],
     [ "log", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ad0889624c3960610d94c44c2675fe2d7", null ],

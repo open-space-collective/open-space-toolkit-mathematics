@@ -26,7 +26,6 @@ ostk.mathematics.geometry.d2.object.PointSet
       ~PointSet.get_point_closest_to
       ~PointSet.get_size
       ~PointSet.intersects
-      ~PointSet.is_defined
       ~PointSet.is_empty
       ~PointSet.is_near
       ~PointSet.to_string

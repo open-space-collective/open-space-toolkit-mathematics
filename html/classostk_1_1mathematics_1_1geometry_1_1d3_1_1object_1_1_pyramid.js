@@ -17,7 +17,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid =
     [ "intersectionWith", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a93113d23dee9ac80c7cba6198ce272a2", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#ae2daf13e58b060a4085944e3c3171910", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a4676717f067f8fd710fc9073d0b1709d", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a8b85f9aa5f4b1cdf0047c8010fdb7645", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a3fa7abd7265937266cb59f19f63db3bf", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#a77efda8908205d41517ed65ad8a09cf9", null ],
     [ "print", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html#aba0fd8b256f78bb7bb0725103287f681", null ]

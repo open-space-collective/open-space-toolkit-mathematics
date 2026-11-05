@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="212" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" bodystart="212" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="194" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" bodystart="194" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ab3286fd0f1915a23c39b23e1d0925243" prot="private" static="no" mutable="no">
         <type>Vector2d</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="213" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" bodystart="213" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="195" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" bodystart="195" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="63" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="42" bodyend="55"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="63" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="42" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a4b591f899c00ed44f98ce718d5d104f4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -157,27 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="73" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="57" bodyend="60"/>
-      </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a603f1de0e328c16a829b9e1c9f5c077f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
-        <type>bool</type>
-        <definition>bool ostk::mathematics::geometry::d2::object::Line::isDefined</definition>
-        <argsstring>() const override</argsstring>
-        <name>isDefined</name>
-        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1abe5ea18c13bc259fc0da0b0c49fa0dca">isDefined</reimplements>
-        <briefdescription>
-<para>Check if line is defined. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Line({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}).isDefined()<sp/>;<sp/>//<sp/>True</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="return"><para>True if line is defined </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="82" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="62" bodyend="65"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="73" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="52" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1adda17499fb10cce0898d611ec234817e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -211,7 +191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="94" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="67" bodyend="70"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="85" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="57" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a8f6979f55c2a971d1b7f1f7dc4b991be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -245,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="106" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="97" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1aefb7b93e8cea6c18e38ee2e6627da0e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -279,7 +259,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="118" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="72" bodyend="100"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="109" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="62" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a44ea437739c18c9c49f05d0f7453cb32" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -313,7 +293,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="130" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="102" bodyend="123"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="121" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="82" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a4518ab68500d6ce13cb801656b263141" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
@@ -332,7 +312,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="139" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="125" bodyend="133"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="130" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="100" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a4922d6aff04576096d132458792ef65a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const Vector2d &amp;</type>
@@ -351,7 +331,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="148" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="135" bodyend="143"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="139" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="105" bodyend="108"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ace28d946a2839e5558178312c7b2948d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -383,7 +363,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="158" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="145" bodyend="159"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="149" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="110" bodyend="119"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1abfbdc40cf31d6c4f92f68930995fa452" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>String</type>
@@ -422,7 +402,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="168" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="161" bodyend="178"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="159" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="121" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ad3cdbabb0a5a068923e9c63e6675fa15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -466,7 +446,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="179" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="180" bodyend="190"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="170" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="140" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3a157e132491ce9f98561dff3c4959d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -498,29 +478,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="189" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="192" bodyend="206"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="180" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="150" bodyend="154"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a728722304ee853205eab876dec1ec632" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref></type>
-        <definition>Line ostk::mathematics::geometry::d2::object::Line::Undefined</definition>
-        <argsstring>()</argsstring>
-        <name>Undefined</name>
-        <briefdescription>
-<para>Constructs an undefined line. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>Line::Undefined()<sp/>;<sp/>//<sp/>Undefined</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="return"><para>Undefined line </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="198" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="208" bodyend="211"/>
-      </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ae8c72610b423866bc7c1bca059d3a7e3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref></type>
         <definition>Line ostk::mathematics::geometry::d2::object::Line::Points</definition>
@@ -548,7 +509,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="209" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="213" bodyend="231"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="191" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="156" bodyend="164"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -583,7 +544,7 @@
         <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="34" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" bodystart="33" bodyend="214"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="34" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" bodystart="33" bodyend="196"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3a157e132491ce9f98561dff3c4959d4" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a60f4de4753ac3be12c6084aca4b9cc3a" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>clone</name></member>
@@ -598,7 +559,6 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1adda17499fb10cce0898d611ec234817e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>intersects</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a8f6979f55c2a971d1b7f1f7dc4b991be" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>intersects</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a553d7a1e388598c74d0f9fdd57d1ba9d" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>intersects</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a603f1de0e328c16a829b9e1c9f5c077f" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>isDefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a0a22b94b232fca62ec257f90f3329431" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>Line</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a15a959fd5b624d6fcc6725982a8cddf8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>Object</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a4b591f899c00ed44f98ce718d5d104f4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>operator!=</name></member>
@@ -609,7 +569,6 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ae8c72610b423866bc7c1bca059d3a7e3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>Points</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ad3cdbabb0a5a068923e9c63e6675fa15" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>print</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1abfbdc40cf31d6c4f92f68930995fa452" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>toString</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a728722304ee853205eab876dec1ec632" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>Undefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af11dec981b2e1ab08deae342ec2c4ef8" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>~Object</name></member>
     </listofallmembers>
   </compounddef>

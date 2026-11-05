@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" line="207" column="7" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="207" bodyend="220"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" line="162" column="7" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="162" bodyend="170"/>
       </memberdef>
       <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1a611d50bcfddda6fe651b06d2648e60cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" line="242" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="242" bodyend="252"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" line="182" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="182" bodyend="192"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

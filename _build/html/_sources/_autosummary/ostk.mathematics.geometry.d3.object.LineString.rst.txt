@@ -39,7 +39,6 @@ ostk.mathematics.geometry.d3.object.LineString
       ~LineString.get_point_count
       ~LineString.intersects
       ~LineString.is_cone
-      ~LineString.is_defined
       ~LineString.is_ellipsoid
       ~LineString.is_empty
       ~LineString.is_line

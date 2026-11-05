@@ -26,8 +26,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_c
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_ae08043260d062f74a3daa54ba9593964}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} \&a\+Cone) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a927c5cfa7196f425f8cd153efde8e90f}{is\+Defined}} () const override
-\begin{DoxyCompactList}\small\item\em Check if cone is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a801e263af20ca039858bcecdd579ff1c}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&a\+Sphere, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
 \begin{DoxyCompactList}\small\item\em Check if cone intersects sphere. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_aa08f535f31cc63cc5675f434b20617e4}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
@@ -62,11 +60,6 @@ virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1obje
 \begin{DoxyCompactList}\small\item\em Print cone. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_ae0eb36a3ddb55789fb3fd382ad5a5b1b}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
 \begin{DoxyCompactList}\small\item\em Apply transformation to cone. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a05a5cf02c3eae74349a97c3347d54429}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined cone. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -548,30 +541,6 @@ Check if cone intersects sphere.
 \begin{DoxyReturn}{Returns}
 True if cone intersects sphere 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a927c5cfa7196f425f8cd153efde8e90f}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a927c5cfa7196f425f8cd153efde8e90f}} 
-\index{ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Check if cone is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
-\DoxyCodeLine{cone.\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ad99d5ff3a95e93b3599248c72b631ff1}{isDefined}}() ; \textcolor{comment}{// True}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if cone is defined 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
-
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_ae08043260d062f74a3daa54ba9593964}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_ae08043260d062f74a3daa54ba9593964}} 
 \index{ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}}
@@ -651,25 +620,6 @@ Print cone.
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a05a5cf02c3eae74349a97c3347d54429}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a05a5cf02c3eae74349a97c3347d54429}} 
-\index{ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined cone. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a05a5cf02c3eae74349a97c3347d54429}{Cone::Undefined}}() ;}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined cone 
-\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

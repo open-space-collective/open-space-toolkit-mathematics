@@ -9,7 +9,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string =
     [ "getLineStringCount", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#a307dced668e40eb38bebea36f1f66dd1", null ],
     [ "getPointClosestTo", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#ae1e7df5d3840884839e43aa0aca5ba6b", null ],
     [ "getPointCount", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#af6b98286c8c872d39d8659d5672f7649", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#ac38eacd742cd2a60eb62d03cf1234b45", null ],
     [ "isEmpty", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#af5f5a56165c38b4dc183316189038642", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#a711811c8e62ce8f678958d09ef6913a3", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#a2243a564e4033f557f26b39cfd75ade8", null ],

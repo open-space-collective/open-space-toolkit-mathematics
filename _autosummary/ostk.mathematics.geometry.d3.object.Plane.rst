@@ -38,7 +38,6 @@ ostk.mathematics.geometry.d3.object.Plane
       ~Plane.intersection_with
       ~Plane.intersects
       ~Plane.is_cone
-      ~Plane.is_defined
       ~Plane.is_ellipsoid
       ~Plane.is_line
       ~Plane.is_line_string
@@ -50,6 +49,5 @@ ostk.mathematics.geometry.d3.object.Plane
       ~Plane.is_ray
       ~Plane.is_segment
       ~Plane.is_sphere
-      ~Plane.undefined
    
    

@@ -24,12 +24,10 @@ ostk.mathematics.geometry.d2.Transformation
       ~Transformation.get_matrix
       ~Transformation.get_type
       ~Transformation.identity
-      ~Transformation.is_defined
       ~Transformation.rotation
       ~Transformation.rotation_around
       ~Transformation.string_from_type
       ~Transformation.translation
       ~Transformation.type_of_matrix
-      ~Transformation.undefined
    
    

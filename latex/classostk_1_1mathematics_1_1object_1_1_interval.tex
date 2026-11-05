@@ -24,8 +24,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a9ad41bce0
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0af7fe64d3e97061f44348b799654619}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} \&an\+Interval) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a6dd09d2e325303a5ad0097bed3896708}{is\+Defined}} () const
-\begin{DoxyCompactList}\small\item\em Check if interval is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a1f279c73d8c7a5fa69ce52dc301d1f5a}{is\+Degenerate}} () const
 \begin{DoxyCompactList}\small\item\em Check if interval is degenerate, i.\+e. its lower and upper bounds are the equal. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a8f109e44bbf0691c0a941a48df64c808}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} \&an\+Interval) const
@@ -40,9 +38,9 @@ const T \& \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a2b7
 \begin{DoxyCompactList}\small\item\em Get lower bound. \end{DoxyCompactList}\item 
 const T \& \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a1176385435c39731f85f0fe2e4e0f875}{get\+Upper\+Bound}} () const
 \begin{DoxyCompactList}\small\item\em Get upper bound. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a2d06470c41c25401977c6a1b0da578e1}{get\+Intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} \&an\+Interval) const
+std\+::optional$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a12974b26fea9935a342f94ffd813cfa2}{get\+Intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} \&an\+Interval) const
 \begin{DoxyCompactList}\small\item\em Get intersecting interval with another interval. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_af0b873731c1700be9b2a30d87a2aa956}{get\+Union\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} \&an\+Interval) const
+std\+::optional$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a74dadebed2bc139147a9aea8ccaf168d}{get\+Union\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} \&an\+Interval) const
 \begin{DoxyCompactList}\small\item\em Get union interval with another interval. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class U $>$ }\\ctnr\+::\+Array$<$ T $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ad1636246dd97c94a67d38b5d2a8eb868}{generate\+Array\+With\+Step}} (const U \&a\+Step) const
 \begin{DoxyCompactList}\small\item\em Generate array from a given step, respecting the openness of the interval. \end{DoxyCompactList}\item 
@@ -59,8 +57,6 @@ void \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a42cfebf36
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a877844b24a34a2c5c5109ce658cd5551}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined interval. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Closed}} (const T \&a\+Lower\+Bound, const T \&an\+Upper\+Bound)
 \begin{DoxyCompactList}\small\item\em Constructs a closed interval. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Open}} (const T \&a\+Lower\+Bound, const T \&an\+Upper\+Bound)
@@ -75,8 +71,8 @@ static ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_
 \begin{DoxyCompactList}\small\item\em Creates a new sorted array, the order based on the inputted parameters. \end{DoxyCompactList}\item 
 static ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac896cb95eb898a697f0b8c55f5f16f4b}{Merge}} (const ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$$>$ \&an\+Interval\+Array)
 \begin{DoxyCompactList}\small\item\em Creates a new array without any overlaps and sorted by their lower bound. \end{DoxyCompactList}\item 
-static ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3b1b3713ef5cbc3287bb0591e8deae53}{Get\+Gaps}} (const ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$$>$ \&an\+Interval\+Array, const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \&an\+Interval=\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a877844b24a34a2c5c5109ce658cd5551}{Interval\+::\+Undefined}}())
-\begin{DoxyCompactList}\small\item\em Creates a new array that contains the gaps between an array of intervals. If an interval is actually defined, only intervals intersecting with the interval are considered and potential leading and trailing gaps w.\+r.\+t. the interval boundaries are included. The intervals are previously merged and sorted. \end{DoxyCompactList}\item 
+static ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a914d0de789eff18b2f1e5fb8d677b500}{Get\+Gaps}} (const ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$$>$ \&an\+Interval\+Array, const std\+::optional$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$$>$ \&an\+Interval=std\+::nullopt)
+\begin{DoxyCompactList}\small\item\em Creates a new array that contains the gaps between an array of intervals. If an interval is provided, only intervals intersecting with the interval are considered and potential leading and trailing gaps w.\+r.\+t. the interval boundaries are included. The intervals are previously merged and sorted. \end{DoxyCompactList}\item 
 static ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a4a08b629ac0bd654b51ff0c8210ce217}{Logical\+Or}} (const ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$$>$ \&an\+Interval\+Array, const ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$$>$ \&another\+Interval\+Array)
 \begin{DoxyCompactList}\small\item\em Creates a new array that contains the intervals representing a logical \textquotesingle{}OR\textquotesingle{} conjunction between the two arrays. The resulting array will contain the union of intervals of the provided arrays, i.\+e. intervals that overlap with intervals from one of the arrays OR the other. \end{DoxyCompactList}\item 
 static ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a2bf375749b313b2e534b1a42d23b6583}{Logical\+And}} (const ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$$>$ \&an\+Interval\+Array, const ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$$>$ \&another\+Interval\+Array)
@@ -286,16 +282,16 @@ Generate array from a given step, respecting the openness of the interval.
 \begin{DoxyReturn}{Returns}
 Array of values 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a3b1b3713ef5cbc3287bb0591e8deae53}\label{classostk_1_1mathematics_1_1object_1_1_interval_a3b1b3713ef5cbc3287bb0591e8deae53}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a914d0de789eff18b2f1e5fb8d677b500}\label{classostk_1_1mathematics_1_1object_1_1_interval_a914d0de789eff18b2f1e5fb8d677b500}} 
 \index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!GetGaps@{GetGaps}}
 \index{GetGaps@{GetGaps}!ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{GetGaps()}{GetGaps()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-static ctnr\+::\+Array$<$\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$T$>$ $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::Get\+Gaps (\begin{DoxyParamCaption}\item[{const ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$$>$ \&}]{an\+Interval\+Array,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \&}]{an\+Interval = {\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$~T~$>$\+:\+:\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a877844b24a34a2c5c5109ce658cd5551}{Undefined}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+static ctnr\+::\+Array$<$\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$T$>$ $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::Get\+Gaps (\begin{DoxyParamCaption}\item[{const ctnr\+::\+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$$>$ \&}]{an\+Interval\+Array,  }\item[{const std\+::optional$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$$>$ \&}]{an\+Interval = {\ttfamily std\+:\+:nullopt} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Creates a new array that contains the gaps between an array of intervals. If an interval is actually defined, only intervals intersecting with the interval are considered and potential leading and trailing gaps w.\+r.\+t. the interval boundaries are included. The intervals are previously merged and sorted. 
+Creates a new array that contains the gaps between an array of intervals. If an interval is provided, only intervals intersecting with the interval are considered and potential leading and trailing gaps w.\+r.\+t. the interval boundaries are included. The intervals are previously merged and sorted. 
 
 
 \begin{DoxyCode}{0}
@@ -304,7 +300,7 @@ Creates a new array that contains the gaps between an array of intervals. If an 
 \DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(2.0, 4.0),}
 \DoxyCodeLine{\};}
 \DoxyCodeLine{\textcolor{keyword}{const} Interval<double> bounds = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(1.5, 4.5)}
-\DoxyCodeLine{Array<\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a625893384a0eea6cedbe88172764a525}{Interval}}<\textcolor{keywordtype}{double}>> gaps = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a625893384a0eea6cedbe88172764a525}{Interval}}<\textcolor{keywordtype}{double}>::\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3b1b3713ef5cbc3287bb0591e8deae53}{GetGaps}}(intervals, bounds);}
+\DoxyCodeLine{Array<\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a625893384a0eea6cedbe88172764a525}{Interval}}<\textcolor{keywordtype}{double}>> gaps = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a625893384a0eea6cedbe88172764a525}{Interval}}<\textcolor{keywordtype}{double}>::\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a914d0de789eff18b2f1e5fb8d677b500}{GetGaps}}(intervals, bounds);}
 \DoxyCodeLine{\textcolor{comment}{// \{[1.5, 2.0], [4.0, 4.5]\}}}
 \end{DoxyCode}
 
@@ -312,12 +308,12 @@ Creates a new array that contains the gaps between an array of intervals. If an 
 \begin{DoxyReturn}{Returns}
 Gaps array 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a2d06470c41c25401977c6a1b0da578e1}\label{classostk_1_1mathematics_1_1object_1_1_interval_a2d06470c41c25401977c6a1b0da578e1}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a12974b26fea9935a342f94ffd813cfa2}\label{classostk_1_1mathematics_1_1object_1_1_interval_a12974b26fea9935a342f94ffd813cfa2}} 
 \index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!getIntersectionWith@{getIntersectionWith}}
 \index{getIntersectionWith@{getIntersectionWith}!ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{getIntersectionWith()}{getIntersectionWith()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$T$>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::get\+Intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \&}]{an\+Interval }\end{DoxyParamCaption}) const}
+std\+::optional$<$\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$T$>$ $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::get\+Intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \&}]{an\+Interval }\end{DoxyParamCaption}) const}
 
 
 
@@ -327,8 +323,8 @@ Get intersecting interval with another interval.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{Interval<double> firstInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
 \DoxyCodeLine{Interval<double> secondInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.5, 1.5) ;}
-\DoxyCodeLine{Interval<double> intersection = firstInterval.getIntersectionWith(secondInterval) ; \textcolor{comment}{//}}
-\DoxyCodeLine{[0.5, 1.0]}
+\DoxyCodeLine{std::optional<Interval<double>> intersection =}
+\DoxyCodeLine{    firstInterval.getIntersectionWith(secondInterval) ; \textcolor{comment}{// [0.5, 1.0]}}
 \end{DoxyCode}
 
 
@@ -338,7 +334,7 @@ Get intersecting interval with another interval.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Intersecting interval 
+Intersecting interval, or std\+::nullopt if the intervals do not intersect 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a2b78835906fd8e7b5421640fc0043e40}\label{classostk_1_1mathematics_1_1object_1_1_interval_a2b78835906fd8e7b5421640fc0043e40}} 
 \index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!getLowerBound@{getLowerBound}}
@@ -382,12 +378,12 @@ Get interval type.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} type 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_af0b873731c1700be9b2a30d87a2aa956}\label{classostk_1_1mathematics_1_1object_1_1_interval_af0b873731c1700be9b2a30d87a2aa956}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a74dadebed2bc139147a9aea8ccaf168d}\label{classostk_1_1mathematics_1_1object_1_1_interval_a74dadebed2bc139147a9aea8ccaf168d}} 
 \index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!getUnionWith@{getUnionWith}}
 \index{getUnionWith@{getUnionWith}!ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{getUnionWith()}{getUnionWith()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$T$>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::get\+Union\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \&}]{an\+Interval }\end{DoxyParamCaption}) const}
+std\+::optional$<$\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$T$>$ $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::get\+Union\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \&}]{an\+Interval }\end{DoxyParamCaption}) const}
 
 
 
@@ -397,7 +393,8 @@ Get union interval with another interval.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{Interval<double> firstInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
 \DoxyCodeLine{Interval<double> secondInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.5, 1.5) ;}
-\DoxyCodeLine{Interval<double> \textcolor{keyword}{union }= firstInterval.getUnionWith(secondInterval) ; \textcolor{comment}{// [0.0, 1.5]}}
+\DoxyCodeLine{std::optional<Interval<double>> \textcolor{keyword}{union }= firstInterval.getUnionWith(secondInterval) ;}
+\DoxyCodeLine{\textcolor{comment}{// [0.0, 1.5]}}
 \end{DoxyCode}
 
 
@@ -407,7 +404,7 @@ Get union interval with another interval.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Union interval 
+Union interval, or std\+::nullopt if the intervals are disjoint 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a1176385435c39731f85f0fe2e4e0f875}\label{classostk_1_1mathematics_1_1object_1_1_interval_a1176385435c39731f85f0fe2e4e0f875}} 
 \index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!getUpperBound@{getUpperBound}}
@@ -494,26 +491,6 @@ Check if interval is intersecting with another interval.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True if intervals are intersecting 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a6dd09d2e325303a5ad0097bed3896708}\label{classostk_1_1mathematics_1_1object_1_1_interval_a6dd09d2e325303a5ad0097bed3896708}} 
-\index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-bool \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Check if interval is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0).isDefined() ; \textcolor{comment}{// True}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if interval is defined 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a1f279c73d8c7a5fa69ce52dc301d1f5a}\label{classostk_1_1mathematics_1_1object_1_1_interval_a1f279c73d8c7a5fa69ce52dc301d1f5a}} 
 \index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!isDegenerate@{isDegenerate}}
@@ -860,26 +837,6 @@ Get serialized interval.
 
 \begin{DoxyReturn}{Returns}
 Serialized interval 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a877844b24a34a2c5c5109ce658cd5551}\label{classostk_1_1mathematics_1_1object_1_1_interval_a877844b24a34a2c5c5109ce658cd5551}} 
-\index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$T$>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined interval. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a877844b24a34a2c5c5109ce658cd5551}{Interval<double>::Undefined}}() ; \textcolor{comment}{// Undefined}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined interval 
 \end{DoxyReturn}
 
 

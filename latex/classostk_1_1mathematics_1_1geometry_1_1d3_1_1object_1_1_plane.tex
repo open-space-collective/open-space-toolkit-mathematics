@@ -26,8 +26,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_p
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a7503e1325f4900f22279659c7b56c211}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&a\+Plane) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a0a39c2a1bd1e330e8cc15aa4a5e19d47}{is\+Defined}} () const override
-\begin{DoxyCompactList}\small\item\em Check if plane is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ac55945830db7e46ae59bca73f4a0c800}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Check if plane intersects point. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_aa4ef1e875568bd35e5a0c502cd9576a3}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
@@ -66,11 +64,6 @@ virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1obje
 \begin{DoxyCompactList}\small\item\em Print plane. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ab4e329b825fa0a3aa24c2c4b7ebfb432}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
 \begin{DoxyCompactList}\small\item\em Apply transformation to plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a426953082cf45d17f80fde82753583df}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -591,29 +584,6 @@ Check if plane intersects segment.
 \begin{DoxyReturn}{Returns}
 True if plane intersects segment 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a0a39c2a1bd1e330e8cc15aa4a5e19d47}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a0a39c2a1bd1e330e8cc15aa4a5e19d47}} 
-\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Check if plane is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a0a39c2a1bd1e330e8cc15aa4a5e19d47}{isDefined}}() ; \textcolor{comment}{// True}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if plane is defined 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
-
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a7503e1325f4900f22279659c7b56c211}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a7503e1325f4900f22279659c7b56c211}} 
 \index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
@@ -691,25 +661,6 @@ Print plane.
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a426953082cf45d17f80fde82753583df}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a426953082cf45d17f80fde82753583df}} 
-\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined plane. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a426953082cf45d17f80fde82753583df}{Plane::Undefined}}() ; \textcolor{comment}{// Undefined}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined plane 
-\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

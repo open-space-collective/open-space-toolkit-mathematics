@@ -38,7 +38,6 @@ ostk.mathematics.geometry.d3.object.Sphere
       ~Sphere.intersection_with
       ~Sphere.intersects
       ~Sphere.is_cone
-      ~Sphere.is_defined
       ~Sphere.is_ellipsoid
       ~Sphere.is_line
       ~Sphere.is_line_string
@@ -51,7 +50,6 @@ ostk.mathematics.geometry.d3.object.Sphere
       ~Sphere.is_segment
       ~Sphere.is_sphere
       ~Sphere.is_unitary
-      ~Sphere.undefined
       ~Sphere.unit
    
    

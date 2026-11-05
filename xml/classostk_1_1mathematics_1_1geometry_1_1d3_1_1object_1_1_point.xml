@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="232" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" bodystart="232" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="214" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" bodystart="214" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a494908addff88432e74b3fa54a69a09a" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="233" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" bodystart="233" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="215" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" bodystart="215" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a3d24706d5c0c9da033bc7d470b4be4ff" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="234" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" bodystart="234" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="216" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" bodystart="216" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -150,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="66" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="39" bodyend="47"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="66" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="39" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1abf23c8836ec513308a298cc7708aeb37" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -182,14 +182,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="76" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="49" bodyend="52"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="76" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="44" bodyend="47"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a151a3020d20a0ae2847f5ce99bd7ee06" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1aa4c9f06cc393c63862e108c2fd74849e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
-        <definition>bool ostk::mathematics::geometry::d3::object::Point::isDefined</definition>
-        <argsstring>() const override</argsstring>
-        <name>isDefined</name>
-        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a1962edbcdde0f851361b60324ab9ce2b">isDefined</reimplements>
+        <definition>bool ostk::mathematics::geometry::d3::object::Point::isNear</definition>
+        <argsstring>(const Point &amp;aPoint, double aTolerance) const</argsstring>
+        <name>isNear</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>aTolerance</declname>
+        </param>
         <briefdescription>
 <para>Addition operator: translate point along vector. </para>
         </briefdescription>
@@ -221,37 +228,10 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@return<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>translation<sp/>vector</highlight></codeline>
 <codeline><highlight class="normal">Vector3d<sp/>operator-(const<sp/>Point&amp;<sp/>aPoint)<sp/>const;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Check<sp/>if<sp/>point<sp/>is<sp/>defined</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Check<sp/>if<sp/>point<sp/>is<sp/>near<sp/>another<sp/>point</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@code</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Point(0.0,<sp/>0.0,<sp/>0.0).isDefined()<sp/>;<sp/>//<sp/>True</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="return"><para>True if point is defined </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="115" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="99" bodyend="102"/>
-      </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1aa4c9f06cc393c63862e108c2fd74849e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool ostk::mathematics::geometry::d3::object::Point::isNear</definition>
-        <argsstring>(const Point &amp;aPoint, double aTolerance) const</argsstring>
-        <name>isNear</name>
-        <param>
-          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
-          <declname>aPoint</declname>
-        </param>
-        <param>
-          <type>double</type>
-          <declname>aTolerance</declname>
-        </param>
-        <briefdescription>
-<para>Check if point is near another point. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Point(0.0,<sp/>0.0,<sp/>0.0).isNear(Point(0.0,<sp/>0.0,<sp/>0.0),<sp/>1e-15)<sp/>;<sp/>//<sp/>True</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Point(0.0,<sp/>0.0,<sp/>0.0).isNear(Point(0.0,<sp/>0.0,<sp/>0.0),<sp/>1e-15)<sp/>;<sp/>//<sp/>True</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -276,7 +256,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="126" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="104" bodyend="112"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="117" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="64" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a80ca35793aeeab4ea8e87922aafe2585" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const double &amp;</type>
@@ -295,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="135" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="114" bodyend="122"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="126" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="74" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a99c7934cc8077743877552432075b584" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const double &amp;</type>
@@ -314,7 +294,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="144" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="124" bodyend="132"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="135" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="79" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a4016baa7914135775b757d34e1c3d4dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const double &amp;</type>
@@ -333,7 +313,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="153" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="134" bodyend="142"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="144" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="84" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a1d9614ed94b6049d6ce56ae529e7ca2b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Vector3d</type>
@@ -352,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="162" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="144" bodyend="152"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="153" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="89" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1af3a2ac5c27e84121aceeef0f8347c9d2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -384,7 +364,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="172" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="154" bodyend="167"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="163" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="94" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a08b4cf02ff55469c2ab76d79a0b7037a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -417,7 +397,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="182" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="169" bodyend="177"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="173" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="99" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a9395ae58a8f65a13328bc581586955c3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -461,7 +441,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="192" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="179" bodyend="188"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="183" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="104" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a99c3b0b78faa977d4c6bd526286a0815" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -493,29 +473,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="202" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="190" bodyend="203"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="193" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="115" bodyend="118"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a48d5b17426787474bdae338a5f154424" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
-        <definition>Point ostk::mathematics::geometry::d3::object::Point::Undefined</definition>
-        <argsstring>()</argsstring>
-        <name>Undefined</name>
-        <briefdescription>
-<para>Constructs an undefined point. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>Point::Undefined()<sp/>;<sp/>//<sp/>Undefined</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="return"><para>Undefined point </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="211" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="205" bodyend="212"/>
-      </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a2e0dc90fe04fb9befb79ec9874dcebc4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
         <definition>Point ostk::mathematics::geometry::d3::object::Point::Origin</definition>
@@ -533,7 +494,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="220" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="214" bodyend="217"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="202" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="120" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1aa467c6aeea346a0a8d1d2c2b0397b069" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -556,7 +517,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="229" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="219" bodyend="222"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="211" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp" bodystart="125" bodyend="128"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -591,7 +552,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="36" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" bodystart="35" bodyend="235"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" line="36" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp" bodystart="35" bodyend="217"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a99c3b0b78faa977d4c6bd526286a0815" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>as</name></member>
@@ -602,7 +563,6 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ac1325aba0fa3796c9ddc5d39dfe40aa6" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>intersectionWith</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a0d8ddc7a929bb3b0b1c70ad82742e64e" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>intersects</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ad9e6f5027d14e3c7d7bead94052611ed" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>is</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a151a3020d20a0ae2847f5ce99bd7ee06" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>isDefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1aa4c9f06cc393c63862e108c2fd74849e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>isNear</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>Object</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1abf23c8836ec513308a298cc7708aeb37" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>operator!=</name></member>
@@ -613,7 +573,6 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a2ca0dbc20c4351e26dc64f56e5e6bbae" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>Point</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a9395ae58a8f65a13328bc581586955c3" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>print</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a08b4cf02ff55469c2ab76d79a0b7037a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>toString</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a48d5b17426787474bdae338a5f154424" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>Undefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1aa467c6aeea346a0a8d1d2c2b0397b069" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>Vector</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a80ca35793aeeab4ea8e87922aafe2585" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>x</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1ab14408a85dedd336fb17c9e0d0e4a860" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Point</scope><name>x_</name></member>

@@ -26,8 +26,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_s
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_abbecdd12d67f8c102deaedc65a028aed}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a6a88d19e8e5978c2fe9eeeb88d6cf8d7}{is\+Defined}} () const override
-\begin{DoxyCompactList}\small\item\em Check if segment is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ae83df71f8f42ef823a7976f78de97a3f}{is\+Degenerate}} () const
 \begin{DoxyCompactList}\small\item\em Check if segment is degenerate, i.\+e. its length is zero. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a694a856a4e694e0c570b3e0bbbee9f53}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \&a\+Point) const
@@ -56,11 +54,6 @@ virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1obje
 \begin{DoxyCompactList}\small\item\em Print segment. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a678b14d476c41b11372b86e9db54b3a6}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation}{Transformation}} \&a\+Transformation) override
 \begin{DoxyCompactList}\small\item\em Apply transformation to segment. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment}{Segment}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_abe41a221a94af6243a986b71e27f49ff}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined segment. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -349,29 +342,6 @@ Get segment second point.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment}{Segment}} second point 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a6a88d19e8e5978c2fe9eeeb88d6cf8d7}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a6a88d19e8e5978c2fe9eeeb88d6cf8d7}} 
-\index{ostk::mathematics::geometry::d2::object::Segment@{ostk::mathematics::geometry::d2::object::Segment}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d2::object::Segment@{ostk::mathematics::geometry::d2::object::Segment}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Segment\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Check if segment is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ac5180c75994c3f3f1d824307a600874f}{Segment}}(\{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_a6a88d19e8e5978c2fe9eeeb88d6cf8d7}{isDefined}}() ; \textcolor{comment}{// True}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if segment is defined 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_abe5ea18c13bc259fc0da0b0c49fa0dca}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
-
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ae83df71f8f42ef823a7976f78de97a3f}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ae83df71f8f42ef823a7976f78de97a3f}} 
 \index{ostk::mathematics::geometry::d2::object::Segment@{ostk::mathematics::geometry::d2::object::Segment}!isDegenerate@{isDegenerate}}
 \index{isDegenerate@{isDegenerate}!ostk::mathematics::geometry::d2::object::Segment@{ostk::mathematics::geometry::d2::object::Segment}}
@@ -513,25 +483,6 @@ String representation
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a2da129348eb0c204c65b2f374f5e5e7a}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_abe41a221a94af6243a986b71e27f49ff}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_abe41a221a94af6243a986b71e27f49ff}} 
-\index{ostk::mathematics::geometry::d2::object::Segment@{ostk::mathematics::geometry::d2::object::Segment}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d2::object::Segment@{ostk::mathematics::geometry::d2::object::Segment}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment}{Segment}} ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Segment\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined segment. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_ac5180c75994c3f3f1d824307a600874f}{Segment}} segment = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_abe41a221a94af6243a986b71e27f49ff}{Segment::Undefined}}() ; \textcolor{comment}{// Undefined}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined segment 
-\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

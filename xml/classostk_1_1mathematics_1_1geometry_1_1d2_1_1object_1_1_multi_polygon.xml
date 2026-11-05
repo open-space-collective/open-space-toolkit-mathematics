@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="255" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" bodystart="253" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="237" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" bodystart="235" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="57" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="329" bodyend="333"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="57" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="322" bodyend="326"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a255ed57cc7b1617df7ee07277d3efd66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -95,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="66" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="335" bodyend="339"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="66" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="328" bodyend="332"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1ae98f8850dcfc6dbd6d1aa3d1a4105408" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -111,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="73" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="341" bodyend="341"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="73" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="334" bodyend="334"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a015d42e476cfc1d14221e6088d79137e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon" kindref="compound">MultiPolygon</ref> &amp;</type>
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="83" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="343" bodyend="355"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="83" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="336" bodyend="348"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a04159c43117169d31c0e275f10617912" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon" kindref="compound">MultiPolygon</ref> *</type>
@@ -163,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="92" column="26" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="357" bodyend="360"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="92" column="26" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="350" bodyend="353"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a6c0965f5352f0b062163855e2ec2cf4b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -195,7 +195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="102" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="362" bodyend="370"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="102" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="355" bodyend="358"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1ad1ac733a4cb185285402cdffbfd8fb36" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -227,27 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="112" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="372" bodyend="375"/>
-      </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a06c0dd090011c4bc96237f46ce47e049" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
-        <type>bool</type>
-        <definition>bool ostk::mathematics::geometry::d2::object::MultiPolygon::isDefined</definition>
-        <argsstring>() const override</argsstring>
-        <name>isDefined</name>
-        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1abe5ea18c13bc259fc0da0b0c49fa0dca">isDefined</reimplements>
-        <briefdescription>
-<para>Check if multi-polygon is defined. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal">multiPolygon.isDefined()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="return"><para>True if multi-polygon is defined </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="121" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="377" bodyend="380"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="112" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="360" bodyend="363"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a910773da45f1028fd287d54cf983d80a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -281,7 +261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="133" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="382" bodyend="395"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="124" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="365" bodyend="368"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1ab8545c27cb14a4c15ba5d7b80f07c91a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -315,7 +295,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="145" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="397" bodyend="410"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="136" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="370" bodyend="373"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1ae9ce727a0b851951cb91cd646d745d6e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -334,7 +314,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="154" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="412" bodyend="420"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="145" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="375" bodyend="378"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a2d3cb29e353fd52f931b4b23d9fb3236" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Array&lt; <ref refid="namespaceostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1ac1ef77832033c8e89498cf87b6e0e08e" kindref="member">Polygon2d</ref> &gt;</type>
@@ -353,7 +333,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="163" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="422" bodyend="430"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="154" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="380" bodyend="383"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a83c6178d69cbf895f4def2487cac0b06" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1ac1ef77832033c8e89498cf87b6e0e08e" kindref="member">Polygon2d</ref></type>
@@ -373,7 +353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="174" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="432" bodyend="440"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="165" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="385" bodyend="388"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1adb9f3fc9b4a828252c89a0a314d851c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon" kindref="compound">MultiPolygon</ref></type>
@@ -405,7 +385,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="184" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="442" bodyend="461"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="175" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="390" bodyend="399"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a058c81078c9487cb6737b5f92333c5e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>String</type>
@@ -444,7 +424,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="194" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="463" bodyend="471"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="185" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="401" bodyend="404"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a2912fc75e812550a0734bd6fa91368b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -488,7 +468,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="205" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="473" bodyend="490"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="196" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="406" bodyend="423"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a5572c34cc89ec6a975e25df33a6b70a5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1ac8c8663dfd3465fdc37f369adc826488" kindref="member">MultiPolygon::ConstIterator</ref></type>
@@ -507,7 +487,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="214" column="33"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="205" column="33"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1ac54e468edcaf72136cb1e93f0b73e779" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1ac8c8663dfd3465fdc37f369adc826488" kindref="member">MultiPolygon::ConstIterator</ref></type>
@@ -526,7 +506,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="223" column="33"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="214" column="33"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a876015bf7a3b8667b8cb94627435a920" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -557,29 +537,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="232" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="502" bodyend="515"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="223" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="435" bodyend="438"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1acc1cc81fdc22237fd4030fceff9962c0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon" kindref="compound">MultiPolygon</ref></type>
-        <definition>MultiPolygon ostk::mathematics::geometry::d2::object::MultiPolygon::Undefined</definition>
-        <argsstring>()</argsstring>
-        <name>Undefined</name>
-        <briefdescription>
-<para>Constructs an undefined multi-polygon. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">MultiPolygon<sp/>multiPolygon<sp/>=<sp/>MultiPolygon::Undefined()<sp/>;<sp/>//<sp/>Undefined</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="return"><para>Undefined multi-polygon </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="241" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="517" bodyend="520"/>
-      </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a4c9d7d4e3f89c926571e3f03766a0551" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon" kindref="compound">MultiPolygon</ref></type>
         <definition>MultiPolygon ostk::mathematics::geometry::d2::object::MultiPolygon::Polygon</definition>
@@ -601,7 +562,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="250" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="522" bodyend="525"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="232" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="440" bodyend="443"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -635,7 +596,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" bodystart="45" bodyend="256"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" bodystart="45" bodyend="238"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a876015bf7a3b8667b8cb94627435a920" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a5572c34cc89ec6a975e25df33a6b70a5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>begin</name></member>
@@ -651,7 +612,6 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a2d3cb29e353fd52f931b4b23d9fb3236" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>getPolygons</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a4ca30c4281115c6b03b65aea46437490" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>implUPtr_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a553d7a1e388598c74d0f9fdd57d1ba9d" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>intersects</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a06c0dd090011c4bc96237f46ce47e049" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>isDefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a387e29bd423e834d10e30d1b55e4a2d7" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>MultiPolygon</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a255ed57cc7b1617df7ee07277d3efd66" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>MultiPolygon</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a15a959fd5b624d6fcc6725982a8cddf8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>Object</name></member>
@@ -663,7 +623,6 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a4c9d7d4e3f89c926571e3f03766a0551" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>Polygon</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a2912fc75e812550a0734bd6fa91368b7" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>print</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1a058c81078c9487cb6737b5f92333c5e5" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>toString</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1acc1cc81fdc22237fd4030fceff9962c0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>Undefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1adb9f3fc9b4a828252c89a0a314d851c8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>unionWith</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1ae98f8850dcfc6dbd6d1aa3d1a4105408" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>~MultiPolygon</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af11dec981b2e1ab08deae342ec2c4ef8" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon</scope><name>~Object</name></member>

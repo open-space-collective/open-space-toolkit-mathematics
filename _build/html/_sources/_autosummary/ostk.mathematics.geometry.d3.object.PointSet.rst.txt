@@ -39,7 +39,6 @@ ostk.mathematics.geometry.d3.object.PointSet
       ~PointSet.get_size
       ~PointSet.intersects
       ~PointSet.is_cone
-      ~PointSet.is_defined
       ~PointSet.is_ellipsoid
       ~PointSet.is_empty
       ~PointSet.is_line

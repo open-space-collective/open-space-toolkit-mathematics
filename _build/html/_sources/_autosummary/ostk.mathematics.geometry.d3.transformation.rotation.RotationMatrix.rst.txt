@@ -24,7 +24,6 @@ ostk.mathematics.geometry.d3.transformation.rotation.RotationMatrix
       ~RotationMatrix.get_column_at
       ~RotationMatrix.get_matrix
       ~RotationMatrix.get_row_at
-      ~RotationMatrix.is_defined
       ~RotationMatrix.quaternion
       ~RotationMatrix.rotation_vector
       ~RotationMatrix.rows
@@ -33,7 +32,6 @@ ostk.mathematics.geometry.d3.transformation.rotation.RotationMatrix
       ~RotationMatrix.rz
       ~RotationMatrix.to_transposed
       ~RotationMatrix.transpose
-      ~RotationMatrix.undefined
       ~RotationMatrix.unit
       ~RotationMatrix.vector_basis
    

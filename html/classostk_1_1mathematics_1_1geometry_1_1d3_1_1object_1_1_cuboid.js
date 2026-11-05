@@ -30,7 +30,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid =
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#af02af83e9c321858d2b54dfc31730aa9", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a0d7ae6afa89438cb9f1676fccd400b15", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#af0a08f4419d48e38793f875654bc97f1", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#ae9749637798c6670bb1c2b8cc2850ba8", null ],
     [ "isNear", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a9919583ad7088da65c90dfb090b872bf", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#a1dbcaa8deafe0bb5a99a426725306b30", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid.html#abe25b1d5a60b159cfe79475e0a1bcd4b", null ],

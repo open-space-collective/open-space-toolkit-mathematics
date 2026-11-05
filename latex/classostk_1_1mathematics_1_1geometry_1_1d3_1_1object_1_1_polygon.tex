@@ -35,8 +35,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_p
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ab8c48ac69bca62018cbb75dda88d38a1}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ab2e3d42d2420cd0d3029f1d14e126a6c}{is\+Defined}} () const override
-\begin{DoxyCompactList}\small\item\em Check if polygon is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4e6adce6f96198104c0532c213cd4f79}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon, double a\+Tolerance) const
 \begin{DoxyCompactList}\small\item\em Check if polygon is near another polygon. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_ae4c84293a1f85b2e2c0d2e8aa5f281c0}{Polygon2d}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a6b2e2d19407956e05b87aa0796eb328b}{get\+Polygon2d}} () const
@@ -65,11 +63,6 @@ virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1obje
 \begin{DoxyCompactList}\small\item\em Compute intersection of polygon with another polygon. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ad2265d32b954c38b63c273acd45bdc4d}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
 \begin{DoxyCompactList}\small\item\em Apply transformation to polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a446de1b35f71c1ac2be694b9c258b6cc}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -424,30 +417,6 @@ Get polygon Y axis.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} Y axis 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ab2e3d42d2420cd0d3029f1d14e126a6c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ab2e3d42d2420cd0d3029f1d14e126a6c}} 
-\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Check if polygon is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = ... ;}
-\DoxyCodeLine{polygon.isDefined() ; \textcolor{comment}{// True}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if polygon is defined 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
-
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4e6adce6f96198104c0532c213cd4f79}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4e6adce6f96198104c0532c213cd4f79}} 
 \index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!isNear@{isNear}}
 \index{isNear@{isNear}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
@@ -565,25 +534,6 @@ Print polygon
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a446de1b35f71c1ac2be694b9c258b6cc}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a446de1b35f71c1ac2be694b9c258b6cc}} 
-\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined polygon. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a446de1b35f71c1ac2be694b9c258b6cc}{Polygon::Undefined}}() ;}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined polygon 
-\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

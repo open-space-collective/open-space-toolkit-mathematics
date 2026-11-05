@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['plane_481',['Plane',['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html',1,'ostk::mathematics::geometry::d3::object']]],
-  ['point_482',['Point',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html',1,'ostk::mathematics::geometry::d2::object::Point'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html',1,'ostk::mathematics::geometry::d3::object::Point']]],
-  ['pointset_483',['PointSet',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html',1,'ostk::mathematics::geometry::d2::object::PointSet'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html',1,'ostk::mathematics::geometry::d3::object::PointSet']]],
-  ['polygon_484',['Polygon',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html',1,'ostk::mathematics::geometry::d2::object::Polygon'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html',1,'ostk::mathematics::geometry::d3::object::Polygon']]],
-  ['pyramid_485',['Pyramid',['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html',1,'ostk::mathematics::geometry::d3::object']]]
+  ['plane_479',['Plane',['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html',1,'ostk::mathematics::geometry::d3::object']]],
+  ['point_480',['Point',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point.html',1,'ostk::mathematics::geometry::d2::object::Point'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point.html',1,'ostk::mathematics::geometry::d3::object::Point']]],
+  ['pointset_481',['PointSet',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set.html',1,'ostk::mathematics::geometry::d2::object::PointSet'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set.html',1,'ostk::mathematics::geometry::d3::object::PointSet']]],
+  ['polygon_482',['Polygon',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html',1,'ostk::mathematics::geometry::d2::object::Polygon'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon.html',1,'ostk::mathematics::geometry::d3::object::Polygon']]],
+  ['pyramid_483',['Pyramid',['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid.html',1,'ostk::mathematics::geometry::d3::object']]]
 ];

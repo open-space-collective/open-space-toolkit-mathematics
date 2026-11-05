@@ -20,8 +20,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformati
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a1ab7d9369961e7f7e2bc9c6afb76f234}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \&a\+Rotation\+Vector) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a7eb8f0bba73e0e36fa7a6f1bbd88da2d}{is\+Defined}} () const
-\begin{DoxyCompactList}\small\item\em Check if Rotation Vector is defined. \end{DoxyCompactList}\item 
 const Vector3d \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_aaf43687d5e5cb3aa31135c5eedfeb9c6}{get\+Axis}} () const
 \begin{DoxyCompactList}\small\item\em Get rotation axis. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a6051bca4c7c30e22efb7d0711c8d4eca}{get\+Angle}} () const
@@ -33,8 +31,6 @@ String \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transforma
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ac296ba2d49497a1d7a5b1d1aa1628294}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Construct an undefined Rotation Vector. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a31c276c930ed9d5ff4cb406be6a48f7e}{Unit}} ()
 \begin{DoxyCompactList}\small\item\em Construct a unitary Rotation Vector. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ad5a563a069f6665a086b2ba5fc20ea76}{X}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&an\+Angle)
@@ -180,25 +176,6 @@ Get rotation axis.
 
 \begin{DoxyReturn}{Returns}
 Rotation axis 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a7eb8f0bba73e0e36fa7a6f1bbd88da2d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a7eb8f0bba73e0e36fa7a6f1bbd88da2d}} 
-\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Check if Rotation Vector is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a31c276c930ed9d5ff4cb406be6a48f7e}{RotationVector::Unit}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a7eb8f0bba73e0e36fa7a6f1bbd88da2d}{isDefined}}();}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if Rotation Vector is defined 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a1ab7d9369961e7f7e2bc9c6afb76f234}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a1ab7d9369961e7f7e2bc9c6afb76f234}} 
 \index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!operator"!=@{operator"!=}}
@@ -371,25 +348,6 @@ Convert Rotation Vector to string representation.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 String representation 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ac296ba2d49497a1d7a5b1d1aa1628294}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ac296ba2d49497a1d7a5b1d1aa1628294}} 
-\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Construct an undefined Rotation Vector. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ac296ba2d49497a1d7a5b1d1aa1628294}{RotationVector::Undefined}}();}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined Rotation Vector 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a31c276c930ed9d5ff4cb406be6a48f7e}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a31c276c930ed9d5ff4cb406be6a48f7e}} 
 \index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!Unit@{Unit}}

@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" line="82" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="82" bodyend="100"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" line="77" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="77" bodyend="90"/>
       </memberdef>
       <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1afac2153187e870e3844842a1c5248125" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" line="100" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="100" bodyend="103"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" line="95" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="95" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1ae26404779f77ca73c95975806e5402d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -136,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" line="154" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="154" bodyend="170"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" line="144" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="144" bodyend="156"/>
       </memberdef>
       <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1afa8bc95840d3ed51eb2c9726bbd52f23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -179,7 +179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" line="193" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="193" bodyend="207"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" line="163" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="163" bodyend="177"/>
       </memberdef>
       <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1a89b141f8b9cd2a93dbd9b584bab23d5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -222,7 +222,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" line="67" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="67" bodyend="79"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" line="62" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="62" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

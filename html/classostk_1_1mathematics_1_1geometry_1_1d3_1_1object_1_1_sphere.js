@@ -21,7 +21,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere =
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a3ec429fe276d4da08dea92c56c008fc5", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a669b7ac4228e1bf40fa0ffabc3cddde9", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a26a485b4674c7f852f07652297adf8b4", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a5311446aca36ccadbd8ae323502dba44", null ],
     [ "isUnitary", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a9dbed5ac4eec1c9a79eedf5408191021", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a48d995d87aaf80ffae9629d33137e50a", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a86fab4da986e79ea843646b859a54b7b", null ],

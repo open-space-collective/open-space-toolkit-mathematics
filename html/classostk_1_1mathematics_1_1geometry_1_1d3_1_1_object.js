@@ -9,7 +9,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object =
     [ "intersectionWith", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#ac1325aba0fa3796c9ddc5d39dfe40aa6", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a0d8ddc7a929bb3b0b1c70ad82742e64e", null ],
     [ "is", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#ad9e6f5027d14e3c7d7bead94052611ed", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a1962edbcdde0f851361b60324ab9ce2b", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a550754b8f5576ce2465979657325d5df", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#aeb99dd25ff1c0683d9c0a058c8200e4d", null ],
     [ "print", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object.html#a5063e1f902e1b08d36f6b6cecab0bd95", null ],

@@ -94,11 +94,8 @@ $(document).ready(function(){initNavTree('_eigen_8hpp.html',''); initResizable()
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aaa1d139fcb55b1f038ab29d736d07f3d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_eigen_8hpp.html#aaa1d139fcb55b1f038ab29d736d07f3d">isDefined</a> () const</td></tr>
-<tr class="memdesc:aaa1d139fcb55b1f038ab29d736d07f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apache License 2.0.  <a href="_eigen_8hpp.html#aaa1d139fcb55b1f038ab29d736d07f3d">More...</a><br /></td></tr>
-<tr class="separator:aaa1d139fcb55b1f038ab29d736d07f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f14bad11d673c61a550d48d6777eae1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_eigen_8hpp.html#a0f14bad11d673c61a550d48d6777eae1">isNaN</a> () const</td></tr>
-<tr class="memdesc:a0f14bad11d673c61a550d48d6777eae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if any element of the matrix/vector is NaN.  <a href="_eigen_8hpp.html#a0f14bad11d673c61a550d48d6777eae1">More...</a><br /></td></tr>
+<tr class="memdesc:a0f14bad11d673c61a550d48d6777eae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apache License 2.0.  <a href="_eigen_8hpp.html#a0f14bad11d673c61a550d48d6777eae1">More...</a><br /></td></tr>
 <tr class="separator:a0f14bad11d673c61a550d48d6777eae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe8246e867e93283cdfac59d16941411"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_eigen_8hpp.html#afe8246e867e93283cdfac59d16941411">isInf</a> () const</td></tr>
 <tr class="memdesc:afe8246e867e93283cdfac59d16941411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if any element of the matrix/vector is infinite.  <a href="_eigen_8hpp.html#afe8246e867e93283cdfac59d16941411">More...</a><br /></td></tr>
@@ -111,29 +108,6 @@ Functions</h2></td></tr>
 <tr class="separator:a12b926fa5c60e26e4a170e5b4e870dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aaa1d139fcb55b1f038ab29d736d07f3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa1d139fcb55b1f038ab29d736d07f3d">&#9670;&nbsp;</a></span>isDefined()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool isDefined </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Apache License 2.0. </p>
-<p>Check if the matrix/vector is defined (not NaN and not Inf)</p>
-<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> v(1.0, 2.0, 3.0);</div>
-<div class="line">v.isDefined();  <span class="comment">// true</span></div>
-</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if all elements are finite and not NaN </dd></dl>
-
-</div>
-</div>
 <a id="afe8246e867e93283cdfac59d16941411"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe8246e867e93283cdfac59d16941411">&#9670;&nbsp;</a></span>isInf()</h2>
 
@@ -171,7 +145,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Check if any element of the matrix/vector is NaN. </p>
+<p>Apache License 2.0. </p>
+<p>Check if any element of the matrix/vector is NaN</p>
 <div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a> v(1.0, std::numeric_limits&lt;double&gt;::quiet_NaN(), 3.0);</div>
 <div class="line">v.isNaN();  <span class="comment">// true</span></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if any element is NaN </dd></dl>

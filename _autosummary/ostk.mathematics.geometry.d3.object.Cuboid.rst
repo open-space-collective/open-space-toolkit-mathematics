@@ -44,7 +44,6 @@ ostk.mathematics.geometry.d3.object.Cuboid
       ~Cuboid.get_vertices
       ~Cuboid.intersects
       ~Cuboid.is_cone
-      ~Cuboid.is_defined
       ~Cuboid.is_ellipsoid
       ~Cuboid.is_line
       ~Cuboid.is_line_string
@@ -57,6 +56,5 @@ ostk.mathematics.geometry.d3.object.Cuboid
       ~Cuboid.is_ray
       ~Cuboid.is_segment
       ~Cuboid.is_sphere
-      ~Cuboid.undefined
    
    

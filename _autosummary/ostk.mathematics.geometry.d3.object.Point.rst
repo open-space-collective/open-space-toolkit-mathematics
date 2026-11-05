@@ -37,7 +37,6 @@ ostk.mathematics.geometry.d3.object.Point
       ~Point.distance_to
       ~Point.intersects
       ~Point.is_cone
-      ~Point.is_defined
       ~Point.is_ellipsoid
       ~Point.is_line
       ~Point.is_line_string
@@ -52,7 +51,6 @@ ostk.mathematics.geometry.d3.object.Point
       ~Point.is_sphere
       ~Point.origin
       ~Point.to_string
-      ~Point.undefined
       ~Point.vector
       ~Point.x
       ~Point.y

@@ -45,7 +45,6 @@ ostk.mathematics.geometry.d3.object.Polygon
       ~Polygon.get_y_axis
       ~Polygon.intersects
       ~Polygon.is_cone
-      ~Polygon.is_defined
       ~Polygon.is_ellipsoid
       ~Polygon.is_line
       ~Polygon.is_line_string
@@ -58,6 +57,5 @@ ostk.mathematics.geometry.d3.object.Polygon
       ~Polygon.is_ray
       ~Polygon.is_segment
       ~Polygon.is_sphere
-      ~Polygon.undefined
    
    

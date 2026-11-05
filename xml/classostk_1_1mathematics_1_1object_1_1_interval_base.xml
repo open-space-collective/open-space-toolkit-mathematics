@@ -8,14 +8,6 @@
       <memberdef kind="enum" id="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201" prot="public" static="no" strong="yes">
         <type></type>
         <name>Type</name>
-        <enumvalue id="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201aec0fc0100c4fc1ce4eea230c3dc10360" prot="public">
-          <name>Undefined</name>
-          <briefdescription>
-<para>Undefined interval type. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
         <enumvalue id="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e" prot="public">
           <name>Closed</name>
           <briefdescription>
@@ -57,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="33" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="32" bodyend="41"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="35" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="34" bodyend="42"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -79,7 +71,7 @@
         <link refid="classostk_1_1mathematics_1_1object_1_1_interval_base"/>
       </node>
     </inheritancegraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="25" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="24" bodyend="42"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="27" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="26" bodyend="43"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::IntervalBase</scope><name>Type</name></member>
     </listofallmembers>

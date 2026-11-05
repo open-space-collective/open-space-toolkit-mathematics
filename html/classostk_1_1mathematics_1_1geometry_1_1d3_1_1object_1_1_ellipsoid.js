@@ -30,7 +30,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid =
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#ae93d460a11c18dcc589501535db52622", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a00bfb5a8d081333b080b586f4b81f8cc", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a1d17071a0fe4ae568bffcbbb3a12aeb8", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a3e36099693bccb2d2e68d8673d86e5f6", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a6ad34b0e40e0a1b59ba503bbacb15db5", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a24d5de8f8d462000ad16f99cb08b6bbe", null ],
     [ "print", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid.html#a7c5c1f79b1c0533073ef48e38dc5e18b", null ]

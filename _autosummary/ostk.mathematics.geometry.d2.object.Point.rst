@@ -24,11 +24,9 @@ ostk.mathematics.geometry.d2.object.Point
       ~Point.contains
       ~Point.distance_to
       ~Point.intersects
-      ~Point.is_defined
       ~Point.is_near
       ~Point.origin
       ~Point.to_string
-      ~Point.undefined
       ~Point.vector
       ~Point.x
       ~Point.y

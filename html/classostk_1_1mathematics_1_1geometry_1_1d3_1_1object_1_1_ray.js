@@ -15,7 +15,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray =
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#a46135e8dd6b6821f0d5e137f479f8997", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#a6f9353b78f7f3d3c8824c29a97bd172e", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#aa4aea4e829d688aeaa26440f211e9218", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#a402bf991d7974383a2766f12367681cd", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#a3237ba10bd95161a2190915d8b6c1bdd", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#a361468984adc4da8b25c39047c5a8279", null ],
     [ "print", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray.html#af5e5dea5fe393ea9a76fd3b2638f9446", null ]

@@ -13,12 +13,11 @@
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdac}{Type}} \{ \newline
-\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdacaec0fc0100c4fc1ce4eea230c3dc10360}{Type\+::\+Undefined}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdacac9c5c65fb4af9cf90eb99b3b84424189}{Type\+::\+Identity}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdaca6dd08874f83507e9c7b23f1a46b7fa7c}{Type\+::\+Translation}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdacaf1a42bd417390fc63b030a519624607a}{Type\+::\+Rotation}}, 
-\newline
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdacabc967dc2d57e6eff184a821bf7577a80}{Type\+::\+Scaling}}, 
+\newline
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdacaaea1e492943ccbad7ee270ec1e064758}{Type\+::\+Reflection}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdaca02414922b70cc0f9d7c841b0c70a0f94}{Type\+::\+Shear}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdaca5b525aab6e200981a842101f1bcbafc6}{Type\+::\+Affine}}
@@ -39,8 +38,6 @@ Vector4d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transfo
 \begin{DoxyCompactList}\small\item\em Apply transformation to a 4D homogeneous vector. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5861759a9e0bcdcf453674c90d159566}{operator$\ast$=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation)
 \begin{DoxyCompactList}\small\item\em Composition assignment operator. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a94cd6ac661f8a55d599ea9a1eaa291dd}{is\+Defined}} () const
-\begin{DoxyCompactList}\small\item\em Check if the transformation is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a8ba50a377bd868397be3fa4111dfdf0f}{is\+Identity}} () const
 \begin{DoxyCompactList}\small\item\em Check if the transformation is the identity. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_ac948a75534e57432e32a747b8340efe1}{is\+Rigid}} () const
@@ -60,8 +57,6 @@ virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_tra
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_aac3424b240ed5116413462fa5e1f7c8f}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Construct an undefined transformation. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5cd654de32139306358aa773bbf8c291}{Identity}} ()
 \begin{DoxyCompactList}\small\item\em Construct an identity transformation. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_af9058de81115d953ab8d9b8922abe692}{Translation}} (const Vector3d \&a\+Translation\+Vector)
@@ -106,10 +101,6 @@ Represents a 3D affine transformation using a 4x4 homogeneous matrix. Supports t
 {\footnotesize\ttfamily enum \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdac}{ostk\+::mathematics\+::geometry\+::d3\+::\+Transformation\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::Transformation@{ostk::mathematics::geometry::d3::Transformation}}\index{ostk::mathematics::geometry::d3::Transformation@{ostk::mathematics::geometry::d3::Transformation}!Undefined@{Undefined}}}\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdacaec0fc0100c4fc1ce4eea230c3dc10360}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdacaec0fc0100c4fc1ce4eea230c3dc10360}} 
-Undefined&Undefined transformation. \\
-\hline
-
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Identity@{Identity}!ostk::mathematics::geometry::d3::Transformation@{ostk::mathematics::geometry::d3::Transformation}}\index{ostk::mathematics::geometry::d3::Transformation@{ostk::mathematics::geometry::d3::Transformation}!Identity@{Identity}}}\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdacac9c5c65fb4af9cf90eb99b3b84424189}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdacac9c5c65fb4af9cf90eb99b3b84424189}} 
 Identity&Identity transformation. \\
 \hline
@@ -290,25 +281,6 @@ Construct an identity transformation.
 
 \begin{DoxyReturn}{Returns}
 An identity transformation 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a94cd6ac661f8a55d599ea9a1eaa291dd}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a94cd6ac661f8a55d599ea9a1eaa291dd}} 
-\index{ostk::mathematics::geometry::d3::Transformation@{ostk::mathematics::geometry::d3::Transformation}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::Transformation@{ostk::mathematics::geometry::d3::Transformation}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::\+Transformation\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Check if the transformation is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5cd654de32139306358aa773bbf8c291}{Transformation::Identity}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a94cd6ac661f8a55d599ea9a1eaa291dd}{isDefined}}();}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if the transformation is defined 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a8ba50a377bd868397be3fa4111dfdf0f}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a8ba50a377bd868397be3fa4111dfdf0f}} 
 \index{ostk::mathematics::geometry::d3::Transformation@{ostk::mathematics::geometry::d3::Transformation}!isIdentity@{isIdentity}}
@@ -670,25 +642,6 @@ Determine the transformation type from a matrix.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The transformation type 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_aac3424b240ed5116413462fa5e1f7c8f}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_aac3424b240ed5116413462fa5e1f7c8f}} 
-\index{ostk::mathematics::geometry::d3::Transformation@{ostk::mathematics::geometry::d3::Transformation}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::Transformation@{ostk::mathematics::geometry::d3::Transformation}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} ostk\+::mathematics\+::geometry\+::d3\+::\+Transformation\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Construct an undefined transformation. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a208df471aa963dabb54cfed7a6cbaa09}{Transformation}} t = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_aac3424b240ed5116413462fa5e1f7c8f}{Transformation::Undefined}}();}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-An undefined transformation 
 \end{DoxyReturn}
 
 

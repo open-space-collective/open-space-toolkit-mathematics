@@ -41,7 +41,6 @@ ostk.mathematics.geometry.d3.Object
       ~Object.contains
       ~Object.intersects
       ~Object.is_cone
-      ~Object.is_defined
       ~Object.is_ellipsoid
       ~Object.is_line
       ~Object.is_line_string

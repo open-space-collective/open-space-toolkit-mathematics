@@ -34,10 +34,8 @@ ostk.mathematics.geometry.d2.object.Polygon
       ~Polygon.get_vertices
       ~Polygon.intersection_with
       ~Polygon.intersects
-      ~Polygon.is_defined
       ~Polygon.is_near
       ~Polygon.to_string
-      ~Polygon.undefined
       ~Polygon.union_with
    
    

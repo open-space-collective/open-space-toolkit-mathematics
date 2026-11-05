@@ -28,10 +28,8 @@ ostk.mathematics.geometry.d2.object.Segment
       ~Segment.get_length
       ~Segment.get_second_point
       ~Segment.intersects
-      ~Segment.is_defined
       ~Segment.is_degenerate
       ~Segment.to_line
       ~Segment.to_string
-      ~Segment.undefined
    
    

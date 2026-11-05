@@ -7,14 +7,6 @@
       <memberdef kind="enum" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" prot="public" static="no" strong="yes">
         <type></type>
         <name>Unit</name>
-        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371aec0fc0100c4fc1ce4eea230c3dc10360" prot="public">
-          <name>Undefined</name>
-          <briefdescription>
-<para>Undefined. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
         <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371a50c62e3ca8d8ec8732a7f968a3bf2c7c" prot="public">
           <name>Radian</name>
           <briefdescription>
@@ -61,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="35" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="34" bodyend="44"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="35" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="34" bodyend="43"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -76,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="507" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="507" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="488" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="488" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a610baa9759c5ed85af6536ab04279263" prot="private" static="no" mutable="no">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref></type>
@@ -89,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="508" column="17" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="508" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="489" column="17" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="489" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -133,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="54" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="21" bodyend="25"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="53" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="21" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aa3dc7dc0bc06636a3e3b1d5628344833" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -165,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="64" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="27" bodyend="82"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="63" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="27" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae42710386b7e29dc17623d606c2f81bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -197,7 +189,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="74" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="84" bodyend="87"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="73" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="79" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a12ba141f8f4820c9c1e6afe51cb7a369" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -229,7 +221,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="84" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="89" bodyend="97"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="83" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="84" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a1b5c4413ac72edd05608f270b76d2cd1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -261,7 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="94" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="99" bodyend="107"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="93" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="89" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad442bf43bf24f7daaf589762239db54b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -293,7 +285,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="104" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="109" bodyend="122"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="103" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="94" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a6482016ea5d2c80e11f5641a03302ca9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -325,7 +317,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="114" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="124" bodyend="142"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="113" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="104" bodyend="117"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a3802b86b410a7fbeb832b4337246157d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
@@ -358,7 +350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="125" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="144" bodyend="154"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="124" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="119" bodyend="124"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a7a027ef61f229719c429a3b6125944ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
@@ -391,7 +383,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="136" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="156" bodyend="166"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="135" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="126" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a6948e7d1dacb7f39f55ba65710f30409" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
@@ -424,7 +416,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="147" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="168" bodyend="183"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="146" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="133" bodyend="143"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0780172295807e12618caff7afd17551" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
@@ -457,7 +449,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="158" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="185" bodyend="205"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="157" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="145" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac5f8554956c2af987e09227b3f80476b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -476,7 +468,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="178" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="222" bodyend="230"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="177" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="172" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a44f10fb317a8616cbfe8f2a6acfbdf54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -495,26 +487,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="187" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="232" bodyend="240"/>
-      </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad99d5ff3a95e93b3599248c72b631ff1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool ostk::mathematics::geometry::Angle::isDefined</definition>
-        <argsstring>() const</argsstring>
-        <name>isDefined</name>
-        <briefdescription>
-<para>Check if the angle is defined. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac0adf3599520171a84973fac94397a5a" kindref="member">Angle::Degrees</ref>(90.0).<ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad99d5ff3a95e93b3599248c72b631ff1" kindref="member">isDefined</ref>();<sp/><sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="return"><para>True if the angle is defined </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="207" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="254" bodyend="257"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="186" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="177" bodyend="180"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a17449f940c75bc182a9eaa069ae59342" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -533,7 +506,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="216" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="259" bodyend="267"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="206" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="194" bodyend="197"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a80267bbfcf53ac84f70e8c64c0ae4162" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -552,7 +525,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="225" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="269" bodyend="277"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="215" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="199" bodyend="202"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a93759a5dc36449aaa68d749d270fa736" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -599,7 +572,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="239" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="279" bodyend="298"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="229" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="204" bodyend="213"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aaf5a6fca6315e78ec77c6b4bbc3dd5c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref></type>
@@ -618,7 +591,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="248" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="300" bodyend="308"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="238" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="215" bodyend="218"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1af966e62bc2e5527d6d4c48b4cd5202ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -650,7 +623,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="258" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="310" bodyend="323"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="248" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="220" bodyend="228"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a97a1d772f17e955fa2cadcdd7d4f3d18" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -669,7 +642,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="267" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="325" bodyend="328"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="257" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="230" bodyend="233"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aa4ee9ff2659517128c2f8a95cf467531" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -713,7 +686,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="278" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="330" bodyend="348"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="268" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="235" bodyend="253"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae2823c3080f0855a1f22d41bcc959c85" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -732,7 +705,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="287" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="350" bodyend="353"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="277" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="255" bodyend="258"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a4d1b430cfd845e90a7fc567fb58be409" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -776,7 +749,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="298" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="355" bodyend="373"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="288" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="260" bodyend="278"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0cdc047da349003f7316e064dece0da8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -795,7 +768,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="307" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="375" bodyend="378"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="297" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="280" bodyend="283"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9521edd31e79ac3f167a32896fff15c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -839,7 +812,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="318" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="380" bodyend="398"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="308" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="285" bodyend="303"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0a3839e315c9f4d37c84ef28e6a5b45b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -858,7 +831,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="327" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="400" bodyend="403"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="317" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="305" bodyend="308"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a5589e3821626581f6c7817df419794da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -902,7 +875,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="338" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="405" bodyend="423"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="328" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="310" bodyend="328"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a5b4946a379a1b37780e74560ec31e7bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -921,7 +894,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="347" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="425" bodyend="428"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="337" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="330" bodyend="333"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1abe321115ea11461edc773d3f4524f56b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -954,7 +927,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="357" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="430" bodyend="438"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="347" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="335" bodyend="338"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -1000,7 +973,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="169" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="207" bodyend="220"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="168" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="162" bodyend="170"/>
       </memberdef>
       <memberdef kind="friend" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a0846b77ee3281e8a559197c3c3208eed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend std::ostream &amp;</type>
@@ -1044,29 +1017,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="198" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="242" bodyend="252"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="197" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="182" bodyend="192"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae07abb07ad2d332bfd5ac200bf68f0dd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
-        <definition>Angle ostk::mathematics::geometry::Angle::Undefined</definition>
-        <argsstring>()</argsstring>
-        <name>Undefined</name>
-        <briefdescription>
-<para>Construct an undefined angle. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ab0e70603bcffee46465b27cd4cb6cbbc" kindref="member">Angle</ref><sp/>angle<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae07abb07ad2d332bfd5ac200bf68f0dd" kindref="member">Angle::Undefined</ref>();</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="return"><para>An undefined angle </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="366" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="440" bodyend="443"/>
-      </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a8e6ae32f87c8dd9dbb5b13f0403bb93b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
         <definition>Angle ostk::mathematics::geometry::Angle::Zero</definition>
@@ -1084,7 +1038,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="375" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="445" bodyend="448"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="356" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="340" bodyend="343"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a3902ff6a057fc65e17b462d2d31e9cd2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -1103,7 +1057,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="384" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="450" bodyend="453"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="365" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="345" bodyend="348"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ab52a6ac8a09b8e96ff5ce6f8c429eb25" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -1122,7 +1076,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="393" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="455" bodyend="458"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="374" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="350" bodyend="353"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac282022eaa53c2f999a181c241b358b0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -1141,7 +1095,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="402" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="460" bodyend="463"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="383" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="355" bodyend="358"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aed85025684f23f918aae248832e24eaa" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -1173,7 +1127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="412" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="465" bodyend="468"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="393" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="360" bodyend="363"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac0adf3599520171a84973fac94397a5a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -1205,7 +1159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="422" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="470" bodyend="473"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="403" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="365" bodyend="368"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a5ed9de314711b66be74f581a7ca0e8ec" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -1237,7 +1191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="432" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="475" bodyend="478"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="413" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="370" bodyend="373"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a2a3e531eeb66f765802a75d8fc240e51" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -1269,7 +1223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="442" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="480" bodyend="483"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="423" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="375" bodyend="378"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a30f125c84a19aa3b4bda318936119aac" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -1301,7 +1255,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="452" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="485" bodyend="488"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="433" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="380" bodyend="383"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aa09f2fa86b1ebb2f5b83f4e79f5b2c94" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -1345,7 +1299,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="463" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="495" bodyend="530"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="444" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="390" bodyend="420"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1a4eb394d49e185968a7ee16b6b40dc0c5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -1389,7 +1343,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="474" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="532" bodyend="567"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="455" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="422" bodyend="452"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ace183366972c47b1f54c7b372e4ac0ff" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -1421,7 +1375,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="484" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="465" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aa8a1a9c33c0f6bd09dabd9580436fa9c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -1453,7 +1407,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="494" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="569" bodyend="597"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="475" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="454" bodyend="479"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1aef349823dc4fc1bd9aae2f3893c9a248" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -1485,7 +1439,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="504" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="599" bodyend="624"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="485" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="481" bodyend="506"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -1504,7 +1458,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="510" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="626" bodyend="651"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="491" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="508" bodyend="533"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae19f590c04de93f9365c12350903909e" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -1529,7 +1483,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="512" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="653" bodyend="677"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="493" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="535" bodyend="559"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1543,7 +1497,7 @@
 </programlisting></para>
 <para><ulink url="https://en.wikipedia.org/wiki/Angle">https://en.wikipedia.org/wiki/Angle</ulink> </para>
     </detaileddescription>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="32" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="31" bodyend="513"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" line="32" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp" bodystart="31" bodyend="494"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ab0e70603bcffee46465b27cd4cb6cbbc" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>Angle</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a5ed9de314711b66be74f581a7ca0e8ec" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>Arcminutes</name></member>
@@ -1563,7 +1517,6 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a97a1d772f17e955fa2cadcdd7d4f3d18" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>inRadians</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1aa4ee9ff2659517128c2f8a95cf467531" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>inRadians</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a5b4946a379a1b37780e74560ec31e7bf" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>inRevolutions</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ad99d5ff3a95e93b3599248c72b631ff1" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>isDefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a93759a5dc36449aaa68d749d270fa736" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>isNear</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a80267bbfcf53ac84f70e8c64c0ae4162" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>isNegative</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a17449f940c75bc182a9eaa069ae59342" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>isZero</name></member>
@@ -1591,7 +1544,6 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1aef349823dc4fc1bd9aae2f3893c9a248" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>SymbolFromUnit</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1abe321115ea11461edc773d3f4524f56b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>toString</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac282022eaa53c2f999a181c241b358b0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>TwoPi</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ae07abb07ad2d332bfd5ac200bf68f0dd" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>Undefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>Unit</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a610baa9759c5ed85af6536ab04279263" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>unit_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a8ea866a16ff6b5cd183b37e504475edb" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::Angle</scope><name>value_</name></member>

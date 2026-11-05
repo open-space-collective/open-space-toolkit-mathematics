@@ -28,9 +28,7 @@ ostk.mathematics.solver.NumericalSolver
       ~NumericalSolver.get_time_step
       ~NumericalSolver.integrate_duration
       ~NumericalSolver.integrate_time
-      ~NumericalSolver.is_defined
       ~NumericalSolver.string_from_log_type
       ~NumericalSolver.string_from_stepper_type
-      ~NumericalSolver.undefined
    
    

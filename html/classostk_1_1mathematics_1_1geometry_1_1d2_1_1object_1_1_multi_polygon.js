@@ -13,7 +13,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon =
     [ "getConvexHull", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a83c6178d69cbf895f4def2487cac0b06", null ],
     [ "getPolygonCount", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#ae9ce727a0b851951cb91cd646d745d6e", null ],
     [ "getPolygons", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a2d3cb29e353fd52f931b4b23d9fb3236", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a06c0dd090011c4bc96237f46ce47e049", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#ad1ac733a4cb185285402cdffbfd8fb36", null ],
     [ "operator=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a015d42e476cfc1d14221e6088d79137e", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a6c0965f5352f0b062163855e2ec2cf4b", null ],

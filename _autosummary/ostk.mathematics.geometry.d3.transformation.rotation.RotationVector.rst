@@ -22,12 +22,10 @@ ostk.mathematics.geometry.d3.transformation.rotation.RotationVector
       ~RotationVector.euler_angle
       ~RotationVector.get_angle
       ~RotationVector.get_axis
-      ~RotationVector.is_defined
       ~RotationVector.quaternion
       ~RotationVector.rectify
       ~RotationVector.rotation_matrix
       ~RotationVector.to_string
-      ~RotationVector.undefined
       ~RotationVector.unit
       ~RotationVector.x
       ~RotationVector.y

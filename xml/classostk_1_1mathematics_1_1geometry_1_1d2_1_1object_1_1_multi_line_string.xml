@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="187" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" bodystart="187" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="178" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" bodystart="178" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -149,26 +149,6 @@
         </inbodydescription>
         <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="81" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ac38eacd742cd2a60eb62d03cf1234b45" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
-        <type>bool</type>
-        <definition>virtual bool ostk::mathematics::geometry::d2::object::MultiLineString::isDefined</definition>
-        <argsstring>() const override</argsstring>
-        <name>isDefined</name>
-        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1abe5ea18c13bc259fc0da0b0c49fa0dca">isDefined</reimplements>
-        <briefdescription>
-<para>Check if multi multi line string is defined. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><programlisting><codeline><highlight class="normal">MultiLineString(0.0,<sp/>0.0).isDefined()<sp/>;<sp/>//<sp/>True</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="return"><para>True if multi multi line string is defined </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="90" column="18"/>
-      </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1af5f5a56165c38b4dc183316189038642" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool ostk::mathematics::geometry::d2::object::MultiLineString::isEmpty</definition>
@@ -186,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="99" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="90" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a307dced668e40eb38bebea36f1f66dd1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -205,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="108" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="99" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1af6b98286c8c872d39d8659d5672f7649" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -224,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="117" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="108" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ae1e7df5d3840884839e43aa0aca5ba6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -256,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="127" column="11"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="118" column="11"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a9acb45a9d609f72e5d8bc566ef921f40" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>String</type>
@@ -295,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="137" column="20"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="128" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ac1befc9e46d84330636599f164cb2033" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -339,7 +319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="148" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="139" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1afb12934caca48b8b55108c2087a3b3e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a56904ee7e27c37e2c3a1c94359ec01c9" kindref="member">MultiLineString::ConstIterator</ref></type>
@@ -358,7 +338,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="157" column="36"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="148" column="36"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a7c91eca1a5cfcbae562a1c709b975cf5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a56904ee7e27c37e2c3a1c94359ec01c9" kindref="member">MultiLineString::ConstIterator</ref></type>
@@ -377,7 +357,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="166" column="36"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="157" column="36"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1afec5f43815879ddfcb5051dd7ac40009" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -408,7 +388,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="175" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="166" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -429,7 +409,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="184" column="28"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="175" column="28"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -463,7 +443,7 @@
         <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="41" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" bodystart="40" bodyend="188"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="41" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" bodystart="40" bodyend="179"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1afec5f43815879ddfcb5051dd7ac40009" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1afb12934caca48b8b55108c2087a3b3e3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>begin</name></member>
@@ -477,7 +457,6 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ae1e7df5d3840884839e43aa0aca5ba6b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>getPointClosestTo</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1af6b98286c8c872d39d8659d5672f7649" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>getPointCount</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a553d7a1e388598c74d0f9fdd57d1ba9d" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>intersects</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ac38eacd742cd2a60eb62d03cf1234b45" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>isDefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1af5f5a56165c38b4dc183316189038642" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>isEmpty</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a2b7de0f89480dd069a3c6d3c2d6f7cce" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>lineStrings_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a2be4b3e1608f466d294ef5884684bab1" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>MultiLineString</name></member>

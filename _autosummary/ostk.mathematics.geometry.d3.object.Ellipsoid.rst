@@ -46,7 +46,6 @@ ostk.mathematics.geometry.d3.object.Ellipsoid
       ~Ellipsoid.intersection_with
       ~Ellipsoid.intersects
       ~Ellipsoid.is_cone
-      ~Ellipsoid.is_defined
       ~Ellipsoid.is_ellipsoid
       ~Ellipsoid.is_line
       ~Ellipsoid.is_line_string
@@ -58,6 +57,5 @@ ostk.mathematics.geometry.d3.object.Ellipsoid
       ~Ellipsoid.is_ray
       ~Ellipsoid.is_segment
       ~Ellipsoid.is_sphere
-      ~Ellipsoid.undefined
    
    

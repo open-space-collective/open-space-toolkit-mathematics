@@ -1,7 +1,6 @@
 var classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation =
 [
     [ "Type", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a119ede15c4e2af41c03d684fc37e06a9", [
-      [ "Undefined", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a119ede15c4e2af41c03d684fc37e06a9aec0fc0100c4fc1ce4eea230c3dc10360", null ],
       [ "Identity", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a119ede15c4e2af41c03d684fc37e06a9ac9c5c65fb4af9cf90eb99b3b84424189", null ],
       [ "Translation", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a119ede15c4e2af41c03d684fc37e06a9a6dd08874f83507e9c7b23f1a46b7fa7c", null ],
       [ "Rotation", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a119ede15c4e2af41c03d684fc37e06a9af1a42bd417390fc63b030a519624607a", null ],
@@ -17,7 +16,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation =
     [ "getInverse", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a81ec04277231eb4c06a3daf04bbd5b22", null ],
     [ "getMatrix", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#aba328c8feb64a9bb4c5bea76a796e4a4", null ],
     [ "getType", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#ad4af5f661b7219ddac4e96de8fb4c462", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a7a810c3645491c671fae1953456257c4", null ],
     [ "isIdentity", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#afc750037dcccec8a35ea8b6e959836cf", null ],
     [ "isRigid", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a35e8e5478a46bdab58808ef63efc4f77", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a9c5841e272ccd57670de80bedf7c7ebc", null ],

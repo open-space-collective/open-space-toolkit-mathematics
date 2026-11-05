@@ -41,7 +41,6 @@ ostk.mathematics.geometry.d3.object.Composite
       ~Composite.intersects
       ~Composite.is_composite
       ~Composite.is_cone
-      ~Composite.is_defined
       ~Composite.is_ellipsoid
       ~Composite.is_empty
       ~Composite.is_line

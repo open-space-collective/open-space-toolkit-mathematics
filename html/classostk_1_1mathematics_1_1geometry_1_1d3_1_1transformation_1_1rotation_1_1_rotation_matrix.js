@@ -5,7 +5,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1
     [ "getColumnAt", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a2abb637de6747ef51067aaf00237d9bf", null ],
     [ "getMatrix", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a77558ecb6b094299a1ac0f208ee6634c", null ],
     [ "getRowAt", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a8f62d9ae197f5f94e168a612be0a9bb1", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#ae17d3b16182ce6110a87534fd5aff6b4", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a24dd53bd3648655d4ab858d0ce0685b2", null ],
     [ "operator()", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a7950245c6fd96b7c75676843a63915be", null ],
     [ "operator()", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a925bbc83df88a581a08426bce118d8ba", null ],
