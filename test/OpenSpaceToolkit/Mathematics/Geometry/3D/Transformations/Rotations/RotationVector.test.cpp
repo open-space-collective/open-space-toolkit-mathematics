@@ -26,24 +26,6 @@ using ostk::mathematics::object::Vector3d;
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Constructor)
 {
     {
-        RotationVector rotationVector = {{0.0, 0.0, 1.0}, Angle::Degrees(45.0)};
-
-        EXPECT_TRUE(rotationVector.isDefined());
-    }
-
-    {
-        RotationVector rotationVector = {{0.0, 0.0, 1.0}, Angle::Unit::Degree};
-
-        EXPECT_TRUE(rotationVector.isDefined());
-    }
-
-    {
-        RotationVector rotationVector = {{0.0, 0.0, 0.0}, Angle::Unit::Degree};
-
-        EXPECT_TRUE(rotationVector.isDefined());
-    }
-
-    {
         EXPECT_ANY_THROW(RotationVector({0.0, 0.0, 0.9}, Angle::Degrees(45.0)));
         EXPECT_ANY_THROW(RotationVector({0.0, 0.0, 1.1}, Angle::Degrees(45.0)));
     }
@@ -109,12 +91,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
             RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(1.0))
         );
     }
-
-    {
-        EXPECT_FALSE(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(0.0)) == RotationVector::Undefined());
-        EXPECT_FALSE(RotationVector::Undefined() == RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(0.0)));
-        EXPECT_FALSE(RotationVector::Undefined() == RotationVector::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, NotEqualToOperator)
@@ -123,12 +99,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
         EXPECT_TRUE(
             RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0)) != RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(1.0))
         );
-    }
-
-    {
-        EXPECT_TRUE(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(0.0)) != RotationVector::Undefined());
-        EXPECT_TRUE(RotationVector::Undefined() != RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(0.0)));
-        EXPECT_TRUE(RotationVector::Undefined() != RotationVector::Undefined());
     }
 
     {
@@ -192,29 +162,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, IsDefined)
-{
-    {
-        EXPECT_TRUE(RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(10.0)).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(RotationVector::Undefined().isDefined());
-        EXPECT_FALSE(RotationVector(Vector3d::Undefined(), Angle::Degrees(10.0)).isDefined());
-        EXPECT_FALSE(RotationVector({1.0, 0.0, 0.0}, Angle::Undefined()).isDefined());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, GetAxis)
 {
     {
         EXPECT_EQ(Vector3d(1.0, 0.0, 0.0), RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(10.0)).getAxis());
         EXPECT_EQ(Vector3d(0.0, 1.0, 0.0), RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(20.0)).getAxis());
         EXPECT_EQ(Vector3d(0.0, 0.0, 1.0), RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(30.0)).getAxis());
-    }
-
-    {
-        EXPECT_ANY_THROW(RotationVector::Undefined().getAxis());
     }
 }
 
@@ -231,10 +184,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
 
         EXPECT_EQ(Angle::Degrees(-180.0), RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(-180.0)).getAngle());
         EXPECT_EQ(Angle::Degrees(+180.0), RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(+180.0)).getAngle());
-    }
-
-    {
-        EXPECT_ANY_THROW(RotationVector::Undefined().getAngle());
     }
 }
 
@@ -280,10 +229,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
             "[0.000, 0.000, 1.000] : 180.000 [deg]", RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(+180.0)).toString(3)
         );
     }
-
-    {
-        EXPECT_ANY_THROW(RotationVector::Undefined().toString());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Rectify)
@@ -309,18 +254,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
             RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(180.0 + 45.0)).rectify()
         );
     }
-
-    {
-        EXPECT_ANY_THROW(RotationVector::Undefined().rectify());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Undefined)
-{
-    {
-        EXPECT_NO_THROW(RotationVector::Undefined());
-        EXPECT_FALSE(RotationVector::Undefined().isDefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Unit)
@@ -341,10 +274,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
         EXPECT_EQ(Vector3d::X(), rotationVector.getAxis());
         EXPECT_EQ(Angle::Degrees(45.0), rotationVector.getAngle());
     }
-
-    {
-        EXPECT_ANY_THROW(RotationVector::X(Angle::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Y)
@@ -357,10 +286,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
         EXPECT_EQ(Vector3d::Y(), rotationVector.getAxis());
         EXPECT_EQ(Angle::Degrees(45.0), rotationVector.getAngle());
     }
-
-    {
-        EXPECT_ANY_THROW(RotationVector::Y(Angle::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Z)
@@ -372,10 +297,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
 
         EXPECT_EQ(Vector3d::Z(), rotationVector.getAxis());
         EXPECT_EQ(Angle::Degrees(45.0), rotationVector.getAngle());
-    }
-
-    {
-        EXPECT_ANY_THROW(RotationVector::Z(Angle::Undefined()));
     }
 }
 
@@ -541,10 +462,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
             RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.9999619230641713, -0.008726535498373997))
         );
     }
-
-    {
-        EXPECT_ANY_THROW(RotationVector::Quaternion(Quaternion::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Quaternion_Rectify)
@@ -562,7 +479,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
         );
 
         EXPECT_ANY_THROW(RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 1.0, 1.0), false));
-        EXPECT_ANY_THROW(RotationVector::Quaternion(Quaternion::Undefined(), false));
     }
 
     // Flag enabled: unit quaternion
@@ -648,7 +564,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
     // Flag enabled: degenerate inputs still throw
 
     {
-        EXPECT_ANY_THROW(RotationVector::Quaternion(Quaternion::Undefined(), true));
         EXPECT_ANY_THROW(RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.0, 0.0), true));
     }
 }
@@ -786,9 +701,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
                        "{} / {}", referenceRotationVector.getAngle().toString(), rotationVector.getAngle().toString()
                    );
         }
-    }
-
-    {
-        EXPECT_ANY_THROW(RotationVector::EulerAngle(EulerAngle::Undefined()));
     }
 }

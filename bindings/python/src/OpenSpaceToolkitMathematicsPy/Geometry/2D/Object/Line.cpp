@@ -53,20 +53,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Line(nanobind::modu
         .def("__repr__", &(shiftToString<Line>))
 
         .def(
-            "is_defined",
-            &Line::isDefined,
-            R"doc(
-                Check if the line is defined.
-
-                Returns:
-                    bool: True if the line is defined, False otherwise.
-
-                Example:
-                    >>> line = Line.points(Point(0.0, 0.0), Point(1.0, 1.0))
-                    >>> line.is_defined()  # True
-            )doc"
-        )
-        .def(
             "intersects",
             overload_cast<const Point&>(&Line::intersects, const_),
             R"doc(
@@ -185,20 +171,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Line(nanobind::modu
             arg("transformation")
         )
 
-        .def_static(
-            "undefined",
-            &Line::Undefined,
-            R"doc(
-                Create an undefined line.
-
-                Returns:
-                    Line: An undefined line.
-
-                Example:
-                    >>> undefined_line = Line.undefined()
-                    >>> undefined_line.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "points",
             &Line::Points,

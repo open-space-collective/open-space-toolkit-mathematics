@@ -52,20 +52,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Segment(nanobind::m
         .def("__repr__", &(shiftToString<Segment>))
 
         .def(
-            "is_defined",
-            &Segment::isDefined,
-            R"doc(
-                Check if the segment is defined.
-
-                Returns:
-                    bool: True if the segment is defined, False otherwise.
-
-                Example:
-                    >>> segment = Segment(Point(0.0, 0.0), Point(1.0, 1.0))
-                    >>> segment.is_defined()  # True
-            )doc"
-        )
-        .def(
             "is_degenerate",
             &Segment::isDegenerate,
             R"doc(
@@ -238,21 +224,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Segment(nanobind::m
                     >>> segment.apply_transformation(transformation)
             )doc",
             arg("transformation")
-        )
-
-        .def_static(
-            "undefined",
-            &Segment::Undefined,
-            R"doc(
-                Create an undefined segment.
-
-                Returns:
-                    Segment: An undefined segment object.
-
-                Example:
-                    >>> undefined_segment = Segment.undefined()
-                    >>> undefined_segment.is_defined()  # False
-            )doc"
         )
 
         ;

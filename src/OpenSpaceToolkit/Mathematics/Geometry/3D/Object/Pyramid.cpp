@@ -42,11 +42,6 @@ Pyramid* Pyramid::clone() const
 
 bool Pyramid::operator==(const Pyramid& aPyramid) const
 {
-    if ((!this->isDefined()) || (!aPyramid.isDefined()))
-    {
-        return false;
-    }
-
     return (base_ == aPyramid.base_) && (apex_ == aPyramid.apex_);
 }
 
@@ -55,23 +50,8 @@ bool Pyramid::operator!=(const Pyramid& aPyramid) const
     return !((*this) == aPyramid);
 }
 
-bool Pyramid::isDefined() const
-{
-    return base_.isDefined() && apex_.isDefined();
-}
-
 bool Pyramid::intersects(const Sphere& aSphere, const Size aDiscretizationLevel) const
 {
-    if (!aSphere.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
-
     for (const auto& ray :
          this->getRaysOfLateralFaces(aDiscretizationLevel))  // [TBM] Could be improved by calculating rays on the fly
     {
@@ -86,16 +66,6 @@ bool Pyramid::intersects(const Sphere& aSphere, const Size aDiscretizationLevel)
 
 bool Pyramid::intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel) const
 {
-    if (!anEllipsoid.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
-
     for (const auto& ray :
          this->getRaysOfLateralFaces(aDiscretizationLevel))  // [TBM] Could be improved by calculating rays on the fly
     {
@@ -111,16 +81,6 @@ bool Pyramid::intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizatio
 bool Pyramid::contains(const Point& aPoint) const
 {
     using Point2d = ostk::mathematics::geometry::d2::object::Point;
-
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
 
     if (aPoint == apex_)
     {
@@ -172,11 +132,6 @@ bool Pyramid::contains(const Point& aPoint) const
 
 bool Pyramid::contains(const PointSet& aPointSet) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
-
     return std::all_of(
         std::begin(aPointSet),
         std::end(aPointSet),
@@ -194,16 +149,6 @@ bool Pyramid::contains(const Segment& aSegment) const
 
 bool Pyramid::contains(const Ellipsoid& anEllipsoid) const
 {
-    if (!anEllipsoid.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
-
     throw ostk::core::error::runtime::ToBeImplemented("Pyramid");
 
     return false;
@@ -211,31 +156,16 @@ bool Pyramid::contains(const Ellipsoid& anEllipsoid) const
 
 const Polygon& Pyramid::getBase() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
-
     return base_;
 }
 
 const Point& Pyramid::getApex() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
-
     return apex_;
 }
 
 Size Pyramid::getLateralFaceCount() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
-
     return base_.getEdgeCount();
 }
 
@@ -243,11 +173,6 @@ Polygon Pyramid::getLateralFaceAt(const Index aLateralFaceIndex) const
 {
     using ostk::mathematics::object::Vector2d;
     using Point2d = ostk::mathematics::geometry::d2::object::Point;
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
 
     const Segment baseEdge = base_.getEdgeAt(aLateralFaceIndex);
 
@@ -344,16 +269,6 @@ Array<Ray> Pyramid::getRaysOfLateralFaces(const Size aRayCount) const
 Intersection Pyramid::intersectionWith(const Sphere& aSphere, const bool onlyInSight, const Size aDiscretizationLevel)
     const
 {
-    if (!aSphere.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
-
     Array<Point> firstIntersectionPoints = Array<Point>::Empty();
     Array<Point> secondIntersectionPoints = Array<Point>::Empty();
 
@@ -411,16 +326,6 @@ Intersection Pyramid::intersectionWith(
     const Ellipsoid& anEllipsoid, const bool onlyInSight, const Size aDiscretizationLevel
 ) const
 {
-    if (!anEllipsoid.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
-
     Array<Point> firstIntersectionPoints = Array<Point>::Empty();
     Array<Point> secondIntersectionPoints = Array<Point>::Empty();
 
@@ -498,7 +403,7 @@ void Pyramid::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
     displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Pyramid") : void();
 
-    ostk::core::utils::Print::Line(anOutputStream) << "Apex:" << (apex_.isDefined() ? apex_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "Apex:" << apex_.toString();
 
     ostk::core::utils::Print::Separator(anOutputStream, "Base:");
 
@@ -509,25 +414,9 @@ void Pyramid::print(std::ostream& anOutputStream, bool displayDecorators) const
 
 void Pyramid::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Pyramid");
-    }
-
     base_.applyTransformation(aTransformation);
     apex_.applyTransformation(aTransformation);
 }
-
-Pyramid Pyramid::Undefined()
-{
-    return {Polygon::Undefined(), Point::Undefined()};
-}
-
 }  // namespace object
 }  // namespace d3
 }  // namespace geometry

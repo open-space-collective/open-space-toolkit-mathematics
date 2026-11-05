@@ -23,15 +23,12 @@ Polygon::Polygon(const Polygon2d& aPolygon, const Point& anOrigin, const Vector3
     : Object(),
       polygon_(aPolygon),
       origin_(anOrigin),
-      xAxis_(aXAxis.isDefined() ? aXAxis.normalized() : aXAxis),
-      yAxis_(aYAxis.isDefined() ? aYAxis.normalized() : aYAxis)
+      xAxis_(aXAxis.normalized()),
+      yAxis_(aYAxis.normalized())
 {
-    if (xAxis_.isDefined() && yAxis_.isDefined())
+    if (std::abs(xAxis_.dot(yAxis_)) > 1e-15)
     {
-        if (std::abs(xAxis_.dot(yAxis_)) > 1e-15)
-        {
-            throw ostk::core::error::RuntimeError("X and Y axes are not orthogonal.");
-        }
+        throw ostk::core::error::RuntimeError("X and Y axes are not orthogonal.");
     }
 }
 
@@ -42,11 +39,6 @@ Polygon* Polygon::clone() const
 
 bool Polygon::operator==(const Polygon& aPolygon) const
 {
-    if ((!this->isDefined()) || (!aPolygon.isDefined()))
-    {
-        return false;
-    }
-
     // [TBI] Implement superposition
 
     return (polygon_ == aPolygon.polygon_) && (origin_ == aPolygon.origin_) && (xAxis_ == aPolygon.xAxis_) &&
@@ -58,26 +50,11 @@ bool Polygon::operator!=(const Polygon& aPolygon) const
     return !((*this) == aPolygon);
 }
 
-bool Polygon::isDefined() const
-{
-    return polygon_.isDefined() && origin_.isDefined() && xAxis_.isDefined() && yAxis_.isDefined();
-}
-
 bool Polygon::isNear(const Polygon& aPolygon, double aTolerance) const
 {
-    if (!aPolygon.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     if (std::isnan(aTolerance))
     {
         throw ostk::core::error::runtime::Undefined("Tolerance");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
     if (this->getVertexCount() != aPolygon.getVertexCount())
@@ -102,71 +79,36 @@ bool Polygon::isNear(const Polygon& aPolygon, double aTolerance) const
 
 const Polygon2d& Polygon::getPolygon2d() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return polygon_;
 }
 
 const Point& Polygon::getOrigin() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return origin_;
 }
 
 const Vector3d& Polygon::getXAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return xAxis_;
 }
 
 const Vector3d& Polygon::getYAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return yAxis_;
 }
 
 Vector3d Polygon::getNormalVector() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return xAxis_.cross(yAxis_).normalized();
 }
 
 Size Polygon::getEdgeCount() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return polygon_.getEdgeCount();
 }
 
 Size Polygon::getVertexCount() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return polygon_.getVertexCount();
 }
 
@@ -174,11 +116,6 @@ Polygon::Edge Polygon::getEdgeAt(const Index anEdgeIndex) const
 {
     using Point2d = ostk::mathematics::geometry::d2::object::Point;
     using Segment2d = ostk::mathematics::geometry::d2::object::Segment;
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
 
     const Segment2d edge2d = polygon_.getEdgeAt(anEdgeIndex);
 
@@ -194,11 +131,6 @@ Polygon::Edge Polygon::getEdgeAt(const Index anEdgeIndex) const
 Polygon::Vertex Polygon::getVertexAt(const Index aVertexIndex) const
 {
     using Point2d = ostk::mathematics::geometry::d2::object::Point;
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
 
     const Point2d vertex2d = polygon_.getVertexAt(aVertexIndex);
 
@@ -250,13 +182,10 @@ void Polygon::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
     displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Polygon") : void();
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Origin:" << (origin_.isDefined() ? origin_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "Origin:" << origin_.toString();
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "X axis:" << (xAxis_.isDefined() ? xAxis_.toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Y axis:" << (yAxis_.isDefined() ? yAxis_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "X axis:" << xAxis_.toString();
+    ostk::core::utils::Print::Line(anOutputStream) << "Y axis:" << yAxis_.toString();
 
     ostk::core::utils::Print::Separator(anOutputStream, "Polygon");
 
@@ -267,16 +196,6 @@ void Polygon::print(std::ostream& anOutputStream, bool displayDecorators) const
 
 void Polygon::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     // polygon_ = aTransformation.applyTo(polygon_) ;
 
     origin_ = aTransformation.applyTo(origin_);
@@ -284,12 +203,6 @@ void Polygon::applyTransformation(const Transformation& aTransformation)
     xAxis_ = aTransformation.applyTo(xAxis_);
     yAxis_ = aTransformation.applyTo(yAxis_);
 }
-
-Polygon Polygon::Undefined()
-{
-    return {Polygon2d::Undefined(), Point::Undefined(), Vector3d::Undefined(), Vector3d::Undefined()};
-}
-
 }  // namespace object
 }  // namespace d3
 }  // namespace geometry

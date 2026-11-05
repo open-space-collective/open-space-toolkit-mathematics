@@ -158,15 +158,6 @@ class RotationMatrix
     /// @return                 Output stream reference
     friend std::ostream& operator<<(std::ostream& anOutputStream, const RotationMatrix& aRotationMatrix);
 
-    /// @brief                  Check if Rotation Matrix is defined
-    ///
-    /// @code
-    ///                         RotationMatrix(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)).isDefined();
-    /// @endcode
-    ///
-    /// @return                 True if Rotation Matrix is defined
-    bool isDefined() const;
-
     /// @brief                  Get row at index
     ///
     /// @code{.cpp}
@@ -213,15 +204,6 @@ class RotationMatrix
     ///
     /// @return                 Rotation Matrix reference
     RotationMatrix& transpose();
-
-    /// @brief                  Construct an undefined Rotation Matrix
-    ///
-    /// @code
-    ///                         RotationMatrix::Undefined();
-    /// @endcode
-    ///
-    /// @return                 Rotation Matrix
-    static RotationMatrix Undefined();
 
     /// @brief                  Construct unitary Rotation Matrix
     ///
@@ -335,8 +317,6 @@ class RotationMatrix
 
    private:
     Matrix3d matrix_;
-
-    RotationMatrix();
 };
 
 }  // namespace rotation

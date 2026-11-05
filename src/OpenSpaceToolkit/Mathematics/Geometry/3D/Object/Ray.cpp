@@ -26,7 +26,7 @@ Ray::Ray(const Point& anOrigin, const Vector3d& aDirection)
       origin_(anOrigin),
       direction_(aDirection)
 {
-    if (direction_.isDefined() && (direction_.squaredNorm() != 1.0))
+    if (direction_.squaredNorm() != 1.0)
     {
         if (direction_.squaredNorm() == 0.0)
         {
@@ -44,22 +44,12 @@ Ray* Ray::clone() const
 
 bool Ray::operator==(const Ray& aRay) const
 {
-    if ((!this->isDefined()) || (!aRay.isDefined()))
-    {
-        return false;
-    }
-
     return (origin_ == aRay.origin_) && (direction_ == aRay.direction_);
 }
 
 bool Ray::operator!=(const Ray& aRay) const
 {
     return !((*this) == aRay);
-}
-
-bool Ray::isDefined() const
-{
-    return origin_.isDefined() && direction_.isDefined();
 }
 
 bool Ray::intersects(const Point& aPoint) const
@@ -75,16 +65,6 @@ bool Ray::intersects(const Point& aPoint) const
 
 bool Ray::intersects(const Plane& aPlane) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
-    if (!aPlane.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Plane");
-    }
-
     const Vector3d n = aPlane.getNormalVector();
     const Vector3d v = direction_;
 
@@ -115,16 +95,6 @@ bool Ray::intersects(const Ellipsoid& anEllipsoid) const
 
 bool Ray::contains(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
     const Vector3d AC = aPoint - origin_;
 
     return (direction_.cross(AC).squaredNorm() == 0.0) && (0.0 <= direction_.dot(AC));
@@ -132,16 +102,6 @@ bool Ray::contains(const Point& aPoint) const
 
 bool Ray::contains(const PointSet& aPointSet) const
 {
-    if (!aPointSet.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point Set");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
     return (!aPointSet.isEmpty()) && std::all_of(
                                          aPointSet.begin(),
                                          aPointSet.end(),
@@ -154,36 +114,16 @@ bool Ray::contains(const PointSet& aPointSet) const
 
 const Point& Ray::getOrigin() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
     return origin_;
 }
 
 const Vector3d& Ray::getDirection() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
     return direction_;
 }
 
 double Ray::distanceTo(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
     if (aPoint == this->origin_)
     {
         return 0.0;
@@ -201,16 +141,6 @@ double Ray::distanceTo(const Point& aPoint) const
 
 Intersection Ray::intersectionWith(const Plane& aPlane) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
-    if (!aPlane.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Plane");
-    }
-
     const Vector3d n = aPlane.getNormalVector();
     const Vector3d v = direction_;
 
@@ -253,35 +183,17 @@ void Ray::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
     displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Ray") : void();
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Origin:" << (origin_.isDefined() ? origin_.toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Direction:" << (direction_.isDefined() ? direction_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "Origin:" << origin_.toString();
+    ostk::core::utils::Print::Line(anOutputStream) << "Direction:" << direction_.toString();
 
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
 
 void Ray::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
     origin_.applyTransformation(aTransformation);
     direction_ = aTransformation.applyTo(direction_);
 }
-
-Ray Ray::Undefined()
-{
-    return {Point::Undefined(), Vector3d::Undefined()};
-}
-
 }  // namespace object
 }  // namespace d3
 }  // namespace geometry

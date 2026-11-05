@@ -207,16 +207,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
         )
 
         .def(
-            "is_defined",
-            &Quaternion::isDefined,
-            R"doc(
-                Check if the quaternion is defined.
-
-                Returns:
-                    bool: True if the quaternion is defined, False otherwise.
-            )doc"
-        )
-        .def(
             "is_unitary",
             &Quaternion::isUnitary,
             arg("norm_tolerance").sig("1e-15") = 1e-15,
@@ -639,20 +629,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
             arg("quaternion")
         )
 
-        .def_static(
-            "undefined",
-            &Quaternion::Undefined,
-            R"doc(
-                Create an undefined quaternion.
-
-                Returns:
-                    Quaternion: An undefined quaternion.
-
-                Example:
-                    >>> q = Quaternion.undefined()
-                    >>> q.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "unit",
             &Quaternion::Unit,

@@ -83,15 +83,6 @@ class Sphere : public Object
     /// @return             True if spheres are not equal
     bool operator!=(const Sphere& aSphere) const;
 
-    /// @brief              Check if sphere is defined
-    ///
-    /// @code
-    ///                     Sphere(Point::Origin(), 1.0).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if sphere is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if sphere is unitary, i.e. its radius is equal to 1.0
     ///
     /// @code
@@ -333,15 +324,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined sphere
-    ///
-    /// @code
-    ///                     Sphere sphere = Sphere::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined sphere
-    static Sphere Undefined();
 
     /// @brief              Constructs a unit sphere
     ///

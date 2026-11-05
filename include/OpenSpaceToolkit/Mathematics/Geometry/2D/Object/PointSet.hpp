@@ -104,15 +104,6 @@ class PointSet : public Object
     /// @return             True if point sets are not equal
     bool operator!=(const PointSet& aPointSet) const;
 
-    /// @brief              Check if point set is defined
-    ///
-    /// @code
-    ///                     PointSet(0.0, 0.0).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if point set is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if point set is empty
     ///
     /// @code

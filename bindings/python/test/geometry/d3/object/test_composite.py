@@ -133,7 +133,6 @@ class Test3DComposite:
 
         assert composite is not None
         assert isinstance(composite, Composite)
-        assert composite.is_defined()
 
     def test_geometry_d3_object_composite_empty(self):
         composite: Composite = Composite.empty()
@@ -141,14 +140,7 @@ class Test3DComposite:
         assert composite is not None
         assert isinstance(composite, Composite)
         assert isinstance(composite, Object)
-        assert composite.is_defined()
         assert composite.is_empty()
-
-    def test_geometry_d3_object_composite_is_defined(self):
-        assert Composite.empty().is_defined()
-        assert Composite(Point.undefined()).is_defined() is False
-
-        assert not hasattr(Composite, "undefined")
 
     def test_geometry_d3_object_composite_comparators(self):
         point_1: Point = Point(1.0, 2.0, 1.0)
@@ -182,23 +174,12 @@ class Test3DComposite:
 
         assert composite_3 is not None
         assert isinstance(composite_3, Composite)
-        assert composite_3.is_defined()
         assert composite_3.get_object_count() == 2
-
-        with pytest.raises(RuntimeError):
-            composite = Composite(Point.undefined()) + composite_1
-
-        with pytest.raises(RuntimeError):
-            composite = composite_1 + Composite(Point.undefined())
 
         composite_3 += composite_1
 
         assert isinstance(composite_3, Composite)
-        assert composite_3.is_defined()
         assert composite_3.get_object_count() == 3
-
-        with pytest.raises(RuntimeError):
-            composite_3 += Composite(Point.undefined())
 
     def test_geometry_d3_object_composite_get_object_at(
         self,
@@ -240,7 +221,6 @@ class Test3DComposite:
         geometry = request.getfixturevalue(geometry_name)
         composite: Composite = Composite(geometry)
 
-        assert composite.is_defined()
         assert getattr(composite, f"is_{geometry_name}")()
 
     @pytest.mark.parametrize(
@@ -264,5 +244,4 @@ class Test3DComposite:
         geometry = request.getfixturevalue(geometry_name)
         composite: Composite = Composite(geometry)
 
-        assert composite.is_defined()
-        assert getattr(composite, f"as_{geometry_name}")().is_defined()
+        assert getattr(composite, f"as_{geometry_name}")() is not None

@@ -1045,10 +1045,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetConvexHull
     }
 
     // Undefined throws
-
-    {
-        EXPECT_ANY_THROW(MultiPolygon::Undefined().getConvexHull());
-    }
 }
 
 // // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, IntersectionWith)
@@ -1208,16 +1204,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetConvexHull
 //     }
 
 // }
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, Undefined)
-{
-    using ostk::mathematics::geometry::d2::object::MultiPolygon;
-
-    {
-        EXPECT_NO_THROW(MultiPolygon::Undefined());
-        EXPECT_FALSE(MultiPolygon::Undefined().isDefined());
-    }
-}
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, Polygon)
 {

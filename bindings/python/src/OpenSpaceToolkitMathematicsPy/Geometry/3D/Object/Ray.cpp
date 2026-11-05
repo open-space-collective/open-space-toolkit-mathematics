@@ -56,20 +56,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ray(nanobind::modul
         .def("__str__", &(shiftToString<Ray>))
         .def("__repr__", &(shiftToString<Ray>))
 
-        .def(
-            "is_defined",
-            &Ray::isDefined,
-            R"doc(
-                Check if the ray is defined.
-
-                Returns:
-                    bool: True if the ray is defined, False otherwise.
-
-                Example:
-                    >>> ray = Ray(Point(0.0, 0.0, 0.0), np.array([1.0, 0.0, 0.0]))
-                    >>> ray.is_defined()  # True
-            )doc"
-        )
         .def("intersects", overload_cast<const Point&>(&Ray::intersects, const_), arg("point"))
         .def("intersects", overload_cast<const Plane&>(&Ray::intersects, const_), arg("plane"))
         .def("intersects", overload_cast<const Sphere&>(&Ray::intersects, const_), arg("sphere"))
@@ -232,21 +218,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ray(nanobind::modul
                     >>> ray.apply_transformation(transformation)
             )doc",
             arg("transformation")
-        )
-
-        .def_static(
-            "undefined",
-            &Ray::Undefined,
-            R"doc(
-                Create an undefined ray.
-
-                Returns:
-                    Ray: An undefined ray object.
-
-                Example:
-                    >>> undefined_ray = Ray.undefined()
-                    >>> undefined_ray.is_defined()  # False
-            )doc"
         )
 
         ;

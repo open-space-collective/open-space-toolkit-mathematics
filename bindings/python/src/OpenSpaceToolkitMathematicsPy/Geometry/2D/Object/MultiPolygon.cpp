@@ -54,21 +54,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(nanobi
         .def("__repr__", &(shiftToString<MultiPolygon>))
 
         .def(
-            "is_defined",
-            &MultiPolygon::isDefined,
-            R"doc(
-                Check if the multi-polygon is defined.
-
-                Returns:
-                    bool: True if the multi-polygon is defined, False otherwise.
-
-                Example:
-                    >>> polygon = Polygon([Point(0.0, 0.0), Point(1.0, 0.0), Point(1.0, 1.0)])
-                    >>> multi_polygon = MultiPolygon([polygon])
-                    >>> multi_polygon.is_defined()  # True
-            )doc"
-        )
-        .def(
             "contains",
             overload_cast<const Point&>(&MultiPolygon::contains, const_),
             R"doc(
@@ -218,20 +203,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(nanobi
             arg("transformation")
         )
 
-        .def_static(
-            "undefined",
-            &MultiPolygon::Undefined,
-            R"doc(
-                Create an undefined multi-polygon.
-
-                Returns:
-                    MultiPolygon: An undefined multi-polygon object.
-
-                Example:
-                    >>> undefined_multi_polygon = MultiPolygon.undefined()
-                    >>> undefined_multi_polygon.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "polygon",
             &MultiPolygon::Polygon,

@@ -96,15 +96,6 @@ class Ellipsoid : public Object
     /// @return             True if ellipsoids are not equal
     bool operator!=(const Ellipsoid& anEllipsoid) const;
 
-    /// @brief              Check if ellipsoid is defined
-    ///
-    /// @code{.cpp}
-    ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if ellipsoid is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if ellipsoid intersects point
     ///
     /// @code{.cpp}
@@ -430,15 +421,6 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined ellipsoid
-    ///
-    /// @code{.cpp}
-    ///                     Ellipsoid ellipsoid = Ellipsoid::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined ellipsoid
-    static Ellipsoid Undefined();
 
    private:
     Point center_;

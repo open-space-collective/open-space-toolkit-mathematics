@@ -43,12 +43,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, EqualToOperator)
         EXPECT_FALSE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) == Ray({0.0, 0.0, -1.0}, {0.0, 0.0, +1.0}));
         EXPECT_FALSE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) == Ray({0.0, 0.0, 0.0}, {0.0, 0.0, -1.0}));
     }
-
-    {
-        EXPECT_FALSE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) == Ray::Undefined());
-        EXPECT_FALSE(Ray::Undefined() == Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
-        EXPECT_FALSE(Ray::Undefined() == Ray::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, NotEqualToOperator)
@@ -72,12 +66,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, NotEqualToOperator)
         EXPECT_TRUE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) != Ray({0.0, 0.0, -1.0}, {0.0, 0.0, +1.0}));
         EXPECT_TRUE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) != Ray({0.0, 0.0, 0.0}, {0.0, 0.0, -1.0}));
     }
-
-    {
-        EXPECT_TRUE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) != Ray::Undefined());
-        EXPECT_TRUE(Ray::Undefined() != Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
-        EXPECT_TRUE(Ray::Undefined() != Ray::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, StreamOperator)
@@ -90,19 +78,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, StreamOperator)
         EXPECT_NO_THROW(std::cout << Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) << std::endl);
 
         EXPECT_FALSE(testing::internal::GetCapturedStdout().empty());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IsDefined)
-{
-    using ostk::mathematics::geometry::d3::object::Ray;
-
-    {
-        EXPECT_TRUE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Ray::Undefined().isDefined());
     }
 }
 
@@ -123,11 +98,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Intersects_Point)
         EXPECT_FALSE(Ray({1.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point(1.0, 0.0, -1.0)));
         EXPECT_FALSE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point(1.0, 0.0, 0.0)));
         EXPECT_FALSE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point(0.0, 1.0, 0.0)));
-    }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().intersects(Point::Undefined()));
-        EXPECT_ANY_THROW(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point::Undefined()));
     }
 }
 
@@ -157,11 +127,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Intersects_Plane)
 
         EXPECT_FALSE(Ray({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}).intersects(Plane({-1.0, -2.0, -3.0}, {1.0, 0.0, 0.0})));
     }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().intersects(Plane::Undefined()));
-        EXPECT_ANY_THROW(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Plane::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Intersects_Sphere)
@@ -174,11 +139,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Intersects_Sphere)
 
         SUCCEED();
     }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().intersects(Sphere::Undefined()));
-        EXPECT_ANY_THROW(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Sphere::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Intersects_Ellipsoid)
@@ -190,11 +150,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Intersects_Ellipsoid)
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid.Intersects_Ray
 
         SUCCEED();
-    }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().intersects(Ellipsoid::Undefined()));
-        EXPECT_ANY_THROW(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Ellipsoid::Undefined()));
     }
 }
 
@@ -215,12 +170,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Contains_Point)
         EXPECT_FALSE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point(0.0, 0.0, -1.0)));
         EXPECT_FALSE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point(0.0, 0.0, -0.5)));
         EXPECT_FALSE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point(1.0, 0.0, 0.0)));
-    }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Ray::Undefined().contains(Point(0.0, 0.0, 0.0)));
     }
 }
 
@@ -244,11 +193,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Contains_PointSet)
         EXPECT_FALSE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0})
                          .contains(PointSet({{-1.0, 0.0, 0.0}, {0.0, 0.0, 0.5}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}})));
     }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().contains(PointSet::Empty()));
-        EXPECT_ANY_THROW(Ray::Undefined().contains(PointSet({{0.0, 0.0, 0.0}})));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, GetOrigin)
@@ -262,10 +206,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, GetOrigin)
 
         EXPECT_EQ(Point(0.0, 0.0, -1.0), Ray({0.0, 0.0, -1.0}, {0.0, 0.0, +1.0}).getOrigin());
     }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().getOrigin());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, GetDirection)
@@ -277,10 +217,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, GetDirection)
     {
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Ray({0.0, 0.0, 0.0}, {0.0, 0.0, +2.0}).getDirection());
         EXPECT_EQ(Vector3d(0.0, 0.0, -1.0), Ray({0.0, 0.0, 0.0}, {0.0, 0.0, -2.0}).getDirection());
-    }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().getDirection());
     }
 }
 
@@ -302,11 +238,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, DistanceTo_Point)
 
         EXPECT_EQ(1.0, Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).distanceTo(Point(0.0, 0.0, -1.0)));
         EXPECT_EQ(2.0, Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).distanceTo(Point(0.0, 0.0, -2.0)));
-    }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().distanceTo(Point::Undefined()));
-        EXPECT_ANY_THROW(Ray::Undefined().distanceTo({0.0, 0.0, 0.0}));
     }
 }
 
@@ -390,11 +321,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IntersectionWith_Plane
 
         expectEmptyIntersection(Ray({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}), Plane({-1.0, -2.0, -3.0}, {1.0, 0.0, 0.0}));
     }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().intersectionWith(Plane::Undefined()));
-        EXPECT_ANY_THROW(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersectionWith(Plane::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IntersectionWith_Ellipsoid)
@@ -406,10 +332,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IntersectionWith_Ellip
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid.IntersectionWith_Ray
 
         SUCCEED();
-    }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().intersectionWith(Ellipsoid::Undefined()));
     }
 }
 
@@ -442,21 +364,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, ApplyTransformation)
 
         EXPECT_TRUE(ray.getOrigin().isNear(referenceRay.getOrigin(), 1e-15));
         EXPECT_TRUE(ray.getDirection().isNear(referenceRay.getDirection(), 1e-15));
-    }
-
-    {
-        EXPECT_ANY_THROW(Ray::Undefined().applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Ray::Undefined().applyTransformation(Transformation::Identity()));
-        EXPECT_ANY_THROW(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).applyTransformation(Transformation::Undefined()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Undefined)
-{
-    using ostk::mathematics::geometry::d3::object::Ray;
-
-    {
-        EXPECT_NO_THROW(Ray::Undefined());
-        EXPECT_FALSE(Ray::Undefined().isDefined());
     }
 }

@@ -41,9 +41,6 @@ class TestEulerAngle:
     def test_repr_success(self, euler_angle: EulerAngle):
         assert repr(euler_angle) is not None
 
-    def test_is_defined_success(self, euler_angle: EulerAngle):
-        assert euler_angle.is_defined()
-
     def test_is_unitary_success(self, euler_angle: EulerAngle):
         assert euler_angle.is_unitary()
 
@@ -67,9 +64,6 @@ class TestEulerAngle:
     def test_to_string_success(self, euler_angle: EulerAngle):
         assert euler_angle.to_string() == "[0, 0, 0] (ZYX)"
         assert euler_angle.to_string(angle_unit=Angle.Unit.Degree) == "[0, 0, 0] (ZYX)"
-
-    def test_undefined_success(self):
-        assert not EulerAngle.undefined().is_defined()
 
     def test_unit_success(self, euler_angle: EulerAngle):
         assert EulerAngle.unit() == euler_angle

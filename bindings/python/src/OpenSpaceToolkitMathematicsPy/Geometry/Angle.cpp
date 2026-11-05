@@ -150,20 +150,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(nanobind::module_& aMod
         )
 
         .def(
-            "is_defined",
-            &Angle::isDefined,
-            R"doc(
-                Check if the angle is defined.
-
-                Returns:
-                    bool: True if the angle is defined, False otherwise.
-
-                Example:
-                    >>> angle = Angle.radians(1.0)
-                    >>> angle.is_defined()  # True
-            )doc"
-        )
-        .def(
             "is_zero",
             &Angle::isZero,
             R"doc(
@@ -409,20 +395,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(nanobind::module_& aMod
 
         // Define static methods
         .def_static(
-            "undefined",
-            &Angle::Undefined,
-            R"doc(
-                Create an undefined angle.
-
-                Returns:
-                    Angle: An undefined angle.
-
-                Example:
-                    >>> undefined_angle = Angle.undefined()
-                    >>> undefined_angle.is_defined()  # False
-            )doc"
-        )
-        .def_static(
             "zero",
             &Angle::Zero,
             R"doc(
@@ -653,7 +625,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(nanobind::module_& aMod
 
     // Define emuneration unit for "angle"
     enum_<Angle::Unit>(angle, "Unit")
-        .value("Undefined", Angle::Unit::Undefined)
         .value("Radian", Angle::Unit::Radian)
         .value("Degree", Angle::Unit::Degree)
         .value("Arcminute", Angle::Unit::Arcminute)

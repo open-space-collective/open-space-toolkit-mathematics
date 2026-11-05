@@ -62,7 +62,6 @@ class TestNumericalSolver:
     def test_constructor_success(self, numerical_solver: NumericalSolver):
         assert numerical_solver is not None
         assert isinstance(numerical_solver, NumericalSolver)
-        assert numerical_solver.is_defined()
 
     def test_comparators(self, numerical_solver: NumericalSolver):
         assert numerical_solver == numerical_solver
@@ -170,7 +169,3 @@ class TestNumericalSolver:
 
     def test_default(self):
         assert NumericalSolver.default() is not None
-
-    def test_undefined(self):
-        assert NumericalSolver.undefined() is not None
-        assert NumericalSolver.undefined().is_defined() is False

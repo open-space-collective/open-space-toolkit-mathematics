@@ -46,7 +46,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, Constructor)
     {
         const Array<Polygon::Vertex> vertexArray = Array<Polygon::Vertex>::Empty();
 
-        EXPECT_NO_THROW(Polygon polygon(vertexArray););
+        EXPECT_ANY_THROW(Polygon polygon(vertexArray););
     }
 
     {
@@ -112,14 +112,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, EqualToOperator)
 
         EXPECT_FALSE(Polygon(vertices_A) == Polygon(vertices_B));
     }
-
-    {
-        const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
-
-        EXPECT_FALSE(Polygon(vertices) == Polygon::Undefined());
-        EXPECT_FALSE(Polygon::Undefined() == Polygon(vertices));
-        EXPECT_FALSE(Polygon::Undefined() == Polygon::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, NotEqualToOperator)
@@ -149,14 +141,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, NotEqualToOperator
 
         EXPECT_TRUE(Polygon(vertices_A) != Polygon(vertices_B));
     }
-
-    {
-        const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
-
-        EXPECT_TRUE(Polygon(vertices) != Polygon::Undefined());
-        EXPECT_TRUE(Polygon::Undefined() != Polygon(vertices));
-        EXPECT_TRUE(Polygon::Undefined() != Polygon::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, StreamOperator)
@@ -173,23 +157,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, StreamOperator)
         EXPECT_NO_THROW(std::cout << Polygon(vertices) << std::endl);
 
         EXPECT_FALSE(testing::internal::GetCapturedStdout().empty());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IsDefined)
-{
-    using ostk::core::container::Array;
-
-    using ostk::mathematics::geometry::d2::object::Polygon;
-
-    {
-        const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
-
-        EXPECT_TRUE(Polygon(vertices).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Polygon::Undefined().isDefined());
     }
 }
 
@@ -232,8 +199,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IsNear)
     {
         const Polygon polygon = {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}};
 
-        EXPECT_ANY_THROW(Polygon::Undefined().isNear(polygon, 0.0));
-        EXPECT_ANY_THROW(polygon.isNear(Polygon::Undefined(), 0.0));
         EXPECT_ANY_THROW(polygon.isNear(polygon, std::numeric_limits<double>::quiet_NaN()));
     }
 }
@@ -306,16 +271,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectsPolygon)
             EXPECT_EQ(result, firstPolygon.intersects(secondPolygon));
         }
     }
-
-    {
-        const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
-
-        const Polygon polygon = {vertices};
-
-        EXPECT_ANY_THROW(Polygon::Undefined().intersects(Polygon::Undefined()));
-        EXPECT_ANY_THROW(polygon.intersects(Polygon::Undefined()));
-        EXPECT_ANY_THROW(Polygon::Undefined().intersects(polygon));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPoint)
@@ -361,16 +316,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPoint)
             EXPECT_EQ(result, polygon.contains(point));
         }
     }
-
-    {
-        const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
-
-        const Polygon polygon = {vertices};
-
-        EXPECT_ANY_THROW(Polygon::Undefined().contains(Point::Undefined()));
-        EXPECT_ANY_THROW(polygon.contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Polygon::Undefined().contains({0.0, 0.0}));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPointSet)
@@ -407,16 +352,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPointSet)
             EXPECT_EQ(result, polygon.contains(pointSet));
         }
     }
-
-    {
-        const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
-
-        const Polygon polygon = {vertices};
-
-        EXPECT_ANY_THROW(Polygon::Undefined().contains(PointSet::Empty()));
-        EXPECT_ANY_THROW(polygon.contains(PointSet::Empty()));
-        EXPECT_ANY_THROW(Polygon::Undefined().contains(PointSet({{0.0, 0.0}, {0.0, 1.0}})));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetInnerRingCount)
@@ -443,10 +378,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetInnerRingCount)
         const Polygon polygon = {outerRing, innerRings};
 
         EXPECT_EQ(2, polygon.getInnerRingCount());
-    }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getInnerRingCount());
     }
 }
 
@@ -475,10 +406,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdgeCount)
 
         EXPECT_EQ(12, polygon.getEdgeCount());
     }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getEdgeCount());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertexCount)
@@ -505,10 +432,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertexCount)
         const Polygon polygon = {outerRing, innerRings};
 
         EXPECT_EQ(12, polygon.getVertexCount());
-    }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getVertexCount());
     }
 }
 
@@ -540,10 +463,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetOuterRing)
         const Polygon::Ring referenceOuterRing = {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}, {0.0, 0.0}}};
 
         EXPECT_EQ(referenceOuterRing, polygon.getOuterRing());
-    }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getOuterRing());
     }
 }
 
@@ -580,10 +499,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetInnerRingAt)
 
         EXPECT_ANY_THROW(polygon.getInnerRingAt(2));
     }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getInnerRingAt(0));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdgeAt)
@@ -608,10 +523,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdgeAt)
     {
         // [TBI] Inner ring support
     }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getEdgeAt(0));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertexAt)
@@ -635,10 +546,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertexAt)
 
     {
         // [TBI] Inner ring support
-    }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getVertexAt(0));
     }
 }
 
@@ -666,10 +573,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdges)
     {
         // [TBI] Inner ring support
     }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getEdges());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertices)
@@ -682,10 +585,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertices)
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
 
         EXPECT_EQ(vertices, Polygon(vertices).getVertices());
-    }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getVertices());
     }
 }
 
@@ -718,10 +617,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetConvexHull)
     }
 
     // Undefined throws
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getConvexHull());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
@@ -1057,13 +952,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, UnionWith)
     }
 
     // Undefined throws
-
-    {
-        const Polygon polygon = {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}};
-
-        EXPECT_ANY_THROW(Polygon::Undefined().unionWith(polygon));
-        EXPECT_ANY_THROW(polygon.unionWith(Polygon::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ToString)
@@ -1116,10 +1004,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ToString)
             Polygon(outerRing, innerRings).toString(Polygon::Format::WKT)
         );
     }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().toString());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ApplyTransformation)
@@ -1140,23 +1024,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ApplyTransformatio
         polygon.applyTransformation(Transformation::Translation({4.0, 5.0}));
 
         EXPECT_EQ(Polygon({{4.0, 5.0}, {4.0, 6.0}, {5.0, 6.0}, {5.0, 5.0}}), polygon);
-    }
-
-    {
-        const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
-
-        EXPECT_ANY_THROW(Polygon::Undefined().applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Polygon::Undefined().applyTransformation(Transformation::Identity()));
-        EXPECT_ANY_THROW(Polygon(vertices).applyTransformation(Transformation::Undefined()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, Undefined)
-{
-    using ostk::mathematics::geometry::d2::object::Polygon;
-
-    {
-        EXPECT_NO_THROW(Polygon::Undefined());
-        EXPECT_FALSE(Polygon::Undefined().isDefined());
     }
 }

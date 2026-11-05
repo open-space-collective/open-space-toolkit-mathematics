@@ -89,21 +89,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(nanobind:
         .def("__repr__", &(shiftToString<Ellipsoid>))
 
         .def(
-            "is_defined",
-            &Ellipsoid::isDefined,
-            R"doc(
-                Check if the ellipsoid is defined.
-
-                Returns:
-                    bool: True if the ellipsoid is defined, False otherwise.
-
-                Example:
-                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
-                    >>> ellipsoid.is_defined()  # True
-            )doc"
-        )
-
-        .def(
             "intersects",
             overload_cast<const Point&>(&Ellipsoid::intersects, const_),
             R"doc(
@@ -541,21 +526,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(nanobind:
                     >>> ellipsoid.apply_transformation(transformation)
             )doc",
             arg("transformation")
-        )
-
-        .def_static(
-            "undefined",
-            &Ellipsoid::Undefined,
-            R"doc(
-                Create an undefined ellipsoid.
-
-                Returns:
-                    Ellipsoid: An undefined ellipsoid object.
-
-                Example:
-                    >>> undefined_ellipsoid = Ellipsoid.undefined()
-                    >>> undefined_ellipsoid.is_defined()  # False
-            )doc"
         )
 
         ;

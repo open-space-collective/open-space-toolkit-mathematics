@@ -30,23 +30,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
             Angle::Degrees(0.0), Angle::Degrees(0.0), Angle::Degrees(0.0), EulerAngle::AxisSequence::ZYX
         };
 
-        EXPECT_TRUE(eulerAngle.isDefined());
-    }
-
-    {
-        EulerAngle eulerAngle = {
-            Angle::Degrees(0.0), Angle::Undefined(), Angle::Degrees(0.0), EulerAngle::AxisSequence::ZYX
-        };
-
-        EXPECT_FALSE(eulerAngle.isDefined());
-    }
-
-    {
-        EulerAngle eulerAngle = {
-            Angle::Degrees(0.0), Angle::Degrees(0.0), Angle::Degrees(0.0), EulerAngle::AxisSequence::Undefined
-        };
-
-        EXPECT_FALSE(eulerAngle.isDefined());
+        EXPECT_TRUE(eulerAngle.isUnitary());
     }
 }
 
@@ -69,18 +53,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
             EulerAngle(Angle::Degrees(1.0), Angle::Degrees(2.0), Angle::Degrees(3.0), EulerAngle::AxisSequence::ZYX) ==
             EulerAngle(Angle::Degrees(1.0), Angle::Degrees(2.0), Angle::Degrees(3.0), EulerAngle::AxisSequence::XYZ)
         );
-
-        EXPECT_FALSE(
-            EulerAngle(Angle::Degrees(0.0), Angle::Degrees(0.0), Angle::Degrees(0.0), EulerAngle::AxisSequence::ZYX) ==
-            EulerAngle::Undefined()
-        );
-
-        EXPECT_FALSE(
-            EulerAngle::Undefined() ==
-            EulerAngle(Angle::Degrees(0.0), Angle::Degrees(0.0), Angle::Degrees(0.0), EulerAngle::AxisSequence::ZYX)
-        );
-
-        EXPECT_FALSE(EulerAngle::Undefined() == EulerAngle::Undefined());
     }
 }
 
@@ -109,46 +81,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
             EulerAngle(Angle::Degrees(1.0), Angle::Degrees(2.0), Angle::Degrees(3.0), EulerAngle::AxisSequence::ZYX)
         );
     }
-
-    {
-        EXPECT_TRUE(
-            EulerAngle(Angle::Degrees(0.0), Angle::Degrees(0.0), Angle::Degrees(0.0), EulerAngle::AxisSequence::ZYX) !=
-            EulerAngle::Undefined()
-        );
-
-        EXPECT_TRUE(
-            EulerAngle::Undefined() !=
-            EulerAngle(Angle::Degrees(0.0), Angle::Degrees(0.0), Angle::Degrees(0.0), EulerAngle::AxisSequence::ZYX)
-        );
-
-        EXPECT_TRUE(EulerAngle::Undefined() != EulerAngle::Undefined());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle, IsDefined)
-{
-    {
-        EXPECT_TRUE(
-            EulerAngle(Angle::Degrees(0.0), Angle::Degrees(0.0), Angle::Degrees(0.0), EulerAngle::AxisSequence::ZYX)
-                .isDefined()
-        );
-
-        EXPECT_TRUE(
-            EulerAngle(Angle::Degrees(1.0), Angle::Degrees(2.0), Angle::Degrees(3.0), EulerAngle::AxisSequence::ZYX)
-                .isDefined()
-        );
-    }
-
-    {
-        EXPECT_FALSE(
-            EulerAngle(Angle::Degrees(1.0), Angle::Undefined(), Angle::Degrees(3.0), EulerAngle::AxisSequence::ZYX)
-                .isDefined()
-        );
-    }
-
-    {
-        EXPECT_FALSE(EulerAngle::Undefined().isDefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle, IsUnitary)
@@ -167,10 +99,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
             EulerAngle(Angle::Degrees(1.0), Angle::Degrees(2.0), Angle::Degrees(3.0), EulerAngle::AxisSequence::ZYX)
                 .isUnitary()
         );
-    }
-
-    {
-        EXPECT_ANY_THROW(EulerAngle::Undefined().isUnitary());
     }
 }
 
@@ -229,13 +157,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
                 )
         );
     }
-
-    {
-        EXPECT_ANY_THROW(EulerAngle::Unit().isNear(EulerAngle::Undefined(), Angle::Undefined()));
-        EXPECT_ANY_THROW(EulerAngle::Undefined().isNear(EulerAngle::Unit(), Angle::Undefined()));
-        EXPECT_ANY_THROW(EulerAngle::Unit().isNear(EulerAngle::Unit(), Angle::Undefined()));
-        EXPECT_ANY_THROW(EulerAngle::Undefined().isNear(EulerAngle::Undefined(), Angle::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle, GetPhi)
@@ -246,10 +167,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
             EulerAngle(Angle::Degrees(1.0), Angle::Degrees(2.0), Angle::Degrees(3.0), EulerAngle::AxisSequence::ZYX)
                 .getPhi()
         );
-    }
-
-    {
-        EXPECT_ANY_THROW(EulerAngle::Undefined().getPhi());
     }
 }
 
@@ -262,10 +179,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
                 .getTheta()
         );
     }
-
-    {
-        EXPECT_ANY_THROW(EulerAngle::Undefined().getTheta());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle, GetPsi)
@@ -276,10 +189,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
             EulerAngle(Angle::Degrees(1.0), Angle::Degrees(2.0), Angle::Degrees(3.0), EulerAngle::AxisSequence::ZYX)
                 .getPsi()
         );
-    }
-
-    {
-        EXPECT_ANY_THROW(EulerAngle::Undefined().getPsi());
     }
 }
 
@@ -292,10 +201,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
                 .getAxisSequence()
         );
     }
-
-    {
-        EXPECT_ANY_THROW(EulerAngle::Undefined().getAxisSequence());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle, ToVector)
@@ -307,10 +212,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
                 .toVector(Angle::Unit::Degree)
         );
     }
-
-    {
-        EXPECT_ANY_THROW(EulerAngle::Undefined().toVector(Angle::Unit::Degree));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle, ToString)
@@ -321,17 +222,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
             EulerAngle(Angle::Degrees(1.1), Angle::Degrees(2.2), Angle::Degrees(3.3), EulerAngle::AxisSequence::ZYX)
                 .toString(Angle::Unit::Degree)
         );
-    }
-
-    {
-        EXPECT_ANY_THROW(EulerAngle::Undefined().toString(Angle::Unit::Degree));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle, Undefined)
-{
-    {
-        EXPECT_NO_THROW(EulerAngle::Undefined());
     }
 }
 
@@ -496,8 +386,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
     }
 
     {
-        EXPECT_ANY_THROW(EulerAngle::Quaternion(Quaternion::Unit(), EulerAngle::AxisSequence::Undefined));
-        EXPECT_ANY_THROW(EulerAngle::Quaternion(Quaternion::Undefined(), EulerAngle::AxisSequence::ZYX));
     }
 }
 
@@ -618,8 +506,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
     }
 
     {
-        EXPECT_ANY_THROW(EulerAngle::RotationVector(RotationVector::Unit(), EulerAngle::AxisSequence::Undefined));
-        EXPECT_ANY_THROW(EulerAngle::RotationVector(RotationVector::Undefined(), EulerAngle::AxisSequence::ZYX));
     }
 }
 
@@ -770,8 +656,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
     }
 
     {
-        EXPECT_ANY_THROW(EulerAngle::RotationMatrix(RotationMatrix::Unit(), EulerAngle::AxisSequence::Undefined));
-        EXPECT_ANY_THROW(EulerAngle::RotationMatrix(RotationMatrix::Undefined(), EulerAngle::AxisSequence::ZYX));
     }
 }
 
@@ -784,6 +668,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
     }
 
     {
-        EXPECT_ANY_THROW(EulerAngle::StringFromAxisSequence(EulerAngle::AxisSequence::Undefined));
     }
 }

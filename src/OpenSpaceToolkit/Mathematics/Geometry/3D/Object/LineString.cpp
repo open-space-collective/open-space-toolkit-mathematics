@@ -42,11 +42,6 @@ bool LineString::operator!=(const LineString& aLineString) const
     return !((*this) == aLineString);
 }
 
-bool LineString::isDefined() const
-{
-    return !points_.isEmpty();
-}
-
 bool LineString::isEmpty() const
 {
     return points_.isEmpty();
@@ -92,11 +87,6 @@ Size LineString::getPointCount() const
 
 Point LineString::getPointClosestTo(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
     if (this->isEmpty())
     {
         throw ostk::core::error::runtime::Undefined("Line string");
@@ -126,7 +116,7 @@ void LineString::print(std::ostream& anOutputStream, bool displayDecorators) con
 
     for (const auto& point : points_)
     {
-        ostk::core::utils::Print::Line(anOutputStream) << (point.isDefined() ? point.toString() : "Undefined");
+        ostk::core::utils::Print::Line(anOutputStream) << point.toString();
     }
 
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
@@ -144,16 +134,6 @@ LineString::ConstIterator LineString::end() const
 
 void LineString::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line string");
-    }
-
     for (auto& point : points_)
     {
         point.applyTransformation(aTransformation);
@@ -167,11 +147,6 @@ LineString LineString::Empty()
 
 LineString LineString::Segment(const object::Segment& aSegment)
 {
-    if (!aSegment.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     return {{aSegment.getFirstPoint(), aSegment.getSecondPoint()}};
 }
 

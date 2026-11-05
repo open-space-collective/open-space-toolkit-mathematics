@@ -26,11 +26,6 @@ Angle::Angle(double aValue, const Angle::Unit& aUnit)
 
 bool Angle::operator==(const Angle& anAngle) const
 {
-    if ((unit_ == Angle::Unit::Undefined) || (anAngle.unit_ == Angle::Unit::Undefined))
-    {
-        return false;
-    }
-
     switch (unit_)
     {
         case Angle::Unit::Radian:
@@ -88,31 +83,16 @@ bool Angle::operator!=(const Angle& anAngle) const
 
 Angle Angle::operator+(const Angle& anAngle) const
 {
-    if ((unit_ == Angle::Unit::Undefined) || (anAngle.unit_ == Angle::Unit::Undefined))
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return Angle((value_ + ((unit_ == anAngle.unit_) ? anAngle.value_ : anAngle.in(unit_))), unit_);
 }
 
 Angle Angle::operator-(const Angle& anAngle) const
 {
-    if ((unit_ == Angle::Unit::Undefined) || (anAngle.unit_ == Angle::Unit::Undefined))
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return Angle((value_ - ((unit_ == anAngle.unit_) ? anAngle.value_ : anAngle.in(unit_))), unit_);
 }
 
 Angle Angle::operator*(double aReal) const
 {
-    if (unit_ == Angle::Unit::Undefined)
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     if (std::isnan(aReal))
     {
         throw ostk::core::error::runtime::Undefined("Real");
@@ -123,11 +103,6 @@ Angle Angle::operator*(double aReal) const
 
 Angle Angle::operator/(double aReal) const
 {
-    if (unit_ == Angle::Unit::Undefined)
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     if (std::isnan(aReal))
     {
         throw ostk::core::error::runtime::Undefined("Real");
@@ -143,11 +118,6 @@ Angle Angle::operator/(double aReal) const
 
 Angle& Angle::operator+=(const Angle& anAngle)
 {
-    if ((unit_ == Angle::Unit::Undefined) || (anAngle.unit_ == Angle::Unit::Undefined))
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     value_ += ((unit_ == anAngle.unit_) ? anAngle.value_ : anAngle.in(unit_));
 
     return *this;
@@ -155,11 +125,6 @@ Angle& Angle::operator+=(const Angle& anAngle)
 
 Angle& Angle::operator-=(const Angle& anAngle)
 {
-    if ((unit_ == Angle::Unit::Undefined) || (anAngle.unit_ == Angle::Unit::Undefined))
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     value_ -= ((unit_ == anAngle.unit_) ? anAngle.value_ : anAngle.in(unit_));
 
     return *this;
@@ -167,11 +132,6 @@ Angle& Angle::operator-=(const Angle& anAngle)
 
 Angle& Angle::operator*=(double aReal)
 {
-    if (unit_ == Angle::Unit::Undefined)
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     if (std::isnan(aReal))
     {
         throw ostk::core::error::runtime::Undefined("Real");
@@ -184,11 +144,6 @@ Angle& Angle::operator*=(double aReal)
 
 Angle& Angle::operator/=(double aReal)
 {
-    if (unit_ == Angle::Unit::Undefined)
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     if (std::isnan(aReal))
     {
         throw ostk::core::error::runtime::Undefined("Real");
@@ -211,31 +166,16 @@ Angle operator*(double aReal, const Angle& anAngle)
         throw ostk::core::error::runtime::Undefined("Real");
     }
 
-    if (anAngle.unit_ == Angle::Unit::Undefined)
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return Angle((anAngle.value_ * aReal), anAngle.unit_);
 }
 
 Angle Angle::operator+() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return Angle(value_, unit_);
 }
 
 Angle Angle::operator-() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return Angle(-value_, unit_);
 }
 
@@ -251,43 +191,18 @@ std::ostream& operator<<(std::ostream& anOutputStream, const Angle& anAngle)
     return anOutputStream;
 }
 
-bool Angle::isDefined() const
-{
-    return !std::isnan(value_) && (unit_ != Angle::Unit::Undefined);
-}
-
 bool Angle::isZero() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return value_ == 0.0;
 }
 
 bool Angle::isNegative() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return value_ < 0.0;
 }
 
 bool Angle::isNear(const Angle& anAngle, const Angle& aTolerance) const
 {
-    if ((!this->isDefined()) || (!anAngle.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
-    if (!aTolerance.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Tolerance");
-    }
-
     const double normalizedAngle_1 = Angle::ReduceRange(this->inDegrees(), 0.0, 360.0);
     const double normalizedAngle_2 = Angle::ReduceRange(anAngle.inDegrees(), 0.0, 360.0);
 
@@ -299,21 +214,11 @@ bool Angle::isNear(const Angle& anAngle, const Angle& aTolerance) const
 
 Angle::Unit Angle::getUnit() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return unit_;
 }
 
 double Angle::in(const Angle::Unit& aUnit) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     if (unit_ == aUnit)
     {
         return value_;
@@ -429,17 +334,7 @@ double Angle::inRevolutions() const
 
 String Angle::toString(int aPrecision) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return DoubleToString(value_, aPrecision) + " [" + Angle::SymbolFromUnit(unit_) + "]";
-}
-
-Angle Angle::Undefined()
-{
-    return {std::numeric_limits<double>::quiet_NaN(), Angle::Unit::Undefined};
 }
 
 Angle Angle::Zero()
@@ -494,11 +389,6 @@ Angle Angle::Revolutions(double aValue)
 
 Angle Angle::Between(const Vector2d& aFirstVector, const Vector2d& aSecondVector)
 {
-    if ((!aFirstVector.isDefined()) || (!aSecondVector.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Vector");
-    }
-
     if ((aFirstVector.squaredNorm() < 1e-15) || (aSecondVector.squaredNorm() < 1e-15))
     {
         throw ostk::core::error::RuntimeError("Vector norm is too small.");
@@ -531,11 +421,6 @@ Angle Angle::Between(const Vector2d& aFirstVector, const Vector2d& aSecondVector
 
 Angle Angle::Between(const Vector3d& aFirstVector, const Vector3d& aSecondVector)
 {
-    if ((!aFirstVector.isDefined()) || (!aSecondVector.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Vector");
-    }
-
     if ((aFirstVector.squaredNorm() < 1e-15) || (aSecondVector.squaredNorm() < 1e-15))
     {
         throw ostk::core::error::RuntimeError("Vector norm is too small.");
@@ -570,9 +455,6 @@ String Angle::StringFromUnit(const Angle::Unit& aUnit)
 {
     switch (aUnit)
     {
-        case Angle::Unit::Undefined:
-            return "Undefined";
-
         case Angle::Unit::Radian:
             return "Radian";
 

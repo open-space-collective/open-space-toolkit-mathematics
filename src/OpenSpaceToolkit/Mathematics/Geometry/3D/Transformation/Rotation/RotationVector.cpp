@@ -24,17 +24,17 @@ namespace rotation
 {
 
 RotationVector::RotationVector(const Vector3d& anAxis, const Angle& anAngle)
-    : axis_(anAxis.isDefined() ? anAxis.normalized() : Vector3d::Undefined()),
+    : axis_(anAxis.normalized()),
       angle_(anAngle)
 {
-    if (anAxis.isDefined() && (std::abs(anAxis.norm() - 1.0) > 1e-15))
+    if (std::abs(anAxis.norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("Axis with norm [{}] is not unitary.", anAxis.norm());
     }
 }
 
 RotationVector::RotationVector(const Vector3d& aVector, const Angle::Unit& anAngleUnit)
-    : axis_(aVector.isDefined() ? aVector.normalized() : Vector3d::Undefined()),
+    : axis_(aVector.normalized()),
       angle_(Angle(aVector.norm(), anAngleUnit))
 {
     if (axis_ == Vector3d::Zero())
@@ -45,11 +45,6 @@ RotationVector::RotationVector(const Vector3d& aVector, const Angle::Unit& anAng
 
 bool RotationVector::operator==(const RotationVector& aRotationVector) const
 {
-    if ((!this->isDefined()) || (!aRotationVector.isDefined()))
-    {
-        return false;
-    }
-
     if (angle_.isZero() && aRotationVector.angle_.isZero())
     {
         return true;
@@ -68,48 +63,26 @@ std::ostream& operator<<(std::ostream& anOutputStream, const RotationVector& aRo
 {
     ostk::core::utils::Print::Header(anOutputStream, "Rotation Vector");
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Axis:" << (aRotationVector.isDefined() ? aRotationVector.getAxis().toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Angle:" << (aRotationVector.isDefined() ? aRotationVector.getAngle().toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "Axis:" << aRotationVector.getAxis().toString();
+    ostk::core::utils::Print::Line(anOutputStream) << "Angle:" << aRotationVector.getAngle().toString();
 
     ostk::core::utils::Print::Footer(anOutputStream);
 
     return anOutputStream;
 }
 
-bool RotationVector::isDefined() const
-{
-    return axis_.isDefined() && angle_.isDefined();
-}
-
 const Vector3d& RotationVector::getAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation vector");
-    }
-
     return axis_;
 }
 
 const Angle& RotationVector::getAngle() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation vector");
-    }
-
     return angle_;
 }
 
 RotationVector& RotationVector::rectify()
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation vector");
-    }
-
     if (angle_.isNegative())
     {
         axis_ = -axis_;
@@ -127,19 +100,9 @@ RotationVector& RotationVector::rectify()
 
 String RotationVector::toString(int aPrecision) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation vector");
-    }
-
     return String::Format(
         "{} : {}", ((aPrecision >= 0) ? axis_.toString(aPrecision) : axis_.toString()), angle_.toString(aPrecision)
     );
-}
-
-RotationVector RotationVector::Undefined()
-{
-    return {};
 }
 
 RotationVector RotationVector::Unit()
@@ -149,31 +112,16 @@ RotationVector RotationVector::Unit()
 
 RotationVector RotationVector::X(const Angle& anAngle)
 {
-    if (!anAngle.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return {Vector3d::X(), anAngle};
 }
 
 RotationVector RotationVector::Y(const Angle& anAngle)
 {
-    if (!anAngle.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return {Vector3d::Y(), anAngle};
 }
 
 RotationVector RotationVector::Z(const Angle& anAngle)
 {
-    if (!anAngle.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Angle");
-    }
-
     return {Vector3d::Z(), anAngle};
 }
 
@@ -184,11 +132,6 @@ RotationVector RotationVector::Quaternion(const rotation::Quaternion& aQuaternio
 
 RotationVector RotationVector::Quaternion(const rotation::Quaternion& aQuaternion, const bool& aRectifyFlag)
 {
-    if (!aQuaternion.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     rotation::Quaternion quaternion = aQuaternion;
 
     if (aRectifyFlag)
@@ -213,11 +156,6 @@ RotationVector RotationVector::Quaternion(const rotation::Quaternion& aQuaternio
 
 RotationVector RotationVector::RotationMatrix(const rotation::RotationMatrix& aRotationMatrix)
 {
-    if (!aRotationMatrix.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix");
-    }
-
     const Angle angle = Angle::Radians(std::acos((aRotationMatrix.getMatrix().trace() - 1.0) / 2.0));
 
     if (std::abs(angle.inRadians()) < 1e-15)
@@ -238,12 +176,6 @@ RotationVector RotationVector::RotationMatrix(const rotation::RotationMatrix& aR
 RotationVector RotationVector::EulerAngle(const rotation::EulerAngle& aEulerAngle)
 {
     return RotationVector::Quaternion(Quaternion::EulerAngle(aEulerAngle));
-}
-
-RotationVector::RotationVector()
-    : axis_(Vector3d::Undefined()),
-      angle_(Angle::Undefined())
-{
 }
 
 }  // namespace rotation

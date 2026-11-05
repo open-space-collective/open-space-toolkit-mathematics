@@ -67,20 +67,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(nanobind::m
         .def("__repr__", &(shiftToString<Polygon>))
 
         .def(
-            "is_defined",
-            &Polygon::isDefined,
-            R"doc(
-                Check if the polygon is defined.
-
-                Returns:
-                    bool: True if the polygon is defined.
-                
-                Example:
-                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
-                    >>> polygon.is_defined()
-            )doc"
-        )
-        .def(
             "is_near",
             &Polygon::isNear,
             arg("polygon"),
@@ -263,21 +249,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(nanobind::m
                     >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
                     >>> transformation = Transformation.identity()
                     >>> polygon.apply_transformation(transformation)
-            )doc"
-        )
-
-        .def_static(
-            "undefined",
-            &Polygon::Undefined,
-            R"doc(
-                Create an undefined polygon.
-
-                Returns:
-                    Polygon: An undefined polygon.
-                
-                Example:
-                    >>> undefined_polygon = Polygon.undefined()
-                    >>> undefined_polygon.is_defined()  # False
             )doc"
         )
 

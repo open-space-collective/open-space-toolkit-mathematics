@@ -23,22 +23,12 @@ class TestSegment:
         assert segment is not None
         assert isinstance(segment, Segment)
         assert isinstance(segment, Object)
-        assert segment.is_defined()
 
         segment: Segment = Segment(point_1, point_1)
 
         assert segment is not None
         assert isinstance(segment, Segment)
         assert isinstance(segment, Object)
-        assert segment.is_defined()
-
-    def test_defined_success(self):
-        segment: Segment = Segment.undefined()
-
-        assert segment is not None
-        assert isinstance(segment, Segment)
-        assert isinstance(segment, Object)
-        assert segment.is_defined() is False
 
     def test_degenerate_success(self):
         point_1: Point = Point(-1.0, 1.0)

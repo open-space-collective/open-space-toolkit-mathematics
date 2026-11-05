@@ -26,7 +26,7 @@ Line::Line(const Point& anOrigin, const Vector3d& aDirection)
       origin_(anOrigin),
       direction_(aDirection)
 {
-    if (direction_.isDefined() && (direction_.squaredNorm() != 1.0))
+    if (direction_.squaredNorm() != 1.0)
     {
         if (direction_.squaredNorm() == 0.0)
         {
@@ -44,11 +44,6 @@ Line* Line::clone() const
 
 bool Line::operator==(const Line& aLine) const
 {
-    if ((!this->isDefined()) || (!aLine.isDefined()))
-    {
-        return false;
-    }
-
     if ((direction_ == aLine.direction_) || (direction_ == -aLine.direction_))
     {
         return this->contains(aLine.origin_);
@@ -60,11 +55,6 @@ bool Line::operator==(const Line& aLine) const
 bool Line::operator!=(const Line& aLine) const
 {
     return !((*this) == aLine);
-}
-
-bool Line::isDefined() const
-{
-    return origin_.isDefined() && direction_.isDefined();
 }
 
 bool Line::intersects(const Point& aPoint) const
@@ -79,16 +69,6 @@ bool Line::intersects(const Point& aPoint) const
 
 bool Line::intersects(const Plane& aPlane) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
-    if (!aPlane.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Plane");
-    }
-
     const Vector3d n = aPlane.getNormalVector();
     const Vector3d v = direction_;
 
@@ -117,26 +97,11 @@ bool Line::intersects(const Ellipsoid& anEllipsoid) const
 
 bool Line::contains(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
     return direction_.cross(aPoint - origin_).squaredNorm() == 0.0;
 }
 
 bool Line::contains(const PointSet& aPointSet) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
     if (aPointSet.isEmpty())
     {
         throw ostk::core::error::runtime::Undefined("Point Set");
@@ -155,46 +120,21 @@ bool Line::contains(const PointSet& aPointSet) const
 
 const Point& Line::getOrigin() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
     return origin_;
 }
 
 const Vector3d& Line::getDirection() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
     return direction_;
 }
 
 double Line::distanceTo(const Point& aPoint) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
     return this->getDirection().cross(aPoint - origin_).norm();
 }
 
 Intersection Line::intersectionWith(const Plane& aPlane) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
-    if (!aPlane.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Plane");
-    }
-
     const Vector3d n = aPlane.getNormalVector();
     const Vector3d v = direction_;
 
@@ -222,47 +162,20 @@ void Line::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
     displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Line") : void();
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Origin:" << (origin_.isDefined() ? origin_.toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Direction:" << (direction_.isDefined() ? direction_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "Origin:" << origin_.toString();
+    ostk::core::utils::Print::Line(anOutputStream) << "Direction:" << direction_.toString();
 
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
 
 void Line::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
     origin_.applyTransformation(aTransformation);
     direction_ = aTransformation.applyTo(direction_);
 }
 
-Line Line::Undefined()
-{
-    return {Point::Undefined(), Vector3d::Undefined()};
-}
-
 Line Line::Points(const Point& aFirstPoint, const Point& aSecondPoint)
 {
-    if (!aFirstPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("First point");
-    }
-
-    if (!aSecondPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Second point");
-    }
-
     if (aFirstPoint == aSecondPoint)
     {
         throw ostk::core::error::RuntimeError("Points are identical.");

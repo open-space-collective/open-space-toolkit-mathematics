@@ -133,20 +133,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, IsDefined)
-{
-    using ostk::mathematics::geometry::d2::object::LineString;
-
-    {
-        EXPECT_TRUE(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}).isDefined());
-        EXPECT_TRUE(LineString({{0.0, 0.0}, {0.0, 0.0}, {0.0, 0.0}}).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(LineString::Empty().isDefined());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, IsEmpty)
 {
     using ostk::mathematics::geometry::d2::object::LineString;
@@ -171,13 +157,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, Contains)
     {
         const Point point = {1.0, 0.0};
 
-        EXPECT_ANY_THROW(LineString::Empty().contains(point));
-    }
-
-    {
-        const LineString lineString = LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}});
-
-        EXPECT_ANY_THROW(lineString.contains(Point::Undefined()));
+        EXPECT_FALSE(LineString::Empty().contains(point));
     }
 
     {
@@ -338,8 +318,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, ConstIterator)
 
         for (const auto& point : lineString)
         {
-            EXPECT_TRUE(point.isDefined());
-
             count++;
         }
 
@@ -363,11 +341,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, ApplyTransforma
 
         EXPECT_EQ(LineString({{4.0, 5.0}, {4.0, 6.0}, {5.0, 5.0}}), lineString) << lineString;
     }
-
-    {
-        EXPECT_ANY_THROW(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}
-        ).applyTransformation(Transformation::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, Empty)
@@ -376,7 +349,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, Empty)
 
     {
         EXPECT_NO_THROW(LineString::Empty());
-        EXPECT_FALSE(LineString::Empty().isDefined());
     }
 }
 

@@ -13,10 +13,9 @@ Unit = Angle.Unit
 def test_angle_unit():
     enum_members = Unit.__members__
 
-    list_keys = ["Undefined", "Radian", "Degree", "Arcminute", "Arcsecond", "Revolution"]
+    list_keys = ["Radian", "Degree", "Arcminute", "Arcsecond", "Revolution"]
 
     list_values = [
-        Unit.Undefined,
         Unit.Radian,
         Unit.Degree,
         Unit.Arcminute,
@@ -94,20 +93,11 @@ def test_angle_default_constructor():
         angle: Angle = Angle("45", Unit.Degree)
 
 
-def test_angle_undefined_constructor():
-    angle: Angle = Angle.undefined()
-
-    assert angle is not None
-    assert isinstance(angle, Angle)
-    assert angle.is_defined() is False
-
-
 def test_angle_zero_constructor():
     angle: Angle = Angle.zero()
 
     assert angle is not None
     assert isinstance(angle, Angle)
-    assert angle.is_defined() is True
     assert angle.get_unit() == Unit.Radian
     assert angle.is_zero() is True
     assert angle.in_radians() == 0.0
@@ -122,7 +112,6 @@ def test_angle_pi_constructors():
 
     assert angle is not None
     assert isinstance(angle, Angle)
-    assert angle.is_defined()
     assert angle.get_unit() == Unit.Radian
     assert angle.in_radians() == math.pi / 2
 
@@ -130,7 +119,6 @@ def test_angle_pi_constructors():
 
     assert angle is not None
     assert isinstance(angle, Angle)
-    assert angle.is_defined()
     assert angle.get_unit() == Unit.Radian
     assert angle.in_radians() == math.pi
 
@@ -138,7 +126,6 @@ def test_angle_pi_constructors():
 
     assert angle is not None
     assert isinstance(angle, Angle)
-    assert angle.is_defined()
     assert angle.get_unit() == Unit.Radian
     assert angle.in_radians() == 2 * math.pi
 
@@ -149,7 +136,6 @@ def test_angle_unit_constructors():
 
     assert angle is not None
     assert isinstance(angle, Angle)
-    assert angle.is_defined()
     assert angle.get_unit() == Unit.Radian
     assert angle.in_radians() == 3.4
 
@@ -158,7 +144,6 @@ def test_angle_unit_constructors():
 
     assert angle is not None
     assert isinstance(angle, Angle)
-    assert angle.is_defined()
     assert angle.get_unit() == Unit.Degree
     assert angle.in_degrees() == -45.0
 
@@ -167,7 +152,6 @@ def test_angle_unit_constructors():
 
     assert angle is not None
     assert isinstance(angle, Angle)
-    assert angle.is_defined()
     assert angle.get_unit() == Unit.Arcminute
     assert angle.in_arcminutes() == 60.5
 
@@ -176,7 +160,6 @@ def test_angle_unit_constructors():
 
     assert angle is not None
     assert isinstance(angle, Angle)
-    assert angle.is_defined()
     assert angle.get_unit() == Unit.Arcsecond
     assert angle.in_arcseconds() == 60.5
 
@@ -185,7 +168,6 @@ def test_angle_unit_constructors():
 
     assert angle is not None
     assert isinstance(angle, Angle)
-    assert angle.is_defined()
     assert angle.get_unit() == Unit.Revolution
     assert angle.in_revolutions() == 3.9
 

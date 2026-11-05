@@ -74,7 +74,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, EqualToOperator)
             Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenLeft) ==
             Interval<double>(0.0, 1.0, Interval<double>::Type::Closed)
         );
-        EXPECT_FALSE(Interval<double>::Undefined() == Interval<double>::Undefined());
     }
 }
 
@@ -112,29 +111,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, NotEqualToOperator)
             Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenLeft) !=
             Interval<double>(0.0, 1.0, Interval<double>::Type::Closed)
         );
-        EXPECT_TRUE(Interval<double>::Undefined() != Interval<double>::Undefined());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Object_Interval, IsDefined)
-{
-    {
-        EXPECT_TRUE(Interval<double>(0.0, 1.0, Interval<double>::Type::Closed).isDefined());
-        EXPECT_TRUE(Interval<double>(0.0, 1.0, Interval<double>::Type::Open).isDefined());
-        EXPECT_TRUE(Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenLeft).isDefined());
-        EXPECT_TRUE(Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenRight).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(
-            Interval<double>(std::numeric_limits<double>::quiet_NaN(), 1.0, Interval<double>::Type::Closed).isDefined()
-        );
-        EXPECT_FALSE(
-            Interval<double>(0.0, std::numeric_limits<double>::quiet_NaN(), Interval<double>::Type::Open).isDefined()
-        );
-        EXPECT_FALSE(Interval<double>(0.0, 1.0, Interval<double>::Type::Undefined).isDefined());
-
-        EXPECT_FALSE(Interval<double>::Undefined().isDefined());
     }
 }
 
@@ -150,30 +126,14 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, IsDegenerate)
         EXPECT_FALSE(Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenLeft).isDegenerate());
         EXPECT_FALSE(Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenRight).isDegenerate());
     }
-
-    {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().isDegenerate());
-
-        EXPECT_ANY_THROW(Interval<double>(std::numeric_limits<double>::quiet_NaN(), 1.0, Interval<double>::Type::Closed)
-                             .isDegenerate());
-        EXPECT_ANY_THROW(
-            Interval<double>(0.0, std::numeric_limits<double>::quiet_NaN(), Interval<double>::Type::Open).isDegenerate()
-        );
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Intersects)
 {
     {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().intersects(Interval<double>::Undefined()));
-    }
-
-    {
         const Interval<double> interval = Interval<double>::Closed(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.intersects(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().intersects(interval));
         }
 
         {
@@ -244,8 +204,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Intersects)
         const Interval<double> interval = Interval<double>::HalfOpenLeft(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.intersects(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().intersects(interval));
         }
 
         {
@@ -316,8 +274,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Intersects)
         const Interval<double> interval = Interval<double>::HalfOpenRight(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.intersects(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().intersects(interval));
         }
 
         {
@@ -388,8 +344,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Intersects)
         const Interval<double> interval = Interval<double>::Open(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.intersects(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().intersects(interval));
         }
 
         {
@@ -460,14 +414,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Intersects)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsValue)
 {
     {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().contains(0.0));
-        EXPECT_ANY_THROW(Interval<double>::Undefined().contains(std::numeric_limits<double>::quiet_NaN()));
-    }
-
-    {
         const Interval<double> interval = Interval<double>::Closed(0.0, 1.0);
-
-        EXPECT_ANY_THROW(interval.contains(std::numeric_limits<double>::quiet_NaN()));
 
         EXPECT_FALSE(interval.contains(-1.0));
         EXPECT_TRUE(interval.contains(0.0));
@@ -479,8 +426,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsValue)
     {
         const Interval<double> interval = Interval<double>::HalfOpenLeft(0.0, 1.0);
 
-        EXPECT_ANY_THROW(interval.contains(std::numeric_limits<double>::quiet_NaN()));
-
         EXPECT_FALSE(interval.contains(-1.0));
         EXPECT_FALSE(interval.contains(0.0));
         EXPECT_TRUE(interval.contains(0.5));
@@ -491,8 +436,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsValue)
     {
         const Interval<double> interval = Interval<double>::HalfOpenRight(0.0, 1.0);
 
-        EXPECT_ANY_THROW(interval.contains(std::numeric_limits<double>::quiet_NaN()));
-
         EXPECT_FALSE(interval.contains(-1.0));
         EXPECT_TRUE(interval.contains(0.0));
         EXPECT_TRUE(interval.contains(0.5));
@@ -502,8 +445,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsValue)
 
     {
         const Interval<double> interval = Interval<double>::Open(0.0, 1.0);
-
-        EXPECT_ANY_THROW(interval.contains(std::numeric_limits<double>::quiet_NaN()));
 
         EXPECT_FALSE(interval.contains(-1.0));
         EXPECT_FALSE(interval.contains(0.0));
@@ -516,15 +457,9 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsValue)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsInterval)
 {
     {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().contains(Interval<double>::Undefined()));
-    }
-
-    {
         const Interval<double> interval = Interval<double>::Closed(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.contains(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().contains(interval));
         }
 
         {
@@ -595,8 +530,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsInterval)
         const Interval<double> interval = Interval<double>::HalfOpenLeft(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.contains(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().contains(interval));
         }
 
         {
@@ -667,8 +600,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsInterval)
         const Interval<double> interval = Interval<double>::HalfOpenRight(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.contains(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().contains(interval));
         }
 
         {
@@ -739,8 +670,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsInterval)
         const Interval<double> interval = Interval<double>::Open(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.contains(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().contains(interval));
         }
 
         {
@@ -822,10 +751,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetType)
             Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenRight).getType()
         );
     }
-
-    {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().getType());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetLowerBound)
@@ -849,10 +774,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetLowerBound)
         Interval<double> interval(0.0, 1.0, Interval<double>::Type::Closed);
 
         EXPECT_EQ(&interval.getLowerBound(), &interval.getLowerBound());
-    }
-
-    {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().getLowerBound());
     }
 }
 
@@ -878,31 +799,21 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUpperBound)
 
         EXPECT_EQ(&interval.getUpperBound(), &interval.getUpperBound());
     }
-
-    {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().getUpperBound());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
 {
     {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().getIntersectionWith(Interval<double>::Undefined()));
-    }
-
-    {
         const Interval<double> interval = Interval<double>::Closed(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.getIntersectionWith(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().getIntersectionWith(interval));
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-2.0, -1.0)).has_value());
         }
 
         {
@@ -913,8 +824,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
                 interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-1.0, 0.0)),
                 Interval<double>::Closed(0.0, 0.0)
             );
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-1.0, 0.0)).has_value());
         }
 
         {
@@ -1005,19 +916,19 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
             EXPECT_EQ(
                 interval.getIntersectionWith(Interval<double>::Closed(1.0, 2.0)), Interval<double>::Closed(1.0, 1.0)
             );
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).has_value());
             EXPECT_EQ(
                 interval.getIntersectionWith(Interval<double>::HalfOpenRight(1.0, 2.0)),
                 Interval<double>::Closed(1.0, 1.0)
             );
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(1.0, 2.0)).has_value());
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(2.0, 3.0)).has_value());
         }
     }
 
@@ -1025,22 +936,20 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
         const Interval<double> interval = Interval<double>::HalfOpenLeft(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.getIntersectionWith(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().getIntersectionWith(interval));
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-2.0, -1.0)).has_value());
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-1.0, 0.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-1.0, 0.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-1.0, 0.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-1.0, 0.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-1.0, 0.0)).has_value());
         }
 
         {
@@ -1134,19 +1043,19 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
             EXPECT_EQ(
                 interval.getIntersectionWith(Interval<double>::Closed(1.0, 2.0)), Interval<double>::Closed(1.0, 1.0)
             );
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).has_value());
             EXPECT_EQ(
                 interval.getIntersectionWith(Interval<double>::HalfOpenRight(1.0, 2.0)),
                 Interval<double>::Closed(1.0, 1.0)
             );
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(1.0, 2.0)).has_value());
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(2.0, 3.0)).has_value());
         }
     }
 
@@ -1154,15 +1063,13 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
         const Interval<double> interval = Interval<double>::HalfOpenRight(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.getIntersectionWith(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().getIntersectionWith(interval));
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-2.0, -1.0)).has_value());
         }
 
         {
@@ -1173,8 +1080,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
                 interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-1.0, 0.0)),
                 Interval<double>::Closed(0.0, 0.0)
             );
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-1.0, 0.0)).has_value());
         }
 
         {
@@ -1262,17 +1169,17 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(1.0, 2.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(1.0, 2.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(1.0, 2.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(1.0, 2.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(1.0, 2.0)).has_value());
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(2.0, 3.0)).has_value());
         }
     }
 
@@ -1280,22 +1187,20 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
         const Interval<double> interval = Interval<double>::Open(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.getIntersectionWith(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().getIntersectionWith(interval));
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-2.0, -1.0)).has_value());
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-1.0, 0.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-1.0, 0.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(-1.0, 0.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(-1.0, 0.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(-1.0, 0.0)).has_value());
         }
 
         {
@@ -1380,17 +1285,17 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(1.0, 2.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(1.0, 2.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(1.0, 2.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(1.0, 2.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(1.0, 2.0)).has_value());
         }
 
         {
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Closed(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<double>::Open(2.0, 3.0)).has_value());
         }
     }
 }
@@ -1398,22 +1303,16 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
 {
     {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().getUnionWith(Interval<double>::Undefined()));
-    }
-
-    {
         const Interval<double> interval = Interval<double>::Closed(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.getUnionWith(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().getUnionWith(interval));
         }
 
         {
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-2.0, -1.0)).has_value());
         }
 
         {
@@ -1508,10 +1407,10 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
         }
 
         {
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(2.0, 3.0)).has_value());
         }
     }
 
@@ -1519,15 +1418,13 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
         const Interval<double> interval = Interval<double>::HalfOpenLeft(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.getUnionWith(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().getUnionWith(interval));
         }
 
         {
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-2.0, -1.0)).has_value());
         }
 
         {
@@ -1536,8 +1433,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
                 interval.getUnionWith(Interval<double>::HalfOpenLeft(-1.0, 0.0)),
                 Interval<double>::HalfOpenLeft(-1.0, 1.0)
             );
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-1.0, 0.0)).has_value());
         }
 
         {
@@ -1627,10 +1524,10 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
         }
 
         {
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(2.0, 3.0)).has_value());
         }
     }
 
@@ -1638,15 +1535,13 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
         const Interval<double> interval = Interval<double>::HalfOpenRight(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.getUnionWith(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().getUnionWith(interval));
         }
 
         {
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-2.0, -1.0)).has_value());
         }
 
         {
@@ -1737,19 +1632,19 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
 
         {
             EXPECT_EQ(interval.getUnionWith(Interval<double>::Closed(1.0, 2.0)), Interval<double>::Closed(0.0, 2.0));
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).has_value());
             EXPECT_EQ(
                 interval.getUnionWith(Interval<double>::HalfOpenRight(1.0, 2.0)),
                 Interval<double>::HalfOpenRight(0.0, 2.0)
             );
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(1.0, 2.0)).has_value());
         }
 
         {
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(2.0, 3.0)).has_value());
         }
     }
 
@@ -1757,15 +1652,13 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
         const Interval<double> interval = Interval<double>::Open(0.0, 1.0);
 
         {
-            EXPECT_ANY_THROW(interval.getUnionWith(Interval<double>::Undefined()));
-            EXPECT_ANY_THROW(Interval<double>::Undefined().getUnionWith(interval));
         }
 
         {
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-2.0, -1.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-2.0, -1.0)).has_value());
         }
 
         {
@@ -1775,8 +1668,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
             EXPECT_EQ(
                 interval.getUnionWith(Interval<double>::HalfOpenLeft(-1.0, 0.0)), Interval<double>::Open(-1.0, 1.0)
             );
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(-1.0, 0.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(-1.0, 0.0)).has_value());
         }
 
         {
@@ -1848,18 +1741,18 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
             EXPECT_EQ(
                 interval.getUnionWith(Interval<double>::Closed(1.0, 2.0)), Interval<double>::HalfOpenLeft(0.0, 2.0)
             );
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(1.0, 2.0)).has_value());
             EXPECT_EQ(
                 interval.getUnionWith(Interval<double>::HalfOpenRight(1.0, 2.0)), Interval<double>::Open(0.0, 2.0)
             );
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(1.0, 2.0)).has_value());
         }
 
         {
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).isDefined());
-            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Closed(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenLeft(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::HalfOpenRight(2.0, 3.0)).has_value());
+            EXPECT_FALSE(interval.getUnionWith(Interval<double>::Open(2.0, 3.0)).has_value());
         }
     }
 }
@@ -2114,10 +2007,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ToString)
         EXPECT_EQ("[0.0, 1.0[", Interval<double>(0.0, 1.0, Interval<double>::Type::HalfOpenRight).toString());
         EXPECT_EQ("[1.0, 1.0]", Interval<double>(1.0, 1.0, Interval<double>::Type::Closed).toString());
     }
-
-    {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().toString());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetType)
@@ -2131,10 +2020,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetType)
 
         EXPECT_EQ(Interval<double>::Type::Open, interval.getType());
     }
-
-    {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().setType(Interval<double>::Type::Closed));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetLowerBound)
@@ -2147,10 +2032,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetLowerBound)
         interval.setLowerBound(1.0);
 
         EXPECT_EQ(1.0, interval.getLowerBound());
-    }
-
-    {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().setLowerBound(1.0));
     }
 
     {
@@ -2175,10 +2056,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetUpperBound)
     }
 
     {
-        EXPECT_ANY_THROW(Interval<double>::Undefined().setUpperBound(1.0));
-    }
-
-    {
         Interval<double> interval(1.0, 1.0, Interval<double>::Type::Closed);
 
         EXPECT_EQ(1.0, interval.getUpperBound());
@@ -2187,21 +2064,10 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetUpperBound)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Undefined)
-{
-    {
-        EXPECT_NO_THROW(Interval<double>::Undefined());
-
-        EXPECT_FALSE(Interval<double>::Undefined().isDefined());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Closed)
 {
     {
         EXPECT_NO_THROW(Interval<double>::Closed(0.0, 1.0));
-
-        EXPECT_TRUE(Interval<double>::Closed(0.0, 1.0).isDefined());
 
         EXPECT_EQ(Interval<double>::Type::Closed, Interval<double>::Closed(0.0, 1.0).getType());
     }
@@ -2212,8 +2078,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Open)
     {
         EXPECT_NO_THROW(Interval<double>::Open(0.0, 1.0));
 
-        EXPECT_TRUE(Interval<double>::Open(0.0, 1.0).isDefined());
-
         EXPECT_EQ(Interval<double>::Type::Open, Interval<double>::Open(0.0, 1.0).getType());
     }
 }
@@ -2222,8 +2086,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, HalfOpenLeft)
 {
     {
         EXPECT_NO_THROW(Interval<double>::HalfOpenLeft(0.0, 1.0));
-
-        EXPECT_TRUE(Interval<double>::HalfOpenLeft(0.0, 1.0).isDefined());
 
         EXPECT_EQ(Interval<double>::Type::HalfOpenLeft, Interval<double>::HalfOpenLeft(0.0, 1.0).getType());
     }
@@ -2234,8 +2096,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, HalfOpenRight)
     {
         EXPECT_NO_THROW(Interval<double>::HalfOpenRight(0.0, 1.0));
 
-        EXPECT_TRUE(Interval<double>::HalfOpenRight(0.0, 1.0).isDefined());
-
         EXPECT_EQ(Interval<double>::Type::HalfOpenRight, Interval<double>::HalfOpenRight(0.0, 1.0).getType());
     }
 }
@@ -2243,14 +2103,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, HalfOpenRight)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Clip)
 {
     {
-        EXPECT_ANY_THROW(Interval<double>::Clip({Interval<double>::Undefined()}, Interval<double>::Closed(0.0, 1.0)));
-        EXPECT_ANY_THROW(Interval<double>::Clip(
-            {Interval<double>::Closed(0.0, 1.0), Interval<double>::Closed(0.0, 1.0)}, Interval<double>::Undefined()
-        ));
-        EXPECT_ANY_THROW(Interval<double>::Clip(
-            {Interval<double>::Closed(0.0, 1.0), Interval<double>::Undefined()}, Interval<double>::Closed(0.0, 1.0)
-        ));
-
         EXPECT_EQ(ctnr::Array<Interval<double>>(), Interval<double>::Clip({}, Interval<double>::Closed(0.0, 1.0)));
     }
 
@@ -2269,9 +2121,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Clip)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Sort)
 {
     {
-        EXPECT_ANY_THROW(Interval<double>::Sort({Interval<double>::Undefined()}));
-        EXPECT_ANY_THROW(Interval<double>::Sort({Interval<double>::Closed(0.0, 1.0), Interval<double>::Undefined()}));
-
         EXPECT_EQ(ctnr::Array<Interval<double>>(), Interval<double>::Sort({}));
     }
 
@@ -2326,9 +2175,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Sort)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Merge)
 {
     {
-        EXPECT_ANY_THROW(Interval<double>::Merge({Interval<double>::Undefined()}));
-        EXPECT_ANY_THROW(Interval<double>::Merge({Interval<double>::Closed(0.0, 1.0), Interval<double>::Undefined()}));
-
         EXPECT_EQ(ctnr::Array<Interval<double>>(), Interval<double>::Merge({}));
     }
 
@@ -2351,9 +2197,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Merge)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Gaps)
 {
     {
-        EXPECT_ANY_THROW(Interval<double>::GetGaps({Interval<double>::Undefined()}, Interval<double>::Closed(0.0, 1.0))
-        );
-
         EXPECT_EQ(ctnr::Array<Interval<double>>(), Interval<double>::GetGaps({}));
 
         ctnr::Array<Interval<double>> gapsArray = {Interval<double>::Closed(0.0, 1.0)};
@@ -2402,9 +2245,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Gaps)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, LogicalOr)
 {
     {
-        EXPECT_ANY_THROW(Interval<double>::LogicalOr({Interval<double>::Undefined()}, {}));
-        EXPECT_ANY_THROW(Interval<double>::LogicalOr({}, {Interval<double>::Undefined()}));
-
         EXPECT_EQ(ctnr::Array<Interval<double>>(), Interval<double>::LogicalOr({}, {}));
 
         ctnr::Array<Interval<double>> logicalOrArray = {Interval<double>::Closed(0.0, 1.0)};
@@ -2439,9 +2279,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, LogicalOr)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, LogicalAnd)
 {
     {
-        EXPECT_ANY_THROW(Interval<double>::LogicalAnd({Interval<double>::Undefined()}, {}));
-        EXPECT_ANY_THROW(Interval<double>::LogicalAnd({}, {Interval<double>::Undefined()}));
-
         EXPECT_EQ(ctnr::Array<Interval<double>>(), Interval<double>::LogicalAnd({}, {}));
         EXPECT_EQ(
             ctnr::Array<Interval<double>>(), Interval<double>::LogicalAnd({Interval<double>::Closed(0.0, 1.0)}, {})

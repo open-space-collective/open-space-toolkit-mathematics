@@ -76,15 +76,6 @@ class Line : public Object
     /// @return             True if lines are not equal
     bool operator!=(const Line& aLine) const;
 
-    /// @brief              Check if line is defined
-    ///
-    /// @code
-    ///                     Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if line is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if line intersects point
     ///
     /// @code
@@ -217,15 +208,6 @@ class Line : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined line
-    ///
-    /// @code
-    ///                     Line line = Line::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined line
-    static Line Undefined();
 
     /// @brief              Constructs a line using two points
     ///

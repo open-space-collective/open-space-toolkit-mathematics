@@ -102,21 +102,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         .def("__repr__", &(shiftToString<RotationMatrix>))
 
         .def(
-            "is_defined",
-            &RotationMatrix::isDefined,
-            R"doc(
-                Check if the rotation matrix is defined.
-
-                Returns:
-                    bool: True if the rotation matrix is defined, False otherwise.
-
-                Example:
-                    >>> rot_matrix = RotationMatrix(Matrix3d.identity())
-                    >>> rot_matrix.is_defined()  # True
-            )doc"
-        )
-
-        .def(
             "get_row_at",
             &RotationMatrix::getRowAt,
             R"doc(
@@ -196,20 +181,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         )
 
         // Define static methods
-        .def_static(
-            "undefined",
-            &RotationMatrix::Undefined,
-            R"doc(
-                Create an undefined rotation matrix.
-
-                Returns:
-                    RotationMatrix: An undefined rotation matrix.
-
-                Example:
-                    >>> undefined_matrix = RotationMatrix.undefined()
-                    >>> undefined_matrix.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "unit",
             &RotationMatrix::Unit,

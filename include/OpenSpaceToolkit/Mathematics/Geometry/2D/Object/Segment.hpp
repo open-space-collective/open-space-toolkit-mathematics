@@ -75,15 +75,6 @@ class Segment : public Object
     /// @return             True if segments are not equal
     bool operator!=(const Segment& aSegment) const;
 
-    /// @brief              Check if segment is defined
-    ///
-    /// @code
-    ///                     Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if segment is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if segment is degenerate, i.e. its length is zero
     ///
     /// @code
@@ -221,15 +212,6 @@ class Segment : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined segment
-    ///
-    /// @code
-    ///                     Segment segment = Segment::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined segment
-    static Segment Undefined();
 
    private:
     Point firstPoint_;

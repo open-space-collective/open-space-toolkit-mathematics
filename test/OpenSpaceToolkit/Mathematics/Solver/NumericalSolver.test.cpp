@@ -182,10 +182,6 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, EqualToOperator)
 
         EXPECT_FALSE(defaultRK54_ == numericalSolver_5);
     }
-
-    {
-        EXPECT_FALSE(NumericalSolver::Undefined() == defaultRK54_);
-    }
 }
 
 TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, NotEqualToOperator)
@@ -249,13 +245,6 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, NotEqualToOperator)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, IsDefined)
-{
-    {
-        EXPECT_TRUE(defaultRK54_.isDefined());
-    }
-}
-
 TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, StreamOperator)
 {
     {
@@ -300,14 +289,11 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, GetType)
             1.0e-12,
         };
         EXPECT_EQ(numericalSolver_LogAdaptive.getLogType(), NumericalSolver::LogType::LogAdaptive);
-
-        EXPECT_THROW(NumericalSolver::Undefined().getLogType(), ostk::core::error::runtime::Undefined);
     }
 
     {
         EXPECT_EQ(defaultRK54_.getStepperType(), NumericalSolver::StepperType::RungeKuttaCashKarp54);
         EXPECT_EQ(defaultRKF78_.getStepperType(), NumericalSolver::StepperType::RungeKuttaFehlberg78);
-        EXPECT_THROW(NumericalSolver::Undefined().getStepperType(), ostk::core::error::runtime::Undefined);
     }
 }
 
@@ -317,12 +303,6 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, GetNumbers)
         EXPECT_EQ(defaultRK54_.getTimeStep(), 5.0);
         EXPECT_EQ(defaultRK54_.getRelativeTolerance(), 1.0e-12);
         EXPECT_EQ(defaultRK54_.getAbsoluteTolerance(), 1.0e-12);
-    }
-
-    {
-        EXPECT_THROW(NumericalSolver::Undefined().getTimeStep(), ostk::core::error::runtime::Undefined);
-        EXPECT_THROW(NumericalSolver::Undefined().getRelativeTolerance(), ostk::core::error::runtime::Undefined);
-        EXPECT_THROW(NumericalSolver::Undefined().getAbsoluteTolerance(), ostk::core::error::runtime::Undefined);
     }
 }
 
@@ -334,10 +314,6 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, GetObservedStates)
 
     {
         EXPECT_TRUE(defaultRK54_.getObservedStateVectors().isEmpty());
-    }
-
-    {
-        EXPECT_ANY_THROW(NumericalSolver::Undefined().getObservedStateVectors());
     }
 }
 
@@ -600,24 +576,9 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Undefined)
-{
-    {
-        EXPECT_NO_THROW(NumericalSolver::Undefined());
-    }
-
-    {
-        EXPECT_FALSE(NumericalSolver::Undefined().isDefined());
-    }
-}
-
 TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Default)
 {
     {
         EXPECT_NO_THROW(NumericalSolver::Default());
-    }
-
-    {
-        EXPECT_TRUE(NumericalSolver::Default().isDefined());
     }
 }

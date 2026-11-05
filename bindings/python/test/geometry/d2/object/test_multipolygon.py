@@ -15,7 +15,6 @@ class TestMultipolygon:
         assert multipolygon is not None
         assert isinstance(multipolygon, MultiPolygon)
         assert isinstance(multipolygon, Object)
-        assert multipolygon.is_defined()
 
         # Construction using a python tuple of polygons
         multipolygon: MultiPolygon = MultiPolygon((square_1, square_2))
@@ -23,7 +22,6 @@ class TestMultipolygon:
         assert multipolygon is not None
         assert isinstance(multipolygon, MultiPolygon)
         assert isinstance(multipolygon, Object)
-        assert multipolygon.is_defined()
 
         # Construction using a python numpy array of polygons
         multipolygon: MultiPolygon = MultiPolygon(np.array((square_1, square_2)))
@@ -31,7 +29,6 @@ class TestMultipolygon:
         assert multipolygon is not None
         assert isinstance(multipolygon, MultiPolygon)
         assert isinstance(multipolygon, Object)
-        assert multipolygon.is_defined()
 
         # Construction using polygon static constructor
         multipolygon: MultiPolygon = MultiPolygon.polygon(square_1)
@@ -39,7 +36,6 @@ class TestMultipolygon:
         assert multipolygon is not None
         assert isinstance(multipolygon, MultiPolygon)
         assert isinstance(multipolygon, Object)
-        assert multipolygon.is_defined()
 
         # Construction using an array of one polygon
         multipolygon: MultiPolygon = MultiPolygon([square_1])
@@ -47,7 +43,6 @@ class TestMultipolygon:
         assert multipolygon is not None
         assert isinstance(multipolygon, MultiPolygon)
         assert isinstance(multipolygon, Object)
-        assert multipolygon.is_defined()
 
     def test_comparators_success(self, square_1: Polygon, square_2: Polygon):
         # Multiple MultiPolygons
@@ -59,14 +54,6 @@ class TestMultipolygon:
         assert multipolygon_1 != multipolygon_2
         assert multipolygon_1 != multipolygon_3
         assert multipolygon_2 == multipolygon_3
-
-    def test_undefined_constructor_success(self):
-        multipolygon: MultiPolygon = MultiPolygon.undefined()
-
-        assert multipolygon is not None
-        assert isinstance(multipolygon, MultiPolygon)
-        assert isinstance(multipolygon, Object)
-        assert multipolygon.is_defined() is False
 
     def test_getters_success(
         self,

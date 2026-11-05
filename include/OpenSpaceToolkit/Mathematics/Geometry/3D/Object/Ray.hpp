@@ -82,15 +82,6 @@ class Ray : public Object
     /// @return             True if rays are not equal
     bool operator!=(const Ray& aRay) const;
 
-    /// @brief              Check if ray is defined
-    ///
-    /// @code
-    ///                     Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if ray is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if ray intersects point
     ///
     /// @code
@@ -249,15 +240,6 @@ class Ray : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined ray
-    ///
-    /// @code
-    ///                     Ray ray = Ray::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined ray
-    static Ray Undefined();
 
    private:
     Point origin_;

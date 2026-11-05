@@ -14,9 +14,6 @@ def rotation_matrix() -> RotationMatrix:
 
 
 class TestRotationMatrix:
-    def test_is_defined_success(self, rotation_matrix: RotationMatrix):
-        assert rotation_matrix.is_defined() is True
-
     def test_quaternion_success(self, rotation_matrix: RotationMatrix):
         assert RotationMatrix.quaternion(Quaternion.unit()) == rotation_matrix
 

@@ -43,12 +43,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, EqualToOperator)
     {
         EXPECT_FALSE(Line({0.0, 0.0}, {0.0, 1.0}) == Line({1.0, 0.0}, {0.0, 1.0}));
     }
-
-    {
-        EXPECT_FALSE(Line({0.0, 0.0}, {0.0, 1.0}) == Line::Undefined());
-        EXPECT_FALSE(Line::Undefined() == Line({0.0, 0.0}, {0.0, 1.0}));
-        EXPECT_FALSE(Line::Undefined() == Line::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, NotEqualToOperator)
@@ -69,12 +63,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, NotEqualToOperator)
     {
         EXPECT_TRUE(Line({0.0, 0.0}, {0.0, 1.0}) != Line({1.0, 0.0}, {0.0, 1.0}));
     }
-
-    {
-        EXPECT_TRUE(Line({0.0, 0.0}, {0.0, 1.0}) != Line::Undefined());
-        EXPECT_TRUE(Line::Undefined() != Line({0.0, 0.0}, {0.0, 1.0}));
-        EXPECT_TRUE(Line::Undefined() != Line::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, StreamOperator)
@@ -87,19 +75,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, StreamOperator)
         EXPECT_NO_THROW(std::cout << Line({0.0, 0.0}, {0.0, 1.0}) << std::endl);
 
         EXPECT_FALSE(testing::internal::GetCapturedStdout().empty());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, IsDefined)
-{
-    using ostk::mathematics::geometry::d2::object::Line;
-
-    {
-        EXPECT_TRUE(Line({0.0, 0.0}, {0.0, 1.0}).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Line::Undefined().isDefined());
     }
 }
 
@@ -124,11 +99,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Intersects_Point)
         EXPECT_FALSE(Line({0.0, 0.0}, {0.0, 1.0}).intersects(Point(1.0, 0.0)));
         EXPECT_FALSE(Line({0.0, 0.0}, {0.0, 1.0}).intersects(Point(1.0, 0.0)));
     }
-
-    {
-        EXPECT_ANY_THROW(Line::Undefined().intersects(Point::Undefined()));
-        EXPECT_ANY_THROW(Line({0.0, 0.0}, {0.0, 1.0}).intersects(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Contains_Point)
@@ -148,12 +118,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Contains_Point)
 
     {
         EXPECT_FALSE(Line({0.0, 0.0}, {0.0, 1.0}).contains(Point(1.0, 0.0)));
-    }
-
-    {
-        EXPECT_ANY_THROW(Line::Undefined().contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Line({0.0, 0.0}, {0.0, 1.0}).contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Line::Undefined().contains(Point(0.0, 0.0)));
     }
 }
 
@@ -182,7 +146,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Contains_PointSet)
 
     {
         EXPECT_ANY_THROW(Line({0.0, 0.0}, {0.0, 1.0}).contains(PointSet::Empty()));
-        EXPECT_ANY_THROW(Line::Undefined().contains(PointSet({Point {0.0, 0.0}})));
     }
 }
 
@@ -197,10 +160,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, GetOrigin)
 
         EXPECT_EQ(Point(0.0, -1.0), Line({0.0, -1.0}, {0.0, +1.0}).getOrigin());
     }
-
-    {
-        EXPECT_ANY_THROW(Line::Undefined().getOrigin());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, GetDirection)
@@ -212,10 +171,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, GetDirection)
     {
         EXPECT_EQ(Vector2d(0.0, +1.0), Line({0.0, 0.0}, {0.0, +2.0}).getDirection());
         EXPECT_EQ(Vector2d(0.0, -1.0), Line({0.0, 0.0}, {0.0, -2.0}).getDirection());
-    }
-
-    {
-        EXPECT_ANY_THROW(Line::Undefined().getDirection());
     }
 }
 
@@ -255,11 +210,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, DistanceTo_Point)
         EXPECT_NEAR(Line({1.0, 2.0}, {1.0, 0.0}).distanceTo({1.0, 5.0}), 3.0, 1e-5);
         EXPECT_NEAR(Line({1.0, 2.0}, {4.0, 5.0}).distanceTo({7.0, 8.0}), 0.93704, 1e-5);
     }
-
-    {
-        EXPECT_ANY_THROW(Line::Undefined().distanceTo({0.0, 0.0}));
-        EXPECT_ANY_THROW(Line({0.0, 0.0}, {0.0, 1.0}).distanceTo(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, ApplyTransformation)
@@ -276,22 +226,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, ApplyTransformation)
         line.applyTransformation(Transformation::Translation({4.0, 5.0}));
 
         EXPECT_EQ(Line({4.0, 5.0}, {0.0, 1.0}), line);
-    }
-
-    {
-        EXPECT_ANY_THROW(Line::Undefined().applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Line::Undefined().applyTransformation(Transformation::Identity()));
-        EXPECT_ANY_THROW(Line({0.0, 0.0}, {0.0, 1.0}).applyTransformation(Transformation::Undefined()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Undefined)
-{
-    using ostk::mathematics::geometry::d2::object::Line;
-
-    {
-        EXPECT_NO_THROW(Line::Undefined());
-        EXPECT_FALSE(Line::Undefined().isDefined());
     }
 }
 
@@ -310,10 +244,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Points)
 
     {
         EXPECT_ANY_THROW(Line::Points(Point(1.0, 2.0), Point(1.0, 2.0)));
-    }
-
-    {
-        EXPECT_ANY_THROW(Line::Points(Point::Undefined(), Point(2.0, 3.0)));
-        EXPECT_ANY_THROW(Line::Points(Point(1.0, 2.0), Point::Undefined()));
     }
 }

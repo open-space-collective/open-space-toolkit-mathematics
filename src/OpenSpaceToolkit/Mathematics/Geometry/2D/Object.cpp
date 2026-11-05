@@ -27,11 +27,6 @@ bool Object::operator==(const Object& anObject) const
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::Polygon;
 
-    if ((!this->isDefined()) || (!anObject.isDefined()))
-    {
-        return false;
-    }
-
     if (typeid(*this) != typeid(anObject))
     {
         return false;
@@ -81,11 +76,6 @@ bool Object::intersects(const Object& anObject) const
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::Polygon;
 
-    if (!anObject.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Object");
-    }
-
     throw ostk::core::error::runtime::ToBeImplemented("Object :: intersects");
 
     return false;
@@ -98,11 +88,6 @@ bool Object::contains(const Object& anObject) const
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::PointSet;
     using ostk::mathematics::geometry::d2::object::Polygon;
-
-    if (!anObject.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Object");
-    }
 
     // LineString
 

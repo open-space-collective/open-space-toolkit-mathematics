@@ -48,11 +48,6 @@ bool Object::operator==(const Object& anObject) const
     using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::object::Sphere;
 
-    if ((!this->isDefined()) || (!anObject.isDefined()))
-    {
-        return false;
-    }
-
     if (typeid(*this) != typeid(anObject))
     {
         return false;
@@ -234,11 +229,6 @@ bool Object::intersects(const Object& anObject) const
     using ostk::mathematics::geometry::d3::object::Ray;
     using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::object::Sphere;
-
-    if (!anObject.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Object");
-    }
 
     // Line
 
@@ -508,11 +498,6 @@ bool Object::contains(const Object& anObject) const
     using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::object::Sphere;
 
-    if (!anObject.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Object");
-    }
-
     // Segment
 
     // if (const Segment* objectPtr = dynamic_cast<const Segment*>(this))
@@ -694,11 +679,6 @@ Intersection Object::intersectionWith(const Object& anObject) const
     using ostk::mathematics::geometry::d3::object::Ray;
     using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::object::Sphere;
-
-    if (!anObject.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Object");
-    }
 
     // Line
 

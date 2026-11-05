@@ -68,36 +68,16 @@ Sphere* Sphere::clone() const
 
 bool Sphere::operator==(const Sphere& aSphere) const
 {
-    if ((!this->isDefined()) || (!aSphere.isDefined()))
-    {
-        return false;
-    }
-
     return (center_ == aSphere.center_) && (radius_ == aSphere.radius_);
 }
 
 bool Sphere::operator!=(const Sphere& aSphere) const
 {
-    if ((!this->isDefined()) || (!aSphere.isDefined()))
-    {
-        return true;
-    }
-
     return (center_ != aSphere.center_) || (radius_ != aSphere.radius_);
-}
-
-bool Sphere::isDefined() const
-{
-    return center_.isDefined() && !std::isnan(radius_);
 }
 
 bool Sphere::isUnitary() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
     return radius_ == 1.0;
 }
 
@@ -108,11 +88,6 @@ bool Sphere::intersects(const Point& aPoint) const
 
 bool Sphere::intersects(const PointSet& aPointSet) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
     return (!aPointSet.isEmpty()) && std::any_of(
                                          aPointSet.begin(),
                                          aPointSet.end(),
@@ -125,16 +100,6 @@ bool Sphere::intersects(const PointSet& aPointSet) const
 
 bool Sphere::intersects(const Line& aLine) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
-    if (!aLine.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
     // Line
 
     const gte::Line3<double> line = {
@@ -158,16 +123,6 @@ bool Sphere::intersects(const Line& aLine) const
 
 bool Sphere::intersects(const Ray& aRay) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
-    if (!aRay.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
     // Ray
 
     const gte::Ray3<double> ray = {
@@ -191,16 +146,6 @@ bool Sphere::intersects(const Ray& aRay) const
 
 bool Sphere::intersects(const Segment& aSegment) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
-    if (!aSegment.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     // Segment
 
     const gte::Segment3<double> segment = {
@@ -224,16 +169,6 @@ bool Sphere::intersects(const Segment& aSegment) const
 
 bool Sphere::intersects(const Plane& aPlane) const
 {
-    if (!aPlane.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Plane");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
     // Plane
 
     const gte::Vector3<double> normal = SphereGteVectorFromVector3d(aPlane.getNormalVector());
@@ -270,26 +205,11 @@ bool Sphere::contains(const Point& aPoint) const
 {
     using ostk::mathematics::object::Vector3d;
 
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
     return std::abs((aPoint - center_).squaredNorm() - (radius_ * radius_)) < 1e-15;
 }
 
 bool Sphere::contains(const PointSet& aPointSet) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
     return (!aPointSet.isEmpty()) && std::all_of(
                                          aPointSet.begin(),
                                          aPointSet.end(),
@@ -302,37 +222,17 @@ bool Sphere::contains(const PointSet& aPointSet) const
 
 const Point& Sphere::getCenter() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
     return center_;
 }
 
 double Sphere::getRadius() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
     return radius_;
 }
 
 Intersection Sphere::intersectionWith(const Line& aLine) const
 {
     using ostk::mathematics::geometry::d3::object::PointSet;
-
-    if (!aLine.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
 
     // Line
 
@@ -377,16 +277,6 @@ Intersection Sphere::intersectionWith(const Line& aLine) const
 Intersection Sphere::intersectionWith(const Ray& aRay, const bool onlyInSight) const
 {
     using ostk::mathematics::geometry::d3::object::PointSet;
-
-    if (!aRay.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
 
     // Ray
 
@@ -456,16 +346,6 @@ Intersection Sphere::intersectionWith(const Ray& aRay, const bool onlyInSight) c
 Intersection Sphere::intersectionWith(const Segment& aSegment) const
 {
     using ostk::mathematics::geometry::d3::object::PointSet;
-
-    if (!aSegment.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
 
     // Segment
 
@@ -575,8 +455,7 @@ void Sphere::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
     displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Sphere") : void();
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Center:" << (center_.isDefined() ? center_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "Center:" << center_.toString();
     ostk::core::utils::Print::Line(anOutputStream) << "Radius:" << DoubleToString(radius_);
 
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
@@ -584,27 +463,12 @@ void Sphere::print(std::ostream& anOutputStream, bool displayDecorators) const
 
 void Sphere::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
     if (!aTransformation.isRigid())
     {
         throw ostk::core::error::RuntimeError("Only rigid transformation is supported.");
     }
 
     center_.applyTransformation(aTransformation);
-}
-
-Sphere Sphere::Undefined()
-{
-    return {Point::Undefined(), std::numeric_limits<double>::quiet_NaN()};
 }
 
 Sphere Sphere::Unit(const Point& aCenter)

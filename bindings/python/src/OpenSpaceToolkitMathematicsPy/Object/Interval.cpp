@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <nanobind/stl/optional.h>
+
 #include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
 
 inline void OpenSpaceToolkitMathematicsPy_Object_Interval(nanobind::module_& aModule)
@@ -53,20 +55,6 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(nanobind::module_& aMo
         .def("__str__", &(shiftToString<Interval<double>>))
         .def("__repr__", &(shiftToString<Interval<double>>))
 
-        .def(
-            "is_defined",
-            &Interval<double>::isDefined,
-            R"doc(
-                Check if the interval is defined.
-
-                Returns:
-                    bool: True if the interval is defined, False otherwise.
-
-                Example:
-                    >>> interval = RealInterval.closed(0.0, 1.0)
-                    >>> interval.is_defined()  # True
-            )doc"
-        )
         .def(
             "is_degenerate",
             &Interval<double>::isDegenerate,
@@ -148,7 +136,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(nanobind::module_& aMo
                     interval (RealInterval): The interval to intersect with.
 
                 Returns:
-                    RealInterval: The intersection interval, or undefined if no intersection.
+                    RealInterval | None: The intersection interval, or None if the intervals do not intersect.
 
                 Example:
                     >>> interval1 = RealInterval.closed(0.0, 2.0)
@@ -168,7 +156,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(nanobind::module_& aMo
                     interval (RealInterval): The interval to union with.
 
                 Returns:
-                    RealInterval: The union interval.
+                    RealInterval | None: The union interval, or None if the intervals are disjoint.
 
                 Example:
                     >>> interval1 = RealInterval.closed(0.0, 1.0)
@@ -223,20 +211,6 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(nanobind::module_& aMo
         )
 
         // Define static methods
-        .def_static(
-            "undefined",
-            &Interval<double>::Undefined,
-            R"doc(
-                Create an undefined interval.
-
-                Returns:
-                    RealInterval: An undefined interval.
-
-                Example:
-                    >>> undefined_interval = RealInterval.undefined()
-                    >>> undefined_interval.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "closed",
             &Interval<double>::Closed,
@@ -479,7 +453,6 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(nanobind::module_& aMo
     // Define emuneration type for "real_interval"
     enum_<Interval<double>::Type>(real_interval, "Type")
 
-        .value("Undefined", Interval<double>::Type::Undefined)
         .value("Closed", Interval<double>::Type::Closed)
         .value("Open", Interval<double>::Type::Open)
         .value("HalfOpenLeft", Interval<double>::Type::HalfOpenLeft)

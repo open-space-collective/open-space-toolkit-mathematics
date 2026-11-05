@@ -291,16 +291,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, RotationAround)
         EXPECT_TRUE(point.isNear(rotatedPoint_ref, 1e-11))
             << String::Format("{} ~ {}", point.toString(), rotatedPoint_ref.toString());
     }
-
-    {
-        const Point rotationCenter = {0.0, 0.0, 0.0};
-        const Angle rotationAngle = Angle::Degrees(45.0);
-        const RotationVector rotationVector = {{0.0, 0.0, 1.0}, rotationAngle};
-
-        EXPECT_ANY_THROW(Transformation::RotationAround(Point::Undefined(), rotationVector));
-        EXPECT_ANY_THROW(Transformation::RotationAround(rotationCenter, RotationVector::Undefined()));
-        EXPECT_ANY_THROW(Transformation::RotationAround(Point::Undefined(), RotationVector::Undefined()));
-    }
 }
 
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, StringFromType)

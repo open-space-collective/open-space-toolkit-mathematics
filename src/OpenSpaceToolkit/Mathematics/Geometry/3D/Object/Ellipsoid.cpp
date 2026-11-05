@@ -108,11 +108,6 @@ Ellipsoid* Ellipsoid::clone() const
 
 bool Ellipsoid::operator==(const Ellipsoid& anEllipsoid) const
 {
-    if ((!this->isDefined()) || (!anEllipsoid.isDefined()))
-    {
-        return false;
-    }
-
     if (center_ == anEllipsoid.center_)
     {
         if ((a_ == anEllipsoid.a_) && (b_ == anEllipsoid.b_) && (c_ == anEllipsoid.c_) && (q_ == anEllipsoid.q_))
@@ -131,11 +126,6 @@ bool Ellipsoid::operator!=(const Ellipsoid& anEllipsoid) const
     return !((*this) == anEllipsoid);
 }
 
-bool Ellipsoid::isDefined() const
-{
-    return center_.isDefined() && !std::isnan(a_) && !std::isnan(b_) && !std::isnan(c_) && q_.isDefined();
-}
-
 bool Ellipsoid::intersects(const Point& aPoint) const
 {
     return this->contains(aPoint);
@@ -143,11 +133,6 @@ bool Ellipsoid::intersects(const Point& aPoint) const
 
 bool Ellipsoid::intersects(const PointSet& aPointSet) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     return (!aPointSet.isEmpty()) && std::any_of(
                                          aPointSet.begin(),
                                          aPointSet.end(),
@@ -160,16 +145,6 @@ bool Ellipsoid::intersects(const PointSet& aPointSet) const
 
 bool Ellipsoid::intersects(const Line& aLine) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
-    if (!aLine.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
     // Line
 
     const gte::Line3<double> line = {
@@ -199,16 +174,6 @@ bool Ellipsoid::intersects(const Line& aLine) const
 
 bool Ellipsoid::intersects(const Ray& aRay) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
-    if (!aRay.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
     // Ray
 
     const gte::Ray3<double> ray = {
@@ -238,16 +203,6 @@ bool Ellipsoid::intersects(const Ray& aRay) const
 
 bool Ellipsoid::intersects(const Segment& aSegment) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
-    if (!aSegment.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     // // Does not work for some reason... most likely a bug w/ gte::TIQuery<double, gte::Segment3<double>,
     // gte::Ellipsoid3<double>>
 
@@ -346,16 +301,6 @@ bool Ellipsoid::intersects(const Plane& aPlane) const
 {
     // https://file.scirp.org/pdf/AM20121100009_89014420.pdf
     // https://www.researchgate.net/publication/312384498_Intersection_of_an_Ellipsoid_and_a_Plane
-
-    if (!aPlane.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Plane");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
 
     // Plane
 
@@ -461,16 +406,6 @@ bool Ellipsoid::contains(const Point& aPoint) const
 {
     using ostk::mathematics::object::Vector3d;
 
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     Matrix3d dcm;
 
     dcm.row(0) = q_ * Vector3d::X();
@@ -488,11 +423,6 @@ bool Ellipsoid::contains(const Point& aPoint) const
 
 bool Ellipsoid::contains(const PointSet& aPointSet) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     return (!aPointSet.isEmpty()) && std::all_of(
                                          aPointSet.begin(),
                                          aPointSet.end(),
@@ -510,91 +440,46 @@ bool Ellipsoid::contains(const Segment& aSegment) const
 
 const Point& Ellipsoid::getCenter() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     return center_;
 }
 
 double Ellipsoid::getFirstPrincipalSemiAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     return a_;
 }
 
 double Ellipsoid::getSecondPrincipalSemiAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     return b_;
 }
 
 double Ellipsoid::getThirdPrincipalSemiAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     return c_;
 }
 
 Vector3d Ellipsoid::getFirstAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     return axes_ ? axes_->first : this->computeFirstAxis();
 }
 
 Vector3d Ellipsoid::getSecondAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     return axes_ ? axes_->second : this->computeSecondAxis();
 }
 
 Vector3d Ellipsoid::getThirdAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     return axes_ ? axes_->third : this->computeThirdAxis();
 }
 
 const Quaternion& Ellipsoid::getOrientation() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     return q_;
 }
 
 Matrix3d Ellipsoid::getMatrix() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     return axes_ ? axes_->matrix
                  : this->computeMatrix(this->computeFirstAxis(), this->computeSecondAxis(), this->computeThirdAxis());
 }
@@ -602,16 +487,6 @@ Matrix3d Ellipsoid::getMatrix() const
 Intersection Ellipsoid::intersectionWith(const Line& aLine) const
 {
     using ostk::mathematics::geometry::d3::object::PointSet;
-
-    if (!aLine.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
 
     // Line
 
@@ -662,16 +537,6 @@ Intersection Ellipsoid::intersectionWith(const Line& aLine) const
 Intersection Ellipsoid::intersectionWith(const Ray& aRay, const bool onlyInSight) const
 {
     using ostk::mathematics::geometry::d3::object::PointSet;
-
-    if (!aRay.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
 
     // Ray
 
@@ -753,16 +618,6 @@ Intersection Ellipsoid::intersectionWith(const Segment& aSegment) const
 {
     using ostk::mathematics::geometry::d3::object::PointSet;
 
-    if (!aSegment.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
     if (aSegment.isDegenerate() && this->contains(aSegment.getFirstPoint()))
     {
         return Intersection::Point(aSegment.getFirstPoint());
@@ -804,8 +659,8 @@ Intersection Ellipsoid::intersectionWith(const Segment& aSegment) const
                 return Intersection::Empty();
             }
 
-            if ((!point.isDefined()) || ((point == aSegment.getFirstPoint() || (point == aSegment.getSecondPoint())) &&
-                                         (!this->contains(point))))  // Discard segment points, if returned by Gte
+            if ((point == aSegment.getFirstPoint() || (point == aSegment.getSecondPoint())) &&
+                (!this->contains(point)))  // Discard segment points, if returned by Gte
             {
                 return Intersection::Empty();
             }
@@ -887,21 +742,17 @@ void Ellipsoid::print(std::ostream& anOutputStream, bool displayDecorators) cons
 {
     displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Ellipsoid") : void();
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Center:" << (center_.isDefined() ? center_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "Center:" << center_.toString();
 
     ostk::core::utils::Print::Line(anOutputStream) << "First principal semi-axis:" << DoubleToString(a_);
     ostk::core::utils::Print::Line(anOutputStream) << "Second principal semi-axis:" << DoubleToString(b_);
     ostk::core::utils::Print::Line(anOutputStream) << "Third principal semi-axis:" << DoubleToString(c_);
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "First axis:" << (q_.isDefined() ? this->getFirstAxis().toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Second axis:" << (q_.isDefined() ? this->getSecondAxis().toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Third axis:" << (q_.isDefined() ? this->getThirdAxis().toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "First axis:" << this->getFirstAxis().toString();
+    ostk::core::utils::Print::Line(anOutputStream) << "Second axis:" << this->getSecondAxis().toString();
+    ostk::core::utils::Print::Line(anOutputStream) << "Third axis:" << this->getThirdAxis().toString();
 
-    ostk::core::utils::Print::Line(anOutputStream) << "Orientation:" << (q_.isDefined() ? q_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "Orientation:" << q_.toString();
 
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
@@ -909,16 +760,6 @@ void Ellipsoid::print(std::ostream& anOutputStream, bool displayDecorators) cons
 void Ellipsoid::applyTransformation(const Transformation& aTransformation)
 {
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
-
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
 
     if (aTransformation.isIdentity())
     {
@@ -950,22 +791,11 @@ void Ellipsoid::applyTransformation(const Transformation& aTransformation)
     this->cacheAxes();
 }
 
-Ellipsoid Ellipsoid::Undefined()
-{
-    return {
-        Point::Undefined(),
-        std::numeric_limits<double>::quiet_NaN(),
-        std::numeric_limits<double>::quiet_NaN(),
-        std::numeric_limits<double>::quiet_NaN(),
-        Quaternion::Undefined()
-    };
-}
-
 void Ellipsoid::cacheAxes()
 {
     axes_.reset();
 
-    if ((!this->isDefined()) || (!q_.isUnitary()))
+    if (!q_.isUnitary())
     {
         return;
     }

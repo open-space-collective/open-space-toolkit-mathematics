@@ -29,7 +29,6 @@ class TestLineString:
         assert linestring is not None
         assert isinstance(linestring, LineString)
         assert isinstance(linestring, Object)
-        assert linestring.is_defined()
 
         # Construction with Array of Points using python tuple
         linestring: LineString = LineString((point_1, point_2, point_3, point_4))
@@ -37,7 +36,6 @@ class TestLineString:
         assert linestring is not None
         assert isinstance(linestring, LineString)
         assert isinstance(linestring, Object)
-        assert linestring.is_defined()
 
         # Construction with Array of Points using python numpy array
         linestring: LineString = LineString(
@@ -47,7 +45,6 @@ class TestLineString:
         assert linestring is not None
         assert isinstance(linestring, LineString)
         assert isinstance(linestring, Object)
-        assert linestring.is_defined()
 
     def test_empty_success(self):
         linestring: LineString = LineString.empty()
@@ -55,7 +52,6 @@ class TestLineString:
         assert linestring is not None
         assert isinstance(linestring, LineString)
         assert isinstance(linestring, Object)
-        assert linestring.is_defined() is False
         assert linestring.is_empty()
 
     def test_comparators_success(self):

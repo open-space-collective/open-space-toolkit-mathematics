@@ -51,21 +51,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(nanobind::m
         .def("__repr__", &(shiftToString<Transformation>))
 
         .def(
-            "is_defined",
-            &Transformation::isDefined,
-            R"doc(
-                Check if the transformation is defined.
-
-                Returns:
-                    bool: True if the transformation is defined, False otherwise.
-
-                Example:
-                    >>> transformation = Transformation.identity()
-                    >>> transformation.is_defined()  # True
-            )doc"
-        )
-
-        .def(
             "get_type",
             &Transformation::getType,
             R"doc(
@@ -148,20 +133,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(nanobind::m
         )
         // .def("apply_to", overload_cast<const Unique<Object>&>(&Transformation::applyTo, const_), arg("object"))
 
-        .def_static(
-            "undefined",
-            &Transformation::Undefined,
-            R"doc(
-                Create an undefined transformation.
-
-                Returns:
-                    Transformation: An undefined transformation.
-
-                Example:
-                    >>> undefined_transform = Transformation.undefined()
-                    >>> undefined_transform.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "identity",
             &Transformation::Identity,
@@ -279,7 +250,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(nanobind::m
 
     enum_<Transformation::Type>(transf, "Type")
 
-        .value("Undefined", Transformation::Type::Undefined)
         .value("Identity", Transformation::Type::Identity)
         .value("Translation", Transformation::Type::Translation)
         .value("Rotation", Transformation::Type::Rotation)

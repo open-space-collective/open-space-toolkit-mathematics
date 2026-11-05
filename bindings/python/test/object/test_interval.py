@@ -13,14 +13,12 @@ class TestInterval:
         enum_members = RealInterval.Type.__members__
 
         assert list(enum_members.keys()) == [
-            "Undefined",
             "Closed",
             "Open",
             "HalfOpenLeft",
             "HalfOpenRight",
         ]
         assert list(enum_members.values()) == [
-            RealInterval.Type.Undefined,
             RealInterval.Type.Closed,
             RealInterval.Type.Open,
             RealInterval.Type.HalfOpenLeft,
@@ -74,13 +72,11 @@ class TestInterval:
         b = 3.0
 
         # Types of RealInterval
-        interval_undefined = RealInterval(a, b, RealInterval.Type.Undefined)
         interval_closed = RealInterval(a, b, RealInterval.Type.Closed)
         interval_open = RealInterval(a, b, RealInterval.Type.Open)
         interval_halfopenleft = RealInterval(a, b, RealInterval.Type.HalfOpenLeft)
         interval_halfopenright = RealInterval(a, b, RealInterval.Type.HalfOpenRight)
 
-        assert isinstance(interval_undefined, RealInterval)
         assert isinstance(interval_closed, RealInterval)
         assert isinstance(interval_open, RealInterval)
         assert isinstance(interval_halfopenleft, RealInterval)
@@ -100,13 +96,6 @@ class TestInterval:
         with pytest.raises(RuntimeError):
             invalid_interval_4 = RealInterval(4.8, 3.5, RealInterval.Type.HalfOpenRight)
 
-    def test_undefined_constructor(self):
-        undefined_interval = RealInterval.undefined()
-
-        assert isinstance(undefined_interval, RealInterval)
-        assert undefined_interval is not None
-        assert undefined_interval.is_defined() is False
-
     @pytest.mark.parametrize(
         "static_func",
         [
@@ -124,28 +113,8 @@ class TestInterval:
 
         assert isinstance(closed_interval, RealInterval)
         assert closed_interval is not None
-        assert closed_interval.is_defined()
         assert closed_interval.get_lower_bound() == a
         assert closed_interval.get_upper_bound() == b
-
-    def test_is_defined(self):
-        # Interval Bounds
-        a = -4.31
-        b = 3.0
-
-        # Types of RealInterval
-        interval_undefined = RealInterval(a, b, RealInterval.Type.Undefined)
-        interval_closed = RealInterval(a, b, RealInterval.Type.Closed)
-        interval_open = RealInterval(a, b, RealInterval.Type.Open)
-        interval_halfopenleft = RealInterval(a, b, RealInterval.Type.HalfOpenLeft)
-        interval_halfopenright = RealInterval(a, b, RealInterval.Type.HalfOpenRight)
-
-        assert interval_undefined.is_defined() is False
-        assert interval_closed.is_defined() is True
-        assert interval_open.is_defined() is True
-        assert interval_halfopenleft.is_defined() is True
-        assert interval_halfopenright.is_defined() is True
-        assert RealInterval.undefined().is_defined() is False
 
     # def test_is_degenerate ():
 
@@ -155,7 +124,6 @@ class TestInterval:
         b = 3.0
 
         # Types of RealInterval
-        interval_undefined = RealInterval(a, b, RealInterval.Type.Undefined)
         interval_closed = RealInterval(a, b, RealInterval.Type.Closed)
         interval_open = RealInterval(a, b, RealInterval.Type.Open)
         interval_halfopenleft = RealInterval(a, b, RealInterval.Type.HalfOpenLeft)
@@ -171,12 +139,6 @@ class TestInterval:
 
         # Add test cases with contained intervals not RealInterval.Type.Closed...
         # Add test cases with open intervals and half open intervals...
-
-        # Test intersects on undefined
-
-        # with pytest.raises(RuntimeError):
-
-        #     interval_undefined.intersects
 
         # Test intersects on closed
 
@@ -220,7 +182,6 @@ class TestInterval:
         b = 3.0
 
         # Types of RealInterval
-        interval_undefined = RealInterval(a, b, RealInterval.Type.Undefined)
         interval_closed = RealInterval(a, b, RealInterval.Type.Closed)
         interval_open = RealInterval(a, b, RealInterval.Type.Open)
         interval_halfopenleft = RealInterval(a, b, RealInterval.Type.HalfOpenLeft)
@@ -233,11 +194,6 @@ class TestInterval:
         real_rightbound = b
         real_between_1 = 2.3
         real_between_2 = 2.999999999
-
-        # Test contains on undefined
-
-        with pytest.raises(RuntimeError):
-            interval_undefined.contains(real_left)
 
         # Test contains on closed
 
@@ -281,7 +237,6 @@ class TestInterval:
         b = 3.0
 
         # Types of RealInterval
-        interval_undefined = RealInterval(a, b, RealInterval.Type.Undefined)
         interval_closed = RealInterval(a, b, RealInterval.Type.Closed)
         interval_open = RealInterval(a, b, RealInterval.Type.Open)
         interval_halfopenleft = RealInterval(a, b, RealInterval.Type.HalfOpenLeft)
@@ -296,11 +251,6 @@ class TestInterval:
         interval_bigger = RealInterval(-45.0, 34.12, RealInterval.Type.Closed)
 
         # Add test cases with contained intervals not RealInterval.Type.Closed...
-
-        # Test contains on undefined
-
-        with pytest.raises(RuntimeError):
-            interval_undefined.contains(interval_left)
 
         # Test contains on closed
 
@@ -344,25 +294,18 @@ class TestInterval:
         b = 3.0
 
         # Types of RealInterval
-        interval_undefined = RealInterval(a, b, RealInterval.Type.Undefined)
         interval_closed = RealInterval(a, b, RealInterval.Type.Closed)
         interval_open = RealInterval(a, b, RealInterval.Type.Open)
         interval_halfopenleft = RealInterval(a, b, RealInterval.Type.HalfOpenLeft)
         interval_halfopenright = RealInterval(a, b, RealInterval.Type.HalfOpenRight)
 
         # get_lower_bound
-        with pytest.raises(RuntimeError):
-            interval_undefined.get_lower_bound()
-
         assert interval_closed.get_lower_bound() == a
         assert interval_open.get_lower_bound() == a
         assert interval_halfopenleft.get_lower_bound() == a
         assert interval_halfopenright.get_lower_bound() == a
 
         # get_upper_bound
-        with pytest.raises(RuntimeError):
-            interval_undefined.get_upper_bound()
-
         assert interval_closed.get_upper_bound() == b
         assert interval_open.get_upper_bound() == b
         assert interval_halfopenleft.get_upper_bound() == b
@@ -374,14 +317,10 @@ class TestInterval:
         b = 3.0
 
         # Types of RealInterval
-        interval_undefined = RealInterval(a, b, RealInterval.Type.Undefined)
         interval_closed = RealInterval(a, b, RealInterval.Type.Closed)
         interval_open = RealInterval(a, b, RealInterval.Type.Open)
         interval_halfopenleft = RealInterval(a, b, RealInterval.Type.HalfOpenLeft)
         interval_halfopenright = RealInterval(a, b, RealInterval.Type.HalfOpenRight)
-
-        with pytest.raises(RuntimeError):
-            interval_undefined.to_string()
 
         assert isinstance(interval_closed.to_string(), String)
         assert interval_closed.to_string() == "[-4.3099999999999996, 3.0]"
@@ -452,6 +391,18 @@ class TestInterval:
             expected_interval = test_case[2]
 
             assert first_interval.get_union_with(second_interval) == expected_interval
+
+    def test_get_intersection_with_disjoint_returns_none(self):
+        first_interval = RealInterval.closed(0.0, 1.0)
+        second_interval = RealInterval.closed(2.0, 3.0)
+
+        assert first_interval.get_intersection_with(second_interval) is None
+
+    def test_get_union_with_disjoint_returns_none(self):
+        first_interval = RealInterval.closed(0.0, 1.0)
+        second_interval = RealInterval.closed(2.0, 3.0)
+
+        assert first_interval.get_union_with(second_interval) is None
 
     def test_clip(self):
         intervals: list[RealInterval] = [

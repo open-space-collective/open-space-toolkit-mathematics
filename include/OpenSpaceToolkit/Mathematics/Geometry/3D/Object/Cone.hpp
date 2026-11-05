@@ -101,16 +101,6 @@ class Cone : public Object
     /// @return             True if cones are not equal
     bool operator!=(const Cone& aCone) const;
 
-    /// @brief              Check if cone is defined
-    ///
-    /// @code{.cpp}
-    ///                     Cone cone = { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }, Angle::Degrees(15.0) } ;
-    ///                     cone.isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if cone is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if cone intersects sphere
     ///
     /// @code{.cpp}
@@ -317,15 +307,6 @@ class Cone : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined cone
-    ///
-    /// @code{.cpp}
-    ///                     Cone cone = Cone::Undefined() ;
-    /// @endcode
-    ///
-    /// @return             Undefined cone
-    static Cone Undefined();
 
    private:
     Point apex_;

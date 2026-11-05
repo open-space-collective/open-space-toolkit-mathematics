@@ -38,11 +38,6 @@ Point* Point::clone() const
 
 bool Point::operator==(const Point& aPoint) const
 {
-    if ((!this->isDefined()) || (!aPoint.isDefined()))
-    {
-        return false;
-    }
-
     return (x_ == aPoint.x_) && (y_ == aPoint.y_) && (z_ == aPoint.z_);
 }
 
@@ -53,52 +48,17 @@ bool Point::operator!=(const Point& aPoint) const
 
 Point Point::operator+(const Vector3d& aVector) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!aVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Vector");
-    }
-
     return {x_ + aVector.x(), y_ + aVector.y(), z_ + aVector.z()};
 }
 
 Point Point::operator-(const Vector3d& aVector) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!aVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Vector");
-    }
-
     return {x_ - aVector.x(), y_ - aVector.y(), z_ - aVector.z()};
 }
 
 Vector3d Point::operator-(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
     return {x_ - aPoint.x(), y_ - aPoint.y(), z_ - aPoint.z()};
-}
-
-bool Point::isDefined() const
-{
-    return !std::isnan(x_) && !std::isnan(y_) && !std::isnan(z_);
 }
 
 bool Point::isNear(const Point& aPoint, double aTolerance) const
@@ -113,66 +73,31 @@ bool Point::isNear(const Point& aPoint, double aTolerance) const
 
 const double& Point::x() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
     return x_;
 }
 
 const double& Point::y() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
     return y_;
 }
 
 const double& Point::z() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
     return z_;
 }
 
 Vector3d Point::asVector() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
     return {x_, y_, z_};
 }
 
 double Point::distanceTo(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
     return ((*this) - aPoint).norm();
 }
 
 String Point::toString(int aPrecision) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
     return (aPrecision >= 0) ? Vector3d(x_, y_, z_).toString(aPrecision) : Vector3d(x_, y_, z_).toString();
 }
 
@@ -189,26 +114,7 @@ void Point::print(std::ostream& anOutputStream, bool displayDecorators) const
 
 void Point::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
     (*this) = aTransformation.applyTo(*this);
-}
-
-Point Point::Undefined()
-{
-    return {
-        std::numeric_limits<double>::quiet_NaN(),
-        std::numeric_limits<double>::quiet_NaN(),
-        std::numeric_limits<double>::quiet_NaN()
-    };
 }
 
 Point Point::Origin()

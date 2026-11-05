@@ -135,15 +135,6 @@ class Polygon : public Object
     /// @return             True if polygons are not equal
     bool operator!=(const Polygon& aPolygon) const;
 
-    /// @brief              Check if polygon is defined
-    ///
-    /// @code{.cpp}
-    ///                     Polygon({ { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } }).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if polygon is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if polygon is near another polygon
     ///
     /// @code{.cpp}
@@ -356,15 +347,6 @@ class Polygon : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined polygon
-    ///
-    /// @code
-    ///                     Polygon polygon = Polygon::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined polygon
-    static Polygon Undefined();
 
    private:
     class Impl;

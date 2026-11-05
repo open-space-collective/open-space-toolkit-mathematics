@@ -50,7 +50,6 @@ class Transformation
     enum class Type
     {
 
-        Undefined,    ///< Undefined transformation
         Identity,     ///< Identity transformation
         Translation,  ///< Translation transformation
         Rotation,     ///< Rotation transformation
@@ -133,15 +132,6 @@ class Transformation
     /// @return             Reference to the output stream
     friend std::ostream& operator<<(std::ostream& anOutputStream, const Transformation& aTransformation);
 
-    /// @brief              Check if the transformation is defined
-    ///
-    /// @code{.cpp}
-    ///                     Transformation::Identity().isDefined();
-    /// @endcode
-    ///
-    /// @return             True if the transformation is defined
-    bool isDefined() const;
-
     /// @brief              Check if the transformation is the identity
     ///
     /// @code{.cpp}
@@ -223,15 +213,6 @@ class Transformation
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] (optional) displayDecorators If true, display decorators
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const;
-
-    /// @brief              Construct an undefined transformation
-    ///
-    /// @code{.cpp}
-    ///                     Transformation t = Transformation::Undefined();
-    /// @endcode
-    ///
-    /// @return             An undefined transformation
-    static Transformation Undefined();
 
     /// @brief              Construct an identity transformation
     ///

@@ -74,21 +74,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         .def("__repr__", &(shiftToString<RotationVector>))
 
         .def(
-            "is_defined",
-            &RotationVector::isDefined,
-            R"doc(
-                Check if the rotation vector is defined.
-
-                Returns:
-                    bool: True if the rotation vector is defined, False otherwise.
-
-                Example:
-                    >>> rot_vector = RotationVector(axis, angle)
-                    >>> rot_vector.is_defined()  # True
-            )doc"
-        )
-
-        .def(
             "get_axis",
             &RotationVector::getAxis,
             R"doc(
@@ -171,20 +156,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         )
 
         // Define static methods
-        .def_static(
-            "undefined",
-            &RotationVector::Undefined,
-            R"doc(
-                Create an undefined rotation vector.
-
-                Returns:
-                    RotationVector: An undefined rotation vector.
-
-                Example:
-                    >>> undefined_vector = RotationVector.undefined()
-                    >>> undefined_vector.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "unit",
             &RotationVector::Unit,

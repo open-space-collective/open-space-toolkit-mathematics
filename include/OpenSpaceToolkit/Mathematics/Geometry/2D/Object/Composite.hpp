@@ -140,15 +140,6 @@ class Composite : public Object
     /// @return             Reference to concatenated composite
     Composite& operator+=(const Composite& aComposite);
 
-    /// @brief              Check if composite is defined
-    ///
-    /// @code
-    ///                     Composite(...).isDefined() ;
-    /// @endcode
-    ///
-    /// @return             True if all objects of the composite are defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if composite is empty
     ///
     /// @code
@@ -171,11 +162,6 @@ class Composite : public Object
     template <class Type>
     bool is() const
     {
-        if (!this->isDefined())
-        {
-            throw ostk::core::error::runtime::Undefined("Composite");
-        }
-
         return (objects_.getSize() == 1) && (dynamic_cast<const Type*>(objects_.getFirst().get()) != nullptr);
     }
 
@@ -192,11 +178,6 @@ class Composite : public Object
     template <class Type>
     const Type& as() const
     {
-        if (!this->isDefined())
-        {
-            throw ostk::core::error::runtime::Undefined("Composite");
-        }
-
         if (objects_.getSize() != 1)
         {
             throw ostk::core::error::RuntimeError("Cannot convert composite: it is complex.");

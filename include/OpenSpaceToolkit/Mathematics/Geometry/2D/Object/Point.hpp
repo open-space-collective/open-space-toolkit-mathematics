@@ -98,15 +98,6 @@ class Point : public Object
     /// @return             A translation vector
     Vector2d operator-(const Point& aPoint) const;
 
-    /// @brief              Check if point is defined
-    ///
-    /// @code
-    ///                     Point(0.0, 0.0).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if point is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if point is near another point
     ///
     /// @code
@@ -186,15 +177,6 @@ class Point : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined point
-    ///
-    /// @code
-    ///                     Point point = Point::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined point
-    static Point Undefined();
 
     /// @brief              Constructs a point at origin
     ///

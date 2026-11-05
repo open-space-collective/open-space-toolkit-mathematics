@@ -91,18 +91,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, EqualToOperator)
 
         EXPECT_TRUE(firstCuboid == secondCuboid);
     }
-
-    {
-        const Point center = {0.0, 0.0, 0.0};
-        const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
-        };
-        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
-
-        EXPECT_FALSE(Cuboid(center, axes, extent) == Cuboid::Undefined());
-        EXPECT_FALSE(Cuboid::Undefined() == Cuboid(center, axes, extent));
-        EXPECT_FALSE(Cuboid::Undefined() == Cuboid::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, NotEqualToOperator)
@@ -146,18 +134,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, NotEqualToOperator)
 
         EXPECT_FALSE(firstCuboid != secondCuboid);
     }
-
-    {
-        const Point center = {0.0, 0.0, 0.0};
-        const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
-        };
-        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
-
-        EXPECT_TRUE(Cuboid(center, axes, extent) != Cuboid::Undefined());
-        EXPECT_TRUE(Cuboid::Undefined() != Cuboid(center, axes, extent));
-        EXPECT_TRUE(Cuboid::Undefined() != Cuboid::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, StreamOperator)
@@ -178,27 +154,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, StreamOperator)
         EXPECT_NO_THROW(std::cout << Cuboid(center, axes, extent) << std::endl);
 
         EXPECT_FALSE(testing::internal::GetCapturedStdout().empty());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsDefined)
-{
-    using ostk::mathematics::geometry::d3::object::Cuboid;
-    using ostk::mathematics::geometry::d3::object::Point;
-    using ostk::mathematics::object::Vector3d;
-
-    {
-        const Point center = {0.0, 0.0, 0.0};
-        const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
-        };
-        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
-
-        EXPECT_TRUE(Cuboid(center, axes, extent).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Cuboid::Undefined().isDefined());
     }
 }
 
@@ -268,9 +223,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsNear)
 
         const Cuboid cuboid = {center, axes, extent};
 
-        EXPECT_ANY_THROW(Cuboid::Undefined().isNear(Cuboid::Undefined(), std::numeric_limits<double>::quiet_NaN()));
-        EXPECT_ANY_THROW(cuboid.isNear(Cuboid::Undefined(), std::numeric_limits<double>::quiet_NaN()));
-        EXPECT_ANY_THROW(Cuboid::Undefined().isNear(cuboid, std::numeric_limits<double>::quiet_NaN()));
         EXPECT_ANY_THROW(cuboid.isNear(cuboid, std::numeric_limits<double>::quiet_NaN()));
     }
 }
@@ -316,18 +268,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Point)
 
         EXPECT_FALSE(cuboid.intersects(Point(+0.5, +2.0, +3.1)));
         EXPECT_FALSE(cuboid.intersects(Point(+0.5, -2.0, -3.1)));
-    }
-
-    {
-        const Point center = {0.0, 0.0, 0.0};
-        const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
-        };
-        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
-
-        EXPECT_ANY_THROW(Cuboid(center, axes, extent).intersects(Point::Undefined()));
-        EXPECT_ANY_THROW(Cuboid::Undefined().intersects(Point(0.0, 0.0, 0.0)));
-        EXPECT_ANY_THROW(Cuboid::Undefined().intersects(Point::Undefined()));
     }
 }
 
@@ -414,11 +354,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_PointSet
 
         EXPECT_FALSE(cuboid.intersects(pointSet));
     }
-
-    {
-        EXPECT_ANY_THROW(Cuboid::Undefined().intersects(PointSet::Empty()));
-        EXPECT_ANY_THROW(Cuboid::Undefined().intersects(PointSet({{+5.0, +2.0, +3.0}, {+5.0, +2.0, +3.0}})));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Line)
@@ -489,20 +424,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Line)
         EXPECT_FALSE(cuboid.intersects(Line({0.0, 0.0, -3.1}, {1.0, 0.0, 0.0})));
         EXPECT_FALSE(cuboid.intersects(Line({0.0, 0.0, -3.1}, {0.0, 1.0, 0.0})));
         EXPECT_TRUE(cuboid.intersects(Line({0.0, 0.0, -3.1}, {0.0, 0.0, 1.0})));
-    }
-
-    {
-        const Point center = {0.0, 0.0, 0.0};
-        const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
-        };
-        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
-
-        const Cuboid cuboid = {center, axes, extent};
-
-        EXPECT_ANY_THROW(Cuboid::Undefined().intersects(Line::Undefined()));
-        EXPECT_ANY_THROW(cuboid.intersects(Line::Undefined()));
-        EXPECT_ANY_THROW(Cuboid::Undefined().intersects(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0})));
     }
 }
 
@@ -612,18 +533,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_Point)
         EXPECT_FALSE(cuboid.contains(Point(+0.5, +2.0, +3.1)));
         EXPECT_FALSE(cuboid.contains(Point(+0.5, -2.0, -3.1)));
     }
-
-    {
-        const Point center = {0.0, 0.0, 0.0};
-        const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
-        };
-        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
-
-        EXPECT_ANY_THROW(Cuboid(center, axes, extent).contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Cuboid::Undefined().contains(Point(0.0, 0.0, 0.0)));
-        EXPECT_ANY_THROW(Cuboid::Undefined().contains(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_PointSet)
@@ -709,11 +618,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_PointSet)
 
         EXPECT_FALSE(cuboid.contains(pointSet));
     }
-
-    {
-        EXPECT_ANY_THROW(Cuboid::Undefined().contains(PointSet::Empty()));
-        EXPECT_ANY_THROW(Cuboid::Undefined().contains(PointSet({{+5.0, +2.0, +3.0}, {+5.0, +2.0, +3.0}})));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetCenter)
@@ -730,10 +634,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetCenter)
         const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_EQ(center, Cuboid(center, axes, extent).getCenter());
-    }
-
-    {
-        EXPECT_ANY_THROW(Cuboid::Undefined().getCenter());
     }
 }
 
@@ -752,10 +652,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetFirstAxis)
 
         EXPECT_EQ(axes[0], Cuboid(center, axes, extent).getFirstAxis());
     }
-
-    {
-        EXPECT_ANY_THROW(Cuboid::Undefined().getFirstAxis());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetSecondAxis)
@@ -772,10 +668,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetSecondAxis)
         const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_EQ(axes[1], Cuboid(center, axes, extent).getSecondAxis());
-    }
-
-    {
-        EXPECT_ANY_THROW(Cuboid::Undefined().getSecondAxis());
     }
 }
 
@@ -794,10 +686,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdAxis)
 
         EXPECT_EQ(axes[2], Cuboid(center, axes, extent).getThirdAxis());
     }
-
-    {
-        EXPECT_ANY_THROW(Cuboid::Undefined().getThirdAxis());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetFirstExtent)
@@ -814,10 +702,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetFirstExtent)
         const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_EQ(extent[0], Cuboid(center, axes, extent).getFirstExtent());
-    }
-
-    {
-        EXPECT_ANY_THROW(Cuboid::Undefined().getFirstExtent());
     }
 }
 
@@ -836,10 +720,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetSecondExtent)
 
         EXPECT_EQ(extent[1], Cuboid(center, axes, extent).getSecondExtent());
     }
-
-    {
-        EXPECT_ANY_THROW(Cuboid::Undefined().getSecondExtent());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdExtent)
@@ -856,10 +736,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdExtent)
         const std::array<double, 3> extent = {1.0, 2.0, 3.0};
 
         EXPECT_EQ(extent[2], Cuboid(center, axes, extent).getThirdExtent());
-    }
-
-    {
-        EXPECT_ANY_THROW(Cuboid::Undefined().getThirdExtent());
     }
 }
 
@@ -892,10 +768,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetVertices)
         };
 
         EXPECT_EQ(referenceVertices, cuboid.getVertices()) << referenceVertices << cuboid.getVertices();
-    }
-
-    {
-        EXPECT_ANY_THROW(Cuboid::Undefined().getVertices());
     }
 }
 
@@ -1034,30 +906,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, ApplyTransformation
 
         EXPECT_TRUE(cuboid.isNear(referenceCuboid, 1e-15)) << referenceCuboid << cuboid;
     }
-
-    {
-        const Point center = {1.0, 2.0, 0.0};
-        const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
-        };
-        const std::array<double, 3> extent = {1.0, 2.0, 3.0};
-
-        Cuboid cuboid = {center, axes, extent};
-
-        EXPECT_ANY_THROW(cuboid.applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Cuboid::Undefined().applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Cuboid::Undefined().applyTransformation(Transformation::Identity()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Undefined)
-{
-    using ostk::mathematics::geometry::d3::object::Cuboid;
-
-    {
-        EXPECT_NO_THROW(Cuboid::Undefined());
-        EXPECT_FALSE(Cuboid::Undefined().isDefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Cube)
@@ -1068,8 +916,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Cube)
 
     {
         const Cuboid cube = Cuboid::Cube({0.0, 0.0, 0.0}, 1.0);
-
-        EXPECT_TRUE(cube.isDefined());
 
         EXPECT_EQ(Point(0.0, 0.0, 0.0), cube.getCenter());
     }

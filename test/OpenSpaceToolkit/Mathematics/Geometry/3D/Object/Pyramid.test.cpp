@@ -61,17 +61,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, EqualToOperator)
     {
         // [TBI] Implement similarities
     }
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        EXPECT_FALSE(Pyramid(base, apex) == Pyramid::Undefined());
-        EXPECT_FALSE(Pyramid::Undefined() == Pyramid(base, apex));
-        EXPECT_FALSE(Pyramid::Undefined() == Pyramid::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, NotEqualToOperator)
@@ -93,17 +82,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, NotEqualToOperator
     {
         // [TBI] Implement similarities
     }
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        EXPECT_TRUE(Pyramid(base, apex) != Pyramid::Undefined());
-        EXPECT_TRUE(Pyramid::Undefined() != Pyramid(base, apex));
-        EXPECT_TRUE(Pyramid::Undefined() != Pyramid::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, StreamOperator)
@@ -124,27 +102,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, StreamOperator)
         EXPECT_NO_THROW(std::cout << Pyramid(base, apex) << std::endl);
 
         EXPECT_FALSE(testing::internal::GetCapturedStdout().empty());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IsDefined)
-{
-    using ostk::mathematics::geometry::d3::object::Point;
-    using ostk::mathematics::geometry::d3::object::Polygon;
-    using ostk::mathematics::geometry::d3::object::Pyramid;
-    using ostk::mathematics::object::Vector3d;
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        EXPECT_TRUE(Pyramid(base, apex).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Pyramid::Undefined().isDefined());
     }
 }
 
@@ -170,10 +127,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Intersects_Ellipso
         const Ellipsoid ellipsoid = {{0.0, 0.0, 10.0}, 5.0, 5.0, 5.0};
 
         EXPECT_TRUE(pyramid.intersects(ellipsoid));
-    }
-
-    {
-        EXPECT_ANY_THROW(Pyramid::Undefined().intersects(Ellipsoid::Undefined()));
     }
 }
 
@@ -291,10 +244,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_Point)
         EXPECT_FALSE(pyramid.contains(Point {2.0, 0.5, 0.0}));
         EXPECT_FALSE(pyramid.contains(Point {1.0, 2.0, 0.0}));
     }
-
-    {
-        EXPECT_ANY_THROW(Pyramid::Undefined().contains(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_PointSet)
@@ -322,10 +271,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_PointSet)
         EXPECT_FALSE(pyramid.contains(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, -1.0}})));
         EXPECT_FALSE(pyramid.contains(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, -2.0}})));
         EXPECT_FALSE(pyramid.contains(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, -3.0}})));
-    }
-
-    {
-        EXPECT_ANY_THROW(Pyramid::Undefined().contains(PointSet::Empty()));
     }
 }
 
@@ -355,10 +300,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_Segment)
         EXPECT_FALSE(pyramid.contains(Segment {{0.0, 0.0, 0.0}, {0.0, 0.0, -2.0}}));
         EXPECT_FALSE(pyramid.contains(Segment {{0.0, 0.0, 0.0}, {0.0, 0.0, -3.0}}));
     }
-
-    {
-        EXPECT_ANY_THROW(Pyramid::Undefined().contains(Segment::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetBase)
@@ -376,10 +317,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetBase)
 
         EXPECT_EQ(base, Pyramid(base, apex).getBase());
     }
-
-    {
-        EXPECT_ANY_THROW(Pyramid::Undefined().getBase());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetApex)
@@ -396,10 +333,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetApex)
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_EQ(apex, Pyramid(base, apex).getApex());
-    }
-
-    {
-        EXPECT_ANY_THROW(Pyramid::Undefined().getApex());
     }
 }
 
@@ -447,10 +380,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IntersectionWith_E
         };
 
         EXPECT_TRUE(intersectionLineString.isNear(referenceLineString, 1e-10));
-    }
-
-    {
-        EXPECT_ANY_THROW(Pyramid::Undefined().intersectionWith(Ellipsoid::Undefined()));
     }
 }
 
@@ -509,26 +438,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, ApplyTransformatio
             << referencePyramid.getBase() << pyramid.getBase();
         EXPECT_TRUE(pyramid.getApex().isNear(referencePyramid.getApex(), 1e-15))
             << referencePyramid.getApex().toString() << pyramid.getApex().toString();
-    }
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        EXPECT_ANY_THROW(Pyramid::Undefined().applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Pyramid::Undefined().applyTransformation(Transformation::Identity()));
-        EXPECT_ANY_THROW(Pyramid(base, apex).applyTransformation(Transformation::Undefined()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Undefined)
-{
-    using ostk::mathematics::geometry::d3::object::Pyramid;
-
-    {
-        EXPECT_NO_THROW(Pyramid::Undefined());
-        EXPECT_FALSE(Pyramid::Undefined().isDefined());
     }
 }

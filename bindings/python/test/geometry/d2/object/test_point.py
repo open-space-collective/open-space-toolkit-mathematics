@@ -21,15 +21,6 @@ class TestPoint:
         assert point is not None
         assert isinstance(point, Point)
         assert isinstance(point, Object)
-        assert point.is_defined()
-
-    def test_undefined_constructor_success(self):
-        point: Point = Point.undefined()
-
-        assert point is not None
-        assert isinstance(point, Point)
-        assert isinstance(point, Object)
-        assert point.is_defined() is False
 
     def test_origin_constructor_success(self):
         point: Point = Point.origin()
@@ -37,7 +28,6 @@ class TestPoint:
         assert point is not None
         assert isinstance(point, Point)
         assert isinstance(point, Object)
-        assert point.is_defined()
         assert point.x() - 0.0 <= 1e-12
         assert point.y() - 0.0 <= 1e-12
 
@@ -48,7 +38,6 @@ class TestPoint:
         assert point is not None
         assert isinstance(point, Point)
         assert isinstance(point, Object)
-        assert point.is_defined()
         assert (point.x() - 3.4) <= 1e-15
         assert (point.y() + 6.7) <= 1e-15
 
@@ -58,7 +47,6 @@ class TestPoint:
         assert point is not None
         assert isinstance(point, Point)
         assert isinstance(point, Object)
-        assert point.is_defined()
         assert (point.x() - 3.4) <= 1e-15
         assert (point.y() + 6.7) <= 1e-15
 
@@ -68,7 +56,6 @@ class TestPoint:
         assert point is not None
         assert isinstance(point, Point)
         assert isinstance(point, Object)
-        assert point.is_defined()
         assert (point.x() - 3.4) <= 1e-15
         assert (point.y() + 6.7) <= 1e-15
 
@@ -104,7 +91,6 @@ class TestPoint:
 
         assert point is not None
         assert isinstance(point, Point)
-        assert point.is_defined()
         assert point.x() - (point_1.x() + point_2.x()) <= 1e-12
         assert point.y() - (point_1.y() + point_2.y()) <= 1e-12
 
@@ -112,7 +98,6 @@ class TestPoint:
 
         assert point is not None
         assert isinstance(point, Point)
-        assert point.is_defined()
         assert point.x() - (point_3.x() + point_2.x()) <= 1e-12
         assert point.y() - (point_3.y() + point_2.y()) <= 1e-12
 
@@ -120,7 +105,6 @@ class TestPoint:
 
         assert point is not None
         assert isinstance(point, Point)
-        assert point.is_defined()
         assert point.x() - (point_1.x() + point_4.x()) <= 1e-12
         assert point.y() - (point_1.y() + point_4.y()) <= 1e-12
 
@@ -128,21 +112,18 @@ class TestPoint:
 
         assert point is not None
         assert isinstance(point, Point)
-        assert point.is_defined()
         assert point == point_1
 
         point: Point = point_1 + [0.0, 0.0]
 
         assert point is not None
         assert isinstance(point, Point)
-        assert point.is_defined()
         assert point == point_1
 
         point: Point = point_1 + np.array((0.0, 0.0))
 
         assert point is not None
         assert isinstance(point, Point)
-        assert point.is_defined()
         assert point == point_1
 
         # point: Point = point_1 - point_1
@@ -150,16 +131,9 @@ class TestPoint:
         # assert point is not None
         # assert isinstance(point, Point)
         # assert isinstance(point, Object)
-        # assert point.is_defined()
         # assert point.x == 0.0
         # assert point.y == 0.0
         # assert point == Point.origin()
-
-    def test_is_defined(self):
-        point: Point = Point(3.5, 5.6)
-
-        assert point.is_defined()
-        assert Point.undefined().is_defined() is False
 
     def test_is_near(self):
         point_1: Point = Point(3.5, 5.6)

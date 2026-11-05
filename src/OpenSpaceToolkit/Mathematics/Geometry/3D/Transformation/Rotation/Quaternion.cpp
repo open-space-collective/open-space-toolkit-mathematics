@@ -56,11 +56,6 @@ Quaternion::Quaternion(const Vector3d& aVectorPart, double aScalarPart)
 
 bool Quaternion::operator==(const Quaternion& aQuaternion) const
 {
-    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
-    {
-        return false;
-    }
-
     return ((x_ == +aQuaternion.x_) && (y_ == +aQuaternion.y_) && (z_ == +aQuaternion.z_) && (s_ == +aQuaternion.s_)) ||
            ((x_ == -aQuaternion.x_) && (y_ == -aQuaternion.y_) && (z_ == -aQuaternion.z_) && (s_ == -aQuaternion.s_));
 }
@@ -119,11 +114,6 @@ Quaternion Quaternion::operator^(double aScalar) const
 
 Quaternion& Quaternion::operator+=(const Quaternion& aQuaternion)
 {
-    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     x_ += aQuaternion.x_;
     y_ += aQuaternion.y_;
     z_ += aQuaternion.z_;
@@ -155,32 +145,18 @@ std::ostream& operator<<(std::ostream& anOutputStream, const Quaternion& aQuater
 {
     ostk::core::utils::Print::Header(anOutputStream, "Quaternion");
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "X:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.x_) : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Y:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.y_) : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Z:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.z_) : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "S:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.s_) : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "X:" << String::Format("{:15f}", aQuaternion.x_);
+    ostk::core::utils::Print::Line(anOutputStream) << "Y:" << String::Format("{:15f}", aQuaternion.y_);
+    ostk::core::utils::Print::Line(anOutputStream) << "Z:" << String::Format("{:15f}", aQuaternion.z_);
+    ostk::core::utils::Print::Line(anOutputStream) << "S:" << String::Format("{:15f}", aQuaternion.s_);
 
     ostk::core::utils::Print::Footer(anOutputStream);
 
     return anOutputStream;
 }
 
-bool Quaternion::isDefined() const
-{
-    return !std::isnan(x_) && !std::isnan(y_) && !std::isnan(z_) && !std::isnan(s_);
-}
-
 bool Quaternion::isUnitary(double aNormTolerance) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     if (std::isnan(aNormTolerance) || aNormTolerance <= 0.0)
     {
         throw ostk::core::error::runtime::Undefined("Norm tolerance");
@@ -191,72 +167,37 @@ bool Quaternion::isUnitary(double aNormTolerance) const
 
 bool Quaternion::isNear(const Quaternion& aQuaternion, const Angle& anAngularTolerance) const
 {
-    if (!anAngularTolerance.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Angular tolerance");
-    }
-
     return this->angularDifferenceWith(aQuaternion).inRadians(0.0, 2.0 * M_PI) <=
            anAngularTolerance.inRadians(0.0, 2.0 * M_PI);
 }
 
 double Quaternion::x() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     return x_;
 }
 
 double Quaternion::y() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     return y_;
 }
 
 double Quaternion::z() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     return z_;
 }
 
 double Quaternion::s() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     return s_;
 }
 
 Vector3d Quaternion::getVectorPart() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     return {x_, y_, z_};
 }
 
 double Quaternion::getScalarPart() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     return s_;
 }
 
@@ -319,11 +260,6 @@ Quaternion Quaternion::pow(double aValue) const
 
 double Quaternion::norm() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     return std::sqrt((x_ * x_) + (y_ * y_) + (z_ * z_) + (s_ * s_));
 }
 
@@ -359,21 +295,11 @@ Quaternion Quaternion::dotMultiply(const Quaternion& aQuaternion) const
 
 double Quaternion::dotProduct(const Quaternion& aQuaternion) const
 {
-    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     return (x_ * aQuaternion.x_) + (y_ * aQuaternion.y_) + (z_ * aQuaternion.z_) + (s_ * aQuaternion.s_);
 }
 
 Vector3d Quaternion::rotateVector(const Vector3d& aVector, double aNormTolerance) const
 {
-    if (!aVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Vector");
-    }
-
     if (!this->isUnitary(aNormTolerance))
     {
         throw ostk::core::error::RuntimeError("Quaternion with norm [{}] is not unitary.", this->norm());
@@ -384,11 +310,6 @@ Vector3d Quaternion::rotateVector(const Vector3d& aVector, double aNormTolerance
 
 Vector4d Quaternion::toVector(const Quaternion::Format& aFormat) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     switch (aFormat)
     {
         case Quaternion::Format::XYZS:
@@ -401,8 +322,6 @@ Vector4d Quaternion::toVector(const Quaternion::Format& aFormat) const
             throw ostk::core::error::runtime::Wrong("Format");
             break;
     }
-
-    return Vector4d::Undefined();
 }
 
 String Quaternion::toString(const Quaternion::Format& aFormat) const
@@ -434,11 +353,6 @@ Quaternion& Quaternion::normalize()
 
 Quaternion& Quaternion::conjugate()
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     x_ = -x_;
     y_ = -y_;
     z_ = -z_;
@@ -448,11 +362,6 @@ Quaternion& Quaternion::conjugate()
 
 Quaternion& Quaternion::inverse()
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     const double reducedNorm = (x_ * x_) + (y_ * y_) + (z_ * z_) + (s_ * s_);
 
     if (std::abs(reducedNorm) < 1e-15)
@@ -470,11 +379,6 @@ Quaternion& Quaternion::inverse()
 
 Quaternion& Quaternion::rectify()
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     if (s_ < 0.0)
     {
         x_ = -x_;
@@ -496,17 +400,6 @@ Angle Quaternion::angularDifferenceWith(const Quaternion& aQuaternion) const
     const Quaternion deltaQuaternion = ((*this) / aQuaternion).normalize();
 
     return Angle::Radians(2.0 * std::acos(std::abs(deltaQuaternion.s_)));
-}
-
-Quaternion Quaternion::Undefined()
-{
-    return {
-        std::numeric_limits<double>::quiet_NaN(),
-        std::numeric_limits<double>::quiet_NaN(),
-        std::numeric_limits<double>::quiet_NaN(),
-        std::numeric_limits<double>::quiet_NaN(),
-        Quaternion::Format::XYZS
-    };
 }
 
 Quaternion Quaternion::Unit()
@@ -603,11 +496,6 @@ Quaternion Quaternion::EulerAngle(const rotation::EulerAngle& aEulerAngle)
     // F. Landis Markley and John L. Crassidis, Springer
     // Table B.5, p. 364
 
-    if (!aEulerAngle.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Euler angle");
-    }
-
     const double phi = aEulerAngle.getPhi().inRadians();
     const double theta = aEulerAngle.getTheta().inRadians();
     const double psi = aEulerAngle.getPsi().inRadians();
@@ -678,16 +566,6 @@ Quaternion Quaternion::Parse(const String& aString, const Quaternion::Format& aF
 
 Quaternion Quaternion::ShortestRotation(const Vector3d& aFirstVector, const Vector3d& aSecondVector)
 {
-    if (!aFirstVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("First vector");
-    }
-
-    if (!aSecondVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Second vector");
-    }
-
     const Vector3d firstNormalizedVector = aFirstVector.normalized();
     const Vector3d secondNormalizedVector = aSecondVector.normalized();
 

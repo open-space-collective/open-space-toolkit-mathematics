@@ -24,11 +24,6 @@ Transformation::Transformation(const Matrix3d& aMatrix)
 
 bool Transformation::operator==(const Transformation& aTransformation) const
 {
-    if ((!this->isDefined()) || (!aTransformation.isDefined()))
-    {
-        return false;
-    }
-
     return matrix_ == aTransformation.matrix_;
 }
 
@@ -48,16 +43,6 @@ Transformation Transformation::operator*(const Transformation& aTransformation) 
 
 Vector3d Transformation::operator*(const Vector3d& aVector) const
 {
-    if (!aVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Vector");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
     return matrix_ * aVector;
 }
 
@@ -66,28 +51,8 @@ Transformation& Transformation::operator*=(const Transformation& aTransformation
     using ostk::core::container::Map;
     using ostk::core::container::Pair;
 
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
     static const Map<Pair<Transformation::Type, Transformation::Type>, Transformation::Type> TypeCompositionMap = {
 
-        {{Transformation::Type::Undefined, Transformation::Type::Undefined}, Transformation::Type::Undefined},
-        {{Transformation::Type::Undefined, Transformation::Type::Identity}, Transformation::Type::Undefined},
-        {{Transformation::Type::Undefined, Transformation::Type::Translation}, Transformation::Type::Undefined},
-        {{Transformation::Type::Undefined, Transformation::Type::Rotation}, Transformation::Type::Undefined},
-        {{Transformation::Type::Undefined, Transformation::Type::Scaling}, Transformation::Type::Undefined},
-        {{Transformation::Type::Undefined, Transformation::Type::Reflection}, Transformation::Type::Undefined},
-        {{Transformation::Type::Undefined, Transformation::Type::Shear}, Transformation::Type::Undefined},
-        {{Transformation::Type::Undefined, Transformation::Type::Affine}, Transformation::Type::Undefined},
-
-        {{Transformation::Type::Identity, Transformation::Type::Undefined}, Transformation::Type::Undefined},
         {{Transformation::Type::Identity, Transformation::Type::Identity}, Transformation::Type::Identity},
         {{Transformation::Type::Identity, Transformation::Type::Translation}, Transformation::Type::Translation},
         {{Transformation::Type::Identity, Transformation::Type::Rotation}, Transformation::Type::Rotation},
@@ -96,7 +61,6 @@ Transformation& Transformation::operator*=(const Transformation& aTransformation
         {{Transformation::Type::Identity, Transformation::Type::Shear}, Transformation::Type::Shear},
         {{Transformation::Type::Identity, Transformation::Type::Affine}, Transformation::Type::Affine},
 
-        {{Transformation::Type::Translation, Transformation::Type::Undefined}, Transformation::Type::Undefined},
         {{Transformation::Type::Translation, Transformation::Type::Identity}, Transformation::Type::Translation},
         {{Transformation::Type::Translation, Transformation::Type::Translation}, Transformation::Type::Translation},
         {{Transformation::Type::Translation, Transformation::Type::Rotation}, Transformation::Type::Affine},
@@ -105,7 +69,6 @@ Transformation& Transformation::operator*=(const Transformation& aTransformation
         {{Transformation::Type::Translation, Transformation::Type::Shear}, Transformation::Type::Affine},
         {{Transformation::Type::Translation, Transformation::Type::Affine}, Transformation::Type::Affine},
 
-        {{Transformation::Type::Rotation, Transformation::Type::Undefined}, Transformation::Type::Undefined},
         {{Transformation::Type::Rotation, Transformation::Type::Identity}, Transformation::Type::Rotation},
         {{Transformation::Type::Rotation, Transformation::Type::Translation}, Transformation::Type::Affine},
         {{Transformation::Type::Rotation, Transformation::Type::Rotation}, Transformation::Type::Rotation},
@@ -114,7 +77,6 @@ Transformation& Transformation::operator*=(const Transformation& aTransformation
         {{Transformation::Type::Rotation, Transformation::Type::Shear}, Transformation::Type::Affine},
         {{Transformation::Type::Rotation, Transformation::Type::Affine}, Transformation::Type::Affine},
 
-        {{Transformation::Type::Reflection, Transformation::Type::Undefined}, Transformation::Type::Undefined},
         {{Transformation::Type::Reflection, Transformation::Type::Identity}, Transformation::Type::Reflection},
         {{Transformation::Type::Reflection, Transformation::Type::Translation}, Transformation::Type::Affine},
         {{Transformation::Type::Reflection, Transformation::Type::Rotation}, Transformation::Type::Affine},
@@ -123,7 +85,6 @@ Transformation& Transformation::operator*=(const Transformation& aTransformation
         {{Transformation::Type::Reflection, Transformation::Type::Shear}, Transformation::Type::Affine},
         {{Transformation::Type::Reflection, Transformation::Type::Affine}, Transformation::Type::Affine},
 
-        {{Transformation::Type::Scaling, Transformation::Type::Undefined}, Transformation::Type::Undefined},
         {{Transformation::Type::Scaling, Transformation::Type::Identity}, Transformation::Type::Scaling},
         {{Transformation::Type::Scaling, Transformation::Type::Translation}, Transformation::Type::Affine},
         {{Transformation::Type::Scaling, Transformation::Type::Rotation}, Transformation::Type::Affine},
@@ -132,7 +93,6 @@ Transformation& Transformation::operator*=(const Transformation& aTransformation
         {{Transformation::Type::Scaling, Transformation::Type::Shear}, Transformation::Type::Affine},
         {{Transformation::Type::Scaling, Transformation::Type::Affine}, Transformation::Type::Affine},
 
-        {{Transformation::Type::Shear, Transformation::Type::Undefined}, Transformation::Type::Undefined},
         {{Transformation::Type::Shear, Transformation::Type::Identity}, Transformation::Type::Shear},
         {{Transformation::Type::Shear, Transformation::Type::Translation}, Transformation::Type::Affine},
         {{Transformation::Type::Shear, Transformation::Type::Rotation}, Transformation::Type::Affine},
@@ -141,7 +101,6 @@ Transformation& Transformation::operator*=(const Transformation& aTransformation
         {{Transformation::Type::Shear, Transformation::Type::Shear}, Transformation::Type::Affine},
         {{Transformation::Type::Shear, Transformation::Type::Affine}, Transformation::Type::Affine},
 
-        {{Transformation::Type::Affine, Transformation::Type::Undefined}, Transformation::Type::Undefined},
         {{Transformation::Type::Affine, Transformation::Type::Identity}, Transformation::Type::Affine},
         {{Transformation::Type::Affine, Transformation::Type::Translation}, Transformation::Type::Affine},
         {{Transformation::Type::Affine, Transformation::Type::Rotation}, Transformation::Type::Affine},
@@ -165,11 +124,6 @@ std::ostream& operator<<(std::ostream& anOutputStream, const Transformation& aTr
     return anOutputStream;
 }
 
-bool Transformation::isDefined() const
-{
-    return type_ != Transformation::Type::Undefined;
-}
-
 bool Transformation::isIdentity() const
 {
     return type_ == Transformation::Type::Identity;
@@ -185,7 +139,6 @@ bool Transformation::isRigid() const
         case Transformation::Type::Reflection:
             return true;
 
-        case Transformation::Type::Undefined:
         case Transformation::Type::Scaling:
         case Transformation::Type::Shear:
         case Transformation::Type::Affine:
@@ -198,31 +151,16 @@ bool Transformation::isRigid() const
 
 Transformation::Type Transformation::getType() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
     return type_;
 }
 
 const Matrix3d& Transformation::getMatrix() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
     return matrix_;
 }
 
 Transformation Transformation::getInverse() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
     return {type_, matrix_.inverse()};
 }
 
@@ -260,11 +198,6 @@ void Transformation::print(std::ostream& anOutputStream, bool displayDecorators)
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
 
-Transformation Transformation::Undefined()
-{
-    return {Transformation::Type::Undefined, Matrix3d::Undefined()};
-}
-
 Transformation Transformation::Identity()
 {
     return {Transformation::Type::Identity, Matrix3d::Identity()};
@@ -272,11 +205,6 @@ Transformation Transformation::Identity()
 
 Transformation Transformation::Translation(const Vector2d& aTranslationVector)
 {
-    if (!aTranslationVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Translation vector");
-    }
-
     Matrix3d transformationMatrix;
 
     transformationMatrix << 1.0, 0.0, aTranslationVector.x(), 0.0, 1.0, aTranslationVector.y(), 0.0, 0.0, 1.0;
@@ -286,11 +214,6 @@ Transformation Transformation::Translation(const Vector2d& aTranslationVector)
 
 Transformation Transformation::Rotation(const Angle& aRotationAngle)
 {
-    if (!aRotationAngle.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation angle");
-    }
-
     const double rotationAngle_rad = aRotationAngle.inRadians();
 
     const double cosRotationAngle = std::cos(rotationAngle_rad);
@@ -314,9 +237,6 @@ String Transformation::StringFromType(const Transformation::Type& aType)
 {
     switch (aType)
     {
-        case Transformation::Type::Undefined:
-            return "Undefined";
-
         case Transformation::Type::Identity:
             return "Identity";
 
@@ -348,11 +268,6 @@ String Transformation::StringFromType(const Transformation::Type& aType)
 
 Transformation::Type Transformation::TypeOfMatrix(const Matrix3d& aMatrix)
 {
-    if (!aMatrix.isDefined())
-    {
-        return Transformation::Type::Undefined;
-    }
-
     if (aMatrix == Matrix3d::Identity())
     {
         return Transformation::Type::Identity;
@@ -361,8 +276,6 @@ Transformation::Type Transformation::TypeOfMatrix(const Matrix3d& aMatrix)
     // [TBI] ...
 
     throw ostk::core::error::RuntimeError("Cannot identify transformation type.");
-
-    return Transformation::Type::Undefined;
 }
 
 Transformation::Transformation(const Transformation::Type& aType, const Matrix3d& aMatrix)

@@ -85,20 +85,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(nanobind::mo
         .def("__repr__", &(shiftToString<Cuboid>))
 
         .def(
-            "is_defined",
-            &Cuboid::isDefined,
-            R"doc(
-                Check if the cuboid is defined.
-
-                Returns:
-                    bool: True if the cuboid is defined, False otherwise.
-
-                Example:
-                    >>> cuboid = Cuboid(center, axes, extent)
-                    >>> cuboid.is_defined()  # True
-            )doc"
-        )
-        .def(
             "is_near",
             &Cuboid::isNear,
             R"doc(
@@ -316,20 +302,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(nanobind::mo
             arg("transformation")
         )
 
-        .def_static(
-            "undefined",
-            &Cuboid::Undefined,
-            R"doc(
-                Create an undefined cuboid.
-
-                Returns:
-                    Cuboid: An undefined cuboid object.
-
-                Example:
-                    >>> undefined_cuboid = Cuboid.undefined()
-                    >>> undefined_cuboid.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "cube",
             &Cuboid::Cube,

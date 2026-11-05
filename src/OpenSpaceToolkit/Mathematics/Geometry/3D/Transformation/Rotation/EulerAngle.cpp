@@ -49,11 +49,6 @@ EulerAngle::EulerAngle(
 
 bool EulerAngle::operator==(const EulerAngle& aEulerAngle) const
 {
-    if ((!this->isDefined()) || (!aEulerAngle.isDefined()))
-    {
-        return false;
-    }
-
     if (axisSequence_ != aEulerAngle.axisSequence_)
     {
         return false;
@@ -83,26 +78,15 @@ std::ostream& operator<<(std::ostream& anOutputStream, const EulerAngle& aEulerA
 {
     ostk::core::utils::Print::Header(anOutputStream, "Euler Angle");
 
+    ostk::core::utils::Print::Line(anOutputStream) << "Phi:" << String::Format("{}", aEulerAngle.phi_.toString());
+    ostk::core::utils::Print::Line(anOutputStream) << "Theta:" << String::Format("{}", aEulerAngle.theta_.toString());
+    ostk::core::utils::Print::Line(anOutputStream) << "Psi:" << String::Format("{}", aEulerAngle.psi_.toString());
     ostk::core::utils::Print::Line(anOutputStream)
-        << "Phi:" << (aEulerAngle.isDefined() ? String::Format("{}", aEulerAngle.phi_.toString()) : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Theta:" << (aEulerAngle.isDefined() ? String::Format("{}", aEulerAngle.theta_.toString()) : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Psi:" << (aEulerAngle.isDefined() ? String::Format("{}", aEulerAngle.psi_.toString()) : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream
-    ) << "Axis sequence:"
-      << (aEulerAngle.isDefined() ? String::Format("{}", EulerAngle::StringFromAxisSequence(aEulerAngle.axisSequence_))
-                                  : "Undefined");
+        << "Axis sequence:" << String::Format("{}", EulerAngle::StringFromAxisSequence(aEulerAngle.axisSequence_));
 
     ostk::core::utils::Print::Footer(anOutputStream);
 
     return anOutputStream;
-}
-
-bool EulerAngle::isDefined() const
-{
-    return phi_.isDefined() && theta_.isDefined() && psi_.isDefined() &&
-           axisSequence_ != EulerAngle::AxisSequence::Undefined;
 }
 
 bool EulerAngle::isUnitary() const
@@ -117,61 +101,31 @@ bool EulerAngle::isNear(const EulerAngle& aEulerAngle, const Angle& anAngularTol
 
 const Angle& EulerAngle::getPhi() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Euler Angle");
-    }
-
     return phi_;
 }
 
 const Angle& EulerAngle::getTheta() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Euler Angle");
-    }
-
     return theta_;
 }
 
 const Angle& EulerAngle::getPsi() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Euler Angle");
-    }
-
     return psi_;
 }
 
 EulerAngle::AxisSequence EulerAngle::getAxisSequence() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Euler Angle");
-    }
-
     return axisSequence_;
 }
 
 Vector3d EulerAngle::toVector(const Angle::Unit& anAngleUnit) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Euler Angle");
-    }
-
     return {phi_.in(anAngleUnit), theta_.in(anAngleUnit), psi_.in(anAngleUnit)};
 }
 
 String EulerAngle::toString(const Angle::Unit& anAngleUnit) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Euler Angle");
-    }
-
     return String::Format(
         "[{}, {}, {}] ({})",
         phi_.in(anAngleUnit),
@@ -179,11 +133,6 @@ String EulerAngle::toString(const Angle::Unit& anAngleUnit) const
         psi_.in(anAngleUnit),
         EulerAngle::StringFromAxisSequence(axisSequence_)
     );
-}
-
-EulerAngle EulerAngle::Undefined()
-{
-    return {Angle::Undefined(), Angle::Undefined(), Angle::Undefined(), EulerAngle::AxisSequence::Undefined};
 }
 
 EulerAngle EulerAngle::Unit()
@@ -210,11 +159,6 @@ EulerAngle EulerAngle::Quaternion(
     const rotation::Quaternion& aQuaternion, const EulerAngle::AxisSequence& anAxisSequence
 )
 {
-    if (!aQuaternion.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     if (!aQuaternion.isUnitary())
     {
         throw ostk::core::error::RuntimeError("Quaternion is not unitary.");
@@ -266,11 +210,6 @@ EulerAngle EulerAngle::RotationMatrix(
     const rotation::RotationMatrix& aRotationMatrix, const EulerAngle::AxisSequence& anAxisSequence
 )
 {
-    if (!aRotationMatrix.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation Matrix");
-    }
-
     double phi = std::numeric_limits<double>::quiet_NaN();
     double theta = std::numeric_limits<double>::quiet_NaN();
     double psi = std::numeric_limits<double>::quiet_NaN();

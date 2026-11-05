@@ -100,7 +100,13 @@ class NumericalSolver
     /// @brief                  Not equal to operator
     ///
     /// @code{.cpp}
-    ///                         NumericalSolver::Default() != NumericalSolver::Undefined();
+    ///                         NumericalSolver::Default() != NumericalSolver(
+    ///                             NumericalSolver::LogType::NoLog,
+    ///                             NumericalSolver::StepperType::RungeKuttaCashKarp54,
+    ///                             1.0,
+    ///                             1e-6,
+    ///                             1e-6
+    ///                         );
     /// @endcode
     ///
     /// @param                  [in] aNumericalSolver A numerical solver
@@ -117,15 +123,6 @@ class NumericalSolver
     /// @param                  [in] aNumericalSolver A numerical solver
     /// @return                 Output stream reference
     friend std::ostream& operator<<(std::ostream& anOutputStream, const NumericalSolver& aNumericalSolver);
-
-    /// @brief                  Check if numerical solver is defined
-    ///
-    /// @code{.cpp}
-    ///                         NumericalSolver::Default().isDefined();
-    /// @endcode
-    ///
-    /// @return                 True if numerical solver is defined
-    bool isDefined() const;
 
     /// @brief                  Print numerical solver
     ///
@@ -281,15 +278,6 @@ class NumericalSolver
     /// @param                  [in] aLogType An integration log type enum
     /// @return                 LogType
     static String StringFromLogType(const NumericalSolver::LogType& aLogType);
-
-    /// @brief                  Undefined
-    ///
-    /// @code{.cpp}
-    ///                         NumericalSolver solver = NumericalSolver::Undefined();
-    /// @endcode
-    ///
-    /// @return                 An undefined numerical solver
-    static NumericalSolver Undefined();
 
     /// @brief                  Default
     ///

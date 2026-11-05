@@ -72,11 +72,6 @@ Cuboid* Cuboid::clone() const
 
 bool Cuboid::operator==(const Cuboid& aCuboid) const
 {
-    if ((!this->isDefined()) || (!aCuboid.isDefined()))
-    {
-        return false;
-    }
-
     if (center_ == aCuboid.center_)
     {
         if (((axes_[0] == aCuboid.axes_[0]) || (axes_[0] == -aCuboid.axes_[0])) && (extent_[0] == aCuboid.extent_[0]))
@@ -154,27 +149,11 @@ bool Cuboid::operator!=(const Cuboid& aCuboid) const
     return !((*this) == aCuboid);
 }
 
-bool Cuboid::isDefined() const
-{
-    return center_.isDefined() && axes_[0].isDefined() && axes_[1].isDefined() && axes_[2].isDefined() &&
-           !std::isnan(extent_[0]) && !std::isnan(extent_[1]) && !std::isnan(extent_[2]);
-}
-
 bool Cuboid::isNear(const Cuboid& aCuboid, double aTolerance) const
 {
-    if (!aCuboid.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     if (std::isnan(aTolerance))
     {
         throw ostk::core::error::runtime::Undefined("Tolerance");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
     }
 
     return PointSet(this->getVertices()).isNear(PointSet(aCuboid.getVertices()), aTolerance);
@@ -187,11 +166,6 @@ bool Cuboid::intersects(const Point& aPoint) const
 
 bool Cuboid::intersects(const PointSet& aPointSet) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     return (!aPointSet.isEmpty()) && std::any_of(
                                          aPointSet.begin(),
                                          aPointSet.end(),
@@ -204,16 +178,6 @@ bool Cuboid::intersects(const PointSet& aPointSet) const
 
 bool Cuboid::intersects(const Line& aLine) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
-    if (!aLine.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line");
-    }
-
     // Line
 
     const gte::Line3<double> line = {
@@ -243,16 +207,6 @@ bool Cuboid::intersects(const Line& aLine) const
 
 bool Cuboid::intersects(const Cuboid& aCuboid) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
-    if (!aCuboid.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     // First cuboid
 
     const gte::Vector3<double> firstCenter = CuboidGteVectorFromPoint(center_);
@@ -288,16 +242,6 @@ bool Cuboid::intersects(const Cuboid& aCuboid) const
 
 bool Cuboid::contains(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     const Vector3d dx = aPoint - center_;
 
     const double a = std::abs(dx.dot(axes_[0]));
@@ -324,11 +268,6 @@ bool Cuboid::contains(const Point& aPoint) const
 
 bool Cuboid::contains(const PointSet& aPointSet) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     return (!aPointSet.isEmpty()) && std::all_of(
                                          aPointSet.begin(),
                                          aPointSet.end(),
@@ -346,81 +285,41 @@ bool Cuboid::contains(const Segment& aSegment) const
 
 const Point& Cuboid::getCenter() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     return center_;
 }
 
 const Vector3d& Cuboid::getFirstAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     return axes_[0];
 }
 
 const Vector3d& Cuboid::getSecondAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     return axes_[1];
 }
 
 const Vector3d& Cuboid::getThirdAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     return axes_[2];
 }
 
 double Cuboid::getFirstExtent() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     return extent_[0];
 }
 
 double Cuboid::getSecondExtent() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     return extent_[1];
 }
 
 double Cuboid::getThirdExtent() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     return extent_[2];
 }
 
 Array<Cuboid::Vertex> Cuboid::getVertices() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
-
     Array<Cuboid::Vertex> vertices = Array<Cuboid::Vertex>::Empty();
 
     vertices.reserve(8);
@@ -445,15 +344,11 @@ void Cuboid::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
     displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Cuboid") : void();
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Center:" << (center_.isDefined() ? center_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "Center:" << center_.toString();
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "First axis:" << (axes_[0].isDefined() ? axes_[0].toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Second axis:" << (axes_[1].isDefined() ? axes_[1].toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Third axis:" << (axes_[2].isDefined() ? axes_[2].toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "First axis:" << axes_[0].toString();
+    ostk::core::utils::Print::Line(anOutputStream) << "Second axis:" << axes_[1].toString();
+    ostk::core::utils::Print::Line(anOutputStream) << "Third axis:" << axes_[2].toString();
 
     ostk::core::utils::Print::Line(anOutputStream) << "First extent:" << DoubleToString(extent_[0]);
     ostk::core::utils::Print::Line(anOutputStream) << "Second extent:" << DoubleToString(extent_[1]);
@@ -465,16 +360,6 @@ void Cuboid::print(std::ostream& anOutputStream, bool displayDecorators) const
 void Cuboid::applyTransformation(const Transformation& aTransformation)
 {
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
-
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cuboid");
-    }
 
     if (aTransformation.isIdentity())
     {
@@ -496,24 +381,8 @@ void Cuboid::applyTransformation(const Transformation& aTransformation)
     axes_[2].normalize();
 }
 
-Cuboid Cuboid::Undefined()
-{
-    return {
-        Point::Undefined(),
-        {Vector3d::Undefined(), Vector3d::Undefined(), Vector3d::Undefined()},
-        {std::numeric_limits<double>::quiet_NaN(),
-         std::numeric_limits<double>::quiet_NaN(),
-         std::numeric_limits<double>::quiet_NaN()}
-    };
-}
-
 Cuboid Cuboid::Cube(const Point& aCenter, double anExtent)
 {
-    if (!aCenter.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Center");
-    }
-
     if (std::isnan(anExtent))
     {
         throw ostk::core::error::runtime::Undefined("Extent");

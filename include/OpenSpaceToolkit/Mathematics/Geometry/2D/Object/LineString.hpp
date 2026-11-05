@@ -84,15 +84,6 @@ class LineString : public Object
     /// @return             True if line strings are not equal
     bool operator!=(const LineString& aLineString) const;
 
-    /// @brief              Check if line string is defined
-    ///
-    /// @code
-    ///                     LineString(0.0, 0.0).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if line string is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if line string is empty
     ///
     /// @code

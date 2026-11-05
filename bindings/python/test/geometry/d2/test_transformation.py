@@ -15,7 +15,6 @@ def test_geometry_d2_transformation_type():
     enum_members = Type.__members__
 
     list_keys = [
-        "Undefined",
         "Identity",
         "Translation",
         "Rotation",
@@ -26,7 +25,6 @@ def test_geometry_d2_transformation_type():
     ]
 
     list_values = [
-        Type.Undefined,
         Type.Identity,
         Type.Translation,
         Type.Rotation,
@@ -47,7 +45,6 @@ def test_geometry_d2_transformation_constructor():
 
     assert transformation is not None
     assert isinstance(transformation, Transformation)
-    assert transformation.is_defined()
 
     # Construction using python numpy array
     M = np.array(M)
@@ -55,21 +52,12 @@ def test_geometry_d2_transformation_constructor():
 
     assert transformation is not None
     assert isinstance(transformation, Transformation)
-    assert transformation.is_defined()
 
 
 def test_geometry_d2_transformation_comparators():
     M1 = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
 
     transformation: Transformation = Transformation(M1)
-
-
-def test_geometry_d2_transformation_defined():
-    transformation: Transformation = Transformation.undefined()
-
-    assert transformation is not None
-    assert isinstance(transformation, Transformation)
-    assert transformation.is_defined() is False
 
 
 # def test_geometry_d2_transformation_getters ():

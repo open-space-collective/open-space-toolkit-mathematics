@@ -48,10 +48,9 @@ class EulerAngle
     enum class AxisSequence
     {
 
-        Undefined,  ///< Undefined sequence
-        XYZ,        ///< X -> Y -> Z sequence
-        ZXY,        ///< Z -> X -> Y sequence
-        ZYX         ///< Z -> Y -> X sequence
+        XYZ,  ///< X -> Y -> Z sequence
+        ZXY,  ///< Z -> X -> Y sequence
+        ZYX   ///< Z -> Y -> X sequence
 
     };
 
@@ -122,15 +121,6 @@ class EulerAngle
     /// @param                  [in] aEulerAngle A Euler Angle
     /// @return                 Output stream reference
     friend std::ostream& operator<<(std::ostream& anOutputStream, const EulerAngle& aEulerAngle);
-
-    /// @brief                  Check if Euler Angle is defined
-    ///
-    /// @code
-    ///                         EulerAngle::Unit().isDefined();
-    /// @endcode
-    ///
-    /// @return                 True if Euler Angle is defined
-    bool isDefined() const;
 
     /// @brief                  Check if Euler Angle is unitary
     ///
@@ -211,15 +201,6 @@ class EulerAngle
     /// @param                  [in] (optional) anAngleUnit An angle unit
     /// @return                 String from of Euler Angle
     String toString(const Angle::Unit& anAngleUnit = Angle::Unit::Degree) const;
-
-    /// @brief                  Construct undefined Euler Angle
-    ///
-    /// @code
-    ///                         EulerAngle::Undefined();
-    /// @endcode
-    ///
-    /// @return                 Undefined Euler Angle
-    static EulerAngle Undefined();
 
     /// @brief                  Construct unitary Euler Angle
     ///
