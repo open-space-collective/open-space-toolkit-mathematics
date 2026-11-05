@@ -2,12 +2,11 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
-    using ostk::core::type::Integer;
 
     using ostk::mathematics::geometry::d2::Object;
     using ostk::mathematics::geometry::d2::object::MultiPolygon;
@@ -34,8 +33,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(pybind
             arg("polygons")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const MultiPolygon& self, const MultiPolygon& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const MultiPolygon& self, const MultiPolygon& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<MultiPolygon>))
         .def("__repr__", &(shiftToString<MultiPolygon>))
@@ -174,7 +187,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(pybind
 
                 Args:
                     format (Object.Format, optional): The output format. Defaults to Standard.
-                    precision (int, optional): The precision for floating point numbers. Defaults to undefined.
+                    precision (int, optional): The precision for floating point numbers. Defaults to -1 (automatic).
 
                 Returns:
                     str: String representation of the multi-polygon.
@@ -185,7 +198,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(pybind
                     >>> multi_polygon.to_string()
             )doc",
             arg("format") = Object::Format::Standard,
-            arg("precision") = Integer::Undefined()
+            arg("precision") = -1
         )
         .def(
             "apply_transformation",

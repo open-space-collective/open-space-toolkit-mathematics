@@ -4,8 +4,6 @@
 
 #include <OpenSpaceToolkit/Core/Container/Array.hpp>
 #include <OpenSpaceToolkit/Core/Container/Pair.hpp>
-#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
@@ -19,8 +17,6 @@ namespace solver
 
 using ostk::core::container::Array;
 using ostk::core::container::Pair;
-using ostk::core::type::Integer;
-using ostk::core::type::Real;
 using ostk::core::type::Size;
 using ostk::core::type::String;
 
@@ -77,9 +73,9 @@ class NumericalSolver
     NumericalSolver(
         const NumericalSolver::LogType& aLogType,
         const NumericalSolver::StepperType& aStepperType,
-        const Real& aTimeStep,
-        const Real& aRelativeTolerance,
-        const Real& anAbsoluteTolerance
+        double aTimeStep,
+        double aRelativeTolerance,
+        double anAbsoluteTolerance
     );
 
     /// @brief                  Clone numerical solver
@@ -141,15 +137,6 @@ class NumericalSolver
     /// @param                  [in] (optional) displayDecorators If true, display decorators
     void print(std::ostream& anOutputStream, bool displayDecorator = true) const;
 
-    /// @brief                  Access observed state vectors
-    ///
-    /// @code{.cpp}
-    ///                         const Array<Solution>& states = numericalSolver.accessObservedStateVectors();
-    /// @endcode
-    ///
-    /// @return                 Observed state vectors
-    const Array<Solution>& accessObservedStateVectors() const;
-
     /// @brief                  Get integration logging enum
     ///
     /// @code
@@ -174,8 +161,8 @@ class NumericalSolver
     ///                         numericalSolver.getTimeStep();
     /// @endcode
     ///
-    /// @return                 Real
-    Real getTimeStep() const;
+    /// @return                 double
+    double getTimeStep() const;
 
     /// @brief                  Get relative integration tolerance
     ///
@@ -183,8 +170,8 @@ class NumericalSolver
     ///                         numericalSolver.getRelativeTolerance();
     /// @endcode
     ///
-    /// @return                 Real
-    Real getRelativeTolerance() const;
+    /// @return                 double
+    double getRelativeTolerance() const;
 
     /// @brief                  Get absolute integration tolerance
     ///
@@ -192,17 +179,17 @@ class NumericalSolver
     ///                         numericalSolver.getAbsoluteTolerance();
     /// @endcode
     ///
-    /// @return                 Real
-    Real getAbsoluteTolerance() const;
+    /// @return                 double
+    double getAbsoluteTolerance() const;
 
     /// @brief                  Get observed state vectors
     ///
-    /// @code
-    ///                         numericalSolver.getObservedStateVectors();
+    /// @code{.cpp}
+    ///                         const Array<Solution>& states = numericalSolver.getObservedStateVectors();
     /// @endcode
     ///
-    /// @return                 Observed state vectors
-    Array<Solution> getObservedStateVectors() const;
+    /// @return                 Const reference to observed state vectors
+    const Array<Solution>& getObservedStateVectors() const;
 
     /// @brief                  Perform numerical integration from a start time to an array of times
     ///
@@ -219,8 +206,8 @@ class NumericalSolver
     /// @return                 Array<Solution>
     Array<Solution> integrateTime(
         const StateVector& anInitialStateVector,
-        const Real& aStartTime,
-        const Array<Real>& aTimeArray,
+        double aStartTime,
+        const Array<double>& aTimeArray,
         const SystemOfEquationsWrapper& aSystemOfEquations
     );
 
@@ -238,8 +225,8 @@ class NumericalSolver
     /// @return                 Solution
     Solution integrateTime(
         const StateVector& anInitialStateVector,
-        const Real& aStartTime,
-        const Real& anEndTime,
+        double aStartTime,
+        double anEndTime,
         const SystemOfEquationsWrapper& aSystemOfEquations
     );
 
@@ -256,7 +243,7 @@ class NumericalSolver
     /// @return                 Solution
     Solution integrateDuration(
         const StateVector& anInitialStateVector,
-        const Real& aDurationInSeconds,
+        double aDurationInSeconds,
         const SystemOfEquationsWrapper& aSystemOfEquations
     );
 
@@ -273,7 +260,7 @@ class NumericalSolver
     /// @return                 Array<Solution>
     Array<Solution> integrateDuration(
         const StateVector& anInitialStateVector,
-        const Array<Real>& aDurationArray,
+        const Array<double>& aDurationArray,
         const SystemOfEquationsWrapper& aSystemOfEquations
     );
 
@@ -316,11 +303,11 @@ class NumericalSolver
    protected:
     NumericalSolver::LogType logType_;
     NumericalSolver::StepperType stepperType_;
-    Real timeStep_;
-    Real relativeTolerance_;
-    Real absoluteTolerance_;
+    double timeStep_;
+    double relativeTolerance_;
+    double absoluteTolerance_;
 
-    double getSignedTimeStep(const Real& aReal) const;
+    double getSignedTimeStep(double aReal) const;
 
    private:
     Array<Solution> observedStateVectors_;

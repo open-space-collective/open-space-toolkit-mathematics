@@ -2,11 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(nanobind::module_& aModule)
 {
-    using namespace pybind11;
-
-    using ostk::core::type::Real;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
@@ -23,7 +21,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(pybind11::mo
     class_<Sphere, Object>(aModule, "Sphere")
 
         .def(
-            init<const Point&, const Real&>(),
+            init<const Point&, double>(),
             R"doc(
                 Create a 3D sphere with center and radius.
 
@@ -39,8 +37,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(pybind11::mo
             arg("radius")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Sphere& self, const Sphere& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Sphere& self, const Sphere& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Sphere>))
         .def("__repr__", &(shiftToString<Sphere>))

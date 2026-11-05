@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <limits>
+
 #include <OpenSpaceToolkit/Core/Container/Table.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
@@ -14,7 +16,6 @@
 using ostk::core::container::Table;
 using ostk::core::filesystem::File;
 using ostk::core::filesystem::Path;
-using ostk::core::type::Real;
 using ostk::core::type::String;
 
 using ostk::mathematics::geometry::Angle;
@@ -254,10 +255,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
     {
         EXPECT_ANY_THROW(Quaternion::Undefined() * 1.0);
-        EXPECT_ANY_THROW(Quaternion::Unit() * Real::Undefined());
+        EXPECT_ANY_THROW(Quaternion::Unit() * std::numeric_limits<double>::quiet_NaN());
 
         EXPECT_ANY_THROW(1.0 * Quaternion::Undefined());
-        EXPECT_ANY_THROW(Real::Undefined() * Quaternion::Unit());
+        EXPECT_ANY_THROW(std::numeric_limits<double>::quiet_NaN() * Quaternion::Unit());
     }
 }
 
@@ -282,7 +283,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
     {
         EXPECT_ANY_THROW(Quaternion::Undefined() ^ 2.0);
-        EXPECT_ANY_THROW(Quaternion::Unit() ^ Real::Undefined());
+        EXPECT_ANY_THROW(Quaternion::Unit() ^ std::numeric_limits<double>::quiet_NaN());
     }
 }
 
@@ -352,14 +353,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     }
 
     {
-        EXPECT_TRUE(Quaternion::XYZS(1.0001, 0.0, 0.0, 0.0).isUnitary(Real(0.0001)));
-        EXPECT_FALSE(Quaternion::XYZS(1.0001, 0.0, 0.0, 0.0).isUnitary(Real(0.00005)));
+        EXPECT_TRUE(Quaternion::XYZS(1.0001, 0.0, 0.0, 0.0).isUnitary(0.0001));
+        EXPECT_FALSE(Quaternion::XYZS(1.0001, 0.0, 0.0, 0.0).isUnitary(0.00005));
     }
 
     {
         EXPECT_ANY_THROW(Quaternion::Undefined().isUnitary());
-        EXPECT_ANY_THROW(Quaternion::Undefined().isUnitary(Real(0.0001)));
-        EXPECT_ANY_THROW(Quaternion::XYZS(1.0001, 0.0, 0.0, 0.0).isUnitary(Real(-0.0001)));
+        EXPECT_ANY_THROW(Quaternion::Undefined().isUnitary(0.0001));
+        EXPECT_ANY_THROW(Quaternion::XYZS(1.0001, 0.0, 0.0, 0.0).isUnitary(-0.0001));
     }
 }
 
@@ -573,7 +574,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
     {
         EXPECT_ANY_THROW(Quaternion::Undefined().pow(2.0));
-        EXPECT_ANY_THROW(Quaternion::Unit().pow(Real::Undefined()));
+        EXPECT_ANY_THROW(Quaternion::Unit().pow(std::numeric_limits<double>::quiet_NaN()));
     }
 }
 
@@ -764,12 +765,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
         EXPECT_TRUE(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS)
                         .isNear(
                             Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(0.0))),
-                            Angle::Radians(Real::Epsilon())
+                            Angle::Radians(1e-15)
                         ));
         EXPECT_TRUE(Quaternion(0.0, 0.0, 1.0, 0.0, Quaternion::Format::XYZS)
                         .isNear(
                             Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(180.0))),
-                            Angle::Radians(Real::Epsilon())
+                            Angle::Radians(1e-15)
                         ));
     }
 
@@ -782,7 +783,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 {
     {
         EXPECT_TRUE(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS)
-                        .isNear(Quaternion::RotationMatrix(RotationMatrix::Unit()), Angle::Radians(Real::Epsilon())));
+                        .isNear(Quaternion::RotationMatrix(RotationMatrix::Unit()), Angle::Radians(1e-15)));
     }
 
     {
@@ -801,9 +802,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
                 const Quaternion quaternion_A_B = Quaternion::RotationMatrix(rotationMatrix_A_B);
 
-                EXPECT_TRUE(rotationMatrix_A_B.accessMatrix().isNear(
-                    RotationMatrix::Quaternion(quaternion_A_B).accessMatrix(), 1e-14
-                ));
+                EXPECT_TRUE(
+                    rotationMatrix_A_B.getMatrix().isNear(RotationMatrix::Quaternion(quaternion_A_B).getMatrix(), 1e-14)
+                );
 
                 for (auto vectorIdx = 0; vectorIdx < 100; ++vectorIdx)
                 {
@@ -838,35 +839,35 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
             true
         );
 
-        const Real tolerance = 1e-10;
+        const double tolerance = 1e-10;
 
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Quaternion referenceQuaternion = Quaternion::XYZS(
-                                                       referenceDataRow[0].accessReal(),
-                                                       referenceDataRow[1].accessReal(),
-                                                       referenceDataRow[2].accessReal(),
-                                                       referenceDataRow[3].accessReal()
+                                                       referenceDataRow[0].getReal(),
+                                                       referenceDataRow[1].getReal(),
+                                                       referenceDataRow[2].getReal(),
+                                                       referenceDataRow[3].getReal()
             )
                                                        .normalize()
                                                        .rectify();
 
             const EulerAngle referenceEulerAngle = EulerAngle::XYZ(
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal()),
-                Angle::Radians(referenceDataRow[6].accessReal())
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal()),
+                Angle::Radians(referenceDataRow[6].getReal())
             );
 
             const Quaternion quaternion = Quaternion::EulerAngle(referenceEulerAngle).rectify();
 
             EXPECT_NEAR(quaternion.x(), referenceQuaternion.x(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.x().toString(), quaternion.x().toString());
+                << String::Format("{} / {}", referenceQuaternion.x(), quaternion.x());
             EXPECT_NEAR(quaternion.y(), referenceQuaternion.y(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.y().toString(), quaternion.y().toString());
+                << String::Format("{} / {}", referenceQuaternion.y(), quaternion.y());
             EXPECT_NEAR(quaternion.z(), referenceQuaternion.z(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.z().toString(), quaternion.z().toString());
+                << String::Format("{} / {}", referenceQuaternion.z(), quaternion.z());
             EXPECT_NEAR(quaternion.s(), referenceQuaternion.s(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.s().toString(), quaternion.s().toString());
+                << String::Format("{} / {}", referenceQuaternion.s(), quaternion.s());
         }
     }
 
@@ -880,35 +881,35 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
             true
         );
 
-        const Real tolerance = 1e-10;
+        const double tolerance = 1e-10;
 
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Quaternion referenceQuaternion = Quaternion::XYZS(
-                                                       referenceDataRow[0].accessReal(),
-                                                       referenceDataRow[1].accessReal(),
-                                                       referenceDataRow[2].accessReal(),
-                                                       referenceDataRow[3].accessReal()
+                                                       referenceDataRow[0].getReal(),
+                                                       referenceDataRow[1].getReal(),
+                                                       referenceDataRow[2].getReal(),
+                                                       referenceDataRow[3].getReal()
             )
                                                        .normalize()
                                                        .rectify();
 
             const EulerAngle referenceEulerAngle = EulerAngle::ZXY(
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal()),
-                Angle::Radians(referenceDataRow[6].accessReal())
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal()),
+                Angle::Radians(referenceDataRow[6].getReal())
             );
 
             const Quaternion quaternion = Quaternion::EulerAngle(referenceEulerAngle).rectify();
 
             EXPECT_NEAR(quaternion.x(), referenceQuaternion.x(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.x().toString(), quaternion.x().toString());
+                << String::Format("{} / {}", referenceQuaternion.x(), quaternion.x());
             EXPECT_NEAR(quaternion.y(), referenceQuaternion.y(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.y().toString(), quaternion.y().toString());
+                << String::Format("{} / {}", referenceQuaternion.y(), quaternion.y());
             EXPECT_NEAR(quaternion.z(), referenceQuaternion.z(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.z().toString(), quaternion.z().toString());
+                << String::Format("{} / {}", referenceQuaternion.z(), quaternion.z());
             EXPECT_NEAR(quaternion.s(), referenceQuaternion.s(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.s().toString(), quaternion.s().toString());
+                << String::Format("{} / {}", referenceQuaternion.s(), quaternion.s());
         }
     }
 
@@ -922,35 +923,35 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
             true
         );
 
-        const Real tolerance = 1e-10;
+        const double tolerance = 1e-10;
 
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Quaternion referenceQuaternion = Quaternion::XYZS(
-                                                       referenceDataRow[0].accessReal(),
-                                                       referenceDataRow[1].accessReal(),
-                                                       referenceDataRow[2].accessReal(),
-                                                       referenceDataRow[3].accessReal()
+                                                       referenceDataRow[0].getReal(),
+                                                       referenceDataRow[1].getReal(),
+                                                       referenceDataRow[2].getReal(),
+                                                       referenceDataRow[3].getReal()
             )
                                                        .normalize()
                                                        .rectify();
 
             const EulerAngle referenceEulerAngle = EulerAngle::ZYX(
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal()),
-                Angle::Radians(referenceDataRow[6].accessReal())
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal()),
+                Angle::Radians(referenceDataRow[6].getReal())
             );
 
             const Quaternion quaternion = Quaternion::EulerAngle(referenceEulerAngle).rectify();
 
             EXPECT_NEAR(quaternion.x(), referenceQuaternion.x(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.x().toString(), quaternion.x().toString());
+                << String::Format("{} / {}", referenceQuaternion.x(), quaternion.x());
             EXPECT_NEAR(quaternion.y(), referenceQuaternion.y(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.y().toString(), quaternion.y().toString());
+                << String::Format("{} / {}", referenceQuaternion.y(), quaternion.y());
             EXPECT_NEAR(quaternion.z(), referenceQuaternion.z(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.z().toString(), quaternion.z().toString());
+                << String::Format("{} / {}", referenceQuaternion.z(), quaternion.z());
             EXPECT_NEAR(quaternion.s(), referenceQuaternion.s(), tolerance)
-                << String::Format("{} / {}", referenceQuaternion.s().toString(), quaternion.s().toString());
+                << String::Format("{} / {}", referenceQuaternion.s(), quaternion.s());
         }
     }
 
@@ -1020,7 +1021,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     {
         EXPECT_ANY_THROW(Quaternion::LERP(Quaternion::Undefined(), Quaternion::Unit(), 0.5));
         EXPECT_ANY_THROW(Quaternion::LERP(Quaternion::Unit(), Quaternion::Undefined(), 0.5));
-        EXPECT_ANY_THROW(Quaternion::LERP(Quaternion::Unit(), Quaternion::Unit(), Real::Undefined()));
+        EXPECT_ANY_THROW(
+            Quaternion::LERP(Quaternion::Unit(), Quaternion::Unit(), std::numeric_limits<double>::quiet_NaN())
+        );
 
         EXPECT_ANY_THROW(Quaternion::LERP(Quaternion::Unit(), Quaternion::Unit(), -0.1));
         EXPECT_ANY_THROW(Quaternion::LERP(Quaternion::Unit(), Quaternion::Unit(), +1.1));
@@ -1049,7 +1052,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     {
         EXPECT_ANY_THROW(Quaternion::NLERP(Quaternion::Undefined(), Quaternion::Unit(), 0.5));
         EXPECT_ANY_THROW(Quaternion::NLERP(Quaternion::Unit(), Quaternion::Undefined(), 0.5));
-        EXPECT_ANY_THROW(Quaternion::NLERP(Quaternion::Unit(), Quaternion::Unit(), Real::Undefined()));
+        EXPECT_ANY_THROW(
+            Quaternion::NLERP(Quaternion::Unit(), Quaternion::Unit(), std::numeric_limits<double>::quiet_NaN())
+        );
 
         EXPECT_ANY_THROW(Quaternion::NLERP(Quaternion::Unit(), Quaternion::Unit(), -0.1));
         EXPECT_ANY_THROW(Quaternion::NLERP(Quaternion::Unit(), Quaternion::Unit(), +1.1));
@@ -1110,7 +1115,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     {
         EXPECT_ANY_THROW(Quaternion::SLERP(Quaternion::Undefined(), Quaternion::Unit(), 0.5));
         EXPECT_ANY_THROW(Quaternion::SLERP(Quaternion::Unit(), Quaternion::Undefined(), 0.5));
-        EXPECT_ANY_THROW(Quaternion::SLERP(Quaternion::Unit(), Quaternion::Unit(), Real::Undefined()));
+        EXPECT_ANY_THROW(
+            Quaternion::SLERP(Quaternion::Unit(), Quaternion::Unit(), std::numeric_limits<double>::quiet_NaN())
+        );
 
         EXPECT_ANY_THROW(Quaternion::SLERP(Quaternion::Unit(), Quaternion::Unit(), -0.1));
         EXPECT_ANY_THROW(Quaternion::SLERP(Quaternion::Unit(), Quaternion::Unit(), +1.1));

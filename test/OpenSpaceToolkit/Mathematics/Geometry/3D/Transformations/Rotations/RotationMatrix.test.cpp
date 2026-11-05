@@ -14,7 +14,6 @@
 using ostk::core::container::Table;
 using ostk::core::filesystem::File;
 using ostk::core::filesystem::Path;
-using ostk::core::type::Real;
 using ostk::core::type::String;
 
 using ostk::mathematics::geometry::Angle;
@@ -74,29 +73,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
     // TBI
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, AccessMatrix)
-{
-    {
-        const RotationMatrix rotationMatrix = {1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, -1.0, 0.0};
-
-        const Matrix3d& matrix = rotationMatrix.accessMatrix();
-
-        EXPECT_EQ(1.0, matrix(0, 0));
-        EXPECT_EQ(0.0, matrix(0, 1));
-        EXPECT_EQ(0.0, matrix(0, 2));
-        EXPECT_EQ(0.0, matrix(1, 0));
-        EXPECT_EQ(0.0, matrix(1, 1));
-        EXPECT_EQ(1.0, matrix(1, 2));
-        EXPECT_EQ(0.0, matrix(2, 0));
-        EXPECT_EQ(-1.0, matrix(2, 1));
-        EXPECT_EQ(0.0, matrix(2, 2));
-    }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::Undefined().accessMatrix());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, GetRowAt)
 {
     {
@@ -134,7 +110,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
     {
         const RotationMatrix rotationMatrix = {1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, -1.0, 0.0};
 
-        const Matrix3d matrix = rotationMatrix.getMatrix();
+        const Matrix3d& matrix = rotationMatrix.getMatrix();
 
         EXPECT_EQ(1.0, matrix(0, 0));
         EXPECT_EQ(0.0, matrix(0, 1));
@@ -145,6 +121,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         EXPECT_EQ(0.0, matrix(2, 0));
         EXPECT_EQ(-1.0, matrix(2, 1));
         EXPECT_EQ(0.0, matrix(2, 2));
+    }
+
+    {
+        const RotationMatrix rotationMatrix = RotationMatrix::Unit();
+
+        EXPECT_EQ(&rotationMatrix.getMatrix(), &rotationMatrix.getMatrix());
     }
 
     {
@@ -452,20 +434,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
             true
         );
 
-        const Real tolerance = 1e-10;
+        const double tolerance = 1e-10;
 
         for (const auto& referenceDataRow : referenceDataTable)
         {
             const Vector3d x =
-                Vector3d(
-                    referenceDataRow[0].accessReal(), referenceDataRow[1].accessReal(), referenceDataRow[2].accessReal()
-                )
+                Vector3d(referenceDataRow[0].getReal(), referenceDataRow[1].getReal(), referenceDataRow[2].getReal())
                     .normalized();
 
             Vector3d y =
-                Vector3d(
-                    referenceDataRow[3].accessReal(), referenceDataRow[4].accessReal(), referenceDataRow[5].accessReal()
-                )
+                Vector3d(referenceDataRow[3].getReal(), referenceDataRow[4].getReal(), referenceDataRow[5].getReal())
                     .normalized();
 
             const Vector3d z = x.cross(y);
@@ -476,9 +454,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
             const RotationMatrix referenceRotationMatrix = RotationMatrix::Rows(x, y, z);
 
             const EulerAngle eulerAngle = EulerAngle::ZYX(
-                Angle::Radians(referenceDataRow[9].accessReal()),
-                Angle::Radians(referenceDataRow[10].accessReal()),
-                Angle::Radians(referenceDataRow[11].accessReal())
+                Angle::Radians(referenceDataRow[9].getReal()),
+                Angle::Radians(referenceDataRow[10].getReal()),
+                Angle::Radians(referenceDataRow[11].getReal())
             );
 
             const RotationMatrix rotationMatrix = RotationMatrix::EulerAngle(eulerAngle);

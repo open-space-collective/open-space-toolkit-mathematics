@@ -176,44 +176,27 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, IsEmpty)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, IsNear)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::object::PointSet;
 
     {
         EXPECT_TRUE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
-        ).isNear(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}), Real::Epsilon()));
+        ).isNear(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}), 1e-15));
         EXPECT_TRUE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
-        ).isNear(PointSet({{0.0, 0.0, 1.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 2.0}}), Real::Epsilon()));
+        ).isNear(PointSet({{0.0, 0.0, 1.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 2.0}}), 1e-15));
 
-        EXPECT_TRUE(
-            PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}})
-                .isNear(
-                    PointSet({{0.0, Real::Epsilon(), 1.0}, {Real::Epsilon(), 0.0, 2.0}, {0.0, 0.0, Real::Epsilon()}}),
-                    Real::Epsilon()
-                )
-        );
+        EXPECT_TRUE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
+        ).isNear(PointSet({{0.0, 1e-15, 1.0}, {1e-15, 0.0, 2.0}, {0.0, 0.0, 1e-15}}), 1e-15));
     }
 
     {
-        EXPECT_FALSE(
-            PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}})
-                .isNear(
-                    PointSet(
-                        {{0.0, 2.0 * Real::Epsilon(), 1.0}, {Real::Epsilon(), 0.0, 2.0}, {0.0, 0.0, Real::Epsilon()}}
-                    ),
-                    Real::Epsilon()
-                )
-        );
-    }
-
-    {
-        EXPECT_FALSE(PointSet::Empty().isNear(PointSet::Empty(), Real::Epsilon()));
         EXPECT_FALSE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
-        ).isNear(PointSet::Empty(), Real::Epsilon()));
-        EXPECT_FALSE(
-            PointSet::Empty().isNear(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}), Real::Epsilon())
-        );
+        ).isNear(PointSet({{0.0, 2.0 * 1e-15, 1.0}, {1e-15, 0.0, 2.0}, {0.0, 0.0, 1e-15}}), 1e-15));
+    }
+
+    {
+        EXPECT_FALSE(PointSet::Empty().isNear(PointSet::Empty(), 1e-15));
+        EXPECT_FALSE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}).isNear(PointSet::Empty(), 1e-15));
+        EXPECT_FALSE(PointSet::Empty().isNear(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}), 1e-15));
     }
 }
 
@@ -309,8 +292,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, ConstIterator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;

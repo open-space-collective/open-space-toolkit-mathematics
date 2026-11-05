@@ -3,7 +3,6 @@
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid__
 
 #include <OpenSpaceToolkit/Core/Container/Array.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
@@ -21,7 +20,6 @@ namespace object
 {
 
 using ostk::core::container::Array;
-using ostk::core::type::Real;
 
 using ostk::mathematics::geometry::d3::Intersection;
 using ostk::mathematics::geometry::d3::Object;
@@ -59,7 +57,7 @@ class Cuboid : public Object
     ///                     } }, { 1.0, 2.0, 3.0 } } ;
     /// @endcode
     ///
-    Cuboid(const Point& aCenter, const std::array<Vector3d, 3>& aAxisArray, const std::array<Real, 3>& anExtent);
+    Cuboid(const Point& aCenter, const std::array<Vector3d, 3>& aAxisArray, const std::array<double, 3>& anExtent);
 
     /// @brief              Clone cuboid
     ///
@@ -111,7 +109,7 @@ class Cuboid : public Object
     /// @param              [in] aCuboid A cuboid
     /// @param              [in] aTolerance A tolerance
     /// @return             True if cuboid is near another cuboid
-    bool isNear(const Cuboid& aCuboid, const Real& aTolerance) const;
+    bool isNear(const Cuboid& aCuboid, double aTolerance) const;
 
     /// @brief              Check if cuboid intersects point
     ///
@@ -265,7 +263,7 @@ class Cuboid : public Object
     /// @endcode
     ///
     /// @return             Cuboid center
-    Point getCenter() const;
+    const Point& getCenter() const;
 
     /// @brief              Get cuboid first axis
     ///
@@ -275,7 +273,7 @@ class Cuboid : public Object
     /// @endcode
     ///
     /// @return             Cuboid first axis
-    Vector3d getFirstAxis() const;
+    const Vector3d& getFirstAxis() const;
 
     /// @brief              Get cuboid second axis
     ///
@@ -285,7 +283,7 @@ class Cuboid : public Object
     /// @endcode
     ///
     /// @return             Cuboid second axis
-    Vector3d getSecondAxis() const;
+    const Vector3d& getSecondAxis() const;
 
     /// @brief              Get cuboid third axis
     ///
@@ -295,37 +293,37 @@ class Cuboid : public Object
     /// @endcode
     ///
     /// @return             Cuboid third axis
-    Vector3d getThirdAxis() const;
+    const Vector3d& getThirdAxis() const;
 
     /// @brief              Get cuboid first extent
     ///
     /// @code{.cpp}
     ///                     Cuboid cuboid = Cuboid::Cube({ 0.0, 0.0, 0.0 }, 1.0) ;
-    ///                     Real firstExtent = cuboid.getFirstExtent() ;
+    ///                     double firstExtent = cuboid.getFirstExtent() ;
     /// @endcode
     ///
     /// @return             Cuboid first extent
-    Real getFirstExtent() const;
+    double getFirstExtent() const;
 
     /// @brief              Get cuboid second extent
     ///
     /// @code{.cpp}
     ///                     Cuboid cuboid = Cuboid::Cube({ 0.0, 0.0, 0.0 }, 1.0) ;
-    ///                     Real secondExtent = cuboid.getSecondExtent() ;
+    ///                     double secondExtent = cuboid.getSecondExtent() ;
     /// @endcode
     ///
     /// @return             Cuboid second extent
-    Real getSecondExtent() const;
+    double getSecondExtent() const;
 
     /// @brief              Get cuboid third extent
     ///
     /// @code{.cpp}
     ///                     Cuboid cuboid = Cuboid::Cube({ 0.0, 0.0, 0.0 }, 1.0) ;
-    ///                     Real thirdExtent = cuboid.getThirdExtent() ;
+    ///                     double thirdExtent = cuboid.getThirdExtent() ;
     /// @endcode
     ///
     /// @return             Cuboid third extent
-    Real getThirdExtent() const;
+    double getThirdExtent() const;
 
     /// @brief              Get cuboid vertices
     ///
@@ -436,12 +434,12 @@ class Cuboid : public Object
     /// @endcode
     ///
     /// @return             Cube
-    static Cuboid Cube(const Point& aCenter, const Real& anExtent);
+    static Cuboid Cube(const Point& aCenter, double anExtent);
 
    private:
     Point center_;
     std::array<Vector3d, 3> axes_;
-    std::array<Real, 3> extent_;
+    std::array<double, 3> extent_;
 };
 
 }  // namespace object

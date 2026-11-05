@@ -2,11 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Segment(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Segment(nanobind::module_& aModule)
 {
-    using namespace pybind11;
-
-    using ostk::core::type::Integer;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d2::Object;
     using ostk::mathematics::geometry::d2::object::Point;
@@ -33,8 +31,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Segment(pybind11::m
             arg("end_point")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Segment& self, const Segment& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Segment& self, const Segment& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Segment>))
         .def("__repr__", &(shiftToString<Segment>))
@@ -199,7 +211,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Segment(pybind11::m
 
                 Args:
                     format (Object.Format, optional): The output format. Defaults to Standard.
-                    precision (int, optional): The precision for floating point numbers. Defaults to undefined.
+                    precision (int, optional): The precision for floating point numbers. Defaults to -1 (automatic).
 
                 Returns:
                     str: String representation of the segment.
@@ -209,7 +221,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Segment(pybind11::m
                     >>> segment.to_string()
             )doc",
             arg("format") = Object::Format::Standard,
-            arg("precision") = Integer::Undefined()
+            arg("precision") = -1
         )
         .def(
             "apply_transformation",

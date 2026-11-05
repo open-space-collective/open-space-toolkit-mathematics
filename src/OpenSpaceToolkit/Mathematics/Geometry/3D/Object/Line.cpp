@@ -153,7 +153,7 @@ bool Line::contains(const PointSet& aPointSet) const
     return true;
 }
 
-Point Line::getOrigin() const
+const Point& Line::getOrigin() const
 {
     if (!this->isDefined())
     {
@@ -163,7 +163,7 @@ Point Line::getOrigin() const
     return origin_;
 }
 
-Vector3d Line::getDirection() const
+const Vector3d& Line::getDirection() const
 {
     if (!this->isDefined())
     {
@@ -173,7 +173,7 @@ Vector3d Line::getDirection() const
     return direction_;
 }
 
-Real Line::distanceTo(const Point& aPoint) const
+double Line::distanceTo(const Point& aPoint) const
 {
     if (!this->isDefined())
     {

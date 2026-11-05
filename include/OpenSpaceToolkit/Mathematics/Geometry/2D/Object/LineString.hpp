@@ -121,7 +121,7 @@ class LineString : public Object
     /// @param              [in] aLineString A line string
     /// @param              [in] aTolerance A tolerance
     /// @return             True if line string is near another line string
-    bool isNear(const LineString& aLineString, const Real& aTolerance) const;
+    bool isNear(const LineString& aLineString, double aTolerance) const;
 
     /// @brief              Get point array
     ///
@@ -132,15 +132,15 @@ class LineString : public Object
     /// @return             Point array
     const Array<Point>& getPointArray() const;
 
-    /// @brief              Access point at index
+    /// @brief              Get point at index
     ///
     /// @code{.cpp}
-    ///                     const Point& point = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).accessPointAt(0) ;
+    ///                     Point point = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).getPointAt(0) ;
     /// @endcode
     ///
     /// @brief              [in] anIndex A point index
-    /// @return             Reference to point at index
-    const Point& accessPointAt(const Index& anIndex) const;
+    /// @return             Const reference to point at index
+    const Point& getPointAt(const Index& anIndex) const;
 
     /// @brief              Get point count
     ///
@@ -170,9 +170,8 @@ class LineString : public Object
     ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-    virtual String toString(
-        const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
-    ) const override;
+    virtual String toString(const Object::Format& aFormat = Object::Format::Standard, int aPrecision = -1)
+        const override;
 
     /// @brief              Print point
     ///

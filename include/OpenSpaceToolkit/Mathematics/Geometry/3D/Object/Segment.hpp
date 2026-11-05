@@ -2,8 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment__
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
@@ -18,8 +16,6 @@ namespace d3
 {
 namespace object
 {
-
-using ostk::core::type::Real;
 
 using ostk::mathematics::geometry::d3::Object;
 using ostk::mathematics::geometry::d3::object::Line;
@@ -158,7 +154,7 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment first point
-    Point getFirstPoint() const;
+    const Point& getFirstPoint() const;
 
     /// @brief              Get segment second point
     ///
@@ -167,7 +163,7 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment second point
-    Point getSecondPoint() const;
+    const Point& getSecondPoint() const;
 
     /// @brief              Get segment center
     ///
@@ -194,30 +190,30 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment length
-    Real getLength() const;
+    double getLength() const;
 
     /// @brief              Get distance to point
     ///
     /// @code{.cpp}
     ///                     Segment segment = Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
-    ///                     Real distance = segment.distanceTo(Point(1.0, 0.0, 0.0)) ;
+    ///                     double distance = segment.distanceTo(Point(1.0, 0.0, 0.0)) ;
     /// @endcode
     ///
     /// @param              [in] aPoint A point
     /// @return             Distance to point
-    Real distanceTo(const Point& aPoint) const;
+    double distanceTo(const Point& aPoint) const;
 
     /// @brief              Get distance to point set
     ///
     /// @code{.cpp}
     ///                     Segment segment = Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
     ///                     PointSet pointSet = PointSet({ { 1.0, 0.0, 0.0 }, { 2.0, 0.0, 0.0 } }) ;
-    ///                     Real distance = segment.distanceTo(pointSet) ;
+    ///                     double distance = segment.distanceTo(pointSet) ;
     /// @endcode
     ///
     /// @param              [in] aPointSet A point set
     /// @return             Distance to point set
-    Real distanceTo(const PointSet& aPointSet) const;
+    double distanceTo(const PointSet& aPointSet) const;
 
     /// @brief              Compute intersection of segment with plane
     ///

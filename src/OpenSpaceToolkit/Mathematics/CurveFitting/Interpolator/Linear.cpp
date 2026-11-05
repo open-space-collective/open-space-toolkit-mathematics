@@ -62,7 +62,7 @@ double Linear::evaluate(const double& aQueryValue) const
     const double previousY = y_(previousIndex);
     const double nextY = y_(nextIndex);
 
-    const Real Ratio = (aQueryValue - x_(previousIndex)) / (x_(nextIndex) - x_(previousIndex));
+    const double Ratio = (aQueryValue - x_(previousIndex)) / (x_(nextIndex) - x_(previousIndex));
 
     return previousY + Ratio * (nextY - previousY);
 }

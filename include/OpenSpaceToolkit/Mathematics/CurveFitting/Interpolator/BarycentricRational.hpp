@@ -4,7 +4,6 @@
 
 #include <boost/math/interpolators/barycentric_rational.hpp>
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
@@ -19,7 +18,6 @@ namespace curvefitting
 namespace interpolator
 {
 
-using ostk::core::type::Real;
 using ostk::core::type::Size;
 
 using ostk::mathematics::curvefitting::Interpolator;
@@ -32,6 +30,9 @@ using boost::math::interpolators::barycentric_rational;
 /// Barycentric rational interpolator is a high-accuracy interpolator method for
 /// non-uniformly spaced samples. It requires 𝑶(N) time for construction, and 𝑶(N) time for
 /// each evaluation.
+///
+/// Use when the data is smooth and irregularly spaced and high accuracy matters. Unlike a high-degree
+/// polynomial it does not oscillate wildly, and it has no poles within the data range.
 ///
 /// @code{.cpp}
 ///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};

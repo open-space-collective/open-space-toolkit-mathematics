@@ -2,8 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere__
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
 
@@ -17,8 +15,6 @@ namespace d3
 {
 namespace object
 {
-
-using ostk::core::type::Real;
 
 using ostk::mathematics::geometry::d3::Object;
 using ostk::mathematics::geometry::d3::object::Point;
@@ -56,7 +52,7 @@ class Sphere : public Object
     ///
     /// @param              [in] aCenter A sphere center
     /// @param              [in] aRadius A sphere radius
-    Sphere(const Point& aCenter, const Real& aRadius);
+    Sphere(const Point& aCenter, double aRadius);
 
     /// @brief              Clone sphere
     ///
@@ -244,7 +240,7 @@ class Sphere : public Object
     /// @endcode
     ///
     /// @return             Sphere center
-    Point getCenter() const;
+    const Point& getCenter() const;
 
     /// @brief              Get sphere radius
     ///
@@ -253,7 +249,7 @@ class Sphere : public Object
     /// @endcode
     ///
     /// @return             Sphere radius
-    Real getRadius() const;
+    double getRadius() const;
 
     /// @brief              Compute intersection of sphere with line
     ///
@@ -360,7 +356,7 @@ class Sphere : public Object
 
    private:
     Point center_;
-    Real radius_;
+    double radius_;
 };
 
 }  // namespace object

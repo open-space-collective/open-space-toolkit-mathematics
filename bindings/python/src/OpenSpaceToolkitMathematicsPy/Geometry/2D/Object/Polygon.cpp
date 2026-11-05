@@ -2,12 +2,11 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
-    using ostk::core::type::Integer;
 
     using ostk::mathematics::geometry::d2::Object;
     using ostk::mathematics::geometry::d2::object::Point;
@@ -50,8 +49,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(pybind11::m
             arg("outer_ring")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Polygon& self, const Polygon& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Polygon& self, const Polygon& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Polygon>))
         .def("__repr__", &(shiftToString<Polygon>))
@@ -364,7 +377,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(pybind11::m
 
                 Args:
                     format (Object.Format, optional): The output format. Defaults to Standard.
-                    precision (int, optional): The precision for floating point numbers. Defaults to undefined.
+                    precision (int, optional): The precision for floating point numbers. Defaults to -1 (automatic).
 
                 Returns:
                     str: String representation of the polygon.
@@ -374,7 +387,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(pybind11::m
                     >>> polygon.to_string()
             )doc",
             arg("format") = Object::Format::Standard,
-            arg("precision") = Integer::Undefined()
+            arg("precision") = -1
         )
         .def(
             "apply_transformation",

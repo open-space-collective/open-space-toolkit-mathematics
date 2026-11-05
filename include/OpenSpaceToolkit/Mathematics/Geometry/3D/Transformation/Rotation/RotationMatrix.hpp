@@ -3,8 +3,6 @@
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix__
 
 #include <OpenSpaceToolkit/Core/Container/Pair.hpp>
-#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
@@ -25,7 +23,6 @@ namespace rotation
 
 using ostk::core::container::Pair;
 using ostk::core::type::Index;
-using ostk::core::type::Real;
 using ostk::core::type::String;
 
 using ostk::mathematics::geometry::Angle;
@@ -71,15 +68,15 @@ class RotationMatrix
     /// @param                  [in] aEighthCoefficient A eighth coefficient
     /// @param                  [in] aNinthCoefficient A ninth coefficient
     RotationMatrix(
-        const Real& aFirstCoefficient,
-        const Real& aSecondCoefficient,
-        const Real& aThirdCoefficient,
-        const Real& aFourthCoefficient,
-        const Real& aFifthCoefficient,
-        const Real& aSixthCoefficient,
-        const Real& aSeventhCoefficient,
-        const Real& aEighthCoefficient,
-        const Real& aNinthCoefficient
+        double aFirstCoefficient,
+        double aSecondCoefficient,
+        double aThirdCoefficient,
+        double aFourthCoefficient,
+        double aFifthCoefficient,
+        double aSixthCoefficient,
+        double aSeventhCoefficient,
+        double aEighthCoefficient,
+        double aNinthCoefficient
     );
 
     /// @brief                  Equal to operator
@@ -170,15 +167,6 @@ class RotationMatrix
     /// @return                 True if Rotation Matrix is defined
     bool isDefined() const;
 
-    /// @brief                  Access underlying 3D Matrix
-    ///
-    /// @code{.cpp}
-    ///                         const Matrix3d& matrix = RotationMatrix::Unit().accessMatrix();
-    /// @endcode
-    ///
-    /// @return                 Matrix reference
-    const Matrix3d& accessMatrix() const;
-
     /// @brief                  Get row at index
     ///
     /// @code{.cpp}
@@ -205,8 +193,8 @@ class RotationMatrix
     ///                         Matrix3d matrix = RotationMatrix::Unit().getMatrix();
     /// @endcode
     ///
-    /// @return                 Matrix
-    Matrix3d getMatrix() const;
+    /// @return                 Const reference to matrix
+    const Matrix3d& getMatrix() const;
 
     /// @brief                  Calculate transposed Rotation Matrix
     ///

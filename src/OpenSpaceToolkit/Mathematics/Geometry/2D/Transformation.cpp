@@ -206,7 +206,7 @@ Transformation::Type Transformation::getType() const
     return type_;
 }
 
-Matrix3d Transformation::getMatrix() const
+const Matrix3d& Transformation::getMatrix() const
 {
     if (!this->isDefined())
     {
@@ -291,10 +291,10 @@ Transformation Transformation::Rotation(const Angle& aRotationAngle)
         throw ostk::core::error::runtime::Undefined("Rotation angle");
     }
 
-    const Real rotationAngle_rad = aRotationAngle.inRadians();
+    const double rotationAngle_rad = aRotationAngle.inRadians();
 
-    const Real cosRotationAngle = std::cos(rotationAngle_rad);
-    const Real sinRotationAngle = std::sin(rotationAngle_rad);
+    const double cosRotationAngle = std::cos(rotationAngle_rad);
+    const double sinRotationAngle = std::sin(rotationAngle_rad);
 
     Matrix3d transformationMatrix;
 

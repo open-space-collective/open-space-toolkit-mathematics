@@ -1,11 +1,15 @@
 /// Apache License 2.0
 
+#include <cmath>
+#include <limits>
+
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Utility.hpp>
 
 namespace ostk
 {
@@ -17,6 +21,8 @@ namespace d2
 {
 namespace object
 {
+
+using ostk::mathematics::utility::DoubleToString;
 
 LineString::LineString(const Array<Point>& aPointArray)
     : Object(),
@@ -65,15 +71,15 @@ bool LineString::contains(const Point& aPoint) const
 
     if (pointCount == 1)
     {
-        return (this->accessPointAt(0) == aPoint);
+        return (this->getPointAt(0) == aPoint);
     }
 
     else
     {
         for (int index = 0; index < (pointCount - 1); index++)
         {
-            Point firstPoint = this->accessPointAt(index);
-            Point secondPoint = this->accessPointAt(index + 1);
+            Point firstPoint = this->getPointAt(index);
+            Point secondPoint = this->getPointAt(index + 1);
 
             object::Segment segment = object::Segment(firstPoint, secondPoint);
 
@@ -87,7 +93,7 @@ bool LineString::contains(const Point& aPoint) const
     return false;
 }
 
-bool LineString::isNear(const LineString& aLineString, const Real& aTolerance) const
+bool LineString::isNear(const LineString& aLineString, double aTolerance) const
 {
     if ((this->isEmpty()) || (aLineString.isEmpty()))
     {
@@ -115,7 +121,7 @@ const Array<Point>& LineString::getPointArray() const
     return points_;
 }
 
-const Point& LineString::accessPointAt(const Index& anIndex) const
+const Point& LineString::getPointAt(const Index& anIndex) const
 {
     if (anIndex >= points_.getSize())
     {
@@ -143,13 +149,13 @@ Point LineString::getPointClosestTo(const Point& aPoint) const
     }
 
     Point const* pointPtr = nullptr;
-    Real minDistance = Real::Undefined();
+    double minDistance = std::numeric_limits<double>::quiet_NaN();
 
     for (const auto& point : points_)
     {
-        const Real distance = (point - aPoint).squaredNorm();
+        const double distance = (point - aPoint).squaredNorm();
 
-        if ((!minDistance.isDefined()) || (distance < minDistance))
+        if ((std::isnan(minDistance)) || (distance < minDistance))
         {
             pointPtr = &point;
 
@@ -160,7 +166,7 @@ Point LineString::getPointClosestTo(const Point& aPoint) const
     return *pointPtr;
 }
 
-String LineString::toString(const Object::Format& aFormat, const Integer& aPrecision) const
+String LineString::toString(const Object::Format& aFormat, int aPrecision) const
 {
     switch (aFormat)
     {
@@ -197,8 +203,9 @@ String LineString::toString(const Object::Format& aFormat, const Integer& aPreci
 
             for (const auto& point : points_)
             {
-                lineStringString +=
-                    String::Format("{} {}", Real(point.x()).toString(aPrecision), Real(point.y()).toString(aPrecision));
+                lineStringString += String::Format(
+                    "{} {}", DoubleToString(point.x(), aPrecision), DoubleToString(point.y(), aPrecision)
+                );
 
                 if ((pointIndex + 1) < pointCount)
                 {

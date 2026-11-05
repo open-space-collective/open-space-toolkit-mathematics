@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_PointSet(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_PointSet(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
 
@@ -38,8 +38,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_PointSet(pybind11::
             arg("points")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const PointSet& self, const PointSet& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const PointSet& self, const PointSet& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<PointSet>))
         .def("__repr__", &(shiftToString<PointSet>))
@@ -183,7 +197,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_PointSet(pybind11::
             "__iter__",
             [](const PointSet& aPointSet)
             {
-                return make_iterator(aPointSet.begin(), aPointSet.end());
+                return make_iterator<rv_policy::reference_internal>(
+                    type<PointSet>(), "PointSet3dIterator", aPointSet.begin(), aPointSet.end()
+                );
             },
             keep_alive<0, 1>()
         )  // Keep vector alive while iterator is used

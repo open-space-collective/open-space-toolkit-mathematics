@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <limits>
+
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
@@ -149,8 +151,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, IsNear)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::object::Vector3d;
     using Polygon2d = ostk::mathematics::geometry::d2::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -206,11 +206,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, IsNear)
         const Vector3d xAxis = {1.0, 0.0, 0.0};
         const Vector3d yAxis = {0.0, 1.0, 0.0};
 
-        EXPECT_ANY_THROW(Polygon::Undefined().isNear(Polygon::Undefined(), Real::Undefined()));
+        EXPECT_ANY_THROW(Polygon::Undefined().isNear(Polygon::Undefined(), std::numeric_limits<double>::quiet_NaN()));
         EXPECT_ANY_THROW(Polygon(polygon2d, origin, xAxis, yAxis).isNear(Polygon::Undefined(), 1.0));
         EXPECT_ANY_THROW(Polygon::Undefined().isNear(Polygon(polygon2d, origin, xAxis, yAxis), 1.0));
-        EXPECT_ANY_THROW(
-            Polygon(polygon2d, origin, xAxis, yAxis).isNear(Polygon(polygon2d, origin, xAxis, yAxis), Real::Undefined())
+        EXPECT_ANY_THROW(Polygon(polygon2d, origin, xAxis, yAxis)
+                             .isNear(Polygon(polygon2d, origin, xAxis, yAxis), std::numeric_limits<double>::quiet_NaN())
         );
     }
 }
@@ -301,8 +301,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, GetYAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, GetNormalVector)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::object::Vector3d;
     using Polygon2d = ostk::mathematics::geometry::d2::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -326,12 +324,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, GetNormalVector)
 
         // X and Y axes can be considered unitary while their cross product is not
         EXPECT_TRUE(
-            (xAxis.norm() - 1.0) < Real::Epsilon() && (yAxis.norm() - 1.0) < Real::Epsilon() &&
-            (xAxis.cross(yAxis).norm() - 1.0) > Real::Epsilon()
+            (xAxis.norm() - 1.0) < 1e-15 && (yAxis.norm() - 1.0) < 1e-15 && (xAxis.cross(yAxis).norm() - 1.0) > 1e-15
         );
 
         // The `getNormalVector` function normalizes the output
-        EXPECT_TRUE((Polygon(polygon2d, origin, xAxis, yAxis).getNormalVector().norm() - 1.0) < Real::Epsilon());
+        EXPECT_TRUE((Polygon(polygon2d, origin, xAxis, yAxis).getNormalVector().norm() - 1.0) < 1e-15);
     }
 
     {
@@ -341,8 +338,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, GetNormalVector)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::object::Vector3d;
     using Polygon2d = ostk::mathematics::geometry::d2::object::Polygon;
@@ -385,10 +380,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, ApplyTransformatio
 
         const Polygon referencePolygon = {referencePolygon2d, referenceOrigin, referenceXAxis, referenceYAxis};
 
-        EXPECT_TRUE(polygon.getOrigin().isNear(referencePolygon.getOrigin(), Real::Epsilon()));
-        EXPECT_TRUE(polygon.getXAxis().isNear(referencePolygon.getXAxis(), Real::Epsilon()));
-        EXPECT_TRUE(polygon.getYAxis().isNear(referencePolygon.getYAxis(), Real::Epsilon()));
-        EXPECT_TRUE(polygon.getNormalVector().isNear(referencePolygon.getNormalVector(), Real::Epsilon()));
+        EXPECT_TRUE(polygon.getOrigin().isNear(referencePolygon.getOrigin(), 1e-15));
+        EXPECT_TRUE(polygon.getXAxis().isNear(referencePolygon.getXAxis(), 1e-15));
+        EXPECT_TRUE(polygon.getYAxis().isNear(referencePolygon.getYAxis(), 1e-15));
+        EXPECT_TRUE(polygon.getNormalVector().isNear(referencePolygon.getNormalVector(), 1e-15));
     }
 
     {

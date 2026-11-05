@@ -2,8 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point__
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
@@ -17,8 +15,6 @@ namespace d2
 {
 namespace object
 {
-
-using ostk::core::type::Real;
 
 using ostk::mathematics::geometry::d2::Object;
 using ostk::mathematics::object::Vector2d;
@@ -41,7 +37,7 @@ class Point : public Object
     ///
     /// @param              [in] aFirstCoordinate A first coordinate
     /// @param              [in] aSecondCoordinate A second coordinate
-    Point(const Real& aFirstCoordinate, const Real& aSecondCoordinate);
+    Point(double aFirstCoordinate, double aSecondCoordinate);
 
     /// @brief              Clone point
     ///
@@ -120,7 +116,7 @@ class Point : public Object
     /// @param              [in] aPoint A point
     /// @param              [in] aTolerance A tolerance
     /// @return             True if point is near another point
-    bool isNear(const Point& aPoint, const Real& aTolerance) const;
+    bool isNear(const Point& aPoint, double aTolerance) const;
 
     /// @brief              Get reference to first coordinate
     ///
@@ -129,7 +125,7 @@ class Point : public Object
     /// @endcode
     ///
     /// @return             Reference to first coordinate
-    const Real& x() const;
+    const double& x() const;
 
     /// @brief              Get reference to second coordinate
     ///
@@ -138,7 +134,7 @@ class Point : public Object
     /// @endcode
     ///
     /// @return             Reference to second coordinate
-    const Real& y() const;
+    const double& y() const;
 
     /// @brief              Get vector representation of point
     ///
@@ -152,12 +148,12 @@ class Point : public Object
     /// @brief              Get distance to another point
     ///
     /// @code{.cpp}
-    ///                     Real distance = Point(0.0, 0.0).distanceTo(Point(1.0, 0.0)) ; // 1.0
+    ///                     double distance = Point(0.0, 0.0).distanceTo(Point(1.0, 0.0)) ; // 1.0
     /// @endcode
     ///
     /// @param              [in] aPoint A point
     /// @return             Distance to point
-    Real distanceTo(const Point& aPoint) const;
+    double distanceTo(const Point& aPoint) const;
 
     /// @brief              Get string representation
     ///
@@ -168,9 +164,8 @@ class Point : public Object
     /// @param              [in] aFormat A format
     /// @param              [in] (optional) aPrecision A precision
     /// @return             String representation
-    virtual String toString(
-        const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
-    ) const override;
+    virtual String toString(const Object::Format& aFormat = Object::Format::Standard, int aPrecision = -1)
+        const override;
 
     /// @brief              Print point
     ///
@@ -220,8 +215,8 @@ class Point : public Object
     static Point Vector(const Vector2d& aVector);
 
    private:
-    Real x_;
-    Real y_;
+    double x_;
+    double y_;
 };
 
 }  // namespace object

@@ -41,11 +41,6 @@ Intersection& Intersection::operator=(const Intersection& anIntersection)
 
 bool Intersection::operator==(const Intersection& anIntersection) const
 {
-    if ((!this->isDefined()) || (!anIntersection.isDefined()))
-    {
-        return false;
-    }
-
     return (type_ == anIntersection.type_) && (composite_ == anIntersection.composite_);
 }
 
@@ -56,30 +51,20 @@ bool Intersection::operator!=(const Intersection& anIntersection) const
 
 Intersection Intersection::operator+(const Intersection& anIntersection) const
 {
-    if (!anIntersection.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Intersection");
-    }
-
     Intersection intersection;
 
     intersection.composite_ = composite_ + anIntersection.composite_;
 
-    intersection.type_ = Intersection::TypeFromObjects(intersection.composite_.accessObjects());
+    intersection.type_ = Intersection::TypeFromObjects(intersection.composite_.getObjects());
 
     return intersection;
 }
 
 Intersection& Intersection::operator+=(const Intersection& anIntersection)
 {
-    if (!anIntersection.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Intersection");
-    }
-
     composite_ += anIntersection.composite_;
 
-    type_ = Intersection::TypeFromObjects(composite_.accessObjects());
+    type_ = Intersection::TypeFromObjects(composite_.getObjects());
 
     return *this;
 }
@@ -99,11 +84,6 @@ std::ostream& operator<<(std::ostream& anOutputStream, const Intersection& anInt
     return anOutputStream;
 }
 
-bool Intersection::isDefined() const
-{
-    return type_ != Intersection::Type::Undefined;
-}
-
 bool Intersection::isEmpty() const
 {
     return type_ == Intersection::Type::Empty;
@@ -114,33 +94,19 @@ bool Intersection::isComplex() const
     return type_ == Intersection::Type::Complex;
 }
 
-const Composite& Intersection::accessComposite() const
+const Composite& Intersection::getComposite() const&
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Intersection");
-    }
-
     return composite_;
+}
+
+Composite Intersection::getComposite() &&
+{
+    return this->getComposite();
 }
 
 Intersection::Type Intersection::getType() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Intersection");
-    }
-
     return type_;
-}
-
-Intersection Intersection::Undefined()
-{
-    Intersection intersection;
-
-    intersection.type_ = Intersection::Type::Undefined;
-
-    return intersection;
 }
 
 Intersection Intersection::Empty()
@@ -218,9 +184,6 @@ String Intersection::StringFromType(const Intersection::Type& aType)
 {
     switch (aType)
     {
-        case Intersection::Type::Undefined:
-            return "Undefined";
-
         case Intersection::Type::Empty:
             return "Empty";
 
@@ -254,8 +217,8 @@ String Intersection::StringFromType(const Intersection::Type& aType)
 }
 
 Intersection::Intersection()
-    : type_(Intersection::Type::Undefined),
-      composite_(Composite::Undefined())
+    : type_(Intersection::Type::Empty),
+      composite_(Composite::Empty())
 {
 }
 
@@ -266,13 +229,13 @@ Intersection::Type Intersection::TypeFromObjects(const Array<Unique<Object>>& an
         return Intersection::Type::Empty;
     }
 
-    Intersection::Type type = Intersection::Type::Undefined;
+    std::optional<Intersection::Type> type = std::nullopt;
 
     for (const auto& objectUPtr : anObjectArray)
     {
-        const Intersection::Type objectType = Intersection::TypeFromObjects(objectUPtr);
+        const std::optional<Intersection::Type> objectType = Intersection::TypeFromObjects(objectUPtr);
 
-        if (type == Intersection::Type::Undefined)
+        if (!type.has_value())
         {
             type = objectType;
         }
@@ -282,10 +245,15 @@ Intersection::Type Intersection::TypeFromObjects(const Array<Unique<Object>>& an
         }
     }
 
-    return type;
+    if (!type.has_value())
+    {
+        throw ostk::core::error::runtime::Undefined("Intersection");
+    }
+
+    return type.value();
 }
 
-Intersection::Type Intersection::TypeFromObjects(const Unique<Object>& anObjectUPtr)
+std::optional<Intersection::Type> Intersection::TypeFromObjects(const Unique<Object>& anObjectUPtr)
 {
     if (dynamic_cast<const object::Point*>(anObjectUPtr.get()))
     {
@@ -317,7 +285,7 @@ Intersection::Type Intersection::TypeFromObjects(const Unique<Object>& anObjectU
         return Intersection::Type::Polygon;
     }
 
-    return Intersection::Type::Undefined;
+    return std::nullopt;
 }
 
 }  // namespace d2

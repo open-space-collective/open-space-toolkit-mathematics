@@ -132,7 +132,7 @@ class PointSet : public Object
     /// @param              [in] aPointSet A point set
     /// @param              [in] aTolerance A tolerance
     /// @return             True if point set is near another point set
-    bool isNear(const PointSet& aPointSet, const Real& aTolerance) const;
+    bool isNear(const PointSet& aPointSet, double aTolerance) const;
 
     /// @brief              Get size of point set
     ///
@@ -146,12 +146,12 @@ class PointSet : public Object
     /// @brief              Get distance to point
     ///
     /// @code{.cpp}
-    ///                     Real distance = PointSet({ { 0.0, 0.0 }, { 1.0, 0.0 } }).distanceTo(Point(2.0, 0.0)) ;
+    ///                     double distance = PointSet({ { 0.0, 0.0 }, { 1.0, 0.0 } }).distanceTo(Point(2.0, 0.0)) ;
     /// @endcode
     ///
     /// @param              [in] aPoint A point
     /// @return             Distance to point
-    Real distanceTo(const Point& aPoint) const;
+    double distanceTo(const Point& aPoint) const;
 
     /// @brief              Get point closest to another point
     ///
@@ -172,9 +172,8 @@ class PointSet : public Object
     ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-    virtual String toString(
-        const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
-    ) const override;
+    virtual String toString(const Object::Format& aFormat = Object::Format::Standard, int aPrecision = -1)
+        const override;
 
     /// @brief              Print point
     ///

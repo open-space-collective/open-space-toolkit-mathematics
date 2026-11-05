@@ -92,7 +92,7 @@ class Composite : public Object
     ///
     /// @code{.cpp}
     ///                     Composite compositeA = Composite(Point(0.0, 0.0, 0.0)) ;
-    ///                     Composite compositeB = Composite::Undefined() ;
+    ///                     Composite compositeB = Composite::Empty() ;
     ///                     compositeB = compositeA ;
     /// @endcode
     ///
@@ -157,7 +157,7 @@ class Composite : public Object
     ///                     Composite(...).isDefined() ;
     /// @endcode
     ///
-    /// @return             True if composite is defined
+    /// @return             True if all objects of the composite are defined
     virtual bool isDefined() const override;
 
     /// @brief              Check if composite is empty
@@ -187,7 +187,7 @@ class Composite : public Object
             throw ostk::core::error::runtime::Undefined("Composite");
         }
 
-        return (objects_.getSize() == 1) && (dynamic_cast<const Type*>(objects_.accessFirst().get()) != nullptr);
+        return (objects_.getSize() == 1) && (dynamic_cast<const Type*>(objects_.getFirst().get()) != nullptr);
     }
 
     /// @brief              Access composite as its underlying object
@@ -213,7 +213,7 @@ class Composite : public Object
             throw ostk::core::error::RuntimeError("Cannot convert composite: it is complex.");
         }
 
-        const Type* objectPtr = dynamic_cast<const Type*>(objects_.accessFirst().get());
+        const Type* objectPtr = dynamic_cast<const Type*>(objects_.getFirst().get());
 
         if (objectPtr == nullptr)
         {
@@ -271,26 +271,26 @@ class Composite : public Object
     /// @return             True if composite contains composite
     bool contains(const Composite& aComposite) const;
 
-    /// @brief              Access object at index
+    /// @brief              Get object at index
     ///
     /// @code{.cpp}
     ///                     Composite composite = Composite(Point(0.0, 0.0, 0.0)) ;
-    ///                     const Object& object = composite.accessObjectAt(0) ;
+    ///                     const Object& object = composite.getObjectAt(0) ;
     /// @endcode
     ///
     /// @param              [in] anIndex An object index
-    /// @return             Reference to object
-    const Object& accessObjectAt(const Index& anIndex) const;
+    /// @return             Const reference to object
+    const Object& getObjectAt(const Index& anIndex) const;
 
-    /// @brief              Access objects in composite
+    /// @brief              Get objects in composite
     ///
     /// @code{.cpp}
     ///                     Composite composite = Composite(Point(0.0, 0.0, 0.0)) ;
-    ///                     const Array<Unique<Object>>& objects = composite.accessObjects() ;
+    ///                     const Array<Unique<Object>>& objects = composite.getObjects() ;
     /// @endcode
     ///
-    /// @return             Reference to objects in composite
-    const Array<Unique<Object>>& accessObjects() const;
+    /// @return             Const reference to objects in composite
+    const Array<Unique<Object>>& getObjects() const;
 
     /// @brief              Get number of objects in composite
     ///
@@ -367,15 +367,6 @@ class Composite : public Object
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
-    /// @brief              Constructs an undefined composite
-    ///
-    /// @code{.cpp}
-    ///                     Composite composite = Composite::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined composite
-    static Composite Undefined();
-
     /// @brief              Constructs an empty composite
     ///
     /// @code{.cpp}
@@ -386,7 +377,6 @@ class Composite : public Object
     static Composite Empty();
 
    private:
-    bool defined_;
     Array<Unique<Object>> objects_;
 };
 

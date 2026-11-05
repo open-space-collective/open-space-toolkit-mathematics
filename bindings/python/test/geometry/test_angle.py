@@ -82,9 +82,16 @@ def test_angle_default_constructor():
     assert isinstance(angle, Angle)
     assert angle.in_revolutions() == 18.0
 
+    # Python ints are accepted and converted to float
+    angle: Angle = Angle(45, Unit.Degree)
+
+    assert angle is not None
+    assert isinstance(angle, Angle)
+    assert angle.in_degrees() == 45.0
+
     # Invalid construction
     with pytest.raises(TypeError):
-        angle: Angle = Angle(45, Unit.Degree)
+        angle: Angle = Angle("45", Unit.Degree)
 
 
 def test_angle_undefined_constructor():
@@ -342,3 +349,9 @@ def test_angle_in_arcseconds_reduction():
 
     angle: Angle = Angle(180.0 * 3600.0, Unit.Arcsecond)
     assert angle.in_arcseconds(-180.0 * 3600.0, 180.0 * 3600.0) == -180.0 * 3600.0
+
+
+def test_angle_is_unhashable():
+    # Angle defines __eq__ without __hash__, so like any such Python class it is unhashable.
+    with pytest.raises(TypeError):
+        hash(Angle.degrees(1.0))

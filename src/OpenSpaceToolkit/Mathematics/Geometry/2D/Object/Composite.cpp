@@ -20,7 +20,6 @@ namespace object
 
 Composite::Composite(const Object& anObject)
     : Object(),
-      defined_(true),
       objects_(Array<Unique<Object>>::Empty())
 {
     objects_.emplace_back(Unique<Object>(anObject.clone()));
@@ -28,7 +27,6 @@ Composite::Composite(const Object& anObject)
 
 Composite::Composite(const Unique<Object>& anObjectUPtr)
     : Object(),
-      defined_(true),
       objects_(Array<Unique<Object>>::Empty())
 {
     objects_.emplace_back(Unique<Object>(anObjectUPtr->clone()));
@@ -36,7 +34,6 @@ Composite::Composite(const Unique<Object>& anObjectUPtr)
 
 Composite::Composite(Array<Unique<Object>>&& anObjectArray)
     : Object(),
-      defined_(true),
       objects_(Array<Unique<Object>>::Empty())
 {
     objects_.reserve(anObjectArray.getSize());
@@ -54,7 +51,6 @@ Composite::Composite(Array<Unique<Object>>&& anObjectArray)
 
 Composite::Composite(const Composite& aComposite)
     : Object(),
-      defined_(aComposite.defined_),
       objects_(Array<Unique<Object>>::Empty())
 {
     objects_.reserve(aComposite.objects_.getSize());
@@ -79,8 +75,6 @@ Composite& Composite::operator=(const Composite& aComposite)
 {
     if (this != &aComposite)
     {
-        defined_ = aComposite.defined_;
-
         objects_.clear();
 
         objects_.reserve(aComposite.objects_.getSize());
@@ -194,14 +188,14 @@ Composite& Composite::operator+=(const Composite& aComposite)
 
 bool Composite::isDefined() const
 {
-    return defined_ && std::all_of(
-                           objects_.begin(),
-                           objects_.end(),
-                           [](const Unique<Object>& anObjectUPtr) -> bool
-                           {
-                               return anObjectUPtr->isDefined();
-                           }
-                       );
+    return std::all_of(
+        objects_.begin(),
+        objects_.end(),
+        [](const Unique<Object>& anObjectUPtr) -> bool
+        {
+            return anObjectUPtr->isDefined();
+        }
+    );
 }
 
 bool Composite::isEmpty() const
@@ -366,7 +360,7 @@ bool Composite::anyContains(const Composite& aComposite) const
     );
 }
 
-const Object& Composite::accessObjectAt(const Index& anIndex) const
+const Object& Composite::getObjectAt(const Index& anIndex) const
 {
     if (!this->isDefined())
     {
@@ -381,7 +375,7 @@ const Object& Composite::accessObjectAt(const Index& anIndex) const
     return *(objects_.at(anIndex).get());
 }
 
-const Array<Unique<Object>>& Composite::accessObjects() const
+const Array<Unique<Object>>& Composite::getObjects() const
 {
     if (!this->isDefined())
     {
@@ -483,7 +477,7 @@ Composite::ConstIterator Composite::end() const
     return objects_.end();
 }
 
-String Composite::toString(const Object::Format& aFormat, const Integer& aPrecision) const
+String Composite::toString(const Object::Format& aFormat, int aPrecision) const
 {
     (void)aPrecision;
 
@@ -542,15 +536,6 @@ void Composite::applyTransformation(const Transformation& aTransformation)
     {
         objectUPtr->applyTransformation(aTransformation);
     }
-}
-
-Composite Composite::Undefined()
-{
-    Composite composite = Composite::Empty();
-
-    composite.defined_ = false;
-
-    return composite;
 }
 
 Composite Composite::Empty()

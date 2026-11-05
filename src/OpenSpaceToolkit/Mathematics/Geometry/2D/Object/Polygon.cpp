@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <cmath>
+
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry/geometries/polygon.hpp>
@@ -89,7 +91,7 @@ class Polygon::Impl
 
     Intersection differenceWith(const Polygon& aPolygon) const;
 
-    String toString(const Object::Format& aFormat, const Integer& aPrecision) const;
+    String toString(const Object::Format& aFormat, int aPrecision) const;
 
     void applyTransformation(const Transformation& aTransformation);
 
@@ -496,7 +498,7 @@ Intersection Polygon::Impl::intersectionWith(const Polygon& aPolygon) const
 
             if (lineStringIsValid)
             {
-                Composite intersectionComposite = intersection.accessComposite();
+                Composite intersectionComposite = intersection.getComposite();
 
                 if (!intersectionComposite.anyContains(lineString))
                 {
@@ -514,7 +516,7 @@ Intersection Polygon::Impl::intersectionWith(const Polygon& aPolygon) const
         {
             Point point = Point({boostPoint.x(), boostPoint.y()});
 
-            Composite intersectionComposite = intersection.accessComposite();
+            Composite intersectionComposite = intersection.getComposite();
 
             if (!intersectionComposite.anyContains(point))
             {
@@ -587,7 +589,7 @@ Intersection Polygon::Impl::differenceWith(const Polygon& aPolygon) const
     return difference;
 }
 
-String Polygon::Impl::toString(const Object::Format& aFormat, const Integer& aPrecision) const
+String Polygon::Impl::toString(const Object::Format& aFormat, int aPrecision) const
 {
     switch (aFormat)
     {
@@ -596,7 +598,7 @@ String Polygon::Impl::toString(const Object::Format& aFormat, const Integer& aPr
         {
             std::stringstream stringStream;
 
-            if (aPrecision.isDefined())
+            if (aPrecision >= 0)
             {
                 stringStream << std::fixed << std::setprecision(aPrecision) << boost::geometry::wkt(polygon_);
             }
@@ -761,14 +763,14 @@ bool Polygon::isDefined() const
     return (implUPtr_ != nullptr) && implUPtr_->isDefined();
 }
 
-bool Polygon::isNear(const Polygon& aPolygon, const Real& aTolerance) const
+bool Polygon::isNear(const Polygon& aPolygon, double aTolerance) const
 {
     if (!aPolygon.isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    if (!aTolerance.isDefined())
+    if (std::isnan(aTolerance))
     {
         throw ostk::core::error::runtime::Undefined("Tolerance");
     }
@@ -1028,7 +1030,7 @@ MultiPolygon Polygon::unionWith(const Polygon& aPolygon) const
     return MultiPolygon::Polygon(*this).unionWith(MultiPolygon::Polygon(aPolygon));
 }
 
-String Polygon::toString(const Object::Format& aFormat, const Integer& aPrecision) const
+String Polygon::toString(const Object::Format& aFormat, int aPrecision) const
 {
     if (!this->isDefined())
     {

@@ -4,12 +4,10 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_RotationVector(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_RotationVector(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
-    using ostk::core::type::Integer;
-    using ostk::core::type::Real;
     using ostk::core::type::String;
 
     using ostk::mathematics::geometry::Angle;
@@ -55,8 +53,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         )
 
         // Define methods
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const RotationVector& self, const RotationVector& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const RotationVector& self, const RotationVector& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<RotationVector>))
         .def("__repr__", &(shiftToString<RotationVector>))
@@ -123,7 +135,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         )
         .def(
             "to_string",
-            +[](const RotationVector& aRotationVector, const Integer& aPrecision) -> String
+            +[](const RotationVector& aRotationVector, int aPrecision) -> String
             {
                 return aRotationVector.toString(aPrecision);
             },

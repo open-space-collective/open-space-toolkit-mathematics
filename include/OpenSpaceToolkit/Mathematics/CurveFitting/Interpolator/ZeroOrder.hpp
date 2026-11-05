@@ -3,7 +3,6 @@
 #define __OpenSpaceToolkit_Mathematics_Interpolator_ZeroOrder__
 
 #include <OpenSpaceToolkit/Core/Type/Index.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
@@ -19,7 +18,6 @@ namespace interpolator
 {
 
 using ostk::core::type::Index;
-using ostk::core::type::Real;
 using ostk::core::type::Size;
 
 using ostk::mathematics::curvefitting::Interpolator;
@@ -30,6 +28,9 @@ using ostk::mathematics::object::VectorXd;
 ///                             A step interpolator that returns the value of the previous data point.
 ///                             For any query value x, it returns the y value of the largest data point
 ///                             x_i where x_i <= x. Also known as "zero-order hold" or "step" interpolation.
+///
+///                             Use when the data is discrete or piecewise constant (states, modes,
+///                             commands), or when values must not be invented between samples.
 ///
 /// @code{.cpp}
 ///                             VectorXd x = {{0.0, 1.0, 2.0, 3.0}};

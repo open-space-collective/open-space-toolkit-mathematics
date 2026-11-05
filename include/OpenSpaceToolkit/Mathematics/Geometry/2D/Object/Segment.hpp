@@ -2,8 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment__
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
@@ -18,8 +16,6 @@ namespace d2
 {
 namespace object
 {
-
-using ostk::core::type::Real;
 
 using ostk::mathematics::geometry::d2::Object;
 using ostk::mathematics::geometry::d2::object::Line;
@@ -128,7 +124,7 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment first point
-    Point getFirstPoint() const;
+    const Point& getFirstPoint() const;
 
     /// @brief              Get segment second point
     ///
@@ -137,7 +133,7 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment second point
-    Point getSecondPoint() const;
+    const Point& getSecondPoint() const;
 
     /// @brief              Get segment center
     ///
@@ -164,27 +160,27 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment length
-    Real getLength() const;
+    double getLength() const;
 
     /// @brief              Get distance to point
     ///
     /// @code{.cpp}
-    ///                     Real distance = Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).distanceTo(Point(1.0, 0.0)) ;
+    ///                     double distance = Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).distanceTo(Point(1.0, 0.0)) ;
     /// @endcode
     ///
     /// @param              [in] aPoint A point
     /// @return             Distance to point
-    Real distanceTo(const Point& aPoint) const;
+    double distanceTo(const Point& aPoint) const;
 
     /// @brief              Get distance to point set
     ///
     /// @code{.cpp}
-    ///                     Real distance = Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).distanceTo(pointSet) ;
+    ///                     double distance = Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).distanceTo(pointSet) ;
     /// @endcode
     ///
     /// @param              [in] aPointSet A point set
     /// @return             Distance to point set
-    Real distanceTo(const PointSet& aPointSet) const;
+    double distanceTo(const PointSet& aPointSet) const;
 
     /// @brief              Get line from segment
     ///
@@ -203,9 +199,8 @@ class Segment : public Object
     ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-    virtual String toString(
-        const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
-    ) const override;
+    virtual String toString(const Object::Format& aFormat = Object::Format::Standard, int aPrecision = -1)
+        const override;
 
     /// @brief              Print segment
     ///

@@ -2,23 +2,24 @@
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(nanobind::module_& aModule)
 {
-    using namespace pybind11;
-
-    using ostk::core::type::Shared;
+    using namespace nanobind;
 
     using ostk::mathematics::curvefitting::Interpolator;
     using ostk::mathematics::object::VectorXd;
 
     using ostk::mathematics::curvefitting::interpolator::Linear;
 
-    class_<Linear, Interpolator, Shared<Linear>>(aModule, "Linear")
+    class_<Linear, Interpolator>(aModule, "Linear")
 
         .def(
             init<const VectorXd&, const VectorXd&>(),
             R"doc(
                 Create a linear interpolator with data points.
+
+                Use when a cheap, robust estimate that never leaves the range of the neighbouring samples is enough,
+                and the smoothness of the result does not matter.
 
                 Args:
                     x (np.array): The x-coordinates of data points.

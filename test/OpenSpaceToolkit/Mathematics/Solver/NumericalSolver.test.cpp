@@ -1,9 +1,9 @@
 /// Apache License 2.0
 
+#include <cmath>
+
 #include <OpenSpaceToolkit/Core/Container/Array.hpp>
 #include <OpenSpaceToolkit/Core/Container/Tuple.hpp>
-#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Shared.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
@@ -14,8 +14,6 @@
 
 using ostk::core::container::Array;
 using ostk::core::container::Tuple;
-using ostk::core::type::Integer;
-using ostk::core::type::Real;
 using ostk::core::type::Shared;
 using ostk::core::type::String;
 
@@ -59,8 +57,8 @@ class OpenSpaceToolkit_Mathematics_Solver_NumericalSolver : public ::testing::Te
     };
 
     NumericalSolver::StateVector defaultStateVector_;
-    const Real defaultDuration_ = 10.0;
-    const Real defaultStartTime_ = 0.0;
+    const double defaultDuration_ = 10.0;
+    const double defaultStartTime_ = 0.0;
 
     const std::function<void(const NumericalSolver::StateVector &, NumericalSolver::StateVector &, const double)>
         systemOfEquations_ =
@@ -280,13 +278,6 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Print)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Accessors)
-{
-    {
-        EXPECT_NO_THROW(defaultRK54_.accessObservedStateVectors());
-    }
-}
-
 TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, GetType)
 {
     {
@@ -398,12 +389,12 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
     };
 
     {
-        const Array<Real> durations = {
+        const Array<double> durations = {
             defaultDuration_,
             -defaultDuration_,
         };
 
-        for (const Real &duration : durations)
+        for (const double &duration : durations)
         {
             const NumericalSolver::StateVector propagatedStateVector =
                 numericalSolver.integrateDuration(defaultStateVector_, duration, systemOfEquations_).first;
@@ -475,14 +466,14 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         1.0e-12,
     };
 
-    const Array<Array<Real>> durationArrays = {
+    const Array<Array<double>> durationArrays = {
         {1.0, 4.0, 7.0, 10.0},
         {-1.0, -4.0, -7.0, -10.0},
     };
 
     const double tolerance = 2e-8;
 
-    for (const Array<Real> &durationArray : durationArrays)
+    for (const Array<double> &durationArray : durationArrays)
     {
         const Array<NumericalSolver::Solution> propagatedStateVectorArray =
             numericalSolver.integrateDuration(defaultStateVector_, durationArray, systemOfEquations_);
@@ -503,12 +494,12 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         1.0e-12,
     };
 
-    const Array<Real> endTimes = {
+    const Array<double> endTimes = {
         defaultStartTime_ + defaultDuration_,
         defaultStartTime_ - defaultDuration_,
     };
 
-    for (const Real &endTime : endTimes)
+    for (const double &endTime : endTimes)
     {
         const NumericalSolver::StateVector propagatedStateVector =
             numericalSolver.integrateTime(defaultStateVector_, defaultStartTime_, endTime, systemOfEquations_).first;
@@ -576,14 +567,14 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         1.0e-12,
     };
 
-    const Array<Array<Real>> timeArrays = {
+    const Array<Array<double>> timeArrays = {
         {1.0, 4.0, 7.0, 10.0},
         {-1.0, -4.0, -7.0, -10.0},
     };
 
     const double tolerance = 2e-8;
 
-    for (const Array<Real> &timeArray : timeArrays)
+    for (const Array<double> &timeArray : timeArrays)
     {
         const Array<NumericalSolver::Solution> propagatedStateVectorArray =
             numericalSolver.integrateTime(defaultStateVector_, defaultStartTime_, timeArray, systemOfEquations_);
@@ -593,7 +584,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
 
     {
         EXPECT_THROW(
-            numericalSolver.integrateTime(defaultStateVector_, defaultStartTime_, Array<Real> {}, systemOfEquations_),
+            numericalSolver.integrateTime(defaultStateVector_, defaultStartTime_, Array<double> {}, systemOfEquations_),
             ostk::core::error::RuntimeError
         );
     }

@@ -203,7 +203,7 @@ Transformation::Type Transformation::getType() const
     return type_;
 }
 
-Matrix4d Transformation::getMatrix() const
+const Matrix4d& Transformation::getMatrix() const
 {
     if (!this->isDefined())
     {

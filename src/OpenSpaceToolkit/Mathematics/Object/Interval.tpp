@@ -1,10 +1,16 @@
 /// Apache License 2.0
 
+#include <cmath>
+#include <limits>
+#include <sstream>
+#include <type_traits>
+
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
+#include <OpenSpaceToolkit/Mathematics/Utility.hpp>
 
 namespace ostk
 {
@@ -15,13 +21,112 @@ namespace object
 
 using ostk::core::type::Size;
 
+/// @brief                      Helpers that let Interval<T> work with both floating-point bounds (where NaN means
+///                             undefined) and class bounds exposing isDefined(), toString() and Undefined()
+namespace internal
+{
+
+template <class T>
+bool IsDefined(const T& aValue)
+{
+    if constexpr (std::is_floating_point<T>::value)
+    {
+        return !std::isnan(aValue);
+    }
+    else
+    {
+        return aValue.isDefined();
+    }
+}
+
+template <class T>
+T Undefined()
+{
+    if constexpr (std::is_floating_point<T>::value)
+    {
+        return std::numeric_limits<T>::quiet_NaN();
+    }
+    else
+    {
+        return T::Undefined();
+    }
+}
+
+template <class T>
+types::String ToString(const T& aValue)
+{
+    if constexpr (std::is_floating_point<T>::value)
+    {
+        return ostk::mathematics::utility::DoubleToString(aValue);
+    }
+    else
+    {
+        return aValue.toString();
+    }
+}
+
+template <class T>
+decltype(auto) Printable(const T& aValue)
+{
+    if constexpr (std::is_floating_point<T>::value)
+    {
+        if (std::isnan(aValue))
+        {
+            return types::String("Undefined");
+        }
+
+        if (std::isinf(aValue))
+        {
+            return types::String((aValue > 0.0) ? "+Inf" : "-Inf");
+        }
+
+        std::ostringstream stringStream;
+
+        stringStream << aValue;
+
+        return types::String(stringStream.str());
+    }
+    else
+    {
+        return (aValue);  // Parenthesized to return a const reference
+    }
+}
+
+template <class T>
+bool IsZero(const T& aValue)
+{
+    if constexpr (std::is_floating_point<T>::value)
+    {
+        return aValue == 0.0;
+    }
+    else
+    {
+        return aValue.isZero();
+    }
+}
+
+template <class T>
+bool IsPositive(const T& aValue)
+{
+    if constexpr (std::is_floating_point<T>::value)
+    {
+        return aValue >= 0.0;
+    }
+    else
+    {
+        return aValue.isPositive();
+    }
+}
+
+}  // namespace internal
+
 template <class T>
 Interval<T>::Interval(const T& aLowerBound, const T& anUpperBound, const Interval::Type& anIntervalType)
     : type_(anIntervalType),
       lowerBound_(aLowerBound),
       upperBound_(anUpperBound)
 {
-    if (lowerBound_.isDefined() && upperBound_.isDefined())
+    if (internal::IsDefined(lowerBound_) && internal::IsDefined(upperBound_))
     {
         if (lowerBound_ > upperBound_)
         {
@@ -59,8 +164,8 @@ std::ostream& operator<<(std::ostream& anOutputStream, const Interval<U>& anInte
     ostk::core::utils::Print::Header(anOutputStream, "Interval");
 
     ostk::core::utils::Print::Line(anOutputStream) << "Type:" << Interval<U>::StringFromType(anInterval.type_);
-    ostk::core::utils::Print::Line(anOutputStream) << "Lower Bound:" << anInterval.lowerBound_;
-    ostk::core::utils::Print::Line(anOutputStream) << "Upper Bound:" << anInterval.upperBound_;
+    ostk::core::utils::Print::Line(anOutputStream) << "Lower Bound:" << internal::Printable(anInterval.lowerBound_);
+    ostk::core::utils::Print::Line(anOutputStream) << "Upper Bound:" << internal::Printable(anInterval.upperBound_);
 
     ostk::core::utils::Print::Footer(anOutputStream);
 
@@ -70,7 +175,7 @@ std::ostream& operator<<(std::ostream& anOutputStream, const Interval<U>& anInte
 template <class T>
 bool Interval<T>::isDefined() const
 {
-    return (type_ != Interval::Type::Undefined) && lowerBound_.isDefined() && upperBound_.isDefined();
+    return (type_ != Interval::Type::Undefined) && internal::IsDefined(lowerBound_) && internal::IsDefined(upperBound_);
 }
 
 template <class T>
@@ -124,7 +229,7 @@ bool Interval<T>::intersects(const Interval& anInterval) const
 template <class T>
 bool Interval<T>::contains(const T& aValue) const
 {
-    if (!aValue.isDefined())
+    if (!internal::IsDefined(aValue))
     {
         throw ostk::core::error::runtime::Undefined("Value");
     }
@@ -163,28 +268,6 @@ bool Interval<T>::contains(const Interval& anInterval) const
 }
 
 template <class T>
-const T& Interval<T>::accessLowerBound() const
-{
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Interval");
-    }
-
-    return lowerBound_;
-}
-
-template <class T>
-const T& Interval<T>::accessUpperBound() const
-{
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Interval");
-    }
-
-    return upperBound_;
-}
-
-template <class T>
 typename Interval<T>::Type Interval<T>::getType() const
 {
     if (!this->isDefined())
@@ -196,7 +279,7 @@ typename Interval<T>::Type Interval<T>::getType() const
 }
 
 template <class T>
-T Interval<T>::getLowerBound() const
+const T& Interval<T>::getLowerBound() const
 {
     if (!this->isDefined())
     {
@@ -207,7 +290,7 @@ T Interval<T>::getLowerBound() const
 }
 
 template <class T>
-T Interval<T>::getUpperBound() const
+const T& Interval<T>::getUpperBound() const
 {
     if (!this->isDefined())
     {
@@ -381,28 +464,28 @@ ctnr::Array<T> Interval<T>::generateArrayWithStep(const U& aStep) const
         throw ostk::core::error::runtime::Undefined("Interval");
     }
 
-    if (!aStep.isDefined())
+    if (!internal::IsDefined(aStep))
     {
         throw ostk::core::error::runtime::Undefined("Step");
     }
 
-    if (aStep.isZero())
+    if (internal::IsZero(aStep))
     {
         throw ostk::core::error::RuntimeError("Step is zero.");
     }
 
     ctnr::Array<T> grid = ctnr::Array<T>::Empty();
 
-    if (aStep.isPositive())
+    if (internal::IsPositive(aStep))
     {
-        T value = this->accessLowerBound();
+        T value = this->getLowerBound();
 
         if ((type_ == Interval<T>::Type::Open) || (type_ == Interval<T>::Type::HalfOpenLeft))
         {
             value += aStep;
         }
 
-        while (value < this->accessUpperBound())
+        while (value < this->getUpperBound())
         {
             grid.add(value);
 
@@ -411,19 +494,19 @@ ctnr::Array<T> Interval<T>::generateArrayWithStep(const U& aStep) const
 
         if ((type_ == Interval<T>::Type::Closed) || (type_ == Interval<T>::Type::HalfOpenLeft))
         {
-            grid.add(this->accessUpperBound());
+            grid.add(this->getUpperBound());
         }
     }
     else
     {
-        T value = this->accessUpperBound();
+        T value = this->getUpperBound();
 
         if ((type_ == Interval<T>::Type::Open) || (type_ == Interval<T>::Type::HalfOpenRight))
         {
             value += aStep;
         }
 
-        while (value > this->accessLowerBound())
+        while (value > this->getLowerBound())
         {
             grid.add(value);
 
@@ -432,7 +515,7 @@ ctnr::Array<T> Interval<T>::generateArrayWithStep(const U& aStep) const
 
         if ((type_ == Interval<T>::Type::Closed) || (type_ == Interval<T>::Type::HalfOpenRight))
         {
-            grid.add(this->accessLowerBound());
+            grid.add(this->getLowerBound());
         }
     }
 
@@ -447,29 +530,29 @@ ctnr::Array<T> Interval<T>::generateArrayWithSize(const types::Size& anArraySize
         throw ostk::core::error::runtime::Wrong("Array size");
     }
 
-    T step = T::Undefined();
-    T value = T::Undefined();
+    T step = internal::Undefined<T>();
+    T value = internal::Undefined<T>();
 
     switch (type_)
     {
         case Interval<T>::Type::Closed:
-            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize - 1);
-            value = this->accessLowerBound();
+            step = (this->getUpperBound() - this->getLowerBound()) / static_cast<T>(anArraySize - 1);
+            value = this->getLowerBound();
             break;
 
         case Interval<T>::Type::Open:
-            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize + 1);
-            value = this->accessLowerBound() + step;
+            step = (this->getUpperBound() - this->getLowerBound()) / static_cast<T>(anArraySize + 1);
+            value = this->getLowerBound() + step;
             break;
 
         case Interval<T>::Type::HalfOpenLeft:
-            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize);
-            value = this->accessLowerBound() + step;
+            step = (this->getUpperBound() - this->getLowerBound()) / static_cast<T>(anArraySize);
+            value = this->getLowerBound() + step;
             break;
 
         case Interval<T>::Type::HalfOpenRight:
-            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize);
-            value = this->accessLowerBound();
+            step = (this->getUpperBound() - this->getLowerBound()) / static_cast<T>(anArraySize);
+            value = this->getLowerBound();
             break;
 
         default:
@@ -477,7 +560,7 @@ ctnr::Array<T> Interval<T>::generateArrayWithSize(const types::Size& anArraySize
             break;
     }
 
-    ctnr::Array<T> array(anArraySize, T::Undefined());
+    ctnr::Array<T> array(anArraySize, internal::Undefined<T>());
 
     typename ctnr::Array<T>::Iterator arrayIt;
 
@@ -500,16 +583,16 @@ types::String Interval<T>::toString() const
     switch (type_)
     {
         case Interval<T>::Type::Closed:
-            return types::String::Format("[{}, {}]", lowerBound_.toString(), upperBound_.toString());
+            return types::String::Format("[{}, {}]", internal::ToString(lowerBound_), internal::ToString(upperBound_));
 
         case Interval<T>::Type::Open:
-            return types::String::Format("]{}, {}[", lowerBound_.toString(), upperBound_.toString());
+            return types::String::Format("]{}, {}[", internal::ToString(lowerBound_), internal::ToString(upperBound_));
 
         case Interval<T>::Type::HalfOpenLeft:
-            return types::String::Format("]{}, {}]", lowerBound_.toString(), upperBound_.toString());
+            return types::String::Format("]{}, {}]", internal::ToString(lowerBound_), internal::ToString(upperBound_));
 
         case Interval<T>::Type::HalfOpenRight:
-            return types::String::Format("[{}, {}[", lowerBound_.toString(), upperBound_.toString());
+            return types::String::Format("[{}, {}[", internal::ToString(lowerBound_), internal::ToString(upperBound_));
 
         default:
             break;
@@ -539,7 +622,7 @@ void Interval<T>::setLowerBound(const T& aLowerBound)
         throw ostk::core::error::runtime::Undefined("Interval");
     }
 
-    if (aLowerBound.isDefined() && upperBound_.isDefined() && (aLowerBound > upperBound_))
+    if (internal::IsDefined(aLowerBound) && internal::IsDefined(upperBound_) && (aLowerBound > upperBound_))
     {
         throw ostk::core::error::RuntimeError("Lower bound greater than upper bound.");
     }
@@ -555,7 +638,7 @@ void Interval<T>::setUpperBound(const T& anUpperBound)
         throw ostk::core::error::runtime::Undefined("Interval");
     }
 
-    if (anUpperBound.isDefined() && lowerBound_.isDefined() && (anUpperBound < lowerBound_))
+    if (internal::IsDefined(anUpperBound) && internal::IsDefined(lowerBound_) && (anUpperBound < lowerBound_))
     {
         throw ostk::core::error::RuntimeError("Upper bound lower than lower bound.");
     }
@@ -566,7 +649,7 @@ void Interval<T>::setUpperBound(const T& anUpperBound)
 template <class T>
 Interval<T> Interval<T>::Undefined()
 {
-    return Interval<T>(T::Undefined(), T::Undefined(), Interval::Type::Undefined);
+    return Interval<T>(internal::Undefined<T>(), internal::Undefined<T>(), Interval::Type::Undefined);
 }
 
 template <class T>

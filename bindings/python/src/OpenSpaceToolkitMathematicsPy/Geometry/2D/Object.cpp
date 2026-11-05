@@ -1,6 +1,5 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
@@ -14,9 +13,9 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Polygon.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Segment.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(pybind11::module &aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(nanobind::module_ &aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::mathematics::geometry::d2::Object;
 
@@ -145,7 +144,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(pybind11::module &a
 
     enum_<Object::Format>(ob, "Format")
 
-        .value("Undefined", Object::Format::Undefined)
         .value("Standard", Object::Format::Standard)
         .value("WKT", Object::Format::WKT)
 

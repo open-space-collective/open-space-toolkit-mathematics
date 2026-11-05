@@ -3,13 +3,15 @@
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/BarycentricRational.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CubicHermite.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CubicSpline.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/Linear.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/QuadraticSpline.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/QuinticHermite.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/QuinticSpline.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/ZeroOrder.cpp>
 
-using namespace pybind11;
-
-using ostk::core::type::Shared;
+using namespace nanobind;
 
 using ostk::mathematics::curvefitting::Interpolator;
 using ostk::mathematics::object::VectorXd;
@@ -18,34 +20,34 @@ using ostk::mathematics::object::VectorXd;
 class PyInterpolator : public Interpolator
 {
    public:
-    using Interpolator::Interpolator;
+    NB_TRAMPOLINE(Interpolator);
 
     // Trampoline (need one for each virtual function)
 
     VectorXd evaluate(const VectorXd& aQueryVector) const override
     {
-        PYBIND11_OVERRIDE_PURE(VectorXd, Interpolator, evaluate, aQueryVector);
+        NB_OVERRIDE_PURE(evaluate, aQueryVector);
     }
 
     double evaluate(const double& aQueryValue) const override
     {
-        PYBIND11_OVERRIDE_PURE(double, Interpolator, evaluate, aQueryValue);
+        NB_OVERRIDE_PURE(evaluate, aQueryValue);
     }
 
     double computeDerivative(const double& aQueryValue) const override
     {
-        PYBIND11_OVERRIDE_PURE(double, Interpolator, computeDerivative, aQueryValue);
+        NB_OVERRIDE_PURE(computeDerivative, aQueryValue);
     }
 
     VectorXd computeDerivative(const VectorXd& aQueryVector) const override
     {
-        PYBIND11_OVERRIDE_PURE(VectorXd, Interpolator, computeDerivative, aQueryVector);
+        NB_OVERRIDE_PURE(computeDerivative, aQueryVector);
     }
 };
 
-inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(nanobind::module_& aModule)
 {
-    class_<Interpolator, PyInterpolator, Shared<Interpolator>> interpolator_class(aModule, "Interpolator");
+    class_<Interpolator, PyInterpolator> interpolator_class(aModule, "Interpolator");
 
     enum_<Interpolator::Type>(interpolator_class, "Type")
 
@@ -53,6 +55,10 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
         .value("CubicSpline", Interpolator::Type::CubicSpline)
         .value("Linear", Interpolator::Type::Linear)
         .value("ZeroOrder", Interpolator::Type::ZeroOrder)
+        .value("CubicHermite", Interpolator::Type::CubicHermite)
+        .value("QuinticHermite", Interpolator::Type::QuinticHermite)
+        .value("QuadraticSpline", Interpolator::Type::QuadraticSpline)
+        .value("QuinticSpline", Interpolator::Type::QuinticSpline)
 
         ;
 
@@ -182,6 +188,10 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
                 Returns:
                     Interpolator: The created interpolator.
 
+                Note:
+                    The Hermite types cannot be generated here, as they additionally require derivative data.
+                    Construct them directly instead.
+
                 Example:
                     >>> x = np.array([0.0, 1.0, 2.0])
                     >>> y = np.array([0.0, 2.0, 4.0])
@@ -201,7 +211,11 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
 
     // Add object to python "interpolator" submodules
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricRational(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicHermite(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuadraticSpline(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticHermite(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_QuinticSpline(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_ZeroOrder(interpolator);
 }

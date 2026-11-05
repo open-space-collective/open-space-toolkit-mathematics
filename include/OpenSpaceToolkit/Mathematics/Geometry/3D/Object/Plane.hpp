@@ -218,7 +218,7 @@ class Plane : public Object
     /// @endcode
     ///
     /// @return             Plane point
-    Point getPoint() const;
+    const Point& getPoint() const;
 
     /// @brief              Get plane normal vector
     ///
@@ -227,7 +227,7 @@ class Plane : public Object
     /// @endcode
     ///
     /// @return             Plane normal vector
-    Vector3d getNormalVector() const;
+    const Vector3d& getNormalVector() const;
 
     /// @brief              Compute intersection of plane with point
     ///

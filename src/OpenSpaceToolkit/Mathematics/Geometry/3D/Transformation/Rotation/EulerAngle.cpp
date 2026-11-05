@@ -1,5 +1,8 @@
 /// Apache License 2.0
 
+#include <cmath>
+#include <limits>
+
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
@@ -112,7 +115,7 @@ bool EulerAngle::isNear(const EulerAngle& aEulerAngle, const Angle& anAngularTol
     return Quaternion::EulerAngle(*this).isNear(Quaternion::EulerAngle(aEulerAngle), anAngularTolerance);
 }
 
-Angle EulerAngle::getPhi() const
+const Angle& EulerAngle::getPhi() const
 {
     if (!this->isDefined())
     {
@@ -122,7 +125,7 @@ Angle EulerAngle::getPhi() const
     return phi_;
 }
 
-Angle EulerAngle::getTheta() const
+const Angle& EulerAngle::getTheta() const
 {
     if (!this->isDefined())
     {
@@ -132,7 +135,7 @@ Angle EulerAngle::getTheta() const
     return theta_;
 }
 
-Angle EulerAngle::getPsi() const
+const Angle& EulerAngle::getPsi() const
 {
     if (!this->isDefined())
     {
@@ -217,14 +220,14 @@ EulerAngle EulerAngle::Quaternion(
         throw ostk::core::error::RuntimeError("Quaternion is not unitary.");
     }
 
-    const Real q_x = aQuaternion.x();
-    const Real q_y = aQuaternion.y();
-    const Real q_z = aQuaternion.z();
-    const Real q_s = aQuaternion.s();
+    const double q_x = aQuaternion.x();
+    const double q_y = aQuaternion.y();
+    const double q_z = aQuaternion.z();
+    const double q_s = aQuaternion.s();
 
-    Real phi = Real::Undefined();
-    Real theta = Real::Undefined();
-    Real psi = Real::Undefined();
+    double phi = std::numeric_limits<double>::quiet_NaN();
+    double theta = std::numeric_limits<double>::quiet_NaN();
+    double psi = std::numeric_limits<double>::quiet_NaN();
 
     switch (anAxisSequence)
     {
@@ -268,9 +271,9 @@ EulerAngle EulerAngle::RotationMatrix(
         throw ostk::core::error::runtime::Undefined("Rotation Matrix");
     }
 
-    Real phi = Real::Undefined();
-    Real theta = Real::Undefined();
-    Real psi = Real::Undefined();
+    double phi = std::numeric_limits<double>::quiet_NaN();
+    double theta = std::numeric_limits<double>::quiet_NaN();
+    double psi = std::numeric_limits<double>::quiet_NaN();
 
     switch (anAxisSequence)
     {

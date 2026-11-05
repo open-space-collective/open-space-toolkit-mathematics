@@ -2,6 +2,8 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Intersection__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Intersection__
 
+#include <optional>
+
 #include <OpenSpaceToolkit/Core/Container/Array.hpp>
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Type/Index.hpp>
@@ -45,7 +47,6 @@ class Intersection
     enum class Type
     {
 
-        Undefined,
         Empty,
         Point,
         PointSet,
@@ -149,15 +150,6 @@ class Intersection
     /// @return             A reference to output stream
     friend std::ostream& operator<<(std::ostream& anOutputStream, const Intersection& anIntersection);
 
-    /// @brief              Check if intersection is defined
-    ///
-    /// @code{.cpp}
-    ///                     Intersection::Empty().isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if intersection is defined
-    bool isDefined() const;
-
     /// @brief              Check if intersection is empty
     ///
     /// @code{.cpp}
@@ -191,11 +183,6 @@ class Intersection
     template <class Type>
     bool is() const
     {
-        if (!this->isDefined())
-        {
-            throw ostk::core::error::runtime::Undefined("Intersection");
-        }
-
         return composite_.is<Type>();
     }
 
@@ -212,22 +199,26 @@ class Intersection
     template <class Type>
     const Type& as() const
     {
-        if (!this->isDefined())
-        {
-            throw ostk::core::error::runtime::Undefined("Intersection");
-        }
-
         return composite_.as<Type>();
     }
 
-    /// @brief              Access composite object
+    /// @brief              Get composite object
     ///
     /// @code{.cpp}
-    ///                     const Composite& composite = intersection.accessComposite() ;
+    ///                     const Composite& composite = intersection.getComposite() ;
     /// @endcode
     ///
-    /// @return             Reference to composite object
-    const Composite& accessComposite() const;
+    /// @return             Const reference to composite object
+    const Composite& getComposite() const&;
+
+    /// @brief              Get composite object of a temporary intersection
+    ///
+    /// @code{.cpp}
+    ///                     for (const auto& object : lineA.intersectionWith(lineB).getComposite()) { ... }
+    /// @endcode
+    ///
+    /// @return             Composite object (copy, so that it does not dangle)
+    Composite getComposite() &&;
 
     /// @brief              Get intersection type
     ///
@@ -237,15 +228,6 @@ class Intersection
     ///
     /// @return             Intersection type
     Intersection::Type getType() const;
-
-    /// @brief              Constructs an undefined intersection
-    ///
-    /// @code
-    ///                     Intersection intersection = Intersection::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined intersection
-    static Intersection Undefined();
 
     /// @brief              Constructs an empty intersection
     ///
@@ -331,7 +313,7 @@ class Intersection
 
     static Intersection::Type TypeFromObjects(const Array<Unique<Object>>& anObjectArray);
 
-    static Intersection::Type TypeFromObjects(const Unique<Object>& anObjectUPtr);
+    static std::optional<Intersection::Type> TypeFromObjects(const Unique<Object>& anObjectUPtr);
 };
 
 }  // namespace d2

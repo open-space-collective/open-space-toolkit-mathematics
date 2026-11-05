@@ -849,8 +849,6 @@ Intersection Object::intersectionWith(const Object& anObject) const
     std::cout << anObject << std::endl;
 
     throw ostk::core::error::runtime::ToBeImplemented("Object :: intersectionWith");
-
-    return Intersection::Undefined();
 }
 
 }  // namespace d3

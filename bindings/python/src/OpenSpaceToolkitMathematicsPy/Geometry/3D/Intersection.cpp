@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
     using ostk::core::type::Unique;
@@ -38,7 +38,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
 
     // Define constructor
     // intersection.def("__init__",
-    //     [] (Intersection& anIntersection, const pybind11::list& anObjectList)
+    //     [] (Intersection& anIntersection, const nanobind::list& anObjectList)
     //         {
 
     //             Array<Unique<Object>> anObjectArray = {} ;
@@ -59,29 +59,46 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
     // ) ;
 
     // Define methods
-    intersection.def(self == self)
-        .def(self != self)
+    intersection
+        .def(
+            "__eq__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self + self)
-        .def(self += self)
+        .def(
+            "__add__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self + other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__iadd__",
+            [](Intersection& self, const Intersection& other) -> Intersection&
+            {
+                self += other;
+                return self;
+            },
+            nanobind::rv_policy::none,
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Intersection>))
         .def("__repr__", &(shiftToString<Intersection>))
 
-        .def(
-            "is_defined",
-            &Intersection::isDefined,
-            R"doc(
-                Check if the intersection is defined.
-
-                Returns:
-                    bool: True if the intersection is defined.
-                
-                Example:
-                    >>> intersection = Intersection.point(Point(1.0, 2.0, 3.0))
-                    >>> intersection.is_defined()  # True
-            )doc"
-        )
         .def(
             "is_empty",
             &Intersection::isEmpty,
@@ -515,19 +532,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
             )doc"
         )
 
-        // .def("access_composite", &Intersection::accessComposite, return_value_policy<reference_existing_object>())
+        // .def("get_composite", &Intersection::getComposite, return_value_policy<reference_existing_object>())
         .def(
-            "access_composite",
-            &Intersection::accessComposite,
-            return_value_policy::reference,
+            "get_composite",
+            [](const Intersection& anIntersection) -> const Composite&
+            {
+                return anIntersection.getComposite();
+            },
+            rv_policy::reference_internal,
             R"doc(
-                Access the composite object in the intersection.
+                Get the composite object in the intersection.
 
                 Returns:
                     Composite: Reference to the composite object.
                 
                 Example:
-                    >>> composite = intersection.access_composite()
+                    >>> composite = intersection.get_composite()
             )doc"
         )
 
@@ -547,20 +567,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
         )
 
         // Define static methods
-        .def_static(
-            "undefined",
-            &Intersection::Undefined,
-            R"doc(
-                Create an undefined intersection.
-
-                Returns:
-                    Intersection: An undefined intersection.
-                
-                Example:
-                    >>> intersection = Intersection.undefined()
-                    >>> intersection.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "empty",
             &Intersection::Empty,
@@ -590,7 +596,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                 
                 Example:
                     >>> intersection = Intersection.point(Point(1.0, 2.0, 3.0))
-                    >>> intersection.is_defined()  # True
+                    >>> intersection.is_point()  # True
             )doc"
         )
         .def_static(
@@ -608,7 +614,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                 
                 Example:
                     >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)]))
-                    >>> intersection.is_defined()  # True
+                    >>> intersection.is_point_set()  # True
             )doc"
         )
         .def_static(
@@ -626,7 +632,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                 
                 Example:
                     >>> intersection = Intersection.line(Line(Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)))
-                    >>> intersection.is_defined()  # True
+                    >>> intersection.is_line()  # True
             )doc"
         )
         .def_static(
@@ -644,7 +650,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                 
                 Example:
                     >>> intersection = Intersection.ray(Ray(Point(1.0, 2.0, 3.0), Vector(3.0, 4.0, 5.0)))
-                    >>> intersection.is_defined()  # True
+                    >>> intersection.is_ray()  # True
             )doc"
         )
         .def_static(
@@ -662,7 +668,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                 
                 Example:
                     >>> intersection = Intersection.segment(Segment(Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)))
-                    >>> intersection.is_defined()  # True
+                    >>> intersection.is_segment()  # True
             )doc"
         )
 
@@ -689,7 +695,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
     // Define Intersection types
     enum_<Intersection::Type>(intersection, "Type")
 
-        .value("Undefined", Intersection::Type::Undefined)
         .value("Empty", Intersection::Type::Empty)
         .value("Point", Intersection::Type::Point)
         .value("PointSet", Intersection::Type::PointSet)

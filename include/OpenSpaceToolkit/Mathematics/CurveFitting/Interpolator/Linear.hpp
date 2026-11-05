@@ -4,7 +4,6 @@
 
 #include <OpenSpaceToolkit/Core/Container/Pair.hpp>
 #include <OpenSpaceToolkit/Core/Type/Index.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
@@ -21,7 +20,6 @@ namespace interpolator
 
 using ostk::core::container::Pair;
 using ostk::core::type::Index;
-using ostk::core::type::Real;
 using ostk::core::type::Size;
 
 using ostk::mathematics::curvefitting::Interpolator;
@@ -32,6 +30,9 @@ using ostk::mathematics::object::VectorXd;
 ///                             In mathematics, linear interpolator is a method of curve fitting using linear
 ///                             polynomials to construct new data points within the range of a discrete set of known
 ///                             data points.
+///
+///                             Use when a cheap, robust estimate that never leaves the range of the
+///                             neighbouring samples is enough, and the smoothness of the result does not matter.
 ///
 /// @code{.cpp}
 ///                             VectorXd x = {{0.0, 1.0, 2.0, 3.0}};

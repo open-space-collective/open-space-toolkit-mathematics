@@ -370,8 +370,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, GetNormalVector)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Point)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -381,20 +379,17 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Poi
     {
         const Intersection intersection = aPlane.intersectionWith(aPoint);
 
-        EXPECT_TRUE(intersection.isDefined());
+        ASSERT_TRUE(intersection.getComposite().is<Point>());
 
-        ASSERT_TRUE(intersection.accessComposite().is<Point>());
+        const Point point = intersection.getComposite().as<Point>();
 
-        const Point point = intersection.accessComposite().as<Point>();
-
-        EXPECT_TRUE(point.isNear(anIntersectionPoint, Real::Epsilon()));
+        EXPECT_TRUE(point.isNear(anIntersectionPoint, 1e-15));
     };
 
     const auto expectEmptyIntersection = [](const Plane& aPlane, const Point& aPoint) -> void
     {
         const Intersection intersection = aPlane.intersectionWith(aPoint);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_TRUE(intersection.isEmpty());
     };
 
@@ -423,8 +418,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Poi
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_PointSet)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
@@ -435,13 +428,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Poi
     {
         const Intersection intersection = aPlane.intersectionWith(aPointSet);
 
-        EXPECT_TRUE(intersection.isDefined());
+        ASSERT_TRUE(intersection.getComposite().is<Point>());
 
-        ASSERT_TRUE(intersection.accessComposite().is<Point>());
+        const Point point = intersection.getComposite().as<Point>();
 
-        const Point point = intersection.accessComposite().as<Point>();
-
-        EXPECT_TRUE(point.isNear(anIntersectionPoint, Real::Epsilon()));
+        EXPECT_TRUE(point.isNear(anIntersectionPoint, 1e-15));
     };
 
     const auto expectPointSetIntersection =
@@ -449,20 +440,17 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Poi
     {
         const Intersection intersection = aPlane.intersectionWith(aPointSet);
 
-        EXPECT_TRUE(intersection.isDefined());
+        ASSERT_TRUE(intersection.getComposite().is<PointSet>());
 
-        ASSERT_TRUE(intersection.accessComposite().is<PointSet>());
+        const PointSet pointSet = intersection.getComposite().as<PointSet>();
 
-        const PointSet pointSet = intersection.accessComposite().as<PointSet>();
-
-        EXPECT_TRUE(pointSet.isNear(anIntersectionPointSet, Real::Epsilon()));
+        EXPECT_TRUE(pointSet.isNear(anIntersectionPointSet, 1e-15));
     };
 
     const auto expectEmptyIntersection = [](const Plane& aPlane, const PointSet& aPointSet) -> void
     {
         const Intersection intersection = aPlane.intersectionWith(aPointSet);
 
-        EXPECT_TRUE(intersection.isDefined());
         EXPECT_TRUE(intersection.isEmpty());
     };
 
@@ -575,8 +563,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Seg
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, ApplyTransformation)
 {
-    using ostk::core::type::Real;
-
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::Transformation;
@@ -602,8 +588,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, ApplyTransformation)
 
         const Plane referencePlane = {{1.0, 0.0, 3.0}, {0.0, 0.0, 1.0}};
 
-        EXPECT_TRUE(plane.getPoint().isNear(referencePlane.getPoint(), Real::Epsilon()));
-        EXPECT_TRUE(plane.getNormalVector().isNear(referencePlane.getNormalVector(), Real::Epsilon()));
+        EXPECT_TRUE(plane.getPoint().isNear(referencePlane.getPoint(), 1e-15));
+        EXPECT_TRUE(plane.getNormalVector().isNear(referencePlane.getNormalVector(), 1e-15));
     }
 
     {

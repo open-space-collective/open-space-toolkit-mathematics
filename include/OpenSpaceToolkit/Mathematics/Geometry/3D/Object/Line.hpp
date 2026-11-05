@@ -2,8 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line__
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
 
@@ -17,8 +15,6 @@ namespace d3
 {
 namespace object
 {
-
-using ostk::core::type::Real;
 
 using ostk::mathematics::geometry::d3::Object;
 using ostk::mathematics::geometry::d3::object::Point;
@@ -168,7 +164,7 @@ class Line : public Object
     /// @endcode
     ///
     /// @return             Line origin
-    Point getOrigin() const;
+    const Point& getOrigin() const;
 
     /// @brief              Get line direction
     ///
@@ -177,18 +173,18 @@ class Line : public Object
     /// @endcode
     ///
     /// @return             Line direction
-    Vector3d getDirection() const;
+    const Vector3d& getDirection() const;
 
     /// @brief              Get distance to point
     ///
     /// @code{.cpp}
     ///                     Line line = Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
-    ///                     Real distance = line.distanceTo(Point(1.0, 0.0, 0.0)) ;
+    ///                     double distance = line.distanceTo(Point(1.0, 0.0, 0.0)) ;
     /// @endcode
     ///
     /// @param              [in] aPoint A point
     /// @return             Distance to point
-    Real distanceTo(const Point& aPoint) const;
+    double distanceTo(const Point& aPoint) const;
 
     /// @brief              Compute intersection of line with plane
     ///

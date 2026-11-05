@@ -4,7 +4,6 @@
 #include <OpenSpaceToolkit/Core/Container/Table.hpp>
 #include <OpenSpaceToolkit/Core/FileSystem/File.hpp>
 #include <OpenSpaceToolkit/Core/FileSystem/Path.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
@@ -17,7 +16,6 @@ using ostk::core::container::Array;
 using ostk::core::container::Table;
 using ostk::core::filesystem::File;
 using ostk::core::filesystem::Path;
-using ostk::core::type::Real;
 using ostk::core::type::Size;
 using ostk::core::type::String;
 
@@ -56,11 +54,11 @@ TEST(OpenSpaceToolkit_Mathematics_Interpolator_Linear, Evaluate)
     {
         const auto& referenceRow = referenceData[i];
 
-        referenceX(i) = referenceRow[0].accessReal();
+        referenceX(i) = referenceRow[0].getReal();
 
         for (Size j = 0; j < 6; ++j)
         {
-            referenceY(i, j) = referenceRow[j + 1].accessReal();
+            referenceY(i, j) = referenceRow[j + 1].getReal();
         }
     }
 

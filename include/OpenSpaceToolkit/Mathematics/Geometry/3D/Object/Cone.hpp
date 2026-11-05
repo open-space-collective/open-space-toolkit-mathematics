@@ -217,7 +217,7 @@ class Cone : public Object
     /// @endcode
     ///
     /// @return             Cone apex
-    Point getApex() const;
+    const Point& getApex() const;
 
     /// @brief              Get cone axis
     ///
@@ -227,7 +227,7 @@ class Cone : public Object
     /// @endcode
     ///
     /// @return             Cone axis
-    Vector3d getAxis() const;
+    const Vector3d& getAxis() const;
 
     /// @brief              Get cone angle
     ///
@@ -237,7 +237,7 @@ class Cone : public Object
     /// @endcode
     ///
     /// @return             Cone angle
-    Angle getAngle() const;
+    const Angle& getAngle() const;
 
     /// @brief              Get rays of lateral surface
     ///
@@ -254,12 +254,12 @@ class Cone : public Object
     ///
     /// @code{.cpp}
     ///                     Cone cone = { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }, Angle::Degrees(15.0) } ;
-    ///                     Real distance = cone.distanceTo({ 1.0, 0.0, 0.0 }) ;
+    ///                     double distance = cone.distanceTo({ 1.0, 0.0, 0.0 }) ;
     /// @endcode
     ///
     /// @param              [in] aPoint A point
     /// @return             Distance of cone to point
-    Real distanceTo(const Point& aPoint) const;
+    double distanceTo(const Point& aPoint) const;
 
     /// @brief              Compute intersection of cone with sphere
     ///

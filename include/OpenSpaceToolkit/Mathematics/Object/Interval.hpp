@@ -45,7 +45,7 @@ class IntervalBase
 /// set is also included in the set
 ///
 /// @code{.cpp}
-///                             Interval<Real> interval(0.0, 1.0, Interval<Real>::Type::Closed);
+///                             Interval<double> interval(0.0, 1.0, Interval<double>::Type::Closed);
 /// @endcode
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Interval_(mathematics)
@@ -56,7 +56,7 @@ class Interval : public IntervalBase
     /// @brief              Constructor
     ///
     /// @code
-    ///                     Interval<Real> interval(0.0, 1.0, Interval::Type::Closed) ;
+    ///                     Interval<double> interval(0.0, 1.0, Interval::Type::Closed) ;
     /// @endcode
     ///
     /// @param              [in] aLowerBound A lower bound
@@ -67,7 +67,7 @@ class Interval : public IntervalBase
     /// @brief              Equal to operator
     ///
     /// @code
-    ///                     Interval<Real>::Closed(0.0, 1.0) == Interval<Real>::Closed(0.0, 1.0) ; // True
+    ///                     Interval<double>::Closed(0.0, 1.0) == Interval<double>::Closed(0.0, 1.0) ; // True
     /// @endcode
     ///
     /// @param              [in] anInterval An interval
@@ -77,7 +77,7 @@ class Interval : public IntervalBase
     /// @brief              Not equal to operator
     ///
     /// @code
-    ///                     Interval<Real>::Closed(0.0, 1.0) != Interval<Real>::Open(0.0, 1.0) ; // True
+    ///                     Interval<double>::Closed(0.0, 1.0) != Interval<double>::Open(0.0, 1.0) ; // True
     /// @endcode
     ///
     /// @param              [in] anInterval An interval
@@ -87,7 +87,7 @@ class Interval : public IntervalBase
     /// @brief              Output stream operator
     ///
     /// @code
-    ///                     Interval<Real> interval(0.0, 1.0, Interval::Type::Closed) ;
+    ///                     Interval<double> interval(0.0, 1.0, Interval::Type::Closed) ;
     ///                     std::cout << interval ;
     /// @endcode
     ///
@@ -100,7 +100,7 @@ class Interval : public IntervalBase
     /// @brief              Check if interval is defined
     ///
     /// @code
-    ///                     Interval<Real>::Closed(0.0, 1.0).isDefined() ; // True
+    ///                     Interval<double>::Closed(0.0, 1.0).isDefined() ; // True
     /// @endcode
     ///
     /// @return             True if interval is defined
@@ -109,7 +109,7 @@ class Interval : public IntervalBase
     /// @brief              Check if interval is degenerate, i.e. its lower and upper bounds are the equal
     ///
     /// @code
-    ///                     Interval<Real>::Closed(1.0, 1.0).isDegenerate() ; // True
+    ///                     Interval<double>::Closed(1.0, 1.0).isDegenerate() ; // True
     /// @endcode
     ///
     /// @return             True if interval is degenerate
@@ -118,7 +118,7 @@ class Interval : public IntervalBase
     /// @brief              Check if interval is intersecting with another interval
     ///
     /// @code
-    ///                     Interval<Real>::Closed(0.0, 1.0).intersects(Interval<Real>::Closed(0.5, 1.5)) ; // True
+    ///                     Interval<double>::Closed(0.0, 1.0).intersects(Interval<double>::Closed(0.5, 1.5)) ; // True
     /// @endcode
     ///
     /// @param              [in] anInterval An interval
@@ -128,7 +128,7 @@ class Interval : public IntervalBase
     /// @brief              Check if interval contains value
     ///
     /// @code
-    ///                     Interval<Real>::Closed(0.0, 1.0).contains(0.5) ; // True
+    ///                     Interval<double>::Closed(0.0, 1.0).contains(0.5) ; // True
     /// @endcode
     ///
     /// @param              [in] aValue A value
@@ -138,38 +138,18 @@ class Interval : public IntervalBase
     /// @brief              Check if interval contains another interval
     ///
     /// @code
-    ///                     Interval<Real>::Closed(0.0, 1.0).contains(Interval<Real>::Open(0.2, 0.8)) ; // True
+    ///                     Interval<double>::Closed(0.0, 1.0).contains(Interval<double>::Open(0.2, 0.8)) ; // True
     /// @endcode
     ///
     /// @param              [in] anInterval An interval
     /// @return             True if interval contains another interval
     bool contains(const Interval& anInterval) const;
 
-    /// @brief              Get reference to lower bound
-    ///
-    /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
-    ///                     interval.accessLowerBound() ; // &0.0
-    /// @endcode
-    ///
-    /// @return             Reference to lower bound
-    const T& accessLowerBound() const;
-
-    /// @brief              Get reference to upper bound
-    ///
-    /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
-    ///                     interval.accessUpperBound() ; // &1.0
-    /// @endcode
-    ///
-    /// @return             Reference to upper bound
-    const T& accessUpperBound() const;
-
     /// @brief              Get interval type
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
-    ///                     interval.getType() ; // Interval<Real>::Type::Closed
+    ///                     Interval<double> interval = Interval<double>::Closed(0.0, 1.0) ;
+    ///                     interval.getType() ; // Interval<double>::Type::Closed
     /// @endcode
     ///
     /// @return             Interval type
@@ -178,29 +158,29 @@ class Interval : public IntervalBase
     /// @brief              Get lower bound
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
+    ///                     Interval<double> interval = Interval<double>::Closed(0.0, 1.0) ;
     ///                     interval.getLowerBound() ; // 0.0
     /// @endcode
     ///
-    /// @return             Lower bound
-    T getLowerBound() const;
+    /// @return             Const reference to lower bound
+    const T& getLowerBound() const;
 
     /// @brief              Get upper bound
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
+    ///                     Interval<double> interval = Interval<double>::Closed(0.0, 1.0) ;
     ///                     interval.getUpperBound() ; // 1.0
     /// @endcode
     ///
-    /// @return             Upper bound
-    T getUpperBound() const;
+    /// @return             Const reference to upper bound
+    const T& getUpperBound() const;
 
     /// @brief              Get intersecting interval with another interval
     ///
     /// @code
-    ///                     Interval<Real> firstInterval = Interval<Real>::Closed(0.0, 1.0) ;
-    ///                     Interval<Real> secondInterval = Interval<Real>::Closed(0.5, 1.5) ;
-    ///                     Interval<Real> intersection = firstInterval.getIntersectionWith(secondInterval) ; //
+    ///                     Interval<double> firstInterval = Interval<double>::Closed(0.0, 1.0) ;
+    ///                     Interval<double> secondInterval = Interval<double>::Closed(0.5, 1.5) ;
+    ///                     Interval<double> intersection = firstInterval.getIntersectionWith(secondInterval) ; //
     ///                     [0.5, 1.0]
     /// @endcode
     ///
@@ -211,9 +191,9 @@ class Interval : public IntervalBase
     /// @brief              Get union interval with another interval
     ///
     /// @code
-    ///                     Interval<Real> firstInterval = Interval<Real>::Closed(0.0, 1.0) ;
-    ///                     Interval<Real> secondInterval = Interval<Real>::Closed(0.5, 1.5) ;
-    ///                     Interval<Real> union = firstInterval.getUnionWith(secondInterval) ; // [0.0, 1.5]
+    ///                     Interval<double> firstInterval = Interval<double>::Closed(0.0, 1.0) ;
+    ///                     Interval<double> secondInterval = Interval<double>::Closed(0.5, 1.5) ;
+    ///                     Interval<double> union = firstInterval.getUnionWith(secondInterval) ; // [0.0, 1.5]
     /// @endcode
     ///
     /// @param              [in] anInterval An interval
@@ -223,8 +203,8 @@ class Interval : public IntervalBase
     /// @brief              Generate array from a given step, respecting the openness of the interval.
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
-    ///                     Array<Real> array = interval.generateArrayWithStep(0.5) ; // [0.0, 0.5, 1.0]
+    ///                     Interval<double> interval = Interval<double>::Closed(0.0, 1.0) ;
+    ///                     Array<double> array = interval.generateArrayWithStep(0.5) ; // [0.0, 0.5, 1.0]
     /// @endcode
     ///
     /// @param              [in] aStep A step
@@ -235,8 +215,8 @@ class Interval : public IntervalBase
     /// @brief              Generate array with a given size, respecting the openness of the interval.
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
-    ///                     Array<Real> array = interval.generateArrayWithSize(3) ; // [0.0, 0.5, 1.0]
+    ///                     Interval<double> interval = Interval<double>::Closed(0.0, 1.0) ;
+    ///                     Array<double> array = interval.generateArrayWithSize(3) ; // [0.0, 0.5, 1.0]
     /// @endcode
     ///
     /// @param              [in] anArraySize An array size
@@ -246,7 +226,7 @@ class Interval : public IntervalBase
     /// @brief              Get serialized interval
     ///
     /// @code
-    ///                     Interval<Real>::HalfOpenLeft(0.0, 1.0).toString() ; // ]0.0, 1.0]
+    ///                     Interval<double>::HalfOpenLeft(0.0, 1.0).toString() ; // ]0.0, 1.0]
     /// @endcode
     ///
     /// @return             Serialized interval
@@ -255,8 +235,8 @@ class Interval : public IntervalBase
     /// @brief              Interval type setter
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
-    ///                     interval.setType(Interval<Real>::Type::Open) ;
+    ///                     Interval<double> interval = Interval<double>::Closed(0.0, 1.0) ;
+    ///                     interval.setType(Interval<double>::Type::Open) ;
     /// @endcode
     ///
     /// @param              [in] aType An interval type
@@ -265,7 +245,7 @@ class Interval : public IntervalBase
     /// @brief              Interval lower bound setter
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
+    ///                     Interval<double> interval = Interval<double>::Closed(0.0, 1.0) ;
     ///                     interval.setLowerBound(-1.0) ;
     /// @endcode
     ///
@@ -275,7 +255,7 @@ class Interval : public IntervalBase
     /// @brief              Interval upper bound setter
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
+    ///                     Interval<double> interval = Interval<double>::Closed(0.0, 1.0) ;
     ///                     interval.setUpperBound(2.0) ;
     /// @endcode
     ///
@@ -285,7 +265,7 @@ class Interval : public IntervalBase
     /// @brief              Constructs an undefined interval
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Undefined() ; // Undefined
+    ///                     Interval<double> interval = Interval<double>::Undefined() ; // Undefined
     /// @endcode
     ///
     /// @return             Undefined interval
@@ -294,7 +274,7 @@ class Interval : public IntervalBase
     /// @brief              Constructs a closed interval
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ; // [0.0, 1.0]
+    ///                     Interval<double> interval = Interval<double>::Closed(0.0, 1.0) ; // [0.0, 1.0]
     /// @endcode
     ///
     /// @return             Closed interval
@@ -303,7 +283,7 @@ class Interval : public IntervalBase
     /// @brief              Constructs an open interval
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Open(0.0, 1.0) ; // ]0.0, 1.0[
+    ///                     Interval<double> interval = Interval<double>::Open(0.0, 1.0) ; // ]0.0, 1.0[
     /// @endcode
     ///
     /// @return             Open interval
@@ -312,7 +292,7 @@ class Interval : public IntervalBase
     /// @brief              Constructs an half-open left interval
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::HalfOpenLeft(0.0, 1.0) ; // ]0.0, 1.0]
+    ///                     Interval<double> interval = Interval<double>::HalfOpenLeft(0.0, 1.0) ; // ]0.0, 1.0]
     /// @endcode
     ///
     /// @return             Half-open left interval
@@ -321,7 +301,7 @@ class Interval : public IntervalBase
     /// @brief              Constructs an half-open right interval
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::HalfOpenRight(0.0, 1.0) ; // [0.0, 1.0[
+    ///                     Interval<double> interval = Interval<double>::HalfOpenRight(0.0, 1.0) ; // [0.0, 1.0[
     /// @endcode
     ///
     /// @return             Half-open right interval
@@ -330,12 +310,12 @@ class Interval : public IntervalBase
     /// @brief              Creates a new array of Intervals clipped by the provided Interval
     ///
     /// @code
-    ///                     Array<Interval<Real>> unclipped = {
-    ///                         Interval<Real>::Closed(-1.0, 1.0),
-    ///                         Interval<Real>::Closed(2.0, 4.0),
+    ///                     Array<Interval<double>> unclipped = {
+    ///                         Interval<double>::Closed(-1.0, 1.0),
+    ///                         Interval<double>::Closed(2.0, 4.0),
     ///                     };
-    ///                     const Interval<Real> clipper = Interval<Real>::Closed(0.0, 3.0);
-    ///                     Array<Interval<Real>> clipped = Interval<Real>::Clip(unclipped, clipper);
+    ///                     const Interval<double> clipper = Interval<double>::Closed(0.0, 3.0);
+    ///                     Array<Interval<double>> clipped = Interval<double>::Clip(unclipped, clipper);
     ///                     // {[0.0, 1.0], [2.0, 3.0]}
     /// @endcode
     ///
@@ -347,11 +327,12 @@ class Interval : public IntervalBase
     /// @brief              Creates a new sorted array, the order based on the inputted parameters
     ///
     /// @code
-    ///                     Array<Interval<Real>> unsorted = {
-    ///                         Interval<Real>::Closed(-1.0, 1.0),
-    ///                         Interval<Real>::Closed(-3.0, 0.0),
+    ///                     Array<Interval<double>> unsorted = {
+    ///                         Interval<double>::Closed(-1.0, 1.0),
+    ///                         Interval<double>::Closed(-3.0, 0.0),
     ///                     };
-    ///                     Array<Interval<Real>> sorted = Interval<Real>::Sort(unsorted); // {[-3.0, 0.0], [-1.0, 1.0]}
+    ///                     Array<Interval<double>> sorted = Interval<double>::Sort(unsorted); // {[-3.0, 0.0],
+    ///                     [-1.0, 1.0]}
     /// @endcode
     ///
     /// @return             Sorted array
@@ -362,12 +343,13 @@ class Interval : public IntervalBase
     /// @brief              Creates a new array without any overlaps and sorted by their lower bound
     ///
     /// @code
-    ///                     Array<Interval<Real>> array = {
-    ///                         Interval<Real>::Closed(-1.0, 1.0),
-    ///                         Interval<Real>::Closed(-2.0, 0.0),
-    ///                         Interval<Real>::Closed(3.0, 4.0),
+    ///                     Array<Interval<double>> array = {
+    ///                         Interval<double>::Closed(-1.0, 1.0),
+    ///                         Interval<double>::Closed(-2.0, 0.0),
+    ///                         Interval<double>::Closed(3.0, 4.0),
     ///                     };
-    ///                     Array<Interval<Real>> merged = Interval<Real>::Merge(array); // {[-2.0, 1.0], [3.0, 4.0]}
+    ///                     Array<Interval<double>> merged = Interval<double>::Merge(array); // {[-2.0, 1.0],
+    ///                     [3.0, 4.0]}
     /// @endcode
     ///
     /// @return             Merged array
@@ -378,12 +360,12 @@ class Interval : public IntervalBase
     ///                     considered and potential leading and trailing gaps w.r.t. the interval boundaries are
     ///                     included. The intervals are previously merged and sorted.
     /// @code
-    ///                     Array<Interval<Real>> intervals = {
-    ///                         Interval<Real>::Closed(-1.0, 1.0),
-    ///                         Interval<Real>::Closed(2.0, 4.0),
+    ///                     Array<Interval<double>> intervals = {
+    ///                         Interval<double>::Closed(-1.0, 1.0),
+    ///                         Interval<double>::Closed(2.0, 4.0),
     ///                     };
-    ///                     const Interval<Real> bounds = Interval<Real>::Closed(1.5, 4.5)
-    ///                     Array<Interval<Real>> gaps = Interval<Real>::GetGaps(intervals, bounds);
+    ///                     const Interval<double> bounds = Interval<double>::Closed(1.5, 4.5)
+    ///                     Array<Interval<double>> gaps = Interval<double>::GetGaps(intervals, bounds);
     ///                     // {[1.5, 2.0], [4.0, 4.5]}
     /// @endcode
     ///
@@ -397,18 +379,18 @@ class Interval : public IntervalBase
     ///                     provided arrays, i.e. intervals that overlap with intervals from one of the arrays OR the
     ///                     other.
     /// @code
-    ///                     Array<Interval<Real>> anIntervalArray = {
-    ///                         Interval<Real>::Closed(-1.0, 1.0),
-    ///                         Interval<Real>::Closed(2.0, 4.0),
+    ///                     Array<Interval<double>> anIntervalArray = {
+    ///                         Interval<double>::Closed(-1.0, 1.0),
+    ///                         Interval<double>::Closed(2.0, 4.0),
     ///                     };
     ///
-    ///                     Array<Interval<Real>> anotherIntervalArray = {
-    ///                         Interval<Real>::Open(0.5, 1.5),
-    ///                         Interval<Real>::Open(3.0, 5.0),
-    ///                         Interval<Real>::Open(7.0, 8.0),
+    ///                     Array<Interval<double>> anotherIntervalArray = {
+    ///                         Interval<double>::Open(0.5, 1.5),
+    ///                         Interval<double>::Open(3.0, 5.0),
+    ///                         Interval<double>::Open(7.0, 8.0),
     ///                     };
     ///
-    ///                     Array<Interval<Real>> logicalOr = Interval<Real>::LogicalOr(anIntervalArray,
+    ///                     Array<Interval<double>> logicalOr = Interval<double>::LogicalOr(anIntervalArray,
     ///                     anotherIntervalArray);
     ///                     // {[-1.0, 1.5), [2.0, 5.0), (7.0, 8.0)}
     /// @endcode
@@ -423,18 +405,18 @@ class Interval : public IntervalBase
     ///                     provided arrays, i.e. intervals that overal with intervals from one of the arrays AND the
     ///                     other.
     /// @code
-    ///                     Array<Interval<Real>> anIntervalArray = {
-    ///                         Interval<Real>::Closed(-1.0, 1.0),
-    ///                         Interval<Real>::Closed(2.0, 4.0),
+    ///                     Array<Interval<double>> anIntervalArray = {
+    ///                         Interval<double>::Closed(-1.0, 1.0),
+    ///                         Interval<double>::Closed(2.0, 4.0),
     ///                     };
     ///
-    ///                     Array<Interval<Real>> anotherIntervalArray = {
-    ///                         Interval<Real>::Open(0.5, 1.5),
-    ///                         Interval<Real>::Open(3.0, 5.0),
-    ///                         Interval<Real>::Open(7.0, 8.0),
+    ///                     Array<Interval<double>> anotherIntervalArray = {
+    ///                         Interval<double>::Open(0.5, 1.5),
+    ///                         Interval<double>::Open(3.0, 5.0),
+    ///                         Interval<double>::Open(7.0, 8.0),
     ///                     };
     ///
-    ///                     Array<Interval<Real>> logicalAnd = Interval<Real>::LogicalAnd(anIntervalArray,
+    ///                     Array<Interval<double>> logicalAnd = Interval<double>::LogicalAnd(anIntervalArray,
     ///                     anotherIntervalArray);
     ///                     // {(0.5, 1.0), [2.0, 4.0]}
     /// @endcode
@@ -447,7 +429,7 @@ class Interval : public IntervalBase
     /// @brief              Constructs an interval from a given string
     ///
     /// @code
-    ///                     Interval<Real> interval = Interval<Real>::Parse("[0.0, 1.0]") ; // [0.0, 1.0]
+    ///                     Interval<double> interval = Interval<double>::Parse("[0.0, 1.0]") ; // [0.0, 1.0]
     /// @endcode
     ///
     /// @param              [in] aString A string
@@ -457,7 +439,7 @@ class Interval : public IntervalBase
     /// @brief              Converts interval type to string
     ///
     /// @code
-    ///                     Interval<Real>::StringFromType(Interval<Real>::Type::Closed) ; // "Closed"
+    ///                     Interval<double>::StringFromType(Interval<double>::Type::Closed) ; // "Closed"
     /// @endcode
     ///
     /// @param              [in] anIntervalType An interval type

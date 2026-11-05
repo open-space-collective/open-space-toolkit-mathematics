@@ -1,5 +1,8 @@
 /// Apache License 2.0
 
+#include <cmath>
+#include <limits>
+
 #include <boost/numeric/odeint.hpp>
 #include <boost/numeric/odeint/algebra/vector_space_algebra.hpp>
 #include <boost/numeric/odeint/external/eigen/eigen.hpp>
@@ -8,6 +11,7 @@
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp>
+#include <OpenSpaceToolkit/Mathematics/Utility.hpp>
 
 #include <Eigen/Core>
 
@@ -51,6 +55,8 @@ namespace mathematics
 namespace solver
 {
 
+using ostk::mathematics::utility::DoubleToString;
+
 using namespace boost::numeric::odeint;
 
 using ostk::core::type::Index;
@@ -86,9 +92,9 @@ auto make_controlled_adam_bashforth_moulton(double abs_tol, double rel_tol)
 NumericalSolver::NumericalSolver(
     const NumericalSolver::LogType& aLogType,
     const NumericalSolver::StepperType& aStepperType,
-    const Real& aTimeStep,
-    const Real& aRelativeTolerance,
-    const Real& anAbsoluteTolerance
+    double aTimeStep,
+    double aRelativeTolerance,
+    double anAbsoluteTolerance
 )
     : logType_(aLogType),
       stepperType_(aStepperType),
@@ -125,7 +131,7 @@ std::ostream& operator<<(std::ostream& anOutputStream, const NumericalSolver& aN
 
 bool NumericalSolver::isDefined() const
 {
-    return timeStep_.isDefined() && relativeTolerance_.isDefined() && absoluteTolerance_.isDefined();
+    return !std::isnan(timeStep_) && !std::isnan(relativeTolerance_) && !std::isnan(absoluteTolerance_);
 }
 
 void NumericalSolver::print(std::ostream& anOutputStream, bool displayDecorator) const
@@ -136,26 +142,13 @@ void NumericalSolver::print(std::ostream& anOutputStream, bool displayDecorator)
         << "Integration logging type:" << NumericalSolver::StringFromLogType(logType_);
     ostk::core::utils::Print::Line(anOutputStream)
         << "Integration stepper type:" << NumericalSolver::StringFromStepperType(stepperType_);
+    ostk::core::utils::Print::Line(anOutputStream) << "Integration time step:" << DoubleToString(timeStep_);
     ostk::core::utils::Print::Line(anOutputStream)
-        << "Integration time step:" << (timeStep_.isDefined() ? timeStep_.toString() : "Undefined");
+        << "Integration relative tolerance:" << DoubleToString(relativeTolerance_);
     ostk::core::utils::Print::Line(anOutputStream)
-        << "Integration relative tolerance:"
-        << (relativeTolerance_.isDefined() ? relativeTolerance_.toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Integration absolute tolerance:"
-        << (absoluteTolerance_.isDefined() ? absoluteTolerance_.toString() : "Undefined");
+        << "Integration absolute tolerance:" << DoubleToString(absoluteTolerance_);
 
     displayDecorator ? ostk::core::utils::Print::Footer(anOutputStream) : void();
-}
-
-const Array<NumericalSolver::Solution>& NumericalSolver::accessObservedStateVectors() const
-{
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("NumericalSolver");
-    }
-
-    return this->observedStateVectors_;
 }
 
 NumericalSolver::LogType NumericalSolver::getLogType() const
@@ -178,7 +171,7 @@ NumericalSolver::StepperType NumericalSolver::getStepperType() const
     return this->stepperType_;
 }
 
-Real NumericalSolver::getTimeStep() const
+double NumericalSolver::getTimeStep() const
 {
     if (!this->isDefined())
     {
@@ -188,7 +181,7 @@ Real NumericalSolver::getTimeStep() const
     return this->timeStep_;
 }
 
-Real NumericalSolver::getRelativeTolerance() const
+double NumericalSolver::getRelativeTolerance() const
 {
     if (!this->isDefined())
     {
@@ -198,7 +191,7 @@ Real NumericalSolver::getRelativeTolerance() const
     return this->relativeTolerance_;
 }
 
-Real NumericalSolver::getAbsoluteTolerance() const
+double NumericalSolver::getAbsoluteTolerance() const
 {
     if (!this->isDefined())
     {
@@ -208,15 +201,20 @@ Real NumericalSolver::getAbsoluteTolerance() const
     return this->absoluteTolerance_;
 }
 
-Array<NumericalSolver::Solution> NumericalSolver::getObservedStateVectors() const
+const Array<NumericalSolver::Solution>& NumericalSolver::getObservedStateVectors() const
 {
-    return this->accessObservedStateVectors();
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("NumericalSolver");
+    }
+
+    return this->observedStateVectors_;
 }
 
 Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
     const StateVector& anInitialStateVector,
-    const Real& aStartTime,
-    const Array<Real>& aTimeArray,
+    double aStartTime,
+    const Array<double>& aTimeArray,
     const NumericalSolver::SystemOfEquationsWrapper& aSystemOfEquations
 )
 {
@@ -239,7 +237,7 @@ Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
     }
 
     // Ensure integration starts in the correct direction with the initial time step guess
-    const double adjustedTimeStep = getSignedTimeStep(aTimeArray.accessLast());
+    const double adjustedTimeStep = getSignedTimeStep(aTimeArray.getLast());
 
     // Add start time to the start of array
     Array<double> durationArray(aTimeArray.begin(), aTimeArray.end());
@@ -348,7 +346,7 @@ Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
 
 NumericalSolver::Solution NumericalSolver::integrateDuration(
     const StateVector& anInitialStateVector,
-    const Real& aDurationInSeconds,
+    double aDurationInSeconds,
     const NumericalSolver::SystemOfEquationsWrapper& aSystemOfEquations
 )
 {
@@ -356,7 +354,7 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
 
     observedStateVectors_.clear();
 
-    if (aDurationInSeconds.isZero())  // If integration duration is zero seconds long, skip integration
+    if (aDurationInSeconds == 0.0)  // If integration duration is zero seconds long, skip integration
     {
         return {anInitialStateVector, 0.0};
     }
@@ -630,8 +628,8 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
 
 NumericalSolver::Solution NumericalSolver::integrateTime(
     const StateVector& anInitialStateVector,
-    const Real& aStartTime,
-    const Real& anEndTime,
+    double aStartTime,
+    double anEndTime,
     const NumericalSolver::SystemOfEquationsWrapper& aSystemOfEquations
 )
 {
@@ -640,7 +638,7 @@ NumericalSolver::Solution NumericalSolver::integrateTime(
 
 Array<NumericalSolver::Solution> NumericalSolver::integrateDuration(
     const NumericalSolver::StateVector& anInitialStateVector,
-    const Array<Real>& aDurationArray,
+    const Array<double>& aDurationArray,
     const NumericalSolver::SystemOfEquationsWrapper& aSystemOfEquations
 )
 {
@@ -700,9 +698,9 @@ NumericalSolver NumericalSolver::Undefined()
     return {
         LogType::NoLog,
         StepperType::RungeKuttaCashKarp54,
-        Real::Undefined(),
-        Real::Undefined(),
-        Real::Undefined(),
+        std::numeric_limits<double>::quiet_NaN(),
+        std::numeric_limits<double>::quiet_NaN(),
+        std::numeric_limits<double>::quiet_NaN(),
     };
 }
 
@@ -751,9 +749,9 @@ void NumericalSolver::observeNumericalIntegration(const NumericalSolver::StateVe
     }
 }
 
-double NumericalSolver::getSignedTimeStep(const Real& aReal) const
+double NumericalSolver::getSignedTimeStep(double aReal) const
 {
-    const Real durationSign = (aReal > 0.0) - (aReal < 0.0);
+    const double durationSign = (aReal > 0.0) - (aReal < 0.0);
     return timeStep_ * durationSign;
 }
 

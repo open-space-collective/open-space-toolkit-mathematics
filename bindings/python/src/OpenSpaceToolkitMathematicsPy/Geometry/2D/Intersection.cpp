@@ -2,9 +2,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
     using ostk::core::container::Array;
     using ostk::core::type::Unique;
@@ -23,29 +23,45 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
 
     intersection
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self + self)
-        .def(self += self)
+        .def(
+            "__add__",
+            [](const Intersection& self, const Intersection& other)
+            {
+                return self + other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__iadd__",
+            [](Intersection& self, const Intersection& other) -> Intersection&
+            {
+                self += other;
+                return self;
+            },
+            nanobind::rv_policy::none,
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Intersection>))
         .def("__repr__", &(shiftToString<Intersection>))
 
-        .def(
-            "is_defined",
-            &Intersection::isDefined,
-            R"doc(
-                Check if the intersection is defined.
-
-                Returns:
-                    bool: True if the intersection is defined, False otherwise.
-
-                Example:
-                    >>> intersection = Intersection.point(Point(1.0, 2.0))
-                    >>> intersection.is_defined()  # True
-            )doc"
-        )
         .def(
             "is_empty",
             &Intersection::isEmpty,
@@ -353,19 +369,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
         )
 
         .def(
-            "access_composite",
-            &Intersection::accessComposite,
+            "get_composite",
+            [](const Intersection& anIntersection) -> const Composite&
+            {
+                return anIntersection.getComposite();
+            },
             R"doc(
-                Access the composite representation of the intersection.
+                Get the composite representation of the intersection.
 
                 Returns:
                     Composite: Reference to the composite containing all intersection objects.
 
                 Example:
                     >>> intersection = Intersection.point(Point(1.0, 2.0))
-                    >>> composite = intersection.access_composite()
+                    >>> composite = intersection.get_composite()
             )doc",
-            return_value_policy::reference
+            rv_policy::reference_internal
         )
 
         .def(
@@ -384,20 +403,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
         )
 
         // Define static methods
-        .def_static(
-            "undefined",
-            &Intersection::Undefined,
-            R"doc(
-                Create an undefined intersection.
-
-                Returns:
-                    Intersection: An undefined intersection.
-
-                Example:
-                    >>> undefined_intersection = Intersection.undefined()
-                    >>> undefined_intersection.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "empty",
             &Intersection::Empty,
@@ -508,7 +513,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
     // Define Intersection types
     enum_<Intersection::Type>(intersection, "Type")
 
-        .value("Undefined", Intersection::Type::Undefined)
         .value("Empty", Intersection::Type::Empty)
         .value("Point", Intersection::Type::Point)
         .value("PointSet", Intersection::Type::PointSet)

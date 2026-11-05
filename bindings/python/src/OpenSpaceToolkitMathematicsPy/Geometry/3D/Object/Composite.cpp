@@ -6,11 +6,10 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(nanobind::module_& aModule)
 {
-    using namespace pybind11;
+    using namespace nanobind;
 
-    using ostk::core::type::Real;
     using ostk::core::type::Shared;
 
     using ostk::mathematics::geometry::d3::Intersection;
@@ -49,11 +48,41 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
             arg("object")
         )
 
-        .def(self == self)
-        .def(self != self)
+        .def(
+            "__eq__",
+            [](const Composite& self, const Composite& other)
+            {
+                return self == other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__ne__",
+            [](const Composite& self, const Composite& other)
+            {
+                return self != other;
+            },
+            nanobind::is_operator()
+        )
 
-        .def(self + self)
-        .def(self += self)
+        .def(
+            "__add__",
+            [](const Composite& self, const Composite& other)
+            {
+                return self + other;
+            },
+            nanobind::is_operator()
+        )
+        .def(
+            "__iadd__",
+            [](Composite& self, const Composite& other) -> Composite&
+            {
+                self += other;
+                return self;
+            },
+            nanobind::rv_policy::none,
+            nanobind::is_operator()
+        )
 
         .def("__str__", &(shiftToString<Composite>))
         .def("__repr__", &(shiftToString<Composite>))
@@ -65,7 +94,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
                 Check if the composite is defined.
 
                 Returns:
-                    bool: True if the composite is defined, False otherwise.
+                    bool: True if all objects of the composite are defined, False otherwise.
 
                 Example:
                     >>> composite = Composite(Point(1.0, 2.0, 3.0))
@@ -680,10 +709,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
         )
 
         .def(
-            "access_object_at",
-            &Composite::accessObjectAt,
+            "get_object_at",
+            &Composite::getObjectAt,
             R"doc(
-                Access the object at a specific index in the composite.
+                Get the object at a specific index in the composite.
 
                 Args:
                     index (int): The index of the object to access.
@@ -696,10 +725,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
 
                 Example:
                     >>> composite = Composite(Point(1.0, 2.0, 3.0))
-                    >>> obj = composite.access_object_at(0)
+                    >>> obj = composite.get_object_at(0)
             )doc",
             arg("index"),
-            return_value_policy::reference
+            rv_policy::reference_internal
         )
 
         .def(
@@ -772,20 +801,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
             arg("transformation")
         )
 
-        .def_static(
-            "undefined",
-            &Composite::Undefined,
-            R"doc(
-                Create an undefined composite.
-
-                Returns:
-                    Composite: An undefined composite object.
-
-                Example:
-                    >>> undefined_composite = Composite.undefined()
-                    >>> undefined_composite.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "empty",
             &Composite::Empty,

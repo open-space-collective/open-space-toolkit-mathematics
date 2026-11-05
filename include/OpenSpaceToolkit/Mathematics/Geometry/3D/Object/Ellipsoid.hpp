@@ -2,7 +2,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid__
 
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <optional>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
@@ -18,8 +18,6 @@ namespace d3
 {
 namespace object
 {
-
-using ostk::core::type::Real;
 
 using ostk::mathematics::geometry::d3::Intersection;
 using ostk::mathematics::geometry::d3::Object;
@@ -62,9 +60,9 @@ class Ellipsoid : public Object
     /// @param              [in] (optional) anOrientation An ellipsoid orientation
     Ellipsoid(
         const Point& aCenter,
-        const Real& aFirstPrincipalSemiAxis,
-        const Real& aSecondPrincipalSemiAxis,
-        const Real& aThirdPrincipalSemiAxis,
+        double aFirstPrincipalSemiAxis,
+        double aSecondPrincipalSemiAxis,
+        double aThirdPrincipalSemiAxis,
         const Quaternion& anOrientation = DEFAULT_ORIENTATION
     );
 
@@ -270,7 +268,7 @@ class Ellipsoid : public Object
     /// @endcode
     ///
     /// @return             Ellipsoid center
-    Point getCenter() const;
+    const Point& getCenter() const;
 
     /// @brief              Get ellipsoid first principal semi-axis
     ///
@@ -279,7 +277,7 @@ class Ellipsoid : public Object
     /// @endcode
     ///
     /// @return             Ellipsoid first principal semi-axis
-    Real getFirstPrincipalSemiAxis() const;
+    double getFirstPrincipalSemiAxis() const;
 
     /// @brief              Get ellipsoid second principal semi-axis
     ///
@@ -288,7 +286,7 @@ class Ellipsoid : public Object
     /// @endcode
     ///
     /// @return             Ellipsoid second principal semi-axis
-    Real getSecondPrincipalSemiAxis() const;
+    double getSecondPrincipalSemiAxis() const;
 
     /// @brief              Get ellipsoid third principal semi-axis
     ///
@@ -297,7 +295,7 @@ class Ellipsoid : public Object
     /// @endcode
     ///
     /// @return             Ellipsoid third principal semi-axis
-    Real getThirdPrincipalSemiAxis() const;
+    double getThirdPrincipalSemiAxis() const;
 
     /// @brief              Get ellipsoid first axis
     ///
@@ -337,7 +335,7 @@ class Ellipsoid : public Object
     /// @endcode
     ///
     /// @return             Ellipsoid orientation
-    Quaternion getOrientation() const;
+    const Quaternion& getOrientation() const;
 
     /// @brief              Get ellipsoid matrix
     ///
@@ -445,11 +443,28 @@ class Ellipsoid : public Object
    private:
     Point center_;
 
-    Real a_;
-    Real b_;
-    Real c_;
+    double a_;
+    double b_;
+    double c_;
 
     Quaternion q_;
+
+    struct Axes
+    {
+        Vector3d first;
+        Vector3d second;
+        Vector3d third;
+        Matrix3d matrix;
+    };
+
+    std::optional<Axes> axes_;
+
+    void cacheAxes();
+
+    Vector3d computeFirstAxis() const;
+    Vector3d computeSecondAxis() const;
+    Vector3d computeThirdAxis() const;
+    Matrix3d computeMatrix(const Vector3d& aFirstAxis, const Vector3d& aSecondAxis, const Vector3d& aThirdAxis) const;
 };
 
 }  // namespace object

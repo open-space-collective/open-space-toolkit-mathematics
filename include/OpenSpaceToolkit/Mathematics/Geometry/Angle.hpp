@@ -2,8 +2,6 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_Angle__
 #define __OpenSpaceToolkit_Mathematics_Geometry_Angle__
 
-#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
@@ -15,8 +13,6 @@ namespace mathematics
 namespace geometry
 {
 
-using ostk::core::type::Integer;
-using ostk::core::type::Real;
 using ostk::core::type::String;
 
 using ostk::mathematics::object::Vector2d;
@@ -55,7 +51,7 @@ class Angle
     ///
     /// @param              [in] aValue A value
     /// @param              [in] aUnit An angle unit
-    Angle(const Real& aValue, const Angle::Unit& aUnit);
+    Angle(double aValue, const Angle::Unit& aUnit);
 
     /// @brief              Check if two angles are equal
     ///
@@ -105,7 +101,7 @@ class Angle
     ///
     /// @param              [in] aReal A scalar multiplier
     /// @return             Scaled angle
-    Angle operator*(const Real& aReal) const;
+    Angle operator*(double aReal) const;
 
     /// @brief              Division operator
     ///
@@ -115,7 +111,7 @@ class Angle
     ///
     /// @param              [in] aReal A scalar divisor
     /// @return             Scaled angle
-    Angle operator/(const Real& aReal) const;
+    Angle operator/(double aReal) const;
 
     /// @brief              Addition assignment operator
     ///
@@ -148,7 +144,7 @@ class Angle
     ///
     /// @param              [in] aReal A scalar multiplier
     /// @return             Reference to the modified angle
-    Angle& operator*=(const Real& aReal);
+    Angle& operator*=(double aReal);
 
     /// @brief              Division assignment operator
     ///
@@ -159,7 +155,7 @@ class Angle
     ///
     /// @param              [in] aReal A scalar divisor
     /// @return             Reference to the modified angle
-    Angle& operator/=(const Real& aReal);
+    Angle& operator/=(double aReal);
 
     /// @brief              Multiplication operator (scalar * angle)
     ///
@@ -170,7 +166,7 @@ class Angle
     /// @param              [in] aReal A scalar multiplier
     /// @param              [in] anAngle An angle
     /// @return             Scaled angle
-    friend Angle operator*(const Real& aReal, const Angle& anAngle);
+    friend Angle operator*(double aReal, const Angle& anAngle);
 
     /// @brief              Unary positive operator
     ///
@@ -254,12 +250,12 @@ class Angle
     /// @brief              Get the angle value in the specified unit
     ///
     /// @code{.cpp}
-    ///                     Real value = Angle::Degrees(90.0).in(Angle::Unit::Radian);
+    ///                     double value = Angle::Degrees(90.0).in(Angle::Unit::Radian);
     /// @endcode
     ///
     /// @param              [in] aUnit An angle unit
     /// @return             The angle value in the specified unit
-    Real in(const Angle::Unit& aUnit) const;
+    double in(const Angle::Unit& aUnit) const;
 
     /// @brief              Get the angle value in radians
     ///
@@ -268,27 +264,27 @@ class Angle
     /// @endcode
     ///
     /// @return             The angle value in radians
-    Real inRadians() const;
+    double inRadians() const;
 
     /// @brief              Get the angle value in radians, reduced to a specified range
     ///
     /// @code{.cpp}
-    ///                     Angle::Degrees(270.0).inRadians(0.0, Real::TwoPi());
+    ///                     Angle::Degrees(270.0).inRadians(0.0, 2.0 * M_PI);
     /// @endcode
     ///
     /// @param              [in] aLowerBound A lower bound of the range (in radians)
     /// @param              [in] anUpperBound An upper bound of the range (in radians)
     /// @return             The angle value in radians within the specified range
-    Real inRadians(const Real& aLowerBound, const Real& anUpperBound) const;
+    double inRadians(double aLowerBound, double anUpperBound) const;
 
     /// @brief              Get the angle value in degrees
     ///
     /// @code{.cpp}
-    ///                     Angle::Radians(Real::Pi()).inDegrees();  // 180.0
+    ///                     Angle::Radians(M_PI).inDegrees();  // 180.0
     /// @endcode
     ///
     /// @return             The angle value in degrees
-    Real inDegrees() const;
+    double inDegrees() const;
 
     /// @brief              Get the angle value in degrees, reduced to a specified range
     ///
@@ -299,7 +295,7 @@ class Angle
     /// @param              [in] aLowerBound A lower bound of the range (in degrees)
     /// @param              [in] anUpperBound An upper bound of the range (in degrees)
     /// @return             The angle value in degrees within the specified range
-    Real inDegrees(const Real& aLowerBound, const Real& anUpperBound) const;
+    double inDegrees(double aLowerBound, double anUpperBound) const;
 
     /// @brief              Get the angle value in arcminutes
     ///
@@ -308,7 +304,7 @@ class Angle
     /// @endcode
     ///
     /// @return             The angle value in arcminutes
-    Real inArcminutes() const;
+    double inArcminutes() const;
 
     /// @brief              Get the angle value in arcminutes, reduced to a specified range
     ///
@@ -319,7 +315,7 @@ class Angle
     /// @param              [in] aLowerBound A lower bound of the range (in arcminutes)
     /// @param              [in] anUpperBound An upper bound of the range (in arcminutes)
     /// @return             The angle value in arcminutes within the specified range
-    Real inArcminutes(const Real& aLowerBound, const Real& anUpperBound) const;
+    double inArcminutes(double aLowerBound, double anUpperBound) const;
 
     /// @brief              Get the angle value in arcseconds
     ///
@@ -328,7 +324,7 @@ class Angle
     /// @endcode
     ///
     /// @return             The angle value in arcseconds
-    Real inArcseconds() const;
+    double inArcseconds() const;
 
     /// @brief              Get the angle value in arcseconds, reduced to a specified range
     ///
@@ -339,7 +335,7 @@ class Angle
     /// @param              [in] aLowerBound A lower bound of the range (in arcseconds)
     /// @param              [in] anUpperBound An upper bound of the range (in arcseconds)
     /// @return             The angle value in arcseconds within the specified range
-    Real inArcseconds(const Real& aLowerBound, const Real& anUpperBound) const;
+    double inArcseconds(double aLowerBound, double anUpperBound) const;
 
     /// @brief              Get the angle value in revolutions
     ///
@@ -348,7 +344,7 @@ class Angle
     /// @endcode
     ///
     /// @return             The angle value in revolutions
-    Real inRevolutions() const;
+    double inRevolutions() const;
 
     /// @brief              Convert the angle to a string representation
     ///
@@ -358,7 +354,7 @@ class Angle
     ///
     /// @param              [in] aPrecision (optional) A precision for the value
     /// @return             String representation of the angle
-    String toString(const Integer& aPrecision = Integer::Undefined()) const;
+    String toString(int aPrecision = -1) const;
 
     /// @brief              Construct an undefined angle
     ///
@@ -413,7 +409,7 @@ class Angle
     ///
     /// @param              [in] aValue A value in radians
     /// @return             An angle
-    static Angle Radians(const Real& aValue);
+    static Angle Radians(double aValue);
 
     /// @brief              Construct an angle from a value in degrees
     ///
@@ -423,7 +419,7 @@ class Angle
     ///
     /// @param              [in] aValue A value in degrees
     /// @return             An angle
-    static Angle Degrees(const Real& aValue);
+    static Angle Degrees(double aValue);
 
     /// @brief              Construct an angle from a value in arcminutes
     ///
@@ -433,7 +429,7 @@ class Angle
     ///
     /// @param              [in] aValue A value in arcminutes
     /// @return             An angle
-    static Angle Arcminutes(const Real& aValue);
+    static Angle Arcminutes(double aValue);
 
     /// @brief              Construct an angle from a value in arcseconds
     ///
@@ -443,7 +439,7 @@ class Angle
     ///
     /// @param              [in] aValue A value in arcseconds
     /// @return             An angle
-    static Angle Arcseconds(const Real& aValue);
+    static Angle Arcseconds(double aValue);
 
     /// @brief              Construct an angle from a value in revolutions
     ///
@@ -453,7 +449,7 @@ class Angle
     ///
     /// @param              [in] aValue A value in revolutions
     /// @return             An angle
-    static Angle Revolutions(const Real& aValue);
+    static Angle Revolutions(double aValue);
 
     /// @brief              Compute the angle between two 2D vectors
     ///
@@ -508,12 +504,12 @@ class Angle
     static String SymbolFromUnit(const Angle::Unit& aUnit);
 
    private:
-    Real value_;
+    double value_;
     Angle::Unit unit_;
 
-    static Real SIRatio(const Angle::Unit& aUnit);
+    static double SIRatio(const Angle::Unit& aUnit);
 
-    static Real ReduceRange(const Real& aValue, const Real& aRangeLowerBound, const Real& aRangeUpperBound);
+    static double ReduceRange(double aValue, double aRangeLowerBound, double aRangeUpperBound);
 };
 
 }  // namespace geometry

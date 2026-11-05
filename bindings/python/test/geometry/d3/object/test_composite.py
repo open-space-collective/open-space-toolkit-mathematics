@@ -144,6 +144,12 @@ class Test3DComposite:
         assert composite.is_defined()
         assert composite.is_empty()
 
+    def test_geometry_d3_object_composite_is_defined(self):
+        assert Composite.empty().is_defined()
+        assert Composite(Point.undefined()).is_defined() is False
+
+        assert not hasattr(Composite, "undefined")
+
     def test_geometry_d3_object_composite_comparators(self):
         point_1: Point = Point(1.0, 2.0, 1.0)
         point_2: Point = Point(1.0, 1.0, 1.0)
@@ -180,10 +186,10 @@ class Test3DComposite:
         assert composite_3.get_object_count() == 2
 
         with pytest.raises(RuntimeError):
-            composite = Composite.undefined() + composite_1
+            composite = Composite(Point.undefined()) + composite_1
 
         with pytest.raises(RuntimeError):
-            composite = composite_1 + Composite.undefined()
+            composite = composite_1 + Composite(Point.undefined())
 
         composite_3 += composite_1
 
@@ -192,26 +198,26 @@ class Test3DComposite:
         assert composite_3.get_object_count() == 3
 
         with pytest.raises(RuntimeError):
-            composite_3 += Composite.undefined()
+            composite_3 += Composite(Point.undefined())
 
-    def test_geometry_d3_object_composite_access_object_at(
+    def test_geometry_d3_object_composite_get_object_at(
         self,
         composite_with_polygon: Composite,
     ):
-        object: Object = composite_with_polygon.access_object_at(0)
+        object: Object = composite_with_polygon.get_object_at(0)
 
         assert object is not None
         assert isinstance(object, Object)
         assert isinstance(object, Segment)
 
-        object_2: Object = composite_with_polygon.access_object_at(1)
+        object_2: Object = composite_with_polygon.get_object_at(1)
 
         assert object_2 is not None
         assert isinstance(object_2, Object)
         assert isinstance(object_2, Polygon)
 
         with pytest.raises(RuntimeError):
-            composite_with_polygon.access_object_at(2)
+            composite_with_polygon.get_object_at(2)
 
     @pytest.mark.parametrize(
         "geometry_name",

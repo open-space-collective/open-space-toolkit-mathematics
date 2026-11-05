@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <cmath>
+
 #include <OpenSpaceToolkit/Core/Container/Table.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
@@ -13,7 +15,6 @@
 using ostk::core::container::Table;
 using ostk::core::filesystem::File;
 using ostk::core::filesystem::Path;
-using ostk::core::type::Real;
 using ostk::core::type::String;
 
 using ostk::mathematics::geometry::Angle;
@@ -86,16 +87,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
         );
 
         EXPECT_TRUE(
-            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::Pi())) ==
-            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(-Real::Pi()))
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(M_PI)) ==
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(-M_PI))
         );
         EXPECT_TRUE(
             RotationVector({0.0, 0.0, 1.0}, Angle::Radians(0)) ==
-            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::TwoPi()))
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(2.0 * M_PI))
         );
         EXPECT_TRUE(
-            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::Pi())) ==
-            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(3.0 * Real::Pi()))
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(M_PI)) ==
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(3.0 * M_PI))
         );
     }
 
@@ -166,16 +167,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
         );
 
         EXPECT_FALSE(
-            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::Pi())) !=
-            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(-Real::Pi()))
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(M_PI)) !=
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(-M_PI))
         );
         EXPECT_FALSE(
             RotationVector({0.0, 0.0, 1.0}, Angle::Radians(0)) !=
-            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::TwoPi()))
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(2.0 * M_PI))
         );
         EXPECT_FALSE(
-            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::Pi())) !=
-            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(3.0 * Real::Pi()))
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(M_PI)) !=
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(3.0 * M_PI))
         );
     }
 }
@@ -668,25 +669,24 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
             true
         );
 
-        const Real tolerance = 1e-9;
+        const double tolerance = 1e-9;
         const Angle angularTolerance = Angle::Degrees(1e-9);
 
         for (const auto& referenceDataRow : referenceDataTable)
         {
-            const RotationVector referenceRotationVector = RotationVector(
-                                                               Vector3d(
-                                                                   referenceDataRow[0].accessReal(),
-                                                                   referenceDataRow[1].accessReal(),
-                                                                   referenceDataRow[2].accessReal()
-                                                               ),
-                                                               Angle::Unit::Radian
-            )
-                                                               .rectify();
+            const RotationVector referenceRotationVector =
+                RotationVector(
+                    Vector3d(
+                        referenceDataRow[0].getReal(), referenceDataRow[1].getReal(), referenceDataRow[2].getReal()
+                    ),
+                    Angle::Unit::Radian
+                )
+                    .rectify();
 
             const EulerAngle eulerAngle = EulerAngle::XYZ(
-                Angle::Radians(referenceDataRow[3].accessReal()),
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal())
+                Angle::Radians(referenceDataRow[3].getReal()),
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal())
             );
 
             const RotationVector rotationVector = RotationVector::EulerAngle(eulerAngle).rectify();
@@ -712,25 +712,24 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
             true
         );
 
-        const Real tolerance = 1e-9;
+        const double tolerance = 1e-9;
         const Angle angularTolerance = Angle::Degrees(1e-9);
 
         for (const auto& referenceDataRow : referenceDataTable)
         {
-            const RotationVector referenceRotationVector = RotationVector(
-                                                               Vector3d(
-                                                                   referenceDataRow[0].accessReal(),
-                                                                   referenceDataRow[1].accessReal(),
-                                                                   referenceDataRow[2].accessReal()
-                                                               ),
-                                                               Angle::Unit::Radian
-            )
-                                                               .rectify();
+            const RotationVector referenceRotationVector =
+                RotationVector(
+                    Vector3d(
+                        referenceDataRow[0].getReal(), referenceDataRow[1].getReal(), referenceDataRow[2].getReal()
+                    ),
+                    Angle::Unit::Radian
+                )
+                    .rectify();
 
             const EulerAngle eulerAngle = EulerAngle::ZXY(
-                Angle::Radians(referenceDataRow[3].accessReal()),
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal())
+                Angle::Radians(referenceDataRow[3].getReal()),
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal())
             );
 
             const RotationVector rotationVector = RotationVector::EulerAngle(eulerAngle).rectify();
@@ -756,25 +755,24 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
             true
         );
 
-        const Real tolerance = 1e-9;
+        const double tolerance = 1e-9;
         const Angle angularTolerance = Angle::Degrees(1e-9);
 
         for (const auto& referenceDataRow : referenceDataTable)
         {
-            const RotationVector referenceRotationVector = RotationVector(
-                                                               Vector3d(
-                                                                   referenceDataRow[0].accessReal(),
-                                                                   referenceDataRow[1].accessReal(),
-                                                                   referenceDataRow[2].accessReal()
-                                                               ),
-                                                               Angle::Unit::Radian
-            )
-                                                               .rectify();
+            const RotationVector referenceRotationVector =
+                RotationVector(
+                    Vector3d(
+                        referenceDataRow[0].getReal(), referenceDataRow[1].getReal(), referenceDataRow[2].getReal()
+                    ),
+                    Angle::Unit::Radian
+                )
+                    .rectify();
 
             const EulerAngle eulerAngle = EulerAngle::ZYX(
-                Angle::Radians(referenceDataRow[3].accessReal()),
-                Angle::Radians(referenceDataRow[4].accessReal()),
-                Angle::Radians(referenceDataRow[5].accessReal())
+                Angle::Radians(referenceDataRow[3].getReal()),
+                Angle::Radians(referenceDataRow[4].getReal()),
+                Angle::Radians(referenceDataRow[5].getReal())
             );
 
             const RotationVector rotationVector = RotationVector::EulerAngle(eulerAngle).rectify();

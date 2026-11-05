@@ -1,5 +1,8 @@
 /// Apache License 2.0
 
+#include <cmath>
+#include <limits>
+
 #include <Gte/Mathematics/GteIntrSphere3Sphere3.h>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
@@ -16,6 +19,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Utility.hpp>
 // #include <Gte/Mathematics/GteIntrHalfspace3Sphere3.h>
 #include <Gte/Mathematics/GteIntrLine3Sphere3.h>
 #include <Gte/Mathematics/GteIntrPlane3Sphere3.h>
@@ -33,6 +37,8 @@ namespace d3
 namespace object
 {
 
+using ostk::mathematics::utility::DoubleToString;
+
 gte::Vector3<double> SphereGteVectorFromPoint(const Point& aPoint)
 {
     return {aPoint.x(), aPoint.y(), aPoint.z()};
@@ -48,7 +54,7 @@ Point SpherePointFromGteVector(const gte::Vector3<double>& aVector)
     return {aVector[0], aVector[1], aVector[2]};
 }
 
-Sphere::Sphere(const Point& aCenter, const Real& aRadius)
+Sphere::Sphere(const Point& aCenter, double aRadius)
     : Object(),
       center_(aCenter),
       radius_(aRadius)
@@ -82,7 +88,7 @@ bool Sphere::operator!=(const Sphere& aSphere) const
 
 bool Sphere::isDefined() const
 {
-    return center_.isDefined() && radius_.isDefined();
+    return center_.isDefined() && !std::isnan(radius_);
 }
 
 bool Sphere::isUnitary() const
@@ -274,7 +280,7 @@ bool Sphere::contains(const Point& aPoint) const
         throw ostk::core::error::runtime::Undefined("Sphere");
     }
 
-    return std::abs((aPoint - center_).squaredNorm() - (radius_ * radius_)) < Real::Epsilon();
+    return std::abs((aPoint - center_).squaredNorm() - (radius_ * radius_)) < 1e-15;
 }
 
 bool Sphere::contains(const PointSet& aPointSet) const
@@ -294,7 +300,7 @@ bool Sphere::contains(const PointSet& aPointSet) const
                                      );
 }
 
-Point Sphere::getCenter() const
+const Point& Sphere::getCenter() const
 {
     if (!this->isDefined())
     {
@@ -304,7 +310,7 @@ Point Sphere::getCenter() const
     return center_;
 }
 
-Real Sphere::getRadius() const
+double Sphere::getRadius() const
 {
     if (!this->isDefined())
     {
@@ -571,8 +577,7 @@ void Sphere::print(std::ostream& anOutputStream, bool displayDecorators) const
 
     ostk::core::utils::Print::Line(anOutputStream)
         << "Center:" << (center_.isDefined() ? center_.toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Radius:" << (radius_.isDefined() ? radius_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "Radius:" << DoubleToString(radius_);
 
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
@@ -599,7 +604,7 @@ void Sphere::applyTransformation(const Transformation& aTransformation)
 
 Sphere Sphere::Undefined()
 {
-    return {Point::Undefined(), Real::Undefined()};
+    return {Point::Undefined(), std::numeric_limits<double>::quiet_NaN()};
 }
 
 Sphere Sphere::Unit(const Point& aCenter)

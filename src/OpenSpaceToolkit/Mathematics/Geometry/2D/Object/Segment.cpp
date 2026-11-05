@@ -95,8 +95,8 @@ bool Segment::contains(const Point& aPoint) const
 
     if (AB.cross(AC).squaredNorm() == 0.0)  // Points are aligned
     {
-        const Real K_AC = AB.dot(AC);
-        const Real K_AB = AB.dot(AB);
+        const double K_AC = AB.dot(AC);
+        const double K_AB = AB.dot(AB);
 
         return (0.0 <= K_AC) && (K_AC <= K_AB);  // C between A and B
     }
@@ -116,7 +116,7 @@ bool Segment::contains(const PointSet& aPointSet) const
                                      );
 }
 
-Point Segment::getFirstPoint() const
+const Point& Segment::getFirstPoint() const
 {
     if (!this->isDefined())
     {
@@ -126,7 +126,7 @@ Point Segment::getFirstPoint() const
     return firstPoint_;
 }
 
-Point Segment::getSecondPoint() const
+const Point& Segment::getSecondPoint() const
 {
     if (!this->isDefined())
     {
@@ -161,7 +161,7 @@ Vector2d Segment::getDirection() const
     return (secondPoint_ - firstPoint_).normalized();
 }
 
-Real Segment::getLength() const
+double Segment::getLength() const
 {
     if (!this->isDefined())
     {
@@ -171,7 +171,7 @@ Real Segment::getLength() const
     return (secondPoint_ - firstPoint_).norm();
 }
 
-Real Segment::distanceTo(const Point& aPoint) const
+double Segment::distanceTo(const Point& aPoint) const
 {
     if (!aPoint.isDefined())
     {
@@ -206,7 +206,7 @@ Real Segment::distanceTo(const Point& aPoint) const
     return projection.distanceTo(aPoint);
 }
 
-Real Segment::distanceTo(const PointSet& aPointSet) const
+double Segment::distanceTo(const PointSet& aPointSet) const
 {
     using ostk::core::container::Array;
 
@@ -220,13 +220,13 @@ Real Segment::distanceTo(const PointSet& aPointSet) const
         throw ostk::core::error::runtime::Undefined("Segment");
     }
 
-    const Array<Real> distances = Array<Point>(aPointSet.begin(), aPointSet.end())
-                                      .map<Real>(
-                                          [this](const Point& aPoint) -> Real
-                                          {
-                                              return this->distanceTo(aPoint);
-                                          }
-                                      );
+    const Array<double> distances = Array<Point>(aPointSet.begin(), aPointSet.end())
+                                        .map<double>(
+                                            [this](const Point& aPoint) -> double
+                                            {
+                                                return this->distanceTo(aPoint);
+                                            }
+                                        );
 
     return *std::min_element(distances.begin(), distances.end());
 }
@@ -236,7 +236,7 @@ Line Segment::toLine() const
     return Line::Points(firstPoint_, secondPoint_);
 }
 
-String Segment::toString(const Object::Format& aFormat, const Integer& aPrecision) const
+String Segment::toString(const Object::Format& aFormat, int aPrecision) const
 {
     using ostk::mathematics::geometry::d2::object::LineString;
 
