@@ -95,17 +95,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Vector2d, Constructor)
     }
 
     {
-        const Vector2d vector = Vector2d::Undefined();
-
-        EXPECT_FALSE(vector.isDefined());
-        EXPECT_TRUE(vector.isNaN());
-        EXPECT_FALSE(vector.isInf());
-    }
-
-    {
         const Vector2d vector = Vector2d::NaN();
 
-        EXPECT_FALSE(vector.isDefined());
         EXPECT_TRUE(vector.isNaN());
         EXPECT_FALSE(vector.isInf());
     }
@@ -113,7 +104,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Vector2d, Constructor)
     {
         const Vector2d vector = Vector2d::Inf();
 
-        EXPECT_FALSE(vector.isDefined());
         EXPECT_FALSE(vector.isNaN());
         EXPECT_TRUE(vector.isInf());
     }
@@ -181,17 +171,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Vector3d, Constructor)
     }
 
     {
-        const Vector3d vector = Vector3d::Undefined();
-
-        EXPECT_FALSE(vector.isDefined());
-        EXPECT_TRUE(vector.isNaN());
-        EXPECT_FALSE(vector.isInf());
-    }
-
-    {
         const Vector3d vector = Vector3d::NaN();
 
-        EXPECT_FALSE(vector.isDefined());
         EXPECT_TRUE(vector.isNaN());
         EXPECT_FALSE(vector.isInf());
     }
@@ -199,7 +180,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Vector3d, Constructor)
     {
         const Vector3d vector = Vector3d::Inf();
 
-        EXPECT_FALSE(vector.isDefined());
         EXPECT_FALSE(vector.isNaN());
         EXPECT_TRUE(vector.isInf());
     }
@@ -245,17 +225,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Vector4d, Constructor)
     }
 
     {
-        const Vector4d vector = Vector4d::Undefined();
-
-        EXPECT_FALSE(vector.isDefined());
-        EXPECT_TRUE(vector.isNaN());
-        EXPECT_FALSE(vector.isInf());
-    }
-
-    {
         const Vector4d vector = Vector4d::NaN();
 
-        EXPECT_FALSE(vector.isDefined());
         EXPECT_TRUE(vector.isNaN());
         EXPECT_FALSE(vector.isInf());
     }
@@ -263,7 +234,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Vector4d, Constructor)
     {
         const Vector4d vector = Vector4d::Inf();
 
-        EXPECT_FALSE(vector.isDefined());
         EXPECT_FALSE(vector.isNaN());
         EXPECT_TRUE(vector.isInf());
     }
@@ -285,10 +255,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Vector4d, IsNear)
 
         EXPECT_TRUE(firstVector.isNear(secondVector, 1.0));
         EXPECT_FALSE(firstVector.isNear(secondVector, 0.0));
-    }
-
-    {
-        EXPECT_ANY_THROW(Vector4d::NaN().isNear(Vector4d::NaN(), 0.0));
     }
 }
 
@@ -362,17 +328,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_VectorXd, Constructor)
     }
 
     {
-        const VectorXd vector = VectorXd::Undefined(5);
-
-        EXPECT_FALSE(vector.isDefined());
-        EXPECT_TRUE(vector.isNaN());
-        EXPECT_FALSE(vector.isInf());
-    }
-
-    {
         const VectorXd vector = VectorXd::NaN(5);
 
-        EXPECT_FALSE(vector.isDefined());
         EXPECT_TRUE(vector.isNaN());
         EXPECT_FALSE(vector.isInf());
     }
@@ -380,7 +337,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_VectorXd, Constructor)
     {
         const VectorXd vector = VectorXd::Inf(5);
 
-        EXPECT_FALSE(vector.isDefined());
         EXPECT_FALSE(vector.isNaN());
         EXPECT_TRUE(vector.isInf());
     }
@@ -415,10 +371,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_VectorXd, IsNear)
 
         EXPECT_TRUE(firstVector.isNear(secondVector, 1.0));
         EXPECT_FALSE(firstVector.isNear(secondVector, 0.0));
-    }
-
-    {
-        EXPECT_ANY_THROW(VectorXd::NaN(3).isNear(VectorXd::NaN(3), 0.0));
     }
 
     {

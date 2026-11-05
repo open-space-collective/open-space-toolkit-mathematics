@@ -7,19 +7,6 @@
 
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
-/// @brief                      Check if the matrix/vector is defined (not NaN and not Inf)
-///
-/// @code{.cpp}
-///     Vector3d v(1.0, 2.0, 3.0);
-///     v.isDefined();  // true
-/// @endcode
-///
-/// @return                     True if all elements are finite and not NaN
-bool isDefined() const
-{
-    return (!this->isNaN()) && (!this->isInf());
-}
-
 /// @brief                      Check if any element of the matrix/vector is NaN
 ///
 /// @code{.cpp}
@@ -81,11 +68,6 @@ bool isInf() const
 /// @return                     True if the norm of the difference is within the tolerance
 bool isNear(const Derived& aMatrix, const RealScalar aTolerance) const
 {
-    if (!this->isDefined() || (!aMatrix.isDefined()))
-    {
-        throw std::runtime_error("Object is undefined.");
-    }
-
     if (this->size() != aMatrix.size())
     {
         throw std::runtime_error("Cannot compare objects of different size.");
@@ -264,45 +246,6 @@ static Matrix<Scalar, 3, 1> Y()
 static Matrix<Scalar, 3, 1> Z()
 {
     return Matrix<Scalar, 3, 1>(0.0, 0.0, 1.0);
-}
-
-/// @brief                      Construct an undefined fixed-size matrix/vector (all NaN)
-///
-/// @code{.cpp}
-///     Vector3d v = Vector3d::Undefined();
-/// @endcode
-///
-/// @return                     Undefined matrix/vector
-static Derived Undefined()
-{
-    return Derived::NaN();
-}
-
-/// @brief                      Construct an undefined dynamic-size vector of given size (all NaN)
-///
-/// @code{.cpp}
-///     VectorXd v = VectorXd::Undefined(5);
-/// @endcode
-///
-/// @param                      [in] aSize The vector size
-/// @return                     Undefined vector
-static Matrix<Scalar, Dynamic, 1> Undefined(Index aSize)
-{
-    return Matrix<Scalar, Dynamic, 1>::NaN(aSize);
-}
-
-/// @brief                      Construct an undefined dynamic-size matrix of given dimensions (all NaN)
-///
-/// @code{.cpp}
-///     MatrixXd m = MatrixXd::Undefined(3, 3);
-/// @endcode
-///
-/// @param                      [in] aRowCount The number of rows
-/// @param                      [in] aColumnCount The number of columns
-/// @return                     Undefined matrix
-static Matrix<Scalar, Dynamic, Dynamic> Undefined(Index aRowCount, Index aColumnCount)
-{
-    return Matrix<Scalar, Dynamic, Dynamic>::NaN(aRowCount, aColumnCount);
 }
 
 /// @brief                      Construct a fixed-size matrix/vector filled with NaN values
