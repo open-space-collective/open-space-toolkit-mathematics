@@ -19,8 +19,3 @@ class TestIntersection:
         assert intersection.is_point()
         assert intersection.get_type() == Intersection.Type.Point
         assert intersection.as_point() == Point(1.0, 2.0, 3.0)
-
-    def test_undefined_is_removed(self):
-        assert not hasattr(Intersection, "undefined")
-        assert not hasattr(Intersection, "is_defined")
-        assert not hasattr(Intersection.Type, "Undefined")

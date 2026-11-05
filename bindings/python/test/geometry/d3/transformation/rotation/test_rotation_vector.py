@@ -34,12 +34,6 @@ class TestRotationVector:
     def test_get_angle_success(self, rotation_vector: RotationVector):
         assert rotation_vector.get_angle() == Angle.zero()
 
-    def test_is_defined_success(self, rotation_vector: RotationVector):
-        assert rotation_vector.is_defined() is True
-
-    def test_is_defined_success(self, rotation_vector: RotationVector):
-        rotation_vector.rectify()
-
     def test_quaternion_success(self, rotation_vector: RotationVector):
         assert RotationVector.quaternion(Quaternion.unit()) == rotation_vector
 

@@ -88,15 +88,6 @@ class Object
     /// @return             A reference to output stream
     friend std::ostream& operator<<(std::ostream& anOutputStream, const Object& anObject);
 
-    /// @brief              Check if object is defined
-    ///
-    /// @code{.cpp}
-    ///                     Point(0.0, 0.0).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if object is defined
-    virtual bool isDefined() const = 0;
-
     /// @brief              Check if object intersects another object
     ///
     /// @code

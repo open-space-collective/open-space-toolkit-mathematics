@@ -43,11 +43,6 @@ Cone* Cone::clone() const
 
 bool Cone::operator==(const Cone& aCone) const
 {
-    if ((!this->isDefined()) || (!aCone.isDefined()))
-    {
-        return false;
-    }
-
     return (apex_ == aCone.apex_) && (((axis_ == aCone.axis_) && (angle_ == aCone.angle_)) ||
                                       ((axis_ == -aCone.axis_) && (angle_ == Angle::Degrees(180.0) - aCone.angle_)));
 }
@@ -57,23 +52,8 @@ bool Cone::operator!=(const Cone& aCone) const
     return !((*this) == aCone);
 }
 
-bool Cone::isDefined() const
-{
-    return apex_.isDefined() && axis_.isDefined() && angle_.isDefined();
-}
-
 bool Cone::intersects(const Sphere& aSphere, [[maybe_unused]] const Size aDiscretizationLevel) const
 {
-    if (!aSphere.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     const Vector3d apexToCenter = aSphere.getCenter() - apex_;
     const double distance = apexToCenter.norm();
 
@@ -94,16 +74,6 @@ bool Cone::intersects(const Sphere& aSphere, [[maybe_unused]] const Size aDiscre
 
 bool Cone::intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel) const
 {
-    if (!anEllipsoid.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     for (const auto& ray :
          this->getRaysOfLateralSurface(aDiscretizationLevel))  // [TBM] Could be improved by calculating rays on the fly
     {
@@ -118,16 +88,6 @@ bool Cone::intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizationLe
 
 bool Cone::contains(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     if (aPoint == this->apex_)
     {
         return true;
@@ -145,11 +105,6 @@ bool Cone::contains(const Point& aPoint) const
 
 bool Cone::contains(const PointSet& aPointSet) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     return std::all_of(
         std::begin(aPointSet),
         std::end(aPointSet),
@@ -167,16 +122,6 @@ bool Cone::contains(const Segment& aSegment) const
 
 bool Cone::contains(const Ray& aRay) const
 {
-    if (!aRay.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ray");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     if (!this->contains(aRay.getOrigin()))
     {
         return false;
@@ -187,31 +132,11 @@ bool Cone::contains(const Ray& aRay) const
 
 bool Cone::contains(const Sphere& aSphere) const
 {
-    if (!aSphere.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     return this->contains(aSphere.getCenter()) && (this->distanceTo(aSphere.getCenter()) >= aSphere.getRadius());
 }
 
 bool Cone::contains(const Ellipsoid& anEllipsoid) const
 {
-    if (!anEllipsoid.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     throw ostk::core::error::runtime::ToBeImplemented("Cone::contains(const Ellipsoid&)");
 
     return false;  // TBI
@@ -219,31 +144,16 @@ bool Cone::contains(const Ellipsoid& anEllipsoid) const
 
 const Point& Cone::getApex() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     return apex_;
 }
 
 const Vector3d& Cone::getAxis() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     return axis_;
 }
 
 const Angle& Cone::getAngle() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     return angle_;
 }
 
@@ -290,16 +200,6 @@ Array<Ray> Cone::getRaysOfLateralSurface(const Size aRayCount) const
 
 double Cone::distanceTo(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     if (aPoint == this->apex_)
     {
         return 0.0;
@@ -340,16 +240,6 @@ double Cone::distanceTo(const Point& aPoint) const
 Intersection Cone::intersectionWith(const Sphere& aSphere, const bool onlyInSight, const Size aDiscretizationLevel)
     const
 {
-    if (!aSphere.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Sphere");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     Array<Point> firstIntersectionPoints = Array<Point>::Empty();
     Array<Point> secondIntersectionPoints = Array<Point>::Empty();
 
@@ -407,16 +297,6 @@ Intersection Cone::intersectionWith(
     const Ellipsoid& anEllipsoid, const bool onlyInSight, const Size aDiscretizationLevel
 ) const
 {
-    if (!anEllipsoid.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Ellipsoid");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     Array<Point> firstIntersectionPoints = Array<Point>::Empty();
     Array<Point> secondIntersectionPoints = Array<Point>::Empty();
 
@@ -472,37 +352,20 @@ void Cone::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
     displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Cone") : void();
 
-    ostk::core::utils::Print::Line(anOutputStream) << "Apex:" << (apex_.isDefined() ? apex_.toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream) << "Axis:" << (axis_.isDefined() ? axis_.toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Angle:" << (angle_.isDefined() ? angle_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "Apex:" << apex_.toString();
+    ostk::core::utils::Print::Line(anOutputStream) << "Axis:" << axis_.toString();
+    ostk::core::utils::Print::Line(anOutputStream) << "Angle:" << angle_.toString();
 
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
 
 void Cone::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Cone");
-    }
-
     apex_ = aTransformation.applyTo(apex_);
     axis_ = aTransformation.applyTo(axis_);
 
     axis_.normalize();
 }
-
-Cone Cone::Undefined()
-{
-    return {Point::Undefined(), Vector3d::Undefined(), Angle::Undefined()};
-}
-
 }  // namespace object
 }  // namespace d3
 }  // namespace geometry

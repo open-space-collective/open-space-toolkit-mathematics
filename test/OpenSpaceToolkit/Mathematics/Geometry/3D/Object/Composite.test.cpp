@@ -227,21 +227,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, EqualToOperator)
 
         EXPECT_FALSE(firstComposite == secondComposite);
     }
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        const Pyramid pyramid = {base, apex};
-
-        const Composite composite = Composite {pyramid};
-
-        EXPECT_FALSE(Composite(Point::Undefined()) == Composite(Point::Undefined()));
-        EXPECT_FALSE(Composite(Point::Undefined()) == composite);
-        EXPECT_FALSE(composite == Composite(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, NotEqualToOperator)
@@ -351,21 +336,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, NotEqualToOperat
 
         EXPECT_TRUE(firstComposite != secondComposite);
     }
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        const Pyramid pyramid = {base, apex};
-
-        const Composite composite = Composite {pyramid};
-
-        EXPECT_TRUE(Composite(Point::Undefined()) != Composite(Point::Undefined()));
-        EXPECT_TRUE(Composite(Point::Undefined()) != composite);
-        EXPECT_TRUE(composite != Composite(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AdditionOperator)
@@ -393,20 +363,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AdditionOperator
 
         EXPECT_NO_THROW(composite + composite);
     }
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        const Pyramid pyramid = {base, apex};
-
-        Composite composite = Composite {pyramid};
-
-        EXPECT_ANY_THROW(Composite(Point::Undefined()) + composite);
-        EXPECT_ANY_THROW(composite + Composite(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AdditionAssignmentOperator)
@@ -433,20 +389,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AdditionAssignme
         Composite composite = Composite {pyramid};
 
         EXPECT_NO_THROW(composite += composite);
-    }
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        const Pyramid pyramid = {base, apex};
-
-        Composite composite = Composite {pyramid};
-
-        EXPECT_ANY_THROW(Composite(Point::Undefined()) += composite);
-        EXPECT_ANY_THROW(composite += Composite(Point::Undefined()));
     }
 }
 
@@ -481,37 +423,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, IsDefined)
-{
-    using ostk::core::container::Array;
-    using ostk::core::type::Unique;
-
-    using ostk::mathematics::geometry::d3::Object;
-    using ostk::mathematics::geometry::d3::object::Composite;
-    using ostk::mathematics::geometry::d3::object::Cuboid;
-    using ostk::mathematics::geometry::d3::object::Point;
-    using ostk::mathematics::geometry::d3::object::Polygon;
-    using ostk::mathematics::geometry::d3::object::Pyramid;
-    using ostk::mathematics::object::Vector3d;
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        const Pyramid pyramid = {base, apex};
-
-        const Composite composite = Composite {pyramid};
-
-        EXPECT_TRUE(composite.isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Composite(Point::Undefined()).isDefined());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, IsEmpty)
 {
     using ostk::core::container::Array;
@@ -540,10 +451,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, IsEmpty)
 
     {
         EXPECT_TRUE(Composite::Empty().isEmpty());
-    }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).isEmpty());
     }
 }
 
@@ -574,21 +481,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Intersects)
     //     EXPECT_TRUE(composite.intersects(composite)) ;
 
     // }
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        const Pyramid pyramid = {base, apex};
-
-        const Composite composite = Composite {pyramid};
-
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).intersects(Composite(Point::Undefined())));
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).intersects(composite));
-        EXPECT_ANY_THROW(composite.intersects(Composite(Point::Undefined())));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Contains)
@@ -618,21 +510,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Contains)
     //     EXPECT_TRUE(composite.contains(composite)) ;
 
     // }
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        const Pyramid pyramid = {base, apex};
-
-        const Composite composite = Composite {pyramid};
-
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).contains(Composite(Point::Undefined())));
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).contains(composite));
-        EXPECT_ANY_THROW(composite.contains(Composite(Point::Undefined())));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Is)
@@ -662,10 +539,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Is)
 
         EXPECT_FALSE(composite.is<Cuboid>());
     }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).is<Pyramid>());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, As)
@@ -694,10 +567,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, As)
         EXPECT_EQ(pyramid, composite.as<Pyramid>());
 
         EXPECT_ANY_THROW(composite.as<Cuboid>());
-    }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).as<Pyramid>());
     }
 }
 
@@ -757,10 +626,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjectAt)
 
         EXPECT_ANY_THROW(composite.getObjectAt(2));
     }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).getObjectAt(0));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjects)
@@ -813,10 +678,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjects)
         const Composite composite = Composite {std::move(objects)};
 
         EXPECT_EQ(2, composite.getObjects().getSize());
-    }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).getObjects());
     }
 }
 
@@ -871,10 +732,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjectCount)
 
         EXPECT_EQ(2, composite.getObjectCount());
     }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).getObjectCount());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
@@ -900,12 +757,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
 
         const Composite composite = Composite {pyramid};
 
-        EXPECT_NO_THROW(
+        size_t objectCount = 0;
 
-            for (const auto& objectUPtr
-                 : composite) { EXPECT_TRUE(objectUPtr->isDefined()); }
+        for (const auto& objectUPtr : composite)
+        {
+            EXPECT_NE(nullptr, objectUPtr);
 
-        );
+            ++objectCount;
+        }
+
+        EXPECT_EQ(1, objectCount);
     }
 
     {
@@ -931,21 +792,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
 
         const Composite composite = Composite {std::move(objects)};
 
-        EXPECT_NO_THROW(
+        size_t objectCount = 0;
 
-            for (const auto& objectUPtr
-                 : composite) { EXPECT_TRUE(objectUPtr->isDefined()); }
+        for (const auto& objectUPtr : composite)
+        {
+            EXPECT_NE(nullptr, objectUPtr);
 
-        );
-    }
+            ++objectCount;
+        }
 
-    {
-        EXPECT_ANY_THROW(
-
-            for (const auto& objectUPtr
-                 : Composite(Point::Undefined())) { (void)objectUPtr; }
-
-        );
+        EXPECT_EQ(2, objectCount);
     }
 }
 
@@ -975,21 +831,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ApplyTransformat
 
         EXPECT_NO_THROW(composite.applyTransformation(Transformation::Identity()));
     }
-
-    {
-        const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        };
-        const Point apex = {0.0, 0.0, 1.0};
-
-        const Pyramid pyramid = {base, apex};
-
-        Composite composite = Composite {pyramid};
-
-        EXPECT_ANY_THROW(composite.applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).applyTransformation(Transformation::Identity()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Empty)
@@ -998,7 +839,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Empty)
 
     {
         EXPECT_NO_THROW(Composite::Empty());
-        EXPECT_TRUE(Composite::Empty().isDefined());
         EXPECT_TRUE(Composite::Empty().isEmpty());
     }
 }

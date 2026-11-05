@@ -19,16 +19,6 @@ def test_geometry_d3_object_point_constructor():
     assert point is not None
     assert isinstance(point, Point)
     assert isinstance(point, Object)
-    assert point.is_defined()
-
-
-def test_geometry_d3_object_point_undefined():
-    point: Point = Point.undefined()
-
-    assert point is not None
-    assert isinstance(point, Point)
-    assert isinstance(point, Object)
-    assert point.is_defined() is False
 
 
 def test_geometry_d3_object_point_origin():
@@ -37,7 +27,6 @@ def test_geometry_d3_object_point_origin():
     assert point is not None
     assert isinstance(point, Point)
     assert isinstance(point, Object)
-    assert point.is_defined()
     assert point.x() == 0.0
     assert point.y() == 0.0
     assert point.z() == 0.0
@@ -50,7 +39,6 @@ def test_geometry_d3_object_point_vector():
     assert point is not None
     assert isinstance(point, Point)
     assert isinstance(point, Object)
-    assert point.is_defined()
     assert (point.x() - 3.4) <= 1e-15
     assert (point.y() + 6.7) <= 1e-15
     assert (point.z() - 1.0) <= 1e-15
@@ -61,7 +49,6 @@ def test_geometry_d3_object_point_vector():
     assert point is not None
     assert isinstance(point, Point)
     assert isinstance(point, Object)
-    assert point.is_defined()
     assert (point.x() - 3.4) <= 1e-15
     assert (point.y() + 6.7) <= 1e-15
     assert (point.z() - 1.0) <= 1e-15
@@ -72,7 +59,6 @@ def test_geometry_d3_object_point_vector():
     assert point is not None
     assert isinstance(point, Point)
     assert isinstance(point, Object)
-    assert point.is_defined()
     assert (point.x() - 3.4) <= 1e-15
     assert (point.y() + 6.7) <= 1e-15
     assert (point.z() - 1.0) <= 1e-15
@@ -112,7 +98,6 @@ def test_geometry_d3_object_point_operators():
 
     assert point is not None
     assert isinstance(point, Point)
-    assert point.is_defined()
     assert point.x() == point_1.x() + point_2.x()
     assert point.y() == point_1.y() + point_2.y()
     assert point.z() == point_1.z() + point_2.z()
@@ -121,7 +106,6 @@ def test_geometry_d3_object_point_operators():
 
     assert point is not None
     assert isinstance(point, Point)
-    assert point.is_defined()
     assert point.x() == point_3.x() + point_2.x()
     assert point.y() == point_3.y() + point_2.y()
     assert point.z() == point_3.z() + point_2.z()
@@ -130,7 +114,6 @@ def test_geometry_d3_object_point_operators():
 
     assert point is not None
     assert isinstance(point, Point)
-    assert point.is_defined()
     assert point.x() == point_1.x() + point_4.x()
     assert point.y() == point_1.y() + point_4.y()
     assert point.z() == point_1.z() + point_4.z()
@@ -139,21 +122,18 @@ def test_geometry_d3_object_point_operators():
 
     assert point is not None
     assert isinstance(point, Point)
-    assert point.is_defined()
     assert point == point_1
 
     point: Point = point_1 + [0.0, 0.0, 0.0]
 
     assert point is not None
     assert isinstance(point, Point)
-    assert point.is_defined()
     assert point == point_1
 
     point: Point = point_1 + np.array((0.0, 0.0, 0.0))
 
     assert point is not None
     assert isinstance(point, Point)
-    assert point.is_defined()
     assert point == point_1
 
     # point: Point = point_1 - point_1
@@ -161,17 +141,9 @@ def test_geometry_d3_object_point_operators():
     # assert point is not None
     # assert isinstance(point, Point)
     # assert isinstance(point, Object)
-    # assert point.is_defined()
     # assert point.x == 0.0
     # assert point.y == 0.0
     # assert point == Point.origin()
-
-
-def test_geometry_d3_object_point_is_defined():
-    point: Point = Point(3.5, 5.6, 4.3)
-
-    assert point.is_defined()
-    assert Point.undefined().is_defined() is False
 
 
 def test_geometry_d3_object_point_is_near():

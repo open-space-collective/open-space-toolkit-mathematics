@@ -38,12 +38,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, EqualToOperator)
     {
         EXPECT_FALSE(Point(1.0, 2.0, 3.0) == Point(1.0, 2.0, 4.0));
     }
-
-    {
-        EXPECT_FALSE(Point(1.0, 2.0, 3.0) == Point::Undefined());
-        EXPECT_FALSE(Point::Undefined() == Point(1.0, 2.0, 3.0));
-        EXPECT_FALSE(Point::Undefined() == Point::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, NotEqualToOperator)
@@ -57,12 +51,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, NotEqualToOperator)
     {
         EXPECT_FALSE(Point(1.0, 2.0, 3.0) != Point(1.0, 2.0, 3.0));
     }
-
-    {
-        EXPECT_TRUE(Point(1.0, 2.0, 3.0) != Point::Undefined());
-        EXPECT_TRUE(Point::Undefined() != Point(1.0, 2.0, 3.0));
-        EXPECT_TRUE(Point::Undefined() != Point::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, AdditionOperator)
@@ -73,11 +61,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, AdditionOperator)
     {
         EXPECT_EQ(Point(1.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) + Vector3d(0.0, 0.0, 0.0));
         EXPECT_EQ(Point(2.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) + Vector3d(1.0, 0.0, 0.0));
-    }
-
-    {
-        EXPECT_ANY_THROW(Point::Undefined() + Vector3d(0.0, 0.0, 0.0));
-        EXPECT_ANY_THROW(Point(1.0, 2.0, 3.0) + Vector3d::Undefined());
     }
 }
 
@@ -92,18 +75,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, SubtractionOperator)
     }
 
     {
-        EXPECT_ANY_THROW(Point::Undefined() - Vector3d(0.0, 0.0, 0.0));
-        EXPECT_ANY_THROW(Point(1.0, 2.0, 3.0) - Vector3d::Undefined());
-    }
-
-    {
         EXPECT_EQ(Vector3d(1.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) - Point(0.0, 0.0, 0.0));
         EXPECT_EQ(Vector3d(0.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) - Point(1.0, 0.0, 0.0));
-    }
-
-    {
-        EXPECT_ANY_THROW(Point::Undefined() - Point(0.0, 0.0, 0.0));
-        EXPECT_ANY_THROW(Point(1.0, 2.0, 3.0) - Point::Undefined());
     }
 }
 
@@ -120,20 +93,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, IsDefined)
-{
-    using ostk::mathematics::geometry::d3::object::Point;
-
-    {
-        EXPECT_TRUE(Point(0.0, 0.0, 0.0).isDefined());
-        EXPECT_TRUE(Point(1.0, 2.0, 3.0).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Point::Undefined().isDefined());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, IsNear)
 {
     using ostk::mathematics::geometry::d3::object::Point;
@@ -146,9 +105,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, IsNear)
     }
 
     {
-        EXPECT_ANY_THROW(Point::Undefined().isNear(Point::Undefined(), std::numeric_limits<double>::quiet_NaN()));
-        EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).isNear(Point::Undefined(), 1e-15));
-        EXPECT_ANY_THROW(Point::Undefined().isNear(Point(0.0, 0.0, 0.0), 1e-15));
         EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).isNear(Point(0.0, 0.0, 0.0), std::numeric_limits<double>::quiet_NaN()));
     }
 }
@@ -160,10 +116,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, AsVector)
 
     {
         EXPECT_EQ(Vector3d(1.0, 2.0, 3.0), Point(1.0, 2.0, 3.0).asVector());
-    }
-
-    {
-        EXPECT_ANY_THROW(Point::Undefined().asVector());
     }
 }
 
@@ -209,12 +161,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, DistanceTo)
         EXPECT_EQ(2.0, Point(0.0, -2.0, 0.0).distanceTo(Point(0.0, 0.0, 0.0)));
         EXPECT_EQ(2.0, Point(0.0, 0.0, -2.0).distanceTo(Point(0.0, 0.0, 0.0)));
     }
-
-    {
-        EXPECT_ANY_THROW(Point::Undefined().distanceTo(Point::Undefined()));
-        EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).distanceTo(Point::Undefined()));
-        EXPECT_ANY_THROW(Point::Undefined().distanceTo(Point(0.0, 0.0, 0.0)));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, ApplyTransformation)
@@ -243,22 +189,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, ApplyTransformation)
         point.applyTransformation(Transformation::Rotation(RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(90.0))));
 
         EXPECT_TRUE(point.isNear(Point(1.0, 0.0, 2.0), 1e-15));
-    }
-
-    {
-        EXPECT_ANY_THROW(Point::Undefined().applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Point::Undefined().applyTransformation(Transformation::Identity()));
-        EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).applyTransformation(Transformation::Undefined()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, Undefined)
-{
-    using ostk::mathematics::geometry::d3::object::Point;
-
-    {
-        EXPECT_NO_THROW(Point::Undefined());
-        EXPECT_FALSE(Point::Undefined().isDefined());
     }
 }
 

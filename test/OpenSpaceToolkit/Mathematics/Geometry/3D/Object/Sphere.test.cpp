@@ -45,12 +45,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, EqualToOperator)
         EXPECT_FALSE(Sphere({1.0, 2.0, 3.0}, 4.0) == Sphere({1.0, 2.0, 4.0}, 4.0));
         EXPECT_FALSE(Sphere({1.0, 2.0, 3.0}, 4.0) == Sphere({1.0, 2.0, 3.0}, 3.0));
     }
-
-    {
-        EXPECT_FALSE(Sphere({1.0, 2.0, 3.0}, 4.0) == Sphere::Undefined());
-        EXPECT_FALSE(Sphere::Undefined() == Sphere({1.0, 2.0, 3.0}, 4.0));
-        EXPECT_FALSE(Sphere::Undefined() == Sphere::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, NotEqualToOperator)
@@ -64,12 +58,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, NotEqualToOperator)
 
     {
         EXPECT_FALSE(Sphere({1.0, 2.0, 3.0}, 4.0) != Sphere({1.0, 2.0, 3.0}, 4.0));
-    }
-
-    {
-        EXPECT_TRUE(Sphere({1.0, 2.0, 3.0}, 4.0) != Sphere::Undefined());
-        EXPECT_TRUE(Sphere::Undefined() != Sphere({1.0, 2.0, 3.0}, 4.0));
-        EXPECT_TRUE(Sphere::Undefined() != Sphere::Undefined());
     }
 }
 
@@ -86,20 +74,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, IsDefined)
-{
-    using ostk::mathematics::geometry::d3::object::Sphere;
-
-    {
-        EXPECT_TRUE(Sphere({0.0, 0.0, 0.0}, 1.0).isDefined());
-        EXPECT_TRUE(Sphere({1.0, 2.0, 3.0}, 4.0).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Sphere::Undefined().isDefined());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, IsUnitary)
 {
     using ostk::mathematics::geometry::d3::object::Sphere;
@@ -112,10 +86,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, IsUnitary)
     {
         EXPECT_FALSE(Sphere({0.0, 0.0, 0.0}, 1.1).isUnitary());
         EXPECT_FALSE(Sphere({1.0, 2.0, 3.0}, 0.9).isUnitary());
-    }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().isUnitary());
     }
 }
 
@@ -137,12 +107,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Point)
 
     {
         EXPECT_FALSE(Sphere(Point::Origin(), 4.0).intersects(Point::Origin()));
-    }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().intersects(Point::Undefined()));
-        EXPECT_ANY_THROW(Sphere({1.0, 2.0, 3.0}, 4.0).intersects(Point::Undefined()));
-        EXPECT_ANY_THROW(Sphere::Undefined().intersects(Point(0.0, 0.0, 0.0)));
     }
 }
 
@@ -167,11 +131,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_PointSet
 
     {
         EXPECT_FALSE(Sphere(Point::Origin(), 4.0).intersects(PointSet::Empty()));
-    }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().intersects(PointSet::Empty()));
-        EXPECT_ANY_THROW(Sphere::Undefined().intersects(PointSet({{+5.0, +2.0, +3.0}, {+5.0, +2.0, +3.0}})));
     }
 }
 
@@ -321,12 +280,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Line)
         // precision issues
         EXPECT_FALSE(sphere.intersects(Line({0.0, +equatorialRadius_m + 0.1, 0.0}, {+1.0, 0.0, 0.0})));
         EXPECT_FALSE(sphere.intersects(Line({0.0, +7000e3, 0.0}, {+1.0, 0.0, 0.0})));
-    }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().intersects(Line::Undefined()));
-        EXPECT_ANY_THROW(Sphere(Point::Origin(), 1.0).intersects(Line::Undefined()));
-        EXPECT_ANY_THROW(Sphere::Undefined().intersects(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0})));
     }
 }
 
@@ -499,12 +452,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Ray)
         EXPECT_FALSE(sphere.intersects(Ray({+10000e3, +equatorialRadius_m + 0.1, 0.0}, {+1.0, 0.0, 0.0})));
         EXPECT_FALSE(sphere.intersects(Ray({+10000e3, +7000e3, 0.0}, {+1.0, 0.0, 0.0})));
     }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().intersects(Ray::Undefined()));
-        EXPECT_ANY_THROW(Sphere(Point::Origin(), 1.0).intersects(Ray::Undefined()));
-        EXPECT_ANY_THROW(Sphere::Undefined().intersects(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0})));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Segment)
@@ -625,10 +572,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Segment)
         ));
         EXPECT_FALSE(sphere.intersects(Segment({-10000e3, 0.0, +7000e3}, {+10000e3, 0.0, +7000e3})));
     }
-
-    {
-        EXPECT_ANY_THROW(Sphere(Point::Origin(), 1.0).intersects(Segment::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Plane)
@@ -667,11 +610,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Plane)
         EXPECT_TRUE(sphere.intersects(Plane({0.0, 0.0, +2.0}, {0.0, 0.0, 1.0})));
         EXPECT_FALSE(sphere.intersects(Plane({0.0, 0.0, +3.0}, {0.0, 0.0, 1.0})));
     }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().intersects(Plane::Undefined()));
-        EXPECT_ANY_THROW(Sphere(Point::Origin(), 1.0).intersects(Plane::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Pyramid)
@@ -684,11 +622,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Pyramid)
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid.Intersects_Sphere
 
         SUCCEED();
-    }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().intersects(Pyramid::Undefined()));
-        EXPECT_ANY_THROW(Sphere(Point::Origin(), 1.0).intersects(Pyramid::Undefined()));
     }
 }
 
@@ -710,12 +643,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Contains_Point)
 
     {
         EXPECT_FALSE(Sphere(Point::Origin(), 4.0).contains(Point::Origin()));
-    }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Sphere({1.0, 2.0, 3.0}, 4.0).contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Sphere::Undefined().contains(Point(0.0, 0.0, 0.0)));
     }
 }
 
@@ -752,11 +679,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Contains_PointSet)
     {
         EXPECT_FALSE(Sphere(Point::Origin(), 4.0).contains(PointSet::Empty()));
     }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().contains(PointSet::Empty()));
-        EXPECT_ANY_THROW(Sphere::Undefined().contains(PointSet({{+5.0, +2.0, +3.0}, {+5.0, +2.0, +3.0}})));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, GetCenter)
@@ -767,10 +689,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, GetCenter)
     {
         EXPECT_EQ(Point(1.0, 2.0, 3.0), Sphere({1.0, 2.0, 3.0}, 4.0).getCenter());
     }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().getCenter());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, GetRadius)
@@ -779,10 +697,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, GetRadius)
 
     {
         EXPECT_EQ(4.0, Sphere({1.0, 2.0, 3.0}, 4.0).getRadius());
-    }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().getRadius());
     }
 }
 
@@ -815,22 +729,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, ApplyTransformation
 
         EXPECT_TRUE(sphere.getCenter().isNear(referenceSphere.getCenter(), 1e-15));
         EXPECT_EQ(referenceSphere.getRadius(), sphere.getRadius());
-    }
-
-    {
-        EXPECT_ANY_THROW(Sphere::Undefined().applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Sphere::Undefined().applyTransformation(Transformation::Identity()));
-        EXPECT_ANY_THROW(Sphere({1.0, 2.0, 3.0}, 4.0).applyTransformation(Transformation::Undefined()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Undefined)
-{
-    using ostk::mathematics::geometry::d3::object::Sphere;
-
-    {
-        EXPECT_NO_THROW(Sphere::Undefined());
-        EXPECT_FALSE(Sphere::Undefined().isDefined());
     }
 }
 

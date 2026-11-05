@@ -111,15 +111,6 @@ class MultiPolygon : public Object
     /// @return             True if multi-polygons are not equal
     bool operator!=(const MultiPolygon& aMultiPolygon) const;
 
-    /// @brief              Check if multi-polygon is defined
-    ///
-    /// @code{.cpp}
-    ///                     multiPolygon.isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if multi-polygon is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if multi-polygon contains point
     ///
     /// @code
@@ -230,15 +221,6 @@ class MultiPolygon : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined multi-polygon
-    ///
-    /// @code
-    ///                     MultiPolygon multiPolygon = MultiPolygon::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined multi-polygon
-    static MultiPolygon Undefined();
 
     /// @brief              Constructs a multi-polygon from a polygon
     ///

@@ -58,20 +58,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(nanobind::mo
         .def("__repr__", &(shiftToString<Sphere>))
 
         .def(
-            "is_defined",
-            &Sphere::isDefined,
-            R"doc(
-                Check if the sphere is defined.
-
-                Returns:
-                    bool: True if the sphere is defined, False otherwise.
-
-                Example:
-                    >>> sphere = Sphere(Point(0.0, 0.0, 0.0), 1.0)
-                    >>> sphere.is_defined()  # True
-            )doc"
-        )
-        .def(
             "is_unitary",
             &Sphere::isUnitary,
             R"doc(
@@ -315,20 +301,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(nanobind::mo
             arg("transformation")
         )
 
-        .def_static(
-            "undefined",
-            &Sphere::Undefined,
-            R"doc(
-                Create an undefined sphere.
-
-                Returns:
-                    Sphere: An undefined sphere.
-
-                Example:
-                    >>> undefined_sphere = Sphere.undefined()
-                    >>> undefined_sphere.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "unit",
             &Sphere::Unit,

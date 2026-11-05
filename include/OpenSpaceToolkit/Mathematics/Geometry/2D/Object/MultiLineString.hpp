@@ -80,15 +80,6 @@ class MultiLineString : public Object
     /// @return             True if multi multi line strings are not equal
     bool operator!=(const MultiLineString& aMultiLineString) const;
 
-    /// @brief              Check if multi multi line string is defined
-    ///
-    /// @code
-    ///                     MultiLineString(0.0, 0.0).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if multi multi line string is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if multi multi line string is empty
     ///
     /// @code

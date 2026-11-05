@@ -257,15 +257,6 @@ class Quaternion
     /// @return                 Output stream reference
     friend std::ostream& operator<<(std::ostream& anOutputStream, const Quaternion& aQuaternion);
 
-    /// @brief                  Check if Quaternion is defined
-    ///
-    /// @code
-    ///                         Quaternion::Unit().isDefined();
-    /// @endcode
-    ///
-    /// @return                 True if Quaternion is defined
-    bool isDefined() const;
-
     /// @brief                  Check if Quaternion is unitary (i.e., its norm is equal to 1.0)
     ///
     /// @code
@@ -546,15 +537,6 @@ class Quaternion
     /// @param                  [in] aQuaternion A Quaternion
     /// @return                 Angular difference
     Angle angularDifferenceWith(const Quaternion& aQuaternion) const;
-
-    /// @brief                  Construct undefined Quaternion
-    ///
-    /// @code
-    ///                         Quaternion::Undefined();
-    /// @endcode
-    ///
-    /// @return                 Quaternion
-    static Quaternion Undefined();
 
     /// @brief                  Construct unitary Quaternion
     ///

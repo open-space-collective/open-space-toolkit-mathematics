@@ -22,7 +22,6 @@ class TestLine:
         assert line is not None
         assert isinstance(line, Line)
         assert isinstance(line, Object)
-        assert line.is_defined()
 
     def test_contains_success_point_set(
         self,
@@ -38,14 +37,6 @@ class TestLine:
         assert float(line.distance_to(Point(2.0, 3.0))) == pytest.approx(0.0, 1e-5)
         assert float(line.distance_to(Point(1.0, 5.0))) == pytest.approx(2.12132, 1e-5)
 
-    def test_undefined_success(self):
-        line = Line.undefined()
-
-        assert line is not None
-        assert isinstance(line, Line)
-        assert isinstance(line, Object)
-        assert line.is_defined() is False
-
     def test_points_success(
         self,
         line: Line,
@@ -53,4 +44,3 @@ class TestLine:
         assert line is not None
         assert isinstance(line, Line)
         assert isinstance(line, Object)
-        assert line.is_defined() is True

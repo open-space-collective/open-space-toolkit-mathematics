@@ -72,16 +72,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, EqualToOperator)
 
         EXPECT_TRUE(firstCone == secondCone);
     }
-
-    {
-        const Point apex = {0.0, 0.0, 0.0};
-        const Vector3d axis = Vector3d::Z();
-        const Angle angle = Angle::Degrees(45.0);
-
-        EXPECT_FALSE(Cone(apex, axis, angle) == Cone::Undefined());
-        EXPECT_FALSE(Cone::Undefined() == Cone(apex, axis, angle));
-        EXPECT_FALSE(Cone::Undefined() == Cone::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, NotEqualToOperator)
@@ -114,16 +104,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, NotEqualToOperator)
 
         EXPECT_FALSE(firstCone != secondCone);
     }
-
-    {
-        const Point apex = {0.0, 0.0, 0.0};
-        const Vector3d axis = Vector3d::Z();
-        const Angle angle = Angle::Degrees(45.0);
-
-        EXPECT_TRUE(Cone(apex, axis, angle) != Cone::Undefined());
-        EXPECT_TRUE(Cone::Undefined() != Cone(apex, axis, angle));
-        EXPECT_TRUE(Cone::Undefined() != Cone::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, StreamOperator)
@@ -143,26 +123,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, StreamOperator)
         EXPECT_NO_THROW(std::cout << Cone(apex, axis, angle) << std::endl);
 
         EXPECT_FALSE(testing::internal::GetCapturedStdout().empty());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, IsDefined)
-{
-    using ostk::mathematics::geometry::Angle;
-    using ostk::mathematics::geometry::d3::object::Cone;
-    using ostk::mathematics::geometry::d3::object::Point;
-    using ostk::mathematics::object::Vector3d;
-
-    {
-        const Point apex = {0.0, 0.0, 0.0};
-        const Vector3d axis = Vector3d::Z();
-        const Angle angle = Angle::Degrees(45.0);
-
-        EXPECT_TRUE(Cone(apex, axis, angle).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Cone::Undefined().isDefined());
     }
 }
 
@@ -238,21 +198,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Intersects_Sphere)
 
         EXPECT_TRUE(cone.intersects(sphere));
     }
-
-    {
-        const Point apex = {0.0, 0.0, 0.0};
-        const Vector3d axis = {1.0, 0.0, 0.0};
-        const Angle angle = Angle::Degrees(15.0);
-
-        const Cone cone = {apex, axis, angle};
-        EXPECT_ANY_THROW(cone.intersects(Sphere::Undefined()));
-    }
-
-    {
-        const Sphere sphere = {{0.0, 0.0, 0.0}, 5.0};
-
-        EXPECT_ANY_THROW(Cone::Undefined().intersects(sphere));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Intersects_Ellipsoid)
@@ -273,10 +218,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Intersects_Ellipsoid)
         const Ellipsoid ellipsoid = {{0.0, 0.0, 10.0}, 5.0, 5.0, 5.0};
 
         EXPECT_TRUE(cone.intersects(ellipsoid));
-    }
-
-    {
-        EXPECT_ANY_THROW(Cone::Undefined().intersects(Ellipsoid::Undefined()));
     }
 }
 
@@ -308,11 +249,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Point)
         EXPECT_FALSE(cone.contains({+10.0, 0.0, 6.0}));
         EXPECT_FALSE(cone.contains({+10.0, 0.0, 14.0}));
     }
-
-    {
-        EXPECT_ANY_THROW(Cone::Undefined().contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Cone::Undefined().contains({0.0, 0.0, 0.0}));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_PointSet)
@@ -335,11 +271,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_PointSet)
 
         EXPECT_FALSE(cone.contains(PointSet({{+10.0, 0.0, 9.0}, {+10.0, 0.0, 11.0}, {-15.0, 0.0, 10.0}})));
     }
-
-    {
-        EXPECT_ANY_THROW(Cone::Undefined().contains(PointSet::Empty()));
-        EXPECT_ANY_THROW(Cone::Undefined().contains(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}})));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Segment)
@@ -361,11 +292,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Segment)
         EXPECT_TRUE(cone.contains(Segment {{+10.0, 0.0, 9.0}, {+10.0, 0.0, 11.0}}));
 
         EXPECT_FALSE(cone.contains(Segment {{+10.0, 0.0, 9.0}, {-15.0, 0.0, 10.0}}));
-    }
-
-    {
-        EXPECT_ANY_THROW(Cone::Undefined().contains(Segment::Undefined()));
-        EXPECT_ANY_THROW(Cone::Undefined().contains(Segment {{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}}));
     }
 }
 
@@ -399,11 +325,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Sphere)
         EXPECT_FALSE(cone.contains(Sphere {(apex - Vector3d {0.5, 0.0, 0.0}), 1.0}));
         EXPECT_FALSE(cone.contains(Sphere {(apex - Vector3d {1.0, 0.0, 0.0}), 1.0}));
     }
-
-    {
-        EXPECT_ANY_THROW(Cone::Undefined().contains(Sphere::Undefined()));
-        EXPECT_ANY_THROW(Cone::Undefined().contains(Sphere::Unit({0.0, 0.0, 0.0})));
-    }
 }
 
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Ellipsoid)
@@ -422,10 +343,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetApex)
 
         EXPECT_EQ(apex, Cone(apex, axis, angle).getApex());
     }
-
-    {
-        EXPECT_ANY_THROW(Cone::Undefined().getApex());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetAxis)
@@ -442,10 +359,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetAxis)
 
         EXPECT_EQ(axis, Cone(apex, axis, angle).getAxis());
     }
-
-    {
-        EXPECT_ANY_THROW(Cone::Undefined().getAxis());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetAngle)
@@ -461,10 +374,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetAngle)
         const Angle angle = Angle::Degrees(45.0);
 
         EXPECT_EQ(angle, Cone(apex, axis, angle).getAngle());
-    }
-
-    {
-        EXPECT_ANY_THROW(Cone::Undefined().getAngle());
     }
 }
 
@@ -501,10 +410,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetRaysOfLateralSurfa
             }
         ));
     }
-
-    {
-        EXPECT_ANY_THROW(Cone::Undefined().getRaysOfLateralSurface());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, DistanceTo_Point)
@@ -540,11 +445,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, DistanceTo_Point)
 
         EXPECT_NEAR(std::sqrt(2.0), cone.distanceTo(apex + Vector3d {-1.0, -1.0, 0.0}), 1e-15);
         EXPECT_NEAR(std::sqrt(2.0), cone.distanceTo(apex + Vector3d {-1.0, +1.0, 0.0}), 1e-15);
-    }
-
-    {
-        EXPECT_ANY_THROW(Cone::Undefined().distanceTo(Point::Undefined()));
-        EXPECT_ANY_THROW(Cone::Undefined().distanceTo({0.0, 0.0, 0.0}));
     }
 }
 
@@ -584,10 +484,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, IntersectionWith_Elli
         }};
 
         EXPECT_TRUE(intersectionLineString.isNear(referenceLineString, 1e-10));
-    }
-
-    {
-        EXPECT_ANY_THROW(Cone::Undefined().intersectionWith(Ellipsoid::Undefined()));
     }
 }
 
@@ -637,25 +533,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, ApplyTransformation)
             << referenceCone.getAxis().toString() << cone.getAxis().toString();
         EXPECT_NEAR(cone.getAngle().inDegrees(), referenceCone.getAngle().inDegrees(), 1e-15)
             << referenceCone.getAngle().toString() << cone.getAngle().toString();
-    }
-
-    {
-        const Point apex = {0.0, 0.0, 0.0};
-        const Vector3d axis = Vector3d::Z();
-        const Angle angle = Angle::Degrees(45.0);
-
-        EXPECT_ANY_THROW(Cone::Undefined().applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Cone::Undefined().applyTransformation(Transformation::Identity()));
-        EXPECT_ANY_THROW(Cone(apex, axis, angle).applyTransformation(Transformation::Undefined()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Undefined)
-{
-    using ostk::mathematics::geometry::d3::object::Cone;
-
-    {
-        EXPECT_NO_THROW(Cone::Undefined());
-        EXPECT_FALSE(Cone::Undefined().isDefined());
     }
 }

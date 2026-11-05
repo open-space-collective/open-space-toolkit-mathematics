@@ -2,6 +2,8 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Object_Interval__
 #define __OpenSpaceToolkit_Mathematics_Object_Interval__
 
+#include <optional>
+
 #include <OpenSpaceToolkit/Core/Container/Array.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
@@ -32,7 +34,6 @@ class IntervalBase
     enum class Type
     {
 
-        Undefined,     ///< Undefined interval type
         Closed,        ///< Closed interval type [a, b]
         Open,          ///< Open interval type ]a, b[
         HalfOpenLeft,  ///< Half-open left interval type ]a, b]
@@ -96,15 +97,6 @@ class Interval : public IntervalBase
     /// @return             A reference to output stream
     template <class U>
     friend std::ostream& operator<<(std::ostream& anOutputStream, const Interval<U>& anInterval);
-
-    /// @brief              Check if interval is defined
-    ///
-    /// @code
-    ///                     Interval<double>::Closed(0.0, 1.0).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if interval is defined
-    bool isDefined() const;
 
     /// @brief              Check if interval is degenerate, i.e. its lower and upper bounds are the equal
     ///
@@ -180,25 +172,26 @@ class Interval : public IntervalBase
     /// @code
     ///                     Interval<double> firstInterval = Interval<double>::Closed(0.0, 1.0) ;
     ///                     Interval<double> secondInterval = Interval<double>::Closed(0.5, 1.5) ;
-    ///                     Interval<double> intersection = firstInterval.getIntersectionWith(secondInterval) ; //
-    ///                     [0.5, 1.0]
+    ///                     std::optional<Interval<double>> intersection =
+    ///                         firstInterval.getIntersectionWith(secondInterval) ; // [0.5, 1.0]
     /// @endcode
     ///
     /// @param              [in] anInterval An interval
-    /// @return             Intersecting interval
-    Interval<T> getIntersectionWith(const Interval& anInterval) const;
+    /// @return             Intersecting interval, or std::nullopt if the intervals do not intersect
+    std::optional<Interval<T>> getIntersectionWith(const Interval& anInterval) const;
 
     /// @brief              Get union interval with another interval
     ///
     /// @code
     ///                     Interval<double> firstInterval = Interval<double>::Closed(0.0, 1.0) ;
     ///                     Interval<double> secondInterval = Interval<double>::Closed(0.5, 1.5) ;
-    ///                     Interval<double> union = firstInterval.getUnionWith(secondInterval) ; // [0.0, 1.5]
+    ///                     std::optional<Interval<double>> union = firstInterval.getUnionWith(secondInterval) ;
+    ///                     // [0.0, 1.5]
     /// @endcode
     ///
     /// @param              [in] anInterval An interval
-    /// @return             Union interval
-    Interval<T> getUnionWith(const Interval& anInterval) const;
+    /// @return             Union interval, or std::nullopt if the intervals are disjoint
+    std::optional<Interval<T>> getUnionWith(const Interval& anInterval) const;
 
     /// @brief              Generate array from a given step, respecting the openness of the interval.
     ///
@@ -261,15 +254,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] anUpperBound An upper bound
     void setUpperBound(const T& anUpperBound);
-
-    /// @brief              Constructs an undefined interval
-    ///
-    /// @code
-    ///                     Interval<double> interval = Interval<double>::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined interval
-    static Interval<T> Undefined();
 
     /// @brief              Constructs a closed interval
     ///
@@ -356,7 +340,7 @@ class Interval : public IntervalBase
     static ctnr::Array<Interval<T>> Merge(const ctnr::Array<Interval<T>>& anIntervalArray);
 
     /// @brief              Creates a new array that contains the gaps between an array of intervals. If
-    ///                     an interval is actually defined, only intervals intersecting with the interval are
+    ///                     an interval is provided, only intervals intersecting with the interval are
     ///                     considered and potential leading and trailing gaps w.r.t. the interval boundaries are
     ///                     included. The intervals are previously merged and sorted.
     /// @code
@@ -371,7 +355,7 @@ class Interval : public IntervalBase
     ///
     /// @return             Gaps array
     static ctnr::Array<Interval<T>> GetGaps(
-        const ctnr::Array<Interval<T>>& anIntervalArray, const Interval<T>& anInterval = Interval::Undefined()
+        const ctnr::Array<Interval<T>>& anIntervalArray, const std::optional<Interval<T>>& anInterval = std::nullopt
     );
 
     /// @brief              Creates a new array that contains the intervals representing a logical 'OR' conjunction

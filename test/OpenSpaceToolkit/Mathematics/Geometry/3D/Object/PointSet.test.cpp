@@ -146,20 +146,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, IsDefined)
-{
-    using ostk::mathematics::geometry::d3::object::PointSet;
-
-    {
-        EXPECT_TRUE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}).isDefined());
-        EXPECT_TRUE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(PointSet::Empty().isDefined());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, IsEmpty)
 {
     using ostk::mathematics::geometry::d3::object::PointSet;
@@ -233,11 +219,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, DistanceToPoint)
             1.0, PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}).distanceTo(Point({0.0, 0.0, 3.0}))
         );
     }
-
-    {
-        EXPECT_ANY_THROW(PointSet::Empty().distanceTo(Point::Undefined()));
-        EXPECT_ANY_THROW(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}).distanceTo(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, GetPointClosestTo)
@@ -261,10 +242,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, GetPointClosestTo
     }
 
     {
-        EXPECT_ANY_THROW(PointSet::Empty().getPointClosestTo(Point::Undefined()));
         EXPECT_ANY_THROW(PointSet::Empty().getPointClosestTo(Point::Origin()));
-        EXPECT_ANY_THROW(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
-        ).getPointClosestTo(Point::Undefined()));
     }
 }
 
@@ -281,8 +259,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, ConstIterator)
 
         for (const auto& point : pointSet)
         {
-            EXPECT_TRUE(point.isDefined());
-
             count++;
         }
 
@@ -314,11 +290,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, ApplyTransformati
     {
         // [TBI]
     }
-
-    {
-        EXPECT_ANY_THROW(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
-        ).applyTransformation(Transformation::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, Empty)
@@ -327,6 +298,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, Empty)
 
     {
         EXPECT_NO_THROW(PointSet::Empty());
-        EXPECT_FALSE(PointSet::Empty().isDefined());
     }
 }

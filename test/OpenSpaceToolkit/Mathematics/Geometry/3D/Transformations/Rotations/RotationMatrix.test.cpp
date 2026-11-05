@@ -29,20 +29,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
     {
         const RotationMatrix rotationMatrix = {1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0};
 
-        EXPECT_TRUE(rotationMatrix.isDefined());
+        EXPECT_EQ(Matrix3d::Identity(), rotationMatrix.getMatrix());
     }
 
     {
         const RotationMatrix rotationMatrix = {Matrix3d::Identity()};
 
-        EXPECT_TRUE(rotationMatrix.isDefined());
+        EXPECT_EQ(Matrix3d::Identity(), rotationMatrix.getMatrix());
     }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, IsDefined)
-{
-    EXPECT_TRUE(RotationMatrix::Unit().isDefined());
-    EXPECT_FALSE(RotationMatrix::Undefined().isDefined());
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, EqualToOperator)
@@ -81,12 +75,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         EXPECT_EQ(Vector3d(0.0, 0.0, 1.0), RotationMatrix::Unit().getRowAt(2));
         EXPECT_THROW(RotationMatrix::Unit().getRowAt(3), ostk::core::error::RuntimeError);
     }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::Undefined().getRowAt(0));
-        EXPECT_ANY_THROW(RotationMatrix::Undefined().getRowAt(1));
-        EXPECT_ANY_THROW(RotationMatrix::Undefined().getRowAt(2));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, GetColumnAt)
@@ -96,12 +84,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         EXPECT_EQ(Vector3d(0.0, 1.0, 0.0), RotationMatrix::Unit().getColumnAt(1));
         EXPECT_EQ(Vector3d(0.0, 0.0, 1.0), RotationMatrix::Unit().getColumnAt(2));
         EXPECT_THROW(RotationMatrix::Unit().getColumnAt(3), ostk::core::error::RuntimeError);
-    }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::Undefined().getColumnAt(0));
-        EXPECT_ANY_THROW(RotationMatrix::Undefined().getColumnAt(1));
-        EXPECT_ANY_THROW(RotationMatrix::Undefined().getColumnAt(2));
     }
 }
 
@@ -128,10 +110,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
 
         EXPECT_EQ(&rotationMatrix.getMatrix(), &rotationMatrix.getMatrix());
     }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::Undefined().getMatrix());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, ToTransposed)
@@ -148,10 +126,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         const RotationMatrix referenceRotationMatrix = {1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 1.0, 0.0};
 
         EXPECT_EQ(referenceRotationMatrix, transposedRotationMatrix);
-    }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::Undefined().toTransposed());
     }
 }
 
@@ -170,15 +144,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
 
         EXPECT_EQ(referenceRotationMatrix, rotationMatrix);
     }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::Undefined().transpose());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, Undefined)
-{
-    EXPECT_NO_THROW(RotationMatrix::Undefined());
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, Unit)
@@ -199,10 +164,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         EXPECT_TRUE(rotationMatrix.getRowAt(1).isApprox(Vector3d(0.0, 0.0, 1.0), 1e-16));
         EXPECT_TRUE(rotationMatrix.getRowAt(2).isApprox(Vector3d(0.0, -1.0, 0.0), 1e-16));
     }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::RX(Angle::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, RY)
@@ -218,10 +179,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         EXPECT_TRUE(rotationMatrix.getRowAt(1).isApprox(Vector3d(0.0, 1.0, 0.0), 1e-16));
         EXPECT_TRUE(rotationMatrix.getRowAt(2).isApprox(Vector3d(1.0, 0.0, 0.0), 1e-16));
     }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::RY(Angle::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, RZ)
@@ -236,10 +193,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         EXPECT_TRUE(rotationMatrix.getRowAt(0).isApprox(Vector3d(0.0, 1.0, 0.0), 1e-16));
         EXPECT_TRUE(rotationMatrix.getRowAt(1).isApprox(Vector3d(-1.0, 0.0, 0.0), 1e-16));
         EXPECT_TRUE(rotationMatrix.getRowAt(2).isApprox(Vector3d(0.0, 0.0, 1.0), 1e-16));
-    }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::RZ(Angle::Undefined()));
     }
 }
 
@@ -297,8 +250,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         const RotationMatrix rotationMatrix =
             RotationMatrix::VectorBasis({sourceFirst, sourceSecond}, {destFirst, destSecond});
 
-        EXPECT_TRUE(rotationMatrix.isDefined());
-
         const Vector3d transformed = rotationMatrix * sourceFirst;
         EXPECT_NEAR(destFirst.x(), transformed.x(), 1e-10);
         EXPECT_NEAR(destFirst.y(), transformed.y(), 1e-10);
@@ -315,8 +266,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         const RotationMatrix rotationMatrix =
             RotationMatrix::VectorBasis({sourceFirst, sourceSecond}, {destFirst, destSecond});
 
-        EXPECT_TRUE(rotationMatrix.isDefined());
-
         const Vector3d col0 = rotationMatrix.getColumnAt(0);
         const Vector3d col1 = rotationMatrix.getColumnAt(1);
         const Vector3d col2 = rotationMatrix.getColumnAt(2);
@@ -332,23 +281,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
 
     // Test error cases
     {
-        EXPECT_THROW(
-            RotationMatrix::VectorBasis({Vector3d::Undefined(), {0.0, 1.0, 0.0}}, {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}),
-            ostk::core::error::RuntimeError
-        );
-        EXPECT_THROW(
-            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, Vector3d::Undefined()}, {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}),
-            ostk::core::error::RuntimeError
-        );
-        EXPECT_THROW(
-            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {Vector3d::Undefined(), {0.0, 1.0, 0.0}}),
-            ostk::core::error::RuntimeError
-        );
-        EXPECT_THROW(
-            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {{1.0, 0.0, 0.0}, Vector3d::Undefined()}),
-            ostk::core::error::RuntimeError
-        );
-
         EXPECT_THROW(
             RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {1.0, 0.0, 0.0}}, {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}),
             ostk::core::error::RuntimeError
@@ -385,10 +317,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
     {
         // TBI
     }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::Quaternion(Quaternion::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, RotationVector)
@@ -399,10 +327,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
 
     {
         // TBI
-    }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::RotationVector(RotationVector::Undefined()));
     }
 }
 
@@ -474,9 +398,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
                        "{} / {}", rotationMatrix.getRowAt(2).toString(), referenceRotationMatrix.getRowAt(2).toString()
                    );
         }
-    }
-
-    {
-        EXPECT_ANY_THROW(RotationMatrix::EulerAngle(EulerAngle::Undefined()));
     }
 }

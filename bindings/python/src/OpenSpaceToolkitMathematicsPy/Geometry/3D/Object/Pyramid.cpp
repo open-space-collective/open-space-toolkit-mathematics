@@ -72,22 +72,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(nanobind::m
         .def("__repr__", &(shiftToString<Pyramid>))
 
         .def(
-            "is_defined",
-            &Pyramid::isDefined,
-            R"doc(
-                Check if the pyramid is defined.
-
-                Returns:
-                    bool: True if the pyramid is defined.
-                
-                Example:
-                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
-                    >>> apex = Point(0.0, 0.0, 1.0)
-                    >>> pyramid = Pyramid(base, apex)
-                    >>> pyramid.is_defined()
-            )doc"
-        )
-        .def(
             "intersects",
             overload_cast<const Ellipsoid&, const Size>(&Pyramid::intersects, const_),
             arg("ellipsoid"),
@@ -358,21 +342,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(nanobind::m
                     >>> pyramid = Pyramid(base, apex)
                     >>> transformation = Transformation.identity()
                     >>> pyramid.apply_transformation(transformation)
-            )doc"
-        )
-
-        .def_static(
-            "undefined",
-            &Pyramid::Undefined,
-            R"doc(
-                Create an undefined pyramid.
-
-                Returns:
-                    Pyramid: An undefined pyramid.
-                
-                Example:
-                    >>> undefined_pyramid = Pyramid.undefined()
-                    >>> undefined_pyramid.is_defined()  # False
             )doc"
         )
 

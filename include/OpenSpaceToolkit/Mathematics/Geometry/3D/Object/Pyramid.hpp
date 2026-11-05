@@ -100,16 +100,6 @@ class Pyramid : public Object
     /// @return             True if pyramids are not equal
     bool operator!=(const Pyramid& aPyramid) const;
 
-    /// @brief              Check if pyramid is defined
-    ///
-    /// @code{.cpp}
-    ///                     Pyramid pyramid = ... ;
-    ///                     pyramid.isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if pyramid is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if pyramid intersects sphere
     ///
     /// @code{.cpp}
@@ -304,15 +294,6 @@ class Pyramid : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined pyramid
-    ///
-    /// @code{.cpp}
-    ///                     Pyramid pyramid = Pyramid::Undefined() ;
-    /// @endcode
-    ///
-    /// @return             Undefined pyramid
-    static Pyramid Undefined();
 
    private:
     Polygon base_;

@@ -107,11 +107,6 @@ NumericalSolver::NumericalSolver(
 
 bool NumericalSolver::operator==(const NumericalSolver& aNumericalSolver) const
 {
-    if ((!this->isDefined()) || (!aNumericalSolver.isDefined()))
-    {
-        return false;
-    }
-
     return (logType_ == aNumericalSolver.logType_) && (stepperType_ == aNumericalSolver.stepperType_) &&
            (timeStep_ == aNumericalSolver.timeStep_) && (relativeTolerance_ == aNumericalSolver.relativeTolerance_) &&
            (absoluteTolerance_ == aNumericalSolver.absoluteTolerance_);
@@ -127,11 +122,6 @@ std::ostream& operator<<(std::ostream& anOutputStream, const NumericalSolver& aN
     aNumericalSolver.print(anOutputStream);
 
     return anOutputStream;
-}
-
-bool NumericalSolver::isDefined() const
-{
-    return !std::isnan(timeStep_) && !std::isnan(relativeTolerance_) && !std::isnan(absoluteTolerance_);
 }
 
 void NumericalSolver::print(std::ostream& anOutputStream, bool displayDecorator) const
@@ -153,61 +143,31 @@ void NumericalSolver::print(std::ostream& anOutputStream, bool displayDecorator)
 
 NumericalSolver::LogType NumericalSolver::getLogType() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("NumericalSolver");
-    }
-
     return this->logType_;
 }
 
 NumericalSolver::StepperType NumericalSolver::getStepperType() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("NumericalSolver");
-    }
-
     return this->stepperType_;
 }
 
 double NumericalSolver::getTimeStep() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("NumericalSolver");
-    }
-
     return this->timeStep_;
 }
 
 double NumericalSolver::getRelativeTolerance() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("NumericalSolver");
-    }
-
     return this->relativeTolerance_;
 }
 
 double NumericalSolver::getAbsoluteTolerance() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("NumericalSolver");
-    }
-
     return this->absoluteTolerance_;
 }
 
 const Array<NumericalSolver::Solution>& NumericalSolver::getObservedStateVectors() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("NumericalSolver");
-    }
-
     return this->observedStateVectors_;
 }
 
@@ -691,17 +651,6 @@ String NumericalSolver::StringFromStepperType(const NumericalSolver::StepperType
         default:
             throw ostk::core::error::runtime::Wrong("Stepper Type");
     }
-}
-
-NumericalSolver NumericalSolver::Undefined()
-{
-    return {
-        LogType::NoLog,
-        StepperType::RungeKuttaCashKarp54,
-        std::numeric_limits<double>::quiet_NaN(),
-        std::numeric_limits<double>::quiet_NaN(),
-        std::numeric_limits<double>::quiet_NaN(),
-    };
 }
 
 NumericalSolver NumericalSolver::Default()

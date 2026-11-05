@@ -91,20 +91,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(nanobind::mod
         .def("__repr__", &(shiftToString<Point>))
 
         .def(
-            "is_defined",
-            &Point::isDefined,
-            R"doc(
-                Check if the point is defined.
-
-                Returns:
-                    bool: True if the point is defined, False otherwise.
-
-                Example:
-                    >>> point = Point(1.0, 2.0, 3.0)
-                    >>> point.is_defined()  # True
-            )doc"
-        )
-        .def(
             "is_near",
             &Point::isNear,
             R"doc(
@@ -242,20 +228,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(nanobind::mod
             arg("transformation")
         )
 
-        .def_static(
-            "undefined",
-            &Point::Undefined,
-            R"doc(
-                Create an undefined point.
-
-                Returns:
-                    Point: An undefined point.
-
-                Example:
-                    >>> undefined_point = Point.undefined()
-                    >>> undefined_point.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "origin",
             &Point::Origin,

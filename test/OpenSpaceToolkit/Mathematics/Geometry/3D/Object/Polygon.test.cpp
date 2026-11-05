@@ -62,17 +62,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, EqualToOperator)
     {
         // [TBI] Implement similarities
     }
-
-    {
-        const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
-        const Point origin = {1.0, 2.0, 3.0};
-        const Vector3d xAxis = {1.0, 0.0, 0.0};
-        const Vector3d yAxis = {0.0, 1.0, 0.0};
-
-        EXPECT_FALSE(Polygon(polygon2d, origin, xAxis, yAxis) == Polygon::Undefined());
-        EXPECT_FALSE(Polygon::Undefined() == Polygon(polygon2d, origin, xAxis, yAxis));
-        EXPECT_FALSE(Polygon::Undefined() == Polygon::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, NotEqualToOperator)
@@ -94,17 +83,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, NotEqualToOperator
     {
         // [TBI] Implement similarities
     }
-
-    {
-        const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
-        const Point origin = {1.0, 2.0, 3.0};
-        const Vector3d xAxis = {1.0, 0.0, 0.0};
-        const Vector3d yAxis = {0.0, 1.0, 0.0};
-
-        EXPECT_TRUE(Polygon(polygon2d, origin, xAxis, yAxis) != Polygon::Undefined());
-        EXPECT_TRUE(Polygon::Undefined() != Polygon(polygon2d, origin, xAxis, yAxis));
-        EXPECT_TRUE(Polygon::Undefined() != Polygon::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, StreamOperator)
@@ -125,27 +103,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, StreamOperator)
         EXPECT_NO_THROW(std::cout << Polygon(polygon2d, origin, xAxis, yAxis) << std::endl);
 
         EXPECT_FALSE(testing::internal::GetCapturedStdout().empty());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, IsDefined)
-{
-    using ostk::mathematics::object::Vector3d;
-    using Polygon2d = ostk::mathematics::geometry::d2::object::Polygon;
-    using ostk::mathematics::geometry::d3::object::Point;
-    using ostk::mathematics::geometry::d3::object::Polygon;
-
-    {
-        const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
-        const Point origin = {1.0, 2.0, 3.0};
-        const Vector3d xAxis = {1.0, 0.0, 0.0};
-        const Vector3d yAxis = {0.0, 1.0, 0.0};
-
-        EXPECT_TRUE(Polygon(polygon2d, origin, xAxis, yAxis).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Polygon::Undefined().isDefined());
     }
 }
 
@@ -206,9 +163,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, IsNear)
         const Vector3d xAxis = {1.0, 0.0, 0.0};
         const Vector3d yAxis = {0.0, 1.0, 0.0};
 
-        EXPECT_ANY_THROW(Polygon::Undefined().isNear(Polygon::Undefined(), std::numeric_limits<double>::quiet_NaN()));
-        EXPECT_ANY_THROW(Polygon(polygon2d, origin, xAxis, yAxis).isNear(Polygon::Undefined(), 1.0));
-        EXPECT_ANY_THROW(Polygon::Undefined().isNear(Polygon(polygon2d, origin, xAxis, yAxis), 1.0));
         EXPECT_ANY_THROW(Polygon(polygon2d, origin, xAxis, yAxis)
                              .isNear(Polygon(polygon2d, origin, xAxis, yAxis), std::numeric_limits<double>::quiet_NaN())
         );
@@ -230,10 +184,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, GetPolygon2d)
 
         EXPECT_EQ(polygon2d, Polygon(polygon2d, origin, xAxis, yAxis).getPolygon2d());
     }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getOrigin());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, GetOrigin)
@@ -250,10 +200,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, GetOrigin)
         const Vector3d yAxis = {0.0, 1.0, 0.0};
 
         EXPECT_EQ(origin, Polygon(polygon2d, origin, xAxis, yAxis).getOrigin());
-    }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getOrigin());
     }
 }
 
@@ -272,10 +218,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, GetXAxis)
 
         EXPECT_EQ(xAxis, Polygon(polygon2d, origin, xAxis, yAxis).getXAxis());
     }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getXAxis());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, GetYAxis)
@@ -292,10 +234,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, GetYAxis)
         const Vector3d yAxis = {0.0, 1.0, 0.0};
 
         EXPECT_EQ(yAxis, Polygon(polygon2d, origin, xAxis, yAxis).getYAxis());
-    }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getYAxis());
     }
 }
 
@@ -329,10 +267,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, GetNormalVector)
 
         // The `getNormalVector` function normalizes the output
         EXPECT_TRUE((Polygon(polygon2d, origin, xAxis, yAxis).getNormalVector().norm() - 1.0) < 1e-15);
-    }
-
-    {
-        EXPECT_ANY_THROW(Polygon::Undefined().getNormalVector());
     }
 }
 
@@ -384,26 +318,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, ApplyTransformatio
         EXPECT_TRUE(polygon.getXAxis().isNear(referencePolygon.getXAxis(), 1e-15));
         EXPECT_TRUE(polygon.getYAxis().isNear(referencePolygon.getYAxis(), 1e-15));
         EXPECT_TRUE(polygon.getNormalVector().isNear(referencePolygon.getNormalVector(), 1e-15));
-    }
-
-    {
-        const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
-        const Point origin = {1.0, 2.0, 3.0};
-        const Vector3d xAxis = {1.0, 0.0, 0.0};
-        const Vector3d yAxis = {0.0, 1.0, 0.0};
-
-        EXPECT_ANY_THROW(Polygon::Undefined().applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Polygon::Undefined().applyTransformation(Transformation::Identity()));
-        EXPECT_ANY_THROW(Polygon(polygon2d, origin, xAxis, yAxis).applyTransformation(Transformation::Undefined()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, Undefined)
-{
-    using ostk::mathematics::geometry::d3::object::Polygon;
-
-    {
-        EXPECT_NO_THROW(Polygon::Undefined());
-        EXPECT_FALSE(Polygon::Undefined().isDefined());
     }
 }

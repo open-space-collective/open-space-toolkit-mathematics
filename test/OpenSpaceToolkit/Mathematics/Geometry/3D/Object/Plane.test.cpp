@@ -40,12 +40,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, EqualToOperator)
     {
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) == Plane({0.0, 0.0, 1.0}, {0.0, 0.0, 1.0}));
     }
-
-    {
-        EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) == Plane::Undefined());
-        EXPECT_FALSE(Plane::Undefined() == Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
-        EXPECT_FALSE(Plane::Undefined() == Plane::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, NotEqualToOperator)
@@ -63,12 +57,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, NotEqualToOperator)
     {
         EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) != Plane({0.0, 0.0, 1.0}, {0.0, 0.0, 1.0}));
     }
-
-    {
-        EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) != Plane::Undefined());
-        EXPECT_TRUE(Plane::Undefined() != Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
-        EXPECT_TRUE(Plane::Undefined() != Plane::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, StreamOperator)
@@ -81,20 +69,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, StreamOperator)
         EXPECT_NO_THROW(std::cout << Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) << std::endl);
 
         EXPECT_FALSE(testing::internal::GetCapturedStdout().empty());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IsDefined)
-{
-    using ostk::mathematics::geometry::d3::object::Plane;
-
-    {
-        EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).isDefined());
-        EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 2.0}).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Plane::Undefined().isDefined());
     }
 }
 
@@ -117,12 +91,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, Intersects_Point)
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point(0.0, 0.0, 0.1)));
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point(0.0, 0.0, 1.0)));
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point(0.0, 0.0, -1.0)));
-    }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().intersects(Point::Undefined()));
-        EXPECT_ANY_THROW(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point::Undefined()));
-        EXPECT_ANY_THROW(Plane::Undefined().intersects(Point(0.0, 0.0, 0.0)));
     }
 }
 
@@ -148,11 +116,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, Intersects_PointSet)
     {
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0})
                          .intersects(PointSet({{0.0, 0.0, 0.1}, {0.0, 0.0, 1.0}, {0.0, 0.0, -1.0}})));
-    }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().intersects(PointSet::Empty()));
-        EXPECT_ANY_THROW(Plane::Undefined().intersects(PointSet({{0.0, 0.0, 0.0}})));
     }
 }
 
@@ -212,12 +175,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, Contains_Point)
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point(0.0, 0.0, 1.0)));
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point(0.0, 0.0, -1.0)));
     }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Plane::Undefined().contains(Point(0.0, 0.0, 0.0)));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, Contains_PointSet)
@@ -242,11 +199,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, Contains_PointSet)
                          .contains(PointSet({{0.0, 0.0, 0.1}, {0.0, 0.0, 1.0}, {0.0, 0.0, -1.0}})));
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 0.1}})));
     }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().contains(PointSet::Empty()));
-        EXPECT_ANY_THROW(Plane::Undefined().contains(PointSet({{0.0, 0.0, 0.0}})));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, Contains_Line)
@@ -270,12 +222,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, Contains_Line)
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Line({0.0, 0.0, +1.0}, {1.0, 0.0, 0.0})));
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Line({0.0, 0.0, -1.0}, {0.0, 1.0, 0.0})));
     }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().contains(Line::Undefined()));
-        EXPECT_ANY_THROW(Plane::Undefined().contains(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0})));
-        EXPECT_ANY_THROW(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Line::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, Contains_Ray)
@@ -298,12 +244,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, Contains_Ray)
 
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Ray({0.0, 0.0, +1.0}, {1.0, 0.0, 0.0})));
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Ray({0.0, 0.0, -1.0}, {0.0, 1.0, 0.0})));
-    }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().contains(Ray::Undefined()));
-        EXPECT_ANY_THROW(Plane::Undefined().contains(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0})));
-        EXPECT_ANY_THROW(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Ray::Undefined()));
     }
 }
 
@@ -329,12 +269,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, Contains_Segment)
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Segment({0.0, 0.0, +1.0}, {1.0, 0.0, +1.0})));
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Segment({0.0, 0.0, -1.0}, {0.0, 1.0, -1.0})));
     }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().contains(Segment::Undefined()));
-        EXPECT_ANY_THROW(Plane::Undefined().contains(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0})));
-        EXPECT_ANY_THROW(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Segment::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, GetPoint)
@@ -345,10 +279,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, GetPoint)
     {
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).getPoint());
         EXPECT_EQ(Point(0.0, 0.0, 1.0), Plane({0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}).getPoint());
-    }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().getPoint());
     }
 }
 
@@ -361,10 +291,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, GetNormalVector)
     {
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Plane({0.0, 0.0, 0.0}, {0.0, 0.0, +2.0}).getNormalVector());
         EXPECT_EQ(Vector3d(0.0, 0.0, -1.0), Plane({0.0, 0.0, 0.0}, {0.0, 0.0, -2.0}).getNormalVector());
-    }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().getNormalVector());
     }
 }
 
@@ -407,12 +333,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Poi
         expectEmptyIntersection(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}), Point(0.0, 0.0, 0.1));
         expectEmptyIntersection(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}), Point(0.0, 0.0, 1.0));
         expectEmptyIntersection(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}), Point(0.0, 0.0, -1.0));
-    }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().intersectionWith(Point::Undefined()));
-        EXPECT_ANY_THROW(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersectionWith(Point::Undefined()));
-        EXPECT_ANY_THROW(Plane::Undefined().intersectionWith(Point(0.0, 0.0, 0.0)));
     }
 }
 
@@ -506,11 +426,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Poi
             Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}), PointSet({{0.0, 0.0, 0.1}, {0.0, 0.0, 1.0}, {0.0, 0.0, -1.0}})
         );
     }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().intersectionWith(PointSet::Empty()));
-        EXPECT_ANY_THROW(Plane::Undefined().intersectionWith(PointSet({{0.0, 0.0, 0.0}})));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Line)
@@ -522,10 +437,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Lin
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line.IntersectionWith_Plane
 
         SUCCEED();
-    }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().intersectionWith(Line::Undefined()));
     }
 }
 
@@ -539,10 +450,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Ray
 
         SUCCEED();
     }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().intersectionWith(Ray::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Segment)
@@ -554,10 +461,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, IntersectionWith_Seg
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment.IntersectionWith_Plane
 
         SUCCEED();
-    }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().intersectionWith(Segment::Undefined()));
     }
 }
 
@@ -590,21 +493,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, ApplyTransformation)
 
         EXPECT_TRUE(plane.getPoint().isNear(referencePlane.getPoint(), 1e-15));
         EXPECT_TRUE(plane.getNormalVector().isNear(referencePlane.getNormalVector(), 1e-15));
-    }
-
-    {
-        EXPECT_ANY_THROW(Plane::Undefined().applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Plane::Undefined().applyTransformation(Transformation::Identity()));
-        EXPECT_ANY_THROW(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).applyTransformation(Transformation::Undefined()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Plane, Undefined)
-{
-    using ostk::mathematics::geometry::d3::object::Plane;
-
-    {
-        EXPECT_NO_THROW(Plane::Undefined());
-        EXPECT_FALSE(Plane::Undefined().isDefined());
     }
 }

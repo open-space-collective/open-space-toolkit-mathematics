@@ -40,12 +40,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, EqualToOperator)
     {
         EXPECT_FALSE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) == Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 2.0}));
     }
-
-    {
-        EXPECT_FALSE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) == Segment::Undefined());
-        EXPECT_FALSE(Segment::Undefined() == Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
-        EXPECT_FALSE(Segment::Undefined() == Segment::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, NotEqualToOperator)
@@ -59,12 +53,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, NotEqualToOperator
 
     {
         EXPECT_TRUE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) != Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 2.0}));
-    }
-
-    {
-        EXPECT_TRUE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) != Segment::Undefined());
-        EXPECT_TRUE(Segment::Undefined() != Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
-        EXPECT_TRUE(Segment::Undefined() != Segment::Undefined());
     }
 }
 
@@ -81,20 +69,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IsDefined)
-{
-    using ostk::mathematics::geometry::d3::object::Segment;
-
-    {
-        EXPECT_TRUE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).isDefined());
-        EXPECT_TRUE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Segment::Undefined().isDefined());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IsDegenerate)
 {
     using ostk::mathematics::geometry::d3::object::Segment;
@@ -107,10 +81,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IsDegenerate)
     {
         EXPECT_FALSE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).isDegenerate());
         EXPECT_FALSE(Segment({1.0, 2.0, 3.0}, {0.0, 0.0, 1.0}).isDegenerate());
-    }
-
-    {
-        EXPECT_ANY_THROW(Segment::Undefined().isDegenerate());
     }
 }
 
@@ -140,11 +110,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Intersects_Plane)
 
         EXPECT_FALSE(Segment({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}).intersects(Plane({-1.0, -2.0, -3.0}, {1.0, 0.0, 0.0})));
     }
-
-    {
-        EXPECT_ANY_THROW(Segment::Undefined().intersects(Plane::Undefined()));
-        EXPECT_ANY_THROW(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Plane::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Intersects_Sphere)
@@ -157,11 +122,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Intersects_Sphere)
 
         SUCCEED();
     }
-
-    {
-        EXPECT_ANY_THROW(Segment::Undefined().intersects(Sphere::Undefined()));
-        EXPECT_ANY_THROW(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).intersects(Sphere::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Intersects_Ellipsoid)
@@ -173,11 +133,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Intersects_Ellipso
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid.Intersects
 
         SUCCEED();
-    }
-
-    {
-        EXPECT_ANY_THROW(Segment::Undefined().intersects(Ellipsoid::Undefined()));
-        EXPECT_ANY_THROW(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).intersects(Ellipsoid::Undefined()));
     }
 }
 
@@ -199,12 +154,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Contains_Point)
         EXPECT_FALSE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point(0.0, 0.0, -1.0)));
         EXPECT_FALSE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point(1.0, 0.0, 0.0)));
     }
-
-    {
-        EXPECT_ANY_THROW(Segment::Undefined().contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).contains(Point::Undefined()));
-        EXPECT_ANY_THROW(Segment::Undefined().contains(Point(0.0, 0.0, 0.0)));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, GetCenter)
@@ -217,10 +166,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, GetCenter)
         EXPECT_EQ(Point(0.0, 0.0, 1.0), Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 2.0}).getCenter());
 
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Segment({0.0, 0.0, -1.0}, {0.0, 0.0, +1.0}).getCenter());
-    }
-
-    {
-        EXPECT_ANY_THROW(Segment::Undefined().getCenter());
     }
 }
 
@@ -236,8 +181,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, GetDirection)
     }
 
     {
-        EXPECT_ANY_THROW(Segment::Undefined().getDirection());
-
         EXPECT_ANY_THROW(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).getDirection());
         EXPECT_ANY_THROW(Segment({1.0, 1.0, 1.0}, {1.0, 1.0, 1.0}).getDirection());
     }
@@ -256,10 +199,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, GetLength)
         EXPECT_EQ(2.0, Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 2.0}).getLength());
 
         EXPECT_EQ(4.0, Segment({0.0, 0.0, -2.0}, {0.0, 0.0, +2.0}).getLength());
-    }
-
-    {
-        EXPECT_ANY_THROW(Segment::Undefined().getLength());
     }
 }
 
@@ -305,11 +244,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, DistanceToPoint)
         EXPECT_EQ(0.0, Segment({-1.0, 0.0, 0.0}, {-1.0, 0.0, 0.0}).distanceTo(Point({-1.0, 0.0, 0.0})));
         EXPECT_EQ(0.0, Segment({0.0, -1.0, 0.0}, {0.0, -1.0, 0.0}).distanceTo(Point({0.0, -1.0, 0.0})));
     }
-
-    {
-        EXPECT_ANY_THROW(Segment::Undefined().distanceTo(Point({0.0, 0.0, 0.0})));
-        EXPECT_ANY_THROW(Segment({0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}).distanceTo(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, DistanceToPointSet)
@@ -334,7 +268,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, DistanceToPointSet
     }
 
     {
-        EXPECT_ANY_THROW(Segment::Undefined().distanceTo(PointSet({{0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}})));
         EXPECT_ANY_THROW(Segment({0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}).distanceTo(PointSet::Empty()));
     }
 }
@@ -428,11 +361,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IntersectionWith_P
 
         expectEmptyIntersection(Segment({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}), Plane({-1.0, -2.0, -3.0}, {1.0, 0.0, 0.0}));
     }
-
-    {
-        EXPECT_ANY_THROW(Segment::Undefined().intersectionWith(Plane::Undefined()));
-        EXPECT_ANY_THROW(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersectionWith(Plane::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, ToLine)
@@ -448,10 +376,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, ToLine)
     {
         EXPECT_ANY_THROW(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).toLine());
         EXPECT_ANY_THROW(Segment({1.0, 1.0, 1.0}, {1.0, 1.0, 1.0}).toLine());
-    }
-
-    {
-        EXPECT_ANY_THROW(Segment::Undefined().toLine());
     }
 }
 
@@ -484,21 +408,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, ApplyTransformatio
 
         EXPECT_TRUE(segment.getFirstPoint().isNear(referenceSegment.getFirstPoint(), 1e-15));
         EXPECT_TRUE(segment.getSecondPoint().isNear(referenceSegment.getSecondPoint(), 1e-15));
-    }
-
-    {
-        EXPECT_ANY_THROW(Segment::Undefined().applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Segment::Undefined().applyTransformation(Transformation::Identity()));
-        EXPECT_ANY_THROW(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).applyTransformation(Transformation::Undefined()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Undefined)
-{
-    using ostk::mathematics::geometry::d3::object::Segment;
-
-    {
-        EXPECT_NO_THROW(Segment::Undefined());
-        EXPECT_FALSE(Segment::Undefined().isDefined());
     }
 }

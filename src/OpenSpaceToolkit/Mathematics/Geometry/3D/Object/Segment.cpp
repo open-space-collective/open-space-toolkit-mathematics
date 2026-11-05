@@ -37,11 +37,6 @@ Segment* Segment::clone() const
 
 bool Segment::operator==(const Segment& aSegment) const
 {
-    if ((!this->isDefined()) || (!aSegment.isDefined()))
-    {
-        return false;
-    }
-
     return ((firstPoint_ == aSegment.firstPoint_) && (secondPoint_ == aSegment.secondPoint_)) ||
            ((firstPoint_ == aSegment.secondPoint_) && (secondPoint_ == aSegment.firstPoint_));
 }
@@ -51,18 +46,8 @@ bool Segment::operator!=(const Segment& aSegment) const
     return !((*this) == aSegment);
 }
 
-bool Segment::isDefined() const
-{
-    return firstPoint_.isDefined() && secondPoint_.isDefined();
-}
-
 bool Segment::isDegenerate() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     return firstPoint_ == secondPoint_;
 }
 
@@ -74,16 +59,6 @@ bool Segment::isDegenerate() const
 bool Segment::intersects(const Plane& aPlane) const
 {
     // http://geomalgorithms.com/a05-_intersect-1.html
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
-    if (!aPlane.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Plane");
-    }
 
     const Vector3d n = aPlane.getNormalVector();
     const Vector3d v = secondPoint_ - firstPoint_;
@@ -115,16 +90,6 @@ bool Segment::intersects(const Ellipsoid& anEllipsoid) const
 
 bool Segment::contains(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     if (this->isDegenerate())
     {
         return firstPoint_ == aPoint;
@@ -151,41 +116,21 @@ bool Segment::contains(const Point& aPoint) const
 
 const Point& Segment::getFirstPoint() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     return firstPoint_;
 }
 
 const Point& Segment::getSecondPoint() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     return secondPoint_;
 }
 
 Point Segment::getCenter() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     return firstPoint_ + (secondPoint_ - firstPoint_) / 2.0;
 }
 
 Vector3d Segment::getDirection() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     if (this->isDegenerate())
     {
         throw ostk::core::error::RuntimeError("Segment is degenerate.");
@@ -196,26 +141,11 @@ Vector3d Segment::getDirection() const
 
 double Segment::getLength() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     return (secondPoint_ - firstPoint_).norm();
 }
 
 double Segment::distanceTo(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     if (this->isDegenerate())
     {
         return firstPoint_.distanceTo(aPoint);
@@ -248,11 +178,6 @@ double Segment::distanceTo(const PointSet& aPointSet) const
         throw ostk::core::error::runtime::Undefined("Point Set");
     }
 
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     const Array<double> distances = Array<Point>(aPointSet.begin(), aPointSet.end())
                                         .map<double>(
                                             [this](const Point& aPoint) -> double
@@ -267,16 +192,6 @@ double Segment::distanceTo(const PointSet& aPointSet) const
 Intersection Segment::intersectionWith(const Plane& aPlane) const
 {
     // http://geomalgorithms.com/a05-_intersect-1.html
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
-    if (!aPlane.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Plane");
-    }
 
     const Vector3d n = aPlane.getNormalVector();
     const Vector3d v = secondPoint_ - firstPoint_;
@@ -315,35 +230,17 @@ void Segment::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
     displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Segment") : void();
 
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "First point:" << (firstPoint_.isDefined() ? firstPoint_.toString() : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream)
-        << "Second point:" << (secondPoint_.isDefined() ? secondPoint_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream) << "First point:" << firstPoint_.toString();
+    ostk::core::utils::Print::Line(anOutputStream) << "Second point:" << secondPoint_.toString();
 
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
 
 void Segment::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Segment");
-    }
-
     firstPoint_.applyTransformation(aTransformation);
     secondPoint_.applyTransformation(aTransformation);
 }
-
-Segment Segment::Undefined()
-{
-    return {Point::Undefined(), Point::Undefined()};
-}
-
 }  // namespace object
 }  // namespace d3
 }  // namespace geometry

@@ -49,8 +49,6 @@ class MultiPolygon::Impl
 
     bool operator==(const MultiPolygon::Impl& aMultiPolygon) const;
 
-    bool isDefined() const;
-
     bool contains(const Point& aPoint) const;
 
     bool contains(const PointSet& aPointSet) const;
@@ -93,11 +91,6 @@ MultiPolygon::Impl::Impl(const Array<Polygon2d>& aPolygonArray)
 bool MultiPolygon::Impl::operator==(const MultiPolygon::Impl& aMultiPolygon) const
 {
     return boost::geometry::equals(multiPolygon_, aMultiPolygon.multiPolygon_);
-}
-
-bool MultiPolygon::Impl::isDefined() const
-{
-    return !multiPolygon_.empty();
 }
 
 bool MultiPolygon::Impl::contains(const Point& aPoint) const
@@ -361,11 +354,6 @@ MultiPolygon* MultiPolygon::clone() const
 
 bool MultiPolygon::operator==(const MultiPolygon& aMultiPolygon) const
 {
-    if ((!this->isDefined()) || (!aMultiPolygon.isDefined()))
-    {
-        return false;
-    }
-
     return (*implUPtr_) == (*aMultiPolygon.implUPtr_);
 }
 
@@ -374,86 +362,36 @@ bool MultiPolygon::operator!=(const MultiPolygon& aMultiPolygon) const
     return !((*this) == aMultiPolygon);
 }
 
-bool MultiPolygon::isDefined() const
-{
-    return (implUPtr_ != nullptr) && implUPtr_->isDefined();
-}
-
 bool MultiPolygon::contains(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Multi-polygon");
-    }
-
     return implUPtr_->contains(aPoint);
 }
 
 bool MultiPolygon::contains(const PointSet& aPointSet) const
 {
-    if (!aPointSet.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point set");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Multi-polygon");
-    }
-
     return implUPtr_->contains(aPointSet);
 }
 
 Size MultiPolygon::getPolygonCount() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Multi-polygon");
-    }
-
     return implUPtr_->getPolygonCount();
 }
 
 Array<Polygon2d> MultiPolygon::getPolygons() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Multi-polygon");
-    }
-
     return implUPtr_->getPolygons();
 }
 
 Polygon2d MultiPolygon::getConvexHull() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Multi-polygon");
-    }
-
     return implUPtr_->getConvexHull();
 }
 
 MultiPolygon MultiPolygon::unionWith(const MultiPolygon& aMultiPolygon) const
 {
-    if (!aMultiPolygon.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Multi-polygon");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Multi-polygon");
-    }
-
     // [TBM] Could be improved to avoid unnecessary copies
 
-    MultiPolygon unionMultiPolygon = MultiPolygon::Undefined();
+    MultiPolygon unionMultiPolygon;
 
     unionMultiPolygon.implUPtr_ = std::make_unique<MultiPolygon::Impl>(implUPtr_->unionWith(*aMultiPolygon.implUPtr_));
 
@@ -462,11 +400,6 @@ MultiPolygon MultiPolygon::unionWith(const MultiPolygon& aMultiPolygon) const
 
 String MultiPolygon::toString(const Object::Format& aFormat, int aPrecision) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Multi-polygon");
-    }
-
     return implUPtr_->toString(aFormat, aPrecision);
 }
 
@@ -501,22 +434,7 @@ void MultiPolygon::print(std::ostream& anOutputStream, bool displayDecorators) c
 
 void MultiPolygon::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Multi-polygon");
-    }
-
     implUPtr_->applyTransformation(aTransformation);
-}
-
-MultiPolygon MultiPolygon::Undefined()
-{
-    return {Array<Polygon2d>::Empty()};
 }
 
 MultiPolygon MultiPolygon::Polygon(const Polygon2d& aPolygon)

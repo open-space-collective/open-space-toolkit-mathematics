@@ -32,24 +32,18 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
         EXPECT_NO_THROW(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS));
 
         Quaternion quaternion = {0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS};
-
-        EXPECT_TRUE(quaternion.isDefined());
     }
 
     {
         EXPECT_NO_THROW(Quaternion(Vector4d(0.0, 0.0, 0.0, 1.0), Quaternion::Format::XYZS));
 
         Quaternion quaternion = {Vector4d(0.0, 0.0, 0.0, 1.0), Quaternion::Format::XYZS};
-
-        EXPECT_TRUE(quaternion.isDefined());
     }
 
     {
         EXPECT_NO_THROW(Quaternion(Vector3d(0.0, 0.0, 0.0), 1.0));
 
         Quaternion quaternion = {Vector3d(0.0, 0.0, 0.0), 1.0};
-
-        EXPECT_TRUE(quaternion.isDefined());
     }
 }
 
@@ -122,12 +116,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
             Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS)
         );
     }
-
-    {
-        EXPECT_FALSE(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS) == Quaternion::Undefined());
-        EXPECT_FALSE(Quaternion::Undefined() == Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS));
-        EXPECT_FALSE(Quaternion::Undefined() == Quaternion::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, NotEqualToOperator)
@@ -145,12 +133,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
             Quaternion(0.0, 0.0, 1.0, 0.0, Quaternion::Format::XYZS) !=
             Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS)
         );
-    }
-
-    {
-        EXPECT_TRUE(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS) != Quaternion::Undefined());
-        EXPECT_TRUE(Quaternion::Undefined() != Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS));
-        EXPECT_TRUE(Quaternion::Undefined() != Quaternion::Undefined());
     }
 
     {
@@ -215,11 +197,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
             Quaternion::XYZS(1.0, 2.0, 3.0, 4.0) + Quaternion::XYZS(1.0, 2.0, 3.0, 4.0)
         );
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined() + Quaternion::Unit());
-        EXPECT_ANY_THROW(Quaternion::Unit() + Quaternion::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, MultiplicationOperator_Quaternion)
@@ -227,22 +204,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     {
         EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit() * Quaternion::Unit());
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined() * Quaternion::Unit());
-        EXPECT_ANY_THROW(Quaternion::Unit() * Quaternion::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, MultiplicationOperator_Vector3d)
 {
     {
         EXPECT_EQ(Vector3d::X(), Quaternion::Unit() * Vector3d::X());
-    }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined() * Vector3d::X());
-        EXPECT_ANY_THROW(Quaternion::Unit() * Vector3d::Undefined());
     }
 }
 
@@ -254,10 +221,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     }
 
     {
-        EXPECT_ANY_THROW(Quaternion::Undefined() * 1.0);
         EXPECT_ANY_THROW(Quaternion::Unit() * std::numeric_limits<double>::quiet_NaN());
 
-        EXPECT_ANY_THROW(1.0 * Quaternion::Undefined());
         EXPECT_ANY_THROW(std::numeric_limits<double>::quiet_NaN() * Quaternion::Unit());
     }
 }
@@ -282,7 +247,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     }
 
     {
-        EXPECT_ANY_THROW(Quaternion::Undefined() ^ 2.0);
         EXPECT_ANY_THROW(Quaternion::Unit() ^ std::numeric_limits<double>::quiet_NaN());
     }
 }
@@ -321,24 +285,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, IsDefined)
-{
-    {
-        EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).isDefined());
-        EXPECT_TRUE(Quaternion::XYZS(0.0, 1.0, 0.0, 0.0).isDefined());
-        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0).isDefined());
-        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isDefined());
-    }
-
-    {
-        EXPECT_TRUE(Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Quaternion::Undefined().isDefined());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, IsUnitary)
 {
     {
@@ -358,8 +304,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     }
 
     {
-        EXPECT_ANY_THROW(Quaternion::Undefined().isUnitary());
-        EXPECT_ANY_THROW(Quaternion::Undefined().isUnitary(0.0001));
         EXPECT_ANY_THROW(Quaternion::XYZS(1.0001, 0.0, 0.0, 0.0).isUnitary(-0.0001));
     }
 }
@@ -392,28 +336,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
         EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)
                         .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0 + 1e-6).normalize(), Angle::Radians(0.0)));
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Degrees(0.0)));
-        EXPECT_ANY_THROW(Quaternion::Undefined().isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.1), Angle::Degrees(0.0)));
-
-        EXPECT_ANY_THROW(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isNear(Quaternion::Undefined(), Angle::Degrees(0.0)));
-        EXPECT_ANY_THROW(Quaternion::XYZS(0.0, 0.0, 0.0, 1.1).isNear(Quaternion::Undefined(), Angle::Degrees(0.0)));
-
-        EXPECT_ANY_THROW(
-            Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Undefined())
-        );
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, X)
 {
     {
         EXPECT_EQ(1.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).x());
-    }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().x());
     }
 }
 
@@ -422,20 +350,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     {
         EXPECT_EQ(2.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).y());
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().y());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Z)
 {
     {
         EXPECT_EQ(3.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).z());
-    }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().z());
     }
 }
 
@@ -444,10 +364,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     {
         EXPECT_EQ(4.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).s());
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().s());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, GetVectorPart)
@@ -455,20 +371,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     {
         EXPECT_EQ(Vector3d(1.0, 2.0, 3.0), Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).getVectorPart());
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().getVectorPart());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, GetScalarPart)
 {
     {
         EXPECT_EQ(4.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).getScalarPart());
-    }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().getScalarPart());
     }
 }
 
@@ -491,10 +399,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
         EXPECT_EQ(Quaternion::XYZS(-1.0, -2.0, -3.0, -4.0), Quaternion::XYZS(+1.0, +2.0, +3.0, -4.0).toConjugate());
         EXPECT_EQ(Quaternion::XYZS(+1.0, +2.0, +3.0, -4.0), Quaternion::XYZS(-1.0, -2.0, -3.0, -4.0).toConjugate());
-    }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().toConjugate());
     }
 }
 
@@ -527,10 +431,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
         EXPECT_EQ(Quaternion::XYZS(-1.0, -2.0, -3.0, -4.0), original);
         EXPECT_EQ(Quaternion::XYZS(+1.0, +2.0, +3.0, +4.0), rectified);
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().toRectify());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Exp)
@@ -542,10 +442,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
                         .toNormalized()
                         .isNear(Quaternion::XYZS(0.841471, 0.0, 0.0, 0.540302).toNormalized(), Angle::Radians(1e-4)));
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().exp());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Log)
@@ -556,10 +452,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
                         .log()
                         .toNormalized()
                         .isNear(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0), Angle::Radians(1e-4)));
-    }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().log());
     }
 }
 
@@ -573,7 +465,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     }
 
     {
-        EXPECT_ANY_THROW(Quaternion::Undefined().pow(2.0));
         EXPECT_ANY_THROW(Quaternion::Unit().pow(std::numeric_limits<double>::quiet_NaN()));
     }
 }
@@ -632,10 +523,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
             Vector4d(1.0, 0.0, 0.0, 0.0), Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toVector(Quaternion::Format::SXYZ)
         );
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().toVector());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, ToString)
@@ -659,10 +546,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     {
         EXPECT_EQ("[0.1, 0.1, 0.1, 0.9]", Quaternion::XYZS(0.1, 0.1, 0.1, 0.9).toString(Quaternion::Format::XYZS));
         EXPECT_EQ("[0.9, 0.1, 0.1, 0.1]", Quaternion::XYZS(0.1, 0.1, 0.1, 0.9).toString(Quaternion::Format::SXYZ));
-    }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().toString());
     }
 }
 
@@ -727,20 +610,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
                 )
         );
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::Undefined().angularDifferenceWith(Quaternion::Undefined()));
-        EXPECT_ANY_THROW(Quaternion::Unit().angularDifferenceWith(Quaternion::Undefined()));
-        EXPECT_ANY_THROW(Quaternion::Undefined().angularDifferenceWith(Quaternion::Unit()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Undefined)
-{
-    {
-        EXPECT_NO_THROW(Quaternion::Undefined());
-        EXPECT_FALSE(Quaternion::Undefined().isDefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Unit)
@@ -772,10 +641,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
                             Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(180.0))),
                             Angle::Radians(1e-15)
                         ));
-    }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::RotationVector(RotationVector::Undefined()));
     }
 }
 
@@ -816,10 +681,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
                 }
             }
         }
-    }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::RotationMatrix(RotationMatrix::Undefined()));
     }
 }
 
@@ -954,10 +815,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
                 << String::Format("{} / {}", referenceQuaternion.s(), quaternion.s());
         }
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::EulerAngle(EulerAngle::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Parse)
@@ -1002,11 +859,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
         ASSERT_TRUE(v_B.isApprox(q_B_A * v_A, 1.0e-9));
     }
-
-    {
-        EXPECT_ANY_THROW(Quaternion::ShortestRotation({1.0, 0.0, 0.0}, Vector3d::Undefined()));
-        EXPECT_ANY_THROW(Quaternion::ShortestRotation(Vector3d::Undefined(), {1.0, 0.0, 0.0}));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, LERP)
@@ -1019,8 +871,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     }
 
     {
-        EXPECT_ANY_THROW(Quaternion::LERP(Quaternion::Undefined(), Quaternion::Unit(), 0.5));
-        EXPECT_ANY_THROW(Quaternion::LERP(Quaternion::Unit(), Quaternion::Undefined(), 0.5));
         EXPECT_ANY_THROW(
             Quaternion::LERP(Quaternion::Unit(), Quaternion::Unit(), std::numeric_limits<double>::quiet_NaN())
         );
@@ -1050,8 +900,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     }
 
     {
-        EXPECT_ANY_THROW(Quaternion::NLERP(Quaternion::Undefined(), Quaternion::Unit(), 0.5));
-        EXPECT_ANY_THROW(Quaternion::NLERP(Quaternion::Unit(), Quaternion::Undefined(), 0.5));
         EXPECT_ANY_THROW(
             Quaternion::NLERP(Quaternion::Unit(), Quaternion::Unit(), std::numeric_limits<double>::quiet_NaN())
         );
@@ -1113,8 +961,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     }
 
     {
-        EXPECT_ANY_THROW(Quaternion::SLERP(Quaternion::Undefined(), Quaternion::Unit(), 0.5));
-        EXPECT_ANY_THROW(Quaternion::SLERP(Quaternion::Unit(), Quaternion::Undefined(), 0.5));
         EXPECT_ANY_THROW(
             Quaternion::SLERP(Quaternion::Unit(), Quaternion::Unit(), std::numeric_limits<double>::quiet_NaN())
         );

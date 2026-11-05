@@ -42,11 +42,6 @@ bool PointSet::operator!=(const PointSet& aPointSet) const
     return !((*this) == aPointSet);
 }
 
-bool PointSet::isDefined() const
-{
-    return !points_.empty();
-}
-
 bool PointSet::isEmpty() const
 {
     return points_.empty();
@@ -111,11 +106,6 @@ double PointSet::distanceTo(const Point& aPoint) const
 {
     using ostk::core::container::Array;
 
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
     if (this->isEmpty())
     {
         throw ostk::core::error::runtime::Undefined("Point Set");
@@ -134,11 +124,6 @@ double PointSet::distanceTo(const Point& aPoint) const
 
 Point PointSet::getPointClosestTo(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
     if (this->isEmpty())
     {
         throw ostk::core::error::runtime::Undefined("Point set");
@@ -168,7 +153,7 @@ void PointSet::print(std::ostream& anOutputStream, bool displayDecorators) const
 
     for (const auto& point : points_)
     {
-        ostk::core::utils::Print::Line(anOutputStream) << (point.isDefined() ? point.toString() : "Undefined");
+        ostk::core::utils::Print::Line(anOutputStream) << point.toString();
     }
 
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
@@ -186,16 +171,6 @@ PointSet::ConstIterator PointSet::end() const
 
 void PointSet::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point set");
-    }
-
     PointSet::Container points;
 
     for (auto& point : points_)

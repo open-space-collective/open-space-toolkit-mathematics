@@ -82,20 +82,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Eu
         .def("__repr__", &(shiftToString<EulerAngle>))
 
         .def(
-            "is_defined",
-            &EulerAngle::isDefined,
-            R"doc(
-                Check if the Euler angle is defined.
-
-                Returns:
-                    bool: True if the Euler angle is defined, False otherwise.
-
-                Example:
-                    >>> euler = EulerAngle(phi, theta, psi, EulerAngle.AxisSequence.XYZ)
-                    >>> euler.is_defined()  # True
-            )doc"
-        )
-        .def(
             "is_unitary",
             &EulerAngle::isUnitary,
             R"doc(
@@ -171,20 +157,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Eu
         )
 
         // Define static methods
-        .def_static(
-            "undefined",
-            &EulerAngle::Undefined,
-            R"doc(
-                Create an undefined Euler angle.
-
-                Returns:
-                    EulerAngle: An undefined Euler angle object.
-
-                Example:
-                    >>> undefined_euler = EulerAngle.undefined()
-                    >>> undefined_euler.is_defined()  # False
-            )doc"
-        )
         .def_static(
             "unit",
             &EulerAngle::Unit,
@@ -289,7 +261,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Eu
 
     enum_<EulerAngle::AxisSequence>(eulerAngle, "AxisSequence")
 
-        .value("Undefined", EulerAngle::AxisSequence::Undefined)
         .value("XYZ", EulerAngle::AxisSequence::XYZ)
         .value("ZXY", EulerAngle::AxisSequence::ZXY)
         .value("ZYX", EulerAngle::AxisSequence::ZYX)

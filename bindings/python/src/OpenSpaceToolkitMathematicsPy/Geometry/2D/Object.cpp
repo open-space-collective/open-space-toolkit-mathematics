@@ -70,20 +70,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(nanobind::module_ &
         .def("__repr__", &(shiftToString<Object>))
 
         .def(
-            "is_defined",
-            &Object::isDefined,
-            R"doc(
-                Check if the 2D object is defined.
-
-                Returns:
-                    bool: True if the object is defined, False otherwise.
-
-                Example:
-                    >>> point = Point(1.0, 2.0)
-                    >>> point.is_defined()  # True
-            )doc"
-        )
-        .def(
             "intersects",
             &Object::intersects,
             R"doc(

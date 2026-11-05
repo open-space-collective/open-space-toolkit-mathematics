@@ -29,7 +29,6 @@ def test_geometry_d3_object_polygon():
 
     assert polygon2d is not None
     assert isinstance(polygon2d, Polygon2d)
-    assert polygon2d.is_defined()
 
     # Construct a Polygon3d using python list constructors for vectors
     point_5: Point3d = Point3d(1.0, 1.0, 1.0)
@@ -41,7 +40,6 @@ def test_geometry_d3_object_polygon():
     assert polygon3d_1 is not None
     assert isinstance(polygon3d_1, Polygon3d)
     assert isinstance(polygon3d_1, Object3d)
-    assert polygon3d_1.is_defined()
 
     # Construct a Polygon3d using python tuple constructors for vectors
     point_5: Point3d = Point3d(1.0, 1.0, 1.0)
@@ -53,7 +51,6 @@ def test_geometry_d3_object_polygon():
     assert polygon3d_2 is not None
     assert isinstance(polygon3d_2, Polygon3d)
     assert isinstance(polygon3d_2, Object3d)
-    assert polygon3d_2.is_defined()
 
     # Construct a Polygon3d using python numpy array constructors for vectors
     point_5: Point3d = Point3d(1.0, 1.0, 1.0)
@@ -65,15 +62,6 @@ def test_geometry_d3_object_polygon():
     assert polygon3d_3 is not None
     assert isinstance(polygon3d_3, Polygon3d)
     assert isinstance(polygon3d_3, Object3d)
-    assert polygon3d_3.is_defined()
-
-    # Construct using the static "undefined" method
-    polygon3d_4: Polygon3d = Polygon3d.undefined()
-
-    assert polygon3d_4 is not None
-    assert isinstance(polygon3d_4, Polygon3d)
-    assert isinstance(polygon3d_4, Object3d)
-    assert polygon3d_4.is_defined() is False
 
     ## Comparators
 

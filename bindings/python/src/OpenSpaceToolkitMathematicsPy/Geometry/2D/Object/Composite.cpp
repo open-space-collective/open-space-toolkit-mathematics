@@ -78,20 +78,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Composite(nanobind:
         .def("__repr__", &(shiftToString<Composite>))
 
         .def(
-            "is_defined",
-            &Composite::isDefined,
-            R"doc(
-                Check if the 2D composite is defined.
-
-                Returns:
-                    bool: True if all objects of the composite are defined, False otherwise.
-
-                Example:
-                    >>> composite = Composite(Point(1.0, 2.0))
-                    >>> composite.is_defined()  # True
-            )doc"
-        )
-        .def(
             "is_empty",
             &Composite::isEmpty,
             R"doc(

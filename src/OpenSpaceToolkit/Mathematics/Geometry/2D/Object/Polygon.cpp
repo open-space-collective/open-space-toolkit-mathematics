@@ -51,8 +51,6 @@ class Polygon::Impl
 
     bool operator==(const Polygon::Impl& aPolygon) const;
 
-    bool isDefined() const;
-
     bool intersects(const Polygon& aPolygon) const;
 
     bool contains(const Point& aPoint) const;
@@ -136,11 +134,6 @@ Polygon::Impl::Impl(const Array<Point>& anOuterRing, const Array<Array<Point>>& 
 bool Polygon::Impl::operator==(const Polygon::Impl& aPolygon) const
 {
     return boost::geometry::equals(polygon_, aPolygon.polygon_);
-}
-
-bool Polygon::Impl::isDefined() const
-{
-    return polygon_.outer().size() >= 3;
 }
 
 bool Polygon::Impl::intersects(const Polygon& aPolygon) const
@@ -645,7 +638,7 @@ void Polygon::Impl::applyTransformation(const Transformation& aTransformation)
 
 Polygon::Impl::BoostPolygon Polygon::Impl::BoostPolygonFromPoints(const Array<Point>& aPointArray)
 {
-    if ((!aPointArray.isEmpty()) && (aPointArray.getSize() < 3))
+    if (aPointArray.getSize() < 3)
     {
         throw ostk::core::error::RuntimeError("At least 3 points are necessary to define a polygon.");
     }
@@ -745,11 +738,6 @@ Polygon* Polygon::clone() const
 
 bool Polygon::operator==(const Polygon& aPolygon) const
 {
-    if ((!this->isDefined()) || (!aPolygon.isDefined()))
-    {
-        return false;
-    }
-
     return (*implUPtr_) == (*aPolygon.implUPtr_);
 }
 
@@ -758,26 +746,11 @@ bool Polygon::operator!=(const Polygon& aPolygon) const
     return !((*this) == aPolygon);
 }
 
-bool Polygon::isDefined() const
-{
-    return (implUPtr_ != nullptr) && implUPtr_->isDefined();
-}
-
 bool Polygon::isNear(const Polygon& aPolygon, double aTolerance) const
 {
-    if (!aPolygon.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     if (std::isnan(aTolerance))
     {
         throw ostk::core::error::runtime::Undefined("Tolerance");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
     if (this->getVertexCount() != aPolygon.getVertexCount())
@@ -802,161 +775,71 @@ bool Polygon::isNear(const Polygon& aPolygon, double aTolerance) const
 
 bool Polygon::intersects(const Polygon& aPolygon) const
 {
-    if (!aPolygon.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->intersects(aPolygon);
 }
 
 bool Polygon::contains(const Point& aPoint) const
 {
-    if (!aPoint.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->contains(aPoint);
 }
 
 bool Polygon::contains(const PointSet& aPointSet) const
 {
-    if (!aPointSet.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Point set");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->contains(aPointSet);
 }
 
 bool Polygon::contains(const LineString& aLineString) const
 {
-    if (!aLineString.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line string");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->contains(aLineString);
 }
 
 Size Polygon::getInnerRingCount() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->getInnerRingCount();
 }
 
 Size Polygon::getEdgeCount() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->getEdgeCount();
 }
 
 Size Polygon::getVertexCount() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->getVertexCount();
 }
 
 Polygon::Ring Polygon::getOuterRing() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->getOuterRing();
 }
 
 Polygon::Ring Polygon::getInnerRingAt(const Index& anInnerRingIndex) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->getInnerRingAt(anInnerRingIndex);
 }
 
 Polygon::Edge Polygon::getEdgeAt(const Index anEdgeIndex) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->getEdgeAt(anEdgeIndex);
 }
 
 Polygon::Vertex Polygon::getVertexAt(const Index aVertexIndex) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->getVertexAt(aVertexIndex);
 }
 
 Array<Polygon::Edge> Polygon::getEdges() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->getEdges();
 }
 
 Array<Polygon::Vertex> Polygon::getVertices() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->getVertices();
 }
 
 Polygon Polygon::getConvexHull() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->getConvexHull();
 }
 
@@ -1002,64 +885,28 @@ void Polygon::print(std::ostream& anOutputStream, bool displayDecorators) const
 
 Intersection Polygon::intersectionWith(const Polygon& aPolygon) const
 {
-    if ((!this->isDefined()) || (!aPolygon.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->intersectionWith(aPolygon);
 }
 
 Intersection Polygon::differenceWith(const Polygon& aPolygon) const
 {
-    if ((!this->isDefined()) || (!aPolygon.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->differenceWith(aPolygon);
 }
 
 MultiPolygon Polygon::unionWith(const Polygon& aPolygon) const
 {
-    if ((!this->isDefined()) || (!aPolygon.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return MultiPolygon::Polygon(*this).unionWith(MultiPolygon::Polygon(aPolygon));
 }
 
 String Polygon::toString(const Object::Format& aFormat, int aPrecision) const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     return implUPtr_->toString(aFormat, aPrecision);
 }
 
 void Polygon::applyTransformation(const Transformation& aTransformation)
 {
-    if (!aTransformation.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Transformation");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Polygon");
-    }
-
     implUPtr_->applyTransformation(aTransformation);
 }
-
-Polygon Polygon::Undefined()
-{
-    return {Array<Point>::Empty()};
-}
-
 }  // namespace object
 }  // namespace d2
 }  // namespace geometry

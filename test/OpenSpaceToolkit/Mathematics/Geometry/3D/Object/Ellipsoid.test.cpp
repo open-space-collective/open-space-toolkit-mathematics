@@ -34,8 +34,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Constructor)
 
         const Ellipsoid ellipsoid = {{1.0, 2.0, 3.0}, 4.0, 5.0, 6.0, Quaternion::XYZS(0.0, 0.0, 0.0, 2.0)};
 
-        ASSERT_TRUE(ellipsoid.isDefined());
-
         ASSERT_ANY_THROW(ellipsoid.getFirstAxis());
         ASSERT_ANY_THROW(ellipsoid.getMatrix());
         ASSERT_ANY_THROW(ellipsoid.intersects(Segment({0.0, 0.0, 0.0}, {10.0, 0.0, 0.0})));
@@ -90,12 +88,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, EqualToOperator)
             )
         );
     }
-
-    {
-        ASSERT_FALSE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0) == Ellipsoid::Undefined());
-        ASSERT_FALSE(Ellipsoid::Undefined() == Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0));
-        ASSERT_FALSE(Ellipsoid::Undefined() == Ellipsoid::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, NotEqualToOperator)
@@ -136,12 +128,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, NotEqualToOperat
             )
         );
     }
-
-    {
-        ASSERT_TRUE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0) != Ellipsoid::Undefined());
-        ASSERT_TRUE(Ellipsoid::Undefined() != Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0));
-        ASSERT_TRUE(Ellipsoid::Undefined() != Ellipsoid::Undefined());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, StreamOperator)
@@ -154,20 +140,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, StreamOperator)
         ASSERT_NO_THROW(std::cout << Ellipsoid({0.0, 0.0, 0.0}, 1.0, 2.0, 3.0) << std::endl);
 
         ASSERT_FALSE(testing::internal::GetCapturedStdout().empty());
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IsDefined)
-{
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
-
-    {
-        ASSERT_TRUE(Ellipsoid({0.0, 0.0, 0.0}, 1.0, 2.0, 3.0).isDefined());
-        ASSERT_TRUE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).isDefined());
-    }
-
-    {
-        ASSERT_FALSE(Ellipsoid::Undefined().isDefined());
     }
 }
 
@@ -189,12 +161,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Point
 
     {
         ASSERT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).intersects(Point::Origin()));
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersects(Point::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).intersects(Point::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersects(Point(0.0, 0.0, 0.0)));
     }
 }
 
@@ -221,11 +187,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Point
 
     {
         ASSERT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).intersects(PointSet::Empty()));
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersects(PointSet::Empty()));
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersects(PointSet({{+5.0, +2.0, +3.0}, {+5.0, +2.0, +3.0}})));
     }
 }
 
@@ -364,12 +325,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Line)
         // precision issues
         ASSERT_FALSE(ellipsoid.intersects(Line({0.0, +equatorialRadius_m + 0.1, 0.0}, {+1.0, 0.0, 0.0})));
         ASSERT_FALSE(ellipsoid.intersects(Line({0.0, +7000e3, 0.0}, {+1.0, 0.0, 0.0})));
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersects(Line::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Line::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersects(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0})));
     }
 }
 
@@ -531,12 +486,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Ray)
         ASSERT_FALSE(ellipsoid.intersects(Ray({+10000e3, +equatorialRadius_m + 0.1, 0.0}, {+1.0, 0.0, 0.0})));
         ASSERT_FALSE(ellipsoid.intersects(Ray({+10000e3, +7000e3, 0.0}, {+1.0, 0.0, 0.0})));
     }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersects(Ray::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Ray::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersects(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0})));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Segment)
@@ -654,10 +603,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Segme
         );
         ASSERT_FALSE(ellipsoid.intersects(Segment({-10000e3, 0.0, +7000e3}, {+10000e3, 0.0, +7000e3})));
     }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Segment::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Plane)
@@ -696,11 +641,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Plane
         ASSERT_TRUE(ellipsoid.intersects(Plane({0.0, 0.0, +3.0}, {0.0, 0.0, 1.0})));
         ASSERT_FALSE(ellipsoid.intersects(Plane({0.0, 0.0, +4.0}, {0.0, 0.0, 1.0})));
     }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersects(Plane::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Plane::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Pyramid)
@@ -713,11 +653,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Pyram
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid.Intersects_Ellipsoid
 
         SUCCEED();
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersects(Pyramid::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Pyramid::Undefined()));
     }
 }
 
@@ -739,12 +674,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Contains_Point)
 
     {
         ASSERT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).contains(Point::Origin()));
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().contains(Point::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).contains(Point::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().contains(Point(0.0, 0.0, 0.0)));
     }
 }
 
@@ -781,11 +710,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Contains_PointSe
     {
         ASSERT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).contains(PointSet::Empty()));
     }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().contains(PointSet::Empty()));
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().contains(PointSet({{+5.0, +2.0, +3.0}, {+5.0, +2.0, +3.0}})));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetCenter)
@@ -796,10 +720,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetCenter)
     {
         ASSERT_EQ(Point(1.0, 2.0, 3.0), Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getCenter());
     }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().getCenter());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetFirstPrincipalSemiAxis)
@@ -808,10 +728,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetFirstPrincipa
 
     {
         ASSERT_EQ(4.0, Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getFirstPrincipalSemiAxis());
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().getFirstPrincipalSemiAxis());
     }
 }
 
@@ -822,10 +738,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetSecondPrincip
     {
         ASSERT_EQ(5.0, Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getSecondPrincipalSemiAxis());
     }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().getSecondPrincipalSemiAxis());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetThirdPrincipalSemiAxis)
@@ -834,10 +746,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetThirdPrincipa
 
     {
         ASSERT_EQ(6.0, Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getThirdPrincipalSemiAxis());
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().getThirdPrincipalSemiAxis());
     }
 }
 
@@ -862,10 +770,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetFirstAxis)
                         .getFirstAxis()
                         .isNear(Vector3d(1.0, 1.0, 0.0).normalized(), 1e-15));
     }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().getFirstAxis());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetSecondAxis)
@@ -888,10 +792,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetSecondAxis)
         )
                         .getSecondAxis()
                         .isNear(Vector3d(-1.0, 1.0, 0.0).normalized(), 1e-15));
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().getSecondAxis());
     }
 }
 
@@ -916,10 +816,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetThirdAxis)
                         .getThirdAxis()
                         .isNear(Vector3d(0.0, -1.0, 1.0).normalized(), 1e-15));
     }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().getThirdAxis());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetOrientation)
@@ -936,10 +832,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetOrientation)
             Quaternion::XYZS(1.0, 0.0, 0.0, 0.0),
             Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0, Quaternion::XYZS(1.0, 0.0, 0.0, 0.0)).getOrientation()
         );
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().getOrientation());
     }
 }
 
@@ -983,10 +875,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetMatrix)
                         .getMatrix()
                         .isNear(referenceEllipsoidMatrix, 1e-15));
     }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().getMatrix());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith_Line)
@@ -1003,8 +891,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(line);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<PointSet>());
 
         const PointSet pointSet = intersection.getComposite().as<PointSet>();
@@ -1019,8 +905,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
         const Ellipsoid ellipsoid = {{0.0, 0.0, 0.0}, 1.0, 2.0, 3.0};
 
         const Intersection intersection = ellipsoid.intersectionWith(line);
-
-        ASSERT_TRUE(intersection.getComposite().isDefined());
 
         ASSERT_TRUE(intersection.getComposite().is<PointSet>());
 
@@ -1037,8 +921,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(line);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<PointSet>());
 
         const PointSet pointSet = intersection.getComposite().as<PointSet>();
@@ -1054,8 +936,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(line);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<Point>());
 
         const Point point = intersection.getComposite().as<Point>();
@@ -1068,8 +948,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
         const Ellipsoid ellipsoid = {{0.0, 0.0, 0.0}, 1.0, 2.0, 3.0};
 
         const Intersection intersection = ellipsoid.intersectionWith(line);
-
-        ASSERT_TRUE(intersection.getComposite().isDefined());
 
         ASSERT_TRUE(intersection.getComposite().is<Point>());
 
@@ -1085,10 +963,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
         const Intersection intersection = ellipsoid.intersectionWith(line);
 
         ASSERT_TRUE(intersection.isEmpty());
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersectionWith(Line::Undefined()));
     }
 }
 
@@ -1108,8 +982,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(ray);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<Point>());
 
         const Point point = intersection.getComposite().as<Point>();
@@ -1122,8 +994,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
         const Ellipsoid ellipsoid = {{0.0, 0.0, 0.0}, 1.0, 2.0, 3.0};
 
         const Intersection intersection = ellipsoid.intersectionWith(ray);
-
-        ASSERT_TRUE(intersection.getComposite().isDefined());
 
         ASSERT_TRUE(intersection.getComposite().is<PointSet>());
 
@@ -1140,8 +1010,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(ray);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<PointSet>());
 
         const PointSet pointSet = intersection.getComposite().as<PointSet>();
@@ -1157,8 +1025,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(ray);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<PointSet>());
 
         const PointSet pointSet = intersection.getComposite().as<PointSet>();
@@ -1173,8 +1039,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
         const Ellipsoid ellipsoid = {{0.0, 0.0, 0.0}, 1.0, 2.0, 3.0};
 
         const Intersection intersection = ellipsoid.intersectionWith(ray);
-
-        ASSERT_TRUE(intersection.getComposite().isDefined());
 
         ASSERT_TRUE(intersection.getComposite().is<PointSet>());
 
@@ -1247,8 +1111,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(ray, true);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<Point>());
 
         const Point point = intersection.getComposite().as<Point>();
@@ -1261,8 +1123,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
         const Ellipsoid ellipsoid = {{0.0, 0.0, 0.0}, 1.0, 2.0, 3.0};
 
         const Intersection intersection = ellipsoid.intersectionWith(ray, true);
-
-        ASSERT_TRUE(intersection.getComposite().isDefined());
 
         ASSERT_TRUE(intersection.getComposite().is<Point>());
 
@@ -1324,10 +1184,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         ASSERT_TRUE(intersection.isEmpty());
     }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersectionWith(Ray::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith_Segment)
@@ -1344,8 +1200,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<Point>());
 
         const Point point = intersection.getComposite().as<Point>();
@@ -1358,8 +1212,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
         const Ellipsoid ellipsoid = {{0.0, 0.0, 0.0}, 1.0, 2.0, 3.0};
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
-
-        ASSERT_TRUE(intersection.getComposite().isDefined());
 
         ASSERT_TRUE(intersection.getComposite().is<Point>());
 
@@ -1374,8 +1226,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<Point>());
 
         const Point point = intersection.getComposite().as<Point>();
@@ -1389,8 +1239,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<Point>());
 
         const Point point = intersection.getComposite().as<Point>();
@@ -1403,8 +1251,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
         const Ellipsoid ellipsoid = {{0.0, 0.0, 0.0}, 1.0, 2.0, 3.0};
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
-
-        ASSERT_TRUE(intersection.getComposite().isDefined());
 
         ASSERT_TRUE(intersection.getComposite().is<PointSet>());
 
@@ -1421,8 +1267,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<PointSet>());
 
         const PointSet pointSet = intersection.getComposite().as<PointSet>();
@@ -1437,8 +1281,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
         const Ellipsoid ellipsoid = {{0.0, 0.0, 0.0}, 1.0, 2.0, 3.0};
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
-
-        ASSERT_TRUE(intersection.getComposite().isDefined());
 
         // Have to do this check as due to double precision accuracy with -O0 we are getting an output
         // of two points instead of one point, where one point has an x value of 4e-310 instead of 0.0
@@ -1469,8 +1311,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         const Intersection intersection = ellipsoid.intersectionWith(segment);
 
-        ASSERT_TRUE(intersection.getComposite().isDefined());
-
         ASSERT_TRUE(intersection.getComposite().is<Point>());
 
         const Point point = intersection.getComposite().as<Point>();
@@ -1495,10 +1335,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
         ASSERT_TRUE(intersection.isEmpty());
     }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersectionWith(Segment::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith_Pyramid)
@@ -1511,11 +1347,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid.IntersectionWith_Ellipsoid
 
         SUCCEED();
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().intersectionWith(Pyramid::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersectionWith(Pyramid::Undefined()));
     }
 }
 
@@ -1572,21 +1403,5 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, ApplyTransformat
         ASSERT_FALSE(ellipsoid.intersects(Segment({1.0, 0.0, 3.0}, {1.0, 5.5, 3.0})));
         // Crossing the rotated ellipsoid (semi-axis 5 along z), but wholly inside the original one (semi-axis 6)
         ASSERT_TRUE(ellipsoid.intersects(Segment({1.0, 0.0, 3.0}, {1.0, 0.0, 8.5})));
-    }
-
-    {
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().applyTransformation(Transformation::Undefined()));
-        ASSERT_ANY_THROW(Ellipsoid::Undefined().applyTransformation(Transformation::Identity()));
-        ASSERT_ANY_THROW(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).applyTransformation(Transformation::Undefined()));
-    }
-}
-
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Undefined)
-{
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
-
-    {
-        ASSERT_NO_THROW(Ellipsoid::Undefined());
-        ASSERT_FALSE(Ellipsoid::Undefined().isDefined());
     }
 }

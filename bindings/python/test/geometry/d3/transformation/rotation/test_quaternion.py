@@ -41,9 +41,6 @@ class TestQuaternion:
 
         assert (quaternion**1.0) == quaternion
 
-    def test_is_defined_success(self, quaternion: Quaternion):
-        assert quaternion.is_defined() is True
-
     def test_is_unitary_success(self, quaternion: Quaternion):
         assert quaternion.is_unitary() is True
         assert quaternion.is_unitary(0.0001) is True
@@ -142,9 +139,6 @@ class TestQuaternion:
 
     def test_angular_difference_with_success(self, quaternion: Quaternion):
         assert quaternion.angular_difference_with(quaternion) == Angle.zero()
-
-    def test_undefined_success(self):
-        assert Quaternion.undefined().is_defined() is False
 
     def test_unit_success(self, quaternion: Quaternion):
         assert Quaternion.unit() == quaternion

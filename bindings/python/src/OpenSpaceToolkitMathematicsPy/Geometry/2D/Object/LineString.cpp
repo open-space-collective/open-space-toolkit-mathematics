@@ -50,21 +50,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(nanobind
         .def("__repr__", &(shiftToString<LineString>))
 
         .def(
-            "is_defined",
-            &LineString::isDefined,
-            R"doc(
-                Check if the line string is defined.
-
-                Returns:
-                    bool: True if the line string is defined, False otherwise.
-
-                Example:
-                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
-                    >>> line_string = LineString(points)
-                    >>> line_string.is_defined()  # True
-            )doc"
-        )
-        .def(
             "is_empty",
             &LineString::isEmpty,
             R"doc(

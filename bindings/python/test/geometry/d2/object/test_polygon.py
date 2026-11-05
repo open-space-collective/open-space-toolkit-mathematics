@@ -29,7 +29,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Array of Points using python tuple
         polygon: Polygon = Polygon((point_1, point_2, point_3, point_4))
@@ -37,7 +36,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Array of Points using python numpy array
         polygon: Polygon = Polygon((point_1, point_2, point_3, point_4))
@@ -45,7 +43,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Defaut constructor with 3 points (minimum)
         polygon: Polygon = Polygon((point_1, point_2, point_3))
@@ -53,7 +50,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Invalid constructions
         with pytest.raises(RuntimeError):
@@ -105,7 +101,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Inner Ring using Python tuples
         polygon: Polyon = Polygon(outer_ring_tuple, inner_rings_tuple_tuple)
@@ -113,7 +108,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Inner Ring using Python numpy arrays
         polygon: Polygon = Polygon(outer_ring_numpy, inner_rings_numpy)
@@ -121,7 +115,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Inner Ring multiple types 1
         polygon: Polygon = Polygon(outer_ring_numpy, inner_rings_list_list)
@@ -129,7 +122,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Inner Ring multiple types 2
         polygon: Polygon = Polygon(outer_ring_tuple, inner_rings_numpy)
@@ -137,7 +129,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Inner Ring multiple types 3
         polygon: Polygon = Polygon(outer_ring_list, inner_rings_numpy)
@@ -145,7 +136,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Inner Ring multiple types 4
         polygon: Polygon = Polygon(outer_ring_list, inner_rings_tuple_tuple)
@@ -153,7 +143,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Inner Ring multiple types 5
         polygon: Polygon = Polygon(outer_ring_numpy, inner_rings_tuple_tuple)
@@ -161,7 +150,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Inner Ring multiple types 6
         polygon: Polygon = Polygon(outer_ring_numpy, inner_rings_list_tuple)
@@ -169,7 +157,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Inner Ring multiple types 7
         polygon: Polygon = Polygon(outer_ring_numpy, inner_rings_tuple_list)
@@ -177,7 +164,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # Default constructor with Inner Ring multiple types 8
         polygon: Polygon = Polygon(outer_ring_tuple, inner_rings_list_list)
@@ -185,7 +171,6 @@ class TestPolygon:
         assert polygon is not None
         assert isinstance(polygon, Polygon)
         assert isinstance(polygon, Object)
-        assert polygon.is_defined()
 
         # ...
 
@@ -318,7 +303,6 @@ class TestPolygon:
 
         assert multipolygon is not None
         assert isinstance(multipolygon, MultiPolygon)
-        assert multipolygon.is_defined()
 
     def test_intersection_with(
         self,

@@ -68,20 +68,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(nanobind::modu
         .def("__repr__", &(shiftToString<Cone>))
 
         .def(
-            "is_defined",
-            &Cone::isDefined,
-            R"doc(
-                Check if the cone is defined.
-
-                Returns:
-                    bool: True if the cone is defined, False otherwise.
-
-                Example:
-                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
-                    >>> cone.is_defined()  # True
-            )doc"
-        )
-        .def(
             "intersects",
             overload_cast<const Sphere&, const Size>(&Cone::intersects, const_),
             R"doc(
@@ -372,20 +358,5 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(nanobind::modu
                     >>> cone.apply_transformation(transformation)
             )doc",
             arg("transformation")
-        )
-
-        .def_static(
-            "undefined",
-            &Cone::Undefined,
-            R"doc(
-                Create an undefined cone.
-
-                Returns:
-                    Cone: An undefined cone object.
-
-                Example:
-                    >>> undefined_cone = Cone.undefined()
-                    >>> undefined_cone.is_defined()  # False
-            )doc"
         );
 }

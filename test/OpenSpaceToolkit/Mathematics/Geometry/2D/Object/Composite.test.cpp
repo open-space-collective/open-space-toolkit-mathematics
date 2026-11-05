@@ -75,16 +75,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, EqualToOperator)
 
         EXPECT_TRUE(composite == composite);
     }
-
-    {
-        const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
-
-        const Composite composite = Composite {polygon};
-
-        EXPECT_FALSE(Composite(Point::Undefined()) == Composite(Point::Undefined()));
-        EXPECT_FALSE(Composite(Point::Undefined()) == composite);
-        EXPECT_FALSE(composite == Composite(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, NotEqualToOperator)
@@ -135,15 +125,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AdditionOperator
 
         EXPECT_NO_THROW(polygonComposite + pointComposite);
     }
-
-    {
-        const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
-
-        const Composite composite = Composite {polygon};
-
-        EXPECT_ANY_THROW(Composite(Point::Undefined()) + composite);
-        EXPECT_ANY_THROW(composite + Composite(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AdditionAssignmentOperator)
@@ -169,15 +150,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AdditionAssignme
 
         EXPECT_NO_THROW(composite += otherComposite);
     }
-
-    {
-        const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
-
-        Composite composite = Composite {polygon};
-
-        EXPECT_ANY_THROW(Composite(Point::Undefined()) += composite);
-        EXPECT_ANY_THROW(composite += Composite(Point::Undefined()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, StreamOperator)
@@ -198,25 +170,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, IsDefined)
-{
-    using ostk::mathematics::geometry::d2::object::Composite;
-    using ostk::mathematics::geometry::d2::object::Point;
-    using ostk::mathematics::geometry::d2::object::Polygon;
-
-    {
-        const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
-
-        const Composite composite = Composite {polygon};
-
-        EXPECT_TRUE(composite.isDefined());
-    }
-
-    {
-        EXPECT_FALSE(Composite(Point::Undefined()).isDefined());
-    }
-}
-
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, IsEmpty)
 {
     using ostk::mathematics::geometry::d2::object::Composite;
@@ -234,10 +187,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, IsEmpty)
     {
         EXPECT_TRUE(Composite::Empty().isEmpty());
     }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).isEmpty());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, Intersects)
@@ -252,9 +201,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, Intersects)
         const Composite composite = Composite {polygon};
 
         // EXPECT_TRUE(composite.intersects(composite)) ; // TBI
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).intersects(Composite(Point::Undefined())));
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).intersects(composite));
-        EXPECT_ANY_THROW(composite.intersects(Composite(Point::Undefined())));
     }
 }
 
@@ -281,9 +227,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, Contains)
 
         const Point point = {1.0, 0.0};
 
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).contains(Composite(Point::Undefined())));
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).contains(composite));
-        EXPECT_ANY_THROW(composite.contains(Composite(Point::Undefined())));
         EXPECT_TRUE(composite.contains(point));
     }
 
@@ -394,9 +337,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AnyContains)
 
         const Point point = {1.0, 0.0};
 
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).contains(Composite(Point::Undefined())));
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).contains(composite));
-        EXPECT_ANY_THROW(composite.contains(Composite(Point::Undefined())));
         EXPECT_TRUE(composite.anyContains(point));
     }
 
@@ -514,10 +454,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, Is)
         EXPECT_TRUE(composite.is<Polygon>());
         EXPECT_FALSE(composite.is<Point>());
     }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).is<Polygon>());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, As)
@@ -551,10 +487,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, As)
         EXPECT_ANY_THROW(composite.as<Polygon>());
         EXPECT_ANY_THROW(composite.as<LineString>());
     }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).as<Point>());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, GetObjectAt)
@@ -586,10 +518,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, GetObjectAt)
         EXPECT_EQ(composite.getObjectAt(1), point);
         EXPECT_ANY_THROW(composite.getObjectAt(2));
     }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).getObjectAt(0));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, GetObjects)
@@ -608,10 +536,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, GetObjects)
         const Composite composite = Composite {polygon};
 
         EXPECT_EQ(1, composite.getObjects().getSize());
-    }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).getObjects());
     }
 
     {
@@ -646,10 +570,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, GetObjectCount)
 
         EXPECT_EQ(4, composite.getObjectCount());
     }
-
-    {
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).getObjectCount());
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, ConstIterator)
@@ -669,21 +589,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, ConstIterator)
 
         composite += otherComposite;
 
-        EXPECT_NO_THROW(
+        size_t objectCount = 0;
 
-            for (const auto& objectUPtr
-                 : composite) { EXPECT_TRUE(objectUPtr->isDefined()); }
+        for (const auto& objectUPtr : composite)
+        {
+            EXPECT_NE(nullptr, objectUPtr);
 
-        );
-    }
+            ++objectCount;
+        }
 
-    {
-        EXPECT_ANY_THROW(
-
-            for (const auto& objectUPtr
-                 : Composite(Point::Undefined())) { (void)objectUPtr; }
-
-        );
+        EXPECT_EQ(2, objectCount);
     }
 }
 
@@ -702,16 +617,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, ApplyTransformat
 
         EXPECT_NO_THROW(composite.applyTransformation(Transformation::Identity()));
     }
-
-    {
-        const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
-
-        Composite composite = Composite {polygon};
-
-        EXPECT_ANY_THROW(composite.applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).applyTransformation(Transformation::Undefined()));
-        EXPECT_ANY_THROW(Composite(Point::Undefined()).applyTransformation(Transformation::Identity()));
-    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, Empty)
@@ -720,7 +625,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, Empty)
 
     {
         EXPECT_NO_THROW(Composite::Empty());
-        EXPECT_TRUE(Composite::Empty().isDefined());
         EXPECT_TRUE(Composite::Empty().isEmpty());
     }
 }

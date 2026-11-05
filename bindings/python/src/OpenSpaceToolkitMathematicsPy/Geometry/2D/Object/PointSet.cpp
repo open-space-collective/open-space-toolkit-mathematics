@@ -50,21 +50,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_PointSet(nanobind::
         .def("__repr__", &(shiftToString<PointSet>))
 
         .def(
-            "is_defined",
-            &PointSet::isDefined,
-            R"doc(
-                Check if the point set is defined.
-
-                Returns:
-                    bool: True if the point set is defined, False otherwise.
-
-                Example:
-                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
-                    >>> point_set = PointSet(points)
-                    >>> point_set.is_defined()  # True
-            )doc"
-        )
-        .def(
             "is_empty",
             &PointSet::isEmpty,
             R"doc(

@@ -36,14 +36,12 @@ class TestSegment:
         assert segment is not None
         assert isinstance(segment, Segment)
         assert isinstance(segment, Object)
-        assert segment.is_defined()
 
         segment: Segment = Segment(point_1, point_1)
 
         assert segment is not None
         assert isinstance(segment, Segment)
         assert isinstance(segment, Object)
-        assert segment.is_defined()
 
     def test_comparators_success(self):
         point_1: Point = Point(-1.0, 1.0, 0.0)
@@ -74,9 +72,6 @@ class TestSegment:
         assert np.array_equal(segment.get_direction(), np.array((1.0, 0.0, 0.0)))
 
         assert segment.get_length() == 2.0
-
-    def test_is_defined_success(self, segment: Segment):
-        assert segment.is_defined() is True
 
     def test_is_degenerate_success(self, segment: Segment):
         assert segment.is_degenerate() is False

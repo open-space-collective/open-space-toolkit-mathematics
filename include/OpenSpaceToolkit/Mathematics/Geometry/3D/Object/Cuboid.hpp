@@ -90,16 +90,6 @@ class Cuboid : public Object
     /// @return             True if cuboids are not equal
     bool operator!=(const Cuboid& aCuboid) const;
 
-    /// @brief              Check if cuboid is defined
-    ///
-    /// @code{.cpp}
-    ///                     Cuboid cuboid = { { 0.0, 0.0, 0.0 }, { { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }, { 0.0, 0.0, 1.0
-    ///                     } }, { 1.0, 2.0, 3.0 } } ; cuboid.isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if cuboid is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if cuboid is near another cuboid
     ///
     /// @code{.cpp}
@@ -417,15 +407,6 @@ class Cuboid : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined cuboid
-    ///
-    /// @code{.cpp}
-    ///                     Cuboid cuboid = Cuboid::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined cuboid
-    static Cuboid Undefined();
 
     /// @brief              Constructs a a cube
     ///

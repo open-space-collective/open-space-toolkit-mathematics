@@ -14,7 +14,6 @@ class TestComposite:
 
         assert composite is not None
         assert isinstance(composite, Composite)
-        assert composite.is_defined()
 
     def test_empty_success(self):
         composite: Composite = Composite.empty()
@@ -22,18 +21,7 @@ class TestComposite:
         assert composite is not None
         assert isinstance(composite, Composite)
         assert isinstance(composite, Object)
-        assert composite.is_defined()
         assert composite.is_empty()
-
-    def test_is_defined_success(self):
-        composite: Composite = Composite(Point.undefined())
-
-        assert composite is not None
-        assert isinstance(composite, Composite)
-        assert isinstance(composite, Object)
-        assert composite.is_defined() is False
-
-        assert not hasattr(Composite, "undefined")
 
     def test_comparators_success(
         self,
@@ -53,23 +41,12 @@ class TestComposite:
     ):
         assert composite is not None
         assert isinstance(composite, Composite)
-        assert composite.is_defined()
         assert composite.get_object_count() == 2
-
-        with pytest.raises(RuntimeError):
-            other_composite = Composite(Point.undefined()) + composite
-
-        with pytest.raises(RuntimeError):
-            other_composite = composite + Composite(Point.undefined())
 
         composite += composite
 
         assert isinstance(composite, Composite)
-        assert composite.is_defined()
         assert composite.get_object_count() == 4
-
-        with pytest.raises(RuntimeError):
-            composite += Composite(Point.undefined())
 
     def test_is_success(
         self,

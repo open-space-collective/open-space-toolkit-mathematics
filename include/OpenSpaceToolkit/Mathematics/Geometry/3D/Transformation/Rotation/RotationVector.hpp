@@ -91,15 +91,6 @@ class RotationVector
     /// @return                 Reference to output stream
     friend std::ostream& operator<<(std::ostream& anOutputStream, const RotationVector& aRotationVector);
 
-    /// @brief                  Check if Rotation Vector is defined
-    ///
-    /// @code
-    ///                         RotationVector::Unit().isDefined();
-    /// @endcode
-    ///
-    /// @return                 True if Rotation Vector is defined
-    bool isDefined() const;
-
     /// @brief                  Get rotation axis
     ///
     /// @code
@@ -136,15 +127,6 @@ class RotationVector
     ///
     /// @return                 Rotation Vector reference
     RotationVector& rectify();
-
-    /// @brief                  Construct an undefined Rotation Vector
-    ///
-    /// @code
-    ///                         RotationVector::Undefined();
-    /// @endcode
-    ///
-    /// @return                 Undefined Rotation Vector
-    static RotationVector Undefined();
 
     /// @brief                  Construct a unitary Rotation Vector
     ///
@@ -234,8 +216,6 @@ class RotationVector
    private:
     Vector3d axis_;
     Angle angle_;
-
-    RotationVector();
 };
 
 }  // namespace rotation

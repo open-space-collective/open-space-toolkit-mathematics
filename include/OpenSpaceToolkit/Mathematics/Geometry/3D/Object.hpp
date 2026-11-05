@@ -81,15 +81,6 @@ class Object
     /// @return             A reference to output stream
     friend std::ostream& operator<<(std::ostream& anOutputStream, const Object& anObject);
 
-    /// @brief              Check if object is defined
-    ///
-    /// @code{.cpp}
-    ///                     Point::Origin().isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if object is defined
-    virtual bool isDefined() const = 0;
-
     /// @brief              Returns true if object can be converted to type
     ///
     /// @code{.cpp}

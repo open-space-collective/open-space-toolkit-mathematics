@@ -82,15 +82,6 @@ class Plane : public Object
     /// @return             True if planes are not equal
     bool operator!=(const Plane& aPlane) const;
 
-    /// @brief              Check if plane is defined
-    ///
-    /// @code
-    ///                     Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined() ; // True
-    /// @endcode
-    ///
-    /// @return             True if plane is defined
-    virtual bool isDefined() const override;
-
     /// @brief              Check if plane intersects point
     ///
     /// @code
@@ -307,15 +298,6 @@ class Plane : public Object
     ///
     /// @param              [in] aTransformation A transformation
     virtual void applyTransformation(const Transformation& aTransformation) override;
-
-    /// @brief              Constructs an undefined plane
-    ///
-    /// @code
-    ///                     Plane plane = Plane::Undefined() ; // Undefined
-    /// @endcode
-    ///
-    /// @return             Undefined plane
-    static Plane Undefined();
 
    private:
     Point point_;

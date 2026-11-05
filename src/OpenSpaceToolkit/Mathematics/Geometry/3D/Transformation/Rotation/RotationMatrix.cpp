@@ -112,11 +112,6 @@ RotationMatrix::RotationMatrix(
 
 bool RotationMatrix::operator==(const RotationMatrix& aRotationMatrix) const
 {
-    if ((!this->isDefined()) || (!aRotationMatrix.isDefined()))
-    {
-        return false;
-    }
-
     return matrix_ == aRotationMatrix.matrix_;
 }
 
@@ -127,26 +122,11 @@ bool RotationMatrix::operator!=(const RotationMatrix& aRotationMatrix) const
 
 RotationMatrix RotationMatrix::operator*(const RotationMatrix& aRotationMatrix) const
 {
-    if ((!this->isDefined()) || (!aRotationMatrix.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix");
-    }
-
     return RotationMatrix(matrix_ * aRotationMatrix.matrix_);
 }
 
 Vector3d RotationMatrix::operator*(const Vector3d& aVector) const
 {
-    if (!aVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Vector");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix");
-    }
-
     return matrix_ * aVector;
 }
 
@@ -162,11 +142,6 @@ double RotationMatrix::operator()(const Index& aRowIndex, const Index& aColumnIn
         throw ostk::core::error::RuntimeError("Column index out of bounds.");
     }
 
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix");
-    }
-
     return matrix_(aRowIndex, aColumnIndex);
 }
 
@@ -180,11 +155,6 @@ double& RotationMatrix::operator()(const Index& aRowIndex, const Index& aColumnI
     if (aColumnIndex > 3)
     {
         throw ostk::core::error::RuntimeError("Column index out of bounds.");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix");
     }
 
     return matrix_(aRowIndex, aColumnIndex);
@@ -206,21 +176,11 @@ std::ostream& operator<<(std::ostream& anOutputStream, const RotationMatrix& aRo
     return anOutputStream;
 }
 
-bool RotationMatrix::isDefined() const
-{
-    return matrix_.isDefined();
-}
-
 Vector3d RotationMatrix::getRowAt(const Index& aRowIndex) const
 {
     if (aRowIndex >= 3)
     {
         throw ostk::core::error::RuntimeError("Row index out of bounds.");
-    }
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix");
     }
 
     return matrix_.block<1, 3>(aRowIndex, 0);
@@ -233,50 +193,25 @@ Vector3d RotationMatrix::getColumnAt(const Index& aColumnIndex) const
         throw ostk::core::error::RuntimeError("Column index out of bounds.");
     }
 
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix");
-    }
-
     return matrix_.block<3, 1>(0, aColumnIndex);
 }
 
 const Matrix3d& RotationMatrix::getMatrix() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix");
-    }
-
     return matrix_;
 }
 
 RotationMatrix RotationMatrix::toTransposed() const
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix");
-    }
-
     return RotationMatrix(matrix_.transpose());
 }
 
 RotationMatrix& RotationMatrix::transpose()
 {
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix");
-    }
-
     // https://eigen.tuxfamily.org/dox/group__TutorialMatrixArithmetic.html
     matrix_.transposeInPlace();
 
     return *this;
-}
-
-RotationMatrix RotationMatrix::Undefined()
-{
-    return RotationMatrix();
 }
 
 RotationMatrix RotationMatrix::Unit()
@@ -286,11 +221,6 @@ RotationMatrix RotationMatrix::Unit()
 
 RotationMatrix RotationMatrix::RX(const Angle& aRotationAngle)
 {
-    if (!aRotationAngle.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation angle");
-    }
-
     const double rotationAngle_rad = aRotationAngle.inRadians();
 
     Matrix3d matrix;
@@ -303,11 +233,6 @@ RotationMatrix RotationMatrix::RX(const Angle& aRotationAngle)
 
 RotationMatrix RotationMatrix::RY(const Angle& aRotationAngle)
 {
-    if (!aRotationAngle.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation angle");
-    }
-
     const double rotationAngle_rad = aRotationAngle.inRadians();
 
     Matrix3d matrix;
@@ -320,11 +245,6 @@ RotationMatrix RotationMatrix::RY(const Angle& aRotationAngle)
 
 RotationMatrix RotationMatrix::RZ(const Angle& aRotationAngle)
 {
-    if (!aRotationAngle.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation angle");
-    }
-
     const double rotationAngle_rad = aRotationAngle.inRadians();
 
     Matrix3d matrix;
@@ -337,21 +257,6 @@ RotationMatrix RotationMatrix::RZ(const Angle& aRotationAngle)
 
 RotationMatrix RotationMatrix::Rows(const Vector3d& aFirstRow, const Vector3d& aSecondRow, const Vector3d& aThirdRow)
 {
-    if (!aFirstRow.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("First row");
-    }
-
-    if (!aSecondRow.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Second row");
-    }
-
-    if (!aThirdRow.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Third row");
-    }
-
     if ((aFirstRow.norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First row is not unitary.");
@@ -394,21 +299,6 @@ RotationMatrix RotationMatrix::Columns(
     const Vector3d& aFirstColumn, const Vector3d& aSecondColumn, const Vector3d& aThirdColumn
 )
 {
-    if (!aFirstColumn.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("First column");
-    }
-
-    if (!aSecondColumn.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Second column");
-    }
-
-    if (!aThirdColumn.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Third column");
-    }
-
     if ((aFirstColumn.norm() - 1.0) > 1e-15)
     {
         throw ostk::core::error::RuntimeError("First column is not unitary.");
@@ -449,11 +339,6 @@ RotationMatrix RotationMatrix::Columns(
 
 RotationMatrix RotationMatrix::Quaternion(const rotation::Quaternion& aQuaternion)
 {
-    if (!aQuaternion.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion");
-    }
-
     if (!aQuaternion.isUnitary())
     {
         throw ostk::core::error::RuntimeError("Quaternion is not unitary.");
@@ -490,11 +375,6 @@ RotationMatrix RotationMatrix::Quaternion(const rotation::Quaternion& aQuaternio
 
 RotationMatrix RotationMatrix::RotationVector(const rotation::RotationVector& aRotationVector)
 {
-    if (!aRotationVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation vector");
-    }
-
     const Vector3d axis = aRotationVector.getAxis();
     const double theta = aRotationVector.getAngle().inRadians();
 
@@ -524,11 +404,6 @@ RotationMatrix RotationMatrix::RotationVector(const rotation::RotationVector& aR
 
 RotationMatrix RotationMatrix::EulerAngle(const rotation::EulerAngle& aEulerAngle)
 {
-    if (!aEulerAngle.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Euler Angle");
-    }
-
     switch (aEulerAngle.getAxisSequence())
     {
         case EulerAngle::AxisSequence::XYZ:  // 1-2-3
@@ -562,26 +437,6 @@ RotationMatrix RotationMatrix::VectorBasis(
     const Vector3d& aSecondSourceVector = aSourcePair.second;
     const Vector3d& aFirstDestinationVector = aDestinationPair.first;
     const Vector3d& aSecondDestinationVector = aDestinationPair.second;
-
-    if (!aFirstSourceVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("First source vector");
-    }
-
-    if (!aSecondSourceVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Second source vector");
-    }
-
-    if (!aFirstDestinationVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("First destination vector");
-    }
-
-    if (!aSecondDestinationVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Second destination vector");
-    }
 
     if (aFirstSourceVector.norm() < 1e-15)
     {
@@ -632,11 +487,6 @@ RotationMatrix RotationMatrix::VectorBasis(
     destinationMatrix.row(1) = destinationMatrix.row(2).cross(normalizedFirstDestination);
 
     return RotationMatrix(destinationMatrix.transpose() * sourceMatrix);
-}
-
-RotationMatrix::RotationMatrix()
-    : matrix_(Matrix3d::Undefined())
-{
 }
 
 }  // namespace rotation

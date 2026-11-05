@@ -68,21 +68,6 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(nanobind::modul
             .def("__repr__", &(shiftToString<NumericalSolver>))
 
             .def(
-                "is_defined",
-                &NumericalSolver::isDefined,
-                R"doc(
-                    Check if the numerical solver is defined.
-
-                    Returns:
-                        bool: True if the solver is defined, False otherwise.
-
-                    Example:
-                        >>> solver = NumericalSolver.default()
-                        >>> solver.is_defined()  # True
-                )doc"
-            )
-
-            .def(
                 "get_stepper_type",
                 &NumericalSolver::getStepperType,
                 R"doc(
@@ -387,21 +372,6 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(nanobind::modul
 
                     Example:
                         >>> solver = NumericalSolver.default()
-                        >>> solver.is_defined()  # True
-                )doc"
-            )
-            .def_static(
-                "undefined",
-                &NumericalSolver::Undefined,
-                R"doc(
-                    Create an undefined numerical solver.
-
-                    Returns:
-                        NumericalSolver: An undefined solver.
-
-                    Example:
-                        >>> solver = NumericalSolver.undefined()
-                        >>> solver.is_defined()  # False
                 )doc"
             )
 

@@ -65,21 +65,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(nanobind::m
         .def("__repr__", &(shiftToString<Transformation>))
 
         .def(
-            "is_defined",
-            &Transformation::isDefined,
-            R"doc(
-                Check if the transformation is defined.
-
-                Returns:
-                    bool: True if the transformation is defined.
-
-                Example:
-                    >>> transformation = Transformation.identity()
-                    >>> transformation.is_defined()  # True
-            )doc"
-        )
-
-        .def(
             "get_type",
             &Transformation::getType,
             R"doc(
@@ -161,20 +146,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(nanobind::m
         )
 
         .def_static(
-            "undefined",
-            &Transformation::Undefined,
-            R"doc(
-                Create an undefined transformation.
-
-                Returns:
-                    Transformation: An undefined transformation.
-
-                Example:
-                    >>> transformation = Transformation.undefined()
-                    >>> transformation.is_defined()  # False
-            )doc"
-        )
-        .def_static(
             "identity",
             &Transformation::Identity,
             R"doc(
@@ -185,7 +156,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(nanobind::m
 
                 Example:
                     >>> transformation = Transformation.identity()
-                    >>> transformation.is_defined()  # True
             )doc"
         )
         .def_static(
@@ -204,7 +174,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(nanobind::m
                 Example:
                     >>> translation_vector = Vector3d(1.0, 2.0, 3.0)
                     >>> transformation = Transformation.translation(translation_vector)
-                    >>> transformation.is_defined()  # True
             )doc"
         )
         .def_static(
@@ -223,7 +192,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(nanobind::m
                 Example:
                     >>> rotation_vector = RotationVector(1.0, 2.0, 3.0)
                     >>> transformation = Transformation.rotation(rotation_vector)
-                    >>> transformation.is_defined()  # True
             )doc"
         )
         .def_static(
@@ -242,7 +210,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(nanobind::m
                 Example:
                     >>> rotation_matrix = RotationMatrix(1.0, 2.0, 3.0)
                     >>> transformation = Transformation.rotation(rotation_matrix)
-                    >>> transformation.is_defined()  # True
             )doc"
         )
         .def_static(
@@ -264,7 +231,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(nanobind::m
                     >>> point = Point(1.0, 2.0, 3.0)
                     >>> rotation_vector = RotationVector(1.0, 2.0, 3.0)
                     >>> transformation = Transformation.rotation_around(point, rotation_vector)
-                    >>> transformation.is_defined()  # True
             )doc"
         )
 
@@ -310,7 +276,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(nanobind::m
     // Define enumeration type for a transformation
     enum_<Transformation::Type>(transformation, "Type")
 
-        .value("Undefined", Transformation::Type::Undefined)
         .value("Identity", Transformation::Type::Identity)
         .value("Translation", Transformation::Type::Translation)
         .value("Rotation", Transformation::Type::Rotation)

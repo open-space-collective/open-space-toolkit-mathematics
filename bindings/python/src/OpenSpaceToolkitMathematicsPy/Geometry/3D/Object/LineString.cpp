@@ -23,7 +23,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(nanobind
                 Example:
                     >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
                     >>> line_string = LineString(points)
-                    >>> line_string.is_defined()  # True
             )doc"
     )
 
@@ -38,7 +37,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(nanobind
                 Example:
                 >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
                 >>> line_string = LineString(points)
-                >>> line_string.is_defined()  # True
             )doc",
             arg("points")
         )
@@ -63,21 +61,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(nanobind
         .def("__str__", &(shiftToString<LineString>))
         .def("__repr__", &(shiftToString<LineString>))
 
-        .def(
-            "is_defined",
-            &LineString::isDefined,
-            R"doc(
-                Check if the line string is defined.
-
-                Returns:
-                    bool: True if the line string is defined.
-
-                Example:
-                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
-                    >>> line_string = LineString(points)
-                    >>> line_string.is_defined()  # True
-            )doc"
-        )
         .def(
             "is_empty",
             &LineString::isEmpty,
@@ -215,7 +198,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(nanobind
                 Example:
                     >>> segment = Segment(Point(0.0, 0.0, 0.0), Point(1.0, 1.0, 1.0))
                     >>> line_string = LineString.segment(segment)
-                    >>> line_string.is_defined()  # True
             )doc",
             arg("segment")
         )

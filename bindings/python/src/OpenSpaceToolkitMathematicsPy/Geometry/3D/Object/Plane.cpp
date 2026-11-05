@@ -57,21 +57,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(nanobind::mod
         .def("__repr__", &(shiftToString<Plane>))
 
         .def(
-            "is_defined",
-            &Plane::isDefined,
-            R"doc(
-                Check if the plane is defined.
-
-                Returns:
-                    bool: True if the plane is defined, False otherwise.
-
-                Example:
-                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
-                    >>> plane.is_defined()  # True
-            )doc"
-        )
-
-        .def(
             "intersects",
             overload_cast<const Point&>(&Plane::intersects, const_),
             R"doc(
@@ -400,21 +385,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(nanobind::mod
                     >>> transformed = plane.apply_transformation(transformation)
             )doc",
             arg("transformation")
-        )
-
-        .def_static(
-            "undefined",
-            &Plane::Undefined,
-            R"doc(
-                Create an undefined plane.
-
-                Returns:
-                    Plane: An undefined plane.
-
-                Example:
-                    >>> undefined_plane = Plane.undefined()
-                    >>> undefined_plane.is_defined()  # False
-            )doc"
         )
 
         ;

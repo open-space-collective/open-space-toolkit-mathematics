@@ -18,7 +18,6 @@ class TestPointSet:
         assert point_set is not None
         assert isinstance(point_set, PointSet)
         assert isinstance(point_set, Object)
-        assert point_set.is_defined()
 
         # Construction using python tuple
         point_set = PointSet((point_1, point_2))
@@ -26,14 +25,12 @@ class TestPointSet:
         assert point_set is not None
         assert isinstance(point_set, PointSet)
         assert isinstance(point_set, Object)
-        assert point_set.is_defined()
 
         point_set = PointSet((point_1,))
 
         assert point_set is not None
         assert isinstance(point_set, PointSet)
         assert isinstance(point_set, Object)
-        assert point_set.is_defined()
 
     def test_empty_success(self):
         point_set: Pointset = PointSet.empty()
@@ -41,7 +38,6 @@ class TestPointSet:
         assert point_set is not None
         assert isinstance(point_set, PointSet)
         assert isinstance(point_set, Object)
-        assert point_set.is_defined() is False
         assert point_set.is_empty()
 
     def test_comparators_success(self):
