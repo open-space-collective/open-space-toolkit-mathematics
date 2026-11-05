@@ -6,13 +6,10 @@
     <includes refid="_log_euclidean_riemannian_8hpp" local="no">OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp</includes>
     <includes local="no">Eigen/Eigenvalues</includes>
     <incdepgraph>
-      <node id="7">
-        <label>OpenSpaceToolkit/Core/Type/Real.hpp</label>
-      </node>
-      <node id="12">
+      <node id="11">
         <label>Eigen/Geometry</label>
       </node>
-      <node id="11">
+      <node id="10">
         <label>Eigen/Core</label>
       </node>
       <node id="1">
@@ -22,32 +19,32 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="13">
+      <node id="12">
         <label>Eigen/Eigenvalues</label>
       </node>
-      <node id="8">
+      <node id="7">
         <label>OpenSpaceToolkit/Core/Type/Size.hpp</label>
       </node>
       <node id="5">
         <label>OpenSpaceToolkit/Core/Container/Pair.hpp</label>
       </node>
-      <node id="9">
+      <node id="8">
         <label>OpenSpaceToolkit/Mathematics/Object/Vector.hpp</label>
         <link refid="_vector_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="2">
         <label>OpenSpaceToolkit/Core/Error.hpp</label>
       </node>
-      <node id="10">
+      <node id="9">
         <label>OpenSpaceToolkit/Core/Type/String.hpp</label>
       </node>
       <node id="3">
@@ -62,8 +59,6 @@
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -177,7 +172,7 @@
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>results;</highlight></codeline>
 <codeline lineno="95"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal">Array&lt;MatrixXd&gt;<sp/>LogEuclideanRiemannian::getMatrices()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&lt;MatrixXd&gt;&amp;<sp/>LogEuclideanRiemannian::getMatrices()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="98"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>matrices_;</highlight></codeline>
 <codeline lineno="100"><highlight class="normal">}</highlight></codeline>

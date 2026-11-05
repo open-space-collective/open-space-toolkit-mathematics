@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.Sphere
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Sphere.apply_transformation
       ~Sphere.as_cone
@@ -50,9 +53,5 @@ ostk.mathematics.geometry.d3.object.Sphere
       ~Sphere.is_unitary
       ~Sphere.undefined
       ~Sphere.unit
-   
-   
-
-   
    
    

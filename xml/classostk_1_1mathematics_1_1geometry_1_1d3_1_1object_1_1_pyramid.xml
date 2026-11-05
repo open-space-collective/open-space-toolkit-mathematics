@@ -415,9 +415,9 @@
         </inbodydescription>
         <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="185" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="195" bodyend="210"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8438922f810553cb5ca34e777ef809bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" kindref="compound">Polygon</ref></type>
-        <definition>Polygon ostk::mathematics::geometry::d3::object::Pyramid::getBase</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1acd05d195c9ca2d9bf70ba0d14655ce6f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+        <definition>const Polygon &amp; ostk::mathematics::geometry::d3::object::Pyramid::getBase</definition>
         <argsstring>() const</argsstring>
         <name>getBase</name>
         <briefdescription>
@@ -433,11 +433,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="195" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="212" bodyend="220"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="195" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="212" bodyend="220"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a11b0783c46852783670d9d0aa82fc61a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
-        <definition>Point ostk::mathematics::geometry::d3::object::Pyramid::getApex</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a131237d7c5596d427d5f059774edc862" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>const Point &amp; ostk::mathematics::geometry::d3::object::Pyramid::getApex</definition>
         <argsstring>() const</argsstring>
         <name>getApex</name>
         <briefdescription>
@@ -453,7 +453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="205" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="222" bodyend="230"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="205" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="222" bodyend="230"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aed535ef84d792822dd1105148fb76451" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -854,8 +854,8 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a4df37b7e74dcdbce1d4485e5531a6f65" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1afb8fc0cc19a2ed253abf288c91d6a769" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>contains</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a11b0783c46852783670d9d0aa82fc61a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getApex</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8438922f810553cb5ca34e777ef809bd" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getBase</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a131237d7c5596d427d5f059774edc862" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getApex</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1acd05d195c9ca2d9bf70ba0d14655ce6f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getBase</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aca6a2bed3e225add46016583f1c3baec" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getLateralFaceAt</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aed535ef84d792822dd1105148fb76451" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getLateralFaceCount</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a83e11f308ae9cd0cdfd10a15c4c11335" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getRaysOfLateralFaceAt</name></member>

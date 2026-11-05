@@ -7,6 +7,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="17" column="1"/>
+    <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="21" column="1"/>
   </compounddef>
 </doxygen>

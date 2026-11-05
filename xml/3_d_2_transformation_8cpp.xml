@@ -12,39 +12,28 @@
       <node id="10">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp</label>
         <link refid="3_d_2_object_2_point_8hpp"/>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="12">
-        <label>OpenSpaceToolkit/Core/Type/Real.hpp</label>
-      </node>
-      <node id="15">
+      <node id="13">
         <label>Eigen/Geometry</label>
       </node>
-      <node id="14">
+      <node id="12">
         <label>Eigen/Core</label>
       </node>
       <node id="2">
         <label>OpenSpaceToolkit/Core/Container/Map.hpp</label>
       </node>
-      <node id="17">
+      <node id="15">
         <label>OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</label>
         <link refid="_angle_8hpp"/>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -53,30 +42,26 @@
       <node id="3">
         <label>OpenSpaceToolkit/Core/Container/Pair.hpp</label>
       </node>
-      <node id="18">
+      <node id="16">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp</label>
         <link refid="_rotation_matrix_8hpp"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="13">
+      <node id="11">
         <label>OpenSpaceToolkit/Mathematics/Object/Vector.hpp</label>
         <link refid="_vector_8hpp"/>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -90,11 +75,11 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -119,22 +104,17 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="11">
-        <label>OpenSpaceToolkit/Core/Type/Integer.hpp</label>
-      </node>
-      <node id="16">
+      <node id="14">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp</label>
         <link refid="_rotation_vector_8hpp"/>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="9">
@@ -193,7 +173,7 @@
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!((*this)<sp/>==<sp/>aTransformation);</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal">Transformation<sp/><ref refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1a6028c92c3bd330713db8cab7bc5122e1" kindref="member">Transformation::operator*</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Transformation&amp;<sp/>aTransformation)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">Transformation<sp/><ref refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1afac2153187e870e3844842a1c5248125" kindref="member">Transformation::operator*</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Transformation&amp;<sp/>aTransformation)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="43"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>Transformation<sp/>transformation<sp/>=<sp/>{*</highlight><highlight class="keyword">this</highlight><highlight class="normal">};</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
@@ -202,7 +182,7 @@
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>transformation;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a4a69dcd1bf9592d64b93139e22f15beb" kindref="member">Vector4d</ref><sp/><ref refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1a6028c92c3bd330713db8cab7bc5122e1" kindref="member">Transformation::operator*</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a4a69dcd1bf9592d64b93139e22f15beb" kindref="member">Vector4d</ref>&amp;<sp/>aVector)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a4a69dcd1bf9592d64b93139e22f15beb" kindref="member">Vector4d</ref><sp/><ref refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1afac2153187e870e3844842a1c5248125" kindref="member">Transformation::operator*</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a4a69dcd1bf9592d64b93139e22f15beb" kindref="member">Vector4d</ref>&amp;<sp/>aVector)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="52"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!aVector.isDefined())</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -315,7 +295,7 @@
 <codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="162"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="164"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespaceostk_1_1mathematics_1_1solver_1a880f6ab73ddfe8eae45c0c7f4c6aaaeb" kindref="member">operator&lt;&lt;</ref>(std::ostream&amp;<sp/>anOutputStream,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Transformation&amp;<sp/>aTransformation)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1a36a57a233542af3c746ef3b589873e18" kindref="member">operator&lt;&lt;</ref>(std::ostream&amp;<sp/>anOutputStream,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Transformation&amp;<sp/>aTransformation)</highlight></codeline>
 <codeline lineno="165"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>aTransformation.print(anOutputStream,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"></highlight></codeline>
@@ -357,7 +337,7 @@
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>type_;</highlight></codeline>
 <codeline lineno="204"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"></highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1adadb22c2eddff1e58abea07ad5cd2b78" kindref="member">Matrix4d</ref><sp/>Transformation::getMatrix()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1adadb22c2eddff1e58abea07ad5cd2b78" kindref="member">Matrix4d</ref>&amp;<sp/>Transformation::getMatrix()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="207"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;<ref refid="_eigen_8hpp_1aaa1d139fcb55b1f038ab29d736d07f3d" kindref="member">isDefined</ref>())</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>

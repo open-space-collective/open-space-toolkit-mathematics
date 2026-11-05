@@ -20,7 +20,7 @@ Inheritance diagram for ostk\+::mathematics\+::curvefitting\+::interpolator\+::C
 \item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_af32918b90ad7b87440323e3b0e4a8d6e}{Cubic\+Spline}} (const Vector\+Xd \&an\+X\+Vector, const Vector\+Xd \&a\+Y\+Vector)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_aee7259e030e792e73991125e793f0862}{Cubic\+Spline}} (const Vector\+Xd \&a\+Y\+Vector, const Real \&x0, const Real \&h)
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a7836b2d6eede8b5fe2118871156c64e3}{Cubic\+Spline}} (const Vector\+Xd \&a\+Y\+Vector, double x0, double h)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a458bf216be06ad3ef539343e8397ef44}{$\sim$\+Cubic\+Spline}} () override
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
@@ -38,18 +38,24 @@ virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline}{Cubic\+Spline}}. 
 
-A cubic Spline interpolator is a spline where each piece is a third-\/degree polynomial specified in Spline form, that is by its values and first derivatives at the end points of the corresponding domain interval.
+A cubic spline interpolator is a spline where each piece is a third-\/degree polynomial specified in spline form, that is by its values and first derivatives at the end points of the corresponding domain interval. The resulting interpolant is C2 continuous.
+
+The derivatives at the two end points are estimated from the data.
+
+Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with a cardinal B-\/spline, which finds the containing interval in constant time rather than searching for it, and is therefore faster to evaluate. Which of the two is used is decided from the data and is not otherwise observable.
+
+Use when the data is smooth and only values are known, and a continuous second derivative is wanted. It is the default choice for smooth sampled data.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} x = \{\{0.0, 1.0, 2.0, 3.0\}\};}
-\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} y = \{\{0.0, 1.0, 4.0, 9.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} x = \{\{0.0, 1.0, 2.0, 3.0, 4.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} y = \{\{0.0, 1.0, 4.0, 9.0, 16.0\}\};}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_af32918b90ad7b87440323e3b0e4a8d6e}{CubicSpline}} interpolator(x, y);}
 \DoxyCodeLine{\textcolor{keywordtype}{double} value = interpolator.evaluate(1.5);}
 \end{DoxyCode}
 
 
-\href{https://en.wikipedia.org/wiki/Cubic_Spline_spline\#}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Cubic\+\_\+\+Spline\+\_\+spline\#}}\+:$\sim$\+:text=In\%20numerical\%20analysis\%2C\%20a\%20cubic,of\%20the\%20corresponding\%20domain\%20interval. 
+\href{https://en.wikipedia.org/wiki/Spline_interpolation}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Spline\+\_\+interpolation}} 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_af32918b90ad7b87440323e3b0e4a8d6e}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_af32918b90ad7b87440323e3b0e4a8d6e}} 
@@ -76,15 +82,15 @@ Constructor.
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
-The x values must be sorted in ascending order 
+The x values must be sorted in strictly ascending order 
 
-The x values must be equally spaced 
+At least 5 data points are required 
 \end{DoxyWarning}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_aee7259e030e792e73991125e793f0862}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_aee7259e030e792e73991125e793f0862}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a7836b2d6eede8b5fe2118871156c64e3}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a7836b2d6eede8b5fe2118871156c64e3}} 
 \index{ostk::mathematics::curvefitting::interpolator::CubicSpline@{ostk::mathematics::curvefitting::interpolator::CubicSpline}!CubicSpline@{CubicSpline}}
 \index{CubicSpline@{CubicSpline}!ostk::mathematics::curvefitting::interpolator::CubicSpline@{ostk::mathematics::curvefitting::interpolator::CubicSpline}}
 \doxysubsubsection{\texorpdfstring{CubicSpline()}{CubicSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline\+::\+Cubic\+Spline (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Y\+Vector,  }\item[{const Real \&}]{x0,  }\item[{const Real \&}]{h }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline\+::\+Cubic\+Spline (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Y\+Vector,  }\item[{double}]{x0,  }\item[{double}]{h }\end{DoxyParamCaption})}
 
 
 
@@ -106,9 +112,9 @@ Constructor.
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
-The x values must be sorted in ascending order 
+The spacing must be strictly positive 
 
-The x values must be equally spaced 
+At least 5 data points are required 
 \end{DoxyWarning}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a458bf216be06ad3ef539343e8397ef44}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a458bf216be06ad3ef539343e8397ef44}} 
 \index{ostk::mathematics::curvefitting::interpolator::CubicSpline@{ostk::mathematics::curvefitting::interpolator::CubicSpline}!````~CubicSpline@{$\sim$CubicSpline}}

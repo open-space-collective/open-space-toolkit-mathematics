@@ -42,11 +42,11 @@ virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1obje
 \begin{DoxyCompactList}\small\item\em Check if point set is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_ab40c84e9a4d76cf89471771c74c3126c}{is\+Empty}} () const
 \begin{DoxyCompactList}\small\item\em Check if point set is empty. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aedd7f0ed2b59c5a8713bc83ab2bbdee6}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set, const Real \&a\+Tolerance) const
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_ad7f949840cc8ffe5739d595a2b6b3387}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set, double a\+Tolerance) const
 \begin{DoxyCompactList}\small\item\em Check if point set is near another point set. \end{DoxyCompactList}\item 
 Size \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_af110ae77a421e673d3ede1b39bfea608}{get\+Size}} () const
 \begin{DoxyCompactList}\small\item\em Get size of point set. \end{DoxyCompactList}\item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a0c0b80b471c070b67768752d65a36b66}{distance\+To}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a9da1fc621c4b46b7adacd4d32e6372d3}{distance\+To}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Get distance to point. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_ac94914cb9c81d2fadab4e700088be7da}{get\+Point\+Closest\+To}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Get point closest to another point. \end{DoxyCompactList}\item 
@@ -183,11 +183,11 @@ Pointer to cloned point set
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a8ea8d4074bfaaa3d996d760d5d5751db}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a0c0b80b471c070b67768752d65a36b66}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a0c0b80b471c070b67768752d65a36b66}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a9da1fc621c4b46b7adacd4d32e6372d3}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a9da1fc621c4b46b7adacd4d32e6372d3}} 
 \index{ostk::mathematics::geometry::d3::object::PointSet@{ostk::mathematics::geometry::d3::object::PointSet}!distanceTo@{distanceTo}}
 \index{distanceTo@{distanceTo}!ostk::mathematics::geometry::d3::object::PointSet@{ostk::mathematics::geometry::d3::object::PointSet}}
 \doxysubsubsection{\texorpdfstring{distanceTo()}{distanceTo()}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point\+Set\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point\+Set\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
 
 
 
@@ -196,7 +196,7 @@ Get distance to point.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}} pointSet = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \} \}) ;}
-\DoxyCodeLine{Real distance = pointSet.distanceTo(Point(2.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\textcolor{keywordtype}{double} distance = pointSet.distanceTo(Point(2.0, 0.0, 0.0)) ;}
 \end{DoxyCode}
 
 
@@ -333,11 +333,11 @@ Check if point set is empty.
 \begin{DoxyReturn}{Returns}
 True if point set is empty 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aedd7f0ed2b59c5a8713bc83ab2bbdee6}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aedd7f0ed2b59c5a8713bc83ab2bbdee6}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_ad7f949840cc8ffe5739d595a2b6b3387}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_ad7f949840cc8ffe5739d595a2b6b3387}} 
 \index{ostk::mathematics::geometry::d3::object::PointSet@{ostk::mathematics::geometry::d3::object::PointSet}!isNear@{isNear}}
 \index{isNear@{isNear}!ostk::mathematics::geometry::d3::object::PointSet@{ostk::mathematics::geometry::d3::object::PointSet}}
 \doxysubsubsection{\texorpdfstring{isNear()}{isNear()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point\+Set\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set,  }\item[{const Real \&}]{a\+Tolerance }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point\+Set\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set,  }\item[{double}]{a\+Tolerance }\end{DoxyParamCaption}) const}
 
 
 
@@ -345,7 +345,7 @@ Check if point set is near another point set.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aedd7f0ed2b59c5a8713bc83ab2bbdee6}{isNear}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 1e-\/15, 0.0 \}, \{}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_ad7f949840cc8ffe5739d595a2b6b3387}{isNear}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_aabd317c62ef535b222c6facc6103faf6}{PointSet}}(\{ \{ 0.0, 1e-\/15, 0.0 \}, \{}
 \DoxyCodeLine{0.0, 0.0, 1.0 \} \}), 1e-\/15) ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 

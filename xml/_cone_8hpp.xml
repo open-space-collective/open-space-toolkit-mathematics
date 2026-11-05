@@ -13,62 +13,48 @@
     <includedby refid="_sphere_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.cpp</includedby>
     <includedby refid="3_d_2_object_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp</includedby>
     <incdepgraph>
-      <node id="9">
+      <node id="8">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp</label>
         <link refid="3_d_2_object_2_point_8hpp"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>OpenSpaceToolkit/Core/Type/Real.hpp</label>
-      </node>
-      <node id="14">
-        <label>Eigen/Geometry</label>
-      </node>
-      <node id="13">
-        <label>Eigen/Core</label>
-      </node>
-      <node id="15">
-        <label>OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</label>
-        <link refid="_angle_8hpp"/>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+      </node>
+      <node id="12">
+        <label>Eigen/Geometry</label>
+      </node>
+      <node id="11">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="13">
+        <label>OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</label>
+        <link refid="_angle_8hpp"/>
+        <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>OpenSpaceToolkit/Core/Type/Size.hpp</label>
       </node>
-      <node id="12">
+      <node id="10">
         <label>OpenSpaceToolkit/Mathematics/Object/Vector.hpp</label>
         <link refid="_vector_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="6">
         <label>OpenSpaceToolkit/Core/Error.hpp</label>
       </node>
-      <node id="11">
+      <node id="9">
         <label>OpenSpaceToolkit/Core/Type/String.hpp</label>
-      </node>
-      <node id="10">
-        <label>OpenSpaceToolkit/Core/Type/Integer.hpp</label>
       </node>
       <node id="3">
         <label>OpenSpaceToolkit/Core/Type/Index.hpp</label>
@@ -95,17 +81,15 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="7">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp</label>
         <link refid="_ray_8hpp"/>
-        <childnode refid="8" relation="include">
-        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -246,15 +230,15 @@
 <codeline lineno="199"><highlight class="normal"></highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a0e66cd58ae5abba7d1c183ec5c9daef7" kindref="member">contains</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref>&amp;<sp/>anEllipsoid)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"></highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1af4e2a4ec2ea977f144e7f7e9a0aed779" kindref="member">getApex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a624ce46bddc59df1628c6dc224bd94e2" kindref="member">getApex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"></highlight></codeline>
-<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a8089b763c1415d24136cd42b31a95fee" kindref="member">getAxis</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a8fb724c11e6576669fd4ccd61bd1d256" kindref="member">getAxis</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"></highlight></codeline>
-<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a9ab023a205fcfdb8b12dae5aae10daad" kindref="member">getAngle</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1ab0f4943974a927744af0529178f1dfb2" kindref="member">getAngle</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="241"><highlight class="normal"></highlight></codeline>
 <codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>Array&lt;Ray&gt;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a4531bad0aa524f19588b4458796b3f78" kindref="member">getRaysOfLateralSurface</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Size<sp/>aRayCount<sp/>=<sp/><ref refid="_cone_8hpp_1a95759f940e1d5e70e977d66fa8fcb5ec" kindref="member">DEFAULT_RAY_COUNT</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"></highlight></codeline>
-<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a7325f4a0c092cb59c505d281d0c064b0" kindref="member">distanceTo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref>&amp;<sp/>aPoint)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1ab181755abb659844585de3f496c6927d" kindref="member">distanceTo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref>&amp;<sp/>aPoint)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="263"><highlight class="normal"></highlight></codeline>
 <codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1aff8111459bf4fd52f4890d52ef468c0a" kindref="member">intersectionWith</ref>(</highlight></codeline>
 <codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere" kindref="compound">Sphere</ref>&amp;<sp/>aSphere,</highlight></codeline>

@@ -1,0 +1,474 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::curvefitting::interpolator::QuinticHermite</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator" prot="public" virt="non-virtual">ostk::mathematics::curvefitting::Interpolator</basecompoundref>
+    <includes refid="_quintic_hermite_8hpp" local="no">QuinticHermite.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1ace0e4302cdc3f0bac37275d252314c18" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; cardinal_quintic_hermite&lt; std::vector&lt; double &gt; &gt; &gt;</type>
+        <definition>std::optional&lt;cardinal_quintic_hermite&lt;std::vector&lt;double&gt; &gt; &gt; ostk::mathematics::curvefitting::interpolator::QuinticHermite::cardinalInterpolator_</definition>
+        <argsstring></argsstring>
+        <name>cardinalInterpolator_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="185" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1ab51f87b8e8270b6e8358c8a35e829656" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; quintic_hermite&lt; std::vector&lt; double &gt; &gt; &gt;</type>
+        <definition>std::optional&lt;quintic_hermite&lt;std::vector&lt;double&gt; &gt; &gt; ostk::mathematics::curvefitting::interpolator::QuinticHermite::interpolator_</definition>
+        <argsstring></argsstring>
+        <name>interpolator_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="186" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a74827396ebbd0fc546065ad74c6f0dae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::QuinticHermite::QuinticHermite</definition>
+        <argsstring>(const VectorXd &amp;anXVector, const VectorXd &amp;aYVector, const VectorXd &amp;aDyDxVector, const VectorXd &amp;aD2yDx2Vector)</argsstring>
+        <name>QuinticHermite</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>anXVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aYVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aDyDxVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aD2yDx2Vector</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a74827396ebbd0fc546065ad74c6f0dae" kindref="member">QuinticHermite</ref><sp/>quinticHermite(x,<sp/>y,<sp/>dydx,<sp/>d2ydx2);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>anXVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aYVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of y values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aDyDxVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of first derivative values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aD2yDx2Vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of second derivative values</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>The x values must be sorted in strictly ascending order </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="73" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.cpp" bodystart="18" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a2f860c81b7dbc871e3d3fdcb856d5cc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::QuinticHermite::QuinticHermite</definition>
+        <argsstring>(const VectorXd &amp;aYVector, const VectorXd &amp;aDyDxVector, const VectorXd &amp;aD2yDx2Vector, double x0, double h)</argsstring>
+        <name>QuinticHermite</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aYVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aDyDxVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aD2yDx2Vector</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a74827396ebbd0fc546065ad74c6f0dae" kindref="member">QuinticHermite</ref><sp/>quinticHermite(y,<sp/>dydx,<sp/>d2ydx2,<sp/>0.0,<sp/>1.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aYVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of y values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aDyDxVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of first derivative values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aD2yDx2Vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of second derivative values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first x value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The spacing between x values</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>The spacing must be strictly positive </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="90" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.cpp" bodystart="68" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1aaba4f7640e974a3b7e868ce99d1f50e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::QuinticHermite::~QuinticHermite</definition>
+        <argsstring>() override</argsstring>
+        <name>~QuinticHermite</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Called<sp/>automatically<sp/>when<sp/>the<sp/>QuinticHermite<sp/>goes<sp/>out<sp/>of<sp/>scope</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="99" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.cpp" bodystart="102" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a4987b498bd8b163d61c9465b9abaf1d2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::QuinticHermite::evaluate</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const override</argsstring>
+        <name>evaluate</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a2e5f87beae48daf0ebbd4da6c0fdcb77">evaluate</reimplements>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the quintic Hermite interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>values<sp/>=<sp/>quinticHermite.evaluate({1.0,<sp/>1.5,<sp/>2.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of y values</para>
+</simplesect>
+<simplesect kind="warning"><para>The query values must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="111" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.cpp" bodystart="104" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1acac2251213d4d9b3fbe5bad72dfc900d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::QuinticHermite::evaluate</definition>
+        <argsstring>(const double &amp;aQueryValue) const override</argsstring>
+        <name>evaluate</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1aae0c8423f11e7aa9f764ee4973070c36">evaluate</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the quintic Hermite interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>quinticHermite.evaluate(1.5)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The y value</para>
+</simplesect>
+<simplesect kind="warning"><para>The query value must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="123" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.cpp" bodystart="116" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a46d578903c780a04b4ab9515db9932bb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::QuinticHermite::computeDerivative</definition>
+        <argsstring>(const double &amp;aQueryValue) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ab17940ffe4064348fa33990424cb4983">computeDerivative</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivative at a specific query value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>derivative<sp/>=<sp/>quinticHermite.computeDerivative(1.5)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The derivative at the given x value</para>
+</simplesect>
+<simplesect kind="warning"><para>The query value must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="135" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.cpp" bodystart="121" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1afb29b4bd4d54fa174cc41c9799dd2f0f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::QuinticHermite::computeDerivative</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1af32075ac2a7f44c83f1a17b43cec78ad">computeDerivative</reimplements>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivatives at multiple query values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>derivatives<sp/>=<sp/>quinticHermite.computeDerivative({1.0,<sp/>1.5,<sp/>2.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of derivatives at the given x values</para>
+</simplesect>
+<simplesect kind="warning"><para>The query values must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="147" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.cpp" bodystart="127" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a594397685f6e6e4215bbfd7b20268d94" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::QuinticHermite::computeSecondDerivative</definition>
+        <argsstring>(const double &amp;aQueryValue) const</argsstring>
+        <name>computeSecondDerivative</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Compute the second derivative at a specific query value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>secondDerivative<sp/>=<sp/>quinticHermite.computeSecondDerivative(1.5)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The second derivative at the given x value</para>
+</simplesect>
+<simplesect kind="warning"><para>The query value must lie within the interpolation domain </para>
+</simplesect>
+<simplesect kind="warning"><para>Throws for uniformly spaced nodes when built against Boost older than 1.93, whose cardinal quintic Hermite spline computes a wrong second derivative for a spacing other than 1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="161" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.cpp" bodystart="139" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1ae4a796c476626127c570b665995ed7ba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::QuinticHermite::computeSecondDerivative</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const</argsstring>
+        <name>computeSecondDerivative</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Compute the second derivatives at multiple query values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>secondDerivatives<sp/>=<sp/>quinticHermite.computeSecondDerivative({1.0,<sp/>2.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of second derivatives at the given x values</para>
+</simplesect>
+<simplesect kind="warning"><para>The query values must lie within the interpolation domain </para>
+</simplesect>
+<simplesect kind="warning"><para>Throws for uniformly spaced nodes when built against Boost older than 1.93, whose cardinal quintic Hermite spline computes a wrong second derivative for a spacing other than 1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="175" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.cpp" bodystart="157" bodyend="167"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite" kindref="compound">QuinticHermite</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A quintic Hermite spline is a piecewise fifth-degree polynomial which matches the value, the first derivative and the second derivative of the underlying function at every node. The resulting interpolant is C2 continuous.</para>
+<para>Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with a cardinal Hermite spline, which finds the containing interval in constant time rather than searching for it, and is therefore faster to evaluate. Which of the two is used is decided from the data and is not otherwise observable, with one exception: the second derivative of the cardinal Hermite spline is only available with Boost 1.93 or later (see computeSecondDerivative).</para>
+<para>Use when the first and second derivatives are known at every sample, for instance velocity and acceleration alongside position. They are honoured exactly, and each interval depends only on its two end nodes.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>x<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>2.0,<sp/>3.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>y<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>4.0,<sp/>9.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>dydx<sp/>=<sp/>{{0.0,<sp/>2.0,<sp/>4.0,<sp/>6.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>d2ydx2<sp/>=<sp/>{{2.0,<sp/>2.0,<sp/>2.0,<sp/>2.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a74827396ebbd0fc546065ad74c6f0dae" kindref="member">QuinticHermite</ref><sp/>interpolator(x,<sp/>y,<sp/>dydx,<sp/>d2ydx2);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>interpolator.evaluate(1.5);</highlight></codeline>
+</programlisting></para>
+<para><ulink url="https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/quintic_hermite.html">https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/quintic_hermite.html</ulink> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ostk::mathematics::curvefitting::Interpolator</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::curvefitting::interpolator::QuinticHermite</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ostk::mathematics::curvefitting::Interpolator</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::curvefitting::interpolator::QuinticHermite</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" line="59" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp" bodystart="58" bodyend="187"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1ace0e4302cdc3f0bac37275d252314c18" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>cardinalInterpolator_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a46d578903c780a04b4ab9515db9932bb" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>computeDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1afb29b4bd4d54fa174cc41c9799dd2f0f" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>computeDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a594397685f6e6e4215bbfd7b20268d94" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>computeSecondDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1ae4a796c476626127c570b665995ed7ba" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>computeSecondDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a4987b498bd8b163d61c9465b9abaf1d2" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1acac2251213d4d9b3fbe5bad72dfc900d" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>GenerateInterpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a3e596528cd5e416546dabe45e9100e04" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>getInterpolationType</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6593f90bb974214f6f2b264bc114b96e" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>Interpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1ab51f87b8e8270b6e8358c8a35e829656" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>interpolator_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a171aae7fe231c3e7b15568d45650e8b0" prot="protected" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>IsUniformlySpaced</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a74827396ebbd0fc546065ad74c6f0dae" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>QuinticHermite</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1a2f860c81b7dbc871e3d3fdcb856d5cc7" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>QuinticHermite</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>Type</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ac980e413bfeb65eceb347e787899c1f4" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>~Interpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_1aaba4f7640e974a3b7e868ce99d1f50e9" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticHermite</scope><name>~QuinticHermite</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

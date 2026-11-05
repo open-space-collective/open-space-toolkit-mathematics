@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="267" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" bodystart="267" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="263" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" bodystart="263" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1ae3f1e066de5257075d1e4f7e37b031e4" prot="private" static="no" mutable="no">
         <type>Vector3d</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="268" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" bodystart="268" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="264" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" bodystart="264" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="56" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="24" bodyend="38"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="52" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="24" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1ad6ef8e1e883a675f054a790093c152b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> *</type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="65" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="40" bodyend="43"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="61" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="40" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a361468984adc4da8b25c39047c5a8279" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -126,7 +126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="76" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="45" bodyend="53"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="72" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="45" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a3237ba10bd95161a2190915d8b6c1bdd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -159,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="87" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="55" bodyend="58"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="83" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="55" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a402bf991d7974383a2766f12367681cd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -179,7 +179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="96" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="60" bodyend="63"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="92" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="60" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a6f9353b78f7f3d3c8824c29a97bd172e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -213,7 +213,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="108" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="65" bodyend="68"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="104" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="65" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a46135e8dd6b6821f0d5e137f479f8997" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -247,7 +247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="120" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="76" bodyend="104"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="116" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="76" bodyend="104"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1aa4aea4e829d688aeaa26440f211e9218" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -281,7 +281,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="132" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="106" bodyend="109"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="128" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="106" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a72bb7ad7136e99d98c580cd5a26728b5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -315,7 +315,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="144" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="111" bodyend="114"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="140" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="111" bodyend="114"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a21258f62dee6d2ce47cc7dc5ce758f95" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -349,7 +349,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="156" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="116" bodyend="131"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="152" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="116" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1aaa1043541f46cbf9939ccb1f24ab8ee9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -383,11 +383,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="168" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="133" bodyend="153"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="164" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="133" bodyend="153"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a64e20625495d9d302afe9c8edcb87ff9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
-        <definition>Point ostk::mathematics::geometry::d3::object::Ray::getOrigin</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1ac84774bdeaa56d62b517f930e19858ff" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>const Point &amp; ostk::mathematics::geometry::d3::object::Ray::getOrigin</definition>
         <argsstring>() const</argsstring>
         <name>getOrigin</name>
         <briefdescription>
@@ -402,11 +402,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="177" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="155" bodyend="163"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="173" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="155" bodyend="163"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a5154c1a63676ebf5948aaa544a819608" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Vector3d</type>
-        <definition>Vector3d ostk::mathematics::geometry::d3::object::Ray::getDirection</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a090d2d72884fab21d0a1ecccdb8aa5e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const Vector3d &amp;</type>
+        <definition>const Vector3d &amp; ostk::mathematics::geometry::d3::object::Ray::getDirection</definition>
         <argsstring>() const</argsstring>
         <name>getDirection</name>
         <briefdescription>
@@ -421,11 +421,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="186" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="165" bodyend="173"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="182" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="165" bodyend="173"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a4582d8b43bf47e6d1ede6102425d905c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Real</type>
-        <definition>Real ostk::mathematics::geometry::d3::object::Ray::distanceTo</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a32884401a156fe00848f4df46e048ee9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::geometry::d3::object::Ray::distanceTo</definition>
         <argsstring>(const Point &amp;aPoint) const</argsstring>
         <name>distanceTo</name>
         <param>
@@ -437,7 +437,7 @@
         </briefdescription>
         <detaileddescription>
 <para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a0d244c15c77e18801be99d79a100420a" kindref="member">Ray</ref><sp/>ray<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a0d244c15c77e18801be99d79a100420a" kindref="member">Ray</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>})<sp/>;</highlight></codeline>
-<codeline><highlight class="normal">Real<sp/>distance<sp/>=<sp/>ray.distanceTo(Point(1.0,<sp/>0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>distance<sp/>=<sp/>ray.distanceTo(Point(1.0,<sp/>0.0,<sp/>0.0))<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -454,7 +454,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="197" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="175" bodyend="200"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="193" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="175" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a71557ba02108ba09422fb3c2b2c8ed68" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -488,7 +488,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="209" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="202" bodyend="240"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="205" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="202" bodyend="240"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a29e402d81639c9a6d094181d8c4ed1c7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -535,7 +535,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="222" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="242" bodyend="245"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="218" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="242" bodyend="245"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a17a3946028e0de16727f63d3f3e6f69d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -582,7 +582,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="235" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="247" bodyend="250"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="231" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="247" bodyend="250"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1af5e5dea5fe393ea9a76fd3b2638f9446" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -626,7 +626,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="245" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="252" bodyend="262"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="241" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="252" bodyend="262"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a3a226ee06322255306b029e004dac647" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -658,7 +658,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="255" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="264" bodyend="278"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="251" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="264" bodyend="278"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -679,7 +679,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="264" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="280" bodyend="283"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="260" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp" bodystart="280" bodyend="283"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -714,7 +714,7 @@
         <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" bodystart="45" bodyend="269"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" line="42" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp" bodystart="41" bodyend="265"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a3a226ee06322255306b029e004dac647" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>as</name></member>
@@ -723,9 +723,9 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1aaa1043541f46cbf9939ccb1f24ab8ee9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1ae3f1e066de5257075d1e4f7e37b031e4" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>direction_</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a4582d8b43bf47e6d1ede6102425d905c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>distanceTo</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a5154c1a63676ebf5948aaa544a819608" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>getDirection</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a64e20625495d9d302afe9c8edcb87ff9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>getOrigin</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a32884401a156fe00848f4df46e048ee9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>distanceTo</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a090d2d72884fab21d0a1ecccdb8aa5e0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>getDirection</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1ac84774bdeaa56d62b517f930e19858ff" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>getOrigin</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a71557ba02108ba09422fb3c2b2c8ed68" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>intersectionWith</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a29e402d81639c9a6d094181d8c4ed1c7" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>intersectionWith</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a17a3946028e0de16727f63d3f3e6f69d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ray</scope><name>intersectionWith</name></member>

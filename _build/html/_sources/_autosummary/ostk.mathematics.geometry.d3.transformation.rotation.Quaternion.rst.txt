@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.transformation.rotation.Quaternion
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Quaternion.angular_difference_with
       ~Quaternion.conjugate
@@ -55,9 +58,5 @@ ostk.mathematics.geometry.d3.transformation.rotation.Quaternion
       ~Quaternion.xyzs
       ~Quaternion.y
       ~Quaternion.z
-   
-   
-
-   
    
    

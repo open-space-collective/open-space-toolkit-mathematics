@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.Segment
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Segment.apply_transformation
       ~Segment.as_cone
@@ -54,9 +57,5 @@ ostk.mathematics.geometry.d3.object.Segment
       ~Segment.is_sphere
       ~Segment.to_line
       ~Segment.undefined
-   
-   
-
-   
    
    

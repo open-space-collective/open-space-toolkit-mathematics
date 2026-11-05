@@ -34,15 +34,11 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac80d99178
 \begin{DoxyCompactList}\small\item\em Check if interval contains value. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a83de87f899ef154f8364c875a45e89b5}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} \&an\+Interval) const
 \begin{DoxyCompactList}\small\item\em Check if interval contains another interval. \end{DoxyCompactList}\item 
-const T \& \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac2e35a2096405efb9a7ab511a1c2e532}{access\+Lower\+Bound}} () const
-\begin{DoxyCompactList}\small\item\em Get reference to lower bound. \end{DoxyCompactList}\item 
-const T \& \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a575cb7312386085246bed0ee94aeda56}{access\+Upper\+Bound}} () const
-\begin{DoxyCompactList}\small\item\em Get reference to upper bound. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201}{Interval\+::\+Type}} \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_aed3a6e8e931beaa732211ccb44e2c43d}{get\+Type}} () const
 \begin{DoxyCompactList}\small\item\em Get interval type. \end{DoxyCompactList}\item 
-T \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a79e64fd3c8faa78c8b62859c5b095b60}{get\+Lower\+Bound}} () const
+const T \& \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a2b78835906fd8e7b5421640fc0043e40}{get\+Lower\+Bound}} () const
 \begin{DoxyCompactList}\small\item\em Get lower bound. \end{DoxyCompactList}\item 
-T \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a17efb397c97eb600f37fbe3e8517df4b}{get\+Upper\+Bound}} () const
+const T \& \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a1176385435c39731f85f0fe2e4e0f875}{get\+Upper\+Bound}} () const
 \begin{DoxyCompactList}\small\item\em Get upper bound. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a2d06470c41c25401977c6a1b0da578e1}{get\+Intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} \&an\+Interval) const
 \begin{DoxyCompactList}\small\item\em Get intersecting interval with another interval. \end{DoxyCompactList}\item 
@@ -105,7 +101,7 @@ Set of numbers with the property that any number that lies between two numbers i
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval(0.0, 1.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e}{Interval<Real>::Type::Closed}});}
+\DoxyCodeLine{Interval<double> interval(0.0, 1.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e}{Interval<double>::Type::Closed}});}
 \end{DoxyCode}
 
 
@@ -125,7 +121,7 @@ Constructor.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval(0.0, 1.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e}{Interval::Type::Closed}}) ;}
+\DoxyCodeLine{Interval<double> interval(0.0, 1.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e}{Interval::Type::Closed}}) ;}
 \end{DoxyCode}
 
 
@@ -141,48 +137,6 @@ Constructor.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_ac2e35a2096405efb9a7ab511a1c2e532}\label{classostk_1_1mathematics_1_1object_1_1_interval_ac2e35a2096405efb9a7ab511a1c2e532}} 
-\index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!accessLowerBound@{accessLowerBound}}
-\index{accessLowerBound@{accessLowerBound}!ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{accessLowerBound()}{accessLowerBound()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-const T\& \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::access\+Lower\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Get reference to lower bound. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
-\DoxyCodeLine{interval.accessLowerBound() ; \textcolor{comment}{// \&0.0}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Reference to lower bound 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a575cb7312386085246bed0ee94aeda56}\label{classostk_1_1mathematics_1_1object_1_1_interval_a575cb7312386085246bed0ee94aeda56}} 
-\index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!accessUpperBound@{accessUpperBound}}
-\index{accessUpperBound@{accessUpperBound}!ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{accessUpperBound()}{accessUpperBound()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-const T\& \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::access\+Upper\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Get reference to upper bound. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
-\DoxyCodeLine{interval.accessUpperBound() ; \textcolor{comment}{// \&1.0}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Reference to upper bound 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_ad3ed5f62f822cf770b439c1aa6283639}\label{classostk_1_1mathematics_1_1object_1_1_interval_ad3ed5f62f822cf770b439c1aa6283639}} 
 \index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!Clip@{Clip}}
 \index{Clip@{Clip}!ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}}
@@ -196,12 +150,12 @@ Creates a new array of Intervals clipped by the provided \mbox{\hyperlink{classo
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Array<Interval<Real>> unclipped = \{}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(-\/1.0, 1.0),}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(2.0, 4.0),}
+\DoxyCodeLine{Array<Interval<double>> unclipped = \{}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(-\/1.0, 1.0),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(2.0, 4.0),}
 \DoxyCodeLine{\};}
-\DoxyCodeLine{\textcolor{keyword}{const} Interval<Real> clipper = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 3.0);}
-\DoxyCodeLine{Array<Interval<Real>> clipped = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ad3ed5f62f822cf770b439c1aa6283639}{Interval<Real>::Clip}}(unclipped, clipper);}
+\DoxyCodeLine{\textcolor{keyword}{const} Interval<double> clipper = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 3.0);}
+\DoxyCodeLine{Array<Interval<double>> clipped = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ad3ed5f62f822cf770b439c1aa6283639}{Interval<double>::Clip}}(unclipped, clipper);}
 \DoxyCodeLine{\textcolor{comment}{// \{[0.0, 1.0], [2.0, 3.0]\}}}
 \end{DoxyCode}
 
@@ -222,7 +176,7 @@ Constructs a closed interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ; \textcolor{comment}{// [0.0, 1.0]}}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ; \textcolor{comment}{// [0.0, 1.0]}}
 \end{DoxyCode}
 
 
@@ -242,7 +196,7 @@ Check if interval contains another interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0).contains(\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<Real>::Open}}(0.2, 0.8)) ; \textcolor{comment}{// True}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0).contains(\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<double>::Open}}(0.2, 0.8)) ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
 
@@ -267,7 +221,7 @@ Check if interval contains value.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0).contains(0.5) ; \textcolor{comment}{// True}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0).contains(0.5) ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
 
@@ -292,8 +246,8 @@ Generate array with a given size, respecting the openness of the interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
-\DoxyCodeLine{Array<Real> array = interval.generateArrayWithSize(3) ; \textcolor{comment}{// [0.0, 0.5, 1.0]}}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{Array<double> array = interval.generateArrayWithSize(3) ; \textcolor{comment}{// [0.0, 0.5, 1.0]}}
 \end{DoxyCode}
 
 
@@ -319,8 +273,8 @@ Generate array from a given step, respecting the openness of the interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
-\DoxyCodeLine{Array<Real> array = interval.generateArrayWithStep(0.5) ; \textcolor{comment}{// [0.0, 0.5, 1.0]}}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{Array<double> array = interval.generateArrayWithStep(0.5) ; \textcolor{comment}{// [0.0, 0.5, 1.0]}}
 \end{DoxyCode}
 
 
@@ -345,12 +299,12 @@ Creates a new array that contains the gaps between an array of intervals. If an 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Array<Interval<Real>> intervals = \{}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(-\/1.0, 1.0),}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(2.0, 4.0),}
+\DoxyCodeLine{Array<Interval<double>> intervals = \{}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(-\/1.0, 1.0),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(2.0, 4.0),}
 \DoxyCodeLine{\};}
-\DoxyCodeLine{\textcolor{keyword}{const} Interval<Real> bounds = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(1.5, 4.5)}
-\DoxyCodeLine{Array<\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a625893384a0eea6cedbe88172764a525}{Interval}}<Real>> gaps = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a625893384a0eea6cedbe88172764a525}{Interval}}<Real>::\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3b1b3713ef5cbc3287bb0591e8deae53}{GetGaps}}(intervals, bounds);}
+\DoxyCodeLine{\textcolor{keyword}{const} Interval<double> bounds = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(1.5, 4.5)}
+\DoxyCodeLine{Array<\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a625893384a0eea6cedbe88172764a525}{Interval}}<\textcolor{keywordtype}{double}>> gaps = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a625893384a0eea6cedbe88172764a525}{Interval}}<\textcolor{keywordtype}{double}>::\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3b1b3713ef5cbc3287bb0591e8deae53}{GetGaps}}(intervals, bounds);}
 \DoxyCodeLine{\textcolor{comment}{// \{[1.5, 2.0], [4.0, 4.5]\}}}
 \end{DoxyCode}
 
@@ -371,9 +325,9 @@ Get intersecting interval with another interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> firstInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
-\DoxyCodeLine{Interval<Real> secondInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.5, 1.5) ;}
-\DoxyCodeLine{Interval<Real> intersection = firstInterval.getIntersectionWith(secondInterval) ; \textcolor{comment}{//}}
+\DoxyCodeLine{Interval<double> firstInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{Interval<double> secondInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.5, 1.5) ;}
+\DoxyCodeLine{Interval<double> intersection = firstInterval.getIntersectionWith(secondInterval) ; \textcolor{comment}{//}}
 \DoxyCodeLine{[0.5, 1.0]}
 \end{DoxyCode}
 
@@ -386,12 +340,12 @@ Get intersecting interval with another interval.
 \begin{DoxyReturn}{Returns}
 Intersecting interval 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a79e64fd3c8faa78c8b62859c5b095b60}\label{classostk_1_1mathematics_1_1object_1_1_interval_a79e64fd3c8faa78c8b62859c5b095b60}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a2b78835906fd8e7b5421640fc0043e40}\label{classostk_1_1mathematics_1_1object_1_1_interval_a2b78835906fd8e7b5421640fc0043e40}} 
 \index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!getLowerBound@{getLowerBound}}
 \index{getLowerBound@{getLowerBound}!ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{getLowerBound()}{getLowerBound()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-T \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::get\+Lower\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+const T\& \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::get\+Lower\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -399,13 +353,13 @@ Get lower bound.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
 \DoxyCodeLine{interval.getLowerBound() ; \textcolor{comment}{// 0.0}}
 \end{DoxyCode}
 
 
 \begin{DoxyReturn}{Returns}
-Lower bound 
+Const reference to lower bound 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_aed3a6e8e931beaa732211ccb44e2c43d}\label{classostk_1_1mathematics_1_1object_1_1_interval_aed3a6e8e931beaa732211ccb44e2c43d}} 
 \index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!getType@{getType}}
@@ -420,8 +374,8 @@ Get interval type.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
-\DoxyCodeLine{interval.getType() ; \textcolor{comment}{// Interval<Real>::Type::Closed}}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{interval.getType() ; \textcolor{comment}{// Interval<double>::Type::Closed}}
 \end{DoxyCode}
 
 
@@ -441,9 +395,9 @@ Get union interval with another interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> firstInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
-\DoxyCodeLine{Interval<Real> secondInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.5, 1.5) ;}
-\DoxyCodeLine{Interval<Real> \textcolor{keyword}{union }= firstInterval.getUnionWith(secondInterval) ; \textcolor{comment}{// [0.0, 1.5]}}
+\DoxyCodeLine{Interval<double> firstInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{Interval<double> secondInterval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.5, 1.5) ;}
+\DoxyCodeLine{Interval<double> \textcolor{keyword}{union }= firstInterval.getUnionWith(secondInterval) ; \textcolor{comment}{// [0.0, 1.5]}}
 \end{DoxyCode}
 
 
@@ -455,12 +409,12 @@ Get union interval with another interval.
 \begin{DoxyReturn}{Returns}
 Union interval 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a17efb397c97eb600f37fbe3e8517df4b}\label{classostk_1_1mathematics_1_1object_1_1_interval_a17efb397c97eb600f37fbe3e8517df4b}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_a1176385435c39731f85f0fe2e4e0f875}\label{classostk_1_1mathematics_1_1object_1_1_interval_a1176385435c39731f85f0fe2e4e0f875}} 
 \index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!getUpperBound@{getUpperBound}}
 \index{getUpperBound@{getUpperBound}!ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{getUpperBound()}{getUpperBound()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-T \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::get\+Upper\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+const T\& \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::mathematics\+::object\+::\+Interval}}$<$ T $>$\+::get\+Upper\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -468,13 +422,13 @@ Get upper bound.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
 \DoxyCodeLine{interval.getUpperBound() ; \textcolor{comment}{// 1.0}}
 \end{DoxyCode}
 
 
 \begin{DoxyReturn}{Returns}
-Upper bound 
+Const reference to upper bound 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1object_1_1_interval_ac0553ec6683fa168ae0beb39d1a4377a}\label{classostk_1_1mathematics_1_1object_1_1_interval_ac0553ec6683fa168ae0beb39d1a4377a}} 
 \index{ostk::mathematics::object::Interval$<$ T $>$@{ostk::mathematics::object::Interval$<$ T $>$}!HalfOpenLeft@{HalfOpenLeft}}
@@ -489,7 +443,7 @@ Constructs an half-\/open left interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac0553ec6683fa168ae0beb39d1a4377a}{Interval<Real>::HalfOpenLeft}}(0.0, 1.0) ; \textcolor{comment}{// ]0.0, 1.0]}}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac0553ec6683fa168ae0beb39d1a4377a}{Interval<double>::HalfOpenLeft}}(0.0, 1.0) ; \textcolor{comment}{// ]0.0, 1.0]}}
 \end{DoxyCode}
 
 
@@ -509,7 +463,7 @@ Constructs an half-\/open right interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac7c309f97e84496b0520879137fb26a4}{Interval<Real>::HalfOpenRight}}(0.0, 1.0) ; \textcolor{comment}{// [0.0, 1.0[}}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac7c309f97e84496b0520879137fb26a4}{Interval<double>::HalfOpenRight}}(0.0, 1.0) ; \textcolor{comment}{// [0.0, 1.0[}}
 \end{DoxyCode}
 
 
@@ -529,7 +483,7 @@ Check if interval is intersecting with another interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0).intersects(\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.5, 1.5)) ; \textcolor{comment}{// True}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0).intersects(\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.5, 1.5)) ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
 
@@ -554,7 +508,7 @@ Check if interval is defined.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0).isDefined() ; \textcolor{comment}{// True}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0).isDefined() ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
 
@@ -574,7 +528,7 @@ Check if interval is degenerate, i.\+e. its lower and upper bounds are the equal
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(1.0, 1.0).isDegenerate() ; \textcolor{comment}{// True}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(1.0, 1.0).isDegenerate() ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
 
@@ -594,18 +548,18 @@ Creates a new array that contains the intervals representing a logical \textquot
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Array<Interval<Real>> anIntervalArray = \{}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(-\/1.0, 1.0),}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(2.0, 4.0),}
+\DoxyCodeLine{Array<Interval<double>> anIntervalArray = \{}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(-\/1.0, 1.0),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(2.0, 4.0),}
 \DoxyCodeLine{\};}
 \DoxyCodeLine{}
-\DoxyCodeLine{Array<Interval<Real>> anotherIntervalArray = \{}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<Real>::Open}}(0.5, 1.5),}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<Real>::Open}}(3.0, 5.0),}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<Real>::Open}}(7.0, 8.0),}
+\DoxyCodeLine{Array<Interval<double>> anotherIntervalArray = \{}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<double>::Open}}(0.5, 1.5),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<double>::Open}}(3.0, 5.0),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<double>::Open}}(7.0, 8.0),}
 \DoxyCodeLine{\};}
 \DoxyCodeLine{}
-\DoxyCodeLine{Array<Interval<Real>> logicalAnd = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a2bf375749b313b2e534b1a42d23b6583}{Interval<Real>::LogicalAnd}}(anIntervalArray,}
+\DoxyCodeLine{Array<Interval<double>> logicalAnd = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a2bf375749b313b2e534b1a42d23b6583}{Interval<double>::LogicalAnd}}(anIntervalArray,}
 \DoxyCodeLine{anotherIntervalArray);}
 \DoxyCodeLine{\textcolor{comment}{// \{(0.5, 1.0), [2.0, 4.0]\}}}
 \end{DoxyCode}
@@ -627,18 +581,18 @@ Creates a new array that contains the intervals representing a logical \textquot
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Array<Interval<Real>> anIntervalArray = \{}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(-\/1.0, 1.0),}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(2.0, 4.0),}
+\DoxyCodeLine{Array<Interval<double>> anIntervalArray = \{}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(-\/1.0, 1.0),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(2.0, 4.0),}
 \DoxyCodeLine{\};}
 \DoxyCodeLine{}
-\DoxyCodeLine{Array<Interval<Real>> anotherIntervalArray = \{}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<Real>::Open}}(0.5, 1.5),}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<Real>::Open}}(3.0, 5.0),}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<Real>::Open}}(7.0, 8.0),}
+\DoxyCodeLine{Array<Interval<double>> anotherIntervalArray = \{}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<double>::Open}}(0.5, 1.5),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<double>::Open}}(3.0, 5.0),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<double>::Open}}(7.0, 8.0),}
 \DoxyCodeLine{\};}
 \DoxyCodeLine{}
-\DoxyCodeLine{Array<Interval<Real>> logicalOr = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a4a08b629ac0bd654b51ff0c8210ce217}{Interval<Real>::LogicalOr}}(anIntervalArray,}
+\DoxyCodeLine{Array<Interval<double>> logicalOr = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a4a08b629ac0bd654b51ff0c8210ce217}{Interval<double>::LogicalOr}}(anIntervalArray,}
 \DoxyCodeLine{anotherIntervalArray);}
 \DoxyCodeLine{\textcolor{comment}{// \{[-\/1.0, 1.5), [2.0, 5.0), (7.0, 8.0)\}}}
 \end{DoxyCode}
@@ -660,12 +614,13 @@ Creates a new array without any overlaps and sorted by their lower bound.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Array<Interval<Real>> array = \{}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(-\/1.0, 1.0),}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(-\/2.0, 0.0),}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(3.0, 4.0),}
+\DoxyCodeLine{Array<Interval<double>> array = \{}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(-\/1.0, 1.0),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(-\/2.0, 0.0),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(3.0, 4.0),}
 \DoxyCodeLine{\};}
-\DoxyCodeLine{Array<Interval<Real>> merged = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac896cb95eb898a697f0b8c55f5f16f4b}{Interval<Real>::Merge}}(array); \textcolor{comment}{// \{[-\/2.0, 1.0], [3.0, 4.0]\}}}
+\DoxyCodeLine{Array<Interval<double>> merged = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac896cb95eb898a697f0b8c55f5f16f4b}{Interval<double>::Merge}}(array); \textcolor{comment}{// \{[-\/2.0, 1.0],}}
+\DoxyCodeLine{[3.0, 4.0]\}}
 \end{DoxyCode}
 
 
@@ -685,7 +640,7 @@ Constructs an open interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<Real>::Open}}(0.0, 1.0) ; \textcolor{comment}{// ]0.0, 1.0[}}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<double>::Open}}(0.0, 1.0) ; \textcolor{comment}{// ]0.0, 1.0[}}
 \end{DoxyCode}
 
 
@@ -705,7 +660,7 @@ Not equal to operator.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) != \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<Real>::Open}}(0.0, 1.0) ; \textcolor{comment}{// True}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) != \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a0dc8428f4db393e2ae009e2a8730c8c2}{Interval<double>::Open}}(0.0, 1.0) ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
 
@@ -730,7 +685,7 @@ Equal to operator.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) == \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ; \textcolor{comment}{// True}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) == \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
 
@@ -755,7 +710,7 @@ Constructs an interval from a given string.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac57a376cb40367712a31e57b82d4bf96}{Interval<Real>::Parse}}(\textcolor{stringliteral}{"[0.0, 1.0]"}) ; \textcolor{comment}{// [0.0, 1.0]}}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac57a376cb40367712a31e57b82d4bf96}{Interval<double>::Parse}}(\textcolor{stringliteral}{"[0.0, 1.0]"}) ; \textcolor{comment}{// [0.0, 1.0]}}
 \end{DoxyCode}
 
 
@@ -780,7 +735,7 @@ void \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::m
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
 \DoxyCodeLine{interval.setLowerBound(-\/1.0) ;}
 \end{DoxyCode}
 
@@ -803,8 +758,8 @@ void \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::m
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
-\DoxyCodeLine{interval.setType(\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201ac3bf447eabe632720a3aa1a7ce401274}{Interval<Real>::Type::Open}}) ;}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{interval.setType(\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201ac3bf447eabe632720a3aa1a7ce401274}{Interval<double>::Type::Open}}) ;}
 \end{DoxyCode}
 
 
@@ -826,7 +781,7 @@ void \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{ostk\+::m
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(0.0, 1.0) ;}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(0.0, 1.0) ;}
 \DoxyCodeLine{interval.setUpperBound(2.0) ;}
 \end{DoxyCode}
 
@@ -849,11 +804,12 @@ Creates a new sorted array, the order based on the inputted parameters.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Array<Interval<Real>> unsorted = \{}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(-\/1.0, 1.0),}
-\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<Real>::Closed}}(-\/3.0, 0.0),}
+\DoxyCodeLine{Array<Interval<double>> unsorted = \{}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(-\/1.0, 1.0),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a3d13b7bfa9bcfee7dd3a7f9998378c4b}{Interval<double>::Closed}}(-\/3.0, 0.0),}
 \DoxyCodeLine{\};}
-\DoxyCodeLine{Array<Interval<Real>> sorted = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a67fd1bf9afb4a553eda2782c1f1e69d7}{Interval<Real>::Sort}}(unsorted); \textcolor{comment}{// \{[-\/3.0, 0.0], [-\/1.0, 1.0]\}}}
+\DoxyCodeLine{Array<Interval<double>> sorted = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a67fd1bf9afb4a553eda2782c1f1e69d7}{Interval<double>::Sort}}(unsorted); \textcolor{comment}{// \{[-\/3.0, 0.0],}}
+\DoxyCodeLine{[-\/1.0, 1.0]\}}
 \end{DoxyCode}
 
 
@@ -873,7 +829,7 @@ Converts interval type to string.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a906c45e8ea21c1d762015a491afa2254}{Interval<Real>::StringFromType}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e}{Interval<Real>::Type::Closed}}) ; \textcolor{comment}{// "Closed"}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a906c45e8ea21c1d762015a491afa2254}{Interval<double>::StringFromType}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e}{Interval<double>::Type::Closed}}) ; \textcolor{comment}{// "Closed"}}
 \end{DoxyCode}
 
 
@@ -898,7 +854,7 @@ Get serialized interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac0553ec6683fa168ae0beb39d1a4377a}{Interval<Real>::HalfOpenLeft}}(0.0, 1.0).toString() ; \textcolor{comment}{// ]0.0, 1.0]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ac0553ec6683fa168ae0beb39d1a4377a}{Interval<double>::HalfOpenLeft}}(0.0, 1.0).toString() ; \textcolor{comment}{// ]0.0, 1.0]}}
 \end{DoxyCode}
 
 
@@ -918,7 +874,7 @@ Constructs an undefined interval.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a877844b24a34a2c5c5109ce658cd5551}{Interval<Real>::Undefined}}() ; \textcolor{comment}{// Undefined}}
+\DoxyCodeLine{Interval<double> interval = \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a877844b24a34a2c5c5109ce658cd5551}{Interval<double>::Undefined}}() ; \textcolor{comment}{// Undefined}}
 \end{DoxyCode}
 
 
@@ -942,7 +898,7 @@ Output stream operator.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Interval<Real> interval(0.0, 1.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e}{Interval::Type::Closed}}) ;}
+\DoxyCodeLine{Interval<double> interval(0.0, 1.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e}{Interval::Type::Closed}}) ;}
 \DoxyCodeLine{std::cout << interval ;}
 \end{DoxyCode}
 

@@ -18,7 +18,7 @@ Inheritance diagram for ostk\+::mathematics\+::geometry\+::d3\+::object\+::Ellip
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Center, const Real \&a\+First\+Principal\+Semi\+Axis, const Real \&a\+Second\+Principal\+Semi\+Axis, const Real \&a\+Third\+Principal\+Semi\+Axis, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&an\+Orientation=\mbox{\hyperlink{_ellipsoid_8hpp_a5c684aeaeb24d197904b5a34839d2dd9}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}})
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Center, double a\+First\+Principal\+Semi\+Axis, double a\+Second\+Principal\+Semi\+Axis, double a\+Third\+Principal\+Semi\+Axis, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&an\+Orientation=\mbox{\hyperlink{_ellipsoid_8hpp_a5c684aeaeb24d197904b5a34839d2dd9}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} $\ast$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aca293bcf279702b8b59d72fe4dd09217}{clone}} () const override
 \begin{DoxyCompactList}\small\item\em Clone ellipsoid. \end{DoxyCompactList}\item 
@@ -54,13 +54,13 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_e
 \begin{DoxyCompactList}\small\item\em Check if ellipsoid contains point set. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a2f6d64044fbfaa53a018f3f0e62fa2ce}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
 \begin{DoxyCompactList}\small\item\em Check if ellipsoid contains segment. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aaffdeef56c13f84501e5e303c932890a}{get\+Center}} () const
+const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a79ff87e3694d0738a695cf511cbfc9ab}{get\+Center}} () const
 \begin{DoxyCompactList}\small\item\em Get ellipsoid center. \end{DoxyCompactList}\item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aee9a534a5fe0d981f240778a675592f0}{get\+First\+Principal\+Semi\+Axis}} () const
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a17060e76614757899468f7d10df5a2da}{get\+First\+Principal\+Semi\+Axis}} () const
 \begin{DoxyCompactList}\small\item\em Get ellipsoid first principal semi-\/axis. \end{DoxyCompactList}\item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a87c58137ec69a852e079274838b1f1f5}{get\+Second\+Principal\+Semi\+Axis}} () const
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac3464d267cdc81ed3855352e33ed56fd}{get\+Second\+Principal\+Semi\+Axis}} () const
 \begin{DoxyCompactList}\small\item\em Get ellipsoid second principal semi-\/axis. \end{DoxyCompactList}\item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aca6b3792410def0bef84025ffd981836}{get\+Third\+Principal\+Semi\+Axis}} () const
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_adfe4ff80148463544ef98ac9ff4940b5}{get\+Third\+Principal\+Semi\+Axis}} () const
 \begin{DoxyCompactList}\small\item\em Get ellipsoid third principal semi-\/axis. \end{DoxyCompactList}\item 
 Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a67ec6b3fcf80a18b0dbb6521c321e003}{get\+First\+Axis}} () const
 \begin{DoxyCompactList}\small\item\em Get ellipsoid first axis. \end{DoxyCompactList}\item 
@@ -68,7 +68,7 @@ Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1
 \begin{DoxyCompactList}\small\item\em Get ellipsoid second axis. \end{DoxyCompactList}\item 
 Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a5fe355055f5fdce92375fa04ff1851e9}{get\+Third\+Axis}} () const
 \begin{DoxyCompactList}\small\item\em Get ellipsoid third axis. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a68cbd49084f102aa99f9135bd0fce3db}{get\+Orientation}} () const
+const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a4aeff1b071e41bf329b5d5bcb8567d9b}{get\+Orientation}} () const
 \begin{DoxyCompactList}\small\item\em Get ellipsoid orientation. \end{DoxyCompactList}\item 
 Matrix3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ad28f3cc4c201d12054da52ce51bdb6a3}{get\+Matrix}} () const
 \begin{DoxyCompactList}\small\item\em Get ellipsoid matrix. \end{DoxyCompactList}\item 
@@ -98,18 +98,18 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid(Point(0.0, 0.0, 0.0), 1.0, 2.0, 3.0);}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid(Point(0.0, 0.0, 0.0), 1.0, 2.0, 3.0);}
 \end{DoxyCode}
 
 
 \href{https://en.wikipedia.org/wiki/Ellipsoid}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Ellipsoid}} 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}} 
 \index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!Ellipsoid@{Ellipsoid}}
 \index{Ellipsoid@{Ellipsoid}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
 \doxysubsubsection{\texorpdfstring{Ellipsoid()}{Ellipsoid()}}
-{\footnotesize\ttfamily ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::\+Ellipsoid (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Center,  }\item[{const Real \&}]{a\+First\+Principal\+Semi\+Axis,  }\item[{const Real \&}]{a\+Second\+Principal\+Semi\+Axis,  }\item[{const Real \&}]{a\+Third\+Principal\+Semi\+Axis,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{an\+Orientation = {\ttfamily \mbox{\hyperlink{_ellipsoid_8hpp_a5c684aeaeb24d197904b5a34839d2dd9}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::\+Ellipsoid (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Center,  }\item[{double}]{a\+First\+Principal\+Semi\+Axis,  }\item[{double}]{a\+Second\+Principal\+Semi\+Axis,  }\item[{double}]{a\+Third\+Principal\+Semi\+Axis,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{an\+Orientation = {\ttfamily \mbox{\hyperlink{_ellipsoid_8hpp_a5c684aeaeb24d197904b5a34839d2dd9}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}}} }\end{DoxyParamCaption})}
 
 
 
@@ -117,7 +117,7 @@ Constructor.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid(\{ 0.0, 0.0, 0.0 \}, 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid(\{ 0.0, 0.0, 0.0 \}, 1.0, 2.0, 3.0) ;}
 \end{DoxyCode}
 
 
@@ -149,7 +149,7 @@ Apply transformation to ellipsoid.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
 \DoxyCodeLine{ellipsoid.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_af9058de81115d953ab8d9b8922abe692}{Transformation::Translation}}(\{ 1.0, 0.0, 0.0 \})) ;}
 \end{DoxyCode}
 
@@ -175,7 +175,7 @@ Clone ellipsoid.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}* clonePtr = ellipsoid.clone() ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}* clonePtr = ellipsoid.clone() ;}
 \end{DoxyCode}
 
 
@@ -198,7 +198,7 @@ Check if ellipsoid contains point.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{Point point = ... ;}
 \DoxyCodeLine{ellipsoid.contains(point) ;}
 \end{DoxyCode}
@@ -224,7 +224,7 @@ Check if ellipsoid contains point set.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{PointSet pointSet = ... ;}
 \DoxyCodeLine{ellipsoid.contains(pointSet) ;}
 \end{DoxyCode}
@@ -250,7 +250,7 @@ Check if ellipsoid contains segment.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{Segment segment = ... ;}
 \DoxyCodeLine{ellipsoid.contains(segment) ;}
 \end{DoxyCode}
@@ -264,11 +264,11 @@ Check if ellipsoid contains segment.
 \begin{DoxyReturn}{Returns}
 True if ellipsoid contains segment 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aaffdeef56c13f84501e5e303c932890a}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aaffdeef56c13f84501e5e303c932890a}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a79ff87e3694d0738a695cf511cbfc9ab}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a79ff87e3694d0738a695cf511cbfc9ab}} 
 \index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getCenter@{getCenter}}
 \index{getCenter@{getCenter}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
 \doxysubsubsection{\texorpdfstring{getCenter()}{getCenter()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \& ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -276,7 +276,7 @@ Get ellipsoid center.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getCenter() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getCenter() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
 \end{DoxyCode}
 
 
@@ -295,7 +295,7 @@ Get ellipsoid first axis.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
 \DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} firstAxis = ellipsoid.getFirstAxis() ;}
 \end{DoxyCode}
 
@@ -303,11 +303,11 @@ Get ellipsoid first axis.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} first axis 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aee9a534a5fe0d981f240778a675592f0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aee9a534a5fe0d981f240778a675592f0}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a17060e76614757899468f7d10df5a2da}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a17060e76614757899468f7d10df5a2da}} 
 \index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getFirstPrincipalSemiAxis@{getFirstPrincipalSemiAxis}}
 \index{getFirstPrincipalSemiAxis@{getFirstPrincipalSemiAxis}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
 \doxysubsubsection{\texorpdfstring{getFirstPrincipalSemiAxis()}{getFirstPrincipalSemiAxis()}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+First\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+First\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -315,7 +315,7 @@ Get ellipsoid first principal semi-\/axis.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getFirstPrincipalSemiAxis() ; \textcolor{comment}{// 1.0}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getFirstPrincipalSemiAxis() ; \textcolor{comment}{// 1.0}}
 \end{DoxyCode}
 
 
@@ -334,7 +334,7 @@ Get ellipsoid matrix.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab065862f2a77807e42f6feaadc0637e2}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0)).getMatrix()}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a26eaffab25ca81a04d7fc56ff808a512}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0)).getMatrix()}
 \DoxyCodeLine{;}
 \end{DoxyCode}
 
@@ -342,11 +342,11 @@ Get ellipsoid matrix.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} matrix 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a68cbd49084f102aa99f9135bd0fce3db}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a68cbd49084f102aa99f9135bd0fce3db}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a4aeff1b071e41bf329b5d5bcb8567d9b}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a4aeff1b071e41bf329b5d5bcb8567d9b}} 
 \index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getOrientation@{getOrientation}}
 \index{getOrientation@{getOrientation}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
 \doxysubsubsection{\texorpdfstring{getOrientation()}{getOrientation()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -354,7 +354,7 @@ Get ellipsoid orientation.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab065862f2a77807e42f6feaadc0637e2}{Quaternion::XYZS}}(0.0, 0.0,}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a26eaffab25ca81a04d7fc56ff808a512}{Quaternion::XYZS}}(0.0, 0.0,}
 \DoxyCodeLine{0.0, 1.0)).getOrientation() ; \textcolor{comment}{// Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)}}
 \end{DoxyCode}
 
@@ -374,7 +374,7 @@ Get ellipsoid second axis.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
 \DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} secondAxis = ellipsoid.getSecondAxis() ;}
 \end{DoxyCode}
 
@@ -382,11 +382,11 @@ Get ellipsoid second axis.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} second axis 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a87c58137ec69a852e079274838b1f1f5}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a87c58137ec69a852e079274838b1f1f5}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac3464d267cdc81ed3855352e33ed56fd}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac3464d267cdc81ed3855352e33ed56fd}} 
 \index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getSecondPrincipalSemiAxis@{getSecondPrincipalSemiAxis}}
 \index{getSecondPrincipalSemiAxis@{getSecondPrincipalSemiAxis}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
 \doxysubsubsection{\texorpdfstring{getSecondPrincipalSemiAxis()}{getSecondPrincipalSemiAxis()}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Second\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Second\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -394,7 +394,7 @@ Get ellipsoid second principal semi-\/axis.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getSecondPrincipalSemiAxis() ; \textcolor{comment}{// 2.0}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getSecondPrincipalSemiAxis() ; \textcolor{comment}{// 2.0}}
 \end{DoxyCode}
 
 
@@ -413,7 +413,7 @@ Get ellipsoid third axis.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
 \DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} thirdAxis = ellipsoid.getThirdAxis() ;}
 \end{DoxyCode}
 
@@ -421,11 +421,11 @@ Get ellipsoid third axis.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} third axis 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aca6b3792410def0bef84025ffd981836}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aca6b3792410def0bef84025ffd981836}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_adfe4ff80148463544ef98ac9ff4940b5}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_adfe4ff80148463544ef98ac9ff4940b5}} 
 \index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getThirdPrincipalSemiAxis@{getThirdPrincipalSemiAxis}}
 \index{getThirdPrincipalSemiAxis@{getThirdPrincipalSemiAxis}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
 \doxysubsubsection{\texorpdfstring{getThirdPrincipalSemiAxis()}{getThirdPrincipalSemiAxis()}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Third\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Third\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -433,7 +433,7 @@ Get ellipsoid third principal semi-\/axis.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getThirdPrincipalSemiAxis() ; \textcolor{comment}{// 3.0}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getThirdPrincipalSemiAxis() ; \textcolor{comment}{// 3.0}}
 \end{DoxyCode}
 
 
@@ -452,8 +452,8 @@ Compute intersection of ellipsoid with cone.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
-\DoxyCodeLine{Cone cone = Cone(\{ 0.0, 0.0, 5.0 \}, \{ 0.0, 0.0, -\/1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0)) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{Cone cone = Cone(\{ 0.0, 0.0, 5.0 \}, \{ 0.0, 0.0, -\/1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0)) ;}
 \DoxyCodeLine{Intersection intersection = ellipsoid.intersectionWith(cone) ;}
 \end{DoxyCode}
 
@@ -480,7 +480,7 @@ Compute intersection of ellipsoid with line.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
 \DoxyCodeLine{Line line = Line(\{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \}) ;}
 \DoxyCodeLine{Intersection intersection = ellipsoid.intersectionWith(line) ;}
 \end{DoxyCode}
@@ -506,7 +506,7 @@ Compute intersection of ellipsoid with pyramid.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
 \DoxyCodeLine{Pyramid pyramid = ... ;}
 \DoxyCodeLine{Intersection intersection = ellipsoid.intersectionWith(pyramid) ;}
 \end{DoxyCode}
@@ -534,7 +534,7 @@ Compute intersection of ellipsoid with ray.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
 \DoxyCodeLine{Ray ray = Ray(\{ -\/2.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \}) ;}
 \DoxyCodeLine{Intersection intersection = ellipsoid.intersectionWith(ray) ;}
 \end{DoxyCode}
@@ -562,7 +562,7 @@ Compute intersection of ellipsoid with segment.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
 \DoxyCodeLine{Segment segment = Segment(\{ -\/2.0, 0.0, 0.0 \}, \{ 2.0, 0.0, 0.0 \}) ;}
 \DoxyCodeLine{Intersection intersection = ellipsoid.intersectionWith(segment) ;}
 \end{DoxyCode}
@@ -588,7 +588,7 @@ Check if ellipsoid intersects cone.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{Cone cone = ... ;}
 \DoxyCodeLine{ellipsoid.intersects(cone) ;}
 \end{DoxyCode}
@@ -614,8 +614,8 @@ Check if ellipsoid intersects ellipsoid.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} anotherEllipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} anotherEllipsoid = ... ;}
 \DoxyCodeLine{ellipsoid.intersects(anotherEllipsoid) ;}
 \end{DoxyCode}
 
@@ -640,7 +640,7 @@ Check if ellipsoid intersects line.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{Line line = ... ;}
 \DoxyCodeLine{ellipsoid.intersects(line) ;}
 \end{DoxyCode}
@@ -666,7 +666,7 @@ Check if ellipsoid intersects plane.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{Plane plane = ... ;}
 \DoxyCodeLine{ellipsoid.intersects(plane) ;}
 \end{DoxyCode}
@@ -692,7 +692,7 @@ Check if ellipsoid intersects point.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{Point point = ... ;}
 \DoxyCodeLine{ellipsoid.intersects(point) ;}
 \end{DoxyCode}
@@ -718,7 +718,7 @@ Check if ellipsoid intersects point set.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{PointSet pointSet = ... ;}
 \DoxyCodeLine{ellipsoid.intersects(pointSet) ;}
 \end{DoxyCode}
@@ -744,7 +744,7 @@ Check if ellipsoid intersects pyramid.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{Pyramid pyramid = ... ;}
 \DoxyCodeLine{ellipsoid.intersects(pyramid) ;}
 \end{DoxyCode}
@@ -770,7 +770,7 @@ Check if ellipsoid intersects ray.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{Ray ray = ... ;}
 \DoxyCodeLine{ellipsoid.intersects(ray) ;}
 \end{DoxyCode}
@@ -796,7 +796,7 @@ Check if ellipsoid intersects segment.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{Segment segment = ... ;}
 \DoxyCodeLine{ellipsoid.intersects(segment) ;}
 \end{DoxyCode}
@@ -822,7 +822,7 @@ Check if ellipsoid intersects sphere.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = ... ;}
 \DoxyCodeLine{Sphere sphere = ... ;}
 \DoxyCodeLine{ellipsoid.intersects(sphere) ;}
 \end{DoxyCode}
@@ -848,7 +848,7 @@ Check if ellipsoid is defined.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).isDefined() ; \textcolor{comment}{// True}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).isDefined() ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
 
@@ -871,7 +871,7 @@ Not equal to operator.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) != \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(2.0, 1.0, 3.0) ; \textcolor{comment}{// True}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) != \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(2.0, 1.0, 3.0) ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
 
@@ -895,7 +895,7 @@ Equal to operator.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) == \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ; \textcolor{comment}{//}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) == \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ; \textcolor{comment}{//}}
 \DoxyCodeLine{True}
 \end{DoxyCode}
 
@@ -920,7 +920,7 @@ Print ellipsoid.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
 \DoxyCodeLine{ellipsoid.print(std::cout, \textcolor{keyword}{true}) ;}
 \end{DoxyCode}
 
@@ -948,7 +948,7 @@ Constructs an undefined ellipsoid.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a926b28952c1364fff54b2cf2ace854ff}{Ellipsoid::Undefined}}() ; \textcolor{comment}{// Undefined}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac7b7238c03ae7c8f112673321812da7d}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a926b28952c1364fff54b2cf2ace854ff}{Ellipsoid::Undefined}}() ; \textcolor{comment}{// Undefined}}
 \end{DoxyCode}
 
 

@@ -16,6 +16,15 @@ ostk.mathematics.geometry.d3.Object
    .. autosummary::
       :nosignatures:
    
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
       ~Object.apply_transformation
       ~Object.as_cone
       ~Object.as_ellipsoid
@@ -44,9 +53,5 @@ ostk.mathematics.geometry.d3.Object
       ~Object.is_ray
       ~Object.is_segment
       ~Object.is_sphere
-   
-   
-
-   
    
    

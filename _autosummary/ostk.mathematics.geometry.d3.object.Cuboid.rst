@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.Cuboid
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Cuboid.apply_transformation
       ~Cuboid.as_cone
@@ -55,9 +58,5 @@ ostk.mathematics.geometry.d3.object.Cuboid
       ~Cuboid.is_segment
       ~Cuboid.is_sphere
       ~Cuboid.undefined
-   
-   
-
-   
    
    

@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d2.object.Segment
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Segment.apply_transformation
       ~Segment.contains
@@ -30,9 +33,5 @@ ostk.mathematics.geometry.d2.object.Segment
       ~Segment.to_line
       ~Segment.to_string
       ~Segment.undefined
-   
-   
-
-   
    
    

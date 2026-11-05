@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.Ellipsoid
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Ellipsoid.apply_transformation
       ~Ellipsoid.as_cone
@@ -56,9 +59,5 @@ ostk.mathematics.geometry.d3.object.Ellipsoid
       ~Ellipsoid.is_segment
       ~Ellipsoid.is_sphere
       ~Ellipsoid.undefined
-   
-   
-
-   
    
    

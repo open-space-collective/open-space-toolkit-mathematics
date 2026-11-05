@@ -7,6 +7,7 @@
     <innerdir refid="dir_373a8ff629b62d081805fa6163d496c1">include/OpenSpaceToolkit/Mathematics/Object</innerdir>
     <innerdir refid="dir_9aaaab1d4b611f2597fbfb7276749f02">include/OpenSpaceToolkit/Mathematics/Solver</innerdir>
     <innerfile refid="_object_8hpp">Object.hpp</innerfile>
+    <innerfile refid="_utility_8hpp">Utility.hpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

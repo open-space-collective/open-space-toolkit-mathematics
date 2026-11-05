@@ -1,0 +1,47 @@
+\hypertarget{namespaceostk_1_1mathematics_1_1utility}{}\doxysection{ostk\+::mathematics\+::utility Namespace Reference}
+\label{namespaceostk_1_1mathematics_1_1utility}\index{ostk::mathematics::utility@{ostk::mathematics::utility}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1utility_a9497030ebeab9a401e6133d3ec9d1dd6}{Double\+To\+String}} (double a\+Value, int a\+Precision=-\/1)
+\begin{DoxyCompactList}\small\item\em Convert a double to a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceostk_1_1mathematics_1_1utility_a9497030ebeab9a401e6133d3ec9d1dd6}\label{namespaceostk_1_1mathematics_1_1utility_a9497030ebeab9a401e6133d3ec9d1dd6}} 
+\index{ostk::mathematics::utility@{ostk::mathematics::utility}!DoubleToString@{DoubleToString}}
+\index{DoubleToString@{DoubleToString}!ostk::mathematics::utility@{ostk::mathematics::utility}}
+\doxysubsubsection{\texorpdfstring{DoubleToString()}{DoubleToString()}}
+{\footnotesize\ttfamily String ostk\+::mathematics\+::utility\+::\+Double\+To\+String (\begin{DoxyParamCaption}\item[{double}]{a\+Value,  }\item[{int}]{a\+Precision = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Convert a double to a string. 
+
+\begin{DoxyVerb}                        Matches the output of the former ostk::core::type::Real::toString:
+                        NaN is printed as "Undefined", infinities as "+Inf" / "-Inf".
+                        With a negative precision, the shortest round-trip representation is used
+                        (integral values get a ".0" suffix, trailing zeros are removed).
+                        With a non-negative precision, fixed notation with that many decimals is used.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1utility_a9497030ebeab9a401e6133d3ec9d1dd6}{DoubleToString}}(1.0) ; \textcolor{comment}{// "1.0"}}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1utility_a9497030ebeab9a401e6133d3ec9d1dd6}{DoubleToString}}(0.5) ; \textcolor{comment}{// "0.5"}}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1utility_a9497030ebeab9a401e6133d3ec9d1dd6}{DoubleToString}}(0.5, 3) ; \textcolor{comment}{// "0.500"}}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1utility_a9497030ebeab9a401e6133d3ec9d1dd6}{DoubleToString}}(std::numeric\_limits<double>::quiet\_NaN()) ; \textcolor{comment}{// "Undefined"}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Value} & A value \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Precision} & A precision (number of decimal places, or -\/1 for automatic) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String 
+\end{DoxyReturn}

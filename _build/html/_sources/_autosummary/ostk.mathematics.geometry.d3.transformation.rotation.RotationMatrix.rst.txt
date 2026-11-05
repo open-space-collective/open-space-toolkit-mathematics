@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.transformation.rotation.RotationMatrix
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~RotationMatrix.columns
       ~RotationMatrix.euler_angle
@@ -33,9 +36,5 @@ ostk.mathematics.geometry.d3.transformation.rotation.RotationMatrix
       ~RotationMatrix.undefined
       ~RotationMatrix.unit
       ~RotationMatrix.vector_basis
-   
-   
-
-   
    
    

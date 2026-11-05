@@ -37,17 +37,17 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_l
 \begin{DoxyCompactList}\small\item\em Check if line string is empty. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a6c13eb4d91446900ddda8f0040455020}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Check if line string contains a point. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a93f187300021999caf7c48efabcb3265}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string}{Line\+String}} \&a\+Line\+String, const Real \&a\+Tolerance) const
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ae50ae393815e0d40dd2ed83a3f301c0c}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string}{Line\+String}} \&a\+Line\+String, double a\+Tolerance) const
 \begin{DoxyCompactList}\small\item\em Check if line string is near another line string. \end{DoxyCompactList}\item 
 const Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} $>$ \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a66e45823757b2fa9a486729e02a91b94}{get\+Point\+Array}} () const
 \begin{DoxyCompactList}\small\item\em Get point array. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ad45555762f8bc004139ca09e49432d8a}{access\+Point\+At}} (const Index \&an\+Index) const
-\begin{DoxyCompactList}\small\item\em Access point at index. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ac6258c6cd3354b86fd4500b1d958ff59}{get\+Point\+At}} (const Index \&an\+Index) const
+\begin{DoxyCompactList}\small\item\em Get point at index. \end{DoxyCompactList}\item 
 Size \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a31ff5ebe4cb0e03f08a68218ec7723c0}{get\+Point\+Count}} () const
 \begin{DoxyCompactList}\small\item\em Get point count. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ae59decef7e902caadca16d171658701e}{get\+Point\+Closest\+To}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Get point closest to another point. \end{DoxyCompactList}\item 
-virtual String \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a896eb59a09118ed324b444616538c699}{to\+String}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&a\+Format=\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
+virtual String \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a7dffbb8cfe9b22a7f33cfd81fc85d890}{to\+String}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&a\+Format=\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}, int a\+Precision=-\/1) const override
 \begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a292e3bf679e232f605e4726f0bfff970}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
 \begin{DoxyCompactList}\small\item\em Print point. \end{DoxyCompactList}\item 
@@ -113,25 +113,6 @@ Constructor.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ad45555762f8bc004139ca09e49432d8a}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ad45555762f8bc004139ca09e49432d8a}} 
-\index{ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}!accessPointAt@{accessPointAt}}
-\index{accessPointAt@{accessPointAt}!ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}}
-\doxysubsubsection{\texorpdfstring{accessPointAt()}{accessPointAt()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \& ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Line\+String\+::access\+Point\+At (\begin{DoxyParamCaption}\item[{const Index \&}]{an\+Index }\end{DoxyParamCaption}) const}
-
-
-
-Access point at index. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{const} Point\& point = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ad45555762f8bc004139ca09e49432d8a}{accessPointAt}}(0) ;}
-\end{DoxyCode}
-
-
-\mbox{[}in\mbox{]} an\+Index A point index \begin{DoxyReturn}{Returns}
-Reference to point at index 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a0d3a24eba42a2d7449259b890d0bb30f}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a0d3a24eba42a2d7449259b890d0bb30f}} 
 \index{ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}!applyTransformation@{applyTransformation}}
 \index{applyTransformation@{applyTransformation}!ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}}
@@ -278,6 +259,25 @@ Get point array.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} array 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ac6258c6cd3354b86fd4500b1d958ff59}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ac6258c6cd3354b86fd4500b1d958ff59}} 
+\index{ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}!getPointAt@{getPointAt}}
+\index{getPointAt@{getPointAt}!ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}}
+\doxysubsubsection{\texorpdfstring{getPointAt()}{getPointAt()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{Point}} \& ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Line\+String\+::get\+Point\+At (\begin{DoxyParamCaption}\item[{const Index \&}]{an\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Get point at index. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Point point = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ac6258c6cd3354b86fd4500b1d958ff59}{getPointAt}}(0) ;}
+\end{DoxyCode}
+
+
+\mbox{[}in\mbox{]} an\+Index A point index \begin{DoxyReturn}{Returns}
+Const reference to point at index 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ae59decef7e902caadca16d171658701e}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ae59decef7e902caadca16d171658701e}} 
 \index{ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}!getPointClosestTo@{getPointClosestTo}}
 \index{getPointClosestTo@{getPointClosestTo}!ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}}
@@ -364,11 +364,11 @@ Check if line string is empty.
 \begin{DoxyReturn}{Returns}
 True if line string is empty 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a93f187300021999caf7c48efabcb3265}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a93f187300021999caf7c48efabcb3265}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ae50ae393815e0d40dd2ed83a3f301c0c}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ae50ae393815e0d40dd2ed83a3f301c0c}} 
 \index{ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}!isNear@{isNear}}
 \index{isNear@{isNear}!ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}}
 \doxysubsubsection{\texorpdfstring{isNear()}{isNear()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Line\+String\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string}{Line\+String}} \&}]{a\+Line\+String,  }\item[{const Real \&}]{a\+Tolerance }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Line\+String\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string}{Line\+String}} \&}]{a\+Line\+String,  }\item[{double}]{a\+Tolerance }\end{DoxyParamCaption}) const}
 
 
 
@@ -376,7 +376,7 @@ Check if line string is near another line string.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a93f187300021999caf7c48efabcb3265}{isNear}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_ae50ae393815e0d40dd2ed83a3f301c0c}{isNear}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{}
 \DoxyCodeLine{0.0, 1.0 \}, \{ 1.0, 1e-\/15 \} \}), 1e-\/15) ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
@@ -488,11 +488,11 @@ Constructs a line string from a segment.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line}{Line}} string 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a896eb59a09118ed324b444616538c699}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a896eb59a09118ed324b444616538c699}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a7dffbb8cfe9b22a7f33cfd81fc85d890}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a7dffbb8cfe9b22a7f33cfd81fc85d890}} 
 \index{ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}!toString@{toString}}
 \index{toString@{toString}!ostk::mathematics::geometry::d2::object::LineString@{ostk::mathematics::geometry::d2::object::LineString}}
 \doxysubsubsection{\texorpdfstring{toString()}{toString()}}
-{\footnotesize\ttfamily String ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Line\+String\+::to\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&}]{a\+Format = {\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}},  }\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily String ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Line\+String\+::to\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&}]{a\+Format = {\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}},  }\item[{int}]{a\+Precision = {\ttfamily -\/1} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -500,7 +500,7 @@ Get string representation.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{String str = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a896eb59a09118ed324b444616538c699}{toString}}() ;}
+\DoxyCodeLine{String str = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_af664c958b514884a3889eab433c5482d}{LineString}}(\{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \} \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string_a7dffbb8cfe9b22a7f33cfd81fc85d890}{toString}}() ;}
 \end{DoxyCode}
 
 
@@ -514,7 +514,7 @@ String representation
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_aedf9c7ef5af5892d15cf08da795fa1af}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a2da129348eb0c204c65b2f374f5e5e7a}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
 
 
 

@@ -20,19 +20,6 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad518b65c3a36386e1843efeb6887146d" prot="private" static="no" mutable="no">
-        <type>bool</type>
-        <definition>bool ostk::mathematics::geometry::d3::object::Composite::defined_</definition>
-        <argsstring></argsstring>
-        <name>defined_</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="389" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" bodystart="389" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a47efb6154ca154967f5b89486ea96ed7" prot="private" static="no" mutable="no">
         <type>Array&lt; Unique&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &gt; &gt;</type>
         <definition>Array&lt;Unique&lt;Object&gt; &gt; ostk::mathematics::geometry::d3::object::Composite::objects_</definition>
@@ -44,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="390" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" bodystart="390" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="380" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" bodystart="380" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -77,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="49" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="21" bodyend="27"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="49" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="21" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1aec24fbd4ad7f8beaea120b2fa2743bd5" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -108,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="59" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="29" bodyend="35"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="59" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="28" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1aa67f5a8fadff55239bc9710c3c86b08b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -140,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="70" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="37" bodyend="53"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="70" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="35" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a66ac8dd91f5a192965ed771a69593ac3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -171,7 +158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="80" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="55" bodyend="71"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="80" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="52" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a4d5a9ea98d5a028f2792d3b11e9fd6e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite" kindref="compound">Composite</ref> *</type>
@@ -191,7 +178,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="89" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="73" bodyend="76"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="89" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="69" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad10e87ffe83a4c78798e598ddfa54998" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite" kindref="compound">Composite</ref> &amp;</type>
@@ -207,7 +194,7 @@
         </briefdescription>
         <detaileddescription>
 <para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad3c66a24df2c50819fbc8dbe288b85ee" kindref="member">Composite</ref><sp/>compositeA<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad3c66a24df2c50819fbc8dbe288b85ee" kindref="member">Composite</ref>(Point(0.0,<sp/>0.0,<sp/>0.0))<sp/>;</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad3c66a24df2c50819fbc8dbe288b85ee" kindref="member">Composite</ref><sp/>compositeB<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ae9de0eace4f4bc2eeef0b79c48723aec" kindref="member">Composite::Undefined</ref>()<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad3c66a24df2c50819fbc8dbe288b85ee" kindref="member">Composite</ref><sp/>compositeB<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a2d1b2de30917d5cb24843a4590c45cf4" kindref="member">Composite::Empty</ref>()<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">compositeB<sp/>=<sp/>compositeA<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
@@ -225,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="101" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="78" bodyend="100"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="101" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="74" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a70bc18b2b15c4419de64b8b0ac0ec44f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -258,7 +245,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="112" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="102" bodyend="123"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="112" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="96" bodyend="117"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a64f215f7a371f31396531b1fb166ca5f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -292,7 +279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="124" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="125" bodyend="128"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="124" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="119" bodyend="122"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a9997d9bdb4f03aaf156511762d479f84" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite" kindref="compound">Composite</ref></type>
@@ -328,7 +315,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="138" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="130" bodyend="166"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="138" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="124" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a1f2e1b5d801464dd1c151b41e9e833b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite" kindref="compound">Composite</ref> &amp;</type>
@@ -364,7 +351,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="152" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="168" bodyend="193"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="152" column="15" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="162" bodyend="187"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a8ccf639112d5c08aa7d2bb831072ca2f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -378,13 +365,13 @@
         <detaileddescription>
 <para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad3c66a24df2c50819fbc8dbe288b85ee" kindref="member">Composite</ref>(...).isDefined()<sp/>;</highlight></codeline>
 </programlisting></para>
-<para><simplesect kind="return"><para>True if composite is defined </para>
+<para><simplesect kind="return"><para>True if all objects of the composite are defined </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="161" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="195" bodyend="205"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="161" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="189" bodyend="199"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a4212e7557991ad99f9d4dfe9cbf6b703" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -403,7 +390,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="170" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="207" bodyend="215"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="170" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="201" bodyend="209"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a1cfbb9bdbf5c56aae7fa6496b6e7c080" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -492,7 +479,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="236" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="217" bodyend="237"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="236" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="211" bodyend="231"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a5377ac1f13ee56f32d1c125a26d28a60" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -526,7 +513,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="248" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="239" bodyend="259"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="248" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="233" bodyend="253"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a9a69a179318ed283eb977f7ed6649061" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -561,7 +548,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="260" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="261" bodyend="281"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="260" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="255" bodyend="275"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a9239c58d4c8dc813b944bd4ab92371a7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -595,23 +582,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="272" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="283" bodyend="303"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="272" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="277" bodyend="297"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a4ad37ad34b9cbc88dd613de55aa71bbe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a7519c97d274cde45377d887db1e23568" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &amp;</type>
-        <definition>const Object &amp; ostk::mathematics::geometry::d3::object::Composite::accessObjectAt</definition>
+        <definition>const Object &amp; ostk::mathematics::geometry::d3::object::Composite::getObjectAt</definition>
         <argsstring>(const Index &amp;anIndex) const</argsstring>
-        <name>accessObjectAt</name>
+        <name>getObjectAt</name>
         <param>
           <type>const Index &amp;</type>
           <declname>anIndex</declname>
         </param>
         <briefdescription>
-<para>Access object at index. </para>
+<para>Get object at index. </para>
         </briefdescription>
         <detaileddescription>
 <para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad3c66a24df2c50819fbc8dbe288b85ee" kindref="member">Composite</ref><sp/>composite<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad3c66a24df2c50819fbc8dbe288b85ee" kindref="member">Composite</ref>(Point(0.0,<sp/>0.0,<sp/>0.0))<sp/>;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" kindref="member">Object</ref>&amp;<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>=<sp/>composite.accessObjectAt(0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" kindref="member">Object</ref>&amp;<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>=<sp/>composite.getObjectAt(0)<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -622,33 +609,33 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Reference to object </para>
+<simplesect kind="return"><para>Const reference to object </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="283" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="305" bodyend="318"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="283" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="299" bodyend="312"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a22d58efe4c8dcabb5b7d0c9f15dd76ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ac45b948c857ec1ea4112ba9701a23592" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const Array&lt; Unique&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &gt; &gt; &amp;</type>
-        <definition>const Array&lt; Unique&lt; Object &gt; &gt; &amp; ostk::mathematics::geometry::d3::object::Composite::accessObjects</definition>
+        <definition>const Array&lt; Unique&lt; Object &gt; &gt; &amp; ostk::mathematics::geometry::d3::object::Composite::getObjects</definition>
         <argsstring>() const</argsstring>
-        <name>accessObjects</name>
+        <name>getObjects</name>
         <briefdescription>
-<para>Access objects in composite. </para>
+<para>Get objects in composite. </para>
         </briefdescription>
         <detaileddescription>
 <para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad3c66a24df2c50819fbc8dbe288b85ee" kindref="member">Composite</ref><sp/>composite<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad3c66a24df2c50819fbc8dbe288b85ee" kindref="member">Composite</ref>(Point(0.0,<sp/>0.0,<sp/>0.0))<sp/>;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&lt;Unique&lt;Object&gt;&gt;&amp;<sp/>objects<sp/>=<sp/>composite.accessObjects()<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&lt;Unique&lt;Object&gt;&gt;&amp;<sp/>objects<sp/>=<sp/>composite.getObjects()<sp/>;</highlight></codeline>
 </programlisting></para>
-<para><simplesect kind="return"><para>Reference to objects in composite </para>
+<para><simplesect kind="return"><para>Const reference to objects in composite </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="293" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="320" bodyend="328"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="293" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="314" bodyend="322"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1aeb62c71920e942368345586df194b63e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -668,7 +655,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="303" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="330" bodyend="338"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="303" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="324" bodyend="332"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a17316a3b66d1459e5a152d71af82d28c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -703,7 +690,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="315" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="340" bodyend="365"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="315" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="334" bodyend="359"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a4605abca6734c866d094f0d40d001b3f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -737,7 +724,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="327" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="367" bodyend="392"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="327" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="361" bodyend="386"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a69f7864cea32998901589429105a3965" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a3fb7f38a564e36224fb4753be74836ff" kindref="member">Composite::ConstIterator</ref></type>
@@ -757,7 +744,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="337" column="30" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="394" bodyend="402"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="337" column="30" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="388" bodyend="396"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a44e8b75a9ba8fa5b92d4589ec8cfe323" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a3fb7f38a564e36224fb4753be74836ff" kindref="member">Composite::ConstIterator</ref></type>
@@ -777,7 +764,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="347" column="30" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="404" bodyend="412"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="347" column="30" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="398" bodyend="406"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a7d59b2b6538e28c9faa5ad94249e0d5d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -822,7 +809,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="358" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="414" bodyend="433"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="358" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="408" bodyend="427"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a07770aa678f84c74355bf7488b4df425" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -854,29 +841,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="368" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="435" bodyend="458"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="368" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="429" bodyend="452"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ae9de0eace4f4bc2eeef0b79c48723aec" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite" kindref="compound">Composite</ref></type>
-        <definition>Composite ostk::mathematics::geometry::d3::object::Composite::Undefined</definition>
-        <argsstring>()</argsstring>
-        <name>Undefined</name>
-        <briefdescription>
-<para>Constructs an undefined composite. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad3c66a24df2c50819fbc8dbe288b85ee" kindref="member">Composite</ref><sp/>composite<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ae9de0eace4f4bc2eeef0b79c48723aec" kindref="member">Composite::Undefined</ref>()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>Undefined</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="return"><para>Undefined composite </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="377" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="460" bodyend="467"/>
-      </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a2d1b2de30917d5cb24843a4590c45cf4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite" kindref="compound">Composite</ref></type>
         <definition>Composite ostk::mathematics::geometry::d3::object::Composite::Empty</definition>
@@ -894,7 +862,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="386" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="469" bodyend="472"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="377" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp" bodystart="454" bodyend="457"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -928,10 +896,8 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="37" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" bodystart="36" bodyend="391"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="37" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" bodystart="36" bodyend="381"/>
     <listofallmembers>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a4ad37ad34b9cbc88dd613de55aa71bbe" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>accessObjectAt</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a22d58efe4c8dcabb5b7d0c9f15dd76ac" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>accessObjects</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a07770aa678f84c74355bf7488b4df425" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a77bcf425bb31b5265f028de762878699" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>as</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a69f7864cea32998901589429105a3965" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>begin</name></member>
@@ -943,10 +909,11 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a3fb7f38a564e36224fb4753be74836ff" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>ConstIterator</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a9a69a179318ed283eb977f7ed6649061" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a9239c58d4c8dc813b944bd4ab92371a7" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>contains</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ad518b65c3a36386e1843efeb6887146d" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>defined_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a2d1b2de30917d5cb24843a4590c45cf4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>Empty</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a44e8b75a9ba8fa5b92d4589ec8cfe323" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>end</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a7519c97d274cde45377d887db1e23568" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>getObjectAt</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1aeb62c71920e942368345586df194b63e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>getObjectCount</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ac45b948c857ec1ea4112ba9701a23592" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>getObjects</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a17316a3b66d1459e5a152d71af82d28c" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>intersectionWith</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a4605abca6734c866d094f0d40d001b3f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>intersectionWith</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1afb414dd80dce2ea9aad5513c8f466e94" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>intersects</name></member>
@@ -964,7 +931,6 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a70bc18b2b15c4419de64b8b0ac0ec44f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>operator==</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aeb99dd25ff1c0683d9c0a058c8200e4d" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>operator==</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a7d59b2b6538e28c9faa5ad94249e0d5d" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>print</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1ae9de0eace4f4bc2eeef0b79c48723aec" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>Undefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aae1324c306129cce2e7d42a28c0de181" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d3::object::Composite</scope><name>~Object</name></member>
     </listofallmembers>
   </compounddef>

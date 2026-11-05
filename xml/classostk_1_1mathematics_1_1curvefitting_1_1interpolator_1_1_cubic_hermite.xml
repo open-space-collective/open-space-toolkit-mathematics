@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::curvefitting::interpolator::CubicHermite</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator" prot="public" virt="non-virtual">ostk::mathematics::curvefitting::Interpolator</basecompoundref>
+    <includes refid="_cubic_hermite_8hpp" local="no">CubicHermite.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a77c7389fdb7024a7159430b5064e122d" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; cardinal_cubic_hermite&lt; std::vector&lt; double &gt; &gt; &gt;</type>
+        <definition>std::optional&lt;cardinal_cubic_hermite&lt;std::vector&lt;double&gt; &gt; &gt; ostk::mathematics::curvefitting::interpolator::CubicHermite::cardinalInterpolator_</definition>
+        <argsstring></argsstring>
+        <name>cardinalInterpolator_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" line="142" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1af2542f611f977ce3bdf07dc15621afdc" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; cubic_hermite&lt; std::vector&lt; double &gt; &gt; &gt;</type>
+        <definition>std::optional&lt;cubic_hermite&lt;std::vector&lt;double&gt; &gt; &gt; ostk::mathematics::curvefitting::interpolator::CubicHermite::interpolator_</definition>
+        <argsstring></argsstring>
+        <name>interpolator_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" line="143" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a400f88505571148d5b34b484c4a64774" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::CubicHermite::CubicHermite</definition>
+        <argsstring>(const VectorXd &amp;anXVector, const VectorXd &amp;aYVector, const VectorXd &amp;aDyDxVector)</argsstring>
+        <name>CubicHermite</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>anXVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aYVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aDyDxVector</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a400f88505571148d5b34b484c4a64774" kindref="member">CubicHermite</ref><sp/>cubicHermite(x,<sp/>y,<sp/>dydx);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>anXVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aYVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of y values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aDyDxVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of first derivative values</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>The x values must be sorted in strictly ascending order </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" line="69" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.cpp" bodystart="16" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1ad00b2da5d756053caae2d0a0590b4beb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::CubicHermite::CubicHermite</definition>
+        <argsstring>(const VectorXd &amp;aYVector, const VectorXd &amp;aDyDxVector, double x0, double h)</argsstring>
+        <name>CubicHermite</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aYVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aDyDxVector</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a400f88505571148d5b34b484c4a64774" kindref="member">CubicHermite</ref><sp/>cubicHermite(y,<sp/>dydx,<sp/>0.0,<sp/>1.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aYVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of y values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aDyDxVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of first derivative values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first x value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The spacing between x values</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>The spacing must be strictly positive </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" line="83" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.cpp" bodystart="57" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a2eae527aed80d8685040e693684823a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::CubicHermite::~CubicHermite</definition>
+        <argsstring>() override</argsstring>
+        <name>~CubicHermite</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Called<sp/>automatically<sp/>when<sp/>the<sp/>CubicHermite<sp/>goes<sp/>out<sp/>of<sp/>scope</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" line="90" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.cpp" bodystart="83" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a7b644ebb0f11acd29b3ce395aa7bd59f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::CubicHermite::evaluate</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const override</argsstring>
+        <name>evaluate</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a2e5f87beae48daf0ebbd4da6c0fdcb77">evaluate</reimplements>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the cubic Hermite interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>values<sp/>=<sp/>cubicHermite.evaluate({1.0,<sp/>1.5,<sp/>2.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of y values</para>
+</simplesect>
+<simplesect kind="warning"><para>The query values must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" line="102" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.cpp" bodystart="85" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a32da7036de2100ba286d16896fae4917" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::CubicHermite::evaluate</definition>
+        <argsstring>(const double &amp;aQueryValue) const override</argsstring>
+        <name>evaluate</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1aae0c8423f11e7aa9f764ee4973070c36">evaluate</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the cubic Hermite interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>cubicHermite.evaluate(1.5)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The y value</para>
+</simplesect>
+<simplesect kind="warning"><para>The query value must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" line="114" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.cpp" bodystart="97" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a735146dbe94d58d16d3a6ef34984bfa0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::CubicHermite::computeDerivative</definition>
+        <argsstring>(const double &amp;aQueryValue) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ab17940ffe4064348fa33990424cb4983">computeDerivative</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivative at a specific query value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>derivative<sp/>=<sp/>cubicHermite.computeDerivative(1.5)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The derivative at the given x value</para>
+</simplesect>
+<simplesect kind="warning"><para>The query value must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" line="126" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.cpp" bodystart="102" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a06fa88f11ed100c426e5d23e191a23a6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::CubicHermite::computeDerivative</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1af32075ac2a7f44c83f1a17b43cec78ad">computeDerivative</reimplements>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivatives at multiple query values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>derivatives<sp/>=<sp/>cubicHermite.computeDerivative({1.0,<sp/>1.5,<sp/>2.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of derivatives at the given x values</para>
+</simplesect>
+<simplesect kind="warning"><para>The query values must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" line="138" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.cpp" bodystart="108" bodyend="118"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite" kindref="compound">CubicHermite</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A cubic Hermite spline is a piecewise third-degree polynomial which matches both the value and the first derivative of the underlying function at every node. The resulting interpolant is C1 continuous.</para>
+<para>Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with a cardinal Hermite spline, which finds the containing interval in constant time rather than searching for it, and is therefore faster to evaluate. Which of the two is used is decided from the data and is not otherwise observable.</para>
+<para>Use when the first derivative is known at every sample, for instance velocity alongside position. The derivatives are honoured exactly, and each interval depends only on its two end nodes.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>x<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>2.0,<sp/>3.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>y<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>4.0,<sp/>9.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>dydx<sp/>=<sp/>{{0.0,<sp/>2.0,<sp/>4.0,<sp/>6.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a400f88505571148d5b34b484c4a64774" kindref="member">CubicHermite</ref><sp/>interpolator(x,<sp/>y,<sp/>dydx);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>interpolator.evaluate(1.5);</highlight></codeline>
+</programlisting></para>
+<para><ulink url="https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/cubic_hermite.html">https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/cubic_hermite.html</ulink> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ostk::mathematics::curvefitting::interpolator::CubicHermite</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::curvefitting::Interpolator</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ostk::mathematics::curvefitting::interpolator::CubicHermite</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::curvefitting::Interpolator</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" line="56" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp" bodystart="55" bodyend="144"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a77c7389fdb7024a7159430b5064e122d" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>cardinalInterpolator_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a735146dbe94d58d16d3a6ef34984bfa0" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>computeDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a06fa88f11ed100c426e5d23e191a23a6" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>computeDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a400f88505571148d5b34b484c4a64774" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>CubicHermite</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1ad00b2da5d756053caae2d0a0590b4beb" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>CubicHermite</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a7b644ebb0f11acd29b3ce395aa7bd59f" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a32da7036de2100ba286d16896fae4917" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>GenerateInterpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a3e596528cd5e416546dabe45e9100e04" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>getInterpolationType</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6593f90bb974214f6f2b264bc114b96e" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>Interpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1af2542f611f977ce3bdf07dc15621afdc" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>interpolator_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a171aae7fe231c3e7b15568d45650e8b0" prot="protected" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>IsUniformlySpaced</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>Type</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_1a2eae527aed80d8685040e693684823a8" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>~CubicHermite</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ac980e413bfeb65eceb347e787899c1f4" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicHermite</scope><name>~Interpolator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

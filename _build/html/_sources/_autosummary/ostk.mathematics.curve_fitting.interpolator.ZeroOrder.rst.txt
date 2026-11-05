@@ -11,18 +11,17 @@ ostk.mathematics.curve\_fitting.interpolator.ZeroOrder
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~ZeroOrder.compute_derivative
       ~ZeroOrder.evaluate
       ~ZeroOrder.generate_interpolator
       ~ZeroOrder.get_interpolation_type
-   
-   
-
-   
    
    

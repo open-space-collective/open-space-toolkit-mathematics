@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="240" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" bodystart="240" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="235" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" bodystart="235" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1adc52cee5d89f3d798cd5d9d042a2be13" prot="private" static="no" mutable="no">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="241" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" bodystart="241" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="236" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" bodystart="236" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="51" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="23" bodyend="28"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="47" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="23" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a354e489eed79ff4e87deea504eeccb54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment" kindref="compound">Segment</ref> *</type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="60" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="30" bodyend="33"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="56" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="30" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a7efea6942753f879406cf983a8e55d19" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="70" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="35" bodyend="44"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="66" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="35" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1abbecdd12d67f8c102deaedc65a028aed" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -157,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="80" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="46" bodyend="49"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="76" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="46" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a6a88d19e8e5978c2fe9eeeb88d6cf8d7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -177,7 +177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="89" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="51" bodyend="54"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="85" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="51" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1ae83df71f8f42ef823a7976f78de97a3f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -196,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="98" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="56" bodyend="64"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="94" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="56" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a694a856a4e694e0c570b3e0bbbee9f53" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -230,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="110" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="71" bodyend="105"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="106" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="71" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a23def062fef6c1210fa528ff078930a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -264,11 +264,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="122" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="107" bodyend="117"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="118" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="107" bodyend="117"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1ab16e56418d2482c24971dcf678d85ec5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
-        <definition>Point ostk::mathematics::geometry::d2::object::Segment::getFirstPoint</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1aa3177bad36e3132464c454a9ac13f015" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>const Point &amp; ostk::mathematics::geometry::d2::object::Segment::getFirstPoint</definition>
         <argsstring>() const</argsstring>
         <name>getFirstPoint</name>
         <briefdescription>
@@ -283,11 +283,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="131" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="119" bodyend="127"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="127" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="119" bodyend="127"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a0417919bc94c59ae23492d591514b6c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
-        <definition>Point ostk::mathematics::geometry::d2::object::Segment::getSecondPoint</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a1f061ad935c17979027c8cb66f0396e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>const Point &amp; ostk::mathematics::geometry::d2::object::Segment::getSecondPoint</definition>
         <argsstring>() const</argsstring>
         <name>getSecondPoint</name>
         <briefdescription>
@@ -302,7 +302,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="140" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="129" bodyend="137"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="136" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="129" bodyend="137"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a7e8e8108964812282c0bd08bd8020116" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -321,7 +321,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="149" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="139" bodyend="147"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="145" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="139" bodyend="147"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a1963e9bad746b355e0b340804622b2b9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Vector2d</type>
@@ -340,11 +340,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="158" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="149" bodyend="162"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="154" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="149" bodyend="162"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a90d8233fcd492fac4a74d5715d5e3b28" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Real</type>
-        <definition>Real ostk::mathematics::geometry::d2::object::Segment::getLength</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1aec0b1748024b14f326ddd0e8e2a15581" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::geometry::d2::object::Segment::getLength</definition>
         <argsstring>() const</argsstring>
         <name>getLength</name>
         <briefdescription>
@@ -359,11 +359,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="167" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="164" bodyend="172"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="163" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="164" bodyend="172"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a0fa9db689dceda267581043aab6bc8b9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Real</type>
-        <definition>Real ostk::mathematics::geometry::d2::object::Segment::distanceTo</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a74e13080614b35408f89ae70ea4f31a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::geometry::d2::object::Segment::distanceTo</definition>
         <argsstring>(const Point &amp;aPoint) const</argsstring>
         <name>distanceTo</name>
         <param>
@@ -374,7 +374,7 @@
 <para>Get distance to point. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal">Real<sp/>distance<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1ac5180c75994c3f3f1d824307a600874f" kindref="member">Segment</ref>({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a0fa9db689dceda267581043aab6bc8b9" kindref="member">distanceTo</ref>(Point(1.0,<sp/>0.0))<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>distance<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1ac5180c75994c3f3f1d824307a600874f" kindref="member">Segment</ref>({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a74e13080614b35408f89ae70ea4f31a9" kindref="member">distanceTo</ref>(Point(1.0,<sp/>0.0))<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -391,11 +391,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="177" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="174" bodyend="207"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="173" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="174" bodyend="207"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a529eb85f7ac09d930579f9c1523feb36" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Real</type>
-        <definition>Real ostk::mathematics::geometry::d2::object::Segment::distanceTo</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a63b554d7cdb2d8b77bd37553d1f459eb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::geometry::d2::object::Segment::distanceTo</definition>
         <argsstring>(const PointSet &amp;aPointSet) const</argsstring>
         <name>distanceTo</name>
         <param>
@@ -406,7 +406,7 @@
 <para>Get distance to point set. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal">Real<sp/>distance<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1ac5180c75994c3f3f1d824307a600874f" kindref="member">Segment</ref>({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a0fa9db689dceda267581043aab6bc8b9" kindref="member">distanceTo</ref>(pointSet)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>distance<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1ac5180c75994c3f3f1d824307a600874f" kindref="member">Segment</ref>({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a74e13080614b35408f89ae70ea4f31a9" kindref="member">distanceTo</ref>(pointSet)<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -423,7 +423,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="187" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="209" bodyend="232"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="183" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="209" bodyend="232"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a12d65189283e7c180d4046238be766f0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref></type>
@@ -442,29 +442,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="196" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="234" bodyend="237"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="192" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="234" bodyend="237"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a336bfa4add0cea6ca7ce52a2e2b5e341" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1af4cc42e7b347a04054a582ec007a9c1f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>String</type>
         <definition>String ostk::mathematics::geometry::d2::object::Segment::toString</definition>
-        <argsstring>(const Object::Format &amp;aFormat=Object::Format::Standard, const Integer &amp;aPrecision=Integer::Undefined()) const override</argsstring>
+        <argsstring>(const Object::Format &amp;aFormat=Object::Format::Standard, int aPrecision=-1) const override</argsstring>
         <name>toString</name>
-        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aedf9c7ef5af5892d15cf08da795fa1af">toString</reimplements>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a2da129348eb0c204c65b2f374f5e5e7a">toString</reimplements>
         <param>
           <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" kindref="member">Object::Format</ref> &amp;</type>
           <declname>aFormat</declname>
           <defval><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b" kindref="member">Object::Format::Standard</ref></defval>
         </param>
         <param>
-          <type>const Integer &amp;</type>
+          <type>int</type>
           <declname>aPrecision</declname>
-          <defval>Integer::Undefined()</defval>
+          <defval>-1</defval>
         </param>
         <briefdescription>
 <para>Get string representation. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>str<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1ac5180c75994c3f3f1d824307a600874f" kindref="member">Segment</ref>({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a336bfa4add0cea6ca7ce52a2e2b5e341" kindref="member">toString</ref>()<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>str<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1ac5180c75994c3f3f1d824307a600874f" kindref="member">Segment</ref>({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1af4cc42e7b347a04054a582ec007a9c1f" kindref="member">toString</ref>()<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -481,7 +481,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="206" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="239" bodyend="261"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="202" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="239" bodyend="261"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a104bbc842576324e46876838e92b18c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -525,7 +525,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="218" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="263" bodyend="273"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="213" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="263" bodyend="273"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a678b14d476c41b11372b86e9db54b3a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -557,7 +557,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="228" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="275" bodyend="289"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="223" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="275" bodyend="289"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -578,7 +578,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="237" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="291" bodyend="294"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="232" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp" bodystart="291" bodyend="294"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -615,22 +615,22 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="41" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" bodystart="40" bodyend="242"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" line="37" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp" bodystart="36" bodyend="237"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a678b14d476c41b11372b86e9db54b3a6" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a354e489eed79ff4e87deea504eeccb54" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>clone</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a694a856a4e694e0c570b3e0bbbee9f53" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a23def062fef6c1210fa528ff078930a3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a43eaa4a59d81e7eb36b80f6695de6ce1" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>contains</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a0fa9db689dceda267581043aab6bc8b9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>distanceTo</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a529eb85f7ac09d930579f9c1523feb36" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>distanceTo</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a74e13080614b35408f89ae70ea4f31a9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>distanceTo</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a63b554d7cdb2d8b77bd37553d1f459eb" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>distanceTo</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a87543ef37900f88ad25fdcc5808b40ec" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>firstPoint_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>Format</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a7e8e8108964812282c0bd08bd8020116" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>getCenter</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a1963e9bad746b355e0b340804622b2b9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>getDirection</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1ab16e56418d2482c24971dcf678d85ec5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>getFirstPoint</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a90d8233fcd492fac4a74d5715d5e3b28" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>getLength</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a0417919bc94c59ae23492d591514b6c9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>getSecondPoint</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1aa3177bad36e3132464c454a9ac13f015" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>getFirstPoint</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1aec0b1748024b14f326ddd0e8e2a15581" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>getLength</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a1f061ad935c17979027c8cb66f0396e0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>getSecondPoint</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a553d7a1e388598c74d0f9fdd57d1ba9d" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>intersects</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a6a88d19e8e5978c2fe9eeeb88d6cf8d7" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>isDefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1ae83df71f8f42ef823a7976f78de97a3f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>isDegenerate</name></member>
@@ -643,7 +643,7 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1adc52cee5d89f3d798cd5d9d042a2be13" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>secondPoint_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1ac5180c75994c3f3f1d824307a600874f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>Segment</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a12d65189283e7c180d4046238be766f0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>toLine</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1a336bfa4add0cea6ca7ce52a2e2b5e341" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>toString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1af4cc42e7b347a04054a582ec007a9c1f" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>toString</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment_1abe41a221a94af6243a986b71e27f49ff" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>Undefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af11dec981b2e1ab08deae342ec2c4ef8" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d2::object::Segment</scope><name>~Object</name></member>
     </listofallmembers>

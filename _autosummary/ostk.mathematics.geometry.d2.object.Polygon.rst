@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d2.object.Polygon
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Polygon.apply_transformation
       ~Polygon.contains
@@ -36,9 +39,5 @@ ostk.mathematics.geometry.d2.object.Polygon
       ~Polygon.to_string
       ~Polygon.undefined
       ~Polygon.union_with
-   
-   
-
-   
    
    

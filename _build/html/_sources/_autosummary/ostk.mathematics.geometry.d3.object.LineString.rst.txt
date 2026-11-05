@@ -11,12 +11,14 @@ ostk.mathematics.geometry.d3.object.LineString
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
-      ~LineString.access_point_at
       ~LineString.apply_transformation
       ~LineString.as_cone
       ~LineString.as_ellipsoid
@@ -32,6 +34,7 @@ ostk.mathematics.geometry.d3.object.LineString
       ~LineString.as_sphere
       ~LineString.contains
       ~LineString.empty
+      ~LineString.get_point_at
       ~LineString.get_point_closest_to
       ~LineString.get_point_count
       ~LineString.intersects
@@ -51,9 +54,5 @@ ostk.mathematics.geometry.d3.object.LineString
       ~LineString.is_segment
       ~LineString.is_sphere
       ~LineString.segment
-   
-   
-
-   
    
    

@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d2.object.Line
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Line.apply_transformation
       ~Line.contains
@@ -25,9 +28,5 @@ ostk.mathematics.geometry.d2.object.Line
       ~Line.is_defined
       ~Line.points
       ~Line.undefined
-   
-   
-
-   
    
    

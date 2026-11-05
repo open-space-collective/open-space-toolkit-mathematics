@@ -16,13 +16,18 @@ ostk.mathematics.geometry.d2.Object
    .. autosummary::
       :nosignatures:
    
-      ~Object.apply_transformation
-      ~Object.contains
-      ~Object.intersects
-      ~Object.is_defined
    
    
 
    
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Object.apply_transformation
+      ~Object.contains
+      ~Object.intersects
+      ~Object.is_defined
    
    

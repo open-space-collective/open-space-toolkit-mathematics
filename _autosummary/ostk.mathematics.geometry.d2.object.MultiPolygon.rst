@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d2.object.MultiPolygon
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~MultiPolygon.apply_transformation
       ~MultiPolygon.contains
@@ -27,9 +30,5 @@ ostk.mathematics.geometry.d2.object.MultiPolygon
       ~MultiPolygon.to_string
       ~MultiPolygon.undefined
       ~MultiPolygon.union_with
-   
-   
-
-   
    
    

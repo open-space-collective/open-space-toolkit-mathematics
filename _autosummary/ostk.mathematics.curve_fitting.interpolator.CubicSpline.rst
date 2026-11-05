@@ -11,18 +11,17 @@ ostk.mathematics.curve\_fitting.interpolator.CubicSpline
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~CubicSpline.compute_derivative
       ~CubicSpline.evaluate
       ~CubicSpline.generate_interpolator
       ~CubicSpline.get_interpolation_type
-   
-   
-
-   
    
    

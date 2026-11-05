@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.Cone
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Cone.apply_transformation
       ~Cone.as_cone
@@ -51,9 +54,5 @@ ostk.mathematics.geometry.d3.object.Cone
       ~Cone.is_segment
       ~Cone.is_sphere
       ~Cone.undefined
-   
-   
-
-   
    
    

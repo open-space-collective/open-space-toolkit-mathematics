@@ -16,7 +16,15 @@ ostk.mathematics.geometry.d3.Intersection
    .. autosummary::
       :nosignatures:
    
-      ~Intersection.access_composite
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
       ~Intersection.as_composite
       ~Intersection.as_ellipsoid
       ~Intersection.as_line
@@ -30,10 +38,10 @@ ostk.mathematics.geometry.d3.Intersection
       ~Intersection.as_segment
       ~Intersection.as_sphere
       ~Intersection.empty
+      ~Intersection.get_composite
       ~Intersection.get_type
       ~Intersection.is_complex
       ~Intersection.is_composite
-      ~Intersection.is_defined
       ~Intersection.is_ellipsoid
       ~Intersection.is_empty
       ~Intersection.is_line
@@ -52,10 +60,5 @@ ostk.mathematics.geometry.d3.Intersection
       ~Intersection.ray
       ~Intersection.segment
       ~Intersection.string_from_type
-      ~Intersection.undefined
-   
-   
-
-   
    
    

@@ -235,17 +235,17 @@
         </inbodydescription>
         <location file="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" line="64" column="24" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp" bodystart="187" bodyend="201"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1_1_impl_1a063619b32ee5c31c6ca9e22bd8965b07" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1_1_impl_1a16790c83ab5fd66db3e9bc6368c4300d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
         <definition>String ostk::mathematics::geometry::d2::object::MultiPolygon::Impl::toString</definition>
-        <argsstring>(const Object::Format &amp;aFormat, const Integer &amp;aPrecision) const</argsstring>
+        <argsstring>(const Object::Format &amp;aFormat, int aPrecision) const</argsstring>
         <name>toString</name>
         <param>
           <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" kindref="member">Object::Format</ref> &amp;</type>
           <declname>aFormat</declname>
         </param>
         <param>
-          <type>const Integer &amp;</type>
+          <type>int</type>
           <declname>aPrecision</declname>
         </param>
         <briefdescription>
@@ -333,7 +333,7 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1_1_impl_1ab39614a8daf78ddcf6f368704bc60a0b" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon::Impl</scope><name>multiPolygon_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1_1_impl_1a4b86607007a87cb56a62dfd732a7b4d8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon::Impl</scope><name>operator==</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1_1_impl_1ab4318c09fe24bb561111e6cbcc96f9d0" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon::Impl</scope><name>PolygonFromBoostPolygon</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1_1_impl_1a063619b32ee5c31c6ca9e22bd8965b07" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon::Impl</scope><name>toString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1_1_impl_1a16790c83ab5fd66db3e9bc6368c4300d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon::Impl</scope><name>toString</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1_1_impl_1a39cc0b0d47ef8eab6f8f8084b25f0fb0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon::Impl</scope><name>unionWith</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon_1_1_impl_1aa3b511f0dbfa95739e062ce626624205" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiPolygon::Impl</scope><name>~Impl</name></member>
     </listofallmembers>

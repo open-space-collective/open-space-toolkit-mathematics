@@ -38,6 +38,8 @@ virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1
 
 Barycentric rational interpolator is a high-\/accuracy interpolator method for non-\/uniformly spaced samples. It requires 𝑶(\+N) time for construction, and 𝑶(\+N) time for each evaluation.
 
+Use when the data is smooth and irregularly spaced and high accuracy matters. Unlike a high-\/degree polynomial it does not oscillate wildly, and it has no poles within the data range.
+
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} x = \{\{0.0, 1.0, 2.0, 3.0\}\};}

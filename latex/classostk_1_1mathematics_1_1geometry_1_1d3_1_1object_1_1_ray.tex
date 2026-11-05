@@ -40,11 +40,11 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_r
 \begin{DoxyCompactList}\small\item\em Check if ray contains point. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_aaa1043541f46cbf9939ccb1f24ab8ee9}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
 \begin{DoxyCompactList}\small\item\em Check if ray contains point set. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a64e20625495d9d302afe9c8edcb87ff9}{get\+Origin}} () const
+const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_ac84774bdeaa56d62b517f930e19858ff}{get\+Origin}} () const
 \begin{DoxyCompactList}\small\item\em Get ray origin. \end{DoxyCompactList}\item 
-Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a5154c1a63676ebf5948aaa544a819608}{get\+Direction}} () const
+const Vector3d \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a090d2d72884fab21d0a1ecccdb8aa5e0}{get\+Direction}} () const
 \begin{DoxyCompactList}\small\item\em Get ray direction. \end{DoxyCompactList}\item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a4582d8b43bf47e6d1ede6102425d905c}{distance\+To}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a32884401a156fe00848f4df46e048ee9}{distance\+To}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Get distance to point. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a71557ba02108ba09422fb3c2b2c8ed68}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&a\+Plane) const
 \begin{DoxyCompactList}\small\item\em Compute intersection of ray with plane. \end{DoxyCompactList}\item 
@@ -202,11 +202,11 @@ Check if ray contains point set.
 \begin{DoxyReturn}{Returns}
 True if ray contains point set 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a4582d8b43bf47e6d1ede6102425d905c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a4582d8b43bf47e6d1ede6102425d905c}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a32884401a156fe00848f4df46e048ee9}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a32884401a156fe00848f4df46e048ee9}} 
 \index{ostk::mathematics::geometry::d3::object::Ray@{ostk::mathematics::geometry::d3::object::Ray}!distanceTo@{distanceTo}}
 \index{distanceTo@{distanceTo}!ostk::mathematics::geometry::d3::object::Ray@{ostk::mathematics::geometry::d3::object::Ray}}
 \doxysubsubsection{\texorpdfstring{distanceTo()}{distanceTo()}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ray\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ray\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
 
 
 
@@ -215,7 +215,7 @@ Get distance to point.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}} ray = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
-\DoxyCodeLine{Real distance = ray.distanceTo(Point(1.0, 0.0, 0.0)) ;}
+\DoxyCodeLine{\textcolor{keywordtype}{double} distance = ray.distanceTo(Point(1.0, 0.0, 0.0)) ;}
 \end{DoxyCode}
 
 
@@ -227,11 +227,11 @@ Get distance to point.
 \begin{DoxyReturn}{Returns}
 Distance to point 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a5154c1a63676ebf5948aaa544a819608}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a5154c1a63676ebf5948aaa544a819608}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a090d2d72884fab21d0a1ecccdb8aa5e0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a090d2d72884fab21d0a1ecccdb8aa5e0}} 
 \index{ostk::mathematics::geometry::d3::object::Ray@{ostk::mathematics::geometry::d3::object::Ray}!getDirection@{getDirection}}
 \index{getDirection@{getDirection}!ostk::mathematics::geometry::d3::object::Ray@{ostk::mathematics::geometry::d3::object::Ray}}
 \doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
-{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ray\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const Vector3d \& ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ray\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -239,18 +239,18 @@ Get ray direction.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a5154c1a63676ebf5948aaa544a819608}{getDirection}}() ; \textcolor{comment}{// [0.0, 0.0, 1.0]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a090d2d72884fab21d0a1ecccdb8aa5e0}{getDirection}}() ; \textcolor{comment}{// [0.0, 0.0, 1.0]}}
 \end{DoxyCode}
 
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} direction 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a64e20625495d9d302afe9c8edcb87ff9}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a64e20625495d9d302afe9c8edcb87ff9}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_ac84774bdeaa56d62b517f930e19858ff}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_ac84774bdeaa56d62b517f930e19858ff}} 
 \index{ostk::mathematics::geometry::d3::object::Ray@{ostk::mathematics::geometry::d3::object::Ray}!getOrigin@{getOrigin}}
 \index{getOrigin@{getOrigin}!ostk::mathematics::geometry::d3::object::Ray@{ostk::mathematics::geometry::d3::object::Ray}}
 \doxysubsubsection{\texorpdfstring{getOrigin()}{getOrigin()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ray\+::get\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \& ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ray\+::get\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -258,7 +258,7 @@ Get ray origin.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a64e20625495d9d302afe9c8edcb87ff9}{getOrigin}}() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a0d244c15c77e18801be99d79a100420a}{Ray}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_ac84774bdeaa56d62b517f930e19858ff}{getOrigin}}() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
 \end{DoxyCode}
 
 

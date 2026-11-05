@@ -1,0 +1,425 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::curvefitting::interpolator::QuinticSpline</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator" prot="public" virt="non-virtual">ostk::mathematics::curvefitting::Interpolator</basecompoundref>
+    <includes refid="_quintic_spline_8hpp" local="no">QuinticSpline.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a2980fa3b39af1f1bbe9ba6da5076ea81" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; cardinal_quintic_b_spline&lt; double &gt; &gt;</type>
+        <definition>std::optional&lt;cardinal_quintic_b_spline&lt;double&gt; &gt; ostk::mathematics::curvefitting::interpolator::QuinticSpline::cardinalInterpolator_</definition>
+        <argsstring></argsstring>
+        <name>cardinalInterpolator_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="172" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a398a2d375cba668ad8ada507afd4ccdb" prot="private" static="no" mutable="no">
+        <type>Shared&lt; const <ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline" kindref="compound">NonUniformBasisSpline</ref> &gt;</type>
+        <definition>Shared&lt;const NonUniformBasisSpline&gt; ostk::mathematics::curvefitting::interpolator::QuinticSpline::interpolator_</definition>
+        <argsstring></argsstring>
+        <name>interpolator_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="173" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1ae573940d59f48cb5553f591413fa31dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::QuinticSpline::QuinticSpline</definition>
+        <argsstring>(const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</argsstring>
+        <name>QuinticSpline</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>anXVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aYVector</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1ae573940d59f48cb5553f591413fa31dd" kindref="member">QuinticSpline</ref><sp/>quinticSpline(x,<sp/>y);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>anXVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aYVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of y values</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>The x values must be sorted in strictly ascending order </para>
+</simplesect>
+<simplesect kind="warning"><para>At least 8 data points are required </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="74" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.cpp" bodystart="17" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1ac19cd7d4783fc9b09cb889b9bd649ffa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::QuinticSpline::QuinticSpline</definition>
+        <argsstring>(const VectorXd &amp;aYVector, double x0, double h)</argsstring>
+        <name>QuinticSpline</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aYVector</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1ae573940d59f48cb5553f591413fa31dd" kindref="member">QuinticSpline</ref><sp/>quinticSpline(y,<sp/>0.0,<sp/>1.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aYVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of y values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first x value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The spacing between x values</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>The spacing must be strictly positive </para>
+</simplesect>
+<simplesect kind="warning"><para>At least 8 data points are required </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="88" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.cpp" bodystart="46" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a18c2a3d7e45c1e4ded1d7204f5b892c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::QuinticSpline::~QuinticSpline</definition>
+        <argsstring>() override</argsstring>
+        <name>~QuinticSpline</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Called<sp/>automatically<sp/>when<sp/>the<sp/>QuinticSpline<sp/>goes<sp/>out<sp/>of<sp/>scope</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="95" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.cpp" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1af27536b8dc8693c7d8fddbd87e51d6b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::QuinticSpline::evaluate</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const override</argsstring>
+        <name>evaluate</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a2e5f87beae48daf0ebbd4da6c0fdcb77">evaluate</reimplements>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the quintic spline interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>values<sp/>=<sp/>quinticSpline.evaluate({1.0,<sp/>1.5,<sp/>2.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of y values</para>
+</simplesect>
+<simplesect kind="warning"><para>The query values must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="107" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.cpp" bodystart="64" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a8721ba2a4f5f4c9656f05c41206b7fa6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::QuinticSpline::evaluate</definition>
+        <argsstring>(const double &amp;aQueryValue) const override</argsstring>
+        <name>evaluate</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1aae0c8423f11e7aa9f764ee4973070c36">evaluate</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the quintic spline interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>quinticSpline.evaluate(1.5)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The y value</para>
+</simplesect>
+<simplesect kind="warning"><para>The query value must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="119" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.cpp" bodystart="76" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a4121630285b4eecb0deec104c2b07b9e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::QuinticSpline::computeDerivative</definition>
+        <argsstring>(const double &amp;aQueryValue) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ab17940ffe4064348fa33990424cb4983">computeDerivative</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivative at a specific query value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>derivative<sp/>=<sp/>quinticSpline.computeDerivative(1.5)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The derivative at the given x value</para>
+</simplesect>
+<simplesect kind="warning"><para>The query value must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="131" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.cpp" bodystart="82" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a083cf7ec82c43fac05c214911868101b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::QuinticSpline::computeDerivative</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1af32075ac2a7f44c83f1a17b43cec78ad">computeDerivative</reimplements>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivatives at multiple query values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>derivatives<sp/>=<sp/>quinticSpline.computeDerivative({1.0,<sp/>1.5,<sp/>2.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of derivatives at the given x values</para>
+</simplesect>
+<simplesect kind="warning"><para>The query values must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="143" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.cpp" bodystart="88" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a39931df31cabc09811851af080a31fc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::QuinticSpline::computeSecondDerivative</definition>
+        <argsstring>(const double &amp;aQueryValue) const</argsstring>
+        <name>computeSecondDerivative</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Compute the second derivative at a specific query value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>secondDerivative<sp/>=<sp/>quinticSpline.computeSecondDerivative(1.5)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The second derivative at the given x value</para>
+</simplesect>
+<simplesect kind="warning"><para>The query value must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="155" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.cpp" bodystart="100" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1abeaa2d617aeb5270b2eba00f5a18f85d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::QuinticSpline::computeSecondDerivative</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const</argsstring>
+        <name>computeSecondDerivative</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Compute the second derivatives at multiple query values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>secondDerivatives<sp/>=<sp/>quinticSpline.computeSecondDerivative({1.0,<sp/>2.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of second derivatives at the given x values</para>
+</simplesect>
+<simplesect kind="warning"><para>The query values must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="167" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.cpp" bodystart="106" bodyend="116"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline" kindref="compound">QuinticSpline</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A quintic spline is a piecewise fifth-degree polynomial fitted so that it passes through the given data points. The resulting interpolant is C4 continuous, and reproduces quintic polynomials exactly. It is the highest order of the spline interpolators, and is the natural choice when a smooth second derivative is needed.</para>
+<para>The first and second derivatives at the two end points are estimated from the data.</para>
+<para>Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with a cardinal B-spline, which finds the containing interval in constant time rather than searching for it, and is therefore faster to evaluate. Which of the two is used is decided from the data and is not otherwise observable.</para>
+<para>Use when the data is smooth and only values are known, but smooth higher derivatives are needed, for instance acceleration from positions. Higher order amplifies noise, so prefer clean data.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>x<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>2.0,<sp/>3.0,<sp/>4.0,<sp/>5.0,<sp/>6.0,<sp/>7.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>y<sp/>=<sp/>{{2.0,<sp/>0.0,<sp/>6.0,<sp/>56.0,<sp/>210.0,<sp/>552.0,<sp/>1190.0,<sp/>2256.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1ae573940d59f48cb5553f591413fa31dd" kindref="member">QuinticSpline</ref><sp/>interpolator(x,<sp/>y);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>interpolator.evaluate(1.5);</highlight></codeline>
+</programlisting></para>
+<para><ulink url="https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/cardinal_quintic_b.html">https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/cardinal_quintic_b.html</ulink> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ostk::mathematics::curvefitting::interpolator::QuinticSpline</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::curvefitting::Interpolator</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ostk::mathematics::curvefitting::interpolator::QuinticSpline</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::curvefitting::Interpolator</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" line="61" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp" bodystart="60" bodyend="174"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a2980fa3b39af1f1bbe9ba6da5076ea81" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>cardinalInterpolator_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a4121630285b4eecb0deec104c2b07b9e" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>computeDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a083cf7ec82c43fac05c214911868101b" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>computeDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a39931df31cabc09811851af080a31fc0" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>computeSecondDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1abeaa2d617aeb5270b2eba00f5a18f85d" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>computeSecondDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1af27536b8dc8693c7d8fddbd87e51d6b8" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a8721ba2a4f5f4c9656f05c41206b7fa6" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>GenerateInterpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a3e596528cd5e416546dabe45e9100e04" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>getInterpolationType</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6593f90bb974214f6f2b264bc114b96e" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>Interpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a398a2d375cba668ad8ada507afd4ccdb" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>interpolator_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a171aae7fe231c3e7b15568d45650e8b0" prot="protected" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>IsUniformlySpaced</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1ae573940d59f48cb5553f591413fa31dd" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>QuinticSpline</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1ac19cd7d4783fc9b09cb889b9bd649ffa" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>QuinticSpline</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>Type</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ac980e413bfeb65eceb347e787899c1f4" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>~Interpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline_1a18c2a3d7e45c1e4ded1d7204f5b892c2" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuinticSpline</scope><name>~QuinticSpline</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

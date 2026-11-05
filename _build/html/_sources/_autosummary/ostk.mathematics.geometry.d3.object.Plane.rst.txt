@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.Plane
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Plane.apply_transformation
       ~Plane.as_cone
@@ -48,9 +51,5 @@ ostk.mathematics.geometry.d3.object.Plane
       ~Plane.is_segment
       ~Plane.is_sphere
       ~Plane.undefined
-   
-   
-
-   
    
    

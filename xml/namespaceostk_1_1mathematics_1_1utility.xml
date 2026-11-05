@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceostk_1_1mathematics_1_1utility" kind="namespace" language="C++">
+    <compoundname>ostk::mathematics::utility</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1utility_1a9497030ebeab9a401e6133d3ec9d1dd6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::utility::DoubleToString</definition>
+        <argsstring>(double aValue, int aPrecision=-1)</argsstring>
+        <name>DoubleToString</name>
+        <param>
+          <type>double</type>
+          <declname>aValue</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>aPrecision</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+<para>Convert a double to a string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>                        Matches the output of the former ostk::core::type::Real::toString:
+                        NaN is printed as &quot;Undefined&quot;, infinities as &quot;+Inf&quot; / &quot;-Inf&quot;.
+                        With a negative precision, the shortest round-trip representation is used
+                        (integral values get a &quot;.0&quot; suffix, trailing zeros are removed).
+                        With a non-negative precision, fixed notation with that many decimals is used.
+</verbatim></para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1utility_1a9497030ebeab9a401e6133d3ec9d1dd6" kindref="member">DoubleToString</ref>(1.0)<sp/>;<sp/></highlight><highlight class="comment">//<sp/>&quot;1.0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1utility_1a9497030ebeab9a401e6133d3ec9d1dd6" kindref="member">DoubleToString</ref>(0.5)<sp/>;<sp/></highlight><highlight class="comment">//<sp/>&quot;0.5&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1utility_1a9497030ebeab9a401e6133d3ec9d1dd6" kindref="member">DoubleToString</ref>(0.5,<sp/>3)<sp/>;<sp/></highlight><highlight class="comment">//<sp/>&quot;0.500&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1utility_1a9497030ebeab9a401e6133d3ec9d1dd6" kindref="member">DoubleToString</ref>(std::numeric_limits&lt;double&gt;::quiet_NaN())<sp/>;<sp/></highlight><highlight class="comment">//<sp/>&quot;Undefined&quot;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aPrecision</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A precision (number of decimal places, or -1 for automatic) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Utility.hpp" line="42" column="15" bodyfile="include/OpenSpaceToolkit/Mathematics/Utility.hpp" bodystart="42" bodyend="82"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Utility.hpp" line="20" column="1"/>
+  </compounddef>
+</doxygen>

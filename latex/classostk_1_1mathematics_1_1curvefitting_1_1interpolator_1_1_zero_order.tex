@@ -39,6 +39,9 @@ Zero-\/\+Order Hold \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_
 \begin{DoxyVerb}                        A step interpolator that returns the value of the previous data point.
                         For any query value x, it returns the y value of the largest data point
                         x_i where x_i <= x. Also known as "zero-order hold" or "step" interpolation.
+
+                        Use when the data is discrete or piecewise constant (states, modes,
+                        commands), or when values must not be invented between samples.
 \end{DoxyVerb}
 
 

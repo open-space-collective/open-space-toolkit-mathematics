@@ -45,7 +45,7 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_p
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a81f715c35ecd0fa424f2daf4ffe59bec}{is\+Defined}} () const override
 \begin{DoxyCompactList}\small\item\em Check if polygon is defined. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_ad5d51eaab4e20905884893b79ff6bf32}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon, const Real \&a\+Tolerance) const
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a687fbfa7aadad5f8ab581895e71286a6}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon, double a\+Tolerance) const
 \begin{DoxyCompactList}\small\item\em Check if polygon is near another polygon. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a8292e74414aa470153d0bd6f0884e00d}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon) const
 \begin{DoxyCompactList}\small\item\em Check if polygon intersects polygon. \end{DoxyCompactList}\item 
@@ -81,7 +81,7 @@ Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1
 \begin{DoxyCompactList}\small\item\em Compute difference of polygon with polygon. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon}{Multi\+Polygon}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_addbc0c8111c2f8c5ce1ff347135d54fe}{union\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon) const
 \begin{DoxyCompactList}\small\item\em Compute union of polygon with polygon. \end{DoxyCompactList}\item 
-virtual String \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_acae5758cc07f2787875897d4392a07a4}{to\+String}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&a\+Format=\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
+virtual String \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a1501f196dc61a347ec6300d8a39beec6}{to\+String}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&a\+Format=\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}, int a\+Precision=-\/1) const override
 \begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a4e6da736abac853938c0a42e50984191}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
 \begin{DoxyCompactList}\small\item\em Print polygon. \end{DoxyCompactList}\item 
@@ -641,11 +641,11 @@ True if polygon is defined
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_abe5ea18c13bc259fc0da0b0c49fa0dca}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_ad5d51eaab4e20905884893b79ff6bf32}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_ad5d51eaab4e20905884893b79ff6bf32}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a687fbfa7aadad5f8ab581895e71286a6}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a687fbfa7aadad5f8ab581895e71286a6}} 
 \index{ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}!isNear@{isNear}}
 \index{isNear@{isNear}!ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}}
 \doxysubsubsection{\texorpdfstring{isNear()}{isNear()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Polygon\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} \&}]{a\+Polygon,  }\item[{const Real \&}]{a\+Tolerance }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Polygon\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon}{Polygon}} \&}]{a\+Polygon,  }\item[{double}]{a\+Tolerance }\end{DoxyParamCaption}) const}
 
 
 
@@ -766,11 +766,11 @@ Print polygon.
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_aaf59b52c718ca92c6b6116660077d9f9}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_acae5758cc07f2787875897d4392a07a4}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_acae5758cc07f2787875897d4392a07a4}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a1501f196dc61a347ec6300d8a39beec6}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_a1501f196dc61a347ec6300d8a39beec6}} 
 \index{ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}!toString@{toString}}
 \index{toString@{toString}!ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}}
 \doxysubsubsection{\texorpdfstring{toString()}{toString()}}
-{\footnotesize\ttfamily String ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Polygon\+::to\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&}]{a\+Format = {\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}},  }\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily String ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Polygon\+::to\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&}]{a\+Format = {\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}},  }\item[{int}]{a\+Precision = {\ttfamily -\/1} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -792,7 +792,7 @@ String representation
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_aedf9c7ef5af5892d15cf08da795fa1af}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a2da129348eb0c204c65b2f374f5e5e7a}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
 
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_adcfe062c3f4fdf897e701399f3d6fd3c}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_adcfe062c3f4fdf897e701399f3d6fd3c}} 
 \index{ostk::mathematics::geometry::d2::object::Polygon@{ostk::mathematics::geometry::d2::object::Polygon}!Undefined@{Undefined}}

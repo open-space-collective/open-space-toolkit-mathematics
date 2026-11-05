@@ -5,8 +5,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite =
     [ "Composite", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a40e91d9468ac09b2b87155b79d196d1d", null ],
     [ "Composite", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a66437dec2907929057147bcf7e6cd364", null ],
     [ "Composite", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#ae777b05fd25e69c98d8d664b6a3e4e14", null ],
-    [ "accessObjectAt", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a05508e89ea2f4af51e9cc5c11f297bf9", null ],
-    [ "accessObjects", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a5559e88bf01995f1c798d9083712758c", null ],
     [ "anyContains", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#ae6722f4d87b91c43645c2176c7effe47", null ],
     [ "anyContains", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a2249520e6059ea385d2b7bd2ff4b78ae", null ],
     [ "applyTransformation", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#aa1fd52d4955be0b4ee647ac2971e72bf", null ],
@@ -16,7 +14,9 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite =
     [ "contains", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#aff95d8fa19dde2346269555c4b8e05cf", null ],
     [ "contains", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a9c1fbdcbb36a4689a047ec6a9e887ebc", null ],
     [ "end", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a01d075d05560cae44d5fc4fa17f3594c", null ],
+    [ "getObjectAt", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a83e9144fe2aeab4c5197cd9f86c159d8", null ],
     [ "getObjectCount", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a823c0b72b4adcdd660b3d2eb874f0b93", null ],
+    [ "getObjects", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#ae97051c7a187b9521fa08ac6ca1fc59a", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#ae79948364d0502c3b6f839ce90e00b45", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a268fb26bb98a77e6ddca626901e9449e", null ],
     [ "is", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a569c373be972804901329c2b2886edba", null ],
@@ -28,5 +28,5 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite =
     [ "operator=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a6ceb4ff7945166c63292269531ecf722", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#aaa0ab4bcefcb11d05ddfcdea811f7d0b", null ],
     [ "print", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a68feee2a993e698e796db61bc27a6167", null ],
-    [ "toString", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a5b9183cde21c414bc8a12e2e079e4ed1", null ]
+    [ "toString", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html#a2abdd1a22d9790454773796e134c936d", null ]
 ];

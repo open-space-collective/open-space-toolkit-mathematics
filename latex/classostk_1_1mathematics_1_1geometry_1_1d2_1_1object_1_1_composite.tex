@@ -63,17 +63,17 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_c
 \begin{DoxyCompactList}\small\item\em Check if composite contains object. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_ae6722f4d87b91c43645c2176c7effe47}{any\+Contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite}{Composite}} \&a\+Composite) const
 \begin{DoxyCompactList}\small\item\em Check if composite contains composite. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object}{Object}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a05508e89ea2f4af51e9cc5c11f297bf9}{access\+Object\+At}} (const Index \&an\+Index) const
-\begin{DoxyCompactList}\small\item\em Access object at index. \end{DoxyCompactList}\item 
-const Array$<$ Unique$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object}{Object}} $>$ $>$ \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a5559e88bf01995f1c798d9083712758c}{access\+Objects}} () const
-\begin{DoxyCompactList}\small\item\em Access objects in composite. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object}{Object}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a83e9144fe2aeab4c5197cd9f86c159d8}{get\+Object\+At}} (const Index \&an\+Index) const
+\begin{DoxyCompactList}\small\item\em Get object at index. \end{DoxyCompactList}\item 
+const Array$<$ Unique$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object}{Object}} $>$ $>$ \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_ae97051c7a187b9521fa08ac6ca1fc59a}{get\+Objects}} () const
+\begin{DoxyCompactList}\small\item\em Get objects in composite. \end{DoxyCompactList}\item 
 Size \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a823c0b72b4adcdd660b3d2eb874f0b93}{get\+Object\+Count}} () const
 \begin{DoxyCompactList}\small\item\em Get number of objects in composite. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a34efd57a99c61f2e4e63fd6444dae04f}{Composite\+::\+Const\+Iterator}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a89beece656a90043d888c5cdd4504753}{begin}} () const
 \begin{DoxyCompactList}\small\item\em Compute intersection of composite with object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a34efd57a99c61f2e4e63fd6444dae04f}{Composite\+::\+Const\+Iterator}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a01d075d05560cae44d5fc4fa17f3594c}{end}} () const
 \begin{DoxyCompactList}\small\item\em Get const iterator to end. \end{DoxyCompactList}\item 
-virtual String \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a5b9183cde21c414bc8a12e2e079e4ed1}{to\+String}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&a\+Format=\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
+virtual String \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a2abdd1a22d9790454773796e134c936d}{to\+String}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&a\+Format=\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}, int a\+Precision=-\/1) const override
 \begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a68feee2a993e698e796db61bc27a6167}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
 \begin{DoxyCompactList}\small\item\em Print composite. \end{DoxyCompactList}\item 
@@ -82,8 +82,6 @@ virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1obje
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite}{Composite}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a68ef0c5cbb3fde1c662f60c5f137fe60}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined composite. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite}{Composite}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a5704d4c2404b89ef12ccf562fd48a7f5}{Empty}} ()
 \begin{DoxyCompactList}\small\item\em Constructs an empty composite. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -197,49 +195,6 @@ Copy constructor.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a05508e89ea2f4af51e9cc5c11f297bf9}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a05508e89ea2f4af51e9cc5c11f297bf9}} 
-\index{ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}!accessObjectAt@{accessObjectAt}}
-\index{accessObjectAt@{accessObjectAt}!ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}}
-\doxysubsubsection{\texorpdfstring{accessObjectAt()}{accessObjectAt()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object}{Object}} \& ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Composite\+::access\+Object\+At (\begin{DoxyParamCaption}\item[{const Index \&}]{an\+Index }\end{DoxyParamCaption}) const}
-
-
-
-Access object at index. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{const} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a15a959fd5b624d6fcc6725982a8cddf8}{Object}}\& \textcolor{keywordtype}{object} = composite.accessObjectAt(0) ;}
-\end{DoxyCode}
-
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em an\+Index} & An object index \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Reference to object 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a5559e88bf01995f1c798d9083712758c}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a5559e88bf01995f1c798d9083712758c}} 
-\index{ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}!accessObjects@{accessObjects}}
-\index{accessObjects@{accessObjects}!ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}}
-\doxysubsubsection{\texorpdfstring{accessObjects()}{accessObjects()}}
-{\footnotesize\ttfamily const Array$<$ Unique$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object}{Object}} $>$ $>$ \& ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Composite\+::access\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Access objects in composite. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{const} Array<Unique<Object>>\& objects = composite.accessObjects() ;}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Reference to objects in composite 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_ae6722f4d87b91c43645c2176c7effe47}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_ae6722f4d87b91c43645c2176c7effe47}} 
 \index{ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}!anyContains@{anyContains}}
 \index{anyContains@{anyContains}!ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}}
@@ -484,6 +439,30 @@ Get const iterator to end.
 \begin{DoxyReturn}{Returns}
 Const iterator to end 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a83e9144fe2aeab4c5197cd9f86c159d8}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a83e9144fe2aeab4c5197cd9f86c159d8}} 
+\index{ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}!getObjectAt@{getObjectAt}}
+\index{getObjectAt@{getObjectAt}!ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}}
+\doxysubsubsection{\texorpdfstring{getObjectAt()}{getObjectAt()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object}{Object}} \& ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Composite\+::get\+Object\+At (\begin{DoxyParamCaption}\item[{const Index \&}]{an\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Get object at index. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a15a959fd5b624d6fcc6725982a8cddf8}{Object}}\& \textcolor{keywordtype}{object} = composite.getObjectAt(0) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Index} & An object index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Const reference to object 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a823c0b72b4adcdd660b3d2eb874f0b93}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a823c0b72b4adcdd660b3d2eb874f0b93}} 
 \index{ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}!getObjectCount@{getObjectCount}}
 \index{getObjectCount@{getObjectCount}!ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}}
@@ -502,6 +481,25 @@ Get number of objects in composite.
 
 \begin{DoxyReturn}{Returns}
 Number of objects in composite 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_ae97051c7a187b9521fa08ac6ca1fc59a}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_ae97051c7a187b9521fa08ac6ca1fc59a}} 
+\index{ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}!getObjects@{getObjects}}
+\index{getObjects@{getObjects}!ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}}
+\doxysubsubsection{\texorpdfstring{getObjects()}{getObjects()}}
+{\footnotesize\ttfamily const Array$<$ Unique$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object}{Object}} $>$ $>$ \& ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Composite\+::get\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get objects in composite. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} Array<Unique<Object>>\& objects = composite.getObjects() ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Const reference to objects in composite 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_ae79948364d0502c3b6f839ce90e00b45}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_ae79948364d0502c3b6f839ce90e00b45}} 
 \index{ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}!intersects@{intersects}}
@@ -595,7 +593,7 @@ Check if composite is defined.
 
 
 \begin{DoxyReturn}{Returns}
-True if composite is defined 
+True if all objects of the composite are defined 
 \end{DoxyReturn}
 
 
@@ -771,11 +769,11 @@ Print composite.
 
 Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_aaf59b52c718ca92c6b6116660077d9f9}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a5b9183cde21c414bc8a12e2e079e4ed1}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a5b9183cde21c414bc8a12e2e079e4ed1}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a2abdd1a22d9790454773796e134c936d}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a2abdd1a22d9790454773796e134c936d}} 
 \index{ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}!toString@{toString}}
 \index{toString@{toString}!ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}}
 \doxysubsubsection{\texorpdfstring{toString()}{toString()}}
-{\footnotesize\ttfamily String ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Composite\+::to\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&}]{a\+Format = {\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}},  }\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily String ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Composite\+::to\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13}{Object\+::\+Format}} \&}]{a\+Format = {\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}},  }\item[{int}]{a\+Precision = {\ttfamily -\/1} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -797,27 +795,8 @@ String representation
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_aedf9c7ef5af5892d15cf08da795fa1af}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_a2da129348eb0c204c65b2f374f5e5e7a}{ostk\+::mathematics\+::geometry\+::d2\+::\+Object}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a68ef0c5cbb3fde1c662f60c5f137fe60}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a68ef0c5cbb3fde1c662f60c5f137fe60}} 
-\index{ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d2::object::Composite@{ostk::mathematics::geometry::d2::object::Composite}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite}{Composite}} ostk\+::mathematics\+::geometry\+::d2\+::object\+::\+Composite\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined composite. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a46840777485fc459449f36c304ef8989}{Composite}} composite = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_a68ef0c5cbb3fde1c662f60c5f137fe60}{Composite::Undefined}}() ; \textcolor{comment}{// Undefined}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined composite 
-\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

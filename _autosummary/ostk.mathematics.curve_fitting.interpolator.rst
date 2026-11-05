@@ -21,8 +21,12 @@
       :nosignatures:
    
       BarycentricRational
+      CubicHermite
       CubicSpline
       Linear
+      QuadraticSpline
+      QuinticHermite
+      QuinticSpline
       ZeroOrder
    
    

@@ -1,0 +1,355 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator" prot="public" virt="non-virtual">ostk::mathematics::curvefitting::Interpolator</basecompoundref>
+    <includes refid="_quadratic_spline_8hpp" local="no">QuadraticSpline.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1af621489988af73261e33f0ecd55bf724" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; cardinal_quadratic_b_spline&lt; double &gt; &gt;</type>
+        <definition>std::optional&lt;cardinal_quadratic_b_spline&lt;double&gt; &gt; ostk::mathematics::curvefitting::interpolator::QuadraticSpline::cardinalInterpolator_</definition>
+        <argsstring></argsstring>
+        <name>cardinalInterpolator_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" line="148" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a5da43f5ded70bead06a96288185e1795" prot="private" static="no" mutable="no">
+        <type>Shared&lt; const <ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline" kindref="compound">NonUniformBasisSpline</ref> &gt;</type>
+        <definition>Shared&lt;const NonUniformBasisSpline&gt; ostk::mathematics::curvefitting::interpolator::QuadraticSpline::interpolator_</definition>
+        <argsstring></argsstring>
+        <name>interpolator_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" line="149" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a64f0307ddfd3082a522d4759a6ca3eb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::QuadraticSpline::QuadraticSpline</definition>
+        <argsstring>(const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</argsstring>
+        <name>QuadraticSpline</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>anXVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aYVector</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a64f0307ddfd3082a522d4759a6ca3eb6" kindref="member">QuadraticSpline</ref><sp/>quadraticSpline(x,<sp/>y);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>anXVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aYVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of y values</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>The x values must be sorted in strictly ascending order </para>
+</simplesect>
+<simplesect kind="warning"><para>At least 3 data points are required </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" line="74" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.cpp" bodystart="17" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a41565f837f874a22d696238db6f05961" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::QuadraticSpline::QuadraticSpline</definition>
+        <argsstring>(const VectorXd &amp;aYVector, double x0, double h)</argsstring>
+        <name>QuadraticSpline</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aYVector</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a64f0307ddfd3082a522d4759a6ca3eb6" kindref="member">QuadraticSpline</ref><sp/>quadraticSpline(y,<sp/>0.0,<sp/>1.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aYVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of y values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first x value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The spacing between x values</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>The spacing must be strictly positive </para>
+</simplesect>
+<simplesect kind="warning"><para>At least 3 data points are required </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" line="88" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.cpp" bodystart="46" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a51139cef6099ab89d9b0629327357bc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::QuadraticSpline::~QuadraticSpline</definition>
+        <argsstring>() override</argsstring>
+        <name>~QuadraticSpline</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Called<sp/>automatically<sp/>when<sp/>the<sp/>QuadraticSpline<sp/>goes<sp/>out<sp/>of<sp/>scope</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" line="95" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.cpp" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a3cd7731de528d9b5c8bd315d0a586f71" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::QuadraticSpline::evaluate</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const override</argsstring>
+        <name>evaluate</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a2e5f87beae48daf0ebbd4da6c0fdcb77">evaluate</reimplements>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the quadratic spline interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>values<sp/>=<sp/>quadraticSpline.evaluate({1.0,<sp/>1.5,<sp/>2.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of y values</para>
+</simplesect>
+<simplesect kind="warning"><para>The query values must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" line="107" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.cpp" bodystart="64" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a35ddd221bc8705571ff9618073cac60a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::QuadraticSpline::evaluate</definition>
+        <argsstring>(const double &amp;aQueryValue) const override</argsstring>
+        <name>evaluate</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1aae0c8423f11e7aa9f764ee4973070c36">evaluate</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the quadratic spline interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>quadraticSpline.evaluate(1.5)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The y value</para>
+</simplesect>
+<simplesect kind="warning"><para>The query value must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" line="119" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.cpp" bodystart="76" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a8ef3bb23a1c9ad6a548a6701dc17dae5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::QuadraticSpline::computeDerivative</definition>
+        <argsstring>(const double &amp;aQueryValue) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ab17940ffe4064348fa33990424cb4983">computeDerivative</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivative at a specific query value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>derivative<sp/>=<sp/>quadraticSpline.computeDerivative(1.5)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The derivative at the given x value</para>
+</simplesect>
+<simplesect kind="warning"><para>The query value must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" line="131" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.cpp" bodystart="82" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a287a6b511504b751f273ace5173d07a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::QuadraticSpline::computeDerivative</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1af32075ac2a7f44c83f1a17b43cec78ad">computeDerivative</reimplements>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivatives at multiple query values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>derivatives<sp/>=<sp/>quadraticSpline.computeDerivative({1.0,<sp/>1.5,<sp/>2.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of derivatives at the given x values</para>
+</simplesect>
+<simplesect kind="warning"><para>The query values must lie within the interpolation domain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" line="143" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.cpp" bodystart="88" bodyend="98"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline" kindref="compound">QuadraticSpline</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A quadratic spline is a piecewise second-degree polynomial fitted so that it passes through the given data points. The resulting interpolant is C1 continuous, and reproduces quadratic polynomials exactly. It is cheaper and less oscillatory than a cubic spline, at the cost of a lower order of accuracy.</para>
+<para>The derivatives at the two end points are estimated from the data.</para>
+<para>Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with a cardinal B-spline, which finds the containing interval in constant time rather than searching for it, and is therefore faster to evaluate. Which of the two is used is decided from the data and is not otherwise observable.</para>
+<para>Use when the data is smooth and only values are known, and a continuous first derivative is enough. It is cheaper and less oscillatory than a cubic spline.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>x<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>2.0,<sp/>3.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>y<sp/>=<sp/>{{2.0,<sp/>0.0,<sp/>0.0,<sp/>2.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a64f0307ddfd3082a522d4759a6ca3eb6" kindref="member">QuadraticSpline</ref><sp/>interpolator(x,<sp/>y);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>interpolator.evaluate(1.5);</highlight></codeline>
+</programlisting></para>
+<para><ulink url="https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/cardinal_quadratic_b.html">https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/cardinal_quadratic_b.html</ulink> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ostk::mathematics::curvefitting::Interpolator</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ostk::mathematics::curvefitting::Interpolator</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" line="61" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp" bodystart="60" bodyend="150"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1af621489988af73261e33f0ecd55bf724" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>cardinalInterpolator_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a8ef3bb23a1c9ad6a548a6701dc17dae5" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>computeDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a287a6b511504b751f273ace5173d07a3" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>computeDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a3cd7731de528d9b5c8bd315d0a586f71" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a35ddd221bc8705571ff9618073cac60a" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>GenerateInterpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a3e596528cd5e416546dabe45e9100e04" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>getInterpolationType</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6593f90bb974214f6f2b264bc114b96e" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>Interpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a5da43f5ded70bead06a96288185e1795" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>interpolator_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a171aae7fe231c3e7b15568d45650e8b0" prot="protected" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>IsUniformlySpaced</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a64f0307ddfd3082a522d4759a6ca3eb6" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>QuadraticSpline</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a41565f837f874a22d696238db6f05961" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>QuadraticSpline</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>Type</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ac980e413bfeb65eceb347e787899c1f4" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>~Interpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_1a51139cef6099ab89d9b0629327357bc4" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::QuadraticSpline</scope><name>~QuadraticSpline</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

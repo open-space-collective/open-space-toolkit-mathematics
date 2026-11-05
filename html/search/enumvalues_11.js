@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['zeroorder_920',['ZeroOrder',['../classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557a302ecba0c202890cc825530fca2bf596',1,'ostk::mathematics::curvefitting::Interpolator']]],
-  ['zxy_921',['ZXY',['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#ac0be9aa2bd8691e11c6b2838709c168ca07bb28478030fc8b86da84000c9860d3',1,'ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle']]],
-  ['zyx_922',['ZYX',['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#ac0be9aa2bd8691e11c6b2838709c168ca6811254e01b3550bdb2dc46f204730dc',1,'ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle']]]
+  ['xyz_972',['XYZ',['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#ac0be9aa2bd8691e11c6b2838709c168cae65075d550f9b5bf9992fa1d71a131be',1,'ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle']]],
+  ['xyzs_973',['XYZS',['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#a69f1621be80ba171c61830a76d481bfca11c51ecd5dc6f86ba3c1ae79e21482f5',1,'ostk::mathematics::geometry::d3::transformation::rotation::Quaternion']]]
 ];

@@ -11,10 +11,13 @@ ostk.mathematics.solver.NumericalSolver
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~NumericalSolver.default
       ~NumericalSolver.get_absolute_tolerance
@@ -29,9 +32,5 @@ ostk.mathematics.solver.NumericalSolver
       ~NumericalSolver.string_from_log_type
       ~NumericalSolver.string_from_stepper_type
       ~NumericalSolver.undefined
-   
-   
-
-   
    
    

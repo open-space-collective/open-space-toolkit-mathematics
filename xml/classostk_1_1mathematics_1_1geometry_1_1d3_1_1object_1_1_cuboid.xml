@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="52" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="52" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="50" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a2caa3ede4a8f8684fc8b62a8cdce0a57" prot="public" static="no">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" kindref="compound">Segment</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="53" column="21" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="53" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="51" column="21" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="51" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="442" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="442" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="440" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="440" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aec319bc94290f0f11885678fdfe8166e" prot="private" static="no" mutable="no">
         <type>std::array&lt; Vector3d, 3 &gt;</type>
@@ -57,11 +57,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="443" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="443" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="441" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="441" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a6e8dff8299b686e0e1bf864dca065f71" prot="private" static="no" mutable="no">
-        <type>std::array&lt; Real, 3 &gt;</type>
-        <definition>std::array&lt;Real, 3&gt; ostk::mathematics::geometry::d3::object::Cuboid::extent_</definition>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a3d8473912c694f25c87e3d2d3aa4c32c" prot="private" static="no" mutable="no">
+        <type>std::array&lt; double, 3 &gt;</type>
+        <definition>std::array&lt;double, 3&gt; ostk::mathematics::geometry::d3::object::Cuboid::extent_</definition>
         <argsstring></argsstring>
         <name>extent_</name>
         <briefdescription>
@@ -70,14 +70,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="444" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="444" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="442" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="442" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>ostk::mathematics::geometry::d3::object::Cuboid::Cuboid</definition>
-        <argsstring>(const Point &amp;aCenter, const std::array&lt; Vector3d, 3 &gt; &amp;aAxisArray, const std::array&lt; Real, 3 &gt; &amp;anExtent)</argsstring>
+        <argsstring>(const Point &amp;aCenter, const std::array&lt; Vector3d, 3 &gt; &amp;aAxisArray, const std::array&lt; double, 3 &gt; &amp;anExtent)</argsstring>
         <name>Cuboid</name>
         <param>
           <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
@@ -88,20 +88,20 @@
           <declname>aAxisArray</declname>
         </param>
         <param>
-          <type>const std::array&lt; Real, 3 &gt; &amp;</type>
+          <type>const std::array&lt; double, 3 &gt; &amp;</type>
           <declname>anExtent</declname>
         </param>
         <briefdescription>
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0</highlight></codeline>
 <codeline><highlight class="normal">}<sp/>},<sp/>{<sp/>1.0,<sp/>2.0,<sp/>3.0<sp/>}<sp/>}<sp/>;</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="62" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="54" bodyend="60"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="60" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="60" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ab67f8c5204e7d81204f80ca1298073a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref> *</type>
@@ -113,7 +113,7 @@
 <para>Clone cuboid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref>*<sp/>clonePtr<sp/>=<sp/>cuboid.clone()<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref>*<sp/>clonePtr<sp/>=<sp/>cuboid.clone()<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para>Pointer to cloned cuboid </para>
 </simplesect>
@@ -121,7 +121,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="71" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="62" bodyend="65"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="69" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="68" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1abe25b1d5a60b159cfe79475e0a1bcd4b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -136,7 +136,7 @@
 <para>Equal to operator. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0</highlight></codeline>
 <codeline><highlight class="normal">}<sp/>},<sp/>{<sp/>1.0,<sp/>2.0,<sp/>3.0<sp/>}<sp/>}<sp/>;<sp/>cuboid<sp/>==<sp/>cuboid<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
@@ -154,7 +154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="82" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="67" bodyend="144"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="80" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="73" bodyend="150"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a1dbcaa8deafe0bb5a99a426725306b30" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -169,7 +169,7 @@
 <para>Not equal to operator. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0</highlight></codeline>
 <codeline><highlight class="normal">}<sp/>},<sp/>{<sp/>1.0,<sp/>2.0,<sp/>3.0<sp/>}<sp/>}<sp/>;<sp/>cuboid<sp/>!=<sp/>cuboid<sp/>;<sp/></highlight><highlight class="comment">//<sp/>False</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
@@ -187,7 +187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="93" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="146" bodyend="149"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="91" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="152" bodyend="155"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ae9749637798c6670bb1c2b8cc2850ba8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -199,7 +199,7 @@
 <para>Check if cuboid is defined. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0</highlight></codeline>
 <codeline><highlight class="normal">}<sp/>},<sp/>{<sp/>1.0,<sp/>2.0,<sp/>3.0<sp/>}<sp/>}<sp/>;<sp/>cuboid.isDefined()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>True</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para>True if cuboid is defined </para>
@@ -208,19 +208,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="103" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="151" bodyend="155"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="101" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="157" bodyend="161"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ae79125fb5fff0a42cdd7bf89ba8a0718" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a9919583ad7088da65c90dfb090b872bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool ostk::mathematics::geometry::d3::object::Cuboid::isNear</definition>
-        <argsstring>(const Cuboid &amp;aCuboid, const Real &amp;aTolerance) const</argsstring>
+        <argsstring>(const Cuboid &amp;aCuboid, double aTolerance) const</argsstring>
         <name>isNear</name>
         <param>
           <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref> &amp;</type>
           <declname>aCuboid</declname>
         </param>
         <param>
-          <type>const Real &amp;</type>
+          <type>double</type>
           <declname>aTolerance</declname>
         </param>
         <briefdescription>
@@ -252,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="114" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="157" bodyend="175"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="112" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="163" bodyend="181"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a25720e902948424afe2f04f20e17aaad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -267,7 +267,7 @@
 <para>Check if cuboid intersects point. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.intersects(point)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -286,7 +286,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="126" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="177" bodyend="180"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="124" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="183" bodyend="186"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a912567b6d352e2c74129dc3bf1338e33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -301,7 +301,7 @@
 <para>Check if cuboid intersects point set. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">PointSet<sp/>pointSet<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.intersects(pointSet)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -320,7 +320,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="138" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="182" bodyend="197"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="136" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="188" bodyend="203"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a7b7213f7ee4154957c65b0c8d9fdde63" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -335,7 +335,7 @@
 <para>Check if cuboid intersects line. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.intersects(line)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -354,7 +354,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="150" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="199" bodyend="236"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="148" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="205" bodyend="242"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1af02af83e9c321858d2b54dfc31730aa9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -369,7 +369,7 @@
 <para>Check if cuboid intersects ray. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Ray<sp/>ray<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.intersects(ray)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -388,7 +388,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="162" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="160" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a0d7ae6afa89438cb9f1676fccd400b15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -403,7 +403,7 @@
 <para>Check if cuboid intersects segment. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Segment<sp/>segment<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.intersects(segment)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -422,7 +422,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="174" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="172" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a23cf1aaedc78eb2cf1bb5b2cc1df92f1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -437,7 +437,7 @@
 <para>Check if cuboid intersects plane. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Plane<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.intersects(plane)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -456,7 +456,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="186" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="184" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1af0a08f4419d48e38793f875654bc97f1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -471,7 +471,7 @@
 <para>Check if cuboid intersects sphere. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Sphere<sp/>sphere<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.intersects(sphere)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -490,7 +490,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="198" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="196" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a5ebb29d0be21f18c899b255af1347d89" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -505,8 +505,8 @@
 <para>Check if cuboid intersects cuboid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>anotherCuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>anotherCuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.intersects(anotherCuboid)<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
@@ -524,7 +524,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="210" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="238" bodyend="281"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="208" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="244" bodyend="287"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a0496625c9ee5edb30052b1b125fcbc64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -539,7 +539,7 @@
 <para>Check if cuboid intersects pyramid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.intersects(pyramid)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -558,7 +558,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="222" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="220" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1af9c1badd7cb2289a15179b0013624045" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -573,7 +573,7 @@
 <para>Check if cuboid contains point. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.contains(point)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -592,7 +592,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="234" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="283" bodyend="317"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="232" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="289" bodyend="323"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a3cf093f96d14d21cfd9851b1cbe744be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -607,7 +607,7 @@
 <para>Check if cuboid contains point set. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">PointSet<sp/>pointSet<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.contains(pointSet)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -626,7 +626,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="246" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="319" bodyend="334"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="244" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="325" bodyend="340"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1adf437c225438cc4d8464002c75eea143" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -641,7 +641,7 @@
 <para>Check if cuboid contains segment. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Segment<sp/>segment<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.contains(segment)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -660,18 +660,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="258" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="336" bodyend="339"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="256" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="342" bodyend="345"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a7d4dde36b455d6e11a3ed9a0dbbafa01" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
-        <definition>Point ostk::mathematics::geometry::d3::object::Cuboid::getCenter</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a84f47a9c48047a9f5511da44c4b68ebd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>const Point &amp; ostk::mathematics::geometry::d3::object::Cuboid::getCenter</definition>
         <argsstring>() const</argsstring>
         <name>getCenter</name>
         <briefdescription>
 <para>Get cuboid center. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0</highlight></codeline>
 <codeline><highlight class="normal">}<sp/>},<sp/>{<sp/>1.0,<sp/>2.0,<sp/>3.0<sp/>}<sp/>}<sp/>;<sp/>cuboid.getCenter()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>[0.0,<sp/>0.0,<sp/>0.0]</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref> center </para>
@@ -680,18 +680,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="268" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="341" bodyend="349"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="266" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="347" bodyend="355"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa1e57bae3cf58c83496484ff6943446a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Vector3d</type>
-        <definition>Vector3d ostk::mathematics::geometry::d3::object::Cuboid::getFirstAxis</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a8ca7efa902856dea894b4e8fe9369a29" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const Vector3d &amp;</type>
+        <definition>const Vector3d &amp; ostk::mathematics::geometry::d3::object::Cuboid::getFirstAxis</definition>
         <argsstring>() const</argsstring>
         <name>getFirstAxis</name>
         <briefdescription>
 <para>Get cuboid first axis. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 <codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/>firstAxis<sp/>=<sp/>cuboid.getFirstAxis()<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref> first axis </para>
@@ -700,18 +700,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="278" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="351" bodyend="359"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="276" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="357" bodyend="365"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a6faa56bfcc4ab39fc6025ca1e179227b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Vector3d</type>
-        <definition>Vector3d ostk::mathematics::geometry::d3::object::Cuboid::getSecondAxis</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ae5be8247dd253858c30e13a254a01781" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const Vector3d &amp;</type>
+        <definition>const Vector3d &amp; ostk::mathematics::geometry::d3::object::Cuboid::getSecondAxis</definition>
         <argsstring>() const</argsstring>
         <name>getSecondAxis</name>
         <briefdescription>
 <para>Get cuboid second axis. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 <codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/>secondAxis<sp/>=<sp/>cuboid.getSecondAxis()<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref> second axis </para>
@@ -720,18 +720,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="288" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="361" bodyend="369"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="286" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="367" bodyend="375"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1abdd000d8bdb9d14c3023305572347859" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Vector3d</type>
-        <definition>Vector3d ostk::mathematics::geometry::d3::object::Cuboid::getThirdAxis</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1adc48deccc430e2d14d74c37f797f5c1c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const Vector3d &amp;</type>
+        <definition>const Vector3d &amp; ostk::mathematics::geometry::d3::object::Cuboid::getThirdAxis</definition>
         <argsstring>() const</argsstring>
         <name>getThirdAxis</name>
         <briefdescription>
 <para>Get cuboid third axis. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 <codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/>thirdAxis<sp/>=<sp/>cuboid.getThirdAxis()<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref> third axis </para>
@@ -740,19 +740,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="298" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="371" bodyend="379"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="296" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="377" bodyend="385"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ae73025b31d9a9beeb8969a3515f1f211" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Real</type>
-        <definition>Real ostk::mathematics::geometry::d3::object::Cuboid::getFirstExtent</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a2e1042e43fb3de77b3012fd85f79e2ef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::geometry::d3::object::Cuboid::getFirstExtent</definition>
         <argsstring>() const</argsstring>
         <name>getFirstExtent</name>
         <briefdescription>
 <para>Get cuboid first extent. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
-<codeline><highlight class="normal">Real<sp/>firstExtent<sp/>=<sp/>cuboid.getFirstExtent()<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>firstExtent<sp/>=<sp/>cuboid.getFirstExtent()<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref> first extent </para>
 </simplesect>
@@ -760,19 +760,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="308" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="381" bodyend="389"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="306" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="387" bodyend="395"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a469d77aeca859afb5a98af4773504ba2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Real</type>
-        <definition>Real ostk::mathematics::geometry::d3::object::Cuboid::getSecondExtent</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a6bac5999b07ec26ab40d075511d0529e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::geometry::d3::object::Cuboid::getSecondExtent</definition>
         <argsstring>() const</argsstring>
         <name>getSecondExtent</name>
         <briefdescription>
 <para>Get cuboid second extent. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
-<codeline><highlight class="normal">Real<sp/>secondExtent<sp/>=<sp/>cuboid.getSecondExtent()<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>secondExtent<sp/>=<sp/>cuboid.getSecondExtent()<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref> second extent </para>
 </simplesect>
@@ -780,19 +780,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="318" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="391" bodyend="399"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="316" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="397" bodyend="405"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a9e7aac9e658a9d647aa07d7aafb93124" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Real</type>
-        <definition>Real ostk::mathematics::geometry::d3::object::Cuboid::getThirdExtent</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a23819f0bac948a56b20ea605464c5795" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::geometry::d3::object::Cuboid::getThirdExtent</definition>
         <argsstring>() const</argsstring>
         <name>getThirdExtent</name>
         <briefdescription>
 <para>Get cuboid third extent. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
-<codeline><highlight class="normal">Real<sp/>thirdExtent<sp/>=<sp/>cuboid.getThirdExtent()<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>thirdExtent<sp/>=<sp/>cuboid.getThirdExtent()<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref> third extent </para>
 </simplesect>
@@ -800,7 +800,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="328" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="401" bodyend="409"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="326" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="407" bodyend="415"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a957659e1c2269b537c70683674ebc223" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad7320e905fa787d1ccdadefd58ceac7b" kindref="member">Cuboid::Vertex</ref> &gt;</type>
@@ -811,7 +811,7 @@
 <para>Get cuboid vertices. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Array&lt;Cuboid::Vertex&gt;<sp/>vertices<sp/>=<sp/>cuboid.getVertices()<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref> vertices </para>
@@ -820,7 +820,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="338" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="411" bodyend="436"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="336" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="417" bodyend="442"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a1fc1bdcbc9727ed2bb089fb257719827" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -835,7 +835,7 @@
 <para>Compute intersection of cuboid with line. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>Line({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>})<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>cuboid.intersectionWith(line)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -854,7 +854,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="350" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="348" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1afffd360837814171549e1e23ffb60b6e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -874,7 +874,7 @@
 <para>Compute intersection of cuboid with ray. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Ray<sp/>ray<sp/>=<sp/>Ray({<sp/>-2.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>})<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>cuboid.intersectionWith(ray)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -901,7 +901,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="363" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="361" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a38e0ac9992b7f2d5c7a8556dc0a1f36d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -916,7 +916,7 @@
 <para>Compute intersection of cuboid with segment. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Segment<sp/>segment<sp/>=<sp/>Segment({<sp/>-2.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>2.0,<sp/>0.0,<sp/>0.0<sp/>})<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>cuboid.intersectionWith(segment)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -935,7 +935,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="375" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="373" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a024aa416b981d548d3e5cc7b8a496cfe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -950,8 +950,8 @@
 <para>Compute intersection of cuboid with cuboid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>anotherCuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.5,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>anotherCuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.5,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>cuboid.intersectionWith(anotherCuboid)<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
@@ -969,7 +969,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="387" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="385" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ae4489290518d48903197556ee086c203" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -989,7 +989,7 @@
 <para>Compute intersection of cuboid with pyramid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>cuboid.intersectionWith(pyramid)<sp/>;</highlight></codeline>
 </programlisting></para>
@@ -1016,7 +1016,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="400" column="18"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="398" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa60fe81325d3fa897e6bc7517c28d071" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1037,7 +1037,7 @@
 <para>Print cuboid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.print(std::cout,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
@@ -1061,7 +1061,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="411" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="438" bodyend="460"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="409" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="444" bodyend="463"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a8471b1cbbaa3498833f6fb6f9d2bab5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1077,7 +1077,7 @@
 <para>Apply transformation to cuboid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 <codeline><highlight class="normal">cuboid.applyTransformation(<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1af9058de81115d953ab8d9b8922abe692" kindref="member">Transformation::Translation</ref>({<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>}))<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
@@ -1093,7 +1093,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="421" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="462" bodyend="494"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="419" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="465" bodyend="497"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1106,7 +1106,7 @@
 <para>Constructs an undefined cuboid. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a137ba797d414aa5432154e59227c7cfc" kindref="member">Cuboid::Undefined</ref>()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>Undefined</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a137ba797d414aa5432154e59227c7cfc" kindref="member">Cuboid::Undefined</ref>()<sp/>;<sp/></highlight><highlight class="comment">//<sp/>Undefined</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para>Undefined cuboid </para>
 </simplesect>
@@ -1114,26 +1114,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="430" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="496" bodyend="503"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="428" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="499" bodyend="508"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref></type>
         <definition>Cuboid ostk::mathematics::geometry::d3::object::Cuboid::Cube</definition>
-        <argsstring>(const Point &amp;aCenter, const Real &amp;anExtent)</argsstring>
+        <argsstring>(const Point &amp;aCenter, double anExtent)</argsstring>
         <name>Cube</name>
         <param>
           <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
           <declname>aCenter</declname>
         </param>
         <param>
-          <type>const Real &amp;</type>
+          <type>double</type>
           <declname>anExtent</declname>
         </param>
         <briefdescription>
 <para>Constructs a a cube. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cube<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cube<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" kindref="member">Cuboid::Cube</ref>({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0)<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para>Cube </para>
 </simplesect>
@@ -1141,14 +1141,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="439" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="505" bodyend="518"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="437" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="510" bodyend="523"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kindref="compound">Cuboid</ref>. </para>
     </briefdescription>
     <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" kindref="member">Cuboid</ref><sp/>cuboid(Point(0.0,<sp/>0.0,<sp/>0.0),<sp/>{{1.0,<sp/>0.0,<sp/>0.0},<sp/>{0.0,<sp/>1.0,<sp/>0.0},<sp/>{0.0,<sp/>0.0,<sp/>1.0}},</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" kindref="member">Cuboid</ref><sp/>cuboid(Point(0.0,<sp/>0.0,<sp/>0.0),<sp/>{{1.0,<sp/>0.0,<sp/>0.0},<sp/>{0.0,<sp/>1.0,<sp/>0.0},<sp/>{0.0,<sp/>0.0,<sp/>1.0}},</highlight></codeline>
 <codeline><highlight class="normal">{1.0,<sp/>2.0,<sp/>3.0});</highlight></codeline>
 </programlisting></para>
 <para><ulink url="https://en.wikipedia.org/wiki/Cuboid">https://en.wikipedia.org/wiki/Cuboid</ulink> </para>
@@ -1177,7 +1177,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="50" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="49" bodyend="445"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" line="48" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp" bodystart="47" bodyend="443"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a8471b1cbbaa3498833f6fb6f9d2bab5a" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>as</name></member>
@@ -1188,17 +1188,17 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a3cf093f96d14d21cfd9851b1cbe744be" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1adf437c225438cc4d8464002c75eea143" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>contains</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a50197f54dd665a9dc63004e89bad728e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>Cube</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa8163a96646fa5b9069c7a19d6a6c642" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>Cuboid</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a62ba17b6ee0e42e60ccebd66ddce3fed" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>Cube</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad1cf81f969ee388b7bdb80986d4f214d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>Cuboid</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a2caa3ede4a8f8684fc8b62a8cdce0a57" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>Edge</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a6e8dff8299b686e0e1bf864dca065f71" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>extent_</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a7d4dde36b455d6e11a3ed9a0dbbafa01" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getCenter</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa1e57bae3cf58c83496484ff6943446a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getFirstAxis</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ae73025b31d9a9beeb8969a3515f1f211" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getFirstExtent</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a6faa56bfcc4ab39fc6025ca1e179227b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getSecondAxis</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a469d77aeca859afb5a98af4773504ba2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getSecondExtent</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1abdd000d8bdb9d14c3023305572347859" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getThirdAxis</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a9e7aac9e658a9d647aa07d7aafb93124" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getThirdExtent</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a3d8473912c694f25c87e3d2d3aa4c32c" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>extent_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a84f47a9c48047a9f5511da44c4b68ebd" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getCenter</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a8ca7efa902856dea894b4e8fe9369a29" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getFirstAxis</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a2e1042e43fb3de77b3012fd85f79e2ef" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getFirstExtent</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ae5be8247dd253858c30e13a254a01781" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getSecondAxis</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a6bac5999b07ec26ab40d075511d0529e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getSecondExtent</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1adc48deccc430e2d14d74c37f797f5c1c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getThirdAxis</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a23819f0bac948a56b20ea605464c5795" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getThirdExtent</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a957659e1c2269b537c70683674ebc223" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>getVertices</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a1fc1bdcbc9727ed2bb089fb257719827" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>intersectionWith</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1afffd360837814171549e1e23ffb60b6e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>intersectionWith</name></member>
@@ -1218,7 +1218,7 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a0d8ddc7a929bb3b0b1c70ad82742e64e" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>intersects</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ad9e6f5027d14e3c7d7bead94052611ed" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>is</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ae9749637798c6670bb1c2b8cc2850ba8" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>isDefined</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ae79125fb5fff0a42cdd7bf89ba8a0718" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>isNear</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a9919583ad7088da65c90dfb090b872bf" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>isNear</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>Object</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a1dbcaa8deafe0bb5a99a426725306b30" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>operator!=</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a550754b8f5576ce2465979657325d5df" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Cuboid</scope><name>operator!=</name></member>

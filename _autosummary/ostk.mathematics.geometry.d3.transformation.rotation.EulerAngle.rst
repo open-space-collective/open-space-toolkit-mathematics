@@ -11,25 +11,6 @@ ostk.mathematics.geometry.d3.transformation.rotation.EulerAngle
 
    
    
-   .. rubric:: Methods
-
-   .. autosummary::
-      :nosignatures:
-   
-      ~EulerAngle.is_defined
-      ~EulerAngle.is_near
-      ~EulerAngle.is_unitary
-      ~EulerAngle.quaternion
-      ~EulerAngle.rotation_matrix
-      ~EulerAngle.rotation_vector
-      ~EulerAngle.to_string
-      ~EulerAngle.to_vector
-      ~EulerAngle.undefined
-      ~EulerAngle.unit
-      ~EulerAngle.xyz
-      ~EulerAngle.zxy
-      ~EulerAngle.zyx
-   
    
 
    
@@ -39,8 +20,21 @@ ostk.mathematics.geometry.d3.transformation.rotation.EulerAngle
    .. autosummary::
    
       ~EulerAngle.axis_sequence
+      ~EulerAngle.is_defined
+      ~EulerAngle.is_near
+      ~EulerAngle.is_unitary
       ~EulerAngle.phi
       ~EulerAngle.psi
+      ~EulerAngle.quaternion
+      ~EulerAngle.rotation_matrix
+      ~EulerAngle.rotation_vector
       ~EulerAngle.theta
+      ~EulerAngle.to_string
+      ~EulerAngle.to_vector
+      ~EulerAngle.undefined
+      ~EulerAngle.unit
+      ~EulerAngle.xyz
+      ~EulerAngle.zxy
+      ~EulerAngle.zyx
    
    

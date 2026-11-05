@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.Line
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Line.apply_transformation
       ~Line.as_cone
@@ -50,9 +53,5 @@ ostk.mathematics.geometry.d3.object.Line
       ~Line.is_sphere
       ~Line.points
       ~Line.undefined
-   
-   
-
-   
    
    

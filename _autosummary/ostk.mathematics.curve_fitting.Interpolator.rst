@@ -11,18 +11,17 @@ ostk.mathematics.curve\_fitting.Interpolator
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Interpolator.compute_derivative
       ~Interpolator.evaluate
       ~Interpolator.generate_interpolator
       ~Interpolator.get_interpolation_type
-   
-   
-
-   
    
    

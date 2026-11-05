@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.Polygon
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Polygon.apply_transformation
       ~Polygon.as_cone
@@ -56,9 +59,5 @@ ostk.mathematics.geometry.d3.object.Polygon
       ~Polygon.is_segment
       ~Polygon.is_sphere
       ~Polygon.undefined
-   
-   
-
-   
    
    

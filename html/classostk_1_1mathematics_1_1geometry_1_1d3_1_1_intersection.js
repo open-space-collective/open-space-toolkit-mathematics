@@ -1,7 +1,6 @@
 var classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection =
 [
     [ "Type", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ae7e12ecebd39f90c9ac81a69db3233cd", [
-      [ "Undefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ae7e12ecebd39f90c9ac81a69db3233cdaec0fc0100c4fc1ce4eea230c3dc10360", null ],
       [ "Empty", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ae7e12ecebd39f90c9ac81a69db3233cdace2c8aed9c2fa0cfbed56cbda4d8bf07", null ],
       [ "Point", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ae7e12ecebd39f90c9ac81a69db3233cda2a3cd5946cfd317eb99c3d32e35e2d4c", null ],
       [ "PointSet", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ae7e12ecebd39f90c9ac81a69db3233cdaaedf8f48dfa5b704b6c12b415707a1da", null ],
@@ -20,12 +19,12 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection =
     [ "Intersection", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#aa36acae0dea26436f03216212ca4d571", null ],
     [ "Intersection", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#a516c2bf940b353c16293f49e49064780", null ],
     [ "~Intersection", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#afcedc858d9629b15c995294c81a6b22b", null ],
-    [ "accessComposite", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#abefdf18f9b1dd525b49f7a933a9364b1", null ],
     [ "as", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ac93f620075e3364e9cdaef6c6191c4f9", null ],
+    [ "getComposite", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ae6cd455f4e6321e394394e1d8305c2ed", null ],
+    [ "getComposite", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#a54405fa6add6afad48b5680cc73c8e67", null ],
     [ "getType", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#a367b3a8193c36e55d69008429349866f", null ],
     [ "is", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ad0823d059381f54389ee417b834c9ef8", null ],
     [ "isComplex", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#a08c4ac700f904766b8625ac09f2a3281", null ],
-    [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#a960e02ae1d0b7a1a5f6871ee70b161a0", null ],
     [ "isEmpty", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#a457c09dcf9daaf8c0ebc0af50373936c", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#a0b7fa437dc93dbc1e3ab1258f85473c0", null ],
     [ "operator+", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#a3e82b2ee39985232e315e63d9cae048c", null ],

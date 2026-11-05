@@ -16,51 +16,40 @@
     <includedby refid="3_d_2_object_2_polygon_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.cpp</includedby>
     <includedby refid="3_d_2_object_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp</includedby>
     <incdepgraph>
-      <node id="23">
+      <node id="21">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp</label>
         <link refid="3_d_2_object_2_point_8hpp"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp</label>
-        <link refid="2_d_2_object_2_line_8hpp"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+      </node>
+      <node id="17">
+        <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp</label>
+        <link refid="2_d_2_object_2_line_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="12">
-        <label>OpenSpaceToolkit/Core/Type/Real.hpp</label>
-      </node>
-      <node id="15">
+      <node id="13">
         <label>Eigen/Geometry</label>
       </node>
-      <node id="28">
+      <node id="26">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp</label>
         <link refid="3_d_2_object_2_segment_8hpp"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
       </node>
-      <node id="14">
+      <node id="12">
         <label>Eigen/Core</label>
       </node>
       <node id="5">
@@ -76,37 +65,37 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
       </node>
-      <node id="24">
+      <node id="22">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp</label>
         <link refid="_plane_8hpp"/>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
         </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="26">
+      <node id="24">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp</label>
         <link refid="3_d_2_object_2_point_set_8hpp"/>
-        <childnode refid="17" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
@@ -114,12 +103,12 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="15">
         <label>unordered_set</label>
       </node>
       <node id="7">
@@ -127,35 +116,29 @@
         <link refid="_geometry_22_d_2_object_8hpp"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
       </node>
-      <node id="11">
+      <node id="10">
         <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp</label>
         <link refid="2_d_2_object_2_point_8hpp"/>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>OpenSpaceToolkit/Core/Type/Size.hpp</label>
       </node>
-      <node id="18">
+      <node id="16">
         <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp</label>
         <link refid="2_d_2_object_2_segment_8hpp"/>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="22">
+      <node id="20">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp</label>
         <link refid="3_d_2_object_2_line_string_8hpp"/>
         <childnode refid="2" relation="include">
@@ -164,34 +147,34 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
-      <node id="13">
+      <node id="11">
         <label>OpenSpaceToolkit/Mathematics/Object/Vector.hpp</label>
         <link refid="_vector_8hpp"/>
-        <childnode refid="9" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="21">
+      <node id="19">
         <label>OpenSpaceToolkit/Core/Error.hpp</label>
       </node>
       <node id="6">
         <label>OpenSpaceToolkit/Core/Type/Unique.hpp</label>
       </node>
-      <node id="9">
+      <node id="8">
         <label>OpenSpaceToolkit/Core/Type/String.hpp</label>
       </node>
-      <node id="16">
+      <node id="14">
         <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp</label>
         <link refid="2_d_2_object_2_point_set_8hpp"/>
-        <childnode refid="17" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
@@ -201,16 +184,13 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
-      </node>
-      <node id="8">
-        <label>OpenSpaceToolkit/Core/Type/Integer.hpp</label>
       </node>
       <node id="3">
         <label>OpenSpaceToolkit/Core/Type/Index.hpp</label>
       </node>
-      <node id="10">
+      <node id="9">
         <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp</label>
         <link refid="2_d_2_object_2_line_string_8hpp"/>
         <childnode refid="2" relation="include">
@@ -221,36 +201,32 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="25">
+      <node id="23">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.hpp</label>
         <link refid="3_d_2_object_2_line_8hpp"/>
-        <childnode refid="12" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="2">
         <label>OpenSpaceToolkit/Core/Container/Array.hpp</label>
       </node>
-      <node id="20">
+      <node id="18">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp</label>
         <link refid="_geometry_23_d_2_object_8hpp"/>
-        <childnode refid="21" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="27">
+      <node id="25">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp</label>
         <link refid="_ray_8hpp"/>
-        <childnode refid="12" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -264,15 +240,15 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
         <childnode refid="20" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -450,15 +426,15 @@
 <codeline lineno="103"><highlight class="normal"></highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1ab2e3d42d2420cd0d3029f1d14e126a6c" kindref="member">isDefined</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1af6dbda995c2077e6b6865710122e39c0" kindref="member">isNear</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" kindref="compound">Polygon</ref>&amp;<sp/>aPolygon,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real&amp;<sp/>aTolerance)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1a4e6adce6f96198104c0532c213cd4f79" kindref="member">isNear</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" kindref="compound">Polygon</ref>&amp;<sp/>aPolygon,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>aTolerance)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon2d</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1a59a5f8d88d61da7f2875b1dee2b0acae" kindref="member">getPolygon2d</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon2d</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1a6b2e2d19407956e05b87aa0796eb328b" kindref="member">getPolygon2d</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1a2a9544f0a707b1760b0a1d52aed42623" kindref="member">getOrigin</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1a1750d5ea5299f905b445b60b03ed1bb4" kindref="member">getOrigin</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1aba824d7c22a6609d103f910ec7c3d646" kindref="member">getXAxis</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1a87d39e6f4e4074d453563e4da0c3f819" kindref="member">getXAxis</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"></highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1ae0d384044e734cc18867358ac9d690f1" kindref="member">getYAxis</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1abc5daa0cde4bc0a4ce168ec04150d774" kindref="member">getYAxis</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"></highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1a7a4c4b31702b6fce4d15b00a602ab033" kindref="member">getNormalVector</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"></highlight></codeline>

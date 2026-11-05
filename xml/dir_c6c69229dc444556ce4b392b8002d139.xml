@@ -3,8 +3,14 @@
   <compounddef id="dir_c6c69229dc444556ce4b392b8002d139" kind="dir">
     <compoundname>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator</compoundname>
     <innerfile refid="_barycentric_rational_8cpp">BarycentricRational.cpp</innerfile>
+    <innerfile refid="_cubic_hermite_8cpp">CubicHermite.cpp</innerfile>
     <innerfile refid="_cubic_spline_8cpp">CubicSpline.cpp</innerfile>
     <innerfile refid="_linear_8cpp">Linear.cpp</innerfile>
+    <innerfile refid="_non_uniform_basis_spline_8cpp">NonUniformBasisSpline.cpp</innerfile>
+    <innerfile refid="_non_uniform_basis_spline_8hpp">NonUniformBasisSpline.hpp</innerfile>
+    <innerfile refid="_quadratic_spline_8cpp">QuadraticSpline.cpp</innerfile>
+    <innerfile refid="_quintic_hermite_8cpp">QuinticHermite.cpp</innerfile>
+    <innerfile refid="_quintic_spline_8cpp">QuinticSpline.cpp</innerfile>
     <innerfile refid="_zero_order_8cpp">ZeroOrder.cpp</innerfile>
     <briefdescription>
     </briefdescription>

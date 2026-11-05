@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.PointSet
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~PointSet.apply_transformation
       ~PointSet.as_cone
@@ -50,9 +53,5 @@ ostk.mathematics.geometry.d3.object.PointSet
       ~PointSet.is_ray
       ~PointSet.is_segment
       ~PointSet.is_sphere
-   
-   
-
-   
    
    

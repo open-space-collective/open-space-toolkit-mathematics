@@ -6,8 +6,12 @@
     <includes local="no">Eigen/Core</includes>
     <includes local="no">Eigen/Geometry</includes>
     <includedby refid="_barycentric_rational_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp</includedby>
+    <includedby refid="_cubic_hermite_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp</includedby>
     <includedby refid="_cubic_spline_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp</includedby>
     <includedby refid="_linear_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp</includedby>
+    <includedby refid="_quadratic_spline_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp</includedby>
+    <includedby refid="_quintic_hermite_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp</includedby>
+    <includedby refid="_quintic_spline_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp</includedby>
     <includedby refid="_zero_order_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp</includedby>
     <includedby refid="_interpolator_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp</includedby>
     <includedby refid="_log_euclidean_riemannian_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp</includedby>
@@ -25,6 +29,7 @@
     <includedby refid="_angle_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</includedby>
     <includedby refid="_object_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Object.hpp</includedby>
     <includedby refid="_numerical_solver_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp</includedby>
+    <includedby refid="_non_uniform_basis_spline_8hpp" local="no">src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBasisSpline.hpp</includedby>
     <includedby refid="_vector_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Object/Vector.cpp</includedby>
     <incdepgraph>
       <node id="4">
@@ -48,71 +53,71 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="53">
+      <node id="61">
         <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp</label>
         <link refid="3_d_2_object_2_point_8hpp"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="51" relation="include">
-        </childnode>
-        <childnode refid="54" relation="include">
-        </childnode>
-        <childnode refid="55" relation="include">
-        </childnode>
-        <childnode refid="58" relation="include">
-        </childnode>
-        <childnode refid="52" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
         <childnode refid="59" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
-        </childnode>
-        <childnode refid="61" relation="include">
-        </childnode>
-        <childnode refid="56" relation="include">
+        <childnode refid="62" relation="include">
         </childnode>
         <childnode refid="63" relation="include">
         </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
         <childnode refid="64" relation="include">
         </childnode>
-        <childnode refid="65" relation="include">
+        <childnode refid="71" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
         </childnode>
       </node>
-      <node id="46">
+      <node id="54">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp</label>
         <link refid="2_d_2_object_2_point_set_8cpp"/>
       </node>
-      <node id="14">
+      <node id="22">
         <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp</label>
         <link refid="2_d_2_object_2_line_8hpp"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="49" relation="include">
         </childnode>
       </node>
-      <node id="76">
+      <node id="84">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp</label>
         <link refid="_angle_8cpp"/>
       </node>
-      <node id="35">
+      <node id="43">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.cpp</label>
         <link refid="_sphere_8cpp"/>
       </node>
-      <node id="6">
+      <node id="8">
         <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp</label>
         <link refid="_cubic_spline_8cpp"/>
       </node>
-      <node id="80">
+      <node id="90">
         <label>src/OpenSpaceToolkit/Mathematics/Object/Vector.cpp</label>
         <link refid="_vector_8cpp"/>
       </node>
-      <node id="70">
+      <node id="78">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp</label>
         <link refid="_rotation_matrix_8cpp"/>
       </node>
@@ -120,255 +125,281 @@
         <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.cpp</label>
         <link refid="_interpolator_8cpp"/>
       </node>
-      <node id="34">
+      <node id="42">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.cpp</label>
         <link refid="3_d_2_object_2_segment_8cpp"/>
       </node>
-      <node id="56">
+      <node id="14">
+        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.cpp</label>
+        <link refid="_quintic_hermite_8cpp"/>
+      </node>
+      <node id="88">
+        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBasisSpline.hpp</label>
+        <link refid="_non_uniform_basis_spline_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
         <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp</label>
         <link refid="3_d_2_object_2_segment_8hpp"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="51" relation="include">
-        </childnode>
-        <childnode refid="52" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="57" relation="include">
-        </childnode>
         <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
-        </childnode>
-      </node>
-      <node id="22">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp</label>
-        <link refid="2_d_2_object_2_polygon_8hpp"/>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp</label>
-        <link refid="2_d_2_intersection_8cpp"/>
-      </node>
-      <node id="52">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp</label>
-        <link refid="_plane_8hpp"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
-        </childnode>
-      </node>
-      <node id="71">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp</label>
-        <link refid="_rotation_vector_8cpp"/>
-      </node>
-      <node id="59">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp</label>
-        <link refid="3_d_2_object_2_point_set_8hpp"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="52" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="59" relation="include">
         </childnode>
         <childnode refid="60" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
         <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="36" relation="include">
         </childnode>
-      </node>
-      <node id="41">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp</label>
-        <link refid="2_d_2_object_2_line_8cpp"/>
-      </node>
-      <node id="54">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp</label>
-        <link refid="_ellipsoid_8hpp"/>
-        <childnode refid="24" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp</label>
-        <link refid="_log_euclidean_riemannian_8cpp"/>
-      </node>
-      <node id="28">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp</label>
-        <link refid="_cuboid_8cpp"/>
-      </node>
-      <node id="15">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp</label>
-        <link refid="2_d_2_intersection_8hpp"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="51">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp</label>
-        <link refid="_cuboid_8hpp"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
-        </childnode>
-      </node>
-      <node id="33">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp</label>
-        <link refid="_ray_8cpp"/>
-      </node>
-      <node id="75">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</label>
-        <link refid="_angle_8hpp"/>
-        <childnode refid="47" relation="include">
-        </childnode>
-        <childnode refid="62" relation="include">
-        </childnode>
-        <childnode refid="67" relation="include">
-        </childnode>
-        <childnode refid="72" relation="include">
-        </childnode>
-        <childnode refid="73" relation="include">
-        </childnode>
-        <childnode refid="74" relation="include">
-        </childnode>
-        <childnode refid="64" relation="include">
-        </childnode>
-        <childnode refid="76" relation="include">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp</label>
-        <link refid="_multi_polygon_8cpp"/>
-      </node>
-      <node id="47">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp</label>
-        <link refid="2_d_2_transformation_8hpp"/>
-        <childnode refid="48" relation="include">
-        </childnode>
-        <childnode refid="41" relation="include">
-        </childnode>
-        <childnode refid="39" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="49" relation="include">
-        </childnode>
-        <childnode refid="46" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="65" relation="include">
         </childnode>
         <childnode refid="40" relation="include">
         </childnode>
-        <childnode refid="50" relation="include">
-        </childnode>
-      </node>
-      <node id="40">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp</label>
-        <link refid="2_d_2_object_2_segment_8cpp"/>
-      </node>
-      <node id="60">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.cpp</label>
-        <link refid="3_d_2_object_2_point_set_8cpp"/>
-      </node>
-      <node id="38">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.cpp</label>
-        <link refid="3_d_2_object_2_polygon_8cpp"/>
-      </node>
-      <node id="42">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp</label>
-        <link refid="2_d_2_object_2_point_8hpp"/>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
         <childnode refid="43" relation="include">
         </childnode>
         <childnode refid="44" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+      </node>
+      <node id="30">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp</label>
+        <link refid="2_d_2_object_2_polygon_8hpp"/>
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="45" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="47" relation="include">
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp</label>
+        <link refid="2_d_2_intersection_8cpp"/>
+      </node>
+      <node id="60">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp</label>
+        <link refid="_plane_8hpp"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp</label>
+        <link refid="_rotation_vector_8cpp"/>
+      </node>
+      <node id="67">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp</label>
+        <link refid="3_d_2_object_2_point_set_8hpp"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp</label>
+        <link refid="2_d_2_object_2_line_8cpp"/>
+      </node>
+      <node id="62">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp</label>
+        <link refid="_ellipsoid_8hpp"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp</label>
+        <link refid="_log_euclidean_riemannian_8cpp"/>
+      </node>
+      <node id="36">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp</label>
+        <link refid="_cuboid_8cpp"/>
+      </node>
+      <node id="23">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp</label>
+        <link refid="2_d_2_intersection_8hpp"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp</label>
+        <link refid="_cuboid_8hpp"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp</label>
+        <link refid="_ray_8cpp"/>
+      </node>
+      <node id="83">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</label>
+        <link refid="_angle_8hpp"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp</label>
+        <link refid="_multi_polygon_8cpp"/>
+      </node>
+      <node id="5">
+        <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.hpp</label>
+        <link refid="_cubic_hermite_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp</label>
+        <link refid="2_d_2_transformation_8hpp"/>
+        <childnode refid="56" relation="include">
         </childnode>
         <childnode refid="49" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp</label>
+        <link refid="2_d_2_object_2_segment_8cpp"/>
+      </node>
+      <node id="16">
+        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.cpp</label>
+        <link refid="_quintic_spline_8cpp"/>
+      </node>
+      <node id="68">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.cpp</label>
+        <link refid="3_d_2_object_2_point_set_8cpp"/>
+      </node>
+      <node id="46">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.cpp</label>
+        <link refid="3_d_2_object_2_polygon_8cpp"/>
+      </node>
+      <node id="50">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp</label>
+        <link refid="2_d_2_object_2_point_8hpp"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
         </childnode>
       </node>
-      <node id="50">
+      <node id="58">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp</label>
         <link refid="2_d_2_transformation_8cpp"/>
       </node>
@@ -376,102 +407,106 @@
         <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.cpp</label>
         <link refid="_barycentric_rational_8cpp"/>
       </node>
-      <node id="63">
+      <node id="71">
         <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp</label>
         <link refid="_sphere_8hpp"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
         <childnode refid="36" relation="include">
         </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
       </node>
-      <node id="49">
+      <node id="57">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp</label>
         <link refid="2_d_2_object_2_point_8cpp"/>
       </node>
-      <node id="68">
+      <node id="76">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp</label>
         <link refid="_euler_angle_8cpp"/>
       </node>
-      <node id="7">
+      <node id="12">
+        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.cpp</label>
+        <link refid="_quadratic_spline_8cpp"/>
+      </node>
+      <node id="9">
         <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp</label>
         <link refid="_linear_8hpp"/>
-        <childnode refid="8" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="27">
         <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp</label>
         <link refid="2_d_2_object_2_segment_8hpp"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="47" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="48" relation="include">
         </childnode>
       </node>
-      <node id="30">
+      <node id="38">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.cpp</label>
         <link refid="3_d_2_object_2_line_8cpp"/>
       </node>
-      <node id="27">
+      <node id="35">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp</label>
         <link refid="_cone_8cpp"/>
       </node>
-      <node id="39">
+      <node id="47">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp</label>
         <link refid="2_d_2_object_2_line_string_8cpp"/>
       </node>
-      <node id="36">
+      <node id="44">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp</label>
         <link refid="3_d_2_object_8cpp"/>
       </node>
-      <node id="58">
+      <node id="66">
         <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp</label>
         <link refid="3_d_2_object_2_line_string_8hpp"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="57" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
-        </childnode>
-      </node>
-      <node id="73">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp</label>
-        <link refid="_rotation_matrix_8hpp"/>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
         <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="68" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
-        <childnode refid="69" relation="include">
+        <childnode refid="65" relation="include">
         </childnode>
-        <childnode refid="70" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
-        <childnode refid="71" relation="include">
+      </node>
+      <node id="81">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp</label>
+        <link refid="_rotation_matrix_8hpp"/>
+        <childnode refid="36" relation="include">
         </childnode>
-        <childnode refid="66" relation="include">
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -487,142 +522,152 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="47" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="51" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="52" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="53" relation="include">
+        <childnode refid="50" relation="include">
         </childnode>
-        <childnode refid="67" relation="include">
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
         </childnode>
         <childnode refid="72" relation="include">
         </childnode>
-        <childnode refid="73" relation="include">
+        <childnode refid="83" relation="include">
         </childnode>
-        <childnode refid="74" relation="include">
+        <childnode refid="85" relation="include">
         </childnode>
-        <childnode refid="64" relation="include">
+        <childnode refid="86" relation="include">
         </childnode>
-        <childnode refid="75" relation="include">
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp</label>
+        <link refid="_pyramid_8hpp"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp</label>
+        <link refid="_numerical_solver_8hpp"/>
+        <childnode refid="87" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp</label>
+        <link refid="_linear_8cpp"/>
+      </node>
+      <node id="75">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp</label>
+        <link refid="_euler_angle_8hpp"/>
+        <childnode refid="76" relation="include">
         </childnode>
         <childnode refid="77" relation="include">
         </childnode>
         <childnode refid="78" relation="include">
         </childnode>
-        <childnode refid="80" relation="include">
+        <childnode refid="79" relation="include">
         </childnode>
       </node>
-      <node id="37">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp</label>
-        <link refid="_pyramid_8hpp"/>
-        <childnode refid="24" relation="include">
+      <node id="56">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp</label>
+        <link refid="2_d_2_object_2_composite_8cpp"/>
+      </node>
+      <node id="80">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp</label>
+        <link refid="_quaternion_8hpp"/>
+        <childnode refid="62" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp</label>
+        <link refid="3_d_2_transformation_8hpp"/>
+        <childnode refid="34" relation="include">
         </childnode>
         <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="36" relation="include">
         </childnode>
-      </node>
-      <node id="78">
-        <label>include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp</label>
-        <link refid="_numerical_solver_8hpp"/>
-        <childnode refid="79" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp</label>
-        <link refid="_linear_8cpp"/>
-      </node>
-      <node id="67">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp</label>
-        <link refid="_euler_angle_8hpp"/>
-        <childnode refid="68" relation="include">
-        </childnode>
-        <childnode refid="69" relation="include">
-        </childnode>
-        <childnode refid="70" relation="include">
-        </childnode>
-        <childnode refid="71" relation="include">
-        </childnode>
-      </node>
-      <node id="48">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp</label>
-        <link refid="2_d_2_object_2_composite_8cpp"/>
-      </node>
-      <node id="72">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp</label>
-        <link refid="_quaternion_8hpp"/>
-        <childnode refid="54" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="68" relation="include">
-        </childnode>
-        <childnode refid="69" relation="include">
-        </childnode>
-        <childnode refid="70" relation="include">
-        </childnode>
-        <childnode refid="71" relation="include">
-        </childnode>
-      </node>
-      <node id="64">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp</label>
-        <link refid="3_d_2_transformation_8hpp"/>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="57" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-        <childnode refid="65" relation="include">
-        </childnode>
-        <childnode refid="60" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
         <childnode refid="38" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="65" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="73" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="68" relation="include">
         </childnode>
-        <childnode refid="66" relation="include">
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
         </childnode>
       </node>
-      <node id="69">
+      <node id="77">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp</label>
         <link refid="_quaternion_8cpp"/>
       </node>
-      <node id="31">
+      <node id="39">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp</label>
         <link refid="_plane_8cpp"/>
       </node>
-      <node id="11">
+      <node id="19">
         <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp</label>
         <link refid="_interpolator_8hpp"/>
         <childnode refid="2" relation="include">
@@ -633,108 +678,118 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
-      </node>
-      <node id="26">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp</label>
-        <link refid="3_d_2_object_2_composite_8cpp"/>
-      </node>
-      <node id="17">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp</label>
-        <link refid="2_d_2_object_2_polygon_8cpp"/>
-      </node>
-      <node id="66">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp</label>
-        <link refid="3_d_2_transformation_8cpp"/>
-      </node>
-      <node id="45">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp</label>
-        <link refid="2_d_2_object_2_point_set_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
         <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="41" relation="include">
-        </childnode>
-        <childnode refid="46" relation="include">
-        </childnode>
-        <childnode refid="40" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp</label>
-        <link refid="_multi_polygon_8hpp"/>
-        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp</label>
-        <link refid="_zero_order_8cpp"/>
-      </node>
-      <node id="5">
-        <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp</label>
-        <link refid="_cubic_spline_8hpp"/>
-        <childnode refid="6" relation="include">
-        </childnode>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="57">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp</label>
-        <link refid="3_d_2_object_2_line_string_8cpp"/>
+      <node id="34">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp</label>
+        <link refid="3_d_2_object_2_composite_8cpp"/>
+      </node>
+      <node id="25">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp</label>
+        <link refid="2_d_2_object_2_polygon_8cpp"/>
       </node>
       <node id="74">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp</label>
-        <link refid="_rotation_vector_8hpp"/>
-        <childnode refid="64" relation="include">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp</label>
+        <link refid="3_d_2_transformation_8cpp"/>
+      </node>
+      <node id="53">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp</label>
+        <link refid="2_d_2_object_2_point_set_8hpp"/>
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
-        <childnode refid="68" relation="include">
+        <childnode refid="49" relation="include">
         </childnode>
-        <childnode refid="69" relation="include">
+        <childnode refid="54" relation="include">
         </childnode>
-        <childnode refid="70" relation="include">
+        <childnode refid="48" relation="include">
         </childnode>
-        <childnode refid="71" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="12">
-        <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp</label>
-        <link refid="_log_euclidean_riemannian_8hpp"/>
-        <childnode refid="13" relation="include">
+      <node id="13">
+        <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticHermite.hpp</label>
+        <link refid="_quintic_hermite_8hpp"/>
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="24">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp</label>
-        <link refid="3_d_2_intersection_8hpp"/>
+      <node id="28">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp</label>
+        <link refid="_multi_polygon_8hpp"/>
+        <childnode refid="29" relation="include">
+        </childnode>
         <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+      </node>
+      <node id="18">
+        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp</label>
+        <link refid="_zero_order_8cpp"/>
+      </node>
+      <node id="7">
+        <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp</label>
+        <link refid="_cubic_spline_8hpp"/>
+        <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+      </node>
+      <node id="15">
+        <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuinticSpline.hpp</label>
+        <link refid="_quintic_spline_8hpp"/>
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+      </node>
+      <node id="6">
+        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicHermite.cpp</label>
+        <link refid="_cubic_hermite_8cpp"/>
+      </node>
+      <node id="65">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp</label>
+        <link refid="3_d_2_object_2_line_string_8cpp"/>
+      </node>
+      <node id="82">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp</label>
+        <link refid="_rotation_vector_8hpp"/>
+        <childnode refid="72" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp</label>
+        <link refid="_log_euclidean_riemannian_8hpp"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp</label>
+        <link refid="3_d_2_intersection_8hpp"/>
         <childnode refid="33" relation="include">
         </childnode>
         <childnode refid="34" relation="include">
@@ -743,68 +798,92 @@
         </childnode>
         <childnode refid="36" relation="include">
         </childnode>
-      </node>
-      <node id="43">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp</label>
-        <link refid="2_d_2_object_2_line_string_8hpp"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
         <childnode refid="39" relation="include">
         </childnode>
         <childnode refid="40" relation="include">
         </childnode>
-      </node>
-      <node id="32">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp</label>
-        <link refid="_pyramid_8cpp"/>
-      </node>
-      <node id="55">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.hpp</label>
-        <link refid="3_d_2_object_2_line_8hpp"/>
-        <childnode refid="24" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
-        <childnode refid="52" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
-        <childnode refid="56" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
       </node>
-      <node id="77">
-        <label>include/OpenSpaceToolkit/Mathematics/Object.hpp</label>
-        <link refid="_object_8hpp"/>
-      </node>
-      <node id="25">
-        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp</label>
-        <link refid="3_d_2_intersection_8cpp"/>
-      </node>
-      <node id="9">
-        <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp</label>
-        <link refid="_zero_order_8hpp"/>
-        <childnode refid="10" relation="include">
+      <node id="11">
+        <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/QuadraticSpline.hpp</label>
+        <link refid="_quadratic_spline_8hpp"/>
+        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="44">
+      <node id="51">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp</label>
+        <link refid="2_d_2_object_2_line_string_8hpp"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp</label>
+        <link refid="_pyramid_8cpp"/>
+      </node>
+      <node id="63">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.hpp</label>
+        <link refid="3_d_2_object_2_line_8hpp"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>include/OpenSpaceToolkit/Mathematics/Object.hpp</label>
+        <link refid="_object_8hpp"/>
+      </node>
+      <node id="33">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp</label>
+        <link refid="3_d_2_intersection_8cpp"/>
+      </node>
+      <node id="17">
+        <label>include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp</label>
+        <link refid="_zero_order_8hpp"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
         <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp</label>
         <link refid="_multi_line_string_8hpp"/>
       </node>
-      <node id="79">
+      <node id="87">
         <label>src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp</label>
         <link refid="_numerical_solver_8cpp"/>
       </node>
@@ -816,63 +895,67 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="29">
+      <node id="37">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp</label>
         <link refid="_ellipsoid_8cpp"/>
       </node>
-      <node id="62">
+      <node id="70">
         <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp</label>
         <link refid="_cone_8hpp"/>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
         <childnode refid="35" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
         </childnode>
       </node>
-      <node id="65">
+      <node id="73">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp</label>
         <link refid="3_d_2_object_2_point_8cpp"/>
       </node>
-      <node id="61">
+      <node id="69">
         <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp</label>
         <link refid="_ray_8hpp"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="62" relation="include">
-        </childnode>
-        <childnode refid="52" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
         <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="70" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
         </childnode>
         <childnode refid="36" relation="include">
-        </childnode>
-      </node>
-      <node id="23">
-        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.hpp</label>
-        <link refid="3_d_2_object_2_polygon_8hpp"/>
-        <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="89">
+        <label>src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/NonUniformBasisSpline.cpp</label>
+        <link refid="_non_uniform_basis_spline_8cpp"/>
+      </node>
+      <node id="31">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.hpp</label>
+        <link refid="3_d_2_object_2_polygon_8hpp"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
         <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp</label>
         <link refid="2_d_2_object_8cpp"/>
       </node>

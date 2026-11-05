@@ -13,16 +13,14 @@
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faae}{Type}} \{ \newline
-\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaeaec0fc0100c4fc1ce4eea230c3dc10360}{Type\+::\+Undefined}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaeace2c8aed9c2fa0cfbed56cbda4d8bf07}{Type\+::\+Empty}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaea2a3cd5946cfd317eb99c3d32e35e2d4c}{Type\+::\+Point}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaeaaedf8f48dfa5b704b6c12b415707a1da}{Type\+::\+Point\+Set}}, 
-\newline
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaea4803e6b9e63dabf04de980788d6a13c4}{Type\+::\+Line}}, 
+\newline
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaea4b77e2a9d8e9cfc299f504b32d6e3d2b}{Type\+::\+Segment}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaea2e321465690359abbb020a3619b1c937}{Type\+::\+Line\+String}}, 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaea4c0a11247d92f73fb84baa51e37a3263}{Type\+::\+Polygon}}, 
-\newline
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaea10b4eb76294b70d7fd6df997ff06edb1}{Type\+::\+Complex}}
  \}
 \end{DoxyCompactItemize}
@@ -45,8 +43,6 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersectio
 \begin{DoxyCompactList}\small\item\em Addition operator (intersection concatenation) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection}{Intersection}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_af6afa26e7bf88dd2e8c2d824abd12076}{operator+=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection}{Intersection}} \&an\+Intersection)
 \begin{DoxyCompactList}\small\item\em Addition assignment operator (intersection concatenation) \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_aee7e7ede2e3ea269b9b2eb091da92b8f}{is\+Defined}} () const
-\begin{DoxyCompactList}\small\item\em Check if intersection is defined. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a4908a1b0edd4fb1b77bf13051f524a70}{is\+Empty}} () const
 \begin{DoxyCompactList}\small\item\em Check if intersection is empty. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_af2757994e5cca200ade007991ff4f160}{is\+Complex}} () const
@@ -55,15 +51,15 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersectio
 \begin{DoxyCompactList}\small\item\em Returns true if intersection can be converted to underlying object. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Type $>$ }\\const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faae}{Type}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab61bad3ddb1b3810311ffe4d517e7b79}{as}} () const
 \begin{DoxyCompactList}\small\item\em Access intersection as its underlying object. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite}{Composite}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a74ec0b78bab654fc7ae2ba9795b32778}{access\+Composite}} () const
-\begin{DoxyCompactList}\small\item\em Access composite object. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite}{Composite}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a84d07210d044001f231df598cb60a081}{get\+Composite}} () const \&
+\begin{DoxyCompactList}\small\item\em Get composite object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite}{Composite}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a679bded39e7d496f69b52f94a968fd92}{get\+Composite}} () \&\&
+\begin{DoxyCompactList}\small\item\em Get composite object of a temporary intersection. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faae}{Intersection\+::\+Type}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ad258b08bc3806cb99bb4019293b92992}{get\+Type}} () const
 \begin{DoxyCompactList}\small\item\em Get intersection type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_af09e4e5f1f8a4b76d0b5e91e3ea7ec11}{Undefined}} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined intersection. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a4b1d39b9c1516c2b1129957e1aaeab61}{Empty}} ()
 \begin{DoxyCompactList}\small\item\em Constructs an empty intersection. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a557d7508624c7644f74a358959e3a7e2}{Point}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point}{object\+::\+Point}} \&a\+Point)
@@ -104,10 +100,6 @@ std\+::ostream \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_
 {\footnotesize\ttfamily enum \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faae}{ostk\+::mathematics\+::geometry\+::d2\+::\+Intersection\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Undefined@{Undefined}!ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}}\index{ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}!Undefined@{Undefined}}}\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaeaec0fc0100c4fc1ce4eea230c3dc10360}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaeaec0fc0100c4fc1ce4eea230c3dc10360}} 
-Undefined&\\
-\hline
-
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Empty@{Empty}!ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}}\index{ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}!Empty@{Empty}}}\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaeace2c8aed9c2fa0cfbed56cbda4d8bf07}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab05d25c82a3b3118aea0aecc2570faaeace2c8aed9c2fa0cfbed56cbda4d8bf07}} 
 Empty&\\
 \hline
@@ -205,25 +197,6 @@ Destructor.
  
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a74ec0b78bab654fc7ae2ba9795b32778}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a74ec0b78bab654fc7ae2ba9795b32778}} 
-\index{ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}!accessComposite@{accessComposite}}
-\index{accessComposite@{accessComposite}!ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}}
-\doxysubsubsection{\texorpdfstring{accessComposite()}{accessComposite()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite}{Composite}} \& ostk\+::mathematics\+::geometry\+::d2\+::\+Intersection\+::access\+Composite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Access composite object. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{const} Composite\& composite = intersection.accessComposite() ;}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Reference to composite object 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab61bad3ddb1b3810311ffe4d517e7b79}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ab61bad3ddb1b3810311ffe4d517e7b79}} 
 \index{ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}!as@{as}}
 \index{as@{as}!ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}}
@@ -265,6 +238,44 @@ Constructs an empty intersection.
 
 \begin{DoxyReturn}{Returns}
 Empty intersection 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a679bded39e7d496f69b52f94a968fd92}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a679bded39e7d496f69b52f94a968fd92}} 
+\index{ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}!getComposite@{getComposite}}
+\index{getComposite@{getComposite}!ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}}
+\doxysubsubsection{\texorpdfstring{getComposite()}{getComposite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite}{Composite}} ostk\+::mathematics\+::geometry\+::d2\+::\+Intersection\+::get\+Composite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) \&\&}
+
+
+
+Get composite object of a temporary intersection. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& \textcolor{keywordtype}{object} : lineA.intersectionWith(lineB).getComposite()) \{ ... \}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Composite object (copy, so that it does not dangle) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a84d07210d044001f231df598cb60a081}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a84d07210d044001f231df598cb60a081}} 
+\index{ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}!getComposite@{getComposite}}
+\index{getComposite@{getComposite}!ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}}
+\doxysubsubsection{\texorpdfstring{getComposite()}{getComposite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite}{Composite}} ostk\+::mathematics\+::geometry\+::d2\+::\+Intersection\+::get\+Composite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const \&}
+
+
+
+Get composite object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} Composite\& composite = intersection.getComposite() ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Const reference to composite object 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ad258b08bc3806cb99bb4019293b92992}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_ad258b08bc3806cb99bb4019293b92992}} 
 \index{ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}!getType@{getType}}
@@ -328,25 +339,6 @@ Check if intersection is complex.
 
 \begin{DoxyReturn}{Returns}
 True if intersection is complex 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_aee7e7ede2e3ea269b9b2eb091da92b8f}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_aee7e7ede2e3ea269b9b2eb091da92b8f}} 
-\index{ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}!isDefined@{isDefined}}
-\index{isDefined@{isDefined}!ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}}
-\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
-{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d2\+::\+Intersection\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Check if intersection is defined. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a4b1d39b9c1516c2b1129957e1aaeab61}{Intersection::Empty}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_aee7e7ede2e3ea269b9b2eb091da92b8f}{isDefined}}() ; \textcolor{comment}{// True}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-True if intersection is defined 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a4908a1b0edd4fb1b77bf13051f524a70}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_a4908a1b0edd4fb1b77bf13051f524a70}} 
 \index{ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}!isEmpty@{isEmpty}}
@@ -624,25 +616,6 @@ Converts intersection type to string.
 
 \begin{DoxyReturn}{Returns}
 String 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_af09e4e5f1f8a4b76d0b5e91e3ea7ec11}\label{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_af09e4e5f1f8a4b76d0b5e91e3ea7ec11}} 
-\index{ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}!Undefined@{Undefined}}
-\index{Undefined@{Undefined}!ostk::mathematics::geometry::d2::Intersection@{ostk::mathematics::geometry::d2::Intersection}}
-\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d2\+::\+Intersection\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Constructs an undefined intersection. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_abadbbcd1176ace347a7148ea89a0fdef}{Intersection}} intersection = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection_af09e4e5f1f8a4b76d0b5e91e3ea7ec11}{Intersection::Undefined}}() ; \textcolor{comment}{// Undefined}}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Undefined intersection 
 \end{DoxyReturn}
 
 

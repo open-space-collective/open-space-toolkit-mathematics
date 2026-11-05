@@ -11,12 +11,14 @@ ostk.mathematics.geometry.d3.object.Composite
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
-      ~Composite.access_object_at
       ~Composite.apply_transformation
       ~Composite.as_composite
       ~Composite.as_cone
@@ -33,6 +35,7 @@ ostk.mathematics.geometry.d3.object.Composite
       ~Composite.as_sphere
       ~Composite.contains
       ~Composite.empty
+      ~Composite.get_object_at
       ~Composite.get_object_count
       ~Composite.intersection_with
       ~Composite.intersects
@@ -51,10 +54,5 @@ ostk.mathematics.geometry.d3.object.Composite
       ~Composite.is_ray
       ~Composite.is_segment
       ~Composite.is_sphere
-      ~Composite.undefined
-   
-   
-
-   
    
    

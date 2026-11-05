@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('classostk_1_1mathematics_1_1curvefitti
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ostk::mathematics::curvefitting::Interpolator Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -100,19 +101,30 @@ Inheritance diagram for ostk::mathematics::curvefitting::Interpolator:</div>
  <div class="center">
   <img src="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.png" usemap="#ostk::mathematics::curvefitting::Interpolator_map" alt=""/>
   <map id="ostk::mathematics::curvefitting::Interpolator_map" name="ostk::mathematics::curvefitting::Interpolator_map">
-<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html" title="BarycentricRational." alt="ostk::mathematics::curvefitting::interpolator::BarycentricRational" shape="rect" coords="0,56,364,80"/>
-<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html" title="CubicSpline." alt="ostk::mathematics::curvefitting::interpolator::CubicSpline" shape="rect" coords="374,56,738,80"/>
-<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html" title="Linear." alt="ostk::mathematics::curvefitting::interpolator::Linear" shape="rect" coords="748,56,1112,80"/>
-<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html" title="Zero-Order Hold Interpolator." alt="ostk::mathematics::curvefitting::interpolator::ZeroOrder" shape="rect" coords="1122,56,1486,80"/>
+<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html" title="BarycentricRational." alt="ostk::mathematics::curvefitting::interpolator::BarycentricRational" shape="rect" coords="374,56,738,80"/>
+<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite.html" title="CubicHermite." alt="ostk::mathematics::curvefitting::interpolator::CubicHermite" shape="rect" coords="374,112,738,136"/>
+<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html" title="CubicSpline." alt="ostk::mathematics::curvefitting::interpolator::CubicSpline" shape="rect" coords="374,168,738,192"/>
+<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html" title="Linear." alt="ostk::mathematics::curvefitting::interpolator::Linear" shape="rect" coords="374,224,738,248"/>
+<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline.html" title="QuadraticSpline." alt="ostk::mathematics::curvefitting::interpolator::QuadraticSpline" shape="rect" coords="374,280,738,304"/>
+<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite.html" title="QuinticHermite." alt="ostk::mathematics::curvefitting::interpolator::QuinticHermite" shape="rect" coords="374,336,738,360"/>
+<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline.html" title="QuinticSpline." alt="ostk::mathematics::curvefitting::interpolator::QuinticSpline" shape="rect" coords="374,392,738,416"/>
+<area href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html" title="Zero-Order Hold Interpolator." alt="ostk::mathematics::curvefitting::interpolator::ZeroOrder" shape="rect" coords="374,448,738,472"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a6318ad43cbddfa9b220213af2ac33557"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557">Type</a> { <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557a98cf9ba70112c998166a82b6f289bb9f">Type::BarycentricRational</a>, 
+<tr class="memitem:a6318ad43cbddfa9b220213af2ac33557"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557">Type</a> { <br />
+&#160;&#160;<a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557a98cf9ba70112c998166a82b6f289bb9f">Type::BarycentricRational</a>, 
 <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557abc050383dcd36a2e1f9481e562332cfa">Type::CubicSpline</a>, 
 <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b">Type::Linear</a>, 
-<a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557a302ecba0c202890cc825530fca2bf596">Type::ZeroOrder</a>
+<a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557a302ecba0c202890cc825530fca2bf596">Type::ZeroOrder</a>, 
+<br />
+&#160;&#160;<a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557af9605155301e3cfe461844773ffcb50e">Type::CubicHermite</a>, 
+<a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557ace966ec83dd7ab312bee9c7ac9c410d0">Type::QuinticHermite</a>, 
+<a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557ad7c01724a89988287d6edb9fb6910afb">Type::QuadraticSpline</a>, 
+<a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557ad8099fb437a26481ec5ee54a513725c1">Type::QuinticSpline</a>
+<br />
  }</td></tr>
 <tr class="separator:a6318ad43cbddfa9b220213af2ac33557"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -145,6 +157,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a41019cdd1cad7b5c5c818ff25a122536"><td class="memItemLeft" align="right" valign="top">static const Shared&lt; const <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html">Interpolator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a41019cdd1cad7b5c5c818ff25a122536">GenerateInterpolator</a> (const <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557">Type</a> &amp;aType, const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</td></tr>
 <tr class="memdesc:a41019cdd1cad7b5c5c818ff25a122536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an interpolator.  <a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a41019cdd1cad7b5c5c818ff25a122536">More...</a><br /></td></tr>
 <tr class="separator:a41019cdd1cad7b5c5c818ff25a122536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a171aae7fe231c3e7b15568d45650e8b0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a171aae7fe231c3e7b15568d45650e8b0">IsUniformlySpaced</a> (const VectorXd &amp;anXVector)</td></tr>
+<tr class="memdesc:a171aae7fe231c3e7b15568d45650e8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a vector of x values is uniformly spaced.  <a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a171aae7fe231c3e7b15568d45650e8b0">More...</a><br /></td></tr>
+<tr class="separator:a171aae7fe231c3e7b15568d45650e8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html" title="Interpolator (abstract class)">Interpolator</a> (abstract class) </p>
@@ -177,6 +195,10 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a6318ad43cbddfa9b220213af2ac33557abc050383dcd36a2e1f9481e562332cfa"></a>CubicSpline&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b"></a>Linear&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6318ad43cbddfa9b220213af2ac33557a302ecba0c202890cc825530fca2bf596"></a>ZeroOrder&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6318ad43cbddfa9b220213af2ac33557af9605155301e3cfe461844773ffcb50e"></a>CubicHermite&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6318ad43cbddfa9b220213af2ac33557ace966ec83dd7ab312bee9c7ac9c410d0"></a>QuinticHermite&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6318ad43cbddfa9b220213af2ac33557ad7c01724a89988287d6edb9fb6910afb"></a>QuadraticSpline&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6318ad43cbddfa9b220213af2ac33557ad8099fb437a26481ec5ee54a513725c1"></a>QuinticSpline&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -272,7 +294,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Derivative of the interpolator at the given x value </dd></dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a18dba35307db81b233329af76feb09fa">ostk::mathematics::curvefitting::interpolator::CubicSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a24f276d8242c407b246d7aed10ce5285">ostk::mathematics::curvefitting::interpolator::Linear</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a0f9feb9408d8b5510342dc5a54107bef">ostk::mathematics::curvefitting::interpolator::BarycentricRational</a>, and <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html#a20e74914f8b7836e252c36c3d512a247">ostk::mathematics::curvefitting::interpolator::ZeroOrder</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite.html#a46d578903c780a04b4ab9515db9932bb">ostk::mathematics::curvefitting::interpolator::QuinticHermite</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline.html#a8ef3bb23a1c9ad6a548a6701dc17dae5">ostk::mathematics::curvefitting::interpolator::QuadraticSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline.html#a4121630285b4eecb0deec104c2b07b9e">ostk::mathematics::curvefitting::interpolator::QuinticSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite.html#a735146dbe94d58d16d3a6ef34984bfa0">ostk::mathematics::curvefitting::interpolator::CubicHermite</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a18dba35307db81b233329af76feb09fa">ostk::mathematics::curvefitting::interpolator::CubicSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a24f276d8242c407b246d7aed10ce5285">ostk::mathematics::curvefitting::interpolator::Linear</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a0f9feb9408d8b5510342dc5a54107bef">ostk::mathematics::curvefitting::interpolator::BarycentricRational</a>, and <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html#a20e74914f8b7836e252c36c3d512a247">ostk::mathematics::curvefitting::interpolator::ZeroOrder</a>.</p>
 
 </div>
 </div>
@@ -310,7 +332,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector of derivatives of the interpolator at the given x values </dd></dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a91fa43ce75d45612a45e22af98762dcd">ostk::mathematics::curvefitting::interpolator::CubicSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#aa3bad32623ca7a926776fac3c5a7f9e0">ostk::mathematics::curvefitting::interpolator::Linear</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a53b32694d5f83bb2570c82e21d8ecaf2">ostk::mathematics::curvefitting::interpolator::BarycentricRational</a>, and <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html#a4d9fe3d2c0e021271277ac6d43a780de">ostk::mathematics::curvefitting::interpolator::ZeroOrder</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite.html#afb29b4bd4d54fa174cc41c9799dd2f0f">ostk::mathematics::curvefitting::interpolator::QuinticHermite</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline.html#a287a6b511504b751f273ace5173d07a3">ostk::mathematics::curvefitting::interpolator::QuadraticSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline.html#a083cf7ec82c43fac05c214911868101b">ostk::mathematics::curvefitting::interpolator::QuinticSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite.html#a06fa88f11ed100c426e5d23e191a23a6">ostk::mathematics::curvefitting::interpolator::CubicHermite</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a91fa43ce75d45612a45e22af98762dcd">ostk::mathematics::curvefitting::interpolator::CubicSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#aa3bad32623ca7a926776fac3c5a7f9e0">ostk::mathematics::curvefitting::interpolator::Linear</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a53b32694d5f83bb2570c82e21d8ecaf2">ostk::mathematics::curvefitting::interpolator::BarycentricRational</a>, and <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html#a4d9fe3d2c0e021271277ac6d43a780de">ostk::mathematics::curvefitting::interpolator::ZeroOrder</a>.</p>
 
 </div>
 </div>
@@ -348,7 +370,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector of y values </dd></dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a2f91b443473606d1236a81d24d643368">ostk::mathematics::curvefitting::interpolator::CubicSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a741b61d24af15b3332721b0751ec3a7a">ostk::mathematics::curvefitting::interpolator::Linear</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a343d5f5f554639ce936706ea75109006">ostk::mathematics::curvefitting::interpolator::BarycentricRational</a>, and <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html#a2ecd527a195050c5892a6d09122c2664">ostk::mathematics::curvefitting::interpolator::ZeroOrder</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite.html#acac2251213d4d9b3fbe5bad72dfc900d">ostk::mathematics::curvefitting::interpolator::QuinticHermite</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline.html#a35ddd221bc8705571ff9618073cac60a">ostk::mathematics::curvefitting::interpolator::QuadraticSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline.html#a8721ba2a4f5f4c9656f05c41206b7fa6">ostk::mathematics::curvefitting::interpolator::QuinticSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite.html#a32da7036de2100ba286d16896fae4917">ostk::mathematics::curvefitting::interpolator::CubicHermite</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a2f91b443473606d1236a81d24d643368">ostk::mathematics::curvefitting::interpolator::CubicSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a741b61d24af15b3332721b0751ec3a7a">ostk::mathematics::curvefitting::interpolator::Linear</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a343d5f5f554639ce936706ea75109006">ostk::mathematics::curvefitting::interpolator::BarycentricRational</a>, and <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html#a2ecd527a195050c5892a6d09122c2664">ostk::mathematics::curvefitting::interpolator::ZeroOrder</a>.</p>
 
 </div>
 </div>
@@ -386,7 +408,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector of y values </dd></dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a6852a278bdd114175116ae0e875bd258">ostk::mathematics::curvefitting::interpolator::CubicSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#ac1332768995f471149cd3852b3ba2782">ostk::mathematics::curvefitting::interpolator::Linear</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a0a440a296a04347ed9b4a9a22f1cf57f">ostk::mathematics::curvefitting::interpolator::BarycentricRational</a>, and <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html#ac9dd12114f9607239761a0891d8562e6">ostk::mathematics::curvefitting::interpolator::ZeroOrder</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite.html#a4987b498bd8b163d61c9465b9abaf1d2">ostk::mathematics::curvefitting::interpolator::QuinticHermite</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline.html#a3cd7731de528d9b5c8bd315d0a586f71">ostk::mathematics::curvefitting::interpolator::QuadraticSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline.html#af27536b8dc8693c7d8fddbd87e51d6b8">ostk::mathematics::curvefitting::interpolator::QuinticSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a6852a278bdd114175116ae0e875bd258">ostk::mathematics::curvefitting::interpolator::CubicSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite.html#a7b644ebb0f11acd29b3ce395aa7bd59f">ostk::mathematics::curvefitting::interpolator::CubicHermite</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#ac1332768995f471149cd3852b3ba2782">ostk::mathematics::curvefitting::interpolator::Linear</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a0a440a296a04347ed9b4a9a22f1cf57f">ostk::mathematics::curvefitting::interpolator::BarycentricRational</a>, and <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html#ac9dd12114f9607239761a0891d8562e6">ostk::mathematics::curvefitting::interpolator::ZeroOrder</a>.</p>
 
 </div>
 </div>
@@ -440,7 +462,8 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Shared pointer to correct <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html" title="Interpolator (abstract class)">Interpolator</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Shared pointer to correct <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html" title="Interpolator (abstract class)">Interpolator</a></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The Hermite types cannot be generated here, as they additionally require derivative data. Construct them directly instead. </dd></dl>
 
 </div>
 </div>
@@ -465,17 +488,55 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a171aae7fe231c3e7b15568d45650e8b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a171aae7fe231c3e7b15568d45650e8b0">&#9670;&nbsp;</a></span>IsUniformlySpaced()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ostk::mathematics::curvefitting::Interpolator::IsUniformlySpaced </td>
+          <td>(</td>
+          <td class="paramtype">const VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>anXVector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check whether a vector of x values is uniformly spaced. </p>
+<p>Interpolators that have both a uniform and a non-uniform implementation use this to decide which one to build. A vector counts as uniformly spaced when every one of its values lies on the reconstructed grid x0 + i * h, where h is the mean spacing, to within a tolerance that accounts both for a small slack relative to the total span and for the precision with which the values themselves can be represented.</p>
+<div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">bool</span> isUniform = <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a171aae7fe231c3e7b15568d45650e8b0">Interpolator::IsUniformlySpaced</a>(x);</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">anXVector</td><td>A vector of x values, sorted in ascending order </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the x values are uniformly spaced </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/OpenSpaceToolkit/Mathematics/CurveFitting/<a class="el" href="_interpolator_8hpp_source.html">Interpolator.hpp</a></li>
 <li>src/OpenSpaceToolkit/Mathematics/CurveFitting/<a class="el" href="_interpolator_8cpp.html">Interpolator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1_interpolator_html_a41019cdd1cad7b5c5c818ff25a122536"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a41019cdd1cad7b5c5c818ff25a122536">ostk::mathematics::curvefitting::Interpolator::GenerateInterpolator</a></div><div class="ttdeci">static const Shared&lt; const Interpolator &gt; GenerateInterpolator(const Type &amp;aType, const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</div><div class="ttdoc">Generate an interpolator.</div><div class="ttdef"><b>Definition:</b> Interpolator.cpp:35</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1_interpolator_html_a6593f90bb974214f6f2b264bc114b96e"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6593f90bb974214f6f2b264bc114b96e">ostk::mathematics::curvefitting::Interpolator::Interpolator</a></div><div class="ttdeci">Interpolator(const Type &amp;aType)</div><div class="ttdoc">Constructor (can only be called by derived classes since it is pure virtual)</div><div class="ttdef"><b>Definition:</b> Interpolator.cpp:23</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1_interpolator_html_a41019cdd1cad7b5c5c818ff25a122536"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a41019cdd1cad7b5c5c818ff25a122536">ostk::mathematics::curvefitting::Interpolator::GenerateInterpolator</a></div><div class="ttdeci">static const Shared&lt; const Interpolator &gt; GenerateInterpolator(const Type &amp;aType, const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</div><div class="ttdoc">Generate an interpolator.</div><div class="ttdef"><b>Definition:</b> Interpolator.cpp:43</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1_interpolator_html_a6593f90bb974214f6f2b264bc114b96e"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6593f90bb974214f6f2b264bc114b96e">ostk::mathematics::curvefitting::Interpolator::Interpolator</a></div><div class="ttdeci">Interpolator(const Type &amp;aType)</div><div class="ttdoc">Constructor (can only be called by derived classes since it is pure virtual)</div><div class="ttdef"><b>Definition:</b> Interpolator.cpp:31</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1_interpolator_html_a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b">ostk::mathematics::curvefitting::Interpolator::Type::Linear</a></div><div class="ttdeci">@ Linear</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1_interpolator_html_a6318ad43cbddfa9b220213af2ac33557"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557">ostk::mathematics::curvefitting::Interpolator::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> Interpolator.hpp:38</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1_interpolator_html_a6318ad43cbddfa9b220213af2ac33557"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557">ostk::mathematics::curvefitting::Interpolator::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> Interpolator.hpp:36</div></div>
 <div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a7353155bb00668655919bf5698f74c84"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">ostk::mathematics::object::VectorXd</a></div><div class="ttdeci">Eigen::VectorXd VectorXd</div><div class="ttdoc">Dynamic-size double vector type alias for Eigen::VectorXd.</div><div class="ttdef"><b>Definition:</b> Vector.hpp:50</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1_interpolator_html_a171aae7fe231c3e7b15568d45650e8b0"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a171aae7fe231c3e7b15568d45650e8b0">ostk::mathematics::curvefitting::Interpolator::IsUniformlySpaced</a></div><div class="ttdeci">static bool IsUniformlySpaced(const VectorXd &amp;anXVector)</div><div class="ttdoc">Check whether a vector of x values is uniformly spaced.</div><div class="ttdef"><b>Definition:</b> Interpolator.cpp:72</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

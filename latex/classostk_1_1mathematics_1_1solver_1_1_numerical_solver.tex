@@ -37,7 +37,7 @@ typedef std\+::function$<$ void(const \mbox{\hyperlink{classostk_1_1mathematics_
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}{Numerical\+Solver}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad8a0c981770c8ee40f765cc17cf0c1a5}{Numerical\+Solver\+::\+Log\+Type}} \&a\+Log\+Type, const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97}{Numerical\+Solver\+::\+Stepper\+Type}} \&a\+Stepper\+Type, const Real \&a\+Time\+Step, const Real \&a\+Relative\+Tolerance, const Real \&an\+Absolute\+Tolerance)
+\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af09f15b0f5d10c8aff8b599672467e44}{Numerical\+Solver}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad8a0c981770c8ee40f765cc17cf0c1a5}{Numerical\+Solver\+::\+Log\+Type}} \&a\+Log\+Type, const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97}{Numerical\+Solver\+::\+Stepper\+Type}} \&a\+Stepper\+Type, double a\+Time\+Step, double a\+Relative\+Tolerance, double an\+Absolute\+Tolerance)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver}{Numerical\+Solver}} $\ast$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ade382b45dc13976a125ee742a7e0e299}{clone}} () const
 \begin{DoxyCompactList}\small\item\em Clone numerical solver. \end{DoxyCompactList}\item 
@@ -49,27 +49,25 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae
 \begin{DoxyCompactList}\small\item\em Check if numerical solver is defined. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad228bac87a6b39aeecc275e894178722}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorator=true) const
 \begin{DoxyCompactList}\small\item\em Print numerical solver. \end{DoxyCompactList}\item 
-const Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Solution}} $>$ \& \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad7d60a1c86d369700734a572d6960da0}{access\+Observed\+State\+Vectors}} () const
-\begin{DoxyCompactList}\small\item\em Access observed state vectors. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad8a0c981770c8ee40f765cc17cf0c1a5}{Numerical\+Solver\+::\+Log\+Type}} \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_acc6274d68e4f0ec5f10089db23354a90}{get\+Log\+Type}} () const
 \begin{DoxyCompactList}\small\item\em Get integration logging enum. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97}{Numerical\+Solver\+::\+Stepper\+Type}} \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a520c6ba46e8033399d81c0f896fa5539}{get\+Stepper\+Type}} () const
 \begin{DoxyCompactList}\small\item\em Get integration stepper enum. \end{DoxyCompactList}\item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aad43791f97dfc11ac7b4dc3e97a6a786}{get\+Time\+Step}} () const
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aa71289db4b591c7a1d72564883320206}{get\+Time\+Step}} () const
 \begin{DoxyCompactList}\small\item\em Get initial time step guess. \end{DoxyCompactList}\item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af59c4d7855ecc9a757df289df56b6495}{get\+Relative\+Tolerance}} () const
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae78d77f6e8c80d105ac137d2f537ab7f}{get\+Relative\+Tolerance}} () const
 \begin{DoxyCompactList}\small\item\em Get relative integration tolerance. \end{DoxyCompactList}\item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_acd9c18a1b9dc2ba8bb5605da416638dc}{get\+Absolute\+Tolerance}} () const
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aa1a0702ad0189afc287e30ddd2a27b0d}{get\+Absolute\+Tolerance}} () const
 \begin{DoxyCompactList}\small\item\em Get absolute integration tolerance. \end{DoxyCompactList}\item 
-Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Solution}} $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ac1dc63e114e85e2c733349ae7f69ed9d}{get\+Observed\+State\+Vectors}} () const
+const Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Solution}} $>$ \& \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a4998c287f1c5eb468610c49f1cf1731d}{get\+Observed\+State\+Vectors}} () const
 \begin{DoxyCompactList}\small\item\em Get observed state vectors. \end{DoxyCompactList}\item 
-Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Solution}} $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a7f9c29b8cbdb29b1e1de907a528f902d}{integrate\+Time}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&an\+Initial\+State\+Vector, const Real \&a\+Start\+Time, const Array$<$ Real $>$ \&a\+Time\+Array, const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&a\+System\+Of\+Equations)
+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Solution}} $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a8e630a88beecdbccda9c16462732b9f5}{integrate\+Time}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&an\+Initial\+State\+Vector, double a\+Start\+Time, const Array$<$ double $>$ \&a\+Time\+Array, const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&a\+System\+Of\+Equations)
 \begin{DoxyCompactList}\small\item\em Perform numerical integration from a start time to an array of times. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Solution}} \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6ca786d30c480052c195cea67f919f05}{integrate\+Time}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&an\+Initial\+State\+Vector, const Real \&a\+Start\+Time, const Real \&an\+End\+Time, const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&a\+System\+Of\+Equations)
+\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Solution}} \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ab28d641273ddd5c957bf2de0fbce49ea}{integrate\+Time}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&an\+Initial\+State\+Vector, double a\+Start\+Time, double an\+End\+Time, const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&a\+System\+Of\+Equations)
 \begin{DoxyCompactList}\small\item\em Perform numerical integration from a start time to an end time. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Solution}} \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a0b2c17bbe35e2cbb8a352b4736685637}{integrate\+Duration}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&an\+Initial\+State\+Vector, const Real \&a\+Duration\+In\+Seconds, const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&a\+System\+Of\+Equations)
+\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Solution}} \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a7412709d3e9420d54a91a0ee9b6b2a93}{integrate\+Duration}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&an\+Initial\+State\+Vector, double a\+Duration\+In\+Seconds, const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&a\+System\+Of\+Equations)
 \begin{DoxyCompactList}\small\item\em Perform numerical integration for a specified duration. \end{DoxyCompactList}\item 
-Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Solution}} $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae8581bab9e2de3b4025c966da27a72c2}{integrate\+Duration}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&an\+Initial\+State\+Vector, const Array$<$ Real $>$ \&a\+Duration\+Array, const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&a\+System\+Of\+Equations)
+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Solution}} $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6614262536aaf875080756fb8a72b0ee}{integrate\+Duration}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&an\+Initial\+State\+Vector, const Array$<$ double $>$ \&a\+Duration\+Array, const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&a\+System\+Of\+Equations)
 \begin{DoxyCompactList}\small\item\em Perform numerical integration for an array of durations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -85,7 +83,7 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-double \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a348ac983e497f1185031205dd465c588}{get\+Signed\+Time\+Step}} (const Real \&a\+Real) const
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a20fac66c5123a1d73057474c43299066}{get\+Signed\+Time\+Step}} (double a\+Real) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -94,11 +92,11 @@ double \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_
 \item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97}{Numerical\+Solver\+::\+Stepper\+Type}} \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad99c1d09276752b4cf3bb1291c54e138}{stepper\+Type\+\_\+}}
 \item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a5f05521e24c29047c899ddffa410b614}{time\+Step\+\_\+}}
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a9761de49502769444c9cd31036eb3239}{time\+Step\+\_\+}}
 \item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a45eb77bb99f110923f802b93556747f0}{relative\+Tolerance\+\_\+}}
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6bfdf5f2af3d61ebc7f9cd3466bbdede}{relative\+Tolerance\+\_\+}}
 \item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae0fbf398e8fee698ba27d6675cd11217}{absolute\+Tolerance\+\_\+}}
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1eb099a178592f1b57b8d9f8d5da9e19}{absolute\+Tolerance\+\_\+}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -112,7 +110,7 @@ Defines a numerical O\+DE solver that use the Boost Odeint libraries. This class
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}{NumericalSolver}} solver = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}();}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af09f15b0f5d10c8aff8b599672467e44}{NumericalSolver}} solver = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}();}
 \end{DoxyCode}
  
 
@@ -197,11 +195,11 @@ Bulirsch\+Stoer&\\
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af09f15b0f5d10c8aff8b599672467e44}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af09f15b0f5d10c8aff8b599672467e44}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!NumericalSolver@{NumericalSolver}}
 \index{NumericalSolver@{NumericalSolver}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{NumericalSolver()}{NumericalSolver()}}
-{\footnotesize\ttfamily ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::\+Numerical\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad8a0c981770c8ee40f765cc17cf0c1a5}{Numerical\+Solver\+::\+Log\+Type}} \&}]{a\+Log\+Type,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97}{Numerical\+Solver\+::\+Stepper\+Type}} \&}]{a\+Stepper\+Type,  }\item[{const Real \&}]{a\+Time\+Step,  }\item[{const Real \&}]{a\+Relative\+Tolerance,  }\item[{const Real \&}]{an\+Absolute\+Tolerance }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::\+Numerical\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad8a0c981770c8ee40f765cc17cf0c1a5}{Numerical\+Solver\+::\+Log\+Type}} \&}]{a\+Log\+Type,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97}{Numerical\+Solver\+::\+Stepper\+Type}} \&}]{a\+Stepper\+Type,  }\item[{double}]{a\+Time\+Step,  }\item[{double}]{a\+Relative\+Tolerance,  }\item[{double}]{an\+Absolute\+Tolerance }\end{DoxyParamCaption})}
 
 
 
@@ -209,7 +207,7 @@ Constructor.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}{NumericalSolver}} numericalSolver = \{ aLogType, aStepperType, aTimeStep,}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af09f15b0f5d10c8aff8b599672467e44}{NumericalSolver}} numericalSolver = \{ aLogType, aStepperType, aTimeStep,}
 \DoxyCodeLine{aRelativeTolerance, anAbsoluteTolerance \};}
 \end{DoxyCode}
 
@@ -230,25 +228,6 @@ Constructor.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad7d60a1c86d369700734a572d6960da0}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad7d60a1c86d369700734a572d6960da0}} 
-\index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!accessObservedStateVectors@{accessObservedStateVectors}}
-\index{accessObservedStateVectors@{accessObservedStateVectors}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
-\doxysubsubsection{\texorpdfstring{accessObservedStateVectors()}{accessObservedStateVectors()}}
-{\footnotesize\ttfamily const Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Numerical\+Solver\+::\+Solution}} $>$ \& ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::access\+Observed\+State\+Vectors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Access observed state vectors. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{const} Array<Solution>\& states = numericalSolver.accessObservedStateVectors();}
-\end{DoxyCode}
-
-
-\begin{DoxyReturn}{Returns}
-Observed state vectors 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ade382b45dc13976a125ee742a7e0e299}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ade382b45dc13976a125ee742a7e0e299}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!clone@{clone}}
 \index{clone@{clone}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
@@ -261,7 +240,7 @@ Clone numerical solver.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}{NumericalSolver}}* \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ade382b45dc13976a125ee742a7e0e299}{clone}} = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ade382b45dc13976a125ee742a7e0e299}{clone}}();}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af09f15b0f5d10c8aff8b599672467e44}{NumericalSolver}}* \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ade382b45dc13976a125ee742a7e0e299}{clone}} = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ade382b45dc13976a125ee742a7e0e299}{clone}}();}
 \end{DoxyCode}
 
 
@@ -280,18 +259,18 @@ Default.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}{NumericalSolver}} solver = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}();}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af09f15b0f5d10c8aff8b599672467e44}{NumericalSolver}} solver = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1653209d9c0b27cc3299fafaa4df7368}{NumericalSolver::Default}}();}
 \end{DoxyCode}
 
 
 \begin{DoxyReturn}{Returns}
 A default numerical solver 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_acd9c18a1b9dc2ba8bb5605da416638dc}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_acd9c18a1b9dc2ba8bb5605da416638dc}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aa1a0702ad0189afc287e30ddd2a27b0d}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aa1a0702ad0189afc287e30ddd2a27b0d}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!getAbsoluteTolerance@{getAbsoluteTolerance}}
 \index{getAbsoluteTolerance@{getAbsoluteTolerance}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{getAbsoluteTolerance()}{getAbsoluteTolerance()}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::get\+Absolute\+Tolerance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::get\+Absolute\+Tolerance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -304,7 +283,7 @@ Get absolute integration tolerance.
 
 
 \begin{DoxyReturn}{Returns}
-Real 
+double 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_acc6274d68e4f0ec5f10089db23354a90}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_acc6274d68e4f0ec5f10089db23354a90}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!getLogType@{getLogType}}
@@ -325,11 +304,11 @@ Get integration logging enum.
 \begin{DoxyReturn}{Returns}
 Log\+Type 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ac1dc63e114e85e2c733349ae7f69ed9d}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ac1dc63e114e85e2c733349ae7f69ed9d}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a4998c287f1c5eb468610c49f1cf1731d}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a4998c287f1c5eb468610c49f1cf1731d}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!getObservedStateVectors@{getObservedStateVectors}}
 \index{getObservedStateVectors@{getObservedStateVectors}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{getObservedStateVectors()}{getObservedStateVectors()}}
-{\footnotesize\ttfamily Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Numerical\+Solver\+::\+Solution}} $>$ ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::get\+Observed\+State\+Vectors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Numerical\+Solver\+::\+Solution}} $>$ \& ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::get\+Observed\+State\+Vectors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -337,18 +316,18 @@ Get observed state vectors.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{numericalSolver.getObservedStateVectors();}
+\DoxyCodeLine{\textcolor{keyword}{const} Array<Solution>\& states = numericalSolver.getObservedStateVectors();}
 \end{DoxyCode}
 
 
 \begin{DoxyReturn}{Returns}
-Observed state vectors 
+Const reference to observed state vectors 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af59c4d7855ecc9a757df289df56b6495}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af59c4d7855ecc9a757df289df56b6495}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae78d77f6e8c80d105ac137d2f537ab7f}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae78d77f6e8c80d105ac137d2f537ab7f}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!getRelativeTolerance@{getRelativeTolerance}}
 \index{getRelativeTolerance@{getRelativeTolerance}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{getRelativeTolerance()}{getRelativeTolerance()}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::get\+Relative\+Tolerance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::get\+Relative\+Tolerance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -361,13 +340,13 @@ Get relative integration tolerance.
 
 
 \begin{DoxyReturn}{Returns}
-Real 
+double 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a348ac983e497f1185031205dd465c588}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a348ac983e497f1185031205dd465c588}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a20fac66c5123a1d73057474c43299066}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a20fac66c5123a1d73057474c43299066}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!getSignedTimeStep@{getSignedTimeStep}}
 \index{getSignedTimeStep@{getSignedTimeStep}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{getSignedTimeStep()}{getSignedTimeStep()}}
-{\footnotesize\ttfamily double ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::get\+Signed\+Time\+Step (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Real }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::get\+Signed\+Time\+Step (\begin{DoxyParamCaption}\item[{double}]{a\+Real }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a520c6ba46e8033399d81c0f896fa5539}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a520c6ba46e8033399d81c0f896fa5539}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!getStepperType@{getStepperType}}
@@ -388,11 +367,11 @@ Get integration stepper enum.
 \begin{DoxyReturn}{Returns}
 Stepper\+Type 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aad43791f97dfc11ac7b4dc3e97a6a786}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aad43791f97dfc11ac7b4dc3e97a6a786}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aa71289db4b591c7a1d72564883320206}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aa71289db4b591c7a1d72564883320206}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!getTimeStep@{getTimeStep}}
 \index{getTimeStep@{getTimeStep}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{getTimeStep()}{getTimeStep()}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::get\+Time\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::get\+Time\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -405,13 +384,13 @@ Get initial time step guess.
 
 
 \begin{DoxyReturn}{Returns}
-Real 
+double 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae8581bab9e2de3b4025c966da27a72c2}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae8581bab9e2de3b4025c966da27a72c2}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6614262536aaf875080756fb8a72b0ee}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6614262536aaf875080756fb8a72b0ee}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!integrateDuration@{integrateDuration}}
 \index{integrateDuration@{integrateDuration}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{integrateDuration()}{integrateDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Numerical\+Solver\+::\+Solution}} $>$ ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::integrate\+Duration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&}]{an\+Initial\+State\+Vector,  }\item[{const Array$<$ Real $>$ \&}]{a\+Duration\+Array,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&}]{a\+System\+Of\+Equations }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Numerical\+Solver\+::\+Solution}} $>$ ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::integrate\+Duration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&}]{an\+Initial\+State\+Vector,  }\item[{const Array$<$ double $>$ \&}]{a\+Duration\+Array,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&}]{a\+System\+Of\+Equations }\end{DoxyParamCaption})}
 
 
 
@@ -434,11 +413,11 @@ Perform numerical integration for an array of durations.
 \begin{DoxyReturn}{Returns}
 Array$<$\+Solution$>$ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a0b2c17bbe35e2cbb8a352b4736685637}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a0b2c17bbe35e2cbb8a352b4736685637}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a7412709d3e9420d54a91a0ee9b6b2a93}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a7412709d3e9420d54a91a0ee9b6b2a93}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!integrateDuration@{integrateDuration}}
 \index{integrateDuration@{integrateDuration}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{integrateDuration()}{integrateDuration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Numerical\+Solver\+::\+Solution}} ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::integrate\+Duration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&}]{an\+Initial\+State\+Vector,  }\item[{const Real \&}]{a\+Duration\+In\+Seconds,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&}]{a\+System\+Of\+Equations }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Numerical\+Solver\+::\+Solution}} ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::integrate\+Duration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&}]{an\+Initial\+State\+Vector,  }\item[{double}]{a\+Duration\+In\+Seconds,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&}]{a\+System\+Of\+Equations }\end{DoxyParamCaption})}
 
 
 
@@ -461,11 +440,11 @@ Perform numerical integration for a specified duration.
 \begin{DoxyReturn}{Returns}
 Solution 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a7f9c29b8cbdb29b1e1de907a528f902d}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a7f9c29b8cbdb29b1e1de907a528f902d}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a8e630a88beecdbccda9c16462732b9f5}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a8e630a88beecdbccda9c16462732b9f5}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!integrateTime@{integrateTime}}
 \index{integrateTime@{integrateTime}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{integrateTime()}{integrateTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Numerical\+Solver\+::\+Solution}} $>$ ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::integrate\+Time (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&}]{an\+Initial\+State\+Vector,  }\item[{const Real \&}]{a\+Start\+Time,  }\item[{const Array$<$ Real $>$ \&}]{a\+Time\+Array,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&}]{a\+System\+Of\+Equations }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Numerical\+Solver\+::\+Solution}} $>$ ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::integrate\+Time (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&}]{an\+Initial\+State\+Vector,  }\item[{double}]{a\+Start\+Time,  }\item[{const Array$<$ double $>$ \&}]{a\+Time\+Array,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&}]{a\+System\+Of\+Equations }\end{DoxyParamCaption})}
 
 
 
@@ -492,11 +471,11 @@ Perform numerical integration from a start time to an array of times.
 \begin{DoxyReturn}{Returns}
 Array$<$\+Solution$>$ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6ca786d30c480052c195cea67f919f05}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6ca786d30c480052c195cea67f919f05}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ab28d641273ddd5c957bf2de0fbce49ea}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ab28d641273ddd5c957bf2de0fbce49ea}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!integrateTime@{integrateTime}}
 \index{integrateTime@{integrateTime}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{integrateTime()}{integrateTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Numerical\+Solver\+::\+Solution}} ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::integrate\+Time (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&}]{an\+Initial\+State\+Vector,  }\item[{const Real \&}]{a\+Start\+Time,  }\item[{const Real \&}]{an\+End\+Time,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&}]{a\+System\+Of\+Equations }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_aef6d06e4478e44fbe3354dbe8f80b94d}{Numerical\+Solver\+::\+Solution}} ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::integrate\+Time (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a321c69ab0db9e09939b690580685a4b9}{State\+Vector}} \&}]{an\+Initial\+State\+Vector,  }\item[{double}]{a\+Start\+Time,  }\item[{double}]{an\+End\+Time,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af087a68c505e3da6f7ebfd0cfb1d2ef5}{System\+Of\+Equations\+Wrapper}} \&}]{a\+System\+Of\+Equations }\end{DoxyParamCaption})}
 
 
 
@@ -667,7 +646,7 @@ Undefined.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1c5fd12a2d545bf7d090d992ffcbe17e}{NumericalSolver}} solver = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1e196c06ce05721dd871501fd4df0500}{NumericalSolver::Undefined}}();}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_af09f15b0f5d10c8aff8b599672467e44}{NumericalSolver}} solver = \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1e196c06ce05721dd871501fd4df0500}{NumericalSolver::Undefined}}();}
 \end{DoxyCode}
 
 
@@ -706,11 +685,11 @@ Output stream reference
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae0fbf398e8fee698ba27d6675cd11217}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ae0fbf398e8fee698ba27d6675cd11217}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1eb099a178592f1b57b8d9f8d5da9e19}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a1eb099a178592f1b57b8d9f8d5da9e19}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!absoluteTolerance\_@{absoluteTolerance\_}}
 \index{absoluteTolerance\_@{absoluteTolerance\_}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{absoluteTolerance\_}{absoluteTolerance\_}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::absolute\+Tolerance\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::absolute\+Tolerance\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a7e2b0144bf211d31e61aa932ee900ba1}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a7e2b0144bf211d31e61aa932ee900ba1}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!logType\_@{logType\_}}
@@ -718,11 +697,11 @@ Output stream reference
 \doxysubsubsection{\texorpdfstring{logType\_}{logType\_}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad8a0c981770c8ee40f765cc17cf0c1a5}{Numerical\+Solver\+::\+Log\+Type}} ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::log\+Type\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a45eb77bb99f110923f802b93556747f0}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a45eb77bb99f110923f802b93556747f0}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6bfdf5f2af3d61ebc7f9cd3466bbdede}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6bfdf5f2af3d61ebc7f9cd3466bbdede}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!relativeTolerance\_@{relativeTolerance\_}}
 \index{relativeTolerance\_@{relativeTolerance\_}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{relativeTolerance\_}{relativeTolerance\_}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::relative\+Tolerance\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::relative\+Tolerance\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad99c1d09276752b4cf3bb1291c54e138}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_ad99c1d09276752b4cf3bb1291c54e138}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!stepperType\_@{stepperType\_}}
@@ -730,11 +709,11 @@ Output stream reference
 \doxysubsubsection{\texorpdfstring{stepperType\_}{stepperType\_}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a6d9ca28da654c92c6f36878e6a5efd97}{Numerical\+Solver\+::\+Stepper\+Type}} ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::stepper\+Type\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a5f05521e24c29047c899ddffa410b614}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a5f05521e24c29047c899ddffa410b614}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a9761de49502769444c9cd31036eb3239}\label{classostk_1_1mathematics_1_1solver_1_1_numerical_solver_a9761de49502769444c9cd31036eb3239}} 
 \index{ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}!timeStep\_@{timeStep\_}}
 \index{timeStep\_@{timeStep\_}!ostk::mathematics::solver::NumericalSolver@{ostk::mathematics::solver::NumericalSolver}}
 \doxysubsubsection{\texorpdfstring{timeStep\_}{timeStep\_}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::time\+Step\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::solver\+::\+Numerical\+Solver\+::time\+Step\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

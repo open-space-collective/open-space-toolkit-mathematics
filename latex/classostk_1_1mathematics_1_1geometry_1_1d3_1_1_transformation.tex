@@ -47,7 +47,7 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformat
 \begin{DoxyCompactList}\small\item\em Returns true if transformation is rigid. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a86fdae5e12b1e722211ade5d0b31cdac}{Transformation\+::\+Type}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_ac56b1e2bf4c24a55f55b22d856f5af25}{get\+Type}} () const
 \begin{DoxyCompactList}\small\item\em Get the type of the transformation. \end{DoxyCompactList}\item 
-Matrix4d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a6581c0285a996750beb921f7138cbe09}{get\+Matrix}} () const
+const Matrix4d \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5843ff06f4bbd493c57fd2ad18048117}{get\+Matrix}} () const
 \begin{DoxyCompactList}\small\item\em Get the transformation matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a4d7e7f02948277935e28e089ba85d6bd}{get\+Inverse}} () const
 \begin{DoxyCompactList}\small\item\em Get the inverse transformation. \end{DoxyCompactList}\item 
@@ -94,7 +94,7 @@ Represents a 3D affine transformation using a 4x4 homogeneous matrix. Supports t
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a208df471aa963dabb54cfed7a6cbaa09}{Transformation}} t = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5cd654de32139306358aa773bbf8c291}{Transformation::Identity}}();}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a208df471aa963dabb54cfed7a6cbaa09}{Transformation}} rotation = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_aa12d31e920d91e59080771f26242b0c2}{Transformation::Rotation}}(RotationVector(\{0.0, 0.0, 1.0\},}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(45.0))); Point p = rotation.applyTo(Point(1.0, 0.0, 0.0));}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(45.0))); Point p = rotation.applyTo(Point(1.0, 0.0, 0.0));}
 \end{DoxyCode}
  
 
@@ -234,11 +234,11 @@ Get the inverse transformation.
 \begin{DoxyReturn}{Returns}
 The inverse transformation 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a6581c0285a996750beb921f7138cbe09}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a6581c0285a996750beb921f7138cbe09}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5843ff06f4bbd493c57fd2ad18048117}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5843ff06f4bbd493c57fd2ad18048117}} 
 \index{ostk::mathematics::geometry::d3::Transformation@{ostk::mathematics::geometry::d3::Transformation}!getMatrix@{getMatrix}}
 \index{getMatrix@{getMatrix}!ostk::mathematics::geometry::d3::Transformation@{ostk::mathematics::geometry::d3::Transformation}}
 \doxysubsubsection{\texorpdfstring{getMatrix()}{getMatrix()}}
-{\footnotesize\ttfamily Matrix4d ostk\+::mathematics\+::geometry\+::d3\+::\+Transformation\+::get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const Matrix4d \& ostk\+::mathematics\+::geometry\+::d3\+::\+Transformation\+::get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -246,7 +246,7 @@ Get the transformation matrix.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_adadb22c2eddff1e58abea07ad5cd2b78}{Matrix4d}} matrix = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5cd654de32139306358aa773bbf8c291}{Transformation::Identity}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a6581c0285a996750beb921f7138cbe09}{getMatrix}}();}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_adadb22c2eddff1e58abea07ad5cd2b78}{Matrix4d}} matrix = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5cd654de32139306358aa773bbf8c291}{Transformation::Identity}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a5843ff06f4bbd493c57fd2ad18048117}{getMatrix}}();}
 \end{DoxyCode}
 
 
@@ -560,7 +560,7 @@ Construct a rotation transformation from a rotation vector.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a208df471aa963dabb54cfed7a6cbaa09}{Transformation}} t = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_aa12d31e920d91e59080771f26242b0c2}{Transformation::Rotation}}(RotationVector(\{0.0, 0.0, 1.0\},}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(45.0)));}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(45.0)));}
 \end{DoxyCode}
 
 
@@ -585,7 +585,7 @@ Construct a rotation transformation around a given point.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a208df471aa963dabb54cfed7a6cbaa09}{Transformation}} t = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_a3966d6c0dcf466528932566907b9c7b4}{Transformation::RotationAround}}(Point(1.0, 0.0, 0.0), RotationVector(\{0.0,}
-\DoxyCodeLine{0.0, 1.0\}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(90.0)));}
+\DoxyCodeLine{0.0, 1.0\}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(90.0)));}
 \end{DoxyCode}
 
 

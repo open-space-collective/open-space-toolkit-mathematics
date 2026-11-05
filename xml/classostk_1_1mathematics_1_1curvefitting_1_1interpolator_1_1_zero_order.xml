@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="105" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" bodystart="105" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="106" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" bodystart="106" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a3efad67f19d45cb03425bf18f72c99b2" prot="private" static="no" mutable="no">
         <type>VectorXd</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="106" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" bodystart="106" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="107" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" bodystart="107" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="55" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="16" bodyend="30"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="56" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="16" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a05867c04160a594a06b783b6d46edd50" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="62" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="32" bodyend="32"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="63" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="32" bodyend="32"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1ac9dd12114f9607239761a0891d8562e6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>VectorXd</type>
@@ -124,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="72" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="34" bodyend="44"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="73" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="34" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a2ecd527a195050c5892a6d09122c2664" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -157,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="82" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="46" bodyend="50"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="83" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="46" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a20e74914f8b7836e252c36c3d512a247" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -190,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="92" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="52" bodyend="56"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="93" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="52" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a4d9fe3d2c0e021271277ac6d43a780de" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>VectorXd</type>
@@ -223,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="102" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="58" bodyend="61"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="103" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="58" bodyend="61"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -242,7 +242,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="108" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="63" bodyend="76"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="109" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.cpp" bodystart="63" bodyend="76"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -252,6 +252,9 @@
 <para><verbatim>                        A step interpolator that returns the value of the previous data point.
                         For any query value x, it returns the y value of the largest data point
                         x_i where x_i &lt;= x. Also known as &quot;zero-order hold&quot; or &quot;step&quot; interpolation.
+
+                        Use when the data is discrete or piecewise constant (states, modes,
+                        commands), or when values must not be invented between samples.
 </verbatim></para>
 <para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>x<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>2.0,<sp/>3.0}};</highlight></codeline>
 <codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>y<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>4.0,<sp/>9.0}};</highlight></codeline>
@@ -284,7 +287,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="43" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" bodystart="42" bodyend="109"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" line="44" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp" bodystart="43" bodyend="110"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a20e74914f8b7836e252c36c3d512a247" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::ZeroOrder</scope><name>computeDerivative</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a4d9fe3d2c0e021271277ac6d43a780de" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::ZeroOrder</scope><name>computeDerivative</name></member>
@@ -294,6 +297,7 @@
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::ZeroOrder</scope><name>GenerateInterpolator</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a3e596528cd5e416546dabe45e9100e04" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::ZeroOrder</scope><name>getInterpolationType</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6593f90bb974214f6f2b264bc114b96e" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::ZeroOrder</scope><name>Interpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a171aae7fe231c3e7b15568d45650e8b0" prot="protected" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::ZeroOrder</scope><name>IsUniformlySpaced</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::ZeroOrder</scope><name>Type</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1aa2159cbb05770b1c0cc0d5e07abb70ca" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::ZeroOrder</scope><name>x_</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order_1a3efad67f19d45cb03425bf18f72c99b2" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::ZeroOrder</scope><name>y_</name></member>

@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d2.object.PointSet
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~PointSet.apply_transformation
       ~PointSet.contains
@@ -27,9 +30,5 @@ ostk.mathematics.geometry.d2.object.PointSet
       ~PointSet.is_empty
       ~PointSet.is_near
       ~PointSet.to_string
-   
-   
-
-   
    
    

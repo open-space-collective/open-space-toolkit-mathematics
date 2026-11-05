@@ -18,25 +18,18 @@
     <includedby refid="2_d_2_object_2_segment_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp</includedby>
     <includedby refid="2_d_2_transformation_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp</includedby>
     <incdepgraph>
-      <node id="7">
-        <label>OpenSpaceToolkit/Core/Type/Real.hpp</label>
-      </node>
-      <node id="10">
+      <node id="8">
         <label>Eigen/Geometry</label>
       </node>
-      <node id="9">
+      <node id="7">
         <label>Eigen/Core</label>
       </node>
-      <node id="11">
+      <node id="9">
         <label>OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</label>
         <link refid="_angle_8hpp"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -48,39 +41,35 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp</label>
         <link refid="_geometry_22_d_2_object_8hpp"/>
-        <childnode refid="5" relation="include">
-        </childnode>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="6">
+      <node id="5">
         <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp</label>
         <link refid="2_d_2_object_2_point_8hpp"/>
-        <childnode refid="7" relation="include">
-        </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="8">
+      <node id="6">
         <label>OpenSpaceToolkit/Mathematics/Object/Vector.hpp</label>
         <link refid="_vector_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -88,9 +77,6 @@
       </node>
       <node id="2">
         <label>OpenSpaceToolkit/Core/Type/String.hpp</label>
-      </node>
-      <node id="5">
-        <label>OpenSpaceToolkit/Core/Type/Integer.hpp</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -232,7 +218,7 @@
 <codeline lineno="161"><highlight class="normal"></highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a119ede15c4e2af41c03d684fc37e06a9" kindref="member">Transformation::Type</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1ad4af5f661b7219ddac4e96de8fb4c462" kindref="member">getType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a9f8f6a9f4bd331fb6bc0c66a1aca5e30" kindref="member">Matrix3d</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a3b523e122e6023e9416269a0bcab7367" kindref="member">getMatrix</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a9f8f6a9f4bd331fb6bc0c66a1aca5e30" kindref="member">Matrix3d</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1aba328c8feb64a9bb4c5bea76a796e4a4" kindref="member">getMatrix</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="179"><highlight class="normal"></highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation_1a81ec04277231eb4c06a3daf04bbd5b22" kindref="member">getInverse</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"></highlight></codeline>

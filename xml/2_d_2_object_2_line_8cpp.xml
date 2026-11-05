@@ -13,20 +13,15 @@
         <link refid="2_d_2_object_2_line_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>OpenSpaceToolkit/Core/Type/Real.hpp</label>
-      </node>
-      <node id="12">
+      <node id="10">
         <label>Eigen/Geometry</label>
       </node>
-      <node id="11">
+      <node id="9">
         <label>Eigen/Core</label>
       </node>
       <node id="1">
@@ -38,108 +33,97 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="12">
         <label>unordered_set</label>
       </node>
-      <node id="20">
+      <node id="18">
         <label>OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</label>
         <link refid="_angle_8hpp"/>
-        <childnode refid="7" relation="include">
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp</label>
+        <link refid="2_d_2_transformation_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp</label>
-        <link refid="2_d_2_transformation_8hpp"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp</label>
-        <link refid="_geometry_22_d_2_object_8hpp"/>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="5">
+        <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp</label>
+        <link refid="_geometry_22_d_2_object_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
         <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp</label>
         <link refid="2_d_2_object_2_point_8hpp"/>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="3">
         <label>OpenSpaceToolkit/Core/Utility.hpp</label>
       </node>
-      <node id="17">
+      <node id="15">
         <label>OpenSpaceToolkit/Core/Type/Size.hpp</label>
       </node>
-      <node id="10">
+      <node id="8">
         <label>OpenSpaceToolkit/Mathematics/Object/Vector.hpp</label>
         <link refid="_vector_8hpp"/>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
       <node id="2">
         <label>OpenSpaceToolkit/Core/Error.hpp</label>
       </node>
-      <node id="19">
+      <node id="17">
         <label>OpenSpaceToolkit/Core/Type/Unique.hpp</label>
       </node>
-      <node id="8">
+      <node id="6">
         <label>OpenSpaceToolkit/Core/Type/String.hpp</label>
       </node>
-      <node id="13">
+      <node id="11">
         <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp</label>
         <link refid="2_d_2_object_2_point_set_8hpp"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
         <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="7">
-        <label>OpenSpaceToolkit/Core/Type/Integer.hpp</label>
-      </node>
-      <node id="16">
+      <node id="14">
         <label>OpenSpaceToolkit/Core/Type/Index.hpp</label>
       </node>
-      <node id="15">
+      <node id="13">
         <label>OpenSpaceToolkit/Core/Container/Array.hpp</label>
       </node>
     </incdepgraph>
@@ -248,7 +232,7 @@
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>aPoint.x()<sp/>==<sp/>p_1.x();</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>m<sp/>=<sp/>(p_2.y()<sp/>-<sp/>p_1.y())<sp/>/<sp/>(p_2.x()<sp/>-<sp/>p_1.x());</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m<sp/>=<sp/>(p_2.y()<sp/>-<sp/>p_1.y())<sp/>/<sp/>(p_2.x()<sp/>-<sp/>p_1.x());</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>aPoint.y()<sp/>==<sp/>m<sp/>*<sp/>(aPoint.x()<sp/>-<sp/>p_1.x())<sp/>+<sp/>p_1.y();</highlight></codeline>
 <codeline lineno="100"><highlight class="normal">}</highlight></codeline>
@@ -276,7 +260,7 @@
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="123"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal">Point<sp/>Line::getOrigin()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Point&amp;<sp/>Line::getOrigin()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="126"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;<ref refid="_eigen_8hpp_1aaa1d139fcb55b1f038ab29d736d07f3d" kindref="member">isDefined</ref>())</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -286,7 +270,7 @@
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>origin_;</highlight></codeline>
 <codeline lineno="133"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1ac86e8f85187dc85c1f935627d56c1beb" kindref="member">Vector2d</ref><sp/>Line::getDirection()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1ac86e8f85187dc85c1f935627d56c1beb" kindref="member">Vector2d</ref>&amp;<sp/>Line::getDirection()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="136"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;<ref refid="_eigen_8hpp_1aaa1d139fcb55b1f038ab29d736d07f3d" kindref="member">isDefined</ref>())</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -296,7 +280,7 @@
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>direction_;</highlight></codeline>
 <codeline lineno="143"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"></highlight></codeline>
-<codeline lineno="145"><highlight class="normal">Real<sp/>Line::distanceTo(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Point&amp;<sp/>aPoint)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Line::distanceTo(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Point&amp;<sp/>aPoint)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="146"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;<ref refid="_eigen_8hpp_1aaa1d139fcb55b1f038ab29d736d07f3d" kindref="member">isDefined</ref>())</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -312,7 +296,7 @@
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((p<sp/>-<sp/>a)<sp/>-<sp/>((p<sp/>-<sp/>a).dot(n))<sp/>*<sp/>n).norm();</highlight></codeline>
 <codeline lineno="159"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal">String<sp/><ref refid="_eigen_8hpp_1a12b926fa5c60e26e4a170e5b4e870dea" kindref="member">Line::toString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Object::Format&amp;<sp/>aFormat,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Integer&amp;<sp/>aPrecision)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">String<sp/><ref refid="_eigen_8hpp_1a12b926fa5c60e26e4a170e5b4e870dea" kindref="member">Line::toString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Object::Format&amp;<sp/>aFormat,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>aPrecision)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="162"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(aFormat)</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>

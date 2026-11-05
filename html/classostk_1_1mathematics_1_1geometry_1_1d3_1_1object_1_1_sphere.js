@@ -1,12 +1,12 @@
 var classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere =
 [
-    [ "Sphere", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a44cf858e4351d1890cc1116bb85f9850", null ],
+    [ "Sphere", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a08d9686f671e9122f2cba6141ba4fe9f", null ],
     [ "applyTransformation", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#aec7fa1a21969f2175948bd57ac8a46ff", null ],
     [ "clone", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a28e9a96d726b5eea0da0696647912780", null ],
     [ "contains", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a4a3a9cec2f8df6799344ea779a635fd5", null ],
     [ "contains", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#ac55784d01e1ab5c8ea2b800dc844448b", null ],
-    [ "getCenter", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a02fcea7a4eaae6f396bc09e09bcc6966", null ],
-    [ "getRadius", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a391da737aed2cd3615f9992949c07abe", null ],
+    [ "getCenter", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#aba536b4ba66564ddfa2381e313d9209c", null ],
+    [ "getRadius", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#a97f20b1dad3f5015a0e0f2e62f452c39", null ],
     [ "intersectionWith", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#ae16d1ba9ed85bb8b7716202a651c262c", null ],
     [ "intersectionWith", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#af155cd1d10cd5b010b134a29e6d67492", null ],
     [ "intersectionWith", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere.html#ad710eeb805c0152d53dc874131f5f758", null ],

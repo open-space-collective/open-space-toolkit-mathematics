@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.Point
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Point.apply_transformation
       ~Point.as_cone
@@ -54,9 +57,5 @@ ostk.mathematics.geometry.d3.object.Point
       ~Point.x
       ~Point.y
       ~Point.z
-   
-   
-
-   
    
    

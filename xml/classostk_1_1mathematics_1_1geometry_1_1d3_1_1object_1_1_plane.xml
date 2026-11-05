@@ -521,9 +521,9 @@
         </inbodydescription>
         <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="212" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="167" bodyend="180"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a27ac75e7c17511ca313236d2048dfac0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
-        <definition>Point ostk::mathematics::geometry::d3::object::Plane::getPoint</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1ae2f6973f24bb7853ea38f87125d9cf43" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>const Point &amp; ostk::mathematics::geometry::d3::object::Plane::getPoint</definition>
         <argsstring>() const</argsstring>
         <name>getPoint</name>
         <briefdescription>
@@ -538,11 +538,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="221" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="182" bodyend="190"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="221" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="182" bodyend="190"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a8637b16118f31b362eb371c3550a430b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Vector3d</type>
-        <definition>Vector3d ostk::mathematics::geometry::d3::object::Plane::getNormalVector</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a1fd6e195d37742224713bf149c1dcc43" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const Vector3d &amp;</type>
+        <definition>const Vector3d &amp; ostk::mathematics::geometry::d3::object::Plane::getNormalVector</definition>
         <argsstring>() const</argsstring>
         <name>getNormalVector</name>
         <briefdescription>
@@ -557,7 +557,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="230" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="192" bodyend="200"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="230" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="192" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1abc6de4b10a4db6f07a8d0e0358d52c5c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -871,8 +871,8 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a6ccf2471ed3a0c7ca9d52b96aecfd01d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a1c62f4dcef9ff0a578e656fd18c2d40c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>contains</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a8637b16118f31b362eb371c3550a430b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>getNormalVector</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a27ac75e7c17511ca313236d2048dfac0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>getPoint</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a1fd6e195d37742224713bf149c1dcc43" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>getNormalVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1ae2f6973f24bb7853ea38f87125d9cf43" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>getPoint</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1abc6de4b10a4db6f07a8d0e0358d52c5c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersectionWith</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1aefbcaaa5d805230fb4414211e330beb4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersectionWith</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a10c0772740b3e8db07cf6e9a3a95986c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersectionWith</name></member>

@@ -6,8 +6,12 @@ var hierarchy =
     [ "ostk::mathematics::geometry::d3::object::PointSet::Hasher", "structostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1_1_hasher.html", null ],
     [ "ostk::mathematics::curvefitting::Interpolator", "classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html", [
       [ "ostk::mathematics::curvefitting::interpolator::BarycentricRational", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html", null ],
+      [ "ostk::mathematics::curvefitting::interpolator::CubicHermite", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite.html", null ],
       [ "ostk::mathematics::curvefitting::interpolator::CubicSpline", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html", null ],
       [ "ostk::mathematics::curvefitting::interpolator::Linear", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html", null ],
+      [ "ostk::mathematics::curvefitting::interpolator::QuadraticSpline", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline.html", null ],
+      [ "ostk::mathematics::curvefitting::interpolator::QuinticHermite", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite.html", null ],
+      [ "ostk::mathematics::curvefitting::interpolator::QuinticSpline", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_spline.html", null ],
       [ "ostk::mathematics::curvefitting::interpolator::ZeroOrder", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_zero_order.html", null ]
     ] ],
     [ "ostk::mathematics::geometry::d2::Intersection", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html", null ],
@@ -16,6 +20,7 @@ var hierarchy =
       [ "ostk::mathematics::object::Interval< T >", "classostk_1_1mathematics_1_1object_1_1_interval.html", null ]
     ] ],
     [ "ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian", "classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian.html", null ],
+    [ "ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline.html", null ],
     [ "ostk::mathematics::solver::NumericalSolver", "classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html", null ],
     [ "ostk::mathematics::geometry::d2::Object", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html", [
       [ "ostk::mathematics::geometry::d2::object::Composite", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite.html", null ],
@@ -47,6 +52,6 @@ var hierarchy =
     [ "ostk::mathematics::geometry::d3::transformation::rotation::Quaternion", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html", null ],
     [ "ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html", null ],
     [ "ostk::mathematics::geometry::d3::transformation::rotation::RotationVector", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html", null ],
-    [ "ostk::mathematics::geometry::d3::Transformation", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html", null ],
-    [ "ostk::mathematics::geometry::d2::Transformation", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html", null ]
+    [ "ostk::mathematics::geometry::d2::Transformation", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html", null ],
+    [ "ostk::mathematics::geometry::d3::Transformation", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation.html", null ]
 ];

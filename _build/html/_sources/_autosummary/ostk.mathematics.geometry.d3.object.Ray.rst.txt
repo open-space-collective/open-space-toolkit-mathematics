@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.Ray
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Ray.apply_transformation
       ~Ray.as_cone
@@ -49,9 +52,5 @@ ostk.mathematics.geometry.d3.object.Ray
       ~Ray.is_segment
       ~Ray.is_sphere
       ~Ray.undefined
-   
-   
-
-   
    
    

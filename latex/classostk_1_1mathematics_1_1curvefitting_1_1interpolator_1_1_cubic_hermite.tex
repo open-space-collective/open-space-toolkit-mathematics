@@ -1,0 +1,264 @@
+\hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite}{}\doxysection{ostk\+::mathematics\+::curvefitting\+::interpolator\+::Cubic\+Hermite Class Reference}
+\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite}\index{ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}}
+
+
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite}{Cubic\+Hermite}}.  
+
+
+
+
+{\ttfamily \#include $<$Cubic\+Hermite.\+hpp$>$}
+
+Inheritance diagram for ostk\+::mathematics\+::curvefitting\+::interpolator\+::Cubic\+Hermite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a400f88505571148d5b34b484c4a64774}{Cubic\+Hermite}} (const Vector\+Xd \&an\+X\+Vector, const Vector\+Xd \&a\+Y\+Vector, const Vector\+Xd \&a\+Dy\+Dx\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_ad00b2da5d756053caae2d0a0590b4beb}{Cubic\+Hermite}} (const Vector\+Xd \&a\+Y\+Vector, const Vector\+Xd \&a\+Dy\+Dx\+Vector, double x0, double h)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a2eae527aed80d8685040e693684823a8}{$\sim$\+Cubic\+Hermite}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a7b644ebb0f11acd29b3ce395aa7bd59f}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const override
+\begin{DoxyCompactList}\small\item\em Evaluate the cubic Hermite interpolator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a32da7036de2100ba286d16896fae4917}{evaluate}} (const double \&a\+Query\+Value) const override
+\begin{DoxyCompactList}\small\item\em Evaluate the cubic Hermite interpolator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a735146dbe94d58d16d3a6ef34984bfa0}{compute\+Derivative}} (const double \&a\+Query\+Value) const override
+\begin{DoxyCompactList}\small\item\em Compute the derivative at a specific query value. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a06fa88f11ed100c426e5d23e191a23a6}{compute\+Derivative}} (const Vector\+Xd \&a\+Query\+Vector) const override
+\begin{DoxyCompactList}\small\item\em Compute the derivatives at multiple query values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite}{Cubic\+Hermite}}. 
+
+A cubic Hermite spline is a piecewise third-\/degree polynomial which matches both the value and the first derivative of the underlying function at every node. The resulting interpolant is C1 continuous.
+
+Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with a cardinal Hermite spline, which finds the containing interval in constant time rather than searching for it, and is therefore faster to evaluate. Which of the two is used is decided from the data and is not otherwise observable.
+
+Use when the first derivative is known at every sample, for instance velocity alongside position. The derivatives are honoured exactly, and each interval depends only on its two end nodes.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} x = \{\{0.0, 1.0, 2.0, 3.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} y = \{\{0.0, 1.0, 4.0, 9.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} dydx = \{\{0.0, 2.0, 4.0, 6.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a400f88505571148d5b34b484c4a64774}{CubicHermite}} interpolator(x, y, dydx);}
+\DoxyCodeLine{\textcolor{keywordtype}{double} value = interpolator.evaluate(1.5);}
+\end{DoxyCode}
+
+
+\href{https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/cubic_hermite.html}{\texttt{ https\+://www.\+boost.\+org/doc/libs/1\+\_\+87\+\_\+0/libs/math/doc/html/math\+\_\+toolkit/cubic\+\_\+hermite.\+html}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a400f88505571148d5b34b484c4a64774}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a400f88505571148d5b34b484c4a64774}} 
+\index{ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}!CubicHermite@{CubicHermite}}
+\index{CubicHermite@{CubicHermite}!ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}}
+\doxysubsubsection{\texorpdfstring{CubicHermite()}{CubicHermite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Hermite\+::\+Cubic\+Hermite (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{an\+X\+Vector,  }\item[{const Vector\+Xd \&}]{a\+Y\+Vector,  }\item[{const Vector\+Xd \&}]{a\+Dy\+Dx\+Vector }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a400f88505571148d5b34b484c4a64774}{CubicHermite}} cubicHermite(x, y, dydx);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em an\+X\+Vector} & A vector of x values \\
+\hline
+{\em a\+Y\+Vector} & A vector of y values \\
+\hline
+{\em a\+Dy\+Dx\+Vector} & A vector of first derivative values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The x values must be sorted in strictly ascending order 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_ad00b2da5d756053caae2d0a0590b4beb}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_ad00b2da5d756053caae2d0a0590b4beb}} 
+\index{ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}!CubicHermite@{CubicHermite}}
+\index{CubicHermite@{CubicHermite}!ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}}
+\doxysubsubsection{\texorpdfstring{CubicHermite()}{CubicHermite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Hermite\+::\+Cubic\+Hermite (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Y\+Vector,  }\item[{const Vector\+Xd \&}]{a\+Dy\+Dx\+Vector,  }\item[{double}]{x0,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a400f88505571148d5b34b484c4a64774}{CubicHermite}} cubicHermite(y, dydx, 0.0, 1.0);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Y\+Vector} & A vector of y values \\
+\hline
+{\em a\+Dy\+Dx\+Vector} & A vector of first derivative values \\
+\hline
+{\em x0} & The first x value \\
+\hline
+{\em h} & The spacing between x values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The spacing must be strictly positive 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a2eae527aed80d8685040e693684823a8}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a2eae527aed80d8685040e693684823a8}} 
+\index{ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}!````~CubicHermite@{$\sim$CubicHermite}}
+\index{````~CubicHermite@{$\sim$CubicHermite}!ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}}
+\doxysubsubsection{\texorpdfstring{$\sim$CubicHermite()}{~CubicHermite()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Hermite\+::$\sim$\+Cubic\+Hermite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Called automatically when the CubicHermite goes out of scope}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a735146dbe94d58d16d3a6ef34984bfa0}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a735146dbe94d58d16d3a6ef34984bfa0}} 
+\index{ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Hermite\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the derivative at a specific query value. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} derivative = cubicHermite.computeDerivative(1.5) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The derivative at the given x value
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query value must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a06fa88f11ed100c426e5d23e191a23a6}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a06fa88f11ed100c426e5d23e191a23a6}} 
+\index{ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Hermite\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the derivatives at multiple query values. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} derivatives = cubicHermite.computeDerivative(\{1.0, 1.5, 2.0\}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of derivatives at the given x values
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query values must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a32da7036de2100ba286d16896fae4917}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a32da7036de2100ba286d16896fae4917}} 
+\index{ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Hermite\+::evaluate (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluate the cubic Hermite interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} value = cubicHermite.evaluate(1.5) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The y value
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query value must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_aae0c8423f11e7aa9f764ee4973070c36}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a7b644ebb0f11acd29b3ce395aa7bd59f}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_hermite_a7b644ebb0f11acd29b3ce395aa7bd59f}} 
+\index{ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::CubicHermite@{ostk::mathematics::curvefitting::interpolator::CubicHermite}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Hermite\+::evaluate (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluate the cubic Hermite interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} values = cubicHermite.evaluate(\{1.0, 1.5, 2.0\}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of y values
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query values must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a2e5f87beae48daf0ebbd4da6c0fdcb77}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Interpolator/\mbox{\hyperlink{_cubic_hermite_8hpp}{Cubic\+Hermite.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Interpolator/\mbox{\hyperlink{_cubic_hermite_8cpp}{Cubic\+Hermite.\+cpp}}\end{DoxyCompactItemize}

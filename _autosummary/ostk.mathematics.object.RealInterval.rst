@@ -11,10 +11,13 @@ ostk.mathematics.object.RealInterval
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~RealInterval.clip
       ~RealInterval.closed
@@ -36,9 +39,5 @@ ostk.mathematics.object.RealInterval
       ~RealInterval.sort
       ~RealInterval.to_string
       ~RealInterval.undefined
-   
-   
-
-   
    
    

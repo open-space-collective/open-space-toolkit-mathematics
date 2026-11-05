@@ -44,15 +44,15 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_c
 \begin{DoxyCompactList}\small\item\em Check if cone contains sphere. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a589c4383552d6e6dcc23f20dc3d6008d}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid) const
 \begin{DoxyCompactList}\small\item\em Check if cone contains ellipsoid. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_af4e2a4ec2ea977f144e7f7e9a0aed779}{get\+Apex}} () const
+const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a624ce46bddc59df1628c6dc224bd94e2}{get\+Apex}} () const
 \begin{DoxyCompactList}\small\item\em Get cone apex. \end{DoxyCompactList}\item 
-Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a8089b763c1415d24136cd42b31a95fee}{get\+Axis}} () const
+const Vector3d \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a8fb724c11e6576669fd4ccd61bd1d256}{get\+Axis}} () const
 \begin{DoxyCompactList}\small\item\em Get cone axis. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a9ab023a205fcfdb8b12dae5aae10daad}{get\+Angle}} () const
+const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_ab0f4943974a927744af0529178f1dfb2}{get\+Angle}} () const
 \begin{DoxyCompactList}\small\item\em Get cone angle. \end{DoxyCompactList}\item 
 Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a4531bad0aa524f19588b4458796b3f78}{get\+Rays\+Of\+Lateral\+Surface}} (const Size a\+Ray\+Count=\mbox{\hyperlink{_cone_8hpp_a95759f940e1d5e70e977d66fa8fcb5ec}{D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+A\+Y\+\_\+\+C\+O\+U\+NT}}) const
 \begin{DoxyCompactList}\small\item\em Get rays of lateral surface. \end{DoxyCompactList}\item 
-Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a7325f4a0c092cb59c505d281d0c064b0}{distance\+To}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_ab181755abb659844585de3f496c6927d}{distance\+To}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Compute distance of cone to point. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_aff8111459bf4fd52f4890d52ef468c0a}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&a\+Sphere, const bool only\+In\+Sight=false, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
 \begin{DoxyCompactList}\small\item\em Compute intersection of cone with sphere. \end{DoxyCompactList}\item 
@@ -79,7 +79,7 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone(Point(0.0, 0.0, 0.0), \{0.0, 0.0, 1.0\}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(45.0));}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone(Point(0.0, 0.0, 0.0), \{0.0, 0.0, 1.0\}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(45.0));}
 \end{DoxyCode}
 
 
@@ -100,7 +100,7 @@ Constructor.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{Point apex = \{ 0.0, 0.0, 0.0 \} ;}
 \DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} axis = \{ 0.0, 0.0, 1.0 \} ;}
-\DoxyCodeLine{Angle angle = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) ;}
+\DoxyCodeLine{Angle angle = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) ;}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ apex, axis, angle \} ;}
 \end{DoxyCode}
 
@@ -129,7 +129,7 @@ Apply transformation to cone.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
 \DoxyCodeLine{cone.applyTransformation(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_af9058de81115d953ab8d9b8922abe692}{Transformation::Translation}}(\{ 1.0, 0.0, 0.0 \})) ;}
 \end{DoxyCode}
 
@@ -322,11 +322,11 @@ Check if cone contains sphere.
 \begin{DoxyReturn}{Returns}
 True if cone contains sphere 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a7325f4a0c092cb59c505d281d0c064b0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a7325f4a0c092cb59c505d281d0c064b0}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_ab181755abb659844585de3f496c6927d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_ab181755abb659844585de3f496c6927d}} 
 \index{ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}!distanceTo@{distanceTo}}
 \index{distanceTo@{distanceTo}!ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}}
 \doxysubsubsection{\texorpdfstring{distanceTo()}{distanceTo()}}
-{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
 
 
 
@@ -334,8 +334,8 @@ Compute distance of cone to point.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
-\DoxyCodeLine{Real distance = cone.distanceTo(\{ 1.0, 0.0, 0.0 \}) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\textcolor{keywordtype}{double} distance = cone.distanceTo(\{ 1.0, 0.0, 0.0 \}) ;}
 \end{DoxyCode}
 
 
@@ -347,11 +347,11 @@ Compute distance of cone to point.
 \begin{DoxyReturn}{Returns}
 Distance of cone to point 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a9ab023a205fcfdb8b12dae5aae10daad}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a9ab023a205fcfdb8b12dae5aae10daad}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_ab0f4943974a927744af0529178f1dfb2}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_ab0f4943974a927744af0529178f1dfb2}} 
 \index{ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}!getAngle@{getAngle}}
 \index{getAngle@{getAngle}!ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}}
 \doxysubsubsection{\texorpdfstring{getAngle()}{getAngle()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \& ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -359,7 +359,7 @@ Get cone angle.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
 \DoxyCodeLine{Angle angle = cone.getAngle() ;}
 \end{DoxyCode}
 
@@ -367,11 +367,11 @@ Get cone angle.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} angle 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_af4e2a4ec2ea977f144e7f7e9a0aed779}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_af4e2a4ec2ea977f144e7f7e9a0aed779}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a624ce46bddc59df1628c6dc224bd94e2}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a624ce46bddc59df1628c6dc224bd94e2}} 
 \index{ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}!getApex@{getApex}}
 \index{getApex@{getApex}!ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}}
 \doxysubsubsection{\texorpdfstring{getApex()}{getApex()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone\+::get\+Apex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \& ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone\+::get\+Apex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -379,7 +379,7 @@ Get cone apex.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
 \DoxyCodeLine{Point apex = cone.getApex() ;}
 \end{DoxyCode}
 
@@ -387,11 +387,11 @@ Get cone apex.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} apex 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a8089b763c1415d24136cd42b31a95fee}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a8089b763c1415d24136cd42b31a95fee}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a8fb724c11e6576669fd4ccd61bd1d256}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a8fb724c11e6576669fd4ccd61bd1d256}} 
 \index{ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}!getAxis@{getAxis}}
 \index{getAxis@{getAxis}!ostk::mathematics::geometry::d3::object::Cone@{ostk::mathematics::geometry::d3::object::Cone}}
 \doxysubsubsection{\texorpdfstring{getAxis()}{getAxis()}}
-{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone\+::get\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const Vector3d \& ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone\+::get\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -399,7 +399,7 @@ Get cone axis.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
 \DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} axis = cone.getAxis() ;}
 \end{DoxyCode}
 
@@ -419,7 +419,7 @@ Get rays of lateral surface.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
 \DoxyCodeLine{Array<Ray> rays = cone.getRaysOfLateralSurface(8) ;}
 \end{DoxyCode}
 
@@ -444,7 +444,7 @@ Compute intersection of cone with ellipsoid.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
 \DoxyCodeLine{Ellipsoid ellipsoid = Ellipsoid(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ;}
 \DoxyCodeLine{Intersection intersection = cone.intersectionWith(ellipsoid) ;}
 \end{DoxyCode}
@@ -474,7 +474,7 @@ Compute intersection of cone with sphere.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
 \DoxyCodeLine{Sphere sphere = Sphere(\{ 0.0, 0.0, 10.0 \}, 1.0) ;}
 \DoxyCodeLine{Intersection intersection = cone.intersectionWith(sphere) ;}
 \end{DoxyCode}
@@ -560,7 +560,7 @@ Check if cone is defined.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
 \DoxyCodeLine{cone.\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ad99d5ff3a95e93b3599248c72b631ff1}{isDefined}}() ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
@@ -584,8 +584,8 @@ Not equal to operator.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} coneA = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} coneB = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(30.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} coneA = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} coneB = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(30.0) \} ;}
 \DoxyCodeLine{coneA != coneB ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
@@ -610,7 +610,7 @@ Equal to operator.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
 \DoxyCodeLine{cone == cone ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
@@ -635,7 +635,7 @@ Print cone.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(15.0) \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a10d3d96af94c8dc4219c4b4ffec15dce}{Cone}} cone = \{ \{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ac0adf3599520171a84973fac94397a5a}{Angle::Degrees}}(15.0) \} ;}
 \DoxyCodeLine{cone.print(std::cout, \textcolor{keyword}{true}) ;}
 \end{DoxyCode}
 

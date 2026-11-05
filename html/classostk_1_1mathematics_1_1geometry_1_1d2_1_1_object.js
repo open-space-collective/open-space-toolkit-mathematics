@@ -1,7 +1,6 @@
 var classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object =
 [
     [ "Format", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a9ba9529b76d02fa7e4d1d285a8cf1c13", [
-      [ "Undefined", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a9ba9529b76d02fa7e4d1d285a8cf1c13aec0fc0100c4fc1ce4eea230c3dc10360", null ],
       [ "Standard", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b", null ],
       [ "WKT", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a9ba9529b76d02fa7e4d1d285a8cf1c13a9ab05752e6beff2c783a6046ed592661", null ]
     ] ],
@@ -15,6 +14,6 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object =
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#afe72ba03919d609d2847b0b4162d083d", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a9617246a3e26d57e5ba78e57387ae05a", null ],
     [ "print", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#aaf59b52c718ca92c6b6116660077d9f9", null ],
-    [ "toString", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#aedf9c7ef5af5892d15cf08da795fa1af", null ],
+    [ "toString", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a2da129348eb0c204c65b2f374f5e5e7a", null ],
     [ "operator<<", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object.html#a418df9bf4a73078f3d494edef1743f8d", null ]
 ];

@@ -9,15 +9,6 @@
 
    
    
-   .. rubric:: Functions
-
-   .. autosummary::
-      :toctree:
-      :nosignatures:
-   
-      set_point_2_array
-      set_point_array
-   
    
 
    

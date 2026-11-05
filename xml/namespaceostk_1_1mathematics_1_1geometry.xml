@@ -6,13 +6,13 @@
     <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d2">ostk::mathematics::geometry::d2</innernamespace>
     <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3">ostk::mathematics::geometry::d3</innernamespace>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1a1765aac15a1ece7dc16ce33e062d150b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1a898ab52c7c4eac078289e374606d8c53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
         <definition>Angle ostk::mathematics::geometry::operator*</definition>
-        <argsstring>(const Real &amp;aReal, const Angle &amp;anAngle)</argsstring>
+        <argsstring>(double aReal, const Angle &amp;anAngle)</argsstring>
         <name>operator*</name>
         <param>
-          <type>const Real &amp;</type>
+          <type>double</type>
           <declname>aReal</declname>
         </param>
         <param>
@@ -22,7 +22,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal">Angle<sp/>angle<sp/>=<sp/>2.0<sp/>*<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">Angle<sp/>angle<sp/>=<sp/>2.0<sp/>*<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac0adf3599520171a84973fac94397a5a" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" line="201" column="7" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="201" bodyend="214"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" line="207" column="7" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="207" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1a611d50bcfddda6fe651b06d2648e60cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -65,7 +65,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1adf219273c9f6215c4a47a5530e0a3aa3" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1ac0adf3599520171a84973fac94397a5a" kindref="member">Angle::Degrees</ref>(90.0);</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -90,13 +90,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" line="236" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="236" bodyend="246"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" line="242" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="242" bodyend="252"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="25" column="1"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="27" column="1"/>
   </compounddef>
 </doxygen>

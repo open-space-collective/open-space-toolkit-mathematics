@@ -11,10 +11,13 @@ ostk.mathematics.geometry.Angle
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Angle.arcminutes
       ~Angle.arcseconds
@@ -41,9 +44,5 @@ ostk.mathematics.geometry.Angle
       ~Angle.two_pi
       ~Angle.undefined
       ~Angle.zero
-   
-   
-
-   
    
    

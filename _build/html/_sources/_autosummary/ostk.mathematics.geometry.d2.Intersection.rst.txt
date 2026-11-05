@@ -16,7 +16,15 @@ ostk.mathematics.geometry.d2.Intersection
    .. autosummary::
       :nosignatures:
    
-      ~Intersection.access_composite
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
       ~Intersection.as_composite
       ~Intersection.as_line
       ~Intersection.as_line_string
@@ -25,10 +33,10 @@ ostk.mathematics.geometry.d2.Intersection
       ~Intersection.as_polygon
       ~Intersection.as_segment
       ~Intersection.empty
+      ~Intersection.get_composite
       ~Intersection.get_type
       ~Intersection.is_complex
       ~Intersection.is_composite
-      ~Intersection.is_defined
       ~Intersection.is_empty
       ~Intersection.is_line
       ~Intersection.is_line_string
@@ -41,10 +49,5 @@ ostk.mathematics.geometry.d2.Intersection
       ~Intersection.point_set
       ~Intersection.segment
       ~Intersection.string_from_type
-      ~Intersection.undefined
-   
-   
-
-   
    
    

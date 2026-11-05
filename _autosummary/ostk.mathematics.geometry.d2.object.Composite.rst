@@ -11,12 +11,14 @@ ostk.mathematics.geometry.d2.object.Composite
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
-      ~Composite.access_object_at
       ~Composite.any_contains
       ~Composite.apply_transformation
       ~Composite.as_composite
@@ -28,6 +30,7 @@ ostk.mathematics.geometry.d2.object.Composite
       ~Composite.as_segment
       ~Composite.contains
       ~Composite.empty
+      ~Composite.get_object_at
       ~Composite.get_object_count
       ~Composite.intersects
       ~Composite.is_composite
@@ -39,10 +42,5 @@ ostk.mathematics.geometry.d2.object.Composite
       ~Composite.is_point_set
       ~Composite.is_polygon
       ~Composite.is_segment
-      ~Composite.undefined
-   
-   
-
-   
    
    

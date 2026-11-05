@@ -5,9 +5,22 @@
     <basecompoundref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator" prot="public" virt="non-virtual">ostk::mathematics::curvefitting::Interpolator</basecompoundref>
     <includes refid="_cubic_spline_8hpp" local="no">CubicSpline.hpp</includes>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a1081e8e00db120522d6f3fbdac88a04a" prot="private" static="no" mutable="no">
-        <type>cardinal_cubic_b_spline&lt; double &gt;</type>
-        <definition>cardinal_cubic_b_spline&lt;double&gt; ostk::mathematics::curvefitting::interpolator::CubicSpline::interpolator_</definition>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a21fbf27180bbc37fdb3fe54909afc2a5" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; cardinal_cubic_b_spline&lt; double &gt; &gt;</type>
+        <definition>std::optional&lt;cardinal_cubic_b_spline&lt;double&gt; &gt; ostk::mathematics::curvefitting::interpolator::CubicSpline::cardinalInterpolator_</definition>
+        <argsstring></argsstring>
+        <name>cardinalInterpolator_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="138" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1afe55d125174e196565c34321d165c845" prot="private" static="no" mutable="no">
+        <type>Shared&lt; const <ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline" kindref="compound">NonUniformBasisSpline</ref> &gt;</type>
+        <definition>Shared&lt;const NonUniformBasisSpline&gt; ostk::mathematics::curvefitting::interpolator::CubicSpline::interpolator_</definition>
         <argsstring></argsstring>
         <name>interpolator_</name>
         <briefdescription>
@@ -16,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="123" column="29" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" bodystart="123" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="139" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" bodystart="139" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -56,31 +69,31 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="warning"><para>The x values must be sorted in ascending order </para>
+<simplesect kind="warning"><para>The x values must be sorted in strictly ascending order </para>
 </simplesect>
-<simplesect kind="warning"><para>The x values must be equally spaced </para>
+<simplesect kind="warning"><para>At least 5 data points are required </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="59" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="16" bodyend="40"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="72" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="17" bodyend="48"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1aee7259e030e792e73991125e793f0862" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a7836b2d6eede8b5fe2118871156c64e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>ostk::mathematics::curvefitting::interpolator::CubicSpline::CubicSpline</definition>
-        <argsstring>(const VectorXd &amp;aYVector, const Real &amp;x0, const Real &amp;h)</argsstring>
+        <argsstring>(const VectorXd &amp;aYVector, double x0, double h)</argsstring>
         <name>CubicSpline</name>
         <param>
           <type>const VectorXd &amp;</type>
           <declname>aYVector</declname>
         </param>
         <param>
-          <type>const Real &amp;</type>
+          <type>double</type>
           <declname>x0</declname>
         </param>
         <param>
-          <type>const Real &amp;</type>
+          <type>double</type>
           <declname>h</declname>
         </param>
         <briefdescription>
@@ -114,15 +127,15 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="warning"><para>The x values must be sorted in ascending order </para>
+<simplesect kind="warning"><para>The spacing must be strictly positive </para>
 </simplesect>
-<simplesect kind="warning"><para>The x values must be equally spaced </para>
+<simplesect kind="warning"><para>At least 5 data points are required </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="73" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="42" bodyend="52"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="86" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="50" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a458bf216be06ad3ef539343e8397ef44" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -138,7 +151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="80" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="54" bodyend="54"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="93" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="66" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a6852a278bdd114175116ae0e875bd258" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>VectorXd</type>
@@ -171,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="90" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="56" bodyend="66"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="103" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="68" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a2f91b443473606d1236a81d24d643368" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -204,7 +217,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="100" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="68" bodyend="71"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="113" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="80" bodyend="84"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a18dba35307db81b233329af76feb09fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -237,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="110" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="73" bodyend="76"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="123" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="86" bodyend="90"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a91fa43ce75d45612a45e22af98762dcd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>VectorXd</type>
@@ -270,20 +283,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="120" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="78" bodyend="88"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="133" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="92" bodyend="102"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline" kindref="compound">CubicSpline</ref>. </para>
     </briefdescription>
     <detaileddescription>
-<para>A cubic Spline interpolator is a spline where each piece is a third-degree polynomial specified in Spline form, that is by its values and first derivatives at the end points of the corresponding domain interval.</para>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>x<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>2.0,<sp/>3.0}};</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>y<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>4.0,<sp/>9.0}};</highlight></codeline>
+<para>A cubic spline interpolator is a spline where each piece is a third-degree polynomial specified in spline form, that is by its values and first derivatives at the end points of the corresponding domain interval. The resulting interpolant is C2 continuous.</para>
+<para>The derivatives at the two end points are estimated from the data.</para>
+<para>Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with a cardinal B-spline, which finds the containing interval in constant time rather than searching for it, and is therefore faster to evaluate. Which of the two is used is decided from the data and is not otherwise observable.</para>
+<para>Use when the data is smooth and only values are known, and a continuous second derivative is wanted. It is the default choice for smooth sampled data.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>x<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>2.0,<sp/>3.0,<sp/>4.0}};</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>y<sp/>=<sp/>{{0.0,<sp/>1.0,<sp/>4.0,<sp/>9.0,<sp/>16.0}};</highlight></codeline>
 <codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1af32918b90ad7b87440323e3b0e4a8d6e" kindref="member">CubicSpline</ref><sp/>interpolator(x,<sp/>y);</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>interpolator.evaluate(1.5);</highlight></codeline>
 </programlisting></para>
-<para><ulink url="https://en.wikipedia.org/wiki/Cubic_Spline_spline#">https://en.wikipedia.org/wiki/Cubic_Spline_spline#</ulink>:~:text=In%20numerical%20analysis%2C%20a%20cubic,of%20the%20corresponding%20domain%20interval. </para>
+<para><ulink url="https://en.wikipedia.org/wiki/Spline_interpolation">https://en.wikipedia.org/wiki/Spline_interpolation</ulink> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -309,18 +325,20 @@
         <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" bodystart="45" bodyend="124"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="59" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" bodystart="58" bodyend="140"/>
     <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a21fbf27180bbc37fdb3fe54909afc2a5" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>cardinalInterpolator_</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a18dba35307db81b233329af76feb09fa" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>computeDerivative</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a91fa43ce75d45612a45e22af98762dcd" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>computeDerivative</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1af32918b90ad7b87440323e3b0e4a8d6e" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>CubicSpline</name></member>
-      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1aee7259e030e792e73991125e793f0862" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>CubicSpline</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a7836b2d6eede8b5fe2118871156c64e3" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>CubicSpline</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a6852a278bdd114175116ae0e875bd258" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>evaluate</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a2f91b443473606d1236a81d24d643368" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>evaluate</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>GenerateInterpolator</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a3e596528cd5e416546dabe45e9100e04" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>getInterpolationType</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6593f90bb974214f6f2b264bc114b96e" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>Interpolator</name></member>
-      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a1081e8e00db120522d6f3fbdac88a04a" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>interpolator_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1afe55d125174e196565c34321d165c845" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>interpolator_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a171aae7fe231c3e7b15568d45650e8b0" prot="protected" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>IsUniformlySpaced</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>Type</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a458bf216be06ad3ef539343e8397ef44" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>~CubicSpline</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ac980e413bfeb65eceb347e787899c1f4" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>~Interpolator</name></member>

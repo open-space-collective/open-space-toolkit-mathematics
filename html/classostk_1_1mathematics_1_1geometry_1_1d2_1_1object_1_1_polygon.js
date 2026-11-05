@@ -26,11 +26,11 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon =
     [ "intersectionWith", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#aeeedeff734bdf3fceae7d17dc9aa2097", null ],
     [ "intersects", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a8292e74414aa470153d0bd6f0884e00d", null ],
     [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a81f715c35ecd0fa424f2daf4ffe59bec", null ],
-    [ "isNear", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#ad5d51eaab4e20905884893b79ff6bf32", null ],
+    [ "isNear", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a687fbfa7aadad5f8ab581895e71286a6", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a9077d4bf7b3d74058f061ef4c2780b1a", null ],
     [ "operator=", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#af999d9844abf33d70dae582222582fac", null ],
     [ "operator==", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a4e45da47629d49cbf83823682b399e54", null ],
     [ "print", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a4e6da736abac853938c0a42e50984191", null ],
-    [ "toString", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#acae5758cc07f2787875897d4392a07a4", null ],
+    [ "toString", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#a1501f196dc61a347ec6300d8a39beec6", null ],
     [ "unionWith", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#addbc0c8111c2f8c5ce1ff347135d54fe", null ]
 ];

@@ -1,0 +1,265 @@
+\hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline}{}\doxysection{ostk\+::mathematics\+::curvefitting\+::interpolator\+::Quadratic\+Spline Class Reference}
+\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline}\index{ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}}
+
+
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline}{Quadratic\+Spline}}.  
+
+
+
+
+{\ttfamily \#include $<$Quadratic\+Spline.\+hpp$>$}
+
+Inheritance diagram for ostk\+::mathematics\+::curvefitting\+::interpolator\+::Quadratic\+Spline\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a64f0307ddfd3082a522d4759a6ca3eb6}{Quadratic\+Spline}} (const Vector\+Xd \&an\+X\+Vector, const Vector\+Xd \&a\+Y\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a41565f837f874a22d696238db6f05961}{Quadratic\+Spline}} (const Vector\+Xd \&a\+Y\+Vector, double x0, double h)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a51139cef6099ab89d9b0629327357bc4}{$\sim$\+Quadratic\+Spline}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a3cd7731de528d9b5c8bd315d0a586f71}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const override
+\begin{DoxyCompactList}\small\item\em Evaluate the quadratic spline interpolator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a35ddd221bc8705571ff9618073cac60a}{evaluate}} (const double \&a\+Query\+Value) const override
+\begin{DoxyCompactList}\small\item\em Evaluate the quadratic spline interpolator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a8ef3bb23a1c9ad6a548a6701dc17dae5}{compute\+Derivative}} (const double \&a\+Query\+Value) const override
+\begin{DoxyCompactList}\small\item\em Compute the derivative at a specific query value. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a287a6b511504b751f273ace5173d07a3}{compute\+Derivative}} (const Vector\+Xd \&a\+Query\+Vector) const override
+\begin{DoxyCompactList}\small\item\em Compute the derivatives at multiple query values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline}{Quadratic\+Spline}}. 
+
+A quadratic spline is a piecewise second-\/degree polynomial fitted so that it passes through the given data points. The resulting interpolant is C1 continuous, and reproduces quadratic polynomials exactly. It is cheaper and less oscillatory than a cubic spline, at the cost of a lower order of accuracy.
+
+The derivatives at the two end points are estimated from the data.
+
+Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with a cardinal B-\/spline, which finds the containing interval in constant time rather than searching for it, and is therefore faster to evaluate. Which of the two is used is decided from the data and is not otherwise observable.
+
+Use when the data is smooth and only values are known, and a continuous first derivative is enough. It is cheaper and less oscillatory than a cubic spline.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} x = \{\{0.0, 1.0, 2.0, 3.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} y = \{\{2.0, 0.0, 0.0, 2.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a64f0307ddfd3082a522d4759a6ca3eb6}{QuadraticSpline}} interpolator(x, y);}
+\DoxyCodeLine{\textcolor{keywordtype}{double} value = interpolator.evaluate(1.5);}
+\end{DoxyCode}
+
+
+\href{https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/cardinal_quadratic_b.html}{\texttt{ https\+://www.\+boost.\+org/doc/libs/1\+\_\+87\+\_\+0/libs/math/doc/html/math\+\_\+toolkit/cardinal\+\_\+quadratic\+\_\+b.\+html}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a64f0307ddfd3082a522d4759a6ca3eb6}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a64f0307ddfd3082a522d4759a6ca3eb6}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}!QuadraticSpline@{QuadraticSpline}}
+\index{QuadraticSpline@{QuadraticSpline}!ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}}
+\doxysubsubsection{\texorpdfstring{QuadraticSpline()}{QuadraticSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quadratic\+Spline\+::\+Quadratic\+Spline (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{an\+X\+Vector,  }\item[{const Vector\+Xd \&}]{a\+Y\+Vector }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a64f0307ddfd3082a522d4759a6ca3eb6}{QuadraticSpline}} quadraticSpline(x, y);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em an\+X\+Vector} & A vector of x values \\
+\hline
+{\em a\+Y\+Vector} & A vector of y values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The x values must be sorted in strictly ascending order 
+
+At least 3 data points are required 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a41565f837f874a22d696238db6f05961}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a41565f837f874a22d696238db6f05961}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}!QuadraticSpline@{QuadraticSpline}}
+\index{QuadraticSpline@{QuadraticSpline}!ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}}
+\doxysubsubsection{\texorpdfstring{QuadraticSpline()}{QuadraticSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quadratic\+Spline\+::\+Quadratic\+Spline (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Y\+Vector,  }\item[{double}]{x0,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a64f0307ddfd3082a522d4759a6ca3eb6}{QuadraticSpline}} quadraticSpline(y, 0.0, 1.0);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Y\+Vector} & A vector of y values \\
+\hline
+{\em x0} & The first x value \\
+\hline
+{\em h} & The spacing between x values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The spacing must be strictly positive 
+
+At least 3 data points are required 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a51139cef6099ab89d9b0629327357bc4}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a51139cef6099ab89d9b0629327357bc4}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}!````~QuadraticSpline@{$\sim$QuadraticSpline}}
+\index{````~QuadraticSpline@{$\sim$QuadraticSpline}!ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}}
+\doxysubsubsection{\texorpdfstring{$\sim$QuadraticSpline()}{~QuadraticSpline()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quadratic\+Spline\+::$\sim$\+Quadratic\+Spline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Called automatically when the QuadraticSpline goes out of scope}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a8ef3bb23a1c9ad6a548a6701dc17dae5}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a8ef3bb23a1c9ad6a548a6701dc17dae5}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quadratic\+Spline\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the derivative at a specific query value. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} derivative = quadraticSpline.computeDerivative(1.5) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The derivative at the given x value
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query value must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a287a6b511504b751f273ace5173d07a3}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a287a6b511504b751f273ace5173d07a3}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quadratic\+Spline\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the derivatives at multiple query values. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} derivatives = quadraticSpline.computeDerivative(\{1.0, 1.5, 2.0\}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of derivatives at the given x values
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query values must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a35ddd221bc8705571ff9618073cac60a}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a35ddd221bc8705571ff9618073cac60a}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quadratic\+Spline\+::evaluate (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluate the quadratic spline interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} value = quadraticSpline.evaluate(1.5) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The y value
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query value must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_aae0c8423f11e7aa9f764ee4973070c36}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a3cd7731de528d9b5c8bd315d0a586f71}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quadratic_spline_a3cd7731de528d9b5c8bd315d0a586f71}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::QuadraticSpline@{ostk::mathematics::curvefitting::interpolator::QuadraticSpline}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quadratic\+Spline\+::evaluate (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluate the quadratic spline interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} values = quadraticSpline.evaluate(\{1.0, 1.5, 2.0\}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of y values
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query values must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a2e5f87beae48daf0ebbd4da6c0fdcb77}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Interpolator/\mbox{\hyperlink{_quadratic_spline_8hpp}{Quadratic\+Spline.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Interpolator/\mbox{\hyperlink{_quadratic_spline_8cpp}{Quadratic\+Spline.\+cpp}}\end{DoxyCompactItemize}

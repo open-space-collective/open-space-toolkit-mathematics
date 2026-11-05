@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d2.object.Point
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Point.apply_transformation
       ~Point.as_vector
@@ -29,9 +32,5 @@ ostk.mathematics.geometry.d2.object.Point
       ~Point.vector
       ~Point.x
       ~Point.y
-   
-   
-
-   
    
    

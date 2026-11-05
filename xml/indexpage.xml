@@ -751,10 +751,10 @@
 </entry><entry thead="yes"><para>Link  </para>
 </entry></row>
 <row>
-<entry thead="no"><para>Pybind11 </para>
-</entry><entry thead="no"><para><computeroutput>2.12.0</computeroutput> </para>
+<entry thead="no"><para>nanobind </para>
+</entry><entry thead="no"><para><computeroutput>3.1.0</computeroutput> </para>
 </entry><entry thead="no"><para>BSD-3-Clause </para>
-</entry><entry thead="no"><para><ulink url="https://github.com/pybind/pybind11">github.com/pybind/pybind11</ulink>  </para>
+</entry><entry thead="no"><para><ulink url="https://github.com/wjakob/nanobind">github.com/wjakob/nanobind</ulink>  </para>
 </entry></row>
 <row>
 <entry thead="no"><para>Eigen </para>

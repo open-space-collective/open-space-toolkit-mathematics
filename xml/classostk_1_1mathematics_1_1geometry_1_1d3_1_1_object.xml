@@ -55,16 +55,16 @@
         <definition>virtual Object* ostk::mathematics::geometry::d3::Object::clone</definition>
         <argsstring>() const =0</argsstring>
         <name>clone</name>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a6d27eb6359000685e81a6a5d79fbb807">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_1a34fd0962885cf69d1a70a5d62395acc9">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1adf6a7e433d64879df60ea17403bf4694">clone</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a07a393740306e4f8363920a8d82823e7">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a6d27eb6359000685e81a6a5d79fbb807">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_1aaaed581dfea7bf716e1125a088ba963c">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1ad6ef8e1e883a675f054a790093c152b8">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a07a393740306e4f8363920a8d82823e7">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_1a28e9a96d726b5eea0da0696647912780">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ab67f8c5204e7d81204f80ca1298073a8">clone</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a61cb86ec44359755cc1edc8dec1604c0">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aca293bcf279702b8b59d72fe4dd09217">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a61cb86ec44359755cc1edc8dec1604c0">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1a0502f752850b36aa89c4fc443f7e4376">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a0c99b116c5a6f6e0915cb5375fc66149">clone</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a1ab0dfee99b56b4324e782a406ca1687">clone</reimplementedby>
@@ -154,10 +154,10 @@
         <argsstring>() const =0</argsstring>
         <name>isDefined</name>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_1ae07b5282c948df716fc1fa5bedeec344">isDefined</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac79b6efa23440fa61690181c6ade42ec">isDefined</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a0a39c2a1bd1e330e8cc15aa4a5e19d47">isDefined</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_1a682162f29a5597e61f0eaac2f9762518">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac79b6efa23440fa61690181c6ade42ec">isDefined</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a402bf991d7974383a2766f12367681cd">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a0a39c2a1bd1e330e8cc15aa4a5e19d47">isDefined</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_1a5311446aca36ccadbd8ae323502dba44">isDefined</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ae9749637798c6670bb1c2b8cc2850ba8">isDefined</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a3e36099693bccb2d2e68d8673d86e5f6">isDefined</reimplementedby>
@@ -334,7 +334,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="162" column="26" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp" bodystart="681" bodyend="854"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="162" column="26" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp" bodystart="681" bodyend="852"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a5063e1f902e1b08d36f6b6cecab0bd95" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -399,8 +399,8 @@
         <argsstring>(const Transformation &amp;aTransformation)=0</argsstring>
         <name>applyTransformation</name>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a2bfff9b3a14df67fac884fd122315145">applyTransformation</reimplementedby>
-        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a750ddc45120fa67b224c65f5ae782ce2">applyTransformation</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a99c3b0b78faa977d4c6bd526286a0815">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a750ddc45120fa67b224c65f5ae782ce2">applyTransformation</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_1a5d3a7527694d5581fbd8ea6cf438d74c">applyTransformation</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a3a226ee06322255306b029e004dac647">applyTransformation</reimplementedby>
         <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_1af3da3893add570615236f1e5ab4971ff">applyTransformation</reimplementedby>

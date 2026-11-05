@@ -1,0 +1,331 @@
+\hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite}{}\doxysection{ostk\+::mathematics\+::curvefitting\+::interpolator\+::Quintic\+Hermite Class Reference}
+\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite}\index{ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}}
+
+
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite}{Quintic\+Hermite}}.  
+
+
+
+
+{\ttfamily \#include $<$Quintic\+Hermite.\+hpp$>$}
+
+Inheritance diagram for ostk\+::mathematics\+::curvefitting\+::interpolator\+::Quintic\+Hermite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a74827396ebbd0fc546065ad74c6f0dae}{Quintic\+Hermite}} (const Vector\+Xd \&an\+X\+Vector, const Vector\+Xd \&a\+Y\+Vector, const Vector\+Xd \&a\+Dy\+Dx\+Vector, const Vector\+Xd \&a\+D2y\+Dx2\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a2f860c81b7dbc871e3d3fdcb856d5cc7}{Quintic\+Hermite}} (const Vector\+Xd \&a\+Y\+Vector, const Vector\+Xd \&a\+Dy\+Dx\+Vector, const Vector\+Xd \&a\+D2y\+Dx2\+Vector, double x0, double h)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_aaba4f7640e974a3b7e868ce99d1f50e9}{$\sim$\+Quintic\+Hermite}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a4987b498bd8b163d61c9465b9abaf1d2}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const override
+\begin{DoxyCompactList}\small\item\em Evaluate the quintic Hermite interpolator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_acac2251213d4d9b3fbe5bad72dfc900d}{evaluate}} (const double \&a\+Query\+Value) const override
+\begin{DoxyCompactList}\small\item\em Evaluate the quintic Hermite interpolator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a46d578903c780a04b4ab9515db9932bb}{compute\+Derivative}} (const double \&a\+Query\+Value) const override
+\begin{DoxyCompactList}\small\item\em Compute the derivative at a specific query value. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_afb29b4bd4d54fa174cc41c9799dd2f0f}{compute\+Derivative}} (const Vector\+Xd \&a\+Query\+Vector) const override
+\begin{DoxyCompactList}\small\item\em Compute the derivatives at multiple query values. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a594397685f6e6e4215bbfd7b20268d94}{compute\+Second\+Derivative}} (const double \&a\+Query\+Value) const
+\begin{DoxyCompactList}\small\item\em Compute the second derivative at a specific query value. \end{DoxyCompactList}\item 
+Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_ae4a796c476626127c570b665995ed7ba}{compute\+Second\+Derivative}} (const Vector\+Xd \&a\+Query\+Vector) const
+\begin{DoxyCompactList}\small\item\em Compute the second derivatives at multiple query values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite}{Quintic\+Hermite}}. 
+
+A quintic Hermite spline is a piecewise fifth-\/degree polynomial which matches the value, the first derivative and the second derivative of the underlying function at every node. The resulting interpolant is C2 continuous.
+
+Nodes may be uniformly or arbitrarily spaced. Uniformly spaced nodes are interpolated with a cardinal Hermite spline, which finds the containing interval in constant time rather than searching for it, and is therefore faster to evaluate. Which of the two is used is decided from the data and is not otherwise observable, with one exception\+: the second derivative of the cardinal Hermite spline is only available with Boost 1.\+93 or later (see compute\+Second\+Derivative).
+
+Use when the first and second derivatives are known at every sample, for instance velocity and acceleration alongside position. They are honoured exactly, and each interval depends only on its two end nodes.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} x = \{\{0.0, 1.0, 2.0, 3.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} y = \{\{0.0, 1.0, 4.0, 9.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} dydx = \{\{0.0, 2.0, 4.0, 6.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} d2ydx2 = \{\{2.0, 2.0, 2.0, 2.0\}\};}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a74827396ebbd0fc546065ad74c6f0dae}{QuinticHermite}} interpolator(x, y, dydx, d2ydx2);}
+\DoxyCodeLine{\textcolor{keywordtype}{double} value = interpolator.evaluate(1.5);}
+\end{DoxyCode}
+
+
+\href{https://www.boost.org/doc/libs/1_87_0/libs/math/doc/html/math_toolkit/quintic_hermite.html}{\texttt{ https\+://www.\+boost.\+org/doc/libs/1\+\_\+87\+\_\+0/libs/math/doc/html/math\+\_\+toolkit/quintic\+\_\+hermite.\+html}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a74827396ebbd0fc546065ad74c6f0dae}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a74827396ebbd0fc546065ad74c6f0dae}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}!QuinticHermite@{QuinticHermite}}
+\index{QuinticHermite@{QuinticHermite}!ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}}
+\doxysubsubsection{\texorpdfstring{QuinticHermite()}{QuinticHermite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quintic\+Hermite\+::\+Quintic\+Hermite (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{an\+X\+Vector,  }\item[{const Vector\+Xd \&}]{a\+Y\+Vector,  }\item[{const Vector\+Xd \&}]{a\+Dy\+Dx\+Vector,  }\item[{const Vector\+Xd \&}]{a\+D2y\+Dx2\+Vector }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a74827396ebbd0fc546065ad74c6f0dae}{QuinticHermite}} quinticHermite(x, y, dydx, d2ydx2);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em an\+X\+Vector} & A vector of x values \\
+\hline
+{\em a\+Y\+Vector} & A vector of y values \\
+\hline
+{\em a\+Dy\+Dx\+Vector} & A vector of first derivative values \\
+\hline
+{\em a\+D2y\+Dx2\+Vector} & A vector of second derivative values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The x values must be sorted in strictly ascending order 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a2f860c81b7dbc871e3d3fdcb856d5cc7}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a2f860c81b7dbc871e3d3fdcb856d5cc7}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}!QuinticHermite@{QuinticHermite}}
+\index{QuinticHermite@{QuinticHermite}!ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}}
+\doxysubsubsection{\texorpdfstring{QuinticHermite()}{QuinticHermite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quintic\+Hermite\+::\+Quintic\+Hermite (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Y\+Vector,  }\item[{const Vector\+Xd \&}]{a\+Dy\+Dx\+Vector,  }\item[{const Vector\+Xd \&}]{a\+D2y\+Dx2\+Vector,  }\item[{double}]{x0,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a74827396ebbd0fc546065ad74c6f0dae}{QuinticHermite}} quinticHermite(y, dydx, d2ydx2, 0.0, 1.0);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Y\+Vector} & A vector of y values \\
+\hline
+{\em a\+Dy\+Dx\+Vector} & A vector of first derivative values \\
+\hline
+{\em a\+D2y\+Dx2\+Vector} & A vector of second derivative values \\
+\hline
+{\em x0} & The first x value \\
+\hline
+{\em h} & The spacing between x values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The spacing must be strictly positive 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_aaba4f7640e974a3b7e868ce99d1f50e9}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_aaba4f7640e974a3b7e868ce99d1f50e9}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}!````~QuinticHermite@{$\sim$QuinticHermite}}
+\index{````~QuinticHermite@{$\sim$QuinticHermite}!ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}}
+\doxysubsubsection{\texorpdfstring{$\sim$QuinticHermite()}{~QuinticHermite()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quintic\+Hermite\+::$\sim$\+Quintic\+Hermite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Called automatically when the QuinticHermite goes out of scope}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a46d578903c780a04b4ab9515db9932bb}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a46d578903c780a04b4ab9515db9932bb}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quintic\+Hermite\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the derivative at a specific query value. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} derivative = quinticHermite.computeDerivative(1.5) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The derivative at the given x value
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query value must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_afb29b4bd4d54fa174cc41c9799dd2f0f}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_afb29b4bd4d54fa174cc41c9799dd2f0f}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quintic\+Hermite\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the derivatives at multiple query values. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} derivatives = quinticHermite.computeDerivative(\{1.0, 1.5, 2.0\}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of derivatives at the given x values
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query values must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a594397685f6e6e4215bbfd7b20268d94}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a594397685f6e6e4215bbfd7b20268d94}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}!computeSecondDerivative@{computeSecondDerivative}}
+\index{computeSecondDerivative@{computeSecondDerivative}!ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}}
+\doxysubsubsection{\texorpdfstring{computeSecondDerivative()}{computeSecondDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quintic\+Hermite\+::compute\+Second\+Derivative (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const}
+
+
+
+Compute the second derivative at a specific query value. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} secondDerivative = quinticHermite.computeSecondDerivative(1.5) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The second derivative at the given x value
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query value must lie within the interpolation domain 
+
+Throws for uniformly spaced nodes when built against Boost older than 1.\+93, whose cardinal quintic Hermite spline computes a wrong second derivative for a spacing other than 1 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_ae4a796c476626127c570b665995ed7ba}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_ae4a796c476626127c570b665995ed7ba}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}!computeSecondDerivative@{computeSecondDerivative}}
+\index{computeSecondDerivative@{computeSecondDerivative}!ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}}
+\doxysubsubsection{\texorpdfstring{computeSecondDerivative()}{computeSecondDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quintic\+Hermite\+::compute\+Second\+Derivative (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const}
+
+
+
+Compute the second derivatives at multiple query values. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} secondDerivatives = quinticHermite.computeSecondDerivative(\{1.0, 2.0\}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of second derivatives at the given x values
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query values must lie within the interpolation domain 
+
+Throws for uniformly spaced nodes when built against Boost older than 1.\+93, whose cardinal quintic Hermite spline computes a wrong second derivative for a spacing other than 1 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_acac2251213d4d9b3fbe5bad72dfc900d}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_acac2251213d4d9b3fbe5bad72dfc900d}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quintic\+Hermite\+::evaluate (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluate the quintic Hermite interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} value = quinticHermite.evaluate(1.5) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The y value
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query value must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_aae0c8423f11e7aa9f764ee4973070c36}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a4987b498bd8b163d61c9465b9abaf1d2}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_quintic_hermite_a4987b498bd8b163d61c9465b9abaf1d2}} 
+\index{ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::QuinticHermite@{ostk::mathematics::curvefitting::interpolator::QuinticHermite}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Quintic\+Hermite\+::evaluate (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluate the quintic Hermite interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} values = quinticHermite.evaluate(\{1.0, 1.5, 2.0\}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of y values
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The query values must lie within the interpolation domain 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a2e5f87beae48daf0ebbd4da6c0fdcb77}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Interpolator/\mbox{\hyperlink{_quintic_hermite_8hpp}{Quintic\+Hermite.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Interpolator/\mbox{\hyperlink{_quintic_hermite_8cpp}{Quintic\+Hermite.\+cpp}}\end{DoxyCompactItemize}

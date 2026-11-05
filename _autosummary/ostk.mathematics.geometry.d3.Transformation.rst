@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.Transformation
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Transformation.apply_to
       ~Transformation.get_inverse
@@ -28,9 +31,5 @@ ostk.mathematics.geometry.d3.Transformation
       ~Transformation.translation
       ~Transformation.type_of_matrix
       ~Transformation.undefined
-   
-   
-
-   
    
    

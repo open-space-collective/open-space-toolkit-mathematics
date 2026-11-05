@@ -1,0 +1,153 @@
+\hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline}{}\doxysection{ostk\+::mathematics\+::curvefitting\+::interpolator\+::Non\+Uniform\+Basis\+Spline Class Reference}
+\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline}\index{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}}
+
+
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline}{Non\+Uniform\+Basis\+Spline}} (library-\/private)  
+
+
+
+
+{\ttfamily \#include $<$Non\+Uniform\+Basis\+Spline.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806c}{Domain\+Behavior}} \{ \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806ca8ce61dd2505effd96f937fa743b6491f}{Domain\+Behavior\+::\+Throw}}, 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806ca16237c1d30a0f1f53e62983156cfd199}{Domain\+Behavior\+::\+Extrapolate}}
+ \}
+\begin{DoxyCompactList}\small\item\em What to do with a query outside of the interpolation domain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_a38d7fe37459a909fd0c9a614ae64e57b}{evaluate}} (const double \&a\+Query\+Value) const
+\begin{DoxyCompactList}\small\item\em Evaluate the spline. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_a947ff991d46a044d92b6c34b10b67715}{compute\+Derivative}} (const double \&a\+Query\+Value) const
+\begin{DoxyCompactList}\small\item\em Compute the first derivative of the spline. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae85d6bbd45203df72f5023a3aee7c159}{compute\+Second\+Derivative}} (const double \&a\+Query\+Value) const
+\begin{DoxyCompactList}\small\item\em Compute the second derivative of the spline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline}{Non\+Uniform\+Basis\+Spline}} \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_a9cec07b2655d9cb5bcf58c716dbb0c2b}{Generate\+Interpolator}} (const Vector\+Xd \&an\+X\+Vector, const Vector\+Xd \&a\+Y\+Vector, const Size \&a\+Degree, const \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806c}{Domain\+Behavior}} \&a\+Domain\+Behavior=\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806ca8ce61dd2505effd96f937fa743b6491f}{Domain\+Behavior\+::\+Throw}})
+\begin{DoxyCompactList}\small\item\em Build the interpolating B-\/spline of the given degree through the given data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline}{Non\+Uniform\+Basis\+Spline}} (library-\/private) 
+
+An interpolating B-\/spline of a given degree over arbitrarily spaced nodes. Boost only supplies B-\/spline interpolators for uniformly spaced nodes (the cardinal\+\_\+$\ast$\+\_\+b\+\_\+spline family), so the spline interpolators fall back to this when their nodes are not uniformly spaced.
+
+The construction mirrors the cardinal interpolators it stands in for\+: the spline is the unique one of the given degree that passes through every data point and matches the endpoint derivatives, which are estimated from the data with one-\/sided finite differences of the same order of accuracy that Boost uses. Both paths therefore describe very nearly the same curve, and which one is taken is not observable beyond rounding.
+
+This header lives under src/ rather than include/ because it is an implementation detail and is deliberately not installed as part of the public A\+PI.
+
+Piegl and Tiller, The N\+U\+R\+BS Book, 2nd edition, chapters 2 and 9. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806c}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806c}} 
+\index{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}!DomainBehavior@{DomainBehavior}}
+\index{DomainBehavior@{DomainBehavior}!ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}}
+\doxysubsubsection{\texorpdfstring{DomainBehavior}{DomainBehavior}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806c}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Non\+Uniform\+Basis\+Spline\+::\+Domain\+Behavior}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+What to do with a query outside of the interpolation domain. 
+
+The Boost cardinal B-\/splines are not consistent about this\+: the quadratic and quintic ones reject such a query, while the cubic one extrapolates. Each interpolator picks the behaviour of the cardinal implementation it shares its name with, so that which of the two paths is taken stays invisible to the caller. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Throw@{Throw}!ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}}\index{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}!Throw@{Throw}}}\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806ca8ce61dd2505effd96f937fa743b6491f}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806ca8ce61dd2505effd96f937fa743b6491f}} 
+Throw&Throw std\+::domain\+\_\+error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Extrapolate@{Extrapolate}!ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}}\index{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}!Extrapolate@{Extrapolate}}}\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806ca16237c1d30a0f1f53e62983156cfd199}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806ca16237c1d30a0f1f53e62983156cfd199}} 
+Extrapolate&Extend the polynomial of the nearest end span. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_a947ff991d46a044d92b6c34b10b67715}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_a947ff991d46a044d92b6c34b10b67715}} 
+\index{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Non\+Uniform\+Basis\+Spline\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const}
+
+
+
+Compute the first derivative of the spline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value, within the interpolation domain \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The first derivative at the given x value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae85d6bbd45203df72f5023a3aee7c159}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae85d6bbd45203df72f5023a3aee7c159}} 
+\index{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}!computeSecondDerivative@{computeSecondDerivative}}
+\index{computeSecondDerivative@{computeSecondDerivative}!ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}}
+\doxysubsubsection{\texorpdfstring{computeSecondDerivative()}{computeSecondDerivative()}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Non\+Uniform\+Basis\+Spline\+::compute\+Second\+Derivative (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const}
+
+
+
+Compute the second derivative of the spline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value, within the interpolation domain \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The second derivative at the given x value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_a38d7fe37459a909fd0c9a614ae64e57b}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_a38d7fe37459a909fd0c9a614ae64e57b}} 
+\index{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Non\+Uniform\+Basis\+Spline\+::evaluate (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const}
+
+
+
+Evaluate the spline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value, within the interpolation domain \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The y value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_a9cec07b2655d9cb5bcf58c716dbb0c2b}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_a9cec07b2655d9cb5bcf58c716dbb0c2b}} 
+\index{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}!GenerateInterpolator@{GenerateInterpolator}}
+\index{GenerateInterpolator@{GenerateInterpolator}!ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline@{ostk::mathematics::curvefitting::interpolator::NonUniformBasisSpline}}
+\doxysubsubsection{\texorpdfstring{GenerateInterpolator()}{GenerateInterpolator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline}{Non\+Uniform\+Basis\+Spline}} ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Non\+Uniform\+Basis\+Spline\+::\+Generate\+Interpolator (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{an\+X\+Vector,  }\item[{const Vector\+Xd \&}]{a\+Y\+Vector,  }\item[{const Size \&}]{a\+Degree,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806c}{Domain\+Behavior}} \&}]{a\+Domain\+Behavior = {\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_non_uniform_basis_spline_ae1accccb3436b304a504b16628ba806ca8ce61dd2505effd96f937fa743b6491f}{Domain\+Behavior\+::\+Throw}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Build the interpolating B-\/spline of the given degree through the given data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em an\+X\+Vector} & A vector of x values, sorted in strictly ascending order \\
+\hline
+{\em a\+Y\+Vector} & A vector of y values \\
+\hline
+{\em a\+Degree} & The degree of the spline \\
+\hline
+{\em a\+Domain\+Behavior} & What to do with a query outside of the interpolation domain (defaults to Throw) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The interpolating B-\/spline 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Interpolator/\mbox{\hyperlink{_non_uniform_basis_spline_8hpp}{Non\+Uniform\+Basis\+Spline.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\+Interpolator/\mbox{\hyperlink{_non_uniform_basis_spline_8cpp}{Non\+Uniform\+Basis\+Spline.\+cpp}}\end{DoxyCompactItemize}

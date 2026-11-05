@@ -16,7 +16,7 @@ class \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformat
 \item 
 std\+::ostream \& \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_a4039583c5e12d44db90af36b8420cffd}{operator$<$$<$}} (std\+::ostream \&an\+Output\+Stream, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle}{Euler\+Angle}} \&a\+Euler\+Angle)
 \item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_a6028c92c3bd330713db8cab7bc5122e1}{operator$\ast$}} (const Real \&a\+Scalar, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion)
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_afac2153187e870e3844842a1c5248125}{operator$\ast$}} (double a\+Scalar, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion)
 \item 
 std\+::ostream \& \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_ae26404779f77ca73c95975806e5402d1}{operator$<$$<$}} (std\+::ostream \&an\+Output\+Stream, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion)
 \item 
@@ -27,15 +27,15 @@ std\+::ostream \& \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_a6028c92c3bd330713db8cab7bc5122e1}\label{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_a6028c92c3bd330713db8cab7bc5122e1}} 
+\mbox{\Hypertarget{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_afac2153187e870e3844842a1c5248125}\label{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_afac2153187e870e3844842a1c5248125}} 
 \index{ostk::mathematics::geometry::d3::transformation::rotation@{ostk::mathematics::geometry::d3::transformation::rotation}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!ostk::mathematics::geometry::d3::transformation::rotation@{ostk::mathematics::geometry::d3::transformation::rotation}}
 \doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Scalar,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{double}]{a\+Scalar,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Real scalar = ... ;}
+\DoxyCodeLine{\textcolor{keywordtype}{double} scalar = ... ;}
 \DoxyCodeLine{Quaternion q\_1 = ... ;}
 \DoxyCodeLine{Quaternion q\_2 = scalar * q\_1 ;}
 \end{DoxyCode}
@@ -81,7 +81,7 @@ Output stream reference
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{std::cout << \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab065862f2a77807e42f6feaadc0637e2}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0);}
+\DoxyCodeLine{std::cout << \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a26eaffab25ca81a04d7fc56ff808a512}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0);}
 \end{DoxyCode}
 
 

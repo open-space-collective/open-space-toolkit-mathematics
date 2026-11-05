@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d2.object.LineString
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~LineString.apply_transformation
       ~LineString.contains
@@ -26,9 +29,5 @@ ostk.mathematics.geometry.d2.object.LineString
       ~LineString.is_empty
       ~LineString.is_near
       ~LineString.to_string
-   
-   
-
-   
    
    

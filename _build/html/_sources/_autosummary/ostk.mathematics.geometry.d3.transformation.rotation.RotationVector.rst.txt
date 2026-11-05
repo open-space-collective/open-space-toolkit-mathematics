@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.transformation.rotation.RotationVector
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~RotationVector.euler_angle
       ~RotationVector.get_angle
@@ -29,9 +32,5 @@ ostk.mathematics.geometry.d3.transformation.rotation.RotationVector
       ~RotationVector.x
       ~RotationVector.y
       ~RotationVector.z
-   
-   
-
-   
    
    

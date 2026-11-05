@@ -15,7 +15,7 @@ var classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation =
     [ "applyTo", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#adfd45137a2eedea1ce1877a80abe12a9", null ],
     [ "applyTo", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a5d1de9866945fa5b6057832b90f9e884", null ],
     [ "getInverse", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a81ec04277231eb4c06a3daf04bbd5b22", null ],
-    [ "getMatrix", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a3b523e122e6023e9416269a0bcab7367", null ],
+    [ "getMatrix", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#aba328c8feb64a9bb4c5bea76a796e4a4", null ],
     [ "getType", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#ad4af5f661b7219ddac4e96de8fb4c462", null ],
     [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#a7a810c3645491c671fae1953456257c4", null ],
     [ "isIdentity", "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation.html#afc750037dcccec8a35ea8b6e959836cf", null ],

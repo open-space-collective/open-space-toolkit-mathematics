@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="105" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="105" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="103" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ac01e5c30b78f551f2a72f910b7740d5c" prot="private" static="no" mutable="no">
         <type>Array&lt; MatrixXd &gt;</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="106" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="106" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="104" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a85de79319451bbee7885259a228501bf" prot="private" static="no" mutable="no">
         <type>Array&lt; MatrixXd &gt;</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="107" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="107" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="105" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="105" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="67" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="18" bodyend="64"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="65" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="18" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a0d8060b39354363728b58cda3481671f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="70" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="66" bodyend="66"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="68" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="66" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ad5ee94b53078432f9e7b1a4f77e6ef2b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>MatrixXd</type>
@@ -133,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="83" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="68" bodyend="82"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="81" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="68" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a0a8136435551df4aba94824305bf26a7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Array&lt; MatrixXd &gt;</type>
@@ -165,11 +165,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="93" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="84" bodyend="95"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="91" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="84" bodyend="95"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1af9443a78a5345e6907d01d620d1d8872" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Array&lt; MatrixXd &gt;</type>
-        <definition>Array&lt; MatrixXd &gt; ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::getMatrices</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ae05f60ffa4e42dd948a9797d3e00313d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const Array&lt; MatrixXd &gt; &amp;</type>
+        <definition>const Array&lt; MatrixXd &gt; &amp; ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian::getMatrices</definition>
         <argsstring>() const</argsstring>
         <name>getMatrices</name>
         <briefdescription>
@@ -184,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="102" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="97" bodyend="100"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="100" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="97" bodyend="100"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -203,7 +203,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="109" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="142" bodyend="157"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="107" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="142" bodyend="157"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -222,7 +222,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="111" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="102" bodyend="125"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="109" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="102" bodyend="125"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1af4b8981278b4b6c3bdc954c925fe94cf" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>MatrixXd</type>
@@ -239,7 +239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="112" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="127" bodyend="140"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="110" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.cpp" bodystart="127" bodyend="140"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -260,12 +260,12 @@
 </programlisting></para>
 <para><ulink url="https://inria.hal.science/inria-00070423/document">https://inria.hal.science/inria-00070423/document</ulink> </para>
     </detaileddescription>
-    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="53" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="52" bodyend="113"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" line="51" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/MatrixInterpolator/LogEuclideanRiemannian.hpp" bodystart="50" bodyend="111"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ad5ee94b53078432f9e7b1a4f77e6ef2b" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>evaluate</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a0a8136435551df4aba94824305bf26a7" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>evaluate</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ac271611a6b07f428d4f18ef3fcaf827d" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>findIndexRange</name></member>
-      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1af9443a78a5345e6907d01d620d1d8872" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>getMatrices</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ae05f60ffa4e42dd948a9797d3e00313d" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>getMatrices</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a1162e9a1845a59a8eead4e1eb981d6ed" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>LogEuclideanRiemannian</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1a85de79319451bbee7885259a228501bf" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>logMatrices_</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1matrixinterpolator_1_1_log_euclidean_riemannian_1ac01e5c30b78f551f2a72f910b7740d5c" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::matrixinterpolator::LogEuclideanRiemannian</scope><name>matrices_</name></member>

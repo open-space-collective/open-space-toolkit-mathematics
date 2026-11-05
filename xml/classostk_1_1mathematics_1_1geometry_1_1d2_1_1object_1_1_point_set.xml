@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="229" column="25" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" bodystart="229" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="228" column="25" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" bodystart="228" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="76" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="20" bodyend="24"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="76" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="23" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a0ee1f055d01e740ac294252806887fc6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set" kindref="compound">PointSet</ref> *</type>
@@ -97,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="85" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="26" bodyend="29"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="85" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="29" bodyend="32"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a736eaf33b25f759729e053aadaeae0cb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -129,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="95" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="31" bodyend="34"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="95" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="34" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a98a4dd2e211ceacfc9e2d9cc35703892" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -161,7 +161,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="105" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="36" bodyend="39"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="105" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="39" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a29bfbe3e8ba8d68e4e5b2351f225f965" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -181,7 +181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="114" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="41" bodyend="44"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="114" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="44" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ae206d0de2c96dba3162f4bcdd4218234" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -200,19 +200,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="123" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="46" bodyend="49"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="123" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="49" bodyend="52"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a219b3cafbf670b88d762c402d09de243" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1abe1357783e1e54a54101ac3e7866d1cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool ostk::mathematics::geometry::d2::object::PointSet::isNear</definition>
-        <argsstring>(const PointSet &amp;aPointSet, const Real &amp;aTolerance) const</argsstring>
+        <argsstring>(const PointSet &amp;aPointSet, double aTolerance) const</argsstring>
         <name>isNear</name>
         <param>
           <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set" kindref="compound">PointSet</ref> &amp;</type>
           <declname>aPointSet</declname>
         </param>
         <param>
-          <type>const Real &amp;</type>
+          <type>double</type>
           <declname>aTolerance</declname>
         </param>
         <briefdescription>
@@ -245,7 +245,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="135" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="51" bodyend="99"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="135" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="54" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a5364c919ae2c9607ac6ca463588fb358" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Size</type>
@@ -264,11 +264,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="144" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="101" bodyend="104"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="144" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="104" bodyend="107"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a88ba7ea275fba11813b6170e927d1477" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>Real</type>
-        <definition>Real ostk::mathematics::geometry::d2::object::PointSet::distanceTo</definition>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ad75924bb48368127445253af545c8622" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::geometry::d2::object::PointSet::distanceTo</definition>
         <argsstring>(const Point &amp;aPoint) const</argsstring>
         <name>distanceTo</name>
         <param>
@@ -279,7 +279,7 @@
 <para>Get distance to point. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal">Real<sp/>distance<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a652ec33b4c6493e0c191a4b6809653a2" kindref="member">PointSet</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a88ba7ea275fba11813b6170e927d1477" kindref="member">distanceTo</ref>(Point(2.0,<sp/>0.0))<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>distance<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a652ec33b4c6493e0c191a4b6809653a2" kindref="member">PointSet</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ad75924bb48368127445253af545c8622" kindref="member">distanceTo</ref>(Point(2.0,<sp/>0.0))<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -296,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="154" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="106" bodyend="129"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="154" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="109" bodyend="132"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a9ada547e27eb625b3be37ac1f8bd5e08" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -329,29 +329,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="165" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="131" bodyend="159"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="165" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="134" bodyend="162"/>
       </memberdef>
-      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a6cc208100261019089ad86b71b700864" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ad4bcebbbb6dea53467d463bf7b7a123f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>String</type>
         <definition>String ostk::mathematics::geometry::d2::object::PointSet::toString</definition>
-        <argsstring>(const Object::Format &amp;aFormat=Object::Format::Standard, const Integer &amp;aPrecision=Integer::Undefined()) const override</argsstring>
+        <argsstring>(const Object::Format &amp;aFormat=Object::Format::Standard, int aPrecision=-1) const override</argsstring>
         <name>toString</name>
-        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aedf9c7ef5af5892d15cf08da795fa1af">toString</reimplements>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a2da129348eb0c204c65b2f374f5e5e7a">toString</reimplements>
         <param>
           <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" kindref="member">Object::Format</ref> &amp;</type>
           <declname>aFormat</declname>
           <defval><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b" kindref="member">Object::Format::Standard</ref></defval>
         </param>
         <param>
-          <type>const Integer &amp;</type>
+          <type>int</type>
           <declname>aPrecision</declname>
-          <defval>Integer::Undefined()</defval>
+          <defval>-1</defval>
         </param>
         <briefdescription>
 <para>Get string representation. </para>
         </briefdescription>
         <detaileddescription>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>str<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a652ec33b4c6493e0c191a4b6809653a2" kindref="member">PointSet</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a6cc208100261019089ad86b71b700864" kindref="member">toString</ref>()<sp/>;</highlight></codeline>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">String<sp/>str<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a652ec33b4c6493e0c191a4b6809653a2" kindref="member">PointSet</ref>({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>}).<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ad4bcebbbb6dea53467d463bf7b7a123f" kindref="member">toString</ref>()<sp/>;</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -368,7 +368,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="175" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="161" bodyend="198"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="175" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="164" bodyend="201"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ab1d1852516a67b36a9d4c3b5f5483fa7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -412,7 +412,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="187" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="200" bodyend="210"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="186" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="203" bodyend="213"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ab0cdaa3e1f7ed827822cf1fa1798e3ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a82c1f98e0313394b616bf3e09b8dfb91" kindref="member">PointSet::ConstIterator</ref></type>
@@ -432,7 +432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="197" column="29" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="212" bodyend="215"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="196" column="29" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="215" bodyend="218"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a39a4223c3ee108f0b0b07d28fa337c3b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a82c1f98e0313394b616bf3e09b8dfb91" kindref="member">PointSet::ConstIterator</ref></type>
@@ -452,7 +452,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="207" column="29" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="217" bodyend="220"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="206" column="29" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="220" bodyend="223"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1aa0b9b22f3a53b89d79056596490bbb0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -484,7 +484,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="217" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="222" bodyend="242"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="216" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="225" bodyend="245"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -505,7 +505,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="226" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="244" bodyend="247"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="225" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp" bodystart="247" bodyend="250"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -539,7 +539,7 @@
         <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="39" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" bodystart="38" bodyend="230"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" line="39" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp" bodystart="38" bodyend="229"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1aa0b9b22f3a53b89d79056596490bbb0d" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>applyTransformation</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ab0cdaa3e1f7ed827822cf1fa1798e3ca" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>begin</name></member>
@@ -547,7 +547,7 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a82c1f98e0313394b616bf3e09b8dfb91" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>ConstIterator</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a210d9e23e5160ce058c2d9af547bd649" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>Container</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a43eaa4a59d81e7eb36b80f6695de6ce1" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>contains</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a88ba7ea275fba11813b6170e927d1477" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>distanceTo</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ad75924bb48368127445253af545c8622" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>distanceTo</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a512dbda75dd8c2143329e525c0478c47" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>Empty</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a39a4223c3ee108f0b0b07d28fa337c3b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>end</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>Format</name></member>
@@ -556,7 +556,7 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a553d7a1e388598c74d0f9fdd57d1ba9d" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>intersects</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a29bfbe3e8ba8d68e4e5b2351f225f965" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>isDefined</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ae206d0de2c96dba3162f4bcdd4218234" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>isEmpty</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a219b3cafbf670b88d762c402d09de243" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>isNear</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1abe1357783e1e54a54101ac3e7866d1cc" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>isNear</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a15a959fd5b624d6fcc6725982a8cddf8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>Object</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a98a4dd2e211ceacfc9e2d9cc35703892" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>operator!=</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1afe72ba03919d609d2847b0b4162d083d" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>operator!=</name></member>
@@ -565,7 +565,7 @@
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1aa4cd0445f735960a6770b81faa2a1c31" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>points_</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a652ec33b4c6493e0c191a4b6809653a2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>PointSet</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ab1d1852516a67b36a9d4c3b5f5483fa7" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>print</name></member>
-      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1a6cc208100261019089ad86b71b700864" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>toString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1ad4bcebbbb6dea53467d463bf7b7a123f" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>toString</name></member>
       <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af11dec981b2e1ab08deae342ec2c4ef8" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d2::object::PointSet</scope><name>~Object</name></member>
     </listofallmembers>
   </compounddef>

@@ -1,10 +1,9 @@
 var classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix =
 [
     [ "RotationMatrix", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a74d44755a8c72da68f52106af2bcfdea", null ],
-    [ "RotationMatrix", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#afadb0c9335620b1504fe72e81e816a0e", null ],
-    [ "accessMatrix", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a4e911a9772e1740533c371d9c89cefb8", null ],
+    [ "RotationMatrix", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a9ea73c48e5a02a87bb9a820fb28a457e", null ],
     [ "getColumnAt", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a2abb637de6747ef51067aaf00237d9bf", null ],
-    [ "getMatrix", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a2cea2567403768437e4074720996bea2", null ],
+    [ "getMatrix", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a77558ecb6b094299a1ac0f208ee6634c", null ],
     [ "getRowAt", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a8f62d9ae197f5f94e168a612be0a9bb1", null ],
     [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#ae17d3b16182ce6110a87534fd5aff6b4", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a24dd53bd3648655d4ab858d0ce0685b2", null ],

@@ -11,10 +11,13 @@ ostk.mathematics.geometry.d3.object.Pyramid
 
    
    
-   .. rubric:: Methods
+   
+
+   
+   
+   .. rubric:: Attributes
 
    .. autosummary::
-      :nosignatures:
    
       ~Pyramid.apply_transformation
       ~Pyramid.as_cone
@@ -52,9 +55,5 @@ ostk.mathematics.geometry.d3.object.Pyramid
       ~Pyramid.is_segment
       ~Pyramid.is_sphere
       ~Pyramid.undefined
-   
-   
-
-   
    
    

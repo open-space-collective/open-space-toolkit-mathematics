@@ -6,10 +6,11 @@
     <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry">ostk::mathematics::geometry</innernamespace>
     <innernamespace refid="namespaceostk_1_1mathematics_1_1object">ostk::mathematics::object</innernamespace>
     <innernamespace refid="namespaceostk_1_1mathematics_1_1solver">ostk::mathematics::solver</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1utility">ostk::mathematics::utility</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="16" column="1"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="15" column="1"/>
   </compounddef>
 </doxygen>

@@ -1,7 +1,7 @@
 var classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline =
 [
     [ "CubicSpline", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#af32918b90ad7b87440323e3b0e4a8d6e", null ],
-    [ "CubicSpline", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#aee7259e030e792e73991125e793f0862", null ],
+    [ "CubicSpline", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a7836b2d6eede8b5fe2118871156c64e3", null ],
     [ "~CubicSpline", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a458bf216be06ad3ef539343e8397ef44", null ],
     [ "computeDerivative", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a18dba35307db81b233329af76feb09fa", null ],
     [ "computeDerivative", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a91fa43ce75d45612a45e22af98762dcd", null ],

@@ -48,9 +48,9 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_p
 \begin{DoxyCompactList}\small\item\em Check if plane contains ray. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a1c62f4dcef9ff0a578e656fd18c2d40c}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
 \begin{DoxyCompactList}\small\item\em Check if plane contains segment. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a27ac75e7c17511ca313236d2048dfac0}{get\+Point}} () const
+const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae2f6973f24bb7853ea38f87125d9cf43}{get\+Point}} () const
 \begin{DoxyCompactList}\small\item\em Get plane point. \end{DoxyCompactList}\item 
-Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8637b16118f31b362eb371c3550a430b}{get\+Normal\+Vector}} () const
+const Vector3d \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a1fd6e195d37742224713bf149c1dcc43}{get\+Normal\+Vector}} () const
 \begin{DoxyCompactList}\small\item\em Get plane normal vector. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_abc6de4b10a4db6f07a8d0e0358d52c5c}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Compute intersection of plane with point. \end{DoxyCompactList}\item 
@@ -294,11 +294,11 @@ Check if plane contains segment.
 \begin{DoxyReturn}{Returns}
 True if plane contains segment 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8637b16118f31b362eb371c3550a430b}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8637b16118f31b362eb371c3550a430b}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a1fd6e195d37742224713bf149c1dcc43}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a1fd6e195d37742224713bf149c1dcc43}} 
 \index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!getNormalVector@{getNormalVector}}
 \index{getNormalVector@{getNormalVector}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
 \doxysubsubsection{\texorpdfstring{getNormalVector()}{getNormalVector()}}
-{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::get\+Normal\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const Vector3d \& ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::get\+Normal\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -306,18 +306,18 @@ Get plane normal vector.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8637b16118f31b362eb371c3550a430b}{getNormalVector}}() ; \textcolor{comment}{// [0.0, 0.0, 1.0]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a1fd6e195d37742224713bf149c1dcc43}{getNormalVector}}() ; \textcolor{comment}{// [0.0, 0.0, 1.0]}}
 \end{DoxyCode}
 
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} normal vector 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a27ac75e7c17511ca313236d2048dfac0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a27ac75e7c17511ca313236d2048dfac0}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae2f6973f24bb7853ea38f87125d9cf43}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae2f6973f24bb7853ea38f87125d9cf43}} 
 \index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!getPoint@{getPoint}}
 \index{getPoint@{getPoint}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
 \doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::get\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \& ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::get\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -325,7 +325,7 @@ Get plane point.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a27ac75e7c17511ca313236d2048dfac0}{getPoint}}() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae2f6973f24bb7853ea38f87125d9cf43}{getPoint}}() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
 \end{DoxyCode}
 
 
