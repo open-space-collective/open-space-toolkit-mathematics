@@ -745,6 +745,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
             R"doc(
                 Create a quaternion representing the shortest rotation between two vectors.
 
+                Note:
+                    If the vectors are anti-parallel, the rotation axis is not unique: a 180 deg rotation
+                    around an arbitrary (but deterministic) axis orthogonal to the first vector is returned.
+
                 Args:
                     first_vector (np.array): The first vector.
                     second_vector (np.array): The second vector.

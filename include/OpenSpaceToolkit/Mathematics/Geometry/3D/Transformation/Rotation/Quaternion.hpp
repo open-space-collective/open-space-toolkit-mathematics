@@ -605,6 +605,11 @@ class Quaternion
 
     /// @brief                  Construct Quaternion describing the shortest rotation between two vectors
     ///
+    ///                         If the vectors are anti-parallel, the rotation axis is not unique: a 180 deg rotation
+    ///                         around an arbitrary (but deterministic) axis orthogonal to the first vector is returned.
+    ///
+    ///                         Ref.: https://raw.org/math/algebra/quaternion-from-two-vectors/
+    ///
     /// @code
     ///                         Quaternion::ShortestRotation({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0});
     /// @endcode

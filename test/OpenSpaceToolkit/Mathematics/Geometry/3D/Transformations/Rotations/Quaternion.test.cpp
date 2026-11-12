@@ -1,8 +1,12 @@
 /// Apache License 2.0
 
+#include <cmath>
 #include <limits>
 
+#include <OpenSpaceToolkit/Core/Container/Array.hpp>
+#include <OpenSpaceToolkit/Core/Container/Pair.hpp>
 #include <OpenSpaceToolkit/Core/Container/Table.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp>
@@ -13,9 +17,12 @@
 
 #include <Global.test.hpp>
 
+using ostk::core::container::Array;
+using ostk::core::container::Pair;
 using ostk::core::container::Table;
 using ostk::core::filesystem::File;
 using ostk::core::filesystem::Path;
+using ostk::core::type::Real;
 using ostk::core::type::String;
 
 using ostk::mathematics::geometry::Angle;
@@ -858,6 +865,150 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
         const Quaternion q_B_A = Quaternion::ShortestRotation(v_A, v_B);
 
         ASSERT_TRUE(v_B.isApprox(q_B_A * v_A, 1.0e-9));
+    }
+
+    // Generic (non-unit, non-axis-aligned) vectors: the quaternion is unit, maps the direction of v_A onto the
+    // direction of v_B, and its rotation angle equals the angle between the two vectors (i.e. it is the shortest
+    // rotation)
+    {
+        const Array<Pair<Vector3d, Vector3d>> vectorPairs = {
+            {{1.0, 2.0, 3.0}, {-4.0, 5.0, 6.0}},
+            {{0.3, -0.7, 0.2}, {10.0, 1.0, -2.0}},
+            {{-1.0, -1.0, -1.0}, {1.0, 0.0, -1.0}},
+            {{5.0, 0.0, 0.0}, {0.0, 0.0, 0.1}},
+        };
+
+        for (const auto& vectorPair : vectorPairs)
+        {
+            const Vector3d& v_A = vectorPair.first;
+            const Vector3d& v_B = vectorPair.second;
+
+            const Quaternion q_B_A = Quaternion::ShortestRotation(v_A, v_B);
+
+            EXPECT_NEAR(1.0, q_B_A.norm(), 1e-15);
+            EXPECT_GE(q_B_A.s(), 0.0);
+            EXPECT_TRUE(v_B.normalized().isApprox(q_B_A * v_A.normalized(), 1e-12));
+            EXPECT_NEAR(
+                std::acos(v_A.normalized().dot(v_B.normalized())),
+                q_B_A.angularDifferenceWith(Quaternion::Unit()).inRadians(),
+                1e-12
+            );
+        }
+    }
+
+    // Parallel vectors with different magnitudes: no rotation is needed, so the identity quaternion is returned
+    {
+        EXPECT_TRUE(Quaternion::ShortestRotation({1.0, 2.0, 3.0}, {2.0, 4.0, 6.0})
+                        .isNear(Quaternion::Unit(), Angle::Radians(1e-12)));
+    }
+
+    // Exactly anti-parallel vectors (singular case of the general formula, which yields a zero quaternion): a 180 deg
+    // rotation around an axis orthogonal to v_A is returned, which maps v_A onto v_B
+    {
+        const Array<Pair<Vector3d, Vector3d>> vectorPairs = {
+            {{1.0, 0.0, 0.0}, {-1.0, 0.0, 0.0}},
+            {{0.0, 1.0, 0.0}, {0.0, -1.0, 0.0}},
+            {{0.0, 0.0, 1.0}, {0.0, 0.0, -1.0}},
+            {{2.0, 0.0, 0.0}, {-5.0, 0.0, 0.0}},
+            {{1.0, 2.0, 3.0}, {-1.0, -2.0, -3.0}},
+            {{-0.3, 0.7, -0.2}, {3.0, -7.0, 2.0}},
+        };
+
+        for (const auto& vectorPair : vectorPairs)
+        {
+            const Vector3d& v_A = vectorPair.first;
+            const Vector3d& v_B = vectorPair.second;
+
+            const Quaternion q_B_A = Quaternion::ShortestRotation(v_A, v_B);
+
+            EXPECT_NEAR(1.0, q_B_A.norm(), 1e-15);
+            EXPECT_NEAR(0.0, q_B_A.s(), 1e-15);
+            EXPECT_NEAR(0.0, q_B_A.getVectorPart().dot(v_A.normalized()), 1e-15);
+            EXPECT_NEAR(Real::Pi(), q_B_A.angularDifferenceWith(Quaternion::Unit()).inRadians(), 1e-12);
+            EXPECT_TRUE(v_B.normalized().isApprox(q_B_A * v_A.normalized(), 1e-12));
+        }
+    }
+
+    // Anti-parallel vectors up to floating point rounding (0.1 is not exactly representable, so the normalized vectors
+    // are not exact opposites and their cross product is rounding noise instead of zero): the anti-parallel case is
+    // detected, instead of normalizing a near-zero quaternion with an arbitrary axis
+    {
+        const Vector3d v_A = {0.1, 0.2, 0.3};
+        const Vector3d v_B = {-1.0, -2.0, -3.0};
+
+        ASSERT_GT(v_B.normalized().cross(v_A.normalized()).norm(), 0.0);
+
+        const Quaternion q_B_A = Quaternion::ShortestRotation(v_A, v_B);
+
+        EXPECT_NEAR(1.0, q_B_A.norm(), 1e-15);
+        EXPECT_NEAR(0.0, q_B_A.s(), 1e-15);
+        EXPECT_TRUE(v_B.normalized().isApprox(q_B_A * v_A.normalized(), 1e-12));
+    }
+
+    // Nearly anti-parallel vectors (v_B is at an angle of 180 deg - delta from v_A): for small deltas, the scalar part
+    // The mapping of v_A onto v_B and the rotation angle (180 deg - delta) must remain accurate.
+    {
+        const Vector3d v_A = {1.0, 0.0, 0.0};
+
+        for (const double delta : {1e-2, 1e-4, 1e-6, 1e-7})
+        {
+            const Vector3d v_B = {-std::cos(delta), std::sin(delta), 0.0};
+
+            const Quaternion q_B_A = Quaternion::ShortestRotation(v_A, v_B);
+
+            EXPECT_NEAR(1.0, q_B_A.norm(), 1e-15);
+            EXPECT_NEAR(std::sin(delta / 2.0), q_B_A.s(), 1e-15);
+            EXPECT_NEAR(Real::Pi() - delta, q_B_A.angularDifferenceWith(Quaternion::Unit()).inRadians(), 1e-12);
+            EXPECT_TRUE(v_B.isApprox(q_B_A * v_A, 1e-12));
+        }
+    }
+
+    // Nearly anti-parallel vectors below the anti-parallel tolerance (delta = 1e-10): handled as exactly anti-parallel,
+    // so a pure 180 deg rotation is returned, which maps v_A onto v_B up to an error of the order of delta
+    {
+        const Vector3d v_A = {1.0, 0.0, 0.0};
+
+        const double delta = 1e-10;
+        const Vector3d v_B = {-std::cos(delta), std::sin(delta), 0.0};
+
+        const Quaternion q_B_A = Quaternion::ShortestRotation(v_A, v_B);
+
+        EXPECT_NEAR(1.0, q_B_A.norm(), 1e-15);
+        EXPECT_NEAR(0.0, q_B_A.s(), 1e-15);
+        EXPECT_TRUE(v_B.isApprox(q_B_A * v_A, 1e-9));
+    }
+
+    // Zero vectors have no direction: the rotation is undefined, so an exception is thrown
+    {
+        EXPECT_THROW(
+            try {
+                Quaternion::ShortestRotation({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0});
+            } catch (const ostk::core::error::RuntimeError& e) {
+                EXPECT_EQ("First vector length is zero.", e.getMessage());
+                throw;
+            },
+            ostk::core::error::RuntimeError
+        );
+
+        EXPECT_THROW(
+            try {
+                Quaternion::ShortestRotation({1.0, 0.0, 0.0}, {0.0, 0.0, 0.0});
+            } catch (const ostk::core::error::RuntimeError& e) {
+                EXPECT_EQ("Second vector length is zero.", e.getMessage());
+                throw;
+            },
+            ostk::core::error::RuntimeError
+        );
+
+        EXPECT_THROW(
+            try {
+                Quaternion::ShortestRotation({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0});
+            } catch (const ostk::core::error::RuntimeError& e) {
+                EXPECT_EQ("First vector length is zero.", e.getMessage());
+                throw;
+            },
+            ostk::core::error::RuntimeError
+        );
     }
 }
 
