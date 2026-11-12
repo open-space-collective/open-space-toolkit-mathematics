@@ -1324,6 +1324,7 @@
   <compound refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation" kind="namespace"><name>ostk::mathematics::geometry::d3::transformation</name>
   </compound>
   <compound refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation" kind="namespace"><name>ostk::mathematics::geometry::d3::transformation::rotation</name>
+    <member refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1ab660d2fbf549f5b2c5014846b0e54801" kind="variable"><name>ShortestRotationAntiParallelTolerance</name></member>
     <member refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1a4039583c5e12d44db90af36b8420cffd" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1afac2153187e870e3844842a1c5248125" kind="function"><name>operator*</name></member>
     <member refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1ae26404779f77ca73c95975806e5402d1" kind="function"><name>operator&lt;&lt;</name></member>

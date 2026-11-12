@@ -6,6 +6,22 @@
     <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" prot="public">ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</innerclass>
     <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" prot="public">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</innerclass>
     <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" prot="public">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1ab660d2fbf549f5b2c5014846b0e54801" prot="public" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double ostk::mathematics::geometry::d3::transformation::rotation::ShortestRotationAntiParallelTolerance</definition>
+        <argsstring></argsstring>
+        <name>ShortestRotationAntiParallelTolerance</name>
+        <initializer>= 1e-8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" line="29" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1a4039583c5e12d44db90af36b8420cffd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -93,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" line="95" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="95" bodyend="98"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" line="99" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="99" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1ae26404779f77ca73c95975806e5402d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -136,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" line="144" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="144" bodyend="156"/>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" line="148" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="148" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1afa8bc95840d3ed51eb2c9726bbd52f23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
