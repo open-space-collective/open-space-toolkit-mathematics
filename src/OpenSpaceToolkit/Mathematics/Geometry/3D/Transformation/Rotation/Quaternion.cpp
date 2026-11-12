@@ -24,6 +24,10 @@ namespace transformation
 namespace rotation
 {
 
+// Tolerance choice is a tradeoff between numerical stability for fully anti-parallel vectors and error tolerance for
+// nearly anti-parallel vectors.
+static const double ShortestRotationAntiParallelTolerance = 1e-8;
+
 Quaternion::Quaternion(
     double aFirstComponent,
     double aSecondComponent,
@@ -594,32 +598,6 @@ Quaternion Quaternion::ShortestRotation(const Vector3d& aFirstVector, const Vect
     }
 
     const double orthogonalVectorSquaredNorm = orthogonalVector.squaredNorm();
-    const double epsilon = 1e-8;  // Tolerance choice is a tradeoff between numerical stability for fully anti-parallel
-                                  // vectors and error tolerance for nearly anti-parallel vectors.
-
-    // Rotation angle is close to 180 deg than the tolerance - compute the shortest rotation as if they were exactly
-    // anti-parallel This is done by redefining the orthogonal vector to be the one that is least aligned with the first
-    // vector.
-    if (orthogonalVectorSquaredNorm <= (epsilon * epsilon))
-    {
-        const Vector3d absoluteFirstVector = firstNormalizedVector.cwiseAbs();
-
-        Vector3d leastAlignedBasisVector = Vector3d::UnitZ();
-
-        if ((absoluteFirstVector.x() <= absoluteFirstVector.y()) &&
-            (absoluteFirstVector.x() <= absoluteFirstVector.z()))
-        {
-            leastAlignedBasisVector = Vector3d::UnitX();
-        }
-        else if (absoluteFirstVector.y() <= absoluteFirstVector.z())
-        {
-            leastAlignedBasisVector = Vector3d::UnitY();
-        }
-
-        const Vector3d rotationAxis = firstNormalizedVector.cross(leastAlignedBasisVector).normalized();
-
-        return Quaternion::XYZS(rotationAxis.x(), rotationAxis.y(), rotationAxis.z(), 0.0);
-    }
 
     // Rotation angle between 90 and 180 deg and still not within tolerance of 180: compute the shortest rotation
     // between the two vectors accounting for numerical instability that can still happens above tolerance but close to
@@ -634,14 +612,37 @@ Quaternion Quaternion::ShortestRotation(const Vector3d& aFirstVector, const Vect
     //     1 + d = |c|^2 / (1 - d)
     //
     // Neither |c|^2 nor (1 - d) involves a cancellation, so the scalar part stays accurate near 180 deg.
+    if (orthogonalVectorSquaredNorm > (ShortestRotationAntiParallelTolerance * ShortestRotationAntiParallelTolerance))
+    {
+        return Quaternion::XYZS(
+                   orthogonalVector.x(),
+                   orthogonalVector.y(),
+                   orthogonalVector.z(),
+                   (orthogonalVectorSquaredNorm / (1.0 - dotProduct))
+        )
+            .toNormalized();
+    }
 
-    return Quaternion::XYZS(
-               orthogonalVector.x(),
-               orthogonalVector.y(),
-               orthogonalVector.z(),
-               (orthogonalVectorSquaredNorm / (1.0 - dotProduct))
-    )
-        .toNormalized();
+    // Rotation angle is closer to 180 deg than the tolerance - compute the shortest rotation as if they were exactly
+    // anti-parallel. This is done by redefining the orthogonal vector to be the one that is least aligned with the
+    // first vector. This is an approximation: the small component of the second vector orthogonal to the first one is
+    // ignored, leading to an angular error of up to the tolerance.
+    const Vector3d absoluteFirstVector = firstNormalizedVector.cwiseAbs();
+
+    Vector3d leastAlignedBasisVector = Vector3d::UnitZ();
+
+    if ((absoluteFirstVector.x() <= absoluteFirstVector.y()) && (absoluteFirstVector.x() <= absoluteFirstVector.z()))
+    {
+        leastAlignedBasisVector = Vector3d::UnitX();
+    }
+    else if (absoluteFirstVector.y() <= absoluteFirstVector.z())
+    {
+        leastAlignedBasisVector = Vector3d::UnitY();
+    }
+
+    const Vector3d rotationAxis = firstNormalizedVector.cross(leastAlignedBasisVector).normalized();
+
+    return Quaternion::XYZS(rotationAxis.x(), rotationAxis.y(), rotationAxis.z(), 0.0);
 }
 
 Quaternion Quaternion::LERP(const Quaternion& aFirstQuaternion, const Quaternion& aSecondQuaternion, double aRatio)
