@@ -605,6 +605,19 @@ class Quaternion
 
     /// @brief                  Construct Quaternion describing the shortest rotation between two vectors
     ///
+    ///                         If the vectors are anti-parallel, the rotation axis is not unique: a 180 deg rotation
+    ///                         around an arbitrary (but deterministic) axis orthogonal to the first vector is returned.
+    ///
+    ///                         Nearly anti-parallel vectors return a 180 deg rotation that is exactly anti-parallel:
+    ///                         they need to be treated separately because the rotation axis is not unique - instead an
+    ///                         arbitrary axis orthogonal to the first vector is used. This applies to nearly
+    ///                         anti-parallel vectors where the norm of the cross product is less than 1e-8 - meaning
+    ///                         that the small component of the second vector orthogonal to the first one is then
+    ///                         ignored (e.g. {1, 0, 0} and {-1, 5e-9, 0} yield a 180 deg rotation that omits the 5e-9 Y
+    ///                         component), resulting in an angular error of up to ~1e-8 rad.
+    ///
+    ///                         Ref.: https://raw.org/math/algebra/quaternion-from-two-vectors/
+    ///
     /// @code
     ///                         Quaternion::ShortestRotation({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0});
     /// @endcode

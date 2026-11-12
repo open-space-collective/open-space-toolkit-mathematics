@@ -24,6 +24,10 @@ namespace transformation
 namespace rotation
 {
 
+// Tolerance choice is a tradeoff between numerical stability for fully anti-parallel vectors and error tolerance for
+// nearly anti-parallel vectors.
+static const double ShortestRotationAntiParallelTolerance = 1e-8;
+
 Quaternion::Quaternion(
     double aFirstComponent,
     double aSecondComponent,
@@ -566,14 +570,79 @@ Quaternion Quaternion::Parse(const String& aString, const Quaternion::Format& aF
 
 Quaternion Quaternion::ShortestRotation(const Vector3d& aFirstVector, const Vector3d& aSecondVector)
 {
+    if (aFirstVector.squaredNorm() == 0.0)
+    {
+        throw ostk::core::error::RuntimeError("First vector length is zero.");
+    }
+
+    if (aSecondVector.squaredNorm() == 0.0)
+    {
+        throw ostk::core::error::RuntimeError("Second vector length is zero.");
+    }
+
     const Vector3d firstNormalizedVector = aFirstVector.normalized();
     const Vector3d secondNormalizedVector = aSecondVector.normalized();
 
     const Vector3d orthogonalVector = secondNormalizedVector.cross(firstNormalizedVector);
     const double dotProduct = firstNormalizedVector.dot(secondNormalizedVector);
 
-    return Quaternion::XYZS(orthogonalVector.x(), orthogonalVector.y(), orthogonalVector.z(), 1.0 + dotProduct)
-        .toNormalized();
+    // According to - https://raw.org/math/algebra/quaternion-from-two-vectors/ split into several cases to handle
+    // numerical stability issues
+
+    // Rotation angle is less than or equal to 90 deg (parallel vectors are handled here, they simply return the
+    // identity quaternion)
+    if (dotProduct >= 0.0)
+    {
+        return Quaternion::XYZS(orthogonalVector.x(), orthogonalVector.y(), orthogonalVector.z(), 1.0 + dotProduct)
+            .toNormalized();
+    }
+
+    const double orthogonalVectorSquaredNorm = orthogonalVector.squaredNorm();
+
+    // Rotation angle between 90 and 180 deg and still not within tolerance of 180: compute the shortest rotation
+    // between the two vectors accounting for numerical instability that can still happens above tolerance but close to
+    // 180 deg: as d = dotProduct approaches -1, (1 + d) subtracts two nearly equal numbers and suffers from
+    // catastrophic cancellation. An equivalent, stable expression is derived from Lagrange's identity, with c =
+    // orthogonalVector and unit input vectors u and v:
+    //
+    //     |c|^2 = |u|^2 |v|^2 - (u . v)^2 = 1 - d^2 = (1 + d) (1 - d)
+    //
+    // Since d < 0, (1 - d) lies in (1, 2] and can be divided by safely:
+    //
+    //     1 + d = |c|^2 / (1 - d)
+    //
+    // Neither |c|^2 nor (1 - d) involves a cancellation, so the scalar part stays accurate near 180 deg.
+    if (orthogonalVectorSquaredNorm > (ShortestRotationAntiParallelTolerance * ShortestRotationAntiParallelTolerance))
+    {
+        return Quaternion::XYZS(
+                   orthogonalVector.x(),
+                   orthogonalVector.y(),
+                   orthogonalVector.z(),
+                   (orthogonalVectorSquaredNorm / (1.0 - dotProduct))
+        )
+            .toNormalized();
+    }
+
+    // Rotation angle is closer to 180 deg than the tolerance - compute the shortest rotation as if they were exactly
+    // anti-parallel. This is done by redefining the orthogonal vector to be the one that is least aligned with the
+    // first vector. This is an approximation: the small component of the second vector orthogonal to the first one is
+    // ignored, leading to an angular error of up to the tolerance.
+    const Vector3d absoluteFirstVector = firstNormalizedVector.cwiseAbs();
+
+    Vector3d leastAlignedBasisVector = Vector3d::UnitZ();
+
+    if ((absoluteFirstVector.x() <= absoluteFirstVector.y()) && (absoluteFirstVector.x() <= absoluteFirstVector.z()))
+    {
+        leastAlignedBasisVector = Vector3d::UnitX();
+    }
+    else if (absoluteFirstVector.y() <= absoluteFirstVector.z())
+    {
+        leastAlignedBasisVector = Vector3d::UnitY();
+    }
+
+    const Vector3d rotationAxis = firstNormalizedVector.cross(leastAlignedBasisVector).normalized();
+
+    return Quaternion::XYZS(rotationAxis.x(), rotationAxis.y(), rotationAxis.z(), 0.0);
 }
 
 Quaternion Quaternion::LERP(const Quaternion& aFirstQuaternion, const Quaternion& aSecondQuaternion, double aRatio)
