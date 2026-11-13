@@ -1,5 +1,6 @@
 /// Apache License 2.0
 
+#include <algorithm>
 #include <cmath>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
@@ -65,7 +66,8 @@ bool Cone::intersects(const Sphere& aSphere, [[maybe_unused]] const Size aDiscre
     const Vector3d normalizedAxis = axis_.normalized();
 
     // Angle between cone axis and vector to sphere center
-    const double theta = std::acos(normalizedAxis.dot(apexToCenter.normalized()));
+    // Clamp to [-1, 1]: rounding can push the dot product of two unit vectors slightly outside, making acos return NaN
+    const double theta = std::acos(std::clamp(normalizedAxis.dot(apexToCenter.normalized()), -1.0, 1.0));
 
     const double alpha = std::asin(aSphere.getRadius() / distance);
 
