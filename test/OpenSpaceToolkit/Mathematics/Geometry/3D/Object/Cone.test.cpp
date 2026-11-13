@@ -198,6 +198,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Intersects_Sphere)
 
         EXPECT_TRUE(cone.intersects(sphere));
     }
+
+    // Sphere centered on the cone axis, where the normalized dot product rounds above 1.0
+    {
+        const Point apex = {0.0, 0.0, 0.0};
+        const Vector3d axis = {1.0, 1.0, 1.0};
+        const Angle angle = Angle::Degrees(10.0);
+
+        const Cone cone = {apex, axis, angle};
+
+        const Sphere sphere = {{2.0, 2.0, 2.0}, 0.1};
+
+        EXPECT_TRUE(cone.intersects(sphere));
+    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Intersects_Ellipsoid)
